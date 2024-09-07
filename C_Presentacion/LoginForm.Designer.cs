@@ -1,4 +1,7 @@
-﻿namespace AgMaGest.C_Presentacion
+﻿using System.Drawing;
+using System.Windows.Forms;
+
+namespace AgMaGest.C_Presentacion
 {
     partial class LoginForm
     {
@@ -28,130 +31,159 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.LUsuario = new System.Windows.Forms.Label();
+            this.LContrasenia = new System.Windows.Forms.Label();
+            this.TBUsuario = new System.Windows.Forms.TextBox();
+            this.TBContrasenia = new System.Windows.Forms.TextBox();
+            this.CBRecordar = new System.Windows.Forms.CheckBox();
             this.BIniciarSesion = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.BSalir = new System.Windows.Forms.Button();
+            this.PBBienvenidos = new System.Windows.Forms.PictureBox();
+            this.PBPerfil = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.PBBienvenidos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBPerfil)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // LUsuario
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(96, 135);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 21);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Usuario";
+            this.LUsuario.AutoSize = true;
+            this.LUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.LUsuario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LUsuario.ForeColor = System.Drawing.Color.Black;
+            this.LUsuario.Location = new System.Drawing.Point(356, 307);
+            this.LUsuario.Name = "LUsuario";
+            this.LUsuario.Size = new System.Drawing.Size(66, 21);
+            this.LUsuario.TabIndex = 0;
+            this.LUsuario.Text = "Usuario";
             // 
-            // label2
+            // LContrasenia
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(96, 185);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 21);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Contraseña";
+            this.LContrasenia.AutoSize = true;
+            this.LContrasenia.BackColor = System.Drawing.Color.Transparent;
+            this.LContrasenia.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LContrasenia.Location = new System.Drawing.Point(356, 357);
+            this.LContrasenia.Name = "LContrasenia";
+            this.LContrasenia.Size = new System.Drawing.Size(103, 21);
+            this.LContrasenia.TabIndex = 1;
+            this.LContrasenia.Text = "Contraseña";
             // 
-            // textBox1
+            // TBUsuario
             // 
-            this.textBox1.Location = new System.Drawing.Point(213, 135);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 2;
+            this.TBUsuario.Location = new System.Drawing.Point(473, 307);
+            this.TBUsuario.Name = "TBUsuario";
+            this.TBUsuario.Size = new System.Drawing.Size(100, 20);
+            this.TBUsuario.TabIndex = 2;
+            this.TBUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBUsuario_KeyPress);
             // 
-            // textBox2
+            // TBContrasenia
             // 
-            this.textBox2.Location = new System.Drawing.Point(213, 185);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 3;
+            this.TBContrasenia.Location = new System.Drawing.Point(473, 357);
+            this.TBContrasenia.Name = "TBContrasenia";
+            this.TBContrasenia.Size = new System.Drawing.Size(100, 20);
+            this.TBContrasenia.TabIndex = 3;
+            // 
+            // CBRecordar
+            // 
+            this.CBRecordar.AutoSize = true;
+            this.CBRecordar.BackColor = System.Drawing.Color.Transparent;
+            this.CBRecordar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBRecordar.Location = new System.Drawing.Point(360, 402);
+            this.CBRecordar.Name = "CBRecordar";
+            this.CBRecordar.Size = new System.Drawing.Size(136, 21);
+            this.CBRecordar.TabIndex = 7;
+            this.CBRecordar.Text = "Recordar usuario";
+            this.CBRecordar.UseVisualStyleBackColor = false;
             // 
             // BIniciarSesion
             // 
-            this.BIniciarSesion.BackColor = System.Drawing.Color.Transparent;
-            this.BIniciarSesion.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BIniciarSesion.Location = new System.Drawing.Point(140, 270);
+            this.BIniciarSesion.BackColor = System.Drawing.Color.Gray;
+            this.BIniciarSesion.FlatAppearance.BorderSize = 0;
+            this.BIniciarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BIniciarSesion.ForeColor = System.Drawing.Color.White;
+            this.BIniciarSesion.Location = new System.Drawing.Point(360, 443);
             this.BIniciarSesion.Name = "BIniciarSesion";
-            this.BIniciarSesion.Size = new System.Drawing.Size(96, 23);
-            this.BIniciarSesion.TabIndex = 4;
+            this.BIniciarSesion.Size = new System.Drawing.Size(99, 50);
+            this.BIniciarSesion.TabIndex = 8;
             this.BIniciarSesion.Text = "Iniciar Sesion";
-            this.BIniciarSesion.UseVisualStyleBackColor = false;
+            this.BIniciarSesion.UseVisualStyleBackColor = true;
             this.BIniciarSesion.Click += new System.EventHandler(this.BIniciarSesion_Click);
             // 
-            // pictureBox1
+            // BSalir
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(175, 41);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
+            this.BSalir.BackColor = System.Drawing.Color.Gray;
+            this.BSalir.FlatAppearance.BorderSize = 0;
+            this.BSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BSalir.ForeColor = System.Drawing.Color.White;
+            this.BSalir.Location = new System.Drawing.Point(473, 443);
+            this.BSalir.Name = "BSalir";
+            this.BSalir.Size = new System.Drawing.Size(100, 50);
+            this.BSalir.TabIndex = 9;
+            this.BSalir.Text = "Salir";
+            this.BSalir.UseVisualStyleBackColor = true;
+            this.BSalir.Click += new System.EventHandler(this.BSalir_Click);
             // 
-            // checkBox1
+            // PBBienvenidos
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(100, 230);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(136, 21);
-            this.checkBox1.TabIndex = 7;
-            this.checkBox1.Text = "Recordar usuario";
-            this.checkBox1.UseVisualStyleBackColor = false;
+            this.PBBienvenidos.BackColor = System.Drawing.Color.Transparent;
+            this.PBBienvenidos.Image = global::AgMaGest.Properties.Resources.BIENVENIDOS__800px_;
+            this.PBBienvenidos.Location = new System.Drawing.Point(73, 1);
+            this.PBBienvenidos.Name = "PBBienvenidos";
+            this.PBBienvenidos.Size = new System.Drawing.Size(786, 176);
+            this.PBBienvenidos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.PBBienvenidos.TabIndex = 10;
+            this.PBBienvenidos.TabStop = false;
             // 
-            // button1
+            // PBPerfil
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(277, 270);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(96, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Salir";
-            this.button1.UseVisualStyleBackColor = false;
+            this.PBPerfil.BackColor = System.Drawing.Color.Transparent;
+            this.PBPerfil.Image = global::AgMaGest.Properties.Resources.avatarUsuario;
+            this.PBPerfil.Location = new System.Drawing.Point(418, 184);
+            this.PBPerfil.Name = "PBPerfil";
+            this.PBPerfil.Size = new System.Drawing.Size(100, 101);
+            this.PBPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PBPerfil.TabIndex = 6;
+            this.PBPerfil.TabStop = false;
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.ClientSize = new System.Drawing.Size(460, 372);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(936, 533);
+            this.ControlBox = false;
+            this.Controls.Add(this.PBBienvenidos);
+            this.Controls.Add(this.BSalir);
             this.Controls.Add(this.BIniciarSesion);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.CBRecordar);
+            this.Controls.Add(this.PBPerfil);
+            this.Controls.Add(this.TBContrasenia);
+            this.Controls.Add(this.TBUsuario);
+            this.Controls.Add(this.LContrasenia);
+            this.Controls.Add(this.LUsuario);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "LoginForm";
+            this.Text = "Iniciar Sesión";
             this.Load += new System.EventHandler(this.LoginForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBBienvenidos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBPerfil)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
+
+
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button BIniciarSesion;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label LUsuario;
+        private System.Windows.Forms.Label LContrasenia;
+        private System.Windows.Forms.TextBox TBUsuario;
+        private System.Windows.Forms.TextBox TBContrasenia;
+        private System.Windows.Forms.PictureBox PBPerfil;
+        private System.Windows.Forms.CheckBox CBRecordar;
+        private Button BIniciarSesion;
+        private Button BSalir;
+        private PictureBox PBBienvenidos;
     }
 }
