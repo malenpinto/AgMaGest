@@ -64,11 +64,11 @@
     <Compile Include="C_Presentacion\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="C_Presentacion\Vendedor\InicioVendedorMDI.cs">
+    <Compile Include="C_Presentacion\Vendedor\InicioVendedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="C_Presentacion\Vendedor\InicioVendedorMDI.Designer.cs">
-      <DependentUpon>InicioVendedorMDI.cs</DependentUpon>
+    <Compile Include="C_Presentacion\Vendedor\InicioVendedor.Designer.cs">
+      <DependentUpon>InicioVendedor.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -84,8 +84,8 @@
     <EmbeddedResource Include="C_Presentacion\Cajero\InicioCajeroMDI.resx">
       <DependentUpon>InicioCajeroMDI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="C_Presentacion\Vendedor\InicioVendedorMDI.resx">
-      <DependentUpon>InicioVendedorMDI.cs</DependentUpon>
+    <EmbeddedResource Include="C_Presentacion\Vendedor\InicioVendedor.resx">
+      <DependentUpon>InicioVendedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
