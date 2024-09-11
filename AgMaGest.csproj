@@ -64,6 +64,12 @@
     <Compile Include="C_Presentacion\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="C_Presentacion\Vendedor\IngresarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C_Presentacion\Vendedor\IngresarCliente.Designer.cs">
+      <DependentUpon>IngresarCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="C_Presentacion\Vendedor\InicioVendedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,9 @@
     <EmbeddedResource Include="C_Presentacion\Cajero\InicioCajeroMDI.resx">
       <DependentUpon>InicioCajeroMDI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="C_Presentacion\Vendedor\IngresarCliente.resx">
+      <DependentUpon>IngresarCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="C_Presentacion\Vendedor\InicioVendedor.resx">
       <DependentUpon>InicioVendedor.cs</DependentUpon>
     </EmbeddedResource>
@@ -95,6 +104,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -112,6 +122,135 @@
   <ItemGroup>
     <Folder Include="C_Datos\" />
     <Folder Include="C_Logica\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Boton-Salir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Boton-Salir1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Boton-Exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B-Exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B-Exit1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fondo.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clientes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ventas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Catalogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TestDrive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Informes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Catalogo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B-Exit2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo-Icono-Blanco-Sin-Fondo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo-Nombre-Sin-Fondo-Blanco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BSalir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BSalir1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BSalir2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BMinimizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo-Icono-Blanco-Sin-Fondo-Chico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo-Icono-Blanco-Sin-Fondo-Chico1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo-Icono-Blanco-Sin-Fondo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clientes1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Catalogo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ventas1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TestDrive1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Informes1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono-Minimizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono-Salir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo-Sin-Fondo-Blanco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono-Clientes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono-Venta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono-Catalogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono-TestDrive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono-Informes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono-Ayuda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono-Exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono-Mas-Venta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono-Lista.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BSalir3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BMinimizar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo-Sin-Fondo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BMaximizar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
