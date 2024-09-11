@@ -16,5 +16,10 @@ namespace AgMaGest.C_Presentacion.Vendedor
         {
             InitializeComponent();
         }
+
+        private void BSalirForm_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
