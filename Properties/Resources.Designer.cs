@@ -63,26 +63,6 @@ namespace AgMaGest.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap BMaximizar {
-            get {
-                object obj = ResourceManager.GetObject("BMaximizar", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap BMinimizar {
-            get {
-                object obj = ResourceManager.GetObject("BMinimizar", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap BSalir {
             get {
                 object obj = ResourceManager.GetObject("BSalir", resourceCulture);
@@ -93,9 +73,9 @@ namespace AgMaGest.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Icono_atras {
+        internal static System.Drawing.Bitmap Icono_Atras {
             get {
-                object obj = ResourceManager.GetObject("Icono-atras", resourceCulture);
+                object obj = ResourceManager.GetObject("Icono-Atras", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +133,39 @@ namespace AgMaGest.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Icono_maximizar {
+            get {
+                object obj = ResourceManager.GetObject("Icono-maximizar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icono_Minimizar {
+            get {
+                object obj = ResourceManager.GetObject("Icono-Minimizar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Icono_TestDrive {
             get {
                 object obj = ResourceManager.GetObject("Icono-TestDrive", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icono_Usuario {
+            get {
+                object obj = ResourceManager.GetObject("Icono-Usuario", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

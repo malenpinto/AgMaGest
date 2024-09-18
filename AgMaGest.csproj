@@ -145,22 +145,25 @@
     <None Include="Resources\Icono-Exit.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BMaximizar.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Logo-Icono-Sin-Fondo.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BSalir.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BMinimizar.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Logo-Sin-Fondo-Blanco.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Icono-atras.png" />
+    <None Include="Resources\Icono-maximizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono-Minimizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono-Atras.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono-Usuario.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

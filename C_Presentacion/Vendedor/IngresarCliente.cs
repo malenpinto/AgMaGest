@@ -21,5 +21,10 @@ namespace AgMaGest.C_Presentacion.Vendedor
         {
             this.Close();
         }
+
+        private void BAtras_Click(object sender, EventArgs e)
+        {
+            this.Close(); 
+        }
     }
 }

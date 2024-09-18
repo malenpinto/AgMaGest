@@ -158,11 +158,6 @@ namespace AgMaGest.C_Presentacion.Vendedor
             ocultarSubmenu();
         }
 
-        private void BExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private Form formularioActivo = null;
         private void abrirFormularioHijo(Form formHijo)
         {
