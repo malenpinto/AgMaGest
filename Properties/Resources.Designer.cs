@@ -93,6 +93,16 @@ namespace AgMaGest.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Icono_atras {
+            get {
+                object obj = ResourceManager.GetObject("Icono-atras", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Icono_Ayuda {
             get {
                 object obj = ResourceManager.GetObject("Icono-Ayuda", resourceCulture);
@@ -143,26 +153,6 @@ namespace AgMaGest.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Icono_Lista {
-            get {
-                object obj = ResourceManager.GetObject("Icono-Lista", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Icono_Mas_Venta {
-            get {
-                object obj = ResourceManager.GetObject("Icono-Mas-Venta", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Icono_TestDrive {
             get {
                 object obj = ResourceManager.GetObject("Icono-TestDrive", resourceCulture);
@@ -183,9 +173,9 @@ namespace AgMaGest.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Logo_Sin_Fondo {
+        internal static System.Drawing.Bitmap Logo_Icono_Sin_Fondo {
             get {
-                object obj = ResourceManager.GetObject("Logo-Sin-Fondo", resourceCulture);
+                object obj = ResourceManager.GetObject("Logo-Icono-Sin-Fondo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
