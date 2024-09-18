@@ -52,11 +52,11 @@
     <Compile Include="C_Presentacion\Administrador\InicioAdministradorMDI.Designer.cs">
       <DependentUpon>InicioAdministradorMDI.cs</DependentUpon>
     </Compile>
-    <Compile Include="C_Presentacion\Cajero\InicioCajeroMDI.cs">
+    <Compile Include="C_Presentacion\Cajero\InicioCajero.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="C_Presentacion\Cajero\InicioCajeroMDI.Designer.cs">
-      <DependentUpon>InicioCajeroMDI.cs</DependentUpon>
+    <Compile Include="C_Presentacion\Cajero\InicioCajero.Designer.cs">
+      <DependentUpon>InicioCajero.cs</DependentUpon>
     </Compile>
     <Compile Include="C_Presentacion\LoginForm.cs">
       <SubType>Form</SubType>
@@ -81,8 +81,8 @@
     <EmbeddedResource Include="C_Presentacion\Administrador\InicioAdministradorMDI.resx">
       <DependentUpon>InicioAdministradorMDI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="C_Presentacion\Cajero\InicioCajeroMDI.resx">
-      <DependentUpon>InicioCajeroMDI.cs</DependentUpon>
+    <EmbeddedResource Include="C_Presentacion\Cajero\InicioCajero.resx">
+      <DependentUpon>InicioCajero.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="C_Presentacion\Vendedor\InicioVendedorMDI.resx">
       <DependentUpon>InicioVendedorMDI.cs</DependentUpon>
@@ -95,6 +95,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -112,6 +113,30 @@
   <ItemGroup>
     <Folder Include="C_Datos\" />
     <Folder Include="C_Logica\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono-Lista.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono-Editar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono-Ayuda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pago.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Factura.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconoLogoInicio1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono-Exit1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono-Informes.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
