@@ -124,40 +124,7 @@
     <Folder Include="C_Logica\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Icono-Lista.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Icono-Editar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Icono-Ayuda.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Pago.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Factura.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\iconoLogoInicio1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Icono-Exit1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Icono-Informes.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Icono-Minimizar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Icono-Maximizar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icono-panelFormHijo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Icono-atras %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

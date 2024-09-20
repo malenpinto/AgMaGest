@@ -49,7 +49,7 @@
             // 
             this.BVolverMenu.FlatAppearance.BorderSize = 0;
             this.BVolverMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BVolverMenu.Image = global::AgMaGest.Properties.Resources.Icono_atras__1_;
+            //this.BVolverMenu.Image = global::AgMaGest.Properties.Resources.Icono-atras(1);
             this.BVolverMenu.Location = new System.Drawing.Point(12, 12);
             this.BVolverMenu.Name = "BVolverMenu";
             this.BVolverMenu.Size = new System.Drawing.Size(75, 23);
