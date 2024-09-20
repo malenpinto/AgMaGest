@@ -31,47 +31,47 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InicioVendedor));
             this.PanelMenuLateral = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BAyuda = new System.Windows.Forms.Button();
+            this.BSalir = new System.Windows.Forms.Button();
             this.panelSubMenuInformes = new System.Windows.Forms.Panel();
             this.BInformesTrimestrales = new System.Windows.Forms.Button();
             this.BInformesMensuales = new System.Windows.Forms.Button();
+            this.BInformes = new System.Windows.Forms.Button();
             this.panelSubMenuTestDrive = new System.Windows.Forms.Panel();
             this.BVerReservas = new System.Windows.Forms.Button();
             this.BModificarReserva = new System.Windows.Forms.Button();
             this.BNuevoTurno = new System.Windows.Forms.Button();
+            this.BTestDrive = new System.Windows.Forms.Button();
+            this.BCatalogo = new System.Windows.Forms.Button();
             this.panelSubMenuVentas = new System.Windows.Forms.Panel();
             this.BVerVentas = new System.Windows.Forms.Button();
             this.BNuevaVenta = new System.Windows.Forms.Button();
+            this.BVentas = new System.Windows.Forms.Button();
             this.panelSubMenuCliente = new System.Windows.Forms.Panel();
             this.BClientes = new System.Windows.Forms.Button();
             this.BModificarCliente = new System.Windows.Forms.Button();
             this.BNuevoCliente = new System.Windows.Forms.Button();
+            this.BCliente = new System.Windows.Forms.Button();
             this.PanelLogo = new System.Windows.Forms.Panel();
+            this.PBLogo = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
-            this.panel = new System.Windows.Forms.Panel();
-            this.LUsuario = new System.Windows.Forms.Label();
             this.pBInicioVendedor = new System.Windows.Forms.PictureBox();
+            this.panel = new System.Windows.Forms.Panel();
             this.pBUsuario = new System.Windows.Forms.PictureBox();
+            this.LUsuario = new System.Windows.Forms.Label();
             this.BMinimizar = new System.Windows.Forms.Button();
             this.BMaximizar = new System.Windows.Forms.Button();
-            this.BAyuda = new System.Windows.Forms.Button();
-            this.BSalir = new System.Windows.Forms.Button();
-            this.BInformes = new System.Windows.Forms.Button();
-            this.BTestDrive = new System.Windows.Forms.Button();
-            this.BCatalogo = new System.Windows.Forms.Button();
-            this.BVentas = new System.Windows.Forms.Button();
-            this.BCliente = new System.Windows.Forms.Button();
-            this.PBLogo = new System.Windows.Forms.PictureBox();
             this.PanelMenuLateral.SuspendLayout();
             this.panelSubMenuInformes.SuspendLayout();
             this.panelSubMenuTestDrive.SuspendLayout();
             this.panelSubMenuVentas.SuspendLayout();
             this.panelSubMenuCliente.SuspendLayout();
             this.PanelLogo.SuspendLayout();
-            this.panelContenedor.SuspendLayout();
-            this.panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pBInicioVendedor)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBUsuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBLogo)).BeginInit();
+            this.panelContenedor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBInicioVendedor)).BeginInit();
+            this.panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBUsuario)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelMenuLateral
@@ -94,370 +94,20 @@
             this.PanelMenuLateral.Controls.Add(this.PanelLogo);
             this.PanelMenuLateral.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelMenuLateral.Location = new System.Drawing.Point(0, 0);
-            this.PanelMenuLateral.Margin = new System.Windows.Forms.Padding(2);
+            this.PanelMenuLateral.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PanelMenuLateral.Name = "PanelMenuLateral";
-            this.PanelMenuLateral.Size = new System.Drawing.Size(215, 599);
+            this.PanelMenuLateral.Size = new System.Drawing.Size(287, 737);
             this.PanelMenuLateral.TabIndex = 0;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.GhostWhite;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 701);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Location = new System.Drawing.Point(0, 860);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(198, 2);
+            this.panel1.Size = new System.Drawing.Size(266, 2);
             this.panel1.TabIndex = 12;
-            // 
-            // panelSubMenuInformes
-            // 
-            this.panelSubMenuInformes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(75)))), ((int)(((byte)(149)))));
-            this.panelSubMenuInformes.Controls.Add(this.BInformesTrimestrales);
-            this.panelSubMenuInformes.Controls.Add(this.BInformesMensuales);
-            this.panelSubMenuInformes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubMenuInformes.Location = new System.Drawing.Point(0, 583);
-            this.panelSubMenuInformes.Margin = new System.Windows.Forms.Padding(2);
-            this.panelSubMenuInformes.Name = "panelSubMenuInformes";
-            this.panelSubMenuInformes.Size = new System.Drawing.Size(198, 77);
-            this.panelSubMenuInformes.TabIndex = 9;
-            this.panelSubMenuInformes.Visible = false;
-            // 
-            // BInformesTrimestrales
-            // 
-            this.BInformesTrimestrales.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BInformesTrimestrales.FlatAppearance.BorderSize = 0;
-            this.BInformesTrimestrales.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.BInformesTrimestrales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BInformesTrimestrales.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BInformesTrimestrales.ForeColor = System.Drawing.Color.GhostWhite;
-            this.BInformesTrimestrales.Location = new System.Drawing.Point(0, 32);
-            this.BInformesTrimestrales.Margin = new System.Windows.Forms.Padding(2);
-            this.BInformesTrimestrales.Name = "BInformesTrimestrales";
-            this.BInformesTrimestrales.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.BInformesTrimestrales.Size = new System.Drawing.Size(198, 32);
-            this.BInformesTrimestrales.TabIndex = 1;
-            this.BInformesTrimestrales.Text = "Informes Trimestrales";
-            this.BInformesTrimestrales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BInformesTrimestrales.UseVisualStyleBackColor = true;
-            this.BInformesTrimestrales.Click += new System.EventHandler(this.BInformesTrimestrales_Click);
-            // 
-            // BInformesMensuales
-            // 
-            this.BInformesMensuales.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BInformesMensuales.FlatAppearance.BorderSize = 0;
-            this.BInformesMensuales.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.BInformesMensuales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BInformesMensuales.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BInformesMensuales.ForeColor = System.Drawing.Color.GhostWhite;
-            this.BInformesMensuales.Location = new System.Drawing.Point(0, 0);
-            this.BInformesMensuales.Margin = new System.Windows.Forms.Padding(2);
-            this.BInformesMensuales.Name = "BInformesMensuales";
-            this.BInformesMensuales.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.BInformesMensuales.Size = new System.Drawing.Size(198, 32);
-            this.BInformesMensuales.TabIndex = 0;
-            this.BInformesMensuales.Text = "Informes Mensuales";
-            this.BInformesMensuales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BInformesMensuales.UseVisualStyleBackColor = true;
-            this.BInformesMensuales.Click += new System.EventHandler(this.BInformesMensuales_Click);
-            // 
-            // panelSubMenuTestDrive
-            // 
-            this.panelSubMenuTestDrive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(75)))), ((int)(((byte)(149)))));
-            this.panelSubMenuTestDrive.Controls.Add(this.BVerReservas);
-            this.panelSubMenuTestDrive.Controls.Add(this.BModificarReserva);
-            this.panelSubMenuTestDrive.Controls.Add(this.BNuevoTurno);
-            this.panelSubMenuTestDrive.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubMenuTestDrive.Location = new System.Drawing.Point(0, 432);
-            this.panelSubMenuTestDrive.Margin = new System.Windows.Forms.Padding(2);
-            this.panelSubMenuTestDrive.Name = "panelSubMenuTestDrive";
-            this.panelSubMenuTestDrive.Size = new System.Drawing.Size(198, 110);
-            this.panelSubMenuTestDrive.TabIndex = 7;
-            this.panelSubMenuTestDrive.Visible = false;
-            // 
-            // BVerReservas
-            // 
-            this.BVerReservas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BVerReservas.FlatAppearance.BorderSize = 0;
-            this.BVerReservas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.BVerReservas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BVerReservas.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BVerReservas.ForeColor = System.Drawing.Color.GhostWhite;
-            this.BVerReservas.Location = new System.Drawing.Point(0, 64);
-            this.BVerReservas.Margin = new System.Windows.Forms.Padding(2);
-            this.BVerReservas.Name = "BVerReservas";
-            this.BVerReservas.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.BVerReservas.Size = new System.Drawing.Size(198, 32);
-            this.BVerReservas.TabIndex = 2;
-            this.BVerReservas.Text = "Ver Reservas";
-            this.BVerReservas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BVerReservas.UseVisualStyleBackColor = true;
-            this.BVerReservas.Click += new System.EventHandler(this.BVerReservas_Click);
-            // 
-            // BModificarReserva
-            // 
-            this.BModificarReserva.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BModificarReserva.FlatAppearance.BorderSize = 0;
-            this.BModificarReserva.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.BModificarReserva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BModificarReserva.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BModificarReserva.ForeColor = System.Drawing.Color.GhostWhite;
-            this.BModificarReserva.Location = new System.Drawing.Point(0, 32);
-            this.BModificarReserva.Margin = new System.Windows.Forms.Padding(2);
-            this.BModificarReserva.Name = "BModificarReserva";
-            this.BModificarReserva.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.BModificarReserva.Size = new System.Drawing.Size(198, 32);
-            this.BModificarReserva.TabIndex = 1;
-            this.BModificarReserva.Text = "Modificar Reserva";
-            this.BModificarReserva.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BModificarReserva.UseVisualStyleBackColor = true;
-            this.BModificarReserva.Click += new System.EventHandler(this.BModificarReserva_Click);
-            // 
-            // BNuevoTurno
-            // 
-            this.BNuevoTurno.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BNuevoTurno.FlatAppearance.BorderSize = 0;
-            this.BNuevoTurno.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.BNuevoTurno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BNuevoTurno.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BNuevoTurno.ForeColor = System.Drawing.Color.GhostWhite;
-            this.BNuevoTurno.Location = new System.Drawing.Point(0, 0);
-            this.BNuevoTurno.Margin = new System.Windows.Forms.Padding(2);
-            this.BNuevoTurno.Name = "BNuevoTurno";
-            this.BNuevoTurno.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.BNuevoTurno.Size = new System.Drawing.Size(198, 32);
-            this.BNuevoTurno.TabIndex = 0;
-            this.BNuevoTurno.Text = "Reservar Turno";
-            this.BNuevoTurno.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BNuevoTurno.UseVisualStyleBackColor = true;
-            this.BNuevoTurno.Click += new System.EventHandler(this.BNuevoTurno_Click);
-            // 
-            // panelSubMenuVentas
-            // 
-            this.panelSubMenuVentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(75)))), ((int)(((byte)(149)))));
-            this.panelSubMenuVentas.Controls.Add(this.BVerVentas);
-            this.panelSubMenuVentas.Controls.Add(this.BNuevaVenta);
-            this.panelSubMenuVentas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubMenuVentas.Location = new System.Drawing.Point(0, 273);
-            this.panelSubMenuVentas.Margin = new System.Windows.Forms.Padding(2);
-            this.panelSubMenuVentas.Name = "panelSubMenuVentas";
-            this.panelSubMenuVentas.Size = new System.Drawing.Size(198, 77);
-            this.panelSubMenuVentas.TabIndex = 4;
-            this.panelSubMenuVentas.Visible = false;
-            // 
-            // BVerVentas
-            // 
-            this.BVerVentas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BVerVentas.FlatAppearance.BorderSize = 0;
-            this.BVerVentas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.BVerVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BVerVentas.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BVerVentas.ForeColor = System.Drawing.Color.GhostWhite;
-            this.BVerVentas.Location = new System.Drawing.Point(0, 32);
-            this.BVerVentas.Margin = new System.Windows.Forms.Padding(2);
-            this.BVerVentas.Name = "BVerVentas";
-            this.BVerVentas.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.BVerVentas.Size = new System.Drawing.Size(198, 32);
-            this.BVerVentas.TabIndex = 1;
-            this.BVerVentas.Text = "Ver Ventas  ";
-            this.BVerVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BVerVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.BVerVentas.UseVisualStyleBackColor = true;
-            this.BVerVentas.Click += new System.EventHandler(this.BVerVentas_Click);
-            // 
-            // BNuevaVenta
-            // 
-            this.BNuevaVenta.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BNuevaVenta.FlatAppearance.BorderSize = 0;
-            this.BNuevaVenta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.BNuevaVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BNuevaVenta.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BNuevaVenta.ForeColor = System.Drawing.Color.GhostWhite;
-            this.BNuevaVenta.Location = new System.Drawing.Point(0, 0);
-            this.BNuevaVenta.Margin = new System.Windows.Forms.Padding(2);
-            this.BNuevaVenta.Name = "BNuevaVenta";
-            this.BNuevaVenta.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.BNuevaVenta.Size = new System.Drawing.Size(198, 32);
-            this.BNuevaVenta.TabIndex = 0;
-            this.BNuevaVenta.Text = "Nueva Venta";
-            this.BNuevaVenta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BNuevaVenta.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.BNuevaVenta.UseVisualStyleBackColor = true;
-            this.BNuevaVenta.Click += new System.EventHandler(this.BNuevaVenta_Click);
-            // 
-            // panelSubMenuCliente
-            // 
-            this.panelSubMenuCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(75)))), ((int)(((byte)(149)))));
-            this.panelSubMenuCliente.Controls.Add(this.BClientes);
-            this.panelSubMenuCliente.Controls.Add(this.BModificarCliente);
-            this.panelSubMenuCliente.Controls.Add(this.BNuevoCliente);
-            this.panelSubMenuCliente.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubMenuCliente.Location = new System.Drawing.Point(0, 125);
-            this.panelSubMenuCliente.Margin = new System.Windows.Forms.Padding(2);
-            this.panelSubMenuCliente.Name = "panelSubMenuCliente";
-            this.panelSubMenuCliente.Size = new System.Drawing.Size(198, 107);
-            this.panelSubMenuCliente.TabIndex = 2;
-            this.panelSubMenuCliente.Visible = false;
-            // 
-            // BClientes
-            // 
-            this.BClientes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BClientes.FlatAppearance.BorderSize = 0;
-            this.BClientes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.BClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BClientes.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BClientes.ForeColor = System.Drawing.Color.GhostWhite;
-            this.BClientes.Location = new System.Drawing.Point(0, 64);
-            this.BClientes.Margin = new System.Windows.Forms.Padding(2);
-            this.BClientes.Name = "BClientes";
-            this.BClientes.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.BClientes.Size = new System.Drawing.Size(198, 32);
-            this.BClientes.TabIndex = 2;
-            this.BClientes.Text = "Ver Clientes";
-            this.BClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BClientes.UseVisualStyleBackColor = true;
-            this.BClientes.Click += new System.EventHandler(this.BClientes_Click);
-            // 
-            // BModificarCliente
-            // 
-            this.BModificarCliente.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BModificarCliente.FlatAppearance.BorderSize = 0;
-            this.BModificarCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.BModificarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BModificarCliente.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BModificarCliente.ForeColor = System.Drawing.Color.GhostWhite;
-            this.BModificarCliente.Location = new System.Drawing.Point(0, 32);
-            this.BModificarCliente.Margin = new System.Windows.Forms.Padding(2);
-            this.BModificarCliente.Name = "BModificarCliente";
-            this.BModificarCliente.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.BModificarCliente.Size = new System.Drawing.Size(198, 32);
-            this.BModificarCliente.TabIndex = 1;
-            this.BModificarCliente.Text = "Modificar Datos";
-            this.BModificarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BModificarCliente.UseVisualStyleBackColor = true;
-            this.BModificarCliente.Click += new System.EventHandler(this.BModificarCliente_Click);
-            // 
-            // BNuevoCliente
-            // 
-            this.BNuevoCliente.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BNuevoCliente.FlatAppearance.BorderSize = 0;
-            this.BNuevoCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.BNuevoCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BNuevoCliente.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BNuevoCliente.ForeColor = System.Drawing.Color.GhostWhite;
-            this.BNuevoCliente.Location = new System.Drawing.Point(0, 0);
-            this.BNuevoCliente.Margin = new System.Windows.Forms.Padding(2);
-            this.BNuevoCliente.Name = "BNuevoCliente";
-            this.BNuevoCliente.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.BNuevoCliente.Size = new System.Drawing.Size(198, 32);
-            this.BNuevoCliente.TabIndex = 0;
-            this.BNuevoCliente.Text = "Ingresar Nuevo";
-            this.BNuevoCliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BNuevoCliente.UseVisualStyleBackColor = true;
-            this.BNuevoCliente.Click += new System.EventHandler(this.BNuevoCliente_Click);
-            // 
-            // PanelLogo
-            // 
-            this.PanelLogo.Controls.Add(this.PBLogo);
-            this.PanelLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelLogo.Location = new System.Drawing.Point(0, 0);
-            this.PanelLogo.Margin = new System.Windows.Forms.Padding(2);
-            this.PanelLogo.Name = "PanelLogo";
-            this.PanelLogo.Size = new System.Drawing.Size(198, 84);
-            this.PanelLogo.TabIndex = 0;
-            // 
-            // panelContenedor
-            // 
-            this.panelContenedor.BackColor = System.Drawing.Color.Gainsboro;
-            this.panelContenedor.Controls.Add(this.pBInicioVendedor);
-            this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContenedor.Location = new System.Drawing.Point(215, 25);
-            this.panelContenedor.Margin = new System.Windows.Forms.Padding(2);
-            this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.panelContenedor.Size = new System.Drawing.Size(825, 574);
-            this.panelContenedor.TabIndex = 1;
-            // 
-            // panel
-            // 
-            this.panel.BackColor = System.Drawing.Color.GhostWhite;
-            this.panel.Controls.Add(this.pBUsuario);
-            this.panel.Controls.Add(this.LUsuario);
-            this.panel.Controls.Add(this.BMinimizar);
-            this.panel.Controls.Add(this.BMaximizar);
-            this.panel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel.Location = new System.Drawing.Point(215, 0);
-            this.panel.Margin = new System.Windows.Forms.Padding(2);
-            this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(825, 25);
-            this.panel.TabIndex = 0;
-            // 
-            // LUsuario
-            // 
-            this.LUsuario.AutoSize = true;
-            this.LUsuario.Dock = System.Windows.Forms.DockStyle.Right;
-            this.LUsuario.Font = new System.Drawing.Font("Berlin Sans FB", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(38)))), ((int)(((byte)(104)))));
-            this.LUsuario.Location = new System.Drawing.Point(659, 0);
-            this.LUsuario.Name = "LUsuario";
-            this.LUsuario.Size = new System.Drawing.Size(110, 17);
-            this.LUsuario.TabIndex = 3;
-            this.LUsuario.Text = "Nombre Usuario";
-            this.LUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pBInicioVendedor
-            // 
-            this.pBInicioVendedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pBInicioVendedor.ErrorImage = null;
-            this.pBInicioVendedor.Image = global::AgMaGest.Properties.Resources.Logo_Icono_Sin_Fondo;
-            this.pBInicioVendedor.InitialImage = null;
-            this.pBInicioVendedor.Location = new System.Drawing.Point(0, 0);
-            this.pBInicioVendedor.Margin = new System.Windows.Forms.Padding(2);
-            this.pBInicioVendedor.Name = "pBInicioVendedor";
-            this.pBInicioVendedor.Size = new System.Drawing.Size(825, 574);
-            this.pBInicioVendedor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pBInicioVendedor.TabIndex = 1;
-            this.pBInicioVendedor.TabStop = false;
-            // 
-            // pBUsuario
-            // 
-            this.pBUsuario.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pBUsuario.Image = ((System.Drawing.Image)(resources.GetObject("pBUsuario.Image")));
-            this.pBUsuario.Location = new System.Drawing.Point(629, 0);
-            this.pBUsuario.Name = "pBUsuario";
-            this.pBUsuario.Size = new System.Drawing.Size(30, 25);
-            this.pBUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pBUsuario.TabIndex = 4;
-            this.pBUsuario.TabStop = false;
-            // 
-            // BMinimizar
-            // 
-            this.BMinimizar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.BMinimizar.FlatAppearance.BorderSize = 0;
-            this.BMinimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.BMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BMinimizar.Image = global::AgMaGest.Properties.Resources.Icono_Minimizar;
-            this.BMinimizar.Location = new System.Drawing.Point(769, 0);
-            this.BMinimizar.Margin = new System.Windows.Forms.Padding(2);
-            this.BMinimizar.Name = "BMinimizar";
-            this.BMinimizar.Size = new System.Drawing.Size(28, 25);
-            this.BMinimizar.TabIndex = 2;
-            this.BMinimizar.UseVisualStyleBackColor = true;
-            this.BMinimizar.Click += new System.EventHandler(this.BMinimizar_Click);
-            // 
-            // BMaximizar
-            // 
-            this.BMaximizar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.BMaximizar.FlatAppearance.BorderSize = 0;
-            this.BMaximizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.BMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BMaximizar.Image = global::AgMaGest.Properties.Resources.Icono_maximizar;
-            this.BMaximizar.Location = new System.Drawing.Point(797, 0);
-            this.BMaximizar.Margin = new System.Windows.Forms.Padding(2);
-            this.BMaximizar.Name = "BMaximizar";
-            this.BMaximizar.Size = new System.Drawing.Size(28, 25);
-            this.BMaximizar.TabIndex = 1;
-            this.BMaximizar.UseVisualStyleBackColor = true;
-            this.BMaximizar.Click += new System.EventHandler(this.BMaximizar_Click);
             // 
             // BAyuda
             // 
@@ -468,11 +118,11 @@
             this.BAyuda.ForeColor = System.Drawing.Color.GhostWhite;
             this.BAyuda.Image = global::AgMaGest.Properties.Resources.Icono_Ayuda;
             this.BAyuda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BAyuda.Location = new System.Drawing.Point(0, 660);
-            this.BAyuda.Margin = new System.Windows.Forms.Padding(2);
+            this.BAyuda.Location = new System.Drawing.Point(0, 810);
+            this.BAyuda.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BAyuda.Name = "BAyuda";
-            this.BAyuda.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.BAyuda.Size = new System.Drawing.Size(198, 41);
+            this.BAyuda.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.BAyuda.Size = new System.Drawing.Size(266, 50);
             this.BAyuda.TabIndex = 11;
             this.BAyuda.Text = "Ayuda";
             this.BAyuda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -489,17 +139,68 @@
             this.BSalir.ForeColor = System.Drawing.Color.GhostWhite;
             this.BSalir.Image = global::AgMaGest.Properties.Resources.Icono_Exit;
             this.BSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BSalir.Location = new System.Drawing.Point(0, 703);
-            this.BSalir.Margin = new System.Windows.Forms.Padding(2);
+            this.BSalir.Location = new System.Drawing.Point(0, 862);
+            this.BSalir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BSalir.Name = "BSalir";
-            this.BSalir.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.BSalir.Size = new System.Drawing.Size(198, 41);
+            this.BSalir.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.BSalir.Size = new System.Drawing.Size(266, 50);
             this.BSalir.TabIndex = 10;
             this.BSalir.Text = "Salir";
             this.BSalir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BSalir.UseVisualStyleBackColor = true;
             this.BSalir.Click += new System.EventHandler(this.BSalir_Click);
+            // 
+            // panelSubMenuInformes
+            // 
+            this.panelSubMenuInformes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(75)))), ((int)(((byte)(149)))));
+            this.panelSubMenuInformes.Controls.Add(this.BInformesTrimestrales);
+            this.panelSubMenuInformes.Controls.Add(this.BInformesMensuales);
+            this.panelSubMenuInformes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSubMenuInformes.Location = new System.Drawing.Point(0, 715);
+            this.panelSubMenuInformes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelSubMenuInformes.Name = "panelSubMenuInformes";
+            this.panelSubMenuInformes.Size = new System.Drawing.Size(266, 95);
+            this.panelSubMenuInformes.TabIndex = 9;
+            this.panelSubMenuInformes.Visible = false;
+            // 
+            // BInformesTrimestrales
+            // 
+            this.BInformesTrimestrales.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BInformesTrimestrales.FlatAppearance.BorderSize = 0;
+            this.BInformesTrimestrales.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.BInformesTrimestrales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BInformesTrimestrales.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BInformesTrimestrales.ForeColor = System.Drawing.Color.GhostWhite;
+            this.BInformesTrimestrales.Location = new System.Drawing.Point(0, 39);
+            this.BInformesTrimestrales.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BInformesTrimestrales.Name = "BInformesTrimestrales";
+            this.BInformesTrimestrales.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.BInformesTrimestrales.Size = new System.Drawing.Size(266, 39);
+            this.BInformesTrimestrales.TabIndex = 1;
+            this.BInformesTrimestrales.Text = "Informes Trimestrales";
+            this.BInformesTrimestrales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BInformesTrimestrales.UseVisualStyleBackColor = true;
+            this.BInformesTrimestrales.Click += new System.EventHandler(this.BInformesTrimestrales_Click);
+            // 
+            // BInformesMensuales
+            // 
+            this.BInformesMensuales.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BInformesMensuales.FlatAppearance.BorderSize = 0;
+            this.BInformesMensuales.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.BInformesMensuales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BInformesMensuales.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BInformesMensuales.ForeColor = System.Drawing.Color.GhostWhite;
+            this.BInformesMensuales.Location = new System.Drawing.Point(0, 0);
+            this.BInformesMensuales.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BInformesMensuales.Name = "BInformesMensuales";
+            this.BInformesMensuales.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.BInformesMensuales.Size = new System.Drawing.Size(266, 39);
+            this.BInformesMensuales.TabIndex = 0;
+            this.BInformesMensuales.Text = "Informes Mensuales";
+            this.BInformesMensuales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BInformesMensuales.UseVisualStyleBackColor = true;
+            this.BInformesMensuales.Click += new System.EventHandler(this.BInformesMensuales_Click);
             // 
             // BInformes
             // 
@@ -510,17 +211,88 @@
             this.BInformes.ForeColor = System.Drawing.Color.GhostWhite;
             this.BInformes.Image = global::AgMaGest.Properties.Resources.Icono_Informes;
             this.BInformes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BInformes.Location = new System.Drawing.Point(0, 542);
-            this.BInformes.Margin = new System.Windows.Forms.Padding(2);
+            this.BInformes.Location = new System.Drawing.Point(0, 665);
+            this.BInformes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BInformes.Name = "BInformes";
-            this.BInformes.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.BInformes.Size = new System.Drawing.Size(198, 41);
+            this.BInformes.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.BInformes.Size = new System.Drawing.Size(266, 50);
             this.BInformes.TabIndex = 8;
             this.BInformes.Text = "Informes";
             this.BInformes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BInformes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BInformes.UseVisualStyleBackColor = true;
             this.BInformes.Click += new System.EventHandler(this.BInformes_Click);
+            // 
+            // panelSubMenuTestDrive
+            // 
+            this.panelSubMenuTestDrive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(75)))), ((int)(((byte)(149)))));
+            this.panelSubMenuTestDrive.Controls.Add(this.BVerReservas);
+            this.panelSubMenuTestDrive.Controls.Add(this.BModificarReserva);
+            this.panelSubMenuTestDrive.Controls.Add(this.BNuevoTurno);
+            this.panelSubMenuTestDrive.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSubMenuTestDrive.Location = new System.Drawing.Point(0, 530);
+            this.panelSubMenuTestDrive.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelSubMenuTestDrive.Name = "panelSubMenuTestDrive";
+            this.panelSubMenuTestDrive.Size = new System.Drawing.Size(266, 135);
+            this.panelSubMenuTestDrive.TabIndex = 7;
+            this.panelSubMenuTestDrive.Visible = false;
+            // 
+            // BVerReservas
+            // 
+            this.BVerReservas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BVerReservas.FlatAppearance.BorderSize = 0;
+            this.BVerReservas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.BVerReservas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BVerReservas.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BVerReservas.ForeColor = System.Drawing.Color.GhostWhite;
+            this.BVerReservas.Location = new System.Drawing.Point(0, 78);
+            this.BVerReservas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BVerReservas.Name = "BVerReservas";
+            this.BVerReservas.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.BVerReservas.Size = new System.Drawing.Size(266, 39);
+            this.BVerReservas.TabIndex = 2;
+            this.BVerReservas.Text = "Ver Reservas";
+            this.BVerReservas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BVerReservas.UseVisualStyleBackColor = true;
+            this.BVerReservas.Click += new System.EventHandler(this.BVerReservas_Click);
+            // 
+            // BModificarReserva
+            // 
+            this.BModificarReserva.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BModificarReserva.FlatAppearance.BorderSize = 0;
+            this.BModificarReserva.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.BModificarReserva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BModificarReserva.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BModificarReserva.ForeColor = System.Drawing.Color.GhostWhite;
+            this.BModificarReserva.Location = new System.Drawing.Point(0, 39);
+            this.BModificarReserva.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BModificarReserva.Name = "BModificarReserva";
+            this.BModificarReserva.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.BModificarReserva.Size = new System.Drawing.Size(266, 39);
+            this.BModificarReserva.TabIndex = 1;
+            this.BModificarReserva.Text = "Modificar Reserva";
+            this.BModificarReserva.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BModificarReserva.UseVisualStyleBackColor = true;
+            this.BModificarReserva.Click += new System.EventHandler(this.BModificarReserva_Click);
+            // 
+            // BNuevoTurno
+            // 
+            this.BNuevoTurno.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BNuevoTurno.FlatAppearance.BorderSize = 0;
+            this.BNuevoTurno.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.BNuevoTurno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BNuevoTurno.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BNuevoTurno.ForeColor = System.Drawing.Color.GhostWhite;
+            this.BNuevoTurno.Location = new System.Drawing.Point(0, 0);
+            this.BNuevoTurno.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BNuevoTurno.Name = "BNuevoTurno";
+            this.BNuevoTurno.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.BNuevoTurno.Size = new System.Drawing.Size(266, 39);
+            this.BNuevoTurno.TabIndex = 0;
+            this.BNuevoTurno.Text = "Reservar Turno";
+            this.BNuevoTurno.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BNuevoTurno.UseVisualStyleBackColor = true;
+            this.BNuevoTurno.Click += new System.EventHandler(this.BNuevoTurno_Click);
             // 
             // BTestDrive
             // 
@@ -531,11 +303,11 @@
             this.BTestDrive.ForeColor = System.Drawing.Color.GhostWhite;
             this.BTestDrive.Image = global::AgMaGest.Properties.Resources.Icono_TestDrive;
             this.BTestDrive.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BTestDrive.Location = new System.Drawing.Point(0, 391);
-            this.BTestDrive.Margin = new System.Windows.Forms.Padding(2);
+            this.BTestDrive.Location = new System.Drawing.Point(0, 480);
+            this.BTestDrive.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BTestDrive.Name = "BTestDrive";
-            this.BTestDrive.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.BTestDrive.Size = new System.Drawing.Size(198, 41);
+            this.BTestDrive.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.BTestDrive.Size = new System.Drawing.Size(266, 50);
             this.BTestDrive.TabIndex = 6;
             this.BTestDrive.Text = "Test Drive";
             this.BTestDrive.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -552,17 +324,70 @@
             this.BCatalogo.ForeColor = System.Drawing.Color.GhostWhite;
             this.BCatalogo.Image = global::AgMaGest.Properties.Resources.Icono_Catalogo;
             this.BCatalogo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BCatalogo.Location = new System.Drawing.Point(0, 350);
-            this.BCatalogo.Margin = new System.Windows.Forms.Padding(2);
+            this.BCatalogo.Location = new System.Drawing.Point(0, 430);
+            this.BCatalogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BCatalogo.Name = "BCatalogo";
-            this.BCatalogo.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.BCatalogo.Size = new System.Drawing.Size(198, 41);
+            this.BCatalogo.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.BCatalogo.Size = new System.Drawing.Size(266, 50);
             this.BCatalogo.TabIndex = 5;
             this.BCatalogo.Text = "Catálogo";
             this.BCatalogo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BCatalogo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BCatalogo.UseVisualStyleBackColor = true;
             this.BCatalogo.Click += new System.EventHandler(this.BCatalogo_Click);
+            // 
+            // panelSubMenuVentas
+            // 
+            this.panelSubMenuVentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(75)))), ((int)(((byte)(149)))));
+            this.panelSubMenuVentas.Controls.Add(this.BVerVentas);
+            this.panelSubMenuVentas.Controls.Add(this.BNuevaVenta);
+            this.panelSubMenuVentas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSubMenuVentas.Location = new System.Drawing.Point(0, 335);
+            this.panelSubMenuVentas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelSubMenuVentas.Name = "panelSubMenuVentas";
+            this.panelSubMenuVentas.Size = new System.Drawing.Size(266, 95);
+            this.panelSubMenuVentas.TabIndex = 4;
+            this.panelSubMenuVentas.Visible = false;
+            // 
+            // BVerVentas
+            // 
+            this.BVerVentas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BVerVentas.FlatAppearance.BorderSize = 0;
+            this.BVerVentas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.BVerVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BVerVentas.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BVerVentas.ForeColor = System.Drawing.Color.GhostWhite;
+            this.BVerVentas.Location = new System.Drawing.Point(0, 39);
+            this.BVerVentas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BVerVentas.Name = "BVerVentas";
+            this.BVerVentas.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.BVerVentas.Size = new System.Drawing.Size(266, 39);
+            this.BVerVentas.TabIndex = 1;
+            this.BVerVentas.Text = "Ver Ventas  ";
+            this.BVerVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BVerVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.BVerVentas.UseVisualStyleBackColor = true;
+            this.BVerVentas.Click += new System.EventHandler(this.BVerVentas_Click);
+            // 
+            // BNuevaVenta
+            // 
+            this.BNuevaVenta.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BNuevaVenta.FlatAppearance.BorderSize = 0;
+            this.BNuevaVenta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.BNuevaVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BNuevaVenta.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BNuevaVenta.ForeColor = System.Drawing.Color.GhostWhite;
+            this.BNuevaVenta.Location = new System.Drawing.Point(0, 0);
+            this.BNuevaVenta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BNuevaVenta.Name = "BNuevaVenta";
+            this.BNuevaVenta.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.BNuevaVenta.Size = new System.Drawing.Size(266, 39);
+            this.BNuevaVenta.TabIndex = 0;
+            this.BNuevaVenta.Text = "Nueva Venta";
+            this.BNuevaVenta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BNuevaVenta.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.BNuevaVenta.UseVisualStyleBackColor = true;
+            this.BNuevaVenta.Click += new System.EventHandler(this.BNuevaVenta_Click);
             // 
             // BVentas
             // 
@@ -573,17 +398,88 @@
             this.BVentas.ForeColor = System.Drawing.Color.GhostWhite;
             this.BVentas.Image = global::AgMaGest.Properties.Resources.Icono_Venta;
             this.BVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BVentas.Location = new System.Drawing.Point(0, 232);
-            this.BVentas.Margin = new System.Windows.Forms.Padding(2);
+            this.BVentas.Location = new System.Drawing.Point(0, 285);
+            this.BVentas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BVentas.Name = "BVentas";
-            this.BVentas.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.BVentas.Size = new System.Drawing.Size(198, 41);
+            this.BVentas.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.BVentas.Size = new System.Drawing.Size(266, 50);
             this.BVentas.TabIndex = 3;
             this.BVentas.Text = "Ventas";
             this.BVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BVentas.UseVisualStyleBackColor = true;
             this.BVentas.Click += new System.EventHandler(this.BVentas_Click);
+            // 
+            // panelSubMenuCliente
+            // 
+            this.panelSubMenuCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(75)))), ((int)(((byte)(149)))));
+            this.panelSubMenuCliente.Controls.Add(this.BClientes);
+            this.panelSubMenuCliente.Controls.Add(this.BModificarCliente);
+            this.panelSubMenuCliente.Controls.Add(this.BNuevoCliente);
+            this.panelSubMenuCliente.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSubMenuCliente.Location = new System.Drawing.Point(0, 153);
+            this.panelSubMenuCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelSubMenuCliente.Name = "panelSubMenuCliente";
+            this.panelSubMenuCliente.Size = new System.Drawing.Size(266, 132);
+            this.panelSubMenuCliente.TabIndex = 2;
+            this.panelSubMenuCliente.Visible = false;
+            // 
+            // BClientes
+            // 
+            this.BClientes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BClientes.FlatAppearance.BorderSize = 0;
+            this.BClientes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.BClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BClientes.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BClientes.ForeColor = System.Drawing.Color.GhostWhite;
+            this.BClientes.Location = new System.Drawing.Point(0, 78);
+            this.BClientes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BClientes.Name = "BClientes";
+            this.BClientes.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.BClientes.Size = new System.Drawing.Size(266, 39);
+            this.BClientes.TabIndex = 2;
+            this.BClientes.Text = "Ver Clientes";
+            this.BClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BClientes.UseVisualStyleBackColor = true;
+            this.BClientes.Click += new System.EventHandler(this.BClientes_Click);
+            // 
+            // BModificarCliente
+            // 
+            this.BModificarCliente.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BModificarCliente.FlatAppearance.BorderSize = 0;
+            this.BModificarCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.BModificarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BModificarCliente.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BModificarCliente.ForeColor = System.Drawing.Color.GhostWhite;
+            this.BModificarCliente.Location = new System.Drawing.Point(0, 39);
+            this.BModificarCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BModificarCliente.Name = "BModificarCliente";
+            this.BModificarCliente.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.BModificarCliente.Size = new System.Drawing.Size(266, 39);
+            this.BModificarCliente.TabIndex = 1;
+            this.BModificarCliente.Text = "Modificar Datos";
+            this.BModificarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BModificarCliente.UseVisualStyleBackColor = true;
+            this.BModificarCliente.Click += new System.EventHandler(this.BModificarCliente_Click);
+            // 
+            // BNuevoCliente
+            // 
+            this.BNuevoCliente.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BNuevoCliente.FlatAppearance.BorderSize = 0;
+            this.BNuevoCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.BNuevoCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BNuevoCliente.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BNuevoCliente.ForeColor = System.Drawing.Color.GhostWhite;
+            this.BNuevoCliente.Location = new System.Drawing.Point(0, 0);
+            this.BNuevoCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BNuevoCliente.Name = "BNuevoCliente";
+            this.BNuevoCliente.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.BNuevoCliente.Size = new System.Drawing.Size(266, 39);
+            this.BNuevoCliente.TabIndex = 0;
+            this.BNuevoCliente.Text = "Ingresar Nuevo";
+            this.BNuevoCliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BNuevoCliente.UseVisualStyleBackColor = true;
+            this.BNuevoCliente.Click += new System.EventHandler(this.BNuevoCliente_Click);
             // 
             // BCliente
             // 
@@ -594,11 +490,11 @@
             this.BCliente.ForeColor = System.Drawing.Color.GhostWhite;
             this.BCliente.Image = global::AgMaGest.Properties.Resources.Icono_Clientes;
             this.BCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BCliente.Location = new System.Drawing.Point(0, 84);
-            this.BCliente.Margin = new System.Windows.Forms.Padding(2);
+            this.BCliente.Location = new System.Drawing.Point(0, 103);
+            this.BCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BCliente.Name = "BCliente";
-            this.BCliente.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.BCliente.Size = new System.Drawing.Size(198, 41);
+            this.BCliente.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.BCliente.Size = new System.Drawing.Size(266, 50);
             this.BCliente.TabIndex = 1;
             this.BCliente.Text = " Clientes";
             this.BCliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -606,32 +502,139 @@
             this.BCliente.UseVisualStyleBackColor = true;
             this.BCliente.Click += new System.EventHandler(this.BCliente_Click);
             // 
+            // PanelLogo
+            // 
+            this.PanelLogo.Controls.Add(this.PBLogo);
+            this.PanelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelLogo.Location = new System.Drawing.Point(0, 0);
+            this.PanelLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PanelLogo.Name = "PanelLogo";
+            this.PanelLogo.Size = new System.Drawing.Size(266, 103);
+            this.PanelLogo.TabIndex = 0;
+            // 
             // PBLogo
             // 
             this.PBLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.PBLogo.ErrorImage = null;
             this.PBLogo.Image = global::AgMaGest.Properties.Resources.Logo_Sin_Fondo_Blanco;
             this.PBLogo.InitialImage = null;
-            this.PBLogo.Location = new System.Drawing.Point(-8, -17);
-            this.PBLogo.Margin = new System.Windows.Forms.Padding(2);
+            this.PBLogo.Location = new System.Drawing.Point(-11, -21);
+            this.PBLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PBLogo.Name = "PBLogo";
-            this.PBLogo.Size = new System.Drawing.Size(206, 138);
+            this.PBLogo.Size = new System.Drawing.Size(275, 170);
             this.PBLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PBLogo.TabIndex = 0;
             this.PBLogo.TabStop = false;
             // 
+            // panelContenedor
+            // 
+            this.panelContenedor.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelContenedor.Controls.Add(this.pBInicioVendedor);
+            this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContenedor.Location = new System.Drawing.Point(287, 31);
+            this.panelContenedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelContenedor.Name = "panelContenedor";
+            this.panelContenedor.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.panelContenedor.Size = new System.Drawing.Size(1100, 706);
+            this.panelContenedor.TabIndex = 1;
+            // 
+            // pBInicioVendedor
+            // 
+            this.pBInicioVendedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pBInicioVendedor.ErrorImage = null;
+            this.pBInicioVendedor.Image = global::AgMaGest.Properties.Resources.Logo_Icono_Sin_Fondo;
+            this.pBInicioVendedor.InitialImage = null;
+            this.pBInicioVendedor.Location = new System.Drawing.Point(0, 0);
+            this.pBInicioVendedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pBInicioVendedor.Name = "pBInicioVendedor";
+            this.pBInicioVendedor.Size = new System.Drawing.Size(1100, 706);
+            this.pBInicioVendedor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pBInicioVendedor.TabIndex = 1;
+            this.pBInicioVendedor.TabStop = false;
+            // 
+            // panel
+            // 
+            this.panel.BackColor = System.Drawing.Color.GhostWhite;
+            this.panel.Controls.Add(this.pBUsuario);
+            this.panel.Controls.Add(this.LUsuario);
+            this.panel.Controls.Add(this.BMinimizar);
+            this.panel.Controls.Add(this.BMaximizar);
+            this.panel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel.Location = new System.Drawing.Point(287, 0);
+            this.panel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel.Name = "panel";
+            this.panel.Size = new System.Drawing.Size(1100, 31);
+            this.panel.TabIndex = 0;
+            // 
+            // pBUsuario
+            // 
+            this.pBUsuario.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pBUsuario.Image = ((System.Drawing.Image)(resources.GetObject("pBUsuario.Image")));
+            this.pBUsuario.Location = new System.Drawing.Point(845, 0);
+            this.pBUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pBUsuario.Name = "pBUsuario";
+            this.pBUsuario.Size = new System.Drawing.Size(40, 31);
+            this.pBUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pBUsuario.TabIndex = 4;
+            this.pBUsuario.TabStop = false;
+            // 
+            // LUsuario
+            // 
+            this.LUsuario.AutoSize = true;
+            this.LUsuario.Dock = System.Windows.Forms.DockStyle.Right;
+            this.LUsuario.Font = new System.Drawing.Font("Berlin Sans FB", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(38)))), ((int)(((byte)(104)))));
+            this.LUsuario.Location = new System.Drawing.Point(885, 0);
+            this.LUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LUsuario.Name = "LUsuario";
+            this.LUsuario.Size = new System.Drawing.Size(141, 21);
+            this.LUsuario.TabIndex = 3;
+            this.LUsuario.Text = "Nombre Usuario";
+            this.LUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // BMinimizar
+            // 
+            this.BMinimizar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BMinimizar.FlatAppearance.BorderSize = 0;
+            this.BMinimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.BMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BMinimizar.Image = global::AgMaGest.Properties.Resources.Icono_Minimizar;
+            this.BMinimizar.Location = new System.Drawing.Point(1026, 0);
+            this.BMinimizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BMinimizar.Name = "BMinimizar";
+            this.BMinimizar.Size = new System.Drawing.Size(37, 31);
+            this.BMinimizar.TabIndex = 2;
+            this.BMinimizar.UseVisualStyleBackColor = true;
+            this.BMinimizar.Click += new System.EventHandler(this.BMinimizar_Click);
+            // 
+            // BMaximizar
+            // 
+            this.BMaximizar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BMaximizar.FlatAppearance.BorderSize = 0;
+            this.BMaximizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.BMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BMaximizar.Image = global::AgMaGest.Properties.Resources.Icono_maximizar;
+            this.BMaximizar.Location = new System.Drawing.Point(1063, 0);
+            this.BMaximizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BMaximizar.Name = "BMaximizar";
+            this.BMaximizar.Size = new System.Drawing.Size(37, 31);
+            this.BMaximizar.TabIndex = 1;
+            this.BMaximizar.UseVisualStyleBackColor = true;
+            this.BMaximizar.Click += new System.EventHandler(this.BMaximizar_Click);
+            // 
             // InicioVendedor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.MintCream;
-            this.ClientSize = new System.Drawing.Size(1040, 599);
+            this.ClientSize = new System.Drawing.Size(1387, 737);
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.panel);
             this.Controls.Add(this.PanelMenuLateral);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MinimumSize = new System.Drawing.Size(1023, 590);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MinimumSize = new System.Drawing.Size(1364, 726);
             this.Name = "InicioVendedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InicioVendedor";
@@ -641,12 +644,12 @@
             this.panelSubMenuVentas.ResumeLayout(false);
             this.panelSubMenuCliente.ResumeLayout(false);
             this.PanelLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PBLogo)).EndInit();
             this.panelContenedor.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pBInicioVendedor)).EndInit();
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pBInicioVendedor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBUsuario)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PBLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
