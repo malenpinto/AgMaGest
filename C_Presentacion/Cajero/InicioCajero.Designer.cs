@@ -30,37 +30,37 @@
         {
             this.PMenu = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.BAyuda = new System.Windows.Forms.Button();
             this.PSubMenuInformes = new System.Windows.Forms.Panel();
             this.BInformeMensual = new System.Windows.Forms.Button();
             this.BInformeDiario = new System.Windows.Forms.Button();
-            this.BInformes = new System.Windows.Forms.Button();
             this.PSubMenuFacturas = new System.Windows.Forms.Panel();
             this.BVerFactura = new System.Windows.Forms.Button();
             this.BEmitirFactura = new System.Windows.Forms.Button();
-            this.BFacturas = new System.Windows.Forms.Button();
             this.PSubMenuPagos = new System.Windows.Forms.Panel();
             this.BControlCaja = new System.Windows.Forms.Button();
             this.BEmitirComprobante = new System.Windows.Forms.Button();
             this.BRegistrarPagos = new System.Windows.Forms.Button();
-            this.BPagos = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BSalir = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.BMinimizar = new System.Windows.Forms.Button();
-            this.BMaximizar = new System.Windows.Forms.Button();
             this.PFormHijo = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.BMinimizar = new System.Windows.Forms.Button();
+            this.BMaximizar = new System.Windows.Forms.Button();
+            this.BAyuda = new System.Windows.Forms.Button();
+            this.BInformes = new System.Windows.Forms.Button();
+            this.BFacturas = new System.Windows.Forms.Button();
+            this.BPagos = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PMenu.SuspendLayout();
             this.PSubMenuInformes.SuspendLayout();
             this.PSubMenuFacturas.SuspendLayout();
             this.PSubMenuPagos.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.PFormHijo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // PMenu
@@ -91,28 +91,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(215, 2);
             this.panel1.TabIndex = 17;
-            // 
-            // BAyuda
-            // 
-            this.BAyuda.BackColor = System.Drawing.Color.BlueViolet;
-            this.BAyuda.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BAyuda.FlatAppearance.BorderSize = 0;
-            this.BAyuda.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.BAyuda.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Indigo;
-            this.BAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BAyuda.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
-            this.BAyuda.ForeColor = System.Drawing.Color.GhostWhite;
-            this.BAyuda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BAyuda.Location = new System.Drawing.Point(0, 472);
-            this.BAyuda.Name = "BAyuda";
-            this.BAyuda.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.BAyuda.Size = new System.Drawing.Size(215, 41);
-            this.BAyuda.TabIndex = 16;
-            this.BAyuda.Text = " Ayuda";
-            this.BAyuda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BAyuda.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BAyuda.UseVisualStyleBackColor = false;
-            this.BAyuda.Click += new System.EventHandler(this.BAyuda_Click);
             // 
             // PSubMenuInformes
             // 
@@ -165,27 +143,6 @@
             this.BInformeDiario.UseVisualStyleBackColor = false;
             this.BInformeDiario.Click += new System.EventHandler(this.BInformeDiario_Click);
             // 
-            // BInformes
-            // 
-            this.BInformes.BackColor = System.Drawing.Color.Transparent;
-            this.BInformes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BInformes.FlatAppearance.BorderSize = 0;
-            this.BInformes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.BInformes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Indigo;
-            this.BInformes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BInformes.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
-            this.BInformes.ForeColor = System.Drawing.Color.GhostWhite;
-            this.BInformes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BInformes.Location = new System.Drawing.Point(0, 360);
-            this.BInformes.Name = "BInformes";
-            this.BInformes.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.BInformes.Size = new System.Drawing.Size(215, 41);
-            this.BInformes.TabIndex = 14;
-            this.BInformes.Text = " Informes";
-            this.BInformes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BInformes.UseVisualStyleBackColor = false;
-            this.BInformes.Click += new System.EventHandler(this.BInformes_Click);
-            // 
             // PSubMenuFacturas
             // 
             this.PSubMenuFacturas.BackColor = System.Drawing.Color.MediumPurple;
@@ -236,27 +193,6 @@
             this.BEmitirFactura.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BEmitirFactura.UseVisualStyleBackColor = false;
             this.BEmitirFactura.Click += new System.EventHandler(this.BEmitirFactura_Click);
-            // 
-            // BFacturas
-            // 
-            this.BFacturas.BackColor = System.Drawing.Color.Transparent;
-            this.BFacturas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BFacturas.FlatAppearance.BorderSize = 0;
-            this.BFacturas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.BFacturas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Indigo;
-            this.BFacturas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BFacturas.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
-            this.BFacturas.ForeColor = System.Drawing.Color.GhostWhite;
-            this.BFacturas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BFacturas.Location = new System.Drawing.Point(0, 248);
-            this.BFacturas.Name = "BFacturas";
-            this.BFacturas.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.BFacturas.Size = new System.Drawing.Size(215, 41);
-            this.BFacturas.TabIndex = 10;
-            this.BFacturas.Text = " Facturas";
-            this.BFacturas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BFacturas.UseVisualStyleBackColor = false;
-            this.BFacturas.Click += new System.EventHandler(this.BFacturas_Click);
             // 
             // PSubMenuPagos
             // 
@@ -330,27 +266,6 @@
             this.BRegistrarPagos.UseVisualStyleBackColor = false;
             this.BRegistrarPagos.Click += new System.EventHandler(this.BRegistrarPagos_Click);
             // 
-            // BPagos
-            // 
-            this.BPagos.BackColor = System.Drawing.Color.Transparent;
-            this.BPagos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BPagos.FlatAppearance.BorderSize = 0;
-            this.BPagos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.BPagos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Indigo;
-            this.BPagos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BPagos.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
-            this.BPagos.ForeColor = System.Drawing.Color.GhostWhite;
-            this.BPagos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BPagos.Location = new System.Drawing.Point(0, 100);
-            this.BPagos.Name = "BPagos";
-            this.BPagos.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.BPagos.Size = new System.Drawing.Size(215, 41);
-            this.BPagos.TabIndex = 7;
-            this.BPagos.Text = " Pagos";
-            this.BPagos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BPagos.UseVisualStyleBackColor = false;
-            this.BPagos.Click += new System.EventHandler(this.BPagos_Click);
-            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.pictureBox1);
@@ -359,15 +274,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(215, 100);
             this.panel3.TabIndex = 6;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(3, -14);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(206, 138);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // BSalir
             // 
@@ -402,32 +308,6 @@
             this.panel2.Size = new System.Drawing.Size(835, 25);
             this.panel2.TabIndex = 1;
             // 
-            // BMinimizar
-            // 
-            this.BMinimizar.BackColor = System.Drawing.Color.Transparent;
-            this.BMinimizar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.BMinimizar.FlatAppearance.BorderSize = 0;
-            this.BMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BMinimizar.Location = new System.Drawing.Point(779, 0);
-            this.BMinimizar.Name = "BMinimizar";
-            this.BMinimizar.Size = new System.Drawing.Size(28, 25);
-            this.BMinimizar.TabIndex = 2;
-            this.BMinimizar.UseVisualStyleBackColor = false;
-            this.BMinimizar.Click += new System.EventHandler(this.BMinimizar_Click);
-            // 
-            // BMaximizar
-            // 
-            this.BMaximizar.BackColor = System.Drawing.Color.Transparent;
-            this.BMaximizar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.BMaximizar.FlatAppearance.BorderSize = 0;
-            this.BMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BMaximizar.Location = new System.Drawing.Point(807, 0);
-            this.BMaximizar.Name = "BMaximizar";
-            this.BMaximizar.Size = new System.Drawing.Size(28, 25);
-            this.BMaximizar.TabIndex = 1;
-            this.BMaximizar.UseVisualStyleBackColor = false;
-            this.BMaximizar.Click += new System.EventHandler(this.BMaximizar_Click);
-            // 
             // PFormHijo
             // 
             this.PFormHijo.BackColor = System.Drawing.SystemColors.ButtonFace;
@@ -441,12 +321,140 @@
             // pictureBox2
             // 
             this.pictureBox2.ErrorImage = null;
+            this.pictureBox2.Image = global::AgMaGest.Properties.Resources.icono_panelFormHijo;
             this.pictureBox2.Location = new System.Drawing.Point(186, 99);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(403, 277);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
+            // 
+            // BMinimizar
+            // 
+            this.BMinimizar.BackColor = System.Drawing.Color.Transparent;
+            this.BMinimizar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BMinimizar.FlatAppearance.BorderSize = 0;
+            this.BMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BMinimizar.Image = global::AgMaGest.Properties.Resources.Icono_Minimizar;
+            this.BMinimizar.Location = new System.Drawing.Point(779, 0);
+            this.BMinimizar.Name = "BMinimizar";
+            this.BMinimizar.Size = new System.Drawing.Size(28, 25);
+            this.BMinimizar.TabIndex = 2;
+            this.BMinimizar.UseVisualStyleBackColor = false;
+            this.BMinimizar.Click += new System.EventHandler(this.BMinimizar_Click);
+            // 
+            // BMaximizar
+            // 
+            this.BMaximizar.BackColor = System.Drawing.Color.Transparent;
+            this.BMaximizar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BMaximizar.FlatAppearance.BorderSize = 0;
+            this.BMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BMaximizar.Image = global::AgMaGest.Properties.Resources.Icono_Maximizar;
+            this.BMaximizar.Location = new System.Drawing.Point(807, 0);
+            this.BMaximizar.Name = "BMaximizar";
+            this.BMaximizar.Size = new System.Drawing.Size(28, 25);
+            this.BMaximizar.TabIndex = 1;
+            this.BMaximizar.UseVisualStyleBackColor = false;
+            this.BMaximizar.Click += new System.EventHandler(this.BMaximizar_Click);
+            // 
+            // BAyuda
+            // 
+            this.BAyuda.BackColor = System.Drawing.Color.BlueViolet;
+            this.BAyuda.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BAyuda.FlatAppearance.BorderSize = 0;
+            this.BAyuda.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BAyuda.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Indigo;
+            this.BAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BAyuda.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
+            this.BAyuda.ForeColor = System.Drawing.Color.GhostWhite;
+            this.BAyuda.Image = global::AgMaGest.Properties.Resources.Icono_Ayuda;
+            this.BAyuda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BAyuda.Location = new System.Drawing.Point(0, 472);
+            this.BAyuda.Name = "BAyuda";
+            this.BAyuda.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.BAyuda.Size = new System.Drawing.Size(215, 41);
+            this.BAyuda.TabIndex = 16;
+            this.BAyuda.Text = " Ayuda";
+            this.BAyuda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BAyuda.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BAyuda.UseVisualStyleBackColor = false;
+            this.BAyuda.Click += new System.EventHandler(this.BAyuda_Click);
+            // 
+            // BInformes
+            // 
+            this.BInformes.BackColor = System.Drawing.Color.Transparent;
+            this.BInformes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BInformes.FlatAppearance.BorderSize = 0;
+            this.BInformes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BInformes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Indigo;
+            this.BInformes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BInformes.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
+            this.BInformes.ForeColor = System.Drawing.Color.GhostWhite;
+            this.BInformes.Image = global::AgMaGest.Properties.Resources.Icono_Informes;
+            this.BInformes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BInformes.Location = new System.Drawing.Point(0, 360);
+            this.BInformes.Name = "BInformes";
+            this.BInformes.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.BInformes.Size = new System.Drawing.Size(215, 41);
+            this.BInformes.TabIndex = 14;
+            this.BInformes.Text = " Informes";
+            this.BInformes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BInformes.UseVisualStyleBackColor = false;
+            this.BInformes.Click += new System.EventHandler(this.BInformes_Click);
+            // 
+            // BFacturas
+            // 
+            this.BFacturas.BackColor = System.Drawing.Color.Transparent;
+            this.BFacturas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BFacturas.FlatAppearance.BorderSize = 0;
+            this.BFacturas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BFacturas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Indigo;
+            this.BFacturas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BFacturas.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
+            this.BFacturas.ForeColor = System.Drawing.Color.GhostWhite;
+            this.BFacturas.Image = global::AgMaGest.Properties.Resources.Factura;
+            this.BFacturas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BFacturas.Location = new System.Drawing.Point(0, 248);
+            this.BFacturas.Name = "BFacturas";
+            this.BFacturas.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.BFacturas.Size = new System.Drawing.Size(215, 41);
+            this.BFacturas.TabIndex = 10;
+            this.BFacturas.Text = " Facturas";
+            this.BFacturas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BFacturas.UseVisualStyleBackColor = false;
+            this.BFacturas.Click += new System.EventHandler(this.BFacturas_Click);
+            // 
+            // BPagos
+            // 
+            this.BPagos.BackColor = System.Drawing.Color.Transparent;
+            this.BPagos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BPagos.FlatAppearance.BorderSize = 0;
+            this.BPagos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BPagos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Indigo;
+            this.BPagos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BPagos.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
+            this.BPagos.ForeColor = System.Drawing.Color.GhostWhite;
+            this.BPagos.Image = global::AgMaGest.Properties.Resources.Pago;
+            this.BPagos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BPagos.Location = new System.Drawing.Point(0, 100);
+            this.BPagos.Name = "BPagos";
+            this.BPagos.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.BPagos.Size = new System.Drawing.Size(215, 41);
+            this.BPagos.TabIndex = 7;
+            this.BPagos.Text = " Pagos";
+            this.BPagos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BPagos.UseVisualStyleBackColor = false;
+            this.BPagos.Click += new System.EventHandler(this.BPagos_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::AgMaGest.Properties.Resources.iconoLogoInicio;
+            this.pictureBox1.Location = new System.Drawing.Point(3, -14);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(206, 138);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // InicioCajero
             // 
@@ -466,10 +474,10 @@
             this.PSubMenuFacturas.ResumeLayout(false);
             this.PSubMenuPagos.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.PFormHijo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
