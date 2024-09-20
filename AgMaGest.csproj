@@ -130,28 +130,34 @@
     <None Include="Resources\Pago1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Factura.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Icono-Informes.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Icono-Ayuda.png" />
+    <None Include="Resources\iconoAtras.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\iconoLogoInicio.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Icono-Minimizar.png" />
+    <None Include="Resources\Pago2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Icono-Maximizar.png" />
+    <None Include="Resources\Factura.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icono-panelFormHijo.png" />
+    <None Include="Resources\IconoInformes.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Icono-atras.png" />
+    <None Include="Resources\IconoAyuda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconoPanelFormHijo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconoMinimizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconoMaximizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconoExit.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

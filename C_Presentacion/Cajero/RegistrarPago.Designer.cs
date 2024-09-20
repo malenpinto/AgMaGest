@@ -1,4 +1,7 @@
-﻿namespace AgMaGest.C_Presentacion.Cajero
+﻿using System.Drawing;
+using System;
+
+namespace AgMaGest.C_Presentacion.Cajero
 {
     partial class RegistrarPago
     {
@@ -49,7 +52,7 @@
             // 
             this.BVolverMenu.FlatAppearance.BorderSize = 0;
             this.BVolverMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BVolverMenu.Image = global::AgMaGest.Properties.Resources.Icono_atras;
+            this.BVolverMenu.Image = global::AgMaGest.Properties.Resources.iconoAtras;
             this.BVolverMenu.Location = new System.Drawing.Point(12, 12);
             this.BVolverMenu.Name = "BVolverMenu";
             this.BVolverMenu.Size = new System.Drawing.Size(75, 23);

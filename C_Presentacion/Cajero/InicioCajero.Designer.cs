@@ -285,6 +285,7 @@
             this.BSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BSalir.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
             this.BSalir.ForeColor = System.Drawing.Color.GhostWhite;
+            this.BSalir.Image = global::AgMaGest.Properties.Resources.IconoExit;
             this.BSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BSalir.Location = new System.Drawing.Point(0, 558);
             this.BSalir.Name = "BSalir";
@@ -321,8 +322,8 @@
             // pictureBox2
             // 
             this.pictureBox2.ErrorImage = null;
-            this.pictureBox2.Image = global::AgMaGest.Properties.Resources.icono_panelFormHijo;
-            this.pictureBox2.Location = new System.Drawing.Point(186, 99);
+            this.pictureBox2.Image = global::AgMaGest.Properties.Resources.iconoPanelFormHijo;
+            this.pictureBox2.Location = new System.Drawing.Point(194, 85);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(403, 277);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -335,7 +336,7 @@
             this.BMinimizar.Dock = System.Windows.Forms.DockStyle.Right;
             this.BMinimizar.FlatAppearance.BorderSize = 0;
             this.BMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BMinimizar.Image = global::AgMaGest.Properties.Resources.Icono_Minimizar;
+            this.BMinimizar.Image = global::AgMaGest.Properties.Resources.IconoMinimizar;
             this.BMinimizar.Location = new System.Drawing.Point(779, 0);
             this.BMinimizar.Name = "BMinimizar";
             this.BMinimizar.Size = new System.Drawing.Size(28, 25);
@@ -349,7 +350,7 @@
             this.BMaximizar.Dock = System.Windows.Forms.DockStyle.Right;
             this.BMaximizar.FlatAppearance.BorderSize = 0;
             this.BMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BMaximizar.Image = global::AgMaGest.Properties.Resources.Icono_Maximizar;
+            this.BMaximizar.Image = global::AgMaGest.Properties.Resources.IconoMaximizar;
             this.BMaximizar.Location = new System.Drawing.Point(807, 0);
             this.BMaximizar.Name = "BMaximizar";
             this.BMaximizar.Size = new System.Drawing.Size(28, 25);
@@ -367,7 +368,7 @@
             this.BAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BAyuda.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
             this.BAyuda.ForeColor = System.Drawing.Color.GhostWhite;
-            this.BAyuda.Image = global::AgMaGest.Properties.Resources.Icono_Ayuda;
+            this.BAyuda.Image = global::AgMaGest.Properties.Resources.IconoAyuda;
             this.BAyuda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BAyuda.Location = new System.Drawing.Point(0, 472);
             this.BAyuda.Name = "BAyuda";
@@ -390,7 +391,7 @@
             this.BInformes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BInformes.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
             this.BInformes.ForeColor = System.Drawing.Color.GhostWhite;
-            this.BInformes.Image = global::AgMaGest.Properties.Resources.Icono_Informes;
+            this.BInformes.Image = global::AgMaGest.Properties.Resources.IconoInformes;
             this.BInformes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BInformes.Location = new System.Drawing.Point(0, 360);
             this.BInformes.Name = "BInformes";
