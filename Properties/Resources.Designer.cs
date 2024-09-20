@@ -73,6 +73,16 @@ namespace AgMaGest.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Icono_atras__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Icono-atras (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Icono_Ayuda {
             get {
                 object obj = ResourceManager.GetObject("Icono-Ayuda", resourceCulture);
@@ -116,6 +126,36 @@ namespace AgMaGest.Properties {
         internal static System.Drawing.Bitmap Icono_Lista {
             get {
                 object obj = ResourceManager.GetObject("Icono-Lista", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icono_Maximizar {
+            get {
+                object obj = ResourceManager.GetObject("Icono-Maximizar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icono_Minimizar {
+            get {
+                object obj = ResourceManager.GetObject("Icono-Minimizar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icono_panelFormHijo {
+            get {
+                object obj = ResourceManager.GetObject("icono-panelFormHijo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

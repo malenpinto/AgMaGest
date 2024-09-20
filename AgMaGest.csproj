@@ -58,6 +58,12 @@
     <Compile Include="C_Presentacion\Cajero\InicioCajero.Designer.cs">
       <DependentUpon>InicioCajero.cs</DependentUpon>
     </Compile>
+    <Compile Include="C_Presentacion\Cajero\RegistrarPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C_Presentacion\Cajero\RegistrarPago.Designer.cs">
+      <DependentUpon>RegistrarPago.cs</DependentUpon>
+    </Compile>
     <Compile Include="C_Presentacion\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="C_Presentacion\Cajero\InicioCajero.resx">
       <DependentUpon>InicioCajero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="C_Presentacion\Cajero\RegistrarPago.resx">
+      <DependentUpon>RegistrarPago.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="C_Presentacion\Vendedor\InicioVendedorMDI.resx">
       <DependentUpon>InicioVendedorMDI.cs</DependentUpon>
@@ -137,6 +146,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Icono-Informes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono-Minimizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono-Maximizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icono-panelFormHijo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono-atras %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
