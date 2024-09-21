@@ -39,7 +39,6 @@
             this.BInformes = new System.Windows.Forms.Button();
             this.panelSubMenuTestDrive = new System.Windows.Forms.Panel();
             this.BVerReservas = new System.Windows.Forms.Button();
-            this.BModificarReserva = new System.Windows.Forms.Button();
             this.BNuevoTurno = new System.Windows.Forms.Button();
             this.BTestDrive = new System.Windows.Forms.Button();
             this.BCatalogo = new System.Windows.Forms.Button();
@@ -49,7 +48,6 @@
             this.BVentas = new System.Windows.Forms.Button();
             this.panelSubMenuCliente = new System.Windows.Forms.Panel();
             this.BClientes = new System.Windows.Forms.Button();
-            this.BModificarCliente = new System.Windows.Forms.Button();
             this.BNuevoCliente = new System.Windows.Forms.Button();
             this.BCliente = new System.Windows.Forms.Button();
             this.PanelLogo = new System.Windows.Forms.Panel();
@@ -103,7 +101,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.GhostWhite;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 860);
+            this.panel1.Location = new System.Drawing.Point(0, 784);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(266, 2);
@@ -118,7 +116,7 @@
             this.BAyuda.ForeColor = System.Drawing.Color.GhostWhite;
             this.BAyuda.Image = global::AgMaGest.Properties.Resources.Icono_Ayuda;
             this.BAyuda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BAyuda.Location = new System.Drawing.Point(0, 810);
+            this.BAyuda.Location = new System.Drawing.Point(0, 734);
             this.BAyuda.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BAyuda.Name = "BAyuda";
             this.BAyuda.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
@@ -139,7 +137,7 @@
             this.BSalir.ForeColor = System.Drawing.Color.GhostWhite;
             this.BSalir.Image = global::AgMaGest.Properties.Resources.Icono_Exit;
             this.BSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BSalir.Location = new System.Drawing.Point(0, 862);
+            this.BSalir.Location = new System.Drawing.Point(0, 786);
             this.BSalir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BSalir.Name = "BSalir";
             this.BSalir.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
@@ -157,7 +155,7 @@
             this.panelSubMenuInformes.Controls.Add(this.BInformesTrimestrales);
             this.panelSubMenuInformes.Controls.Add(this.BInformesMensuales);
             this.panelSubMenuInformes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubMenuInformes.Location = new System.Drawing.Point(0, 715);
+            this.panelSubMenuInformes.Location = new System.Drawing.Point(0, 639);
             this.panelSubMenuInformes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelSubMenuInformes.Name = "panelSubMenuInformes";
             this.panelSubMenuInformes.Size = new System.Drawing.Size(266, 95);
@@ -211,7 +209,7 @@
             this.BInformes.ForeColor = System.Drawing.Color.GhostWhite;
             this.BInformes.Image = global::AgMaGest.Properties.Resources.Icono_Informes;
             this.BInformes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BInformes.Location = new System.Drawing.Point(0, 665);
+            this.BInformes.Location = new System.Drawing.Point(0, 589);
             this.BInformes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BInformes.Name = "BInformes";
             this.BInformes.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
@@ -227,13 +225,12 @@
             // 
             this.panelSubMenuTestDrive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(75)))), ((int)(((byte)(149)))));
             this.panelSubMenuTestDrive.Controls.Add(this.BVerReservas);
-            this.panelSubMenuTestDrive.Controls.Add(this.BModificarReserva);
             this.panelSubMenuTestDrive.Controls.Add(this.BNuevoTurno);
             this.panelSubMenuTestDrive.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubMenuTestDrive.Location = new System.Drawing.Point(0, 530);
+            this.panelSubMenuTestDrive.Location = new System.Drawing.Point(0, 493);
             this.panelSubMenuTestDrive.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelSubMenuTestDrive.Name = "panelSubMenuTestDrive";
-            this.panelSubMenuTestDrive.Size = new System.Drawing.Size(266, 135);
+            this.panelSubMenuTestDrive.Size = new System.Drawing.Size(266, 96);
             this.panelSubMenuTestDrive.TabIndex = 7;
             this.panelSubMenuTestDrive.Visible = false;
             // 
@@ -245,7 +242,7 @@
             this.BVerReservas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BVerReservas.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BVerReservas.ForeColor = System.Drawing.Color.GhostWhite;
-            this.BVerReservas.Location = new System.Drawing.Point(0, 78);
+            this.BVerReservas.Location = new System.Drawing.Point(0, 39);
             this.BVerReservas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BVerReservas.Name = "BVerReservas";
             this.BVerReservas.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
@@ -255,25 +252,6 @@
             this.BVerReservas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BVerReservas.UseVisualStyleBackColor = true;
             this.BVerReservas.Click += new System.EventHandler(this.BVerReservas_Click);
-            // 
-            // BModificarReserva
-            // 
-            this.BModificarReserva.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BModificarReserva.FlatAppearance.BorderSize = 0;
-            this.BModificarReserva.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.BModificarReserva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BModificarReserva.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BModificarReserva.ForeColor = System.Drawing.Color.GhostWhite;
-            this.BModificarReserva.Location = new System.Drawing.Point(0, 39);
-            this.BModificarReserva.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BModificarReserva.Name = "BModificarReserva";
-            this.BModificarReserva.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.BModificarReserva.Size = new System.Drawing.Size(266, 39);
-            this.BModificarReserva.TabIndex = 1;
-            this.BModificarReserva.Text = "Modificar Reserva";
-            this.BModificarReserva.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BModificarReserva.UseVisualStyleBackColor = true;
-            this.BModificarReserva.Click += new System.EventHandler(this.BModificarReserva_Click);
             // 
             // BNuevoTurno
             // 
@@ -303,7 +281,7 @@
             this.BTestDrive.ForeColor = System.Drawing.Color.GhostWhite;
             this.BTestDrive.Image = global::AgMaGest.Properties.Resources.Icono_TestDrive;
             this.BTestDrive.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BTestDrive.Location = new System.Drawing.Point(0, 480);
+            this.BTestDrive.Location = new System.Drawing.Point(0, 443);
             this.BTestDrive.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BTestDrive.Name = "BTestDrive";
             this.BTestDrive.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
@@ -324,7 +302,7 @@
             this.BCatalogo.ForeColor = System.Drawing.Color.GhostWhite;
             this.BCatalogo.Image = global::AgMaGest.Properties.Resources.Icono_Catalogo;
             this.BCatalogo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BCatalogo.Location = new System.Drawing.Point(0, 430);
+            this.BCatalogo.Location = new System.Drawing.Point(0, 393);
             this.BCatalogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BCatalogo.Name = "BCatalogo";
             this.BCatalogo.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
@@ -342,7 +320,7 @@
             this.panelSubMenuVentas.Controls.Add(this.BVerVentas);
             this.panelSubMenuVentas.Controls.Add(this.BNuevaVenta);
             this.panelSubMenuVentas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubMenuVentas.Location = new System.Drawing.Point(0, 335);
+            this.panelSubMenuVentas.Location = new System.Drawing.Point(0, 298);
             this.panelSubMenuVentas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelSubMenuVentas.Name = "panelSubMenuVentas";
             this.panelSubMenuVentas.Size = new System.Drawing.Size(266, 95);
@@ -398,7 +376,7 @@
             this.BVentas.ForeColor = System.Drawing.Color.GhostWhite;
             this.BVentas.Image = global::AgMaGest.Properties.Resources.Icono_Venta;
             this.BVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BVentas.Location = new System.Drawing.Point(0, 285);
+            this.BVentas.Location = new System.Drawing.Point(0, 248);
             this.BVentas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BVentas.Name = "BVentas";
             this.BVentas.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
@@ -414,13 +392,12 @@
             // 
             this.panelSubMenuCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(75)))), ((int)(((byte)(149)))));
             this.panelSubMenuCliente.Controls.Add(this.BClientes);
-            this.panelSubMenuCliente.Controls.Add(this.BModificarCliente);
             this.panelSubMenuCliente.Controls.Add(this.BNuevoCliente);
             this.panelSubMenuCliente.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubMenuCliente.Location = new System.Drawing.Point(0, 153);
             this.panelSubMenuCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelSubMenuCliente.Name = "panelSubMenuCliente";
-            this.panelSubMenuCliente.Size = new System.Drawing.Size(266, 132);
+            this.panelSubMenuCliente.Size = new System.Drawing.Size(266, 95);
             this.panelSubMenuCliente.TabIndex = 2;
             this.panelSubMenuCliente.Visible = false;
             // 
@@ -432,7 +409,7 @@
             this.BClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BClientes.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BClientes.ForeColor = System.Drawing.Color.GhostWhite;
-            this.BClientes.Location = new System.Drawing.Point(0, 78);
+            this.BClientes.Location = new System.Drawing.Point(0, 39);
             this.BClientes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BClientes.Name = "BClientes";
             this.BClientes.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
@@ -442,25 +419,6 @@
             this.BClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BClientes.UseVisualStyleBackColor = true;
             this.BClientes.Click += new System.EventHandler(this.BClientes_Click);
-            // 
-            // BModificarCliente
-            // 
-            this.BModificarCliente.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BModificarCliente.FlatAppearance.BorderSize = 0;
-            this.BModificarCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.BModificarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BModificarCliente.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BModificarCliente.ForeColor = System.Drawing.Color.GhostWhite;
-            this.BModificarCliente.Location = new System.Drawing.Point(0, 39);
-            this.BModificarCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BModificarCliente.Name = "BModificarCliente";
-            this.BModificarCliente.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.BModificarCliente.Size = new System.Drawing.Size(266, 39);
-            this.BModificarCliente.TabIndex = 1;
-            this.BModificarCliente.Text = "Modificar Datos";
-            this.BModificarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BModificarCliente.UseVisualStyleBackColor = true;
-            this.BModificarCliente.Click += new System.EventHandler(this.BModificarCliente_Click);
             // 
             // BNuevoCliente
             // 
@@ -571,7 +529,7 @@
             this.pBUsuario.Dock = System.Windows.Forms.DockStyle.Right;
             this.pBUsuario.Image = ((System.Drawing.Image)(resources.GetObject("pBUsuario.Image")));
             this.pBUsuario.Location = new System.Drawing.Point(845, 0);
-            this.pBUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pBUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.pBUsuario.Name = "pBUsuario";
             this.pBUsuario.Size = new System.Drawing.Size(40, 31);
             this.pBUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -596,7 +554,6 @@
             // 
             this.BMinimizar.Dock = System.Windows.Forms.DockStyle.Right;
             this.BMinimizar.FlatAppearance.BorderSize = 0;
-            this.BMinimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.BMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BMinimizar.Image = global::AgMaGest.Properties.Resources.Icono_Minimizar;
             this.BMinimizar.Location = new System.Drawing.Point(1026, 0);
@@ -611,7 +568,6 @@
             // 
             this.BMaximizar.Dock = System.Windows.Forms.DockStyle.Right;
             this.BMaximizar.FlatAppearance.BorderSize = 0;
-            this.BMaximizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.BMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BMaximizar.Image = global::AgMaGest.Properties.Resources.Icono_maximizar;
             this.BMaximizar.Location = new System.Drawing.Point(1063, 0);
@@ -633,7 +589,7 @@
             this.Controls.Add(this.panel);
             this.Controls.Add(this.PanelMenuLateral);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(1364, 726);
             this.Name = "InicioVendedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -662,7 +618,6 @@
         private System.Windows.Forms.Button BCliente;
         private System.Windows.Forms.Panel panelSubMenuCliente;
         private System.Windows.Forms.Button BClientes;
-        private System.Windows.Forms.Button BModificarCliente;
         private System.Windows.Forms.Button BNuevoCliente;
         private System.Windows.Forms.Panel panelSubMenuInformes;
         private System.Windows.Forms.Button BInformesTrimestrales;
@@ -670,7 +625,6 @@
         private System.Windows.Forms.Button BInformes;
         private System.Windows.Forms.Panel panelSubMenuTestDrive;
         private System.Windows.Forms.Button BVerReservas;
-        private System.Windows.Forms.Button BModificarReserva;
         private System.Windows.Forms.Button BNuevoTurno;
         private System.Windows.Forms.Button BTestDrive;
         private System.Windows.Forms.Button BCatalogo;
