@@ -59,17 +59,9 @@ namespace AgMaGest.C_Presentacion.Vendedor
             ocultarSubmenu();
         }
 
-        private void BModificarCliente_Click(object sender, EventArgs e)
-        {
-            //Nuestro Codigo
-            //
-            ocultarSubmenu();
-        }
-
         private void BClientes_Click(object sender, EventArgs e)
         {
-            //Nuestro Codigo
-            //
+            abrirFormularioHijo(new VisualizarClientes());
             ocultarSubmenu();
         }
         #endregion Cliente
