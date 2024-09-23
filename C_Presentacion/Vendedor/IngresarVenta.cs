@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace AgMaGest.C_Presentacion.Vendedor
 {
-    public partial class IngresarCliente : Form
+    public partial class IngresarVenta : Form
     {
-        public IngresarCliente()
+        public IngresarVenta()
         {
             InitializeComponent();
-        }
-
-        private void BSalirForm_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void BAtras_Click(object sender, EventArgs e)
-        {
-            this.Close(); 
         }
     }
 }

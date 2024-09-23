@@ -93,6 +93,26 @@ namespace AgMaGest.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Icono_Back {
+            get {
+                object obj = ResourceManager.GetObject("Icono-Back", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icono_Buscar {
+            get {
+                object obj = ResourceManager.GetObject("Icono-Buscar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Icono_Catalogo {
             get {
                 object obj = ResourceManager.GetObject("Icono-Catalogo", resourceCulture);
@@ -103,9 +123,19 @@ namespace AgMaGest.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Icono_Clientes {
+        internal static System.Drawing.Bitmap Icono_Cliente {
             get {
-                object obj = ResourceManager.GetObject("Icono-Clientes", resourceCulture);
+                object obj = ResourceManager.GetObject("Icono-Cliente", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icono_Close {
+            get {
+                object obj = ResourceManager.GetObject("Icono-Close", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -126,6 +156,16 @@ namespace AgMaGest.Properties {
         internal static System.Drawing.Bitmap Icono_Informes {
             get {
                 object obj = ResourceManager.GetObject("Icono-Informes", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icono_MasCliente {
+            get {
+                object obj = ResourceManager.GetObject("Icono-MasCliente", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

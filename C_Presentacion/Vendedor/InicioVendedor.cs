@@ -12,6 +12,8 @@ namespace AgMaGest.C_Presentacion.Vendedor
 {
     public partial class InicioVendedor : Form
     {
+        // Verifica que solo haya una definición de estos elementos
+
         public InicioVendedor()
         {
             InitializeComponent();
@@ -24,8 +26,6 @@ namespace AgMaGest.C_Presentacion.Vendedor
 
         private void ocultarSubmenu()
         {
-            if (panelSubMenuCliente.Visible)
-                panelSubMenuCliente.Visible = false;
             if (panelSubMenuVentas.Visible)
                 panelSubMenuVentas.Visible = false;
             if (panelSubMenuTestDrive.Visible)
@@ -50,41 +50,35 @@ namespace AgMaGest.C_Presentacion.Vendedor
         #region Cliente
         private void BCliente_Click(object sender, EventArgs e)
         {
-            mostrarSubMenu(panelSubMenuCliente);
-        }
-
-        private void BNuevoCliente_Click(object sender, EventArgs e)
-        {
-            abrirFormularioHijo(new IngresarCliente());
-            ocultarSubmenu();
-        }
-
-        private void BClientes_Click(object sender, EventArgs e)
-        {
-            abrirFormularioHijo(new VisualizarClientes());
-            ocultarSubmenu();
+            abrirFormularioHijo(new VisualizarClientes(), "Clientes");
         }
         #endregion Cliente
 
-        #region Venta
+        #region Venta        
         private void BVentas_Click(object sender, EventArgs e)
         {
             mostrarSubMenu(panelSubMenuVentas);
         }
+        private void BVentasMensuales_Click(object sender, EventArgs e)
+        {
+            // Obtener el mes actual en formato largo (por ejemplo, "Septiembre")
+            string mesActual = DateTime.Now.ToString("MMMM");
 
+            // Convertir la primera letra del mes en mayúscula y el resto en minúscula
+            mesActual = char.ToUpper(mesActual[0]) + mesActual.Substring(1).ToLower();
+
+            // Concatenar "Ventas" con el mes actual
+            string titulo = "Ventas " + mesActual; 
+
+            abrirFormularioHijo(new VisualizarVentas(), titulo);
+            ocultarSubmenu();
+        }
         private void BNuevaVenta_Click(object sender, EventArgs e)
         {
-            //Nuestro Codigo
-            //
+            abrirFormularioHijo(new IngresarVenta(), "Ingresar Venta"); 
             ocultarSubmenu();
         }
 
-        private void BVerVentas_Click(object sender, EventArgs e)
-        {
-            //Nuestro Codigo
-            //
-            ocultarSubmenu();
-        }
         #endregion
 
         #region Test Drive
@@ -138,8 +132,7 @@ namespace AgMaGest.C_Presentacion.Vendedor
 
         private void BCatalogo_Click(object sender, EventArgs e)
         {
-            //Nuestro Codigo
-            //
+            abrirFormularioHijo(new VisualizarCatalogo(), "Catálogo");
             ocultarSubmenu();
         }
 
@@ -151,7 +144,8 @@ namespace AgMaGest.C_Presentacion.Vendedor
         }
 
         private Form formularioActivo = null;
-        private void abrirFormularioHijo(Form formHijo)
+
+        private void abrirFormularioHijo(Form formHijo, string titulo)
         {
             if(formularioActivo != null)
                 formularioActivo.Close();
@@ -163,9 +157,21 @@ namespace AgMaGest.C_Presentacion.Vendedor
             panelContenedor.Tag = formHijo;
             formHijo.BringToFront();
             formHijo.Show();
+
+            // Cambia el título dinámicamente
+            LTituloInicioCliente.Text = titulo;
+
+            // Muestra el botón de retroceso
+            BAtrasCliente.Visible = true;
         }
 
-        private void BMaximizar_Click(object sender, EventArgs e)
+
+        private void BExitCliente_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void BMaximizarCliente_Click(object sender, EventArgs e)
         {
             // Si la ventana está maximizada, la restaura
             if (this.WindowState == FormWindowState.Maximized)
@@ -179,9 +185,19 @@ namespace AgMaGest.C_Presentacion.Vendedor
             }
         }
 
-        private void BMinimizar_Click(object sender, EventArgs e)
+        private void BMinimizarCliente_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void BAtrasCliente_Click(object sender, EventArgs e)
+        {
+            if (formularioActivo != null)
+                formularioActivo.Close();
+
+            // Ocultar el botón de retroceso cuando regreses al menú principal
+            BAtrasCliente.Visible = false;
+            LTituloInicioCliente.Text = " ";  // Cambia al título del menú principal
         }
     }
 }
