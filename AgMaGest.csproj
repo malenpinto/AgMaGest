@@ -129,5 +129,32 @@
   <ItemGroup>
     <None Include="Resources\IconoAyuda20px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconoAyuda20px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pago20px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Factura20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconoInformes20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono-Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconoMaximizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconoMinimizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconoLogoInicio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo-Icono-Sin-Fondo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
