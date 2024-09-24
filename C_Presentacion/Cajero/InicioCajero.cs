@@ -21,7 +21,7 @@ namespace AgMaGest.C_Presentacion.Cajero
         private void personalizarDiseño()
         {
             PSubMenuPagos.Visible = false;
-            PSubMenuFacturas.Visible = false;
+            //PSubMenuFacturas.Visible = false;
             PSubMenuInformes.Visible = false;
         }
 
@@ -29,8 +29,8 @@ namespace AgMaGest.C_Presentacion.Cajero
         {
             if (PSubMenuPagos.Visible == true)
                 PSubMenuPagos.Visible = false;
-            if (PSubMenuFacturas.Visible == true)
-                PSubMenuFacturas.Visible = false;
+           // if (PSubMenuFacturas.Visible == true)
+           //    PSubMenuFacturas.Visible = false;
             if (PSubMenuInformes.Visible == true)
                 PSubMenuInformes.Visible = false;
         }
@@ -55,7 +55,7 @@ namespace AgMaGest.C_Presentacion.Cajero
 
         private void BFacturas_Click(object sender, EventArgs e)
         {
-            mostrarSubMenu(PSubMenuFacturas);
+          //mostrarSubMenu(PSubMenuFacturas);
         }
 
         private void BInformes_Click(object sender, EventArgs e)
