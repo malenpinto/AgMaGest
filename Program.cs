@@ -16,7 +16,7 @@ namespace AgMaGest
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new C_Presentacion.Vendedor.InicioVendedor());
+            Application.Run(new C_Presentacion.LoginForm());
         }
     }
 }
