@@ -12,8 +12,6 @@ namespace AgMaGest.C_Presentacion.Vendedor
 {
     public partial class InicioVendedor : Form
     {
-        // Verifica que solo haya una definición de estos elementos
-
         public InicioVendedor()
         {
             InitializeComponent();
