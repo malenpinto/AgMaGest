@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="C_Presentacion\Administrador\InicioAdministradorMDI.cs">
+    <Compile Include="C_Presentacion\Administrador\InicioAdministrador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="C_Presentacion\Administrador\InicioAdministradorMDI.Designer.cs">
-      <DependentUpon>InicioAdministradorMDI.cs</DependentUpon>
+    <Compile Include="C_Presentacion\Administrador\InicioAdministrador.Designer.cs">
+      <DependentUpon>InicioAdministrador.cs</DependentUpon>
     </Compile>
     <Compile Include="C_Presentacion\Cajero\InicioCajeroMDI.cs">
       <SubType>Form</SubType>
@@ -78,8 +78,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="C_Presentacion\Administrador\InicioAdministradorMDI.resx">
-      <DependentUpon>InicioAdministradorMDI.cs</DependentUpon>
+    <EmbeddedResource Include="C_Presentacion\Administrador\InicioAdministrador.resx">
+      <DependentUpon>InicioAdministrador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="C_Presentacion\Cajero\InicioCajeroMDI.resx">
       <DependentUpon>InicioCajeroMDI.cs</DependentUpon>
@@ -95,6 +95,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -112,6 +113,12 @@
   <ItemGroup>
     <Folder Include="C_Datos\" />
     <Folder Include="C_Logica\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo-Sin-Fondo-Blanco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono-Exit.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
