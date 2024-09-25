@@ -58,11 +58,23 @@
     <Compile Include="C_Presentacion\Administrador\VisualizarEmpleados.Designer.cs">
       <DependentUpon>VisualizarEmpleados.cs</DependentUpon>
     </Compile>
-    <Compile Include="C_Presentacion\Cajero\InicioCajeroMDI.cs">
+    <Compile Include="C_Presentacion\Cajero\GenerarPago.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="C_Presentacion\Cajero\InicioCajeroMDI.Designer.cs">
-      <DependentUpon>InicioCajeroMDI.cs</DependentUpon>
+    <Compile Include="C_Presentacion\Cajero\GenerarPago.Designer.cs">
+      <DependentUpon>GenerarPago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="C_Presentacion\Cajero\InicioCajero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C_Presentacion\Cajero\InicioCajero.Designer.cs">
+      <DependentUpon>InicioCajero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="C_Presentacion\Cajero\RegistrarPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C_Presentacion\Cajero\RegistrarPago.Designer.cs">
+      <DependentUpon>RegistrarPago.cs</DependentUpon>
     </Compile>
     <Compile Include="C_Presentacion\LoginForm.cs">
       <SubType>Form</SubType>
@@ -126,8 +138,14 @@
     <EmbeddedResource Include="C_Presentacion\Administrador\VisualizarEmpleados.resx">
       <DependentUpon>VisualizarEmpleados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="C_Presentacion\Cajero\InicioCajeroMDI.resx">
-      <DependentUpon>InicioCajeroMDI.cs</DependentUpon>
+    <EmbeddedResource Include="C_Presentacion\Cajero\GenerarPago.resx">
+      <DependentUpon>GenerarPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="C_Presentacion\Cajero\InicioCajero.resx">
+      <DependentUpon>InicioCajero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="C_Presentacion\Cajero\RegistrarPago.resx">
+      <DependentUpon>RegistrarPago.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="C_Presentacion\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -268,7 +286,32 @@
     <None Include="Resources\Icono-MasEmpleado.png" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <None Include="Resources\Icono-Acercade.png" />
+=======
+    <None Include="Resources\Icono-Avatar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconoFacturaCajero.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconoMinimizarCajero.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconoMaximizarCajero.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono-CloseCajero.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono-BackCajero.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono-UsuarioCajero.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono-Buscar-Cajero.png" />
+>>>>>>> 79d67274fa718139356d0129c97ea666a69ee95b
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

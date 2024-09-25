@@ -55,10 +55,9 @@ namespace AgMaGest.C_Presentacion
             this.LUsuario.BackColor = System.Drawing.Color.Transparent;
             this.LUsuario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LUsuario.ForeColor = System.Drawing.Color.GhostWhite;
-            this.LUsuario.Location = new System.Drawing.Point(475, 378);
-            this.LUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LUsuario.Location = new System.Drawing.Point(356, 307);
             this.LUsuario.Name = "LUsuario";
-            this.LUsuario.Size = new System.Drawing.Size(81, 23);
+            this.LUsuario.Size = new System.Drawing.Size(65, 19);
             this.LUsuario.TabIndex = 0;
             this.LUsuario.Text = "Usuario";
             // 
@@ -68,28 +67,25 @@ namespace AgMaGest.C_Presentacion
             this.LContrasenia.BackColor = System.Drawing.Color.Transparent;
             this.LContrasenia.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LContrasenia.ForeColor = System.Drawing.Color.GhostWhite;
-            this.LContrasenia.Location = new System.Drawing.Point(475, 439);
-            this.LContrasenia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LContrasenia.Location = new System.Drawing.Point(356, 357);
             this.LContrasenia.Name = "LContrasenia";
-            this.LContrasenia.Size = new System.Drawing.Size(123, 23);
+            this.LContrasenia.Size = new System.Drawing.Size(98, 19);
             this.LContrasenia.TabIndex = 1;
             this.LContrasenia.Text = "Contraseña";
             // 
             // TBUsuario
             // 
-            this.TBUsuario.Location = new System.Drawing.Point(631, 378);
-            this.TBUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.TBUsuario.Location = new System.Drawing.Point(473, 307);
             this.TBUsuario.Name = "TBUsuario";
-            this.TBUsuario.Size = new System.Drawing.Size(132, 22);
+            this.TBUsuario.Size = new System.Drawing.Size(100, 20);
             this.TBUsuario.TabIndex = 2;
             this.TBUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBUsuario_KeyPress);
             // 
             // TBContrasenia
             // 
-            this.TBContrasenia.Location = new System.Drawing.Point(631, 439);
-            this.TBContrasenia.Margin = new System.Windows.Forms.Padding(4);
+            this.TBContrasenia.Location = new System.Drawing.Point(473, 357);
             this.TBContrasenia.Name = "TBContrasenia";
-            this.TBContrasenia.Size = new System.Drawing.Size(132, 22);
+            this.TBContrasenia.Size = new System.Drawing.Size(100, 20);
             this.TBContrasenia.TabIndex = 3;
             // 
             // CBRecordar
@@ -98,10 +94,9 @@ namespace AgMaGest.C_Presentacion
             this.CBRecordar.BackColor = System.Drawing.Color.Transparent;
             this.CBRecordar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBRecordar.ForeColor = System.Drawing.Color.GhostWhite;
-            this.CBRecordar.Location = new System.Drawing.Point(480, 495);
-            this.CBRecordar.Margin = new System.Windows.Forms.Padding(4);
+            this.CBRecordar.Location = new System.Drawing.Point(360, 402);
             this.CBRecordar.Name = "CBRecordar";
-            this.CBRecordar.Size = new System.Drawing.Size(172, 25);
+            this.CBRecordar.Size = new System.Drawing.Size(136, 21);
             this.CBRecordar.TabIndex = 7;
             this.CBRecordar.Text = "Recordar usuario";
             this.CBRecordar.UseVisualStyleBackColor = false;
@@ -113,10 +108,9 @@ namespace AgMaGest.C_Presentacion
             this.BIniciarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BIniciarSesion.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BIniciarSesion.ForeColor = System.Drawing.Color.GhostWhite;
-            this.BIniciarSesion.Location = new System.Drawing.Point(480, 545);
-            this.BIniciarSesion.Margin = new System.Windows.Forms.Padding(4);
+            this.BIniciarSesion.Location = new System.Drawing.Point(360, 443);
             this.BIniciarSesion.Name = "BIniciarSesion";
-            this.BIniciarSesion.Size = new System.Drawing.Size(132, 62);
+            this.BIniciarSesion.Size = new System.Drawing.Size(99, 50);
             this.BIniciarSesion.TabIndex = 8;
             this.BIniciarSesion.Text = "Iniciar Sesion";
             this.BIniciarSesion.UseVisualStyleBackColor = true;
@@ -129,10 +123,9 @@ namespace AgMaGest.C_Presentacion
             this.BSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BSalir.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BSalir.ForeColor = System.Drawing.Color.GhostWhite;
-            this.BSalir.Location = new System.Drawing.Point(631, 545);
-            this.BSalir.Margin = new System.Windows.Forms.Padding(4);
+            this.BSalir.Location = new System.Drawing.Point(473, 443);
             this.BSalir.Name = "BSalir";
-            this.BSalir.Size = new System.Drawing.Size(133, 62);
+            this.BSalir.Size = new System.Drawing.Size(100, 50);
             this.BSalir.TabIndex = 9;
             this.BSalir.Text = "Salir";
             this.BSalir.UseVisualStyleBackColor = true;
@@ -147,9 +140,8 @@ namespace AgMaGest.C_Presentacion
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1248, 150);
+            this.panel1.Size = new System.Drawing.Size(936, 122);
             this.panel1.TabIndex = 10;
             // 
             // LBienvenidos
@@ -158,36 +150,33 @@ namespace AgMaGest.C_Presentacion
             this.LBienvenidos.BackColor = System.Drawing.Color.Transparent;
             this.LBienvenidos.Font = new System.Drawing.Font("Cascadia Code SemiLight", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBienvenidos.ForeColor = System.Drawing.Color.GhostWhite;
-            this.LBienvenidos.Location = new System.Drawing.Point(463, 27);
-            this.LBienvenidos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LBienvenidos.Location = new System.Drawing.Point(347, 22);
             this.LBienvenidos.Name = "LBienvenidos";
-            this.LBienvenidos.Size = new System.Drawing.Size(419, 79);
+            this.LBienvenidos.Size = new System.Drawing.Size(335, 63);
             this.LBienvenidos.TabIndex = 2;
             this.LBienvenidos.Text = "BIENVENIDOS";
             // 
             // label1
             // 
             this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 28);
+            this.label1.Size = new System.Drawing.Size(100, 23);
             this.label1.TabIndex = 0;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.GhostWhite;
-            this.panel2.Location = new System.Drawing.Point(208, 144);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Location = new System.Drawing.Point(156, 117);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(785, 2);
+            this.panel2.Size = new System.Drawing.Size(589, 2);
             this.panel2.TabIndex = 1;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(252, -64);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Image = global::AgMaGest.Properties.Resources.iconoLogoInicio;
+            this.pictureBox1.Location = new System.Drawing.Point(189, -52);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(272, 261);
+            this.pictureBox1.Size = new System.Drawing.Size(204, 212);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -195,20 +184,20 @@ namespace AgMaGest.C_Presentacion
             // PBPerfil
             // 
             this.PBPerfil.BackColor = System.Drawing.Color.Transparent;
-            this.PBPerfil.Location = new System.Drawing.Point(557, 226);
-            this.PBPerfil.Margin = new System.Windows.Forms.Padding(4);
+            this.PBPerfil.Image = global::AgMaGest.Properties.Resources.Icono_Avatar;
+            this.PBPerfil.Location = new System.Drawing.Point(418, 184);
             this.PBPerfil.Name = "PBPerfil";
-            this.PBPerfil.Size = new System.Drawing.Size(133, 124);
+            this.PBPerfil.Size = new System.Drawing.Size(100, 101);
             this.PBPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PBPerfil.TabIndex = 6;
             this.PBPerfil.TabStop = false;
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.ClientSize = new System.Drawing.Size(1248, 656);
+            this.ClientSize = new System.Drawing.Size(936, 533);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.BSalir);
@@ -220,7 +209,6 @@ namespace AgMaGest.C_Presentacion
             this.Controls.Add(this.LContrasenia);
             this.Controls.Add(this.LUsuario);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Iniciar Sesión";
