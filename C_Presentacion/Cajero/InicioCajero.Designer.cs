@@ -43,9 +43,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.LTituloInicioCajero = new System.Windows.Forms.Label();
             this.PFormHijo = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.BAtrasCajero = new System.Windows.Forms.Button();
             this.BMinimizar = new System.Windows.Forms.Button();
             this.BMaximizar = new System.Windows.Forms.Button();
             this.BCerrar = new System.Windows.Forms.Button();
@@ -53,8 +50,11 @@
             this.BInformes = new System.Windows.Forms.Button();
             this.BFacturas = new System.Windows.Forms.Button();
             this.BPagos = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BSalir = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.BAtrasCajero = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PMenu.SuspendLayout();
             this.PSubMenuInformes.SuspendLayout();
             this.PSubMenuPagos.SuspendLayout();
@@ -275,48 +275,12 @@
             this.PFormHijo.Size = new System.Drawing.Size(835, 599);
             this.PFormHijo.TabIndex = 2;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox2.ErrorImage = null;
-            this.pictureBox2.Image = global::AgMaGest.Properties.Resources.Logo_Icono_Sin_Fondo;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 25);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(835, 574);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox4.Location = new System.Drawing.Point(585, 0);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(28, 25);
-            this.pictureBox4.TabIndex = 6;
-            this.pictureBox4.TabStop = false;
-            // 
-            // BAtrasCajero
-            // 
-            this.BAtrasCajero.Dock = System.Windows.Forms.DockStyle.Left;
-            this.BAtrasCajero.FlatAppearance.BorderSize = 0;
-            this.BAtrasCajero.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BAtrasCajero.Image = global::AgMaGest.Properties.Resources.Icono_Back;
-            this.BAtrasCajero.Location = new System.Drawing.Point(0, 0);
-            this.BAtrasCajero.Name = "BAtrasCajero";
-            this.BAtrasCajero.Size = new System.Drawing.Size(43, 25);
-            this.BAtrasCajero.TabIndex = 0;
-            this.BAtrasCajero.UseVisualStyleBackColor = true;
-            this.BAtrasCajero.Visible = false;
-            this.BAtrasCajero.Click += new System.EventHandler(this.BAtrasCajero_Click);
-            // 
             // BMinimizar
             // 
             this.BMinimizar.BackColor = System.Drawing.Color.Transparent;
             this.BMinimizar.Dock = System.Windows.Forms.DockStyle.Right;
             this.BMinimizar.FlatAppearance.BorderSize = 0;
             this.BMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BMinimizar.Image = global::AgMaGest.Properties.Resources.IconoMinimizar;
             this.BMinimizar.Location = new System.Drawing.Point(751, 0);
             this.BMinimizar.Name = "BMinimizar";
             this.BMinimizar.Size = new System.Drawing.Size(28, 25);
@@ -330,7 +294,6 @@
             this.BMaximizar.Dock = System.Windows.Forms.DockStyle.Right;
             this.BMaximizar.FlatAppearance.BorderSize = 0;
             this.BMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BMaximizar.Image = global::AgMaGest.Properties.Resources.IconoMaximizar;
             this.BMaximizar.Location = new System.Drawing.Point(779, 0);
             this.BMaximizar.Name = "BMaximizar";
             this.BMaximizar.Size = new System.Drawing.Size(28, 25);
@@ -344,7 +307,6 @@
             this.BCerrar.Dock = System.Windows.Forms.DockStyle.Right;
             this.BCerrar.FlatAppearance.BorderSize = 0;
             this.BCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BCerrar.Image = global::AgMaGest.Properties.Resources.Icono_Close;
             this.BCerrar.Location = new System.Drawing.Point(807, 0);
             this.BCerrar.Name = "BCerrar";
             this.BCerrar.Size = new System.Drawing.Size(28, 25);
@@ -362,7 +324,6 @@
             this.BAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BAyuda.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
             this.BAyuda.ForeColor = System.Drawing.Color.GhostWhite;
-            this.BAyuda.Image = global::AgMaGest.Properties.Resources.IconoAyuda20px;
             this.BAyuda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BAyuda.Location = new System.Drawing.Point(0, 365);
             this.BAyuda.Name = "BAyuda";
@@ -385,7 +346,6 @@
             this.BInformes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BInformes.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
             this.BInformes.ForeColor = System.Drawing.Color.GhostWhite;
-            this.BInformes.Image = global::AgMaGest.Properties.Resources.IconoInformes20px;
             this.BInformes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BInformes.Location = new System.Drawing.Point(0, 253);
             this.BInformes.Name = "BInformes";
@@ -408,7 +368,6 @@
             this.BFacturas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BFacturas.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
             this.BFacturas.ForeColor = System.Drawing.Color.GhostWhite;
-            this.BFacturas.Image = global::AgMaGest.Properties.Resources.Factura20px;
             this.BFacturas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BFacturas.Location = new System.Drawing.Point(0, 212);
             this.BFacturas.Name = "BFacturas";
@@ -431,7 +390,6 @@
             this.BPagos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BPagos.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
             this.BPagos.ForeColor = System.Drawing.Color.GhostWhite;
-            this.BPagos.Image = global::AgMaGest.Properties.Resources.Pago20px;
             this.BPagos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BPagos.Location = new System.Drawing.Point(0, 100);
             this.BPagos.Name = "BPagos";
@@ -444,16 +402,6 @@
             this.BPagos.UseVisualStyleBackColor = false;
             this.BPagos.Click += new System.EventHandler(this.BPagos_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::AgMaGest.Properties.Resources.iconoLogoInicio;
-            this.pictureBox1.Location = new System.Drawing.Point(3, -14);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(206, 138);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // BSalir
             // 
             this.BSalir.BackColor = System.Drawing.Color.BlueViolet;
@@ -464,7 +412,6 @@
             this.BSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BSalir.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
             this.BSalir.ForeColor = System.Drawing.Color.GhostWhite;
-            this.BSalir.Image = global::AgMaGest.Properties.Resources.IconoExit;
             this.BSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BSalir.Location = new System.Drawing.Point(0, 558);
             this.BSalir.Name = "BSalir";
@@ -476,6 +423,48 @@
             this.BSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BSalir.UseVisualStyleBackColor = false;
             this.BSalir.Click += new System.EventHandler(this.BSalir_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox2.ErrorImage = null;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 25);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(835, 574);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox4.Location = new System.Drawing.Point(585, 0);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(28, 25);
+            this.pictureBox4.TabIndex = 6;
+            this.pictureBox4.TabStop = false;
+            // 
+            // BAtrasCajero
+            // 
+            this.BAtrasCajero.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BAtrasCajero.FlatAppearance.BorderSize = 0;
+            this.BAtrasCajero.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BAtrasCajero.Location = new System.Drawing.Point(0, 0);
+            this.BAtrasCajero.Name = "BAtrasCajero";
+            this.BAtrasCajero.Size = new System.Drawing.Size(43, 25);
+            this.BAtrasCajero.TabIndex = 0;
+            this.BAtrasCajero.UseVisualStyleBackColor = true;
+            this.BAtrasCajero.Visible = false;
+            this.BAtrasCajero.Click += new System.EventHandler(this.BAtrasCajero_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(3, -14);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(206, 138);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // InicioCajero
             // 
