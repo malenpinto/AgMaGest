@@ -145,6 +145,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -213,6 +214,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Icono-MasCliente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avatarUsuario.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avatarUsuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sin título.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BIENVENIDOS %28800px%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconoLogoInicio.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
