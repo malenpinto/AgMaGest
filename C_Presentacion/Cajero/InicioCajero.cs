@@ -90,7 +90,7 @@ namespace AgMaGest.C_Presentacion.Cajero
        //#region Pagos Poner las regiones
         private void BRegistrarPagos_Click(object sender, EventArgs e)
         {
-            abrirFormularioHijo(new RegistrarPago());
+            abrirFormularioHijo(new RegistrarPago(), "Registrar Pago");
             ocultarSubMenu();
         }
 
@@ -130,7 +130,7 @@ namespace AgMaGest.C_Presentacion.Cajero
         }
 
         private Form activeForm = null;
-        private void abrirFormularioHijo(Form formularioHijo)
+        private void abrirFormularioHijo(Form formularioHijo, string titulo)
         {
             if (activeForm != null)
                 activeForm.Close();
@@ -142,6 +142,20 @@ namespace AgMaGest.C_Presentacion.Cajero
             PFormHijo.Tag = formularioHijo;
             formularioHijo.BringToFront();
             formularioHijo.Show();
+
+            //Cambia el titulo dinamicamente
+            LTituloInicioCajero.Text = titulo;
+
+            //Muestra boton de retroceso
+            BAtrasCajero.Visible = true;
+        }
+
+        private void BAtrasCajero_Click(object sender, EventArgs e)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            BAtrasCajero.Visible = false;
+            LTituloInicioCajero.Text = " "; //
         }
     }
 }

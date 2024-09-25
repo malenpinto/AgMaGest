@@ -83,6 +83,16 @@ namespace AgMaGest.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Icono_Back {
+            get {
+                object obj = ResourceManager.GetObject("Icono-Back", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Icono_Close {
             get {
                 object obj = ResourceManager.GetObject("Icono-Close", resourceCulture);
@@ -96,6 +106,16 @@ namespace AgMaGest.Properties {
         internal static System.Drawing.Bitmap IconoAyuda20px {
             get {
                 object obj = ResourceManager.GetObject("IconoAyuda20px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IconoExit {
+            get {
+                object obj = ResourceManager.GetObject("IconoExit", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
