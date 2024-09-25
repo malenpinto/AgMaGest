@@ -31,16 +31,19 @@ namespace AgMaGest.C_Presentacion.Cajero
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.BGenerarVenta = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.id_Venta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.generarPago = new System.Windows.Forms.DataGridViewButtonColumn();
             this.editarVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,13 +54,10 @@ namespace AgMaGest.C_Presentacion.Cajero
             this.nombreCompletoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.montoTotalVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estadoVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.BGenerarVenta = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -98,14 +98,56 @@ namespace AgMaGest.C_Presentacion.Cajero
             this.panel4.Size = new System.Drawing.Size(783, 106);
             this.panel4.TabIndex = 3;
             // 
-            // panel5
+            // panel7
             // 
-            this.panel5.BackColor = System.Drawing.Color.Thistle;
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 86);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(783, 20);
-            this.panel5.TabIndex = 0;
+            this.panel7.BackColor = System.Drawing.Color.GhostWhite;
+            this.panel7.Controls.Add(this.BGenerarVenta);
+            this.panel7.Controls.Add(this.pictureBox1);
+            this.panel7.Controls.Add(this.textBox1);
+            this.panel7.Controls.Add(this.label1);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel7.Location = new System.Drawing.Point(0, 39);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(783, 47);
+            this.panel7.TabIndex = 2;
+            // 
+            // BGenerarVenta
+            // 
+            this.BGenerarVenta.Location = new System.Drawing.Point(521, 9);
+            this.BGenerarVenta.Name = "BGenerarVenta";
+            this.BGenerarVenta.Size = new System.Drawing.Size(90, 23);
+            this.BGenerarVenta.TabIndex = 3;
+            this.BGenerarVenta.Text = "Generar Venta";
+            this.BGenerarVenta.UseVisualStyleBackColor = true;
+            this.BGenerarVenta.Click += new System.EventHandler(this.BGenerarVenta_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::AgMaGest.Properties.Resources.Icono_Buscar_Cajero;
+            this.pictureBox1.Location = new System.Drawing.Point(400, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(34, 49);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(215, 9);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(179, 27);
+            this.textBox1.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(6, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(200, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Buscar por DNI Vendedor/Cliente";
             // 
             // panel6
             // 
@@ -116,16 +158,25 @@ namespace AgMaGest.C_Presentacion.Cajero
             this.panel6.Size = new System.Drawing.Size(783, 39);
             this.panel6.TabIndex = 1;
             // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.Thistle;
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel5.Location = new System.Drawing.Point(0, 86);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(783, 20);
+            this.panel5.TabIndex = 0;
+            // 
             // dataGridView1
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_Venta,
@@ -143,29 +194,6 @@ namespace AgMaGest.C_Presentacion.Cajero
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(783, 429);
             this.dataGridView1.TabIndex = 4;
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.GhostWhite;
-            this.panel7.Controls.Add(this.BGenerarVenta);
-            this.panel7.Controls.Add(this.pictureBox1);
-            this.panel7.Controls.Add(this.textBox1);
-            this.panel7.Controls.Add(this.label1);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(0, 39);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(783, 47);
-            this.panel7.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(200, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Buscar por DNI Vendedor/Cliente";
             // 
             // id_Venta
             // 
@@ -217,33 +245,6 @@ namespace AgMaGest.C_Presentacion.Cajero
             this.estadoVenta.HeaderText = "Estado venta";
             this.estadoVenta.Name = "estadoVenta";
             // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(215, 9);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(179, 27);
-            this.textBox1.TabIndex = 1;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(400, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(34, 49);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
-            // BGenerarVenta
-            // 
-            this.BGenerarVenta.Location = new System.Drawing.Point(521, 9);
-            this.BGenerarVenta.Name = "BGenerarVenta";
-            this.BGenerarVenta.Size = new System.Drawing.Size(90, 23);
-            this.BGenerarVenta.TabIndex = 3;
-            this.BGenerarVenta.Text = "Generar Venta";
-            this.BGenerarVenta.UseVisualStyleBackColor = true;
-            this.BGenerarVenta.Click += new System.EventHandler(this.BGenerarVenta_Click);
-            // 
             // RegistrarPago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -258,10 +259,10 @@ namespace AgMaGest.C_Presentacion.Cajero
             this.Name = "RegistrarPago";
             this.Text = "RegistrarPago";
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }

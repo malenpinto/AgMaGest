@@ -63,6 +63,16 @@ namespace AgMaGest.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Icono_Avatar {
+            get {
+                object obj = ResourceManager.GetObject("Icono-Avatar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Icono_Ayuda {
             get {
                 object obj = ResourceManager.GetObject("Icono-Ayuda", resourceCulture);
@@ -93,9 +103,29 @@ namespace AgMaGest.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Icono_BackCajero {
+            get {
+                object obj = ResourceManager.GetObject("Icono-BackCajero", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Icono_Buscar_Admin {
             get {
                 object obj = ResourceManager.GetObject("Icono-Buscar-Admin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icono_Buscar_Cajero {
+            get {
+                object obj = ResourceManager.GetObject("Icono-Buscar-Cajero", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -156,6 +186,16 @@ namespace AgMaGest.Properties {
         internal static System.Drawing.Bitmap Icono_Close_Vendedor {
             get {
                 object obj = ResourceManager.GetObject("Icono-Close-Vendedor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icono_CloseCajero {
+            get {
+                object obj = ResourceManager.GetObject("Icono-CloseCajero", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -303,6 +343,16 @@ namespace AgMaGest.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Icono_UsuarioCajero {
+            get {
+                object obj = ResourceManager.GetObject("Icono-UsuarioCajero", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Icono_Venta {
             get {
                 object obj = ResourceManager.GetObject("Icono-Venta", resourceCulture);
@@ -313,9 +363,39 @@ namespace AgMaGest.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap IconoFacturaCajero {
+            get {
+                object obj = ResourceManager.GetObject("IconoFacturaCajero", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap iconoLogoInicio {
             get {
                 object obj = ResourceManager.GetObject("iconoLogoInicio", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IconoMaximizarCajero {
+            get {
+                object obj = ResourceManager.GetObject("IconoMaximizarCajero", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IconoMinimizarCajero {
+            get {
+                object obj = ResourceManager.GetObject("IconoMinimizarCajero", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -1,5 +1,6 @@
 ﻿using AgMaGest.C_Presentacion.Administrador;
 using AgMaGest.C_Presentacion.Vendedor;
+using AgMaGest.C_Presentacion.Cajero;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -78,10 +79,13 @@ namespace AgMaGest.C_Presentacion
             // Simulación de la verificación del rol del usuario
             // Definimos usuarios y contraseñas estáticos
             string usuarioVendedor = "1234";
-            string contraseñaVendedor = "abcd";
+            string contraseñaVendedor = "asdf";
 
             string usuarioAdministrador = "12345";
-            string contraseñaAdministrador = "abcde";
+            string contraseñaAdministrador = "asdfg";
+
+            string usuarioCajero = "123456";
+            string contraseñaCajero = "asdfgh";
 
             // Obtenemos los valores ingresados
             string usuarioIngresado = TBUsuario.Text;
@@ -101,6 +105,14 @@ namespace AgMaGest.C_Presentacion
                 // Abre el formulario de InicioAdministrador
                 InicioAdministrador formAdmin = new InicioAdministrador();
                 formAdmin.Show();
+                this.Hide(); // Oculta el formulario de login
+            }
+            //Verificacion para usuario Cajero
+            else if (usuarioIngresado == usuarioCajero && contraseñaIngresada == contraseñaCajero)
+            {
+                // Abre el formulario de InicioAdministrador
+                InicioCajero formCajero = new InicioCajero();
+                formCajero.Show();
                 this.Hide(); // Oculta el formulario de login
             }
             else

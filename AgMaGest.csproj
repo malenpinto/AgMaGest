@@ -197,7 +197,6 @@
   <ItemGroup>
     <Folder Include="C_Datos\" />
     <Folder Include="C_Logica\" />
-    <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Logo-Icono-Sin-Fondo.png" />
@@ -285,6 +284,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Icono-MasEmpleado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono-Avatar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconoFacturaCajero.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconoMinimizarCajero.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconoMaximizarCajero.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono-CloseCajero.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono-BackCajero.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono-UsuarioCajero.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono-Buscar-Cajero.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

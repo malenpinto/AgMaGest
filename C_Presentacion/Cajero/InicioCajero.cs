@@ -65,7 +65,7 @@ namespace AgMaGest.C_Presentacion.Cajero
 
         private void BSalir_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void BMaximizar_Click(object sender, EventArgs e)
@@ -94,22 +94,7 @@ namespace AgMaGest.C_Presentacion.Cajero
             ocultarSubMenu();
         }
 
-        private void BEmitirComprobante_Click(object sender, EventArgs e)
-        {
-            ocultarSubMenu();
-        }
-
         private void BControlCaja_Click(object sender, EventArgs e)
-        {
-            ocultarSubMenu();
-        }
-
-        private void BEmitirFactura_Click(object sender, EventArgs e)
-        {
-            ocultarSubMenu();
-        }
-
-        private void BVerFactura_Click(object sender, EventArgs e)
         {
             ocultarSubMenu();
         }
@@ -160,7 +145,7 @@ namespace AgMaGest.C_Presentacion.Cajero
 
         private void BCerrar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
     }
 }
