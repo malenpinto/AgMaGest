@@ -155,7 +155,7 @@ namespace AgMaGest.C_Presentacion.Cajero
             if (activeForm != null)
                 activeForm.Close();
             BAtrasCajero.Visible = false;
-            LTituloInicioCajero.Text = " "; //
+            LTituloInicioCajero.Text = " "; //Cambia el titulo del menu principal
         }
     }
 }
