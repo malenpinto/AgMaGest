@@ -19,10 +19,10 @@ namespace AgMaGest.C_Presentacion.Vendedor
 
         private void BSalir_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
-        private void ocultarSubmenu()
+        private void OcultarSubmenu()
         {
             if (panelSubMenuVentas.Visible)
                 panelSubMenuVentas.Visible = false;
@@ -32,11 +32,11 @@ namespace AgMaGest.C_Presentacion.Vendedor
                 panelSubMenuInformes.Visible = false;
         }
 
-        private void mostrarSubMenu(Panel subMenu)
+        private void MostrarSubMenu(Panel subMenu)
         {
             if (!subMenu.Visible)
             {
-                ocultarSubmenu();
+                OcultarSubmenu();
                 subMenu.Visible = true;
             }
             else
@@ -48,14 +48,14 @@ namespace AgMaGest.C_Presentacion.Vendedor
         #region Cliente
         private void BCliente_Click(object sender, EventArgs e)
         {
-            abrirFormularioHijo(new VisualizarClientes(), "Clientes");
+            AbrirFormularioHijo(new VisualizarClientes(), "Clientes");
         }
         #endregion Cliente
 
         #region Venta        
         private void BVentas_Click(object sender, EventArgs e)
         {
-            mostrarSubMenu(panelSubMenuVentas);
+            MostrarSubMenu(panelSubMenuVentas);
         }
         private void BVentasMensuales_Click(object sender, EventArgs e)
         {
@@ -68,13 +68,13 @@ namespace AgMaGest.C_Presentacion.Vendedor
             // Concatenar "Ventas" con el mes actual
             string titulo = "Ventas " + mesActual; 
 
-            abrirFormularioHijo(new VisualizarVentas(), titulo);
-            ocultarSubmenu();
+            AbrirFormularioHijo(new VisualizarVentas(), titulo);
+            OcultarSubmenu();
         }
         private void BNuevaVenta_Click(object sender, EventArgs e)
         {
-            abrirFormularioHijo(new IngresarVenta(), "Ingresar Venta"); 
-            ocultarSubmenu();
+            AbrirFormularioHijo(new IngresarVenta(), "Ingresar Venta"); 
+            OcultarSubmenu();
         }
 
         #endregion
@@ -82,70 +82,70 @@ namespace AgMaGest.C_Presentacion.Vendedor
         #region Test Drive
         private void BTestDrive_Click(object sender, EventArgs e)
         {
-            mostrarSubMenu(panelSubMenuTestDrive);
+            MostrarSubMenu(panelSubMenuTestDrive);
         }
 
         private void BNuevoTurno_Click(object sender, EventArgs e)
         {
             //Nuestro Codigo
             //
-            ocultarSubmenu();
+            OcultarSubmenu();
         }
 
         private void BModificarReserva_Click(object sender, EventArgs e)
         {
             //Nuestro Codigo
             //
-            ocultarSubmenu();
+            OcultarSubmenu();
         }
 
         private void BVerReservas_Click(object sender, EventArgs e)
         {
             //Nuestro Codigo
             //
-            ocultarSubmenu();
+            OcultarSubmenu();
         }
         #endregion
 
         #region Informes
         private void BInformes_Click(object sender, EventArgs e)
         {
-            mostrarSubMenu(panelSubMenuInformes);
+            MostrarSubMenu(panelSubMenuInformes);
         }
 
         private void BInformesMensuales_Click(object sender, EventArgs e)
         {
             //Nuestro Codigo
             //
-            ocultarSubmenu();
+            OcultarSubmenu();
         }
 
         private void BInformesTrimestrales_Click(object sender, EventArgs e)
         {
             //Nuestro Codigo
             //
-            ocultarSubmenu();
+            OcultarSubmenu();
         }
         #endregion
 
         private void BCatalogo_Click(object sender, EventArgs e)
         {
-            abrirFormularioHijo(new VisualizarCatalogo(), "Catálogo");
-            ocultarSubmenu();
+            AbrirFormularioHijo(new VisualizarCatalogo(), "Catálogo");
+            OcultarSubmenu();
         }
 
         private void BAyuda_Click(object sender, EventArgs e)
         {
             //Nuestro Codigo
             //
-            ocultarSubmenu();
+            OcultarSubmenu();
         }
 
         private Form formularioActivo = null;
 
-        private void abrirFormularioHijo(Form formHijo, string titulo)
+        private void AbrirFormularioHijo(Form formHijo, string titulo)
         {
-            if(formularioActivo != null)
+            if (formularioActivo != null)
                 formularioActivo.Close();
             formularioActivo = formHijo;
             formHijo.TopLevel = false;
@@ -166,7 +166,7 @@ namespace AgMaGest.C_Presentacion.Vendedor
 
         private void BExitCliente_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void BMaximizarCliente_Click(object sender, EventArgs e)

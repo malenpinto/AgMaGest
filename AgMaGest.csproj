@@ -120,6 +120,9 @@
     <EmbeddedResource Include="C_Presentacion\Cajero\InicioCajeroMDI.resx">
       <DependentUpon>InicioCajeroMDI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="C_Presentacion\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="C_Presentacion\Vendedor\IngresarClienteEmpresa.resx">
       <DependentUpon>IngresarClienteEmpresa.cs</DependentUpon>
     </EmbeddedResource>
@@ -154,7 +157,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -168,34 +170,12 @@
   <ItemGroup>
     <Folder Include="C_Datos\" />
     <Folder Include="C_Logica\" />
-    <Folder Include="C_Presentacion\Administrador\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Logo-Icono-Sin-Fondo.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BSalir.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Logo-Sin-Fondo-Blanco.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Icono-maximizar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Icono-Minimizar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Icono-Atras.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Icono-Usuario.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Icono-Back.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Icono-Close.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Icono-Cliente.png" />
@@ -213,37 +193,37 @@
     <None Include="Resources\Icono-Informes.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Icono-Exit.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Icono-Ayuda.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Icono-Buscar.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Icono-MasCliente.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\avatarUsuario.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\avatarUsuario.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Sin título.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\BIENVENIDOS %28800px%29.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\iconoLogoInicio.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Logo-Sin-Fondo-Blanco.png" />
+    <None Include="Resources\Icono-Exit-Vendedor.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Icono-Exit.png" />
+    <None Include="Resources\Icono-Cliente-Vendedor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono-Back-Vendedor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono-Usuario-Vendedor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono-Minimizar-Vendedor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono-Maximizar-Vendedor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono-Close-Vendedor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono-Buscar-Vendedor.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

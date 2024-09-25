@@ -147,22 +147,4 @@
   <metadata name="pagoFact_verVentas.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAu
-        IgAALiIBquLdkgAAAqxJREFUWEftVs9rU0EQfvEnSJL3XmLAf0AET4ogUt7uHvTQo4JFbe2/IQpCjtp0
-        N2lQxF71Um3xJPjHqNiDWIreeqm0Jn6zb1768qJ1s9qA0A+WJDM7387MzswmOMT/h0vLx8PkWRwmj2L6
-        ztKDRe1ytxqp9nwk9btI6G+h0Fu0ImG+htK8jaSZrU8tVHj7P0UpVvoODtjE6u+3Qqm/hMrMBEG/xLZ/
-        CdU8hoifg7xXPAyR7yATuyNyqXvITDdoNo8wizdKkVhczpOD+DOivFeRS2ftATOvj9anOufgzAPoNvJ7
-        4UiHOFIqD0SyNQuiLPIeDn7ZUE/LrB5BfO1xiH0rezbIhDQ3WD0ebMHl7hxELyhaVv8e6AjsJycyu/Xg
-        fPMEa92RVjuTIO37RV5E9YqpwW6vYIWeY5U7bKtlDuDOWewMqomBA1KvsdgRSBn1eUZgC25MhKp1AbY/
-        LIcwn1jsBjvhhNli4x2fdjqlWmdg+z3l0NssdgONVzvhUuNdp+IroEEOSHYAnyx2BFUyxisb96nPWeMM
-        1M1FakPLIfR4V0Dg2Z4WEQqKxc6AzcOc/SqL3QFDGkKWAPWwQUOGVX9EOek28kUcC32LVe6gvqeHJSMB
-        4SunZ3e6exJ73wzspPng/VyHSfvm4B7T8bpSufqkzuoRlJU+XTgcS7dY7YN+CelfGiY0m7Fo36c+p1aj
-        arcFR3eeK9zBohczMXeZ0AOYASBq5zKRLRoy1GZYI7rhRU+2WpxnRj/Qq0YPyy8PGFr6Y6TMgo08L8dv
-        +lPDdJ5IR/QcDlnD1azje5oB9DnWqq12LjhKu4087wT21uy/pQkhdaKYCb1N2eQtB49YmdsU+ZATuCbv
-        1vQBpZ0iHzgg9PuJOkAIVee6LVAcXlVmmsUTBkU96cgP4YYg+AleKa++TtmjcwAAAABJRU5ErkJggg==
-</value>
-  </data>
 </root>

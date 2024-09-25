@@ -16,5 +16,10 @@ namespace AgMaGest.C_Presentacion.Administrador
         {
             InitializeComponent();
         }
+
+        private void BSalirVistaAdm_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AgMaGest.C_Presentacion.Administrador;
+using AgMaGest.C_Presentacion.Vendedor;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -73,6 +75,40 @@ namespace AgMaGest.C_Presentacion
                 return;
             }
 
+            // Simulación de la verificación del rol del usuario
+            // Definimos usuarios y contraseñas estáticos
+            string usuarioVendedor = "1234";
+            string contraseñaVendedor = "abcd";
+
+            string usuarioAdministrador = "12345";
+            string contraseñaAdministrador = "abcde";
+
+            // Obtenemos los valores ingresados
+            string usuarioIngresado = TBUsuario.Text;
+            string contraseñaIngresada = TBContrasenia.Text;
+
+            // Verificación para usuario Vendedor
+            if (usuarioIngresado == usuarioVendedor && contraseñaIngresada == contraseñaVendedor)
+            {
+                // Abre el formulario de InicioVendedor
+                InicioVendedor formVendedor = new InicioVendedor();
+                formVendedor.Show();
+                this.Hide(); // Oculta el formulario de login
+            }
+            // Verificación para usuario Administrador
+            else if (usuarioIngresado == usuarioAdministrador && contraseñaIngresada == contraseñaAdministrador)
+            {
+                // Abre el formulario de InicioAdministrador
+                InicioAdministrador formAdmin = new InicioAdministrador();
+                formAdmin.Show();
+                this.Hide(); // Oculta el formulario de login
+            }
+            else
+            {
+                // Si los datos no coinciden, mostramos un mensaje de error
+                MessageBox.Show("Usuario o contraseña incorrectos", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
             // Guardar usuario si la casilla "Recordar" está marcada
             if (CBRecordar.Checked)
             {
@@ -88,11 +124,6 @@ namespace AgMaGest.C_Presentacion
 
             // Guardar los cambios en las configuraciones
             Properties.Settings.Default.Save();
-
-            // En este punto, las validaciones han sido exitosas
-            MessageBox.Show("Login exitoso", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            // Aca continuar con la lógica del inicio de sesión (conexión a BD)
         }
 
         // Método para validar si un string contiene solo números
