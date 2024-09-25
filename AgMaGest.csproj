@@ -58,11 +58,23 @@
     <Compile Include="C_Presentacion\Administrador\VisualizarEmpleados.Designer.cs">
       <DependentUpon>VisualizarEmpleados.cs</DependentUpon>
     </Compile>
-    <Compile Include="C_Presentacion\Cajero\InicioCajeroMDI.cs">
+    <Compile Include="C_Presentacion\Cajero\GenerarPago.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="C_Presentacion\Cajero\InicioCajeroMDI.Designer.cs">
-      <DependentUpon>InicioCajeroMDI.cs</DependentUpon>
+    <Compile Include="C_Presentacion\Cajero\GenerarPago.Designer.cs">
+      <DependentUpon>GenerarPago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="C_Presentacion\Cajero\InicioCajero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C_Presentacion\Cajero\InicioCajero.Designer.cs">
+      <DependentUpon>InicioCajero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="C_Presentacion\Cajero\RegistrarPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C_Presentacion\Cajero\RegistrarPago.Designer.cs">
+      <DependentUpon>RegistrarPago.cs</DependentUpon>
     </Compile>
     <Compile Include="C_Presentacion\LoginForm.cs">
       <SubType>Form</SubType>
@@ -126,8 +138,14 @@
     <EmbeddedResource Include="C_Presentacion\Administrador\VisualizarEmpleados.resx">
       <DependentUpon>VisualizarEmpleados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="C_Presentacion\Cajero\InicioCajeroMDI.resx">
-      <DependentUpon>InicioCajeroMDI.cs</DependentUpon>
+    <EmbeddedResource Include="C_Presentacion\Cajero\GenerarPago.resx">
+      <DependentUpon>GenerarPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="C_Presentacion\Cajero\InicioCajero.resx">
+      <DependentUpon>InicioCajero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="C_Presentacion\Cajero\RegistrarPago.resx">
+      <DependentUpon>RegistrarPago.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="C_Presentacion\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -179,6 +197,7 @@
   <ItemGroup>
     <Folder Include="C_Datos\" />
     <Folder Include="C_Logica\" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Logo-Icono-Sin-Fondo.png" />
