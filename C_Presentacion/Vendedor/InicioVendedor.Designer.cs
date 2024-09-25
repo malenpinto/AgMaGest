@@ -31,36 +31,36 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InicioVendedor));
             this.PanelMenuLateral = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BAyuda = new System.Windows.Forms.Button();
+            this.BSalir = new System.Windows.Forms.Button();
             this.panelSubMenuInformes = new System.Windows.Forms.Panel();
             this.BInformesTrimestrales = new System.Windows.Forms.Button();
             this.BInformesMensuales = new System.Windows.Forms.Button();
+            this.BInformes = new System.Windows.Forms.Button();
             this.panelSubMenuTestDrive = new System.Windows.Forms.Panel();
             this.BVerReservas = new System.Windows.Forms.Button();
             this.BNuevoTurno = new System.Windows.Forms.Button();
+            this.BTestDrive = new System.Windows.Forms.Button();
+            this.BCatalogo = new System.Windows.Forms.Button();
             this.panelSubMenuVentas = new System.Windows.Forms.Panel();
             this.BVentasMensuales = new System.Windows.Forms.Button();
             this.BNuevaVenta = new System.Windows.Forms.Button();
+            this.BVentas = new System.Windows.Forms.Button();
+            this.BCliente = new System.Windows.Forms.Button();
             this.PanelLogo = new System.Windows.Forms.Panel();
             this.PBLogo = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.pBInicioVendedor = new System.Windows.Forms.PictureBox();
             this.panel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.BAtrasCliente = new System.Windows.Forms.Button();
             this.LTituloInicioCliente = new System.Windows.Forms.Label();
+            this.pBUsuarioCliente = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.BExitCliente = new System.Windows.Forms.Button();
-            this.BAtrasCliente = new System.Windows.Forms.Button();
-            this.pBUsuarioCliente = new System.Windows.Forms.PictureBox();
             this.BMinimizarCliente = new System.Windows.Forms.Button();
             this.BMaximizarCliente = new System.Windows.Forms.Button();
-            this.BAyuda = new System.Windows.Forms.Button();
-            this.BSalir = new System.Windows.Forms.Button();
-            this.BInformes = new System.Windows.Forms.Button();
-            this.BTestDrive = new System.Windows.Forms.Button();
-            this.BCatalogo = new System.Windows.Forms.Button();
-            this.BVentas = new System.Windows.Forms.Button();
-            this.BCliente = new System.Windows.Forms.Button();
+            this.BExitCliente = new System.Windows.Forms.Button();
             this.PanelMenuLateral.SuspendLayout();
             this.panelSubMenuInformes.SuspendLayout();
             this.panelSubMenuTestDrive.SuspendLayout();
@@ -71,8 +71,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pBInicioVendedor)).BeginInit();
             this.panel.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBUsuarioCliente)).BeginInit();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelMenuLateral
@@ -108,6 +108,48 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(287, 2);
             this.panel1.TabIndex = 12;
+            // 
+            // BAyuda
+            // 
+            this.BAyuda.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BAyuda.FlatAppearance.BorderSize = 0;
+            this.BAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BAyuda.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BAyuda.ForeColor = System.Drawing.Color.GhostWhite;
+            this.BAyuda.Image = ((System.Drawing.Image)(resources.GetObject("BAyuda.Image")));
+            this.BAyuda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BAyuda.Location = new System.Drawing.Point(0, 619);
+            this.BAyuda.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BAyuda.Name = "BAyuda";
+            this.BAyuda.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.BAyuda.Size = new System.Drawing.Size(287, 46);
+            this.BAyuda.TabIndex = 11;
+            this.BAyuda.Text = " Ayuda";
+            this.BAyuda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BAyuda.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BAyuda.UseVisualStyleBackColor = true;
+            this.BAyuda.Click += new System.EventHandler(this.BAyuda_Click);
+            // 
+            // BSalir
+            // 
+            this.BSalir.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.BSalir.FlatAppearance.BorderSize = 0;
+            this.BSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BSalir.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BSalir.ForeColor = System.Drawing.Color.GhostWhite;
+            this.BSalir.Image = global::AgMaGest.Properties.Resources.Icono_Exit_Vendedor;
+            this.BSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BSalir.Location = new System.Drawing.Point(0, 691);
+            this.BSalir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BSalir.Name = "BSalir";
+            this.BSalir.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.BSalir.Size = new System.Drawing.Size(287, 46);
+            this.BSalir.TabIndex = 10;
+            this.BSalir.Text = " Salir";
+            this.BSalir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BSalir.UseVisualStyleBackColor = true;
+            this.BSalir.Click += new System.EventHandler(this.BSalir_Click);
             // 
             // panelSubMenuInformes
             // 
@@ -160,6 +202,27 @@
             this.BInformesMensuales.UseVisualStyleBackColor = true;
             this.BInformesMensuales.Click += new System.EventHandler(this.BInformesMensuales_Click);
             // 
+            // BInformes
+            // 
+            this.BInformes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BInformes.FlatAppearance.BorderSize = 0;
+            this.BInformes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BInformes.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BInformes.ForeColor = System.Drawing.Color.GhostWhite;
+            this.BInformes.Image = ((System.Drawing.Image)(resources.GetObject("BInformes.Image")));
+            this.BInformes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BInformes.Location = new System.Drawing.Point(0, 478);
+            this.BInformes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BInformes.Name = "BInformes";
+            this.BInformes.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.BInformes.Size = new System.Drawing.Size(287, 46);
+            this.BInformes.TabIndex = 8;
+            this.BInformes.Text = " Informes";
+            this.BInformes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BInformes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BInformes.UseVisualStyleBackColor = true;
+            this.BInformes.Click += new System.EventHandler(this.BInformes_Click);
+            // 
             // panelSubMenuTestDrive
             // 
             this.panelSubMenuTestDrive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(75)))), ((int)(((byte)(149)))));
@@ -210,6 +273,48 @@
             this.BNuevoTurno.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BNuevoTurno.UseVisualStyleBackColor = true;
             this.BNuevoTurno.Click += new System.EventHandler(this.BNuevoTurno_Click);
+            // 
+            // BTestDrive
+            // 
+            this.BTestDrive.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BTestDrive.FlatAppearance.BorderSize = 0;
+            this.BTestDrive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTestDrive.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTestDrive.ForeColor = System.Drawing.Color.GhostWhite;
+            this.BTestDrive.Image = ((System.Drawing.Image)(resources.GetObject("BTestDrive.Image")));
+            this.BTestDrive.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BTestDrive.Location = new System.Drawing.Point(0, 336);
+            this.BTestDrive.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BTestDrive.Name = "BTestDrive";
+            this.BTestDrive.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.BTestDrive.Size = new System.Drawing.Size(287, 46);
+            this.BTestDrive.TabIndex = 6;
+            this.BTestDrive.Text = " Test Drive";
+            this.BTestDrive.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BTestDrive.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BTestDrive.UseVisualStyleBackColor = true;
+            this.BTestDrive.Click += new System.EventHandler(this.BTestDrive_Click);
+            // 
+            // BCatalogo
+            // 
+            this.BCatalogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BCatalogo.FlatAppearance.BorderSize = 0;
+            this.BCatalogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BCatalogo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BCatalogo.ForeColor = System.Drawing.Color.GhostWhite;
+            this.BCatalogo.Image = ((System.Drawing.Image)(resources.GetObject("BCatalogo.Image")));
+            this.BCatalogo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BCatalogo.Location = new System.Drawing.Point(0, 290);
+            this.BCatalogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BCatalogo.Name = "BCatalogo";
+            this.BCatalogo.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.BCatalogo.Size = new System.Drawing.Size(287, 46);
+            this.BCatalogo.TabIndex = 5;
+            this.BCatalogo.Text = " Catálogo";
+            this.BCatalogo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BCatalogo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BCatalogo.UseVisualStyleBackColor = true;
+            this.BCatalogo.Click += new System.EventHandler(this.BCatalogo_Click);
             // 
             // panelSubMenuVentas
             // 
@@ -264,292 +369,6 @@
             this.BNuevaVenta.UseVisualStyleBackColor = true;
             this.BNuevaVenta.Click += new System.EventHandler(this.BNuevaVenta_Click);
             // 
-            // PanelLogo
-            // 
-            this.PanelLogo.Controls.Add(this.PBLogo);
-            this.PanelLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelLogo.Location = new System.Drawing.Point(0, 0);
-            this.PanelLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.PanelLogo.Name = "PanelLogo";
-            this.PanelLogo.Size = new System.Drawing.Size(287, 103);
-            this.PanelLogo.TabIndex = 0;
-            // 
-            // PBLogo
-            // 
-            this.PBLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.PBLogo.ErrorImage = null;
-            this.PBLogo.InitialImage = null;
-            this.PBLogo.Location = new System.Drawing.Point(-11, -21);
-            this.PBLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.PBLogo.Name = "PBLogo";
-            this.PBLogo.Size = new System.Drawing.Size(275, 170);
-            this.PBLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PBLogo.TabIndex = 0;
-            this.PBLogo.TabStop = false;
-            // 
-            // panelContenedor
-            // 
-            this.panelContenedor.BackColor = System.Drawing.Color.Gainsboro;
-            this.panelContenedor.Controls.Add(this.pBInicioVendedor);
-            this.panelContenedor.Controls.Add(this.panel);
-            this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContenedor.Location = new System.Drawing.Point(287, 0);
-            this.panelContenedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.panelContenedor.Size = new System.Drawing.Size(1100, 737);
-            this.panelContenedor.TabIndex = 1;
-            // 
-            // pBInicioVendedor
-            // 
-            this.pBInicioVendedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pBInicioVendedor.ErrorImage = null;
-            this.pBInicioVendedor.InitialImage = null;
-            this.pBInicioVendedor.Location = new System.Drawing.Point(0, 31);
-            this.pBInicioVendedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pBInicioVendedor.Name = "pBInicioVendedor";
-            this.pBInicioVendedor.Size = new System.Drawing.Size(1100, 706);
-            this.pBInicioVendedor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pBInicioVendedor.TabIndex = 1;
-            this.pBInicioVendedor.TabStop = false;
-            // 
-            // panel
-            // 
-            this.panel.BackColor = System.Drawing.Color.GhostWhite;
-            this.panel.Controls.Add(this.panel2);
-            this.panel.Controls.Add(this.pBUsuarioCliente);
-            this.panel.Controls.Add(this.panel4);
-            this.panel.Controls.Add(this.BMinimizarCliente);
-            this.panel.Controls.Add(this.BMaximizarCliente);
-            this.panel.Controls.Add(this.BExitCliente);
-            this.panel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel.Location = new System.Drawing.Point(0, 0);
-            this.panel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(1100, 31);
-            this.panel.TabIndex = 2;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Controls.Add(this.BAtrasCliente);
-            this.panel2.Controls.Add(this.LTituloInicioCliente);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(381, 31);
-            this.panel2.TabIndex = 8;
-            // 
-            // LTituloInicioCliente
-            // 
-            this.LTituloInicioCliente.AutoSize = true;
-            this.LTituloInicioCliente.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LTituloInicioCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(38)))), ((int)(((byte)(104)))));
-            this.LTituloInicioCliente.Location = new System.Drawing.Point(63, 2);
-            this.LTituloInicioCliente.Name = "LTituloInicioCliente";
-            this.LTituloInicioCliente.Size = new System.Drawing.Size(0, 28);
-            this.LTituloInicioCliente.TabIndex = 1;
-            this.LTituloInicioCliente.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.label3);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(805, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(184, 31);
-            this.panel4.TabIndex = 7;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Berlin Sans FB", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(38)))), ((int)(((byte)(104)))));
-            this.label3.Location = new System.Drawing.Point(0, 2);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(163, 24);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Nombre Usuario";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // BExitCliente
-            // 
-            this.BExitCliente.Dock = System.Windows.Forms.DockStyle.Right;
-            this.BExitCliente.FlatAppearance.BorderSize = 0;
-            this.BExitCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BExitCliente.Image = global::AgMaGest.Properties.Resources.Icono_Close_Vendedor;
-            this.BExitCliente.Location = new System.Drawing.Point(1061, 0);
-            this.BExitCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BExitCliente.Name = "BExitCliente";
-            this.BExitCliente.Size = new System.Drawing.Size(39, 31);
-            this.BExitCliente.TabIndex = 5;
-            this.BExitCliente.UseVisualStyleBackColor = true;
-            this.BExitCliente.Click += new System.EventHandler(this.BExitCliente_Click);
-            // 
-            // BAtrasCliente
-            // 
-            this.BAtrasCliente.Dock = System.Windows.Forms.DockStyle.Left;
-            this.BAtrasCliente.FlatAppearance.BorderSize = 0;
-            this.BAtrasCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BAtrasCliente.Image = global::AgMaGest.Properties.Resources.Icono_Back_Vendedor;
-            this.BAtrasCliente.Location = new System.Drawing.Point(0, 0);
-            this.BAtrasCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BAtrasCliente.Name = "BAtrasCliente";
-            this.BAtrasCliente.Size = new System.Drawing.Size(57, 31);
-            this.BAtrasCliente.TabIndex = 2;
-            this.BAtrasCliente.UseVisualStyleBackColor = true;
-            this.BAtrasCliente.Visible = false;
-            this.BAtrasCliente.Click += new System.EventHandler(this.BAtrasCliente_Click);
-            // 
-            // pBUsuarioCliente
-            // 
-            this.pBUsuarioCliente.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pBUsuarioCliente.Image = global::AgMaGest.Properties.Resources.Icono_Usuario_Vendedor;
-            this.pBUsuarioCliente.Location = new System.Drawing.Point(768, 0);
-            this.pBUsuarioCliente.Margin = new System.Windows.Forms.Padding(4);
-            this.pBUsuarioCliente.Name = "pBUsuarioCliente";
-            this.pBUsuarioCliente.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pBUsuarioCliente.Size = new System.Drawing.Size(37, 31);
-            this.pBUsuarioCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pBUsuarioCliente.TabIndex = 4;
-            this.pBUsuarioCliente.TabStop = false;
-            // 
-            // BMinimizarCliente
-            // 
-            this.BMinimizarCliente.Dock = System.Windows.Forms.DockStyle.Right;
-            this.BMinimizarCliente.FlatAppearance.BorderSize = 0;
-            this.BMinimizarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BMinimizarCliente.Image = global::AgMaGest.Properties.Resources.Icono_Minimizar_Vendedor;
-            this.BMinimizarCliente.Location = new System.Drawing.Point(989, 0);
-            this.BMinimizarCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BMinimizarCliente.Name = "BMinimizarCliente";
-            this.BMinimizarCliente.Size = new System.Drawing.Size(37, 31);
-            this.BMinimizarCliente.TabIndex = 2;
-            this.BMinimizarCliente.UseVisualStyleBackColor = true;
-            this.BMinimizarCliente.Click += new System.EventHandler(this.BMinimizarCliente_Click);
-            // 
-            // BMaximizarCliente
-            // 
-            this.BMaximizarCliente.Dock = System.Windows.Forms.DockStyle.Right;
-            this.BMaximizarCliente.FlatAppearance.BorderSize = 0;
-            this.BMaximizarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BMaximizarCliente.Image = global::AgMaGest.Properties.Resources.Icono_Maximizar_Vendedor;
-            this.BMaximizarCliente.Location = new System.Drawing.Point(1026, 0);
-            this.BMaximizarCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BMaximizarCliente.Name = "BMaximizarCliente";
-            this.BMaximizarCliente.Size = new System.Drawing.Size(35, 31);
-            this.BMaximizarCliente.TabIndex = 1;
-            this.BMaximizarCliente.UseVisualStyleBackColor = true;
-            this.BMaximizarCliente.Click += new System.EventHandler(this.BMaximizarCliente_Click);
-            // 
-            // BAyuda
-            // 
-            this.BAyuda.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BAyuda.FlatAppearance.BorderSize = 0;
-            this.BAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BAyuda.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BAyuda.ForeColor = System.Drawing.Color.GhostWhite;
-            this.BAyuda.Image = ((System.Drawing.Image)(resources.GetObject("BAyuda.Image")));
-            this.BAyuda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BAyuda.Location = new System.Drawing.Point(0, 619);
-            this.BAyuda.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BAyuda.Name = "BAyuda";
-            this.BAyuda.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.BAyuda.Size = new System.Drawing.Size(287, 46);
-            this.BAyuda.TabIndex = 11;
-            this.BAyuda.Text = " Ayuda";
-            this.BAyuda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BAyuda.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BAyuda.UseVisualStyleBackColor = true;
-            this.BAyuda.Click += new System.EventHandler(this.BAyuda_Click);
-            // 
-            // BSalir
-            // 
-            this.BSalir.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.BSalir.FlatAppearance.BorderSize = 0;
-            this.BSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BSalir.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BSalir.ForeColor = System.Drawing.Color.GhostWhite;
-            this.BSalir.Image = global::AgMaGest.Properties.Resources.Icono_Exit_Vendedor;
-            this.BSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BSalir.Location = new System.Drawing.Point(0, 691);
-            this.BSalir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BSalir.Name = "BSalir";
-            this.BSalir.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.BSalir.Size = new System.Drawing.Size(287, 46);
-            this.BSalir.TabIndex = 10;
-            this.BSalir.Text = " Salir";
-            this.BSalir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BSalir.UseVisualStyleBackColor = true;
-            this.BSalir.Click += new System.EventHandler(this.BSalir_Click);
-            // 
-            // BInformes
-            // 
-            this.BInformes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BInformes.FlatAppearance.BorderSize = 0;
-            this.BInformes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BInformes.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BInformes.ForeColor = System.Drawing.Color.GhostWhite;
-            this.BInformes.Image = ((System.Drawing.Image)(resources.GetObject("BInformes.Image")));
-            this.BInformes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BInformes.Location = new System.Drawing.Point(0, 478);
-            this.BInformes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BInformes.Name = "BInformes";
-            this.BInformes.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.BInformes.Size = new System.Drawing.Size(287, 46);
-            this.BInformes.TabIndex = 8;
-            this.BInformes.Text = " Informes";
-            this.BInformes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BInformes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BInformes.UseVisualStyleBackColor = true;
-            this.BInformes.Click += new System.EventHandler(this.BInformes_Click);
-            // 
-            // BTestDrive
-            // 
-            this.BTestDrive.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BTestDrive.FlatAppearance.BorderSize = 0;
-            this.BTestDrive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BTestDrive.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTestDrive.ForeColor = System.Drawing.Color.GhostWhite;
-            this.BTestDrive.Image = ((System.Drawing.Image)(resources.GetObject("BTestDrive.Image")));
-            this.BTestDrive.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BTestDrive.Location = new System.Drawing.Point(0, 336);
-            this.BTestDrive.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BTestDrive.Name = "BTestDrive";
-            this.BTestDrive.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.BTestDrive.Size = new System.Drawing.Size(287, 46);
-            this.BTestDrive.TabIndex = 6;
-            this.BTestDrive.Text = " Test Drive";
-            this.BTestDrive.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BTestDrive.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BTestDrive.UseVisualStyleBackColor = true;
-            this.BTestDrive.Click += new System.EventHandler(this.BTestDrive_Click);
-            // 
-            // BCatalogo
-            // 
-            this.BCatalogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BCatalogo.FlatAppearance.BorderSize = 0;
-            this.BCatalogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BCatalogo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BCatalogo.ForeColor = System.Drawing.Color.GhostWhite;
-            this.BCatalogo.Image = ((System.Drawing.Image)(resources.GetObject("BCatalogo.Image")));
-            this.BCatalogo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BCatalogo.Location = new System.Drawing.Point(0, 290);
-            this.BCatalogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BCatalogo.Name = "BCatalogo";
-            this.BCatalogo.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.BCatalogo.Size = new System.Drawing.Size(287, 46);
-            this.BCatalogo.TabIndex = 5;
-            this.BCatalogo.Text = " Catálogo";
-            this.BCatalogo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BCatalogo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BCatalogo.UseVisualStyleBackColor = true;
-            this.BCatalogo.Click += new System.EventHandler(this.BCatalogo_Click);
-            // 
             // BVentas
             // 
             this.BVentas.Dock = System.Windows.Forms.DockStyle.Top;
@@ -592,6 +411,187 @@
             this.BCliente.UseVisualStyleBackColor = true;
             this.BCliente.Click += new System.EventHandler(this.BCliente_Click);
             // 
+            // PanelLogo
+            // 
+            this.PanelLogo.Controls.Add(this.PBLogo);
+            this.PanelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelLogo.Location = new System.Drawing.Point(0, 0);
+            this.PanelLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PanelLogo.Name = "PanelLogo";
+            this.PanelLogo.Size = new System.Drawing.Size(287, 103);
+            this.PanelLogo.TabIndex = 0;
+            // 
+            // PBLogo
+            // 
+            this.PBLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.PBLogo.ErrorImage = null;
+            this.PBLogo.Image = global::AgMaGest.Properties.Resources.Logo_Sin_Fondo_Blanco;
+            this.PBLogo.InitialImage = null;
+            this.PBLogo.Location = new System.Drawing.Point(6, -30);
+            this.PBLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PBLogo.Name = "PBLogo";
+            this.PBLogo.Size = new System.Drawing.Size(268, 173);
+            this.PBLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PBLogo.TabIndex = 0;
+            this.PBLogo.TabStop = false;
+            // 
+            // panelContenedor
+            // 
+            this.panelContenedor.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelContenedor.Controls.Add(this.pBInicioVendedor);
+            this.panelContenedor.Controls.Add(this.panel);
+            this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContenedor.Location = new System.Drawing.Point(287, 0);
+            this.panelContenedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelContenedor.Name = "panelContenedor";
+            this.panelContenedor.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.panelContenedor.Size = new System.Drawing.Size(1100, 737);
+            this.panelContenedor.TabIndex = 1;
+            // 
+            // pBInicioVendedor
+            // 
+            this.pBInicioVendedor.ErrorImage = null;
+            this.pBInicioVendedor.InitialImage = null;
+            this.pBInicioVendedor.Location = new System.Drawing.Point(89, 121);
+            this.pBInicioVendedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pBInicioVendedor.Name = "pBInicioVendedor";
+            this.pBInicioVendedor.Size = new System.Drawing.Size(1100, 706);
+            this.pBInicioVendedor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pBInicioVendedor.TabIndex = 1;
+            this.pBInicioVendedor.TabStop = false;
+            // 
+            // panel
+            // 
+            this.panel.BackColor = System.Drawing.Color.GhostWhite;
+            this.panel.Controls.Add(this.panel2);
+            this.panel.Controls.Add(this.pBUsuarioCliente);
+            this.panel.Controls.Add(this.panel4);
+            this.panel.Controls.Add(this.BMinimizarCliente);
+            this.panel.Controls.Add(this.BMaximizarCliente);
+            this.panel.Controls.Add(this.BExitCliente);
+            this.panel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel.Location = new System.Drawing.Point(0, 0);
+            this.panel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel.Name = "panel";
+            this.panel.Size = new System.Drawing.Size(1100, 31);
+            this.panel.TabIndex = 2;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.BAtrasCliente);
+            this.panel2.Controls.Add(this.LTituloInicioCliente);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(381, 31);
+            this.panel2.TabIndex = 8;
+            // 
+            // BAtrasCliente
+            // 
+            this.BAtrasCliente.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BAtrasCliente.FlatAppearance.BorderSize = 0;
+            this.BAtrasCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BAtrasCliente.Image = global::AgMaGest.Properties.Resources.Icono_Back_Vendedor;
+            this.BAtrasCliente.Location = new System.Drawing.Point(0, 0);
+            this.BAtrasCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BAtrasCliente.Name = "BAtrasCliente";
+            this.BAtrasCliente.Size = new System.Drawing.Size(57, 31);
+            this.BAtrasCliente.TabIndex = 2;
+            this.BAtrasCliente.UseVisualStyleBackColor = true;
+            this.BAtrasCliente.Visible = false;
+            this.BAtrasCliente.Click += new System.EventHandler(this.BAtrasCliente_Click);
+            // 
+            // LTituloInicioCliente
+            // 
+            this.LTituloInicioCliente.AutoSize = true;
+            this.LTituloInicioCliente.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LTituloInicioCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(38)))), ((int)(((byte)(104)))));
+            this.LTituloInicioCliente.Location = new System.Drawing.Point(63, 2);
+            this.LTituloInicioCliente.Name = "LTituloInicioCliente";
+            this.LTituloInicioCliente.Size = new System.Drawing.Size(0, 28);
+            this.LTituloInicioCliente.TabIndex = 1;
+            this.LTituloInicioCliente.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pBUsuarioCliente
+            // 
+            this.pBUsuarioCliente.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pBUsuarioCliente.Image = global::AgMaGest.Properties.Resources.Icono_Usuario_Vendedor;
+            this.pBUsuarioCliente.Location = new System.Drawing.Point(768, 0);
+            this.pBUsuarioCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.pBUsuarioCliente.Name = "pBUsuarioCliente";
+            this.pBUsuarioCliente.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pBUsuarioCliente.Size = new System.Drawing.Size(37, 31);
+            this.pBUsuarioCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pBUsuarioCliente.TabIndex = 4;
+            this.pBUsuarioCliente.TabStop = false;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.label3);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel4.Location = new System.Drawing.Point(805, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(184, 31);
+            this.panel4.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Berlin Sans FB", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(38)))), ((int)(((byte)(104)))));
+            this.label3.Location = new System.Drawing.Point(0, 2);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(163, 24);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Nombre Usuario";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // BMinimizarCliente
+            // 
+            this.BMinimizarCliente.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BMinimizarCliente.FlatAppearance.BorderSize = 0;
+            this.BMinimizarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BMinimizarCliente.Image = global::AgMaGest.Properties.Resources.Icono_Minimizar_Vendedor;
+            this.BMinimizarCliente.Location = new System.Drawing.Point(989, 0);
+            this.BMinimizarCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BMinimizarCliente.Name = "BMinimizarCliente";
+            this.BMinimizarCliente.Size = new System.Drawing.Size(37, 31);
+            this.BMinimizarCliente.TabIndex = 2;
+            this.BMinimizarCliente.UseVisualStyleBackColor = true;
+            this.BMinimizarCliente.Click += new System.EventHandler(this.BMinimizarCliente_Click);
+            // 
+            // BMaximizarCliente
+            // 
+            this.BMaximizarCliente.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BMaximizarCliente.FlatAppearance.BorderSize = 0;
+            this.BMaximizarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BMaximizarCliente.Image = global::AgMaGest.Properties.Resources.Icono_Maximizar_Vendedor;
+            this.BMaximizarCliente.Location = new System.Drawing.Point(1026, 0);
+            this.BMaximizarCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BMaximizarCliente.Name = "BMaximizarCliente";
+            this.BMaximizarCliente.Size = new System.Drawing.Size(35, 31);
+            this.BMaximizarCliente.TabIndex = 1;
+            this.BMaximizarCliente.UseVisualStyleBackColor = true;
+            this.BMaximizarCliente.Click += new System.EventHandler(this.BMaximizarCliente_Click);
+            // 
+            // BExitCliente
+            // 
+            this.BExitCliente.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BExitCliente.FlatAppearance.BorderSize = 0;
+            this.BExitCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BExitCliente.Image = global::AgMaGest.Properties.Resources.Icono_Close_Vendedor;
+            this.BExitCliente.Location = new System.Drawing.Point(1061, 0);
+            this.BExitCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BExitCliente.Name = "BExitCliente";
+            this.BExitCliente.Size = new System.Drawing.Size(39, 31);
+            this.BExitCliente.TabIndex = 5;
+            this.BExitCliente.UseVisualStyleBackColor = true;
+            this.BExitCliente.Click += new System.EventHandler(this.BExitCliente_Click);
+            // 
             // InicioVendedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -602,7 +602,7 @@
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.PanelMenuLateral);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(1364, 726);
             this.Name = "InicioVendedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -618,9 +618,9 @@
             this.panel.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBUsuarioCliente)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pBUsuarioCliente)).EndInit();
             this.ResumeLayout(false);
 
         }

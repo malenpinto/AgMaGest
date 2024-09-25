@@ -163,7 +163,6 @@ namespace AgMaGest.C_Presentacion.Vendedor
             BAtrasCliente.Visible = true;
         }
 
-
         private void BExitCliente_Click(object sender, EventArgs e)
         {
             Application.Exit();
