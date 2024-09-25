@@ -111,7 +111,6 @@
             this.BSalirVistaAdm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BSalirVistaAdm.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BSalirVistaAdm.ForeColor = System.Drawing.Color.GhostWhite;
-            this.BSalirVistaAdm.Image = global::AgMaGest.Properties.Resources.Icono_Exit;
             this.BSalirVistaAdm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BSalirVistaAdm.Location = new System.Drawing.Point(0, 561);
             this.BSalirVistaAdm.Name = "BSalirVistaAdm";
@@ -124,7 +123,6 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::AgMaGest.Properties.Resources.Logo_Sin_Fondo_Blanco;
             this.pictureBox1.Location = new System.Drawing.Point(0, -12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(221, 128);
