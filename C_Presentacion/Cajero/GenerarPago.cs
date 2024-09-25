@@ -16,5 +16,10 @@ namespace AgMaGest.C_Presentacion.Cajero
         {
             InitializeComponent();
         }
+
+        private void BSalirGenerarPago_Click(object sender, EventArgs e)
+        {
+            this.Close();  
+        }
     }
 }

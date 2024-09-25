@@ -93,6 +93,9 @@
     <EmbeddedResource Include="C_Presentacion\Administrador\InicioAdministradorMDI.resx">
       <DependentUpon>InicioAdministradorMDI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="C_Presentacion\Cajero\GenerarPago.resx">
+      <DependentUpon>GenerarPago.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="C_Presentacion\Cajero\InicioCajero.resx">
       <DependentUpon>InicioCajero.cs</DependentUpon>
     </EmbeddedResource>

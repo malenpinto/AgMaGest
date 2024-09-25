@@ -21,5 +21,11 @@ namespace AgMaGest.C_Presentacion.Cajero
         {
             this.Close();
         }
+
+        private void BGenerarVenta_Click(object sender, EventArgs e)
+        {
+            GenerarPago formPago = new GenerarPago();
+            formPago.ShowDialog();
+        }
     }
 }
