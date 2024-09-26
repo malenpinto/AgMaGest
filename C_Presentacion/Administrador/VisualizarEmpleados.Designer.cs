@@ -28,25 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.BAgregarCliente = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.id_Empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.editar_Empleado = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.estado_Empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cuil_Empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dni_Empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre_Empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellido_Empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email_Empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccion_Empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.perfil_Empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BAgregarEmpleado = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,38 +99,9 @@
             this.panel4.Size = new System.Drawing.Size(1030, 133);
             this.panel4.TabIndex = 3;
             // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(200)))), ((int)(((byte)(145)))));
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1030, 48);
-            this.panel5.TabIndex = 0;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(200)))), ((int)(((byte)(145)))));
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel6.Location = new System.Drawing.Point(0, 108);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1030, 25);
-            this.panel6.TabIndex = 1;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(35, 133);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1030, 525);
-            this.dataGridView1.TabIndex = 4;
-            // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.BAgregarCliente);
+            this.panel7.Controls.Add(this.BAgregarEmpleado);
             this.panel7.Controls.Add(this.button1);
             this.panel7.Controls.Add(this.panel8);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -127,6 +109,20 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1030, 60);
             this.panel7.TabIndex = 2;
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(524, 0);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(24, 60);
+            this.button1.TabIndex = 9;
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // panel8
             // 
@@ -174,41 +170,148 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Buscar por ";
             // 
-            // button1
+            // panel6
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(524, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(24, 60);
-            this.button1.TabIndex = 9;
-            this.button1.UseVisualStyleBackColor = true;
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(200)))), ((int)(((byte)(145)))));
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel6.Location = new System.Drawing.Point(0, 108);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1030, 25);
+            this.panel6.TabIndex = 1;
             // 
-            // BAgregarCliente
+            // panel5
             // 
-            this.BAgregarCliente.BackColor = System.Drawing.Color.Transparent;
-            this.BAgregarCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BAgregarCliente.Dock = System.Windows.Forms.DockStyle.Left;
-            this.BAgregarCliente.FlatAppearance.BorderSize = 0;
-            this.BAgregarCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.BAgregarCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.BAgregarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BAgregarCliente.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BAgregarCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
-            this.BAgregarCliente.Image = global::AgMaGest.Properties.Resources.Icono_MasEmpleado;
-            this.BAgregarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BAgregarCliente.Location = new System.Drawing.Point(548, 0);
-            this.BAgregarCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BAgregarCliente.Name = "BAgregarCliente";
-            this.BAgregarCliente.Size = new System.Drawing.Size(1100, 60);
-            this.BAgregarCliente.TabIndex = 8;
-            this.BAgregarCliente.Text = " Nuevo Cliente";
-            this.BAgregarCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BAgregarCliente.UseVisualStyleBackColor = false;
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(200)))), ((int)(((byte)(145)))));
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1030, 48);
+            this.panel5.TabIndex = 0;
+            // 
+            // dataGridView1
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id_Empleado,
+            this.editar_Empleado,
+            this.estado_Empleado,
+            this.cuil_Empleado,
+            this.dni_Empleado,
+            this.nombre_Empleado,
+            this.apellido_Empleado,
+            this.email_Empleado,
+            this.direccion_Empleado,
+            this.perfil_Empleado});
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(35, 133);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(1030, 525);
+            this.dataGridView1.TabIndex = 4;
+            // 
+            // id_Empleado
+            // 
+            this.id_Empleado.HeaderText = "ID";
+            this.id_Empleado.MinimumWidth = 6;
+            this.id_Empleado.Name = "id_Empleado";
+            this.id_Empleado.Width = 125;
+            // 
+            // editar_Empleado
+            // 
+            this.editar_Empleado.HeaderText = "Editar";
+            this.editar_Empleado.MinimumWidth = 6;
+            this.editar_Empleado.Name = "editar_Empleado";
+            this.editar_Empleado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.editar_Empleado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.editar_Empleado.Width = 125;
+            // 
+            // estado_Empleado
+            // 
+            this.estado_Empleado.HeaderText = "Estado";
+            this.estado_Empleado.MinimumWidth = 6;
+            this.estado_Empleado.Name = "estado_Empleado";
+            this.estado_Empleado.Width = 125;
+            // 
+            // cuil_Empleado
+            // 
+            this.cuil_Empleado.HeaderText = "CUIL";
+            this.cuil_Empleado.MinimumWidth = 6;
+            this.cuil_Empleado.Name = "cuil_Empleado";
+            this.cuil_Empleado.Width = 125;
+            // 
+            // dni_Empleado
+            // 
+            this.dni_Empleado.HeaderText = "DNI";
+            this.dni_Empleado.MinimumWidth = 6;
+            this.dni_Empleado.Name = "dni_Empleado";
+            this.dni_Empleado.Width = 125;
+            // 
+            // nombre_Empleado
+            // 
+            this.nombre_Empleado.HeaderText = "Nombre";
+            this.nombre_Empleado.MinimumWidth = 6;
+            this.nombre_Empleado.Name = "nombre_Empleado";
+            this.nombre_Empleado.Width = 125;
+            // 
+            // apellido_Empleado
+            // 
+            this.apellido_Empleado.HeaderText = "Apellido";
+            this.apellido_Empleado.MinimumWidth = 6;
+            this.apellido_Empleado.Name = "apellido_Empleado";
+            this.apellido_Empleado.Width = 125;
+            // 
+            // email_Empleado
+            // 
+            this.email_Empleado.HeaderText = "Email";
+            this.email_Empleado.MinimumWidth = 6;
+            this.email_Empleado.Name = "email_Empleado";
+            this.email_Empleado.Width = 125;
+            // 
+            // direccion_Empleado
+            // 
+            this.direccion_Empleado.HeaderText = "Dirección";
+            this.direccion_Empleado.MinimumWidth = 6;
+            this.direccion_Empleado.Name = "direccion_Empleado";
+            this.direccion_Empleado.Width = 125;
+            // 
+            // perfil_Empleado
+            // 
+            this.perfil_Empleado.HeaderText = "Perfil ";
+            this.perfil_Empleado.MinimumWidth = 6;
+            this.perfil_Empleado.Name = "perfil_Empleado";
+            this.perfil_Empleado.Width = 125;
+            // 
+            // BAgregarEmpleado
+            // 
+            this.BAgregarEmpleado.BackColor = System.Drawing.Color.Transparent;
+            this.BAgregarEmpleado.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BAgregarEmpleado.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BAgregarEmpleado.FlatAppearance.BorderSize = 0;
+            this.BAgregarEmpleado.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BAgregarEmpleado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.BAgregarEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BAgregarEmpleado.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BAgregarEmpleado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
+            this.BAgregarEmpleado.Image = global::AgMaGest.Properties.Resources.Icono_MasEmpleado;
+            this.BAgregarEmpleado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BAgregarEmpleado.Location = new System.Drawing.Point(548, 0);
+            this.BAgregarEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BAgregarEmpleado.Name = "BAgregarEmpleado";
+            this.BAgregarEmpleado.Size = new System.Drawing.Size(240, 60);
+            this.BAgregarEmpleado.TabIndex = 8;
+            this.BAgregarEmpleado.Text = " Nuevo Empleado";
+            this.BAgregarEmpleado.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BAgregarEmpleado.UseVisualStyleBackColor = false;
+            this.BAgregarEmpleado.Click += new System.EventHandler(this.BAgregarEmpleado_Click);
             // 
             // pictureBox1
             // 
@@ -237,10 +340,10 @@
             this.Name = "VisualizarEmpleados";
             this.Text = "VisualizarEmpleados";
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -261,7 +364,17 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button BAgregarCliente;
+        private System.Windows.Forms.Button BAgregarEmpleado;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_Empleado;
+        private System.Windows.Forms.DataGridViewButtonColumn editar_Empleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado_Empleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cuil_Empleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dni_Empleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_Empleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellido_Empleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn email_Empleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn direccion_Empleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn perfil_Empleado;
     }
 }

@@ -76,7 +76,7 @@ namespace AgMaGest.C_Presentacion.Administrador
 
             // Ocultar el botón de retroceso cuando regreses al menú principal
             BAtrasAdmin.Visible = false;
-            LTituloInicioCliente.Text = " ";  // Cambia al título del menú principal
+            LTituloInicioAdmin.Text = " ";  // Cambia al título del menú principal
         }
 
         private void BSalirVistaAdm_Click(object sender, EventArgs e)

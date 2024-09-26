@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="C_Presentacion\Administrador\IngresarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C_Presentacion\Administrador\IngresarEmpleado.Designer.cs">
+      <DependentUpon>IngresarEmpleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="C_Presentacion\Administrador\InicioAdministrador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +138,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="C_Presentacion\Administrador\IngresarEmpleado.resx">
+      <DependentUpon>IngresarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="C_Presentacion\Administrador\InicioAdministrador.resx">
       <DependentUpon>InicioAdministrador.cs</DependentUpon>
     </EmbeddedResource>

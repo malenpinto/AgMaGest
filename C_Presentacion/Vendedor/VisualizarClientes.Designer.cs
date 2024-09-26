@@ -31,17 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DGListaCLientes = new System.Windows.Forms.DataGridView();
-            this.id_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.editar_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DGeditar_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cuil_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dni_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellido_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaNacimiento_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.celular_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.email_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.direccion_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -59,6 +48,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.id_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.editar_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGeditar_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cuil_cuit_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.celular_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccion_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DGListaCLientes)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -84,11 +81,8 @@
             this.id_Cliente,
             this.editar_Cliente,
             this.DGeditar_Cliente,
-            this.cuil_Cliente,
-            this.dni_Cliente,
-            this.apellido_Cliente,
+            this.cuil_cuit_Cliente,
             this.nombre_Cliente,
-            this.fechaNacimiento_Cliente,
             this.celular_Cliente,
             this.email_Cliente,
             this.direccion_Cliente});
@@ -100,83 +94,6 @@
             this.DGListaCLientes.RowTemplate.Height = 24;
             this.DGListaCLientes.Size = new System.Drawing.Size(1030, 525);
             this.DGListaCLientes.TabIndex = 7;
-            // 
-            // id_Cliente
-            // 
-            this.id_Cliente.HeaderText = "ID";
-            this.id_Cliente.MinimumWidth = 6;
-            this.id_Cliente.Name = "id_Cliente";
-            this.id_Cliente.Width = 60;
-            // 
-            // editar_Cliente
-            // 
-            this.editar_Cliente.HeaderText = "Estado";
-            this.editar_Cliente.MinimumWidth = 6;
-            this.editar_Cliente.Name = "editar_Cliente";
-            this.editar_Cliente.Width = 80;
-            // 
-            // DGeditar_Cliente
-            // 
-            this.DGeditar_Cliente.HeaderText = "Editar";
-            this.DGeditar_Cliente.MinimumWidth = 6;
-            this.DGeditar_Cliente.Name = "DGeditar_Cliente";
-            this.DGeditar_Cliente.Width = 80;
-            // 
-            // cuil_Cliente
-            // 
-            this.cuil_Cliente.HeaderText = "CUIL";
-            this.cuil_Cliente.MinimumWidth = 6;
-            this.cuil_Cliente.Name = "cuil_Cliente";
-            this.cuil_Cliente.Width = 125;
-            // 
-            // dni_Cliente
-            // 
-            this.dni_Cliente.HeaderText = "DNI";
-            this.dni_Cliente.MinimumWidth = 6;
-            this.dni_Cliente.Name = "dni_Cliente";
-            this.dni_Cliente.Width = 125;
-            // 
-            // apellido_Cliente
-            // 
-            this.apellido_Cliente.HeaderText = "Apellido";
-            this.apellido_Cliente.MinimumWidth = 6;
-            this.apellido_Cliente.Name = "apellido_Cliente";
-            this.apellido_Cliente.Width = 125;
-            // 
-            // nombre_Cliente
-            // 
-            this.nombre_Cliente.HeaderText = "Nombre";
-            this.nombre_Cliente.MinimumWidth = 6;
-            this.nombre_Cliente.Name = "nombre_Cliente";
-            this.nombre_Cliente.Width = 125;
-            // 
-            // fechaNacimiento_Cliente
-            // 
-            this.fechaNacimiento_Cliente.HeaderText = "Fecha Nacimiento";
-            this.fechaNacimiento_Cliente.MinimumWidth = 6;
-            this.fechaNacimiento_Cliente.Name = "fechaNacimiento_Cliente";
-            this.fechaNacimiento_Cliente.Width = 125;
-            // 
-            // celular_Cliente
-            // 
-            this.celular_Cliente.HeaderText = "Celular";
-            this.celular_Cliente.MinimumWidth = 6;
-            this.celular_Cliente.Name = "celular_Cliente";
-            this.celular_Cliente.Width = 125;
-            // 
-            // email_Cliente
-            // 
-            this.email_Cliente.HeaderText = "Email";
-            this.email_Cliente.MinimumWidth = 6;
-            this.email_Cliente.Name = "email_Cliente";
-            this.email_Cliente.Width = 125;
-            // 
-            // direccion_Cliente
-            // 
-            this.direccion_Cliente.HeaderText = "Dirección";
-            this.direccion_Cliente.MinimumWidth = 6;
-            this.direccion_Cliente.Name = "direccion_Cliente";
-            this.direccion_Cliente.Width = 125;
             // 
             // panel1
             // 
@@ -403,6 +320,62 @@
             this.panel9.Size = new System.Drawing.Size(1030, 48);
             this.panel9.TabIndex = 5;
             // 
+            // id_Cliente
+            // 
+            this.id_Cliente.HeaderText = "ID";
+            this.id_Cliente.MinimumWidth = 6;
+            this.id_Cliente.Name = "id_Cliente";
+            this.id_Cliente.Width = 60;
+            // 
+            // editar_Cliente
+            // 
+            this.editar_Cliente.HeaderText = "Estado";
+            this.editar_Cliente.MinimumWidth = 6;
+            this.editar_Cliente.Name = "editar_Cliente";
+            this.editar_Cliente.Width = 80;
+            // 
+            // DGeditar_Cliente
+            // 
+            this.DGeditar_Cliente.HeaderText = "Editar";
+            this.DGeditar_Cliente.MinimumWidth = 6;
+            this.DGeditar_Cliente.Name = "DGeditar_Cliente";
+            this.DGeditar_Cliente.Width = 80;
+            // 
+            // cuil_cuit_Cliente
+            // 
+            this.cuil_cuit_Cliente.HeaderText = "CUIL/CUIT";
+            this.cuil_cuit_Cliente.MinimumWidth = 6;
+            this.cuil_cuit_Cliente.Name = "cuil_cuit_Cliente";
+            this.cuil_cuit_Cliente.Width = 125;
+            // 
+            // nombre_Cliente
+            // 
+            this.nombre_Cliente.HeaderText = "Nombre";
+            this.nombre_Cliente.MinimumWidth = 6;
+            this.nombre_Cliente.Name = "nombre_Cliente";
+            this.nombre_Cliente.Width = 125;
+            // 
+            // celular_Cliente
+            // 
+            this.celular_Cliente.HeaderText = "Celular";
+            this.celular_Cliente.MinimumWidth = 6;
+            this.celular_Cliente.Name = "celular_Cliente";
+            this.celular_Cliente.Width = 125;
+            // 
+            // email_Cliente
+            // 
+            this.email_Cliente.HeaderText = "Email";
+            this.email_Cliente.MinimumWidth = 6;
+            this.email_Cliente.Name = "email_Cliente";
+            this.email_Cliente.Width = 125;
+            // 
+            // direccion_Cliente
+            // 
+            this.direccion_Cliente.HeaderText = "Dirección";
+            this.direccion_Cliente.MinimumWidth = 6;
+            this.direccion_Cliente.Name = "direccion_Cliente";
+            this.direccion_Cliente.Width = 125;
+            // 
             // VisualizarClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -446,17 +419,14 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_Cliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn editar_Cliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn DGeditar_Cliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cuil_Cliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dni_Cliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn apellido_Cliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cuil_cuit_Cliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre_Cliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaNacimiento_Cliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn celular_Cliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn email_Cliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn direccion_Cliente;
-        private System.Windows.Forms.Label label2;
     }
 }

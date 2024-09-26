@@ -1,5 +1,4 @@
-﻿using AgMaGest.C_Presentacion.Vendedor;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,17 +10,16 @@ using System.Windows.Forms;
 
 namespace AgMaGest.C_Presentacion.Administrador
 {
-    public partial class VisualizarEmpleados : Form
+    public partial class IngresarEmpleado : Form
     {
-        public VisualizarEmpleados()
+        public IngresarEmpleado()
         {
             InitializeComponent();
         }
 
-        private void BAgregarEmpleado_Click(object sender, EventArgs e)
+        private void BSalirEmpleado_Click(object sender, EventArgs e)
         {
-            IngresarEmpleado formEmpleado = new IngresarEmpleado();
-            formEmpleado.ShowDialog();
+            this.Close();
         }
     }
 }
