@@ -21,5 +21,17 @@ namespace AgMaGest.C_Presentacion.Cajero
         {
             this.Close();  
         }
+
+        private void GenerarPago_Load(object sender, EventArgs e)
+        {
+            // Agregar opciones al ComboBox de Medios de Pago
+            CBMediosPagos.Items.Add("Tarjeta de Crédito");
+            CBMediosPagos.Items.Add("Tarjeta de Débito");
+            CBMediosPagos.Items.Add("Efectivo");
+            CBMediosPagos.Items.Add("Transferencia Bancaria");
+
+            // Opción predeterminada (opcional)
+            CBMediosPagos.SelectedIndex = 0; // Selecciona la primera opción por defecto
+        }
     }
 }

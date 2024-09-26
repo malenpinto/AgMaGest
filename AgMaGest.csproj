@@ -76,6 +76,12 @@
     <Compile Include="C_Presentacion\Administrador\VisualizarInventario.Designer.cs">
       <DependentUpon>VisualizarInventario.cs</DependentUpon>
     </Compile>
+    <Compile Include="C_Presentacion\Cajero\ControlCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C_Presentacion\Cajero\ControlCaja.Designer.cs">
+      <DependentUpon>ControlCaja.cs</DependentUpon>
+    </Compile>
     <Compile Include="C_Presentacion\Cajero\GenerarPago.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="C_Presentacion\Administrador\VisualizarInventario.resx">
       <DependentUpon>VisualizarInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="C_Presentacion\Cajero\ControlCaja.resx">
+      <DependentUpon>ControlCaja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="C_Presentacion\Cajero\GenerarPago.resx">
       <DependentUpon>GenerarPago.cs</DependentUpon>

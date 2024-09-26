@@ -38,7 +38,6 @@ namespace AgMaGest.C_Presentacion.Cajero
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.BGenerarVenta = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -54,10 +53,11 @@ namespace AgMaGest.C_Presentacion.Cajero
             this.nombreCompletoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.montoTotalVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estadoVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4.SuspendLayout();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -120,16 +120,6 @@ namespace AgMaGest.C_Presentacion.Cajero
             this.BGenerarVenta.Text = "Generar Venta";
             this.BGenerarVenta.UseVisualStyleBackColor = true;
             this.BGenerarVenta.Click += new System.EventHandler(this.BGenerarVenta_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::AgMaGest.Properties.Resources.Icono_Buscar_Cajero;
-            this.pictureBox1.Location = new System.Drawing.Point(400, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(34, 49);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
             // 
             // textBox1
             // 
@@ -245,6 +235,16 @@ namespace AgMaGest.C_Presentacion.Cajero
             this.estadoVenta.HeaderText = "Estado venta";
             this.estadoVenta.Name = "estadoVenta";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::AgMaGest.Properties.Resources.Icono_Buscar_Cajero;
+            this.pictureBox1.Location = new System.Drawing.Point(400, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(34, 49);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
             // RegistrarPago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -261,8 +261,8 @@ namespace AgMaGest.C_Presentacion.Cajero
             this.panel4.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

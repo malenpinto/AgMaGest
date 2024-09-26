@@ -96,6 +96,7 @@ namespace AgMaGest.C_Presentacion.Cajero
 
         private void BControlCaja_Click(object sender, EventArgs e)
         {
+            abrirFormularioHijo(new ControlCaja(), "Control Caja");
             ocultarSubMenu();
         }
 
