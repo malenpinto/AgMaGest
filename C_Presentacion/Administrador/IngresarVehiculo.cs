@@ -10,17 +10,16 @@ using System.Windows.Forms;
 
 namespace AgMaGest.C_Presentacion.Administrador
 {
-    public partial class VisualizarInventario : Form
+    public partial class IngresarVehiculo : Form
     {
-        public VisualizarInventario()
+        public IngresarVehiculo()
         {
             InitializeComponent();
         }
 
-        private void BAgregarVehiculo_Click(object sender, EventArgs e)
+        private void BSalirVehiculo_Click(object sender, EventArgs e)
         {
-            IngresarVehiculo formVehiculo = new IngresarVehiculo();
-            formVehiculo.ShowDialog();
+            this.Close();
         }
     }
 }

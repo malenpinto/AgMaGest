@@ -46,11 +46,9 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.TBNumeroCalle = new System.Windows.Forms.TextBox();
             this.LNumeroCalle = new System.Windows.Forms.Label();
-            this.TBCalle = new System.Windows.Forms.TextBox();
             this.LCalle = new System.Windows.Forms.Label();
             this.TBLocalidad = new System.Windows.Forms.TextBox();
             this.LLocalidad = new System.Windows.Forms.Label();
@@ -65,17 +63,13 @@
             this.LNombre = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.BAgregarCFinal = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.BAgregarCFinal = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -296,24 +290,13 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(136, 26);
             this.dateTimePicker1.TabIndex = 109;
             // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.LightGray;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(349, 291);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(286, 24);
-            this.textBox1.TabIndex = 108;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.LightSlateGray;
             this.label2.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label2.Location = new System.Drawing.Point(349, 264);
+            this.label2.Location = new System.Drawing.Point(349, 270);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 23);
             this.label2.TabIndex = 107;
@@ -341,18 +324,6 @@
             this.LNumeroCalle.Size = new System.Drawing.Size(78, 23);
             this.LNumeroCalle.TabIndex = 105;
             this.LNumeroCalle.Text = "Número";
-            // 
-            // TBCalle
-            // 
-            this.TBCalle.AccessibleRole = System.Windows.Forms.AccessibleRole.OutlineButton;
-            this.TBCalle.BackColor = System.Drawing.Color.LightGray;
-            this.TBCalle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBCalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBCalle.Location = new System.Drawing.Point(42, 291);
-            this.TBCalle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TBCalle.Name = "TBCalle";
-            this.TBCalle.Size = new System.Drawing.Size(286, 24);
-            this.TBCalle.TabIndex = 104;
             // 
             // LCalle
             // 
@@ -407,7 +378,7 @@
             this.LCelular.BackColor = System.Drawing.Color.LightSlateGray;
             this.LCelular.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LCelular.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.LCelular.Location = new System.Drawing.Point(42, 263);
+            this.LCelular.Location = new System.Drawing.Point(42, 269);
             this.LCelular.Name = "LCelular";
             this.LCelular.Size = new System.Drawing.Size(73, 23);
             this.LCelular.TabIndex = 99;
@@ -517,36 +488,13 @@
             this.label3.TabIndex = 72;
             this.label3.Text = "Contacto";
             // 
-            // textBox9
-            // 
-            this.textBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(42, 90);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(286, 24);
-            this.textBox9.TabIndex = 95;
-            this.textBox9.Tag = "";
-            // 
-            // textBox10
-            // 
-            this.textBox10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(349, 90);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(286, 24);
-            this.textBox10.TabIndex = 97;
-            // 
             // textBox12
             // 
             this.textBox12.AccessibleRole = System.Windows.Forms.AccessibleRole.OutlineButton;
             this.textBox12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.textBox12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox12.Location = new System.Drawing.Point(42, 291);
+            this.textBox12.Location = new System.Drawing.Point(42, 297);
             this.textBox12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(286, 24);
@@ -557,34 +505,11 @@
             this.textBox13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.textBox13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox13.Location = new System.Drawing.Point(349, 291);
+            this.textBox13.Location = new System.Drawing.Point(349, 297);
             this.textBox13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(286, 24);
             this.textBox13.TabIndex = 108;
-            // 
-            // textBox15
-            // 
-            this.textBox15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.textBox15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox15.Location = new System.Drawing.Point(42, 149);
-            this.textBox15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(286, 24);
-            this.textBox15.TabIndex = 118;
-            this.textBox15.Tag = "";
-            // 
-            // textBox16
-            // 
-            this.textBox16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.textBox16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox16.Location = new System.Drawing.Point(349, 149);
-            this.textBox16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(286, 24);
-            this.textBox16.TabIndex = 119;
             // 
             // panel1
             // 
@@ -601,9 +526,7 @@
             this.panel1.Controls.Add(this.textBox6);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.textBox16);
             this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.textBox15);
             this.panel1.Controls.Add(this.textBox5);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label8);
@@ -612,20 +535,16 @@
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.textBox13);
             this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.TBNumeroCalle);
             this.panel1.Controls.Add(this.textBox12);
             this.panel1.Controls.Add(this.LNumeroCalle);
-            this.panel1.Controls.Add(this.TBCalle);
             this.panel1.Controls.Add(this.LCalle);
             this.panel1.Controls.Add(this.TBLocalidad);
             this.panel1.Controls.Add(this.LLocalidad);
             this.panel1.Controls.Add(this.TBCelular);
-            this.panel1.Controls.Add(this.textBox10);
             this.panel1.Controls.Add(this.LCelular);
             this.panel1.Controls.Add(this.TBApellido);
-            this.panel1.Controls.Add(this.textBox9);
             this.panel1.Controls.Add(this.TBNombre);
             this.panel1.Controls.Add(this.LProvincia);
             this.panel1.Controls.Add(this.LPais);
@@ -637,33 +556,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(693, 694);
             this.panel1.TabIndex = 127;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.LightSlateGray;
-            this.panel3.Location = new System.Drawing.Point(14, 621);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(650, 3);
-            this.panel3.TabIndex = 121;
-            // 
-            // BAgregarCFinal
-            // 
-            this.BAgregarCFinal.BackColor = System.Drawing.Color.Transparent;
-            this.BAgregarCFinal.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BAgregarCFinal.FlatAppearance.BorderSize = 2;
-            this.BAgregarCFinal.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.BAgregarCFinal.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.BAgregarCFinal.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCyan;
-            this.BAgregarCFinal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BAgregarCFinal.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BAgregarCFinal.ForeColor = System.Drawing.Color.LightSeaGreen;
-            this.BAgregarCFinal.Location = new System.Drawing.Point(200, 634);
-            this.BAgregarCFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BAgregarCFinal.Name = "BAgregarCFinal";
-            this.BAgregarCFinal.Size = new System.Drawing.Size(128, 50);
-            this.BAgregarCFinal.TabIndex = 127;
-            this.BAgregarCFinal.Text = "Agregar";
-            this.BAgregarCFinal.UseVisualStyleBackColor = false;
             // 
             // comboBox2
             // 
@@ -724,6 +616,33 @@
             this.comboBox1.Size = new System.Drawing.Size(281, 24);
             this.comboBox1.TabIndex = 130;
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.LightSlateGray;
+            this.panel3.Location = new System.Drawing.Point(14, 621);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(650, 3);
+            this.panel3.TabIndex = 121;
+            // 
+            // BAgregarCFinal
+            // 
+            this.BAgregarCFinal.BackColor = System.Drawing.Color.Transparent;
+            this.BAgregarCFinal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BAgregarCFinal.FlatAppearance.BorderSize = 2;
+            this.BAgregarCFinal.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.BAgregarCFinal.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BAgregarCFinal.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCyan;
+            this.BAgregarCFinal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BAgregarCFinal.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BAgregarCFinal.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.BAgregarCFinal.Location = new System.Drawing.Point(200, 634);
+            this.BAgregarCFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BAgregarCFinal.Name = "BAgregarCFinal";
+            this.BAgregarCFinal.Size = new System.Drawing.Size(128, 50);
+            this.BAgregarCFinal.TabIndex = 127;
+            this.BAgregarCFinal.Text = "Agregar";
+            this.BAgregarCFinal.UseVisualStyleBackColor = false;
+            // 
             // IngresarClienteFinal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -767,11 +686,9 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TBNumeroCalle;
         private System.Windows.Forms.Label LNumeroCalle;
-        private System.Windows.Forms.TextBox TBCalle;
         private System.Windows.Forms.Label LCalle;
         private System.Windows.Forms.TextBox TBLocalidad;
         private System.Windows.Forms.Label LLocalidad;
@@ -786,12 +703,8 @@
         private System.Windows.Forms.Label LNombre;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox16;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button BAgregarCFinal;
         private System.Windows.Forms.Panel panel3;

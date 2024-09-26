@@ -34,7 +34,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.BAgregarProducto = new System.Windows.Forms.Button();
+            this.BAgregarVehiculo = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -102,7 +102,7 @@
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.BAgregarProducto);
+            this.panel7.Controls.Add(this.BAgregarVehiculo);
             this.panel7.Controls.Add(this.button1);
             this.panel7.Controls.Add(this.panel8);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -111,27 +111,28 @@
             this.panel7.Size = new System.Drawing.Size(1030, 60);
             this.panel7.TabIndex = 3;
             // 
-            // BAgregarProducto
+            // BAgregarVehiculo
             // 
-            this.BAgregarProducto.BackColor = System.Drawing.Color.Transparent;
-            this.BAgregarProducto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BAgregarProducto.Dock = System.Windows.Forms.DockStyle.Left;
-            this.BAgregarProducto.FlatAppearance.BorderSize = 0;
-            this.BAgregarProducto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.BAgregarProducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.BAgregarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BAgregarProducto.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BAgregarProducto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
-            this.BAgregarProducto.Image = global::AgMaGest.Properties.Resources.Icono_MasVehiculo;
-            this.BAgregarProducto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BAgregarProducto.Location = new System.Drawing.Point(548, 0);
-            this.BAgregarProducto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BAgregarProducto.Name = "BAgregarProducto";
-            this.BAgregarProducto.Size = new System.Drawing.Size(220, 60);
-            this.BAgregarProducto.TabIndex = 8;
-            this.BAgregarProducto.Text = " Nuevo Producto";
-            this.BAgregarProducto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BAgregarProducto.UseVisualStyleBackColor = false;
+            this.BAgregarVehiculo.BackColor = System.Drawing.Color.Transparent;
+            this.BAgregarVehiculo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BAgregarVehiculo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BAgregarVehiculo.FlatAppearance.BorderSize = 0;
+            this.BAgregarVehiculo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BAgregarVehiculo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.BAgregarVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BAgregarVehiculo.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BAgregarVehiculo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
+            this.BAgregarVehiculo.Image = global::AgMaGest.Properties.Resources.Icono_MasVehiculo;
+            this.BAgregarVehiculo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BAgregarVehiculo.Location = new System.Drawing.Point(590, 0);
+            this.BAgregarVehiculo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BAgregarVehiculo.Name = "BAgregarVehiculo";
+            this.BAgregarVehiculo.Size = new System.Drawing.Size(257, 60);
+            this.BAgregarVehiculo.TabIndex = 8;
+            this.BAgregarVehiculo.Text = " Nuevo Vehículo";
+            this.BAgregarVehiculo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BAgregarVehiculo.UseVisualStyleBackColor = false;
+            this.BAgregarVehiculo.Click += new System.EventHandler(this.BAgregarVehiculo_Click);
             // 
             // button1
             // 
@@ -140,7 +141,7 @@
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(524, 0);
+            this.button1.Location = new System.Drawing.Point(566, 0);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(24, 60);
@@ -158,7 +159,7 @@
             this.panel8.Location = new System.Drawing.Point(0, 0);
             this.panel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(524, 60);
+            this.panel8.Size = new System.Drawing.Size(566, 60);
             this.panel8.TabIndex = 5;
             // 
             // label2
@@ -166,18 +167,18 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Bahnschrift", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(45, 28);
+            this.label2.Location = new System.Drawing.Point(35, 26);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(128, 21);
+            this.label2.Size = new System.Drawing.Size(166, 21);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Código/Nombre";
+            this.label2.Text = "Código 0Km/Patente";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
             this.pictureBox1.Image = global::AgMaGest.Properties.Resources.Icono_Buscar_Admin;
-            this.pictureBox1.Location = new System.Drawing.Point(479, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(521, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(45, 60);
@@ -189,7 +190,7 @@
             // 
             this.textBox1.BackColor = System.Drawing.Color.Gainsboro;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(189, 11);
+            this.textBox1.Location = new System.Drawing.Point(225, 11);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(287, 32);
@@ -368,7 +369,7 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Button BAgregarProducto;
+        private System.Windows.Forms.Button BAgregarVehiculo;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label2;

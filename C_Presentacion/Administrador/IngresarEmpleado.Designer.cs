@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -42,9 +44,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox16 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -54,20 +54,16 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.TBNumeroCalle = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.LNumeroCalle = new System.Windows.Forms.Label();
-            this.TBCalle = new System.Windows.Forms.TextBox();
             this.LCalle = new System.Windows.Forms.Label();
             this.TBLocalidad = new System.Windows.Forms.TextBox();
             this.LLocalidad = new System.Windows.Forms.Label();
             this.TBCelular = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
             this.LCelular = new System.Windows.Forms.Label();
             this.TBApellido = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
             this.TBNombre = new System.Windows.Forms.TextBox();
             this.LProvincia = new System.Windows.Forms.Label();
             this.LPais = new System.Windows.Forms.Label();
@@ -76,9 +72,6 @@
             this.LNombre = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -88,7 +81,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.GhostWhite;
-            this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.textBox11);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.comboBox2);
@@ -103,9 +95,7 @@
             this.panel1.Controls.Add(this.textBox6);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.textBox16);
             this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.textBox15);
             this.panel1.Controls.Add(this.textBox5);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label8);
@@ -114,20 +104,16 @@
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.textBox13);
             this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.TBNumeroCalle);
             this.panel1.Controls.Add(this.textBox12);
             this.panel1.Controls.Add(this.LNumeroCalle);
-            this.panel1.Controls.Add(this.TBCalle);
             this.panel1.Controls.Add(this.LCalle);
             this.panel1.Controls.Add(this.TBLocalidad);
             this.panel1.Controls.Add(this.LLocalidad);
             this.panel1.Controls.Add(this.TBCelular);
-            this.panel1.Controls.Add(this.textBox10);
             this.panel1.Controls.Add(this.LCelular);
             this.panel1.Controls.Add(this.TBApellido);
-            this.panel1.Controls.Add(this.textBox9);
             this.panel1.Controls.Add(this.TBNombre);
             this.panel1.Controls.Add(this.LProvincia);
             this.panel1.Controls.Add(this.LPais);
@@ -139,6 +125,29 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(693, 694);
             this.panel1.TabIndex = 0;
+            // 
+            // textBox11
+            // 
+            this.textBox11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.textBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox11.Location = new System.Drawing.Point(49, 223);
+            this.textBox11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(286, 24);
+            this.textBox11.TabIndex = 177;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.SeaGreen;
+            this.label5.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label5.Location = new System.Drawing.Point(49, 197);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(56, 23);
+            this.label5.TabIndex = 176;
+            this.label5.Text = "Perfil";
             // 
             // comboBox2
             // 
@@ -336,17 +345,6 @@
             this.label9.TabIndex = 72;
             this.label9.Text = "Datos Personales";
             // 
-            // textBox16
-            // 
-            this.textBox16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.textBox16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox16.Location = new System.Drawing.Point(356, 126);
-            this.textBox16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(286, 24);
-            this.textBox16.TabIndex = 164;
-            // 
             // textBox4
             // 
             this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
@@ -357,18 +355,6 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(286, 24);
             this.textBox4.TabIndex = 163;
-            // 
-            // textBox15
-            // 
-            this.textBox15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.textBox15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox15.Location = new System.Drawing.Point(49, 126);
-            this.textBox15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(286, 24);
-            this.textBox15.TabIndex = 162;
-            this.textBox15.Tag = "";
             // 
             // textBox5
             // 
@@ -474,17 +460,6 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(136, 26);
             this.dateTimePicker1.TabIndex = 154;
             // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.LightGray;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(356, 326);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(286, 24);
-            this.textBox1.TabIndex = 153;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -531,18 +506,6 @@
             this.LNumeroCalle.Size = new System.Drawing.Size(78, 23);
             this.LNumeroCalle.TabIndex = 149;
             this.LNumeroCalle.Text = "Número";
-            // 
-            // TBCalle
-            // 
-            this.TBCalle.AccessibleRole = System.Windows.Forms.AccessibleRole.OutlineButton;
-            this.TBCalle.BackColor = System.Drawing.Color.LightGray;
-            this.TBCalle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBCalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBCalle.Location = new System.Drawing.Point(49, 326);
-            this.TBCalle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TBCalle.Name = "TBCalle";
-            this.TBCalle.Size = new System.Drawing.Size(286, 24);
-            this.TBCalle.TabIndex = 147;
             // 
             // LCalle
             // 
@@ -591,17 +554,6 @@
             this.TBCelular.Size = new System.Drawing.Size(286, 24);
             this.TBCelular.TabIndex = 143;
             // 
-            // textBox10
-            // 
-            this.textBox10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(356, 71);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(286, 24);
-            this.textBox10.TabIndex = 141;
-            // 
             // LCelular
             // 
             this.LCelular.AutoSize = true;
@@ -624,18 +576,6 @@
             this.TBApellido.Name = "TBApellido";
             this.TBApellido.Size = new System.Drawing.Size(286, 24);
             this.TBApellido.TabIndex = 140;
-            // 
-            // textBox9
-            // 
-            this.textBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(49, 71);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(286, 24);
-            this.textBox9.TabIndex = 139;
-            this.textBox9.Tag = "";
             // 
             // TBNombre
             // 
@@ -730,40 +670,6 @@
             this.label3.TabIndex = 72;
             this.label3.Text = "Contacto";
             // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(49, 223);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(286, 24);
-            this.textBox2.TabIndex = 178;
-            // 
-            // textBox11
-            // 
-            this.textBox11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.textBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.Location = new System.Drawing.Point(49, 223);
-            this.textBox11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(286, 24);
-            this.textBox11.TabIndex = 177;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.SeaGreen;
-            this.label5.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label5.Location = new System.Drawing.Point(49, 197);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 23);
-            this.label5.TabIndex = 176;
-            this.label5.Text = "Perfil";
-            // 
             // IngresarEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -804,9 +710,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox16;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox15;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
@@ -816,20 +720,16 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox13;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TBNumeroCalle;
         private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.Label LNumeroCalle;
-        private System.Windows.Forms.TextBox TBCalle;
         private System.Windows.Forms.Label LCalle;
         private System.Windows.Forms.TextBox TBLocalidad;
         private System.Windows.Forms.Label LLocalidad;
         private System.Windows.Forms.TextBox TBCelular;
-        private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.Label LCelular;
         private System.Windows.Forms.TextBox TBApellido;
-        private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.TextBox TBNombre;
         private System.Windows.Forms.Label LProvincia;
         private System.Windows.Forms.Label LPais;
@@ -838,7 +738,6 @@
         private System.Windows.Forms.Label LNombre;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.Label label5;
     }
