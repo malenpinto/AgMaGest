@@ -286,9 +286,7 @@
     <None Include="Resources\Icono-MasEmpleado.png" />
   </ItemGroup>
   <ItemGroup>
-
     <None Include="Resources\Icono-Acercade.png" />
-
     <None Include="Resources\Icono-Avatar.png" />
   </ItemGroup>
   <ItemGroup>
@@ -311,6 +309,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Icono-Buscar-Cajero.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono-Acercade1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

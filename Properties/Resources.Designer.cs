@@ -63,17 +63,19 @@ namespace AgMaGest.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-
-        internal static System.Drawing.Bitmap Icono_Acercade
-        {
-            get
-            {
+        internal static System.Drawing.Bitmap Icono_Acercade {
+            get {
                 object obj = ResourceManager.GetObject("Icono-Acercade", resourceCulture);
-=======
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Icono_Avatar {
             get {
                 object obj = ResourceManager.GetObject("Icono-Avatar", resourceCulture);
->>>>>>> 79d67274fa718139356d0129c97ea666a69ee95b
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

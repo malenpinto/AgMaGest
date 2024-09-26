@@ -121,6 +121,9 @@
   <data name="Icono-Ayuda" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icono-Ayuda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Icono-CloseCajero" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icono-CloseCajero.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Icono-Maximizar-Admin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icono-Maximizar-Admin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -145,20 +148,17 @@
   <data name="Icono-Minimizar-Vendedor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icono-Minimizar-Vendedor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Icono-Buscar-Cajero" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icono-Buscar-Cajero.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Icono-Cliente" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icono-Cliente.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Icono-Proveedor-Admin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icono-Proveedor-Admin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Icono-Usuario-Admin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icono-Usuario-Admin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Icono-Empleado-Admin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icono-Empleado-Admin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Icono-Avatar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icono-Avatar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Icono-Minimizar-Admin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icono-Minimizar-Admin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,12 +178,6 @@
   <data name="Icono-MasEmpleado" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icono-MasEmpleado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Icono-UsuarioCajero" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icono-UsuarioCajero.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Icono-MasEmpleado" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icono-MasEmpleado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Icono-Back-Vendedor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icono-Back-Vendedor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -196,23 +190,29 @@
   <data name="Icono-Catalogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icono-Catalogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Icono-Usuario-Vendedor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icono-Usuario-Vendedor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Icono-Buscar-Vendedor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icono-Buscar-Vendedor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Icono-Inventario-Admin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icono-Inventario-Admin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Icono-CloseCajero" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icono-CloseCajero.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Icono-Avatar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icono-Avatar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Icono-Maximizar-Vendedor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icono-Maximizar-Vendedor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Icono-UsuarioCajero" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icono-UsuarioCajero.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Icono-Venta" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icono-Venta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Icono-Back-Admin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icono-Back-Admin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Icono-Venta" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icono-Venta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Icono-Maximizar-Vendedor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icono-Maximizar-Vendedor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Icono-Close-Admin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icono-Close-Admin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -220,18 +220,13 @@
   <data name="Icono-MasCliente" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icono-MasCliente.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Icono-Usuario-Vendedor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icono-Usuario-Vendedor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Icono-Usuario-Admin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icono-Usuario-Admin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Icono-Close-Vendedor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icono-Close-Vendedor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-<<<<<<< HEAD
   <data name="Icono-Acercade" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icono-Acercade.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-=======
-  <data name="Icono-Buscar-Cajero" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icono-Buscar-Cajero.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
->>>>>>> 79d67274fa718139356d0129c97ea666a69ee95b
+    <value>..\Resources\Icono-Acercade1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
