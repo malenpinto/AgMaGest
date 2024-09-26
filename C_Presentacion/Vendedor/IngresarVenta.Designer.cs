@@ -39,23 +39,23 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(45, 658);
+            this.panel1.Size = new System.Drawing.Size(35, 658);
             this.panel1.TabIndex = 0;
             // 
             // panel2
             // 
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(1055, 0);
+            this.panel2.Location = new System.Drawing.Point(1065, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(45, 658);
+            this.panel2.Size = new System.Drawing.Size(35, 658);
             this.panel2.TabIndex = 1;
             // 
             // panel3
             // 
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(45, 0);
+            this.panel3.Location = new System.Drawing.Point(35, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1010, 48);
+            this.panel3.Size = new System.Drawing.Size(1030, 48);
             this.panel3.TabIndex = 2;
             // 
             // panel4

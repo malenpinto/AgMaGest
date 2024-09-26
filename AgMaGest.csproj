@@ -64,6 +64,12 @@
     <Compile Include="C_Presentacion\Administrador\VisualizarEmpleados.Designer.cs">
       <DependentUpon>VisualizarEmpleados.cs</DependentUpon>
     </Compile>
+    <Compile Include="C_Presentacion\Administrador\VisualizarInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C_Presentacion\Administrador\VisualizarInventario.Designer.cs">
+      <DependentUpon>VisualizarInventario.cs</DependentUpon>
+    </Compile>
     <Compile Include="C_Presentacion\Cajero\GenerarPago.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="C_Presentacion\Administrador\VisualizarEmpleados.resx">
       <DependentUpon>VisualizarEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="C_Presentacion\Administrador\VisualizarInventario.resx">
+      <DependentUpon>VisualizarInventario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="C_Presentacion\Cajero\GenerarPago.resx">
       <DependentUpon>GenerarPago.cs</DependentUpon>
@@ -292,9 +301,6 @@
     <None Include="Resources\Icono-Buscar-Admin.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Icono-MasEmpleado.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Icono-Acercade.png" />
     <None Include="Resources\Icono-Avatar.png" />
   </ItemGroup>
@@ -321,6 +327,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Icono-Acercade1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono-MasVehiculo1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

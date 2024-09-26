@@ -33,24 +33,21 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridVentas = new System.Windows.Forms.DataGridView();
             this.id_VerVentas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ver_verVentas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imprimir_verVentas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ver_verVentas = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.editar_Venta = new System.Windows.Forms.DataGridViewButtonColumn();
             this.cuitCliente_verVentas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellidoCliente_verVentas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreCliente_verVentas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numFactura_verVentas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cliente_verVentas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaFact_verVentas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalFact__verVentas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pagoFact_verVentas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridVentas)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -88,7 +85,7 @@
             this.panel4.Size = new System.Drawing.Size(1030, 48);
             this.panel4.TabIndex = 3;
             // 
-            // dataGridView1
+            // dataGridVentas
             // 
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -97,47 +94,48 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridVentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridVentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_VerVentas,
             this.ver_verVentas,
-            this.imprimir_verVentas,
+            this.editar_Venta,
             this.cuitCliente_verVentas,
-            this.apellidoCliente_verVentas,
-            this.nombreCliente_verVentas,
-            this.numFactura_verVentas,
+            this.Cliente_verVentas,
             this.fechaFact_verVentas,
-            this.totalFact__verVentas,
-            this.pagoFact_verVentas});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(35, 133);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1030, 533);
-            this.dataGridView1.TabIndex = 4;
+            this.totalFact__verVentas});
+            this.dataGridVentas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridVentas.Location = new System.Drawing.Point(35, 133);
+            this.dataGridVentas.Name = "dataGridVentas";
+            this.dataGridVentas.RowHeadersWidth = 51;
+            this.dataGridVentas.RowTemplate.Height = 24;
+            this.dataGridVentas.Size = new System.Drawing.Size(1030, 533);
+            this.dataGridVentas.TabIndex = 4;
             // 
             // id_VerVentas
             // 
             this.id_VerVentas.HeaderText = "ID";
             this.id_VerVentas.MinimumWidth = 6;
             this.id_VerVentas.Name = "id_VerVentas";
-            this.id_VerVentas.Width = 60;
+            this.id_VerVentas.Width = 80;
             // 
             // ver_verVentas
             // 
-            this.ver_verVentas.HeaderText = "Ver";
+            this.ver_verVentas.HeaderText = "Visualizar";
             this.ver_verVentas.MinimumWidth = 6;
             this.ver_verVentas.Name = "ver_verVentas";
-            this.ver_verVentas.Width = 60;
+            this.ver_verVentas.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ver_verVentas.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ver_verVentas.Width = 125;
             // 
-            // imprimir_verVentas
+            // editar_Venta
             // 
-            this.imprimir_verVentas.HeaderText = "Imprimir";
-            this.imprimir_verVentas.MinimumWidth = 6;
-            this.imprimir_verVentas.Name = "imprimir_verVentas";
-            this.imprimir_verVentas.Width = 80;
+            this.editar_Venta.HeaderText = "Editar";
+            this.editar_Venta.MinimumWidth = 6;
+            this.editar_Venta.Name = "editar_Venta";
+            this.editar_Venta.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.editar_Venta.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.editar_Venta.Width = 125;
             // 
             // cuitCliente_verVentas
             // 
@@ -146,26 +144,12 @@
             this.cuitCliente_verVentas.Name = "cuitCliente_verVentas";
             this.cuitCliente_verVentas.Width = 125;
             // 
-            // apellidoCliente_verVentas
+            // Cliente_verVentas
             // 
-            this.apellidoCliente_verVentas.HeaderText = "Apellido Cliente";
-            this.apellidoCliente_verVentas.MinimumWidth = 6;
-            this.apellidoCliente_verVentas.Name = "apellidoCliente_verVentas";
-            this.apellidoCliente_verVentas.Width = 125;
-            // 
-            // nombreCliente_verVentas
-            // 
-            this.nombreCliente_verVentas.HeaderText = "Nombre Cliente";
-            this.nombreCliente_verVentas.MinimumWidth = 6;
-            this.nombreCliente_verVentas.Name = "nombreCliente_verVentas";
-            this.nombreCliente_verVentas.Width = 125;
-            // 
-            // numFactura_verVentas
-            // 
-            this.numFactura_verVentas.HeaderText = "Factura";
-            this.numFactura_verVentas.MinimumWidth = 6;
-            this.numFactura_verVentas.Name = "numFactura_verVentas";
-            this.numFactura_verVentas.Width = 125;
+            this.Cliente_verVentas.HeaderText = "Cliente";
+            this.Cliente_verVentas.MinimumWidth = 6;
+            this.Cliente_verVentas.Name = "Cliente_verVentas";
+            this.Cliente_verVentas.Width = 250;
             // 
             // fechaFact_verVentas
             // 
@@ -180,13 +164,6 @@
             this.totalFact__verVentas.MinimumWidth = 6;
             this.totalFact__verVentas.Name = "totalFact__verVentas";
             this.totalFact__verVentas.Width = 125;
-            // 
-            // pagoFact_verVentas
-            // 
-            this.pagoFact_verVentas.HeaderText = "Forma de Pago";
-            this.pagoFact_verVentas.MinimumWidth = 6;
-            this.pagoFact_verVentas.Name = "pagoFact_verVentas";
-            this.pagoFact_verVentas.Width = 125;
             // 
             // panel5
             // 
@@ -258,7 +235,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(1100, 706);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridVentas);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
@@ -267,7 +244,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "VisualizarVentas";
             this.Text = "VisualizarVentas";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridVentas)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
@@ -282,7 +259,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridVentas;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
@@ -290,14 +267,11 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_VerVentas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ver_verVentas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn imprimir_verVentas;
+        private System.Windows.Forms.DataGridViewButtonColumn ver_verVentas;
+        private System.Windows.Forms.DataGridViewButtonColumn editar_Venta;
         private System.Windows.Forms.DataGridViewTextBoxColumn cuitCliente_verVentas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn apellidoCliente_verVentas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreCliente_verVentas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numFactura_verVentas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cliente_verVentas;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaFact_verVentas;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalFact__verVentas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pagoFact_verVentas;
     }
 }

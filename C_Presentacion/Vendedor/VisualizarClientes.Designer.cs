@@ -30,7 +30,15 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.DGListaCLientes = new System.Windows.Forms.DataGridView();
+            this.dataGridClientes = new System.Windows.Forms.DataGridView();
+            this.id_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.editar_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGeditar_Cliente = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.cuil_cuit_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.celular_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccion_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -48,15 +56,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.id_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.editar_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DGeditar_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cuil_cuit_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.celular_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.email_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.direccion_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.DGListaCLientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridClientes)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -64,10 +64,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // DGListaCLientes
+            // dataGridClientes
             // 
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DGListaCLientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridClientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -75,9 +75,9 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGListaCLientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.DGListaCLientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGListaCLientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_Cliente,
             this.editar_Cliente,
             this.DGeditar_Cliente,
@@ -86,14 +86,73 @@
             this.celular_Cliente,
             this.email_Cliente,
             this.direccion_Cliente});
-            this.DGListaCLientes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DGListaCLientes.Location = new System.Drawing.Point(35, 133);
-            this.DGListaCLientes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.DGListaCLientes.Name = "DGListaCLientes";
-            this.DGListaCLientes.RowHeadersWidth = 51;
-            this.DGListaCLientes.RowTemplate.Height = 24;
-            this.DGListaCLientes.Size = new System.Drawing.Size(1030, 525);
-            this.DGListaCLientes.TabIndex = 7;
+            this.dataGridClientes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridClientes.Location = new System.Drawing.Point(35, 133);
+            this.dataGridClientes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridClientes.Name = "dataGridClientes";
+            this.dataGridClientes.RowHeadersWidth = 51;
+            this.dataGridClientes.RowTemplate.Height = 24;
+            this.dataGridClientes.Size = new System.Drawing.Size(1030, 525);
+            this.dataGridClientes.TabIndex = 7;
+            // 
+            // id_Cliente
+            // 
+            this.id_Cliente.HeaderText = "ID";
+            this.id_Cliente.MinimumWidth = 6;
+            this.id_Cliente.Name = "id_Cliente";
+            this.id_Cliente.Width = 80;
+            // 
+            // editar_Cliente
+            // 
+            this.editar_Cliente.HeaderText = "Estado";
+            this.editar_Cliente.MinimumWidth = 6;
+            this.editar_Cliente.Name = "editar_Cliente";
+            this.editar_Cliente.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.editar_Cliente.Width = 125;
+            // 
+            // DGeditar_Cliente
+            // 
+            this.DGeditar_Cliente.HeaderText = "Editar";
+            this.DGeditar_Cliente.MinimumWidth = 6;
+            this.DGeditar_Cliente.Name = "DGeditar_Cliente";
+            this.DGeditar_Cliente.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGeditar_Cliente.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.DGeditar_Cliente.Width = 125;
+            // 
+            // cuil_cuit_Cliente
+            // 
+            this.cuil_cuit_Cliente.HeaderText = "CUIL/CUIT";
+            this.cuil_cuit_Cliente.MinimumWidth = 6;
+            this.cuil_cuit_Cliente.Name = "cuil_cuit_Cliente";
+            this.cuil_cuit_Cliente.Width = 125;
+            // 
+            // nombre_Cliente
+            // 
+            this.nombre_Cliente.HeaderText = "Nombre";
+            this.nombre_Cliente.MinimumWidth = 6;
+            this.nombre_Cliente.Name = "nombre_Cliente";
+            this.nombre_Cliente.Width = 250;
+            // 
+            // celular_Cliente
+            // 
+            this.celular_Cliente.HeaderText = "Celular";
+            this.celular_Cliente.MinimumWidth = 6;
+            this.celular_Cliente.Name = "celular_Cliente";
+            this.celular_Cliente.Width = 125;
+            // 
+            // email_Cliente
+            // 
+            this.email_Cliente.HeaderText = "Email";
+            this.email_Cliente.MinimumWidth = 6;
+            this.email_Cliente.Name = "email_Cliente";
+            this.email_Cliente.Width = 125;
+            // 
+            // direccion_Cliente
+            // 
+            this.direccion_Cliente.HeaderText = "Dirección";
+            this.direccion_Cliente.MinimumWidth = 6;
+            this.direccion_Cliente.Name = "direccion_Cliente";
+            this.direccion_Cliente.Width = 250;
             // 
             // panel1
             // 
@@ -262,9 +321,9 @@
             this.label2.Font = new System.Drawing.Font("Bahnschrift", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(19, 31);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(143, 21);
+            this.label2.Size = new System.Drawing.Size(157, 21);
             this.label2.TabIndex = 4;
-            this.label2.Text = "DNI/CUIT/Celular";
+            this.label2.Text = "CUIL/CUIT/Nombre";
             // 
             // pictureBox1
             // 
@@ -320,68 +379,12 @@
             this.panel9.Size = new System.Drawing.Size(1030, 48);
             this.panel9.TabIndex = 5;
             // 
-            // id_Cliente
-            // 
-            this.id_Cliente.HeaderText = "ID";
-            this.id_Cliente.MinimumWidth = 6;
-            this.id_Cliente.Name = "id_Cliente";
-            this.id_Cliente.Width = 60;
-            // 
-            // editar_Cliente
-            // 
-            this.editar_Cliente.HeaderText = "Estado";
-            this.editar_Cliente.MinimumWidth = 6;
-            this.editar_Cliente.Name = "editar_Cliente";
-            this.editar_Cliente.Width = 80;
-            // 
-            // DGeditar_Cliente
-            // 
-            this.DGeditar_Cliente.HeaderText = "Editar";
-            this.DGeditar_Cliente.MinimumWidth = 6;
-            this.DGeditar_Cliente.Name = "DGeditar_Cliente";
-            this.DGeditar_Cliente.Width = 80;
-            // 
-            // cuil_cuit_Cliente
-            // 
-            this.cuil_cuit_Cliente.HeaderText = "CUIL/CUIT";
-            this.cuil_cuit_Cliente.MinimumWidth = 6;
-            this.cuil_cuit_Cliente.Name = "cuil_cuit_Cliente";
-            this.cuil_cuit_Cliente.Width = 125;
-            // 
-            // nombre_Cliente
-            // 
-            this.nombre_Cliente.HeaderText = "Nombre";
-            this.nombre_Cliente.MinimumWidth = 6;
-            this.nombre_Cliente.Name = "nombre_Cliente";
-            this.nombre_Cliente.Width = 125;
-            // 
-            // celular_Cliente
-            // 
-            this.celular_Cliente.HeaderText = "Celular";
-            this.celular_Cliente.MinimumWidth = 6;
-            this.celular_Cliente.Name = "celular_Cliente";
-            this.celular_Cliente.Width = 125;
-            // 
-            // email_Cliente
-            // 
-            this.email_Cliente.HeaderText = "Email";
-            this.email_Cliente.MinimumWidth = 6;
-            this.email_Cliente.Name = "email_Cliente";
-            this.email_Cliente.Width = 125;
-            // 
-            // direccion_Cliente
-            // 
-            this.direccion_Cliente.HeaderText = "Dirección";
-            this.direccion_Cliente.MinimumWidth = 6;
-            this.direccion_Cliente.Name = "direccion_Cliente";
-            this.direccion_Cliente.Width = 125;
-            // 
             // VisualizarClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1100, 706);
-            this.Controls.Add(this.DGListaCLientes);
+            this.Controls.Add(this.dataGridClientes);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -390,7 +393,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "VisualizarClientes";
             this.Text = "VisualizarClientes";
-            ((System.ComponentModel.ISupportInitialize)(this.DGListaCLientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridClientes)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
@@ -402,7 +405,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView DGListaCLientes;
+        private System.Windows.Forms.DataGridView dataGridClientes;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
@@ -422,7 +425,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_Cliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn editar_Cliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DGeditar_Cliente;
+        private System.Windows.Forms.DataGridViewButtonColumn DGeditar_Cliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn cuil_cuit_Cliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre_Cliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn celular_Cliente;

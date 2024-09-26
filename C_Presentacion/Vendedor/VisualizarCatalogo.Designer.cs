@@ -42,12 +42,11 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridCatalogo = new System.Windows.Forms.DataGridView();
             this.id_Catalogo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado_Catalogo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imagen_Catalogo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigo0KM_Catalogo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.patente_Catalogo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.patente_codigo0KM_Catalogo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipo_Catalogo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.marca_Catalogo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.version_Catalogo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,7 +56,7 @@
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridCatalogo)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -192,7 +191,7 @@
             this.panel8.Size = new System.Drawing.Size(1030, 25);
             this.panel8.TabIndex = 0;
             // 
-            // dataGridView1
+            // dataGridCatalogo
             // 
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -201,41 +200,41 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridCatalogo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridCatalogo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridCatalogo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_Catalogo,
             this.estado_Catalogo,
             this.imagen_Catalogo,
-            this.codigo0KM_Catalogo,
-            this.patente_Catalogo,
+            this.patente_codigo0KM_Catalogo,
             this.tipo_Catalogo,
             this.marca_Catalogo,
             this.version_Catalogo,
             this.modelo_Catalogo,
             this.km_Catalogo,
             this.anio_Catalogo});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(35, 133);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1030, 525);
-            this.dataGridView1.TabIndex = 5;
+            this.dataGridCatalogo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridCatalogo.Location = new System.Drawing.Point(35, 133);
+            this.dataGridCatalogo.Name = "dataGridCatalogo";
+            this.dataGridCatalogo.RowHeadersWidth = 51;
+            this.dataGridCatalogo.RowTemplate.Height = 24;
+            this.dataGridCatalogo.Size = new System.Drawing.Size(1030, 525);
+            this.dataGridCatalogo.TabIndex = 5;
             // 
             // id_Catalogo
             // 
             this.id_Catalogo.HeaderText = "ID";
             this.id_Catalogo.MinimumWidth = 6;
             this.id_Catalogo.Name = "id_Catalogo";
-            this.id_Catalogo.Width = 60;
+            this.id_Catalogo.Width = 80;
             // 
             // estado_Catalogo
             // 
             this.estado_Catalogo.HeaderText = "Estado";
             this.estado_Catalogo.MinimumWidth = 6;
             this.estado_Catalogo.Name = "estado_Catalogo";
-            this.estado_Catalogo.Width = 80;
+            this.estado_Catalogo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.estado_Catalogo.Width = 125;
             // 
             // imagen_Catalogo
             // 
@@ -244,19 +243,12 @@
             this.imagen_Catalogo.Name = "imagen_Catalogo";
             this.imagen_Catalogo.Width = 125;
             // 
-            // codigo0KM_Catalogo
+            // patente_codigo0KM_Catalogo
             // 
-            this.codigo0KM_Catalogo.HeaderText = "Código 0Km";
-            this.codigo0KM_Catalogo.MinimumWidth = 6;
-            this.codigo0KM_Catalogo.Name = "codigo0KM_Catalogo";
-            this.codigo0KM_Catalogo.Width = 125;
-            // 
-            // patente_Catalogo
-            // 
-            this.patente_Catalogo.HeaderText = "Patente";
-            this.patente_Catalogo.MinimumWidth = 6;
-            this.patente_Catalogo.Name = "patente_Catalogo";
-            this.patente_Catalogo.Width = 125;
+            this.patente_codigo0KM_Catalogo.HeaderText = "Código 0Km/Patente";
+            this.patente_codigo0KM_Catalogo.MinimumWidth = 6;
+            this.patente_codigo0KM_Catalogo.Name = "patente_codigo0KM_Catalogo";
+            this.patente_codigo0KM_Catalogo.Width = 200;
             // 
             // tipo_Catalogo
             // 
@@ -306,7 +298,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(1100, 706);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridCatalogo);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
@@ -320,7 +312,7 @@
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridCatalogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -332,7 +324,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridCatalogo;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox textBox1;
@@ -344,8 +336,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn id_Catalogo;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado_Catalogo;
         private System.Windows.Forms.DataGridViewTextBoxColumn imagen_Catalogo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigo0KM_Catalogo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn patente_Catalogo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn patente_codigo0KM_Catalogo;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipo_Catalogo;
         private System.Windows.Forms.DataGridViewTextBoxColumn marca_Catalogo;
         private System.Windows.Forms.DataGridViewTextBoxColumn version_Catalogo;
