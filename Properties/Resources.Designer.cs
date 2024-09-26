@@ -233,6 +233,16 @@ namespace AgMaGest.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Icono_GenerarFactura {
+            get {
+                object obj = ResourceManager.GetObject("Icono-GenerarFactura", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Icono_Informes {
             get {
                 object obj = ResourceManager.GetObject("Icono-Informes", resourceCulture);

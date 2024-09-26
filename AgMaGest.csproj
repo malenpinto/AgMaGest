@@ -35,6 +35,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -82,11 +84,23 @@
     <Compile Include="C_Presentacion\Cajero\ControlCaja.Designer.cs">
       <DependentUpon>ControlCaja.cs</DependentUpon>
     </Compile>
+    <Compile Include="C_Presentacion\Cajero\Facturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C_Presentacion\Cajero\Facturas.Designer.cs">
+      <DependentUpon>Facturas.cs</DependentUpon>
+    </Compile>
     <Compile Include="C_Presentacion\Cajero\GenerarPago.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="C_Presentacion\Cajero\GenerarPago.Designer.cs">
       <DependentUpon>GenerarPago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="C_Presentacion\Cajero\InformeDiario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C_Presentacion\Cajero\InformeDiario.Designer.cs">
+      <DependentUpon>InformeDiario.cs</DependentUpon>
     </Compile>
     <Compile Include="C_Presentacion\Cajero\InicioCajero.cs">
       <SubType>Form</SubType>
@@ -174,8 +188,14 @@
     <EmbeddedResource Include="C_Presentacion\Cajero\ControlCaja.resx">
       <DependentUpon>ControlCaja.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="C_Presentacion\Cajero\Facturas.resx">
+      <DependentUpon>Facturas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="C_Presentacion\Cajero\GenerarPago.resx">
       <DependentUpon>GenerarPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="C_Presentacion\Cajero\InformeDiario.resx">
+      <DependentUpon>InformeDiario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="C_Presentacion\Cajero\InicioCajero.resx">
       <DependentUpon>InicioCajero.cs</DependentUpon>
@@ -351,6 +371,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Icono-MasEmpleado1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono-GenerarFactura.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
