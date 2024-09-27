@@ -48,6 +48,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="C_Presentacion\Administrador\VisualizarEstadisticas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C_Presentacion\Administrador\VisualizarEstadisticas.Designer.cs">
+      <DependentUpon>VisualizarEstadisticas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="C_Presentacion\Administrador\VisualizarFacturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C_Presentacion\Administrador\VisualizarFacturas.Designer.cs">
+      <DependentUpon>VisualizarFacturas.cs</DependentUpon>
+    </Compile>
     <Compile Include="C_Presentacion\Administrador\IngresarEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +194,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="C_Presentacion\Administrador\VisualizarEstadisticas.resx">
+      <DependentUpon>VisualizarEstadisticas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="C_Presentacion\Administrador\VisualizarFacturas.resx">
+      <DependentUpon>VisualizarFacturas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="C_Presentacion\Administrador\IngresarEmpleado.resx">
       <DependentUpon>IngresarEmpleado.cs</DependentUpon>
     </EmbeddedResource>

@@ -27,6 +27,17 @@ namespace AgMaGest.C_Presentacion.Administrador
         {
             AbrirFormularioHijo(new VisualizarInventario(), "Inventario");
         }
+
+        private void BEstadisticasAdmin_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new VisualizarEstadisticas(), "Estadísticas");
+        }
+
+        private void BFacturasAdmin_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new VisualizarFacturas(), "Facturas");
+        }
+
         private Form formularioActivo = null;
 
         private void AbrirFormularioHijo(Form formHijo, string titulo)
