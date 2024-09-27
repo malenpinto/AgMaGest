@@ -55,7 +55,7 @@ namespace AgMaGest.C_Presentacion.Cajero
 
         private void BFacturas_Click(object sender, EventArgs e)
         {
-          //mostrarSubMenu(PSubMenuFacturas);
+            abrirFormularioHijo(new Facturas(), "Lista de Facturas");
         }
 
         private void BInformes_Click(object sender, EventArgs e)
@@ -102,6 +102,7 @@ namespace AgMaGest.C_Presentacion.Cajero
 
         private void BInformeDiario_Click(object sender, EventArgs e)
         {
+            abrirFormularioHijo(new InformeDiario(), "Estadisticas Diarias");
             ocultarSubMenu();
         }
 

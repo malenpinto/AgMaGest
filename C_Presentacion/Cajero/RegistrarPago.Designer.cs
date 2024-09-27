@@ -38,6 +38,7 @@ namespace AgMaGest.C_Presentacion.Cajero
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.BGenerarVenta = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -49,15 +50,14 @@ namespace AgMaGest.C_Presentacion.Cajero
             this.eliminarVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dniVendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreCompletoVendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dniCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cuil_cuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreCompletoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.montoTotalVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estadoVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4.SuspendLayout();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -117,9 +117,19 @@ namespace AgMaGest.C_Presentacion.Cajero
             this.BGenerarVenta.Name = "BGenerarVenta";
             this.BGenerarVenta.Size = new System.Drawing.Size(90, 23);
             this.BGenerarVenta.TabIndex = 3;
-            this.BGenerarVenta.Text = "Generar Venta";
+            this.BGenerarVenta.Text = "Generar Pago";
             this.BGenerarVenta.UseVisualStyleBackColor = true;
             this.BGenerarVenta.Click += new System.EventHandler(this.BGenerarVenta_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::AgMaGest.Properties.Resources.Icono_Buscar_Cajero;
+            this.pictureBox1.Location = new System.Drawing.Point(400, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(34, 49);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // textBox1
             // 
@@ -175,7 +185,7 @@ namespace AgMaGest.C_Presentacion.Cajero
             this.eliminarVenta,
             this.dniVendedor,
             this.nombreCompletoVendedor,
-            this.dniCliente,
+            this.cuil_cuit,
             this.nombreCompletoCliente,
             this.montoTotalVenta,
             this.estadoVenta});
@@ -215,10 +225,10 @@ namespace AgMaGest.C_Presentacion.Cajero
             this.nombreCompletoVendedor.HeaderText = "Vendedor";
             this.nombreCompletoVendedor.Name = "nombreCompletoVendedor";
             // 
-            // dniCliente
+            // cuil_cuit
             // 
-            this.dniCliente.HeaderText = "DNI Cliente";
-            this.dniCliente.Name = "dniCliente";
+            this.cuil_cuit.HeaderText = "CUIL/CUIT";
+            this.cuil_cuit.Name = "cuil_cuit";
             // 
             // nombreCompletoCliente
             // 
@@ -234,16 +244,6 @@ namespace AgMaGest.C_Presentacion.Cajero
             // 
             this.estadoVenta.HeaderText = "Estado venta";
             this.estadoVenta.Name = "estadoVenta";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::AgMaGest.Properties.Resources.Icono_Buscar_Cajero;
-            this.pictureBox1.Location = new System.Drawing.Point(400, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(34, 49);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
             // 
             // RegistrarPago
             // 
@@ -261,8 +261,8 @@ namespace AgMaGest.C_Presentacion.Cajero
             this.panel4.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -278,18 +278,18 @@ namespace AgMaGest.C_Presentacion.Cajero
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button BGenerarVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_Venta;
         private System.Windows.Forms.DataGridViewButtonColumn generarPago;
         private System.Windows.Forms.DataGridViewTextBoxColumn editarVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn eliminarVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn dniVendedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreCompletoVendedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dniCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cuil_cuit;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreCompletoCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn montoTotalVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn estadoVenta;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button BGenerarVenta;
     }
 }

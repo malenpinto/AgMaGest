@@ -96,11 +96,23 @@
     <Compile Include="C_Presentacion\Cajero\GenerarPago.Designer.cs">
       <DependentUpon>GenerarPago.cs</DependentUpon>
     </Compile>
+    <Compile Include="C_Presentacion\Cajero\GenerarPagoEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C_Presentacion\Cajero\GenerarPagoEmpresa.Designer.cs">
+      <DependentUpon>GenerarPagoEmpresa.cs</DependentUpon>
+    </Compile>
     <Compile Include="C_Presentacion\Cajero\InformeDiario.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="C_Presentacion\Cajero\InformeDiario.Designer.cs">
       <DependentUpon>InformeDiario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="C_Presentacion\Cajero\InformeMensual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C_Presentacion\Cajero\InformeMensual.Designer.cs">
+      <DependentUpon>InformeMensual.cs</DependentUpon>
     </Compile>
     <Compile Include="C_Presentacion\Cajero\InicioCajero.cs">
       <SubType>Form</SubType>
@@ -194,8 +206,14 @@
     <EmbeddedResource Include="C_Presentacion\Cajero\GenerarPago.resx">
       <DependentUpon>GenerarPago.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="C_Presentacion\Cajero\GenerarPagoEmpresa.resx">
+      <DependentUpon>GenerarPagoEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="C_Presentacion\Cajero\InformeDiario.resx">
       <DependentUpon>InformeDiario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="C_Presentacion\Cajero\InformeMensual.resx">
+      <DependentUpon>InformeMensual.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="C_Presentacion\Cajero\InicioCajero.resx">
       <DependentUpon>InicioCajero.cs</DependentUpon>

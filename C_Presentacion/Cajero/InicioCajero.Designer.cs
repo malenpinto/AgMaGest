@@ -30,7 +30,6 @@
         {
             this.PMenu = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.BAyuda = new System.Windows.Forms.Button();
             this.PSubMenuInformes = new System.Windows.Forms.Panel();
             this.BInformeMensual = new System.Windows.Forms.Button();
             this.BInformeDiario = new System.Windows.Forms.Button();
@@ -50,6 +49,7 @@
             this.BMinimizar = new System.Windows.Forms.Button();
             this.BMaximizar = new System.Windows.Forms.Button();
             this.BCerrar = new System.Windows.Forms.Button();
+            this.BAyuda = new System.Windows.Forms.Button();
             this.BInformes = new System.Windows.Forms.Button();
             this.BFacturas = new System.Windows.Forms.Button();
             this.BPagos = new System.Windows.Forms.Button();
@@ -96,29 +96,6 @@
             this.panel1.Size = new System.Drawing.Size(215, 2);
             this.panel1.TabIndex = 17;
             // 
-            // BAyuda
-            // 
-            this.BAyuda.BackColor = System.Drawing.Color.BlueViolet;
-            this.BAyuda.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BAyuda.FlatAppearance.BorderSize = 0;
-            this.BAyuda.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.BAyuda.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Indigo;
-            this.BAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BAyuda.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
-            this.BAyuda.ForeColor = System.Drawing.Color.GhostWhite;
-            this.BAyuda.Image = global::AgMaGest.Properties.Resources.Icono_Ayuda;
-            this.BAyuda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BAyuda.Location = new System.Drawing.Point(0, 365);
-            this.BAyuda.Name = "BAyuda";
-            this.BAyuda.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.BAyuda.Size = new System.Drawing.Size(215, 41);
-            this.BAyuda.TabIndex = 16;
-            this.BAyuda.Text = " Ayuda";
-            this.BAyuda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BAyuda.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BAyuda.UseVisualStyleBackColor = false;
-            this.BAyuda.Click += new System.EventHandler(this.BAyuda_Click);
-            // 
             // PSubMenuInformes
             // 
             this.PSubMenuInformes.BackColor = System.Drawing.Color.MediumPurple;
@@ -145,7 +122,7 @@
             this.BInformeMensual.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
             this.BInformeMensual.Size = new System.Drawing.Size(215, 32);
             this.BInformeMensual.TabIndex = 4;
-            this.BInformeMensual.Text = "Informe Mensual";
+            this.BInformeMensual.Text = "Estadisticas Mensuales";
             this.BInformeMensual.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BInformeMensual.UseVisualStyleBackColor = false;
             this.BInformeMensual.Click += new System.EventHandler(this.BInformeMensual_Click);
@@ -165,7 +142,7 @@
             this.BInformeDiario.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
             this.BInformeDiario.Size = new System.Drawing.Size(215, 32);
             this.BInformeDiario.TabIndex = 3;
-            this.BInformeDiario.Text = "Informe Diario";
+            this.BInformeDiario.Text = "Estadisticas Diarias";
             this.BInformeDiario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BInformeDiario.UseVisualStyleBackColor = false;
             this.BInformeDiario.Click += new System.EventHandler(this.BInformeDiario_Click);
@@ -376,6 +353,29 @@
             this.BCerrar.UseVisualStyleBackColor = false;
             this.BCerrar.Click += new System.EventHandler(this.BCerrar_Click);
             // 
+            // BAyuda
+            // 
+            this.BAyuda.BackColor = System.Drawing.Color.BlueViolet;
+            this.BAyuda.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BAyuda.FlatAppearance.BorderSize = 0;
+            this.BAyuda.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BAyuda.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Indigo;
+            this.BAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BAyuda.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
+            this.BAyuda.ForeColor = System.Drawing.Color.GhostWhite;
+            this.BAyuda.Image = global::AgMaGest.Properties.Resources.Icono_Ayuda;
+            this.BAyuda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BAyuda.Location = new System.Drawing.Point(0, 365);
+            this.BAyuda.Name = "BAyuda";
+            this.BAyuda.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.BAyuda.Size = new System.Drawing.Size(215, 41);
+            this.BAyuda.TabIndex = 16;
+            this.BAyuda.Text = " Ayuda";
+            this.BAyuda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BAyuda.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BAyuda.UseVisualStyleBackColor = false;
+            this.BAyuda.Click += new System.EventHandler(this.BAyuda_Click);
+            // 
             // BInformes
             // 
             this.BInformes.BackColor = System.Drawing.Color.Transparent;
@@ -393,7 +393,7 @@
             this.BInformes.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
             this.BInformes.Size = new System.Drawing.Size(215, 41);
             this.BInformes.TabIndex = 14;
-            this.BInformes.Text = " Informes";
+            this.BInformes.Text = " Estadisticas";
             this.BInformes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BInformes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BInformes.UseVisualStyleBackColor = false;
