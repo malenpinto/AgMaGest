@@ -45,7 +45,7 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TBBuscarFactura = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -105,7 +105,6 @@
             this.cuil_Empleado,
             this.nombre_Empleado,
             this.totalFactura});
-            this.dataGridEmpleados.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridEmpleados.Location = new System.Drawing.Point(35, 133);
             this.dataGridEmpleados.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridEmpleados.Name = "dataGridEmpleados";
@@ -192,7 +191,7 @@
             this.panel8.BackColor = System.Drawing.Color.Transparent;
             this.panel8.Controls.Add(this.label2);
             this.panel8.Controls.Add(this.pictureBox1);
-            this.panel8.Controls.Add(this.textBox1);
+            this.panel8.Controls.Add(this.TBBuscarFactura);
             this.panel8.Controls.Add(this.label1);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel8.Location = new System.Drawing.Point(0, 0);
@@ -225,15 +224,15 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
-            // textBox1
+            // TBBuscarFactura
             // 
-            this.textBox1.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(263, 11);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(287, 32);
-            this.textBox1.TabIndex = 0;
+            this.TBBuscarFactura.BackColor = System.Drawing.Color.Gainsboro;
+            this.TBBuscarFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBBuscarFactura.Location = new System.Drawing.Point(263, 11);
+            this.TBBuscarFactura.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBBuscarFactura.Name = "TBBuscarFactura";
+            this.TBBuscarFactura.Size = new System.Drawing.Size(287, 32);
+            this.TBBuscarFactura.TabIndex = 0;
             // 
             // label1
             // 
@@ -277,7 +276,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "VisualizarFacturas";
             this.Text = "FacturasAdmin";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridEmpleados)).EndInit();
@@ -303,7 +302,7 @@
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TBBuscarFactura;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaFactura;
         private System.Windows.Forms.DataGridViewTextBoxColumn num_Factura;

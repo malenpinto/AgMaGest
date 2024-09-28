@@ -52,7 +52,8 @@
             this.chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(191, 137);
+            this.chart1.Location = new System.Drawing.Point(255, 169);
+            this.chart1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
             series1.ChartArea = "ChartArea1";
@@ -103,17 +104,18 @@
             this.chart1.Series.Add(series10);
             this.chart1.Series.Add(series11);
             this.chart1.Series.Add(series12);
-            this.chart1.Size = new System.Drawing.Size(453, 300);
+            this.chart1.Size = new System.Drawing.Size(604, 369);
             this.chart1.TabIndex = 1;
             this.chart1.Text = "chart1";
             // 
             // InformeMensual
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(835, 574);
+            this.ClientSize = new System.Drawing.Size(1100, 706);
             this.Controls.Add(this.chart1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "InformeMensual";
             this.Text = "InformeMensual";
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();

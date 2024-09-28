@@ -46,8 +46,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label19 = new System.Windows.Forms.Label();
-            this.TBNombre = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.TBBuscarPedido = new System.Windows.Forms.TextBox();
+            this.BBuscarPedido = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.BConfirmarPedido = new System.Windows.Forms.Button();
             this.BSalirPedido = new System.Windows.Forms.Button();
@@ -281,8 +281,8 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.Gainsboro;
             this.panel4.Controls.Add(this.label19);
-            this.panel4.Controls.Add(this.TBNombre);
-            this.panel4.Controls.Add(this.button1);
+            this.panel4.Controls.Add(this.TBBuscarPedido);
+            this.panel4.Controls.Add(this.BBuscarPedido);
             this.panel4.Location = new System.Drawing.Point(38, 143);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(592, 44);
@@ -299,30 +299,31 @@
             this.label19.TabIndex = 147;
             this.label19.Text = "Buscar por CUIL/CUIT";
             // 
-            // TBNombre
+            // TBBuscarPedido
             // 
-            this.TBNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.TBNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBNombre.Location = new System.Drawing.Point(257, 10);
-            this.TBNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TBNombre.Name = "TBNombre";
-            this.TBNombre.Size = new System.Drawing.Size(286, 24);
-            this.TBNombre.TabIndex = 95;
-            this.TBNombre.Tag = "";
+            this.TBBuscarPedido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.TBBuscarPedido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBBuscarPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBBuscarPedido.Location = new System.Drawing.Point(257, 10);
+            this.TBBuscarPedido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBBuscarPedido.Name = "TBBuscarPedido";
+            this.TBBuscarPedido.Size = new System.Drawing.Size(286, 24);
+            this.TBBuscarPedido.TabIndex = 95;
+            this.TBBuscarPedido.Tag = "";
+            this.TBBuscarPedido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             // 
-            // button1
+            // BBuscarPedido
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(62)))), ((int)(((byte)(141)))));
-            this.button1.FlatAppearance.BorderSize = 2;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::AgMaGest.Properties.Resources.Icono_Buscar_Vendedor;
-            this.button1.Location = new System.Drawing.Point(549, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(43, 44);
-            this.button1.TabIndex = 128;
-            this.button1.UseVisualStyleBackColor = true;
+            this.BBuscarPedido.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BBuscarPedido.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(62)))), ((int)(((byte)(141)))));
+            this.BBuscarPedido.FlatAppearance.BorderSize = 2;
+            this.BBuscarPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BBuscarPedido.Image = global::AgMaGest.Properties.Resources.Icono_Buscar_Vendedor;
+            this.BBuscarPedido.Location = new System.Drawing.Point(549, 0);
+            this.BBuscarPedido.Name = "BBuscarPedido";
+            this.BBuscarPedido.Size = new System.Drawing.Size(43, 44);
+            this.BBuscarPedido.TabIndex = 128;
+            this.BBuscarPedido.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
@@ -511,11 +512,11 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label LCelular;
-        private System.Windows.Forms.TextBox TBNombre;
+        private System.Windows.Forms.TextBox TBBuscarPedido;
         private System.Windows.Forms.Label LApellido;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BBuscarPedido;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;

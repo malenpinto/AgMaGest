@@ -39,7 +39,7 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TBBuscarVehiculo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -153,7 +153,7 @@
             this.panel8.BackColor = System.Drawing.Color.Transparent;
             this.panel8.Controls.Add(this.label2);
             this.panel8.Controls.Add(this.pictureBox1);
-            this.panel8.Controls.Add(this.textBox1);
+            this.panel8.Controls.Add(this.TBBuscarVehiculo);
             this.panel8.Controls.Add(this.label1);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel8.Location = new System.Drawing.Point(0, 0);
@@ -186,15 +186,15 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
-            // textBox1
+            // TBBuscarVehiculo
             // 
-            this.textBox1.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(225, 11);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(287, 32);
-            this.textBox1.TabIndex = 0;
+            this.TBBuscarVehiculo.BackColor = System.Drawing.Color.Gainsboro;
+            this.TBBuscarVehiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBBuscarVehiculo.Location = new System.Drawing.Point(225, 11);
+            this.TBBuscarVehiculo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBBuscarVehiculo.Name = "TBBuscarVehiculo";
+            this.TBBuscarVehiculo.Size = new System.Drawing.Size(287, 32);
+            this.TBBuscarVehiculo.TabIndex = 0;
             // 
             // label1
             // 
@@ -248,7 +248,6 @@
             this.anio_Vehiculo,
             this.km_Vehiculo,
             this.condicion_Vehiculo});
-            this.dataGridInventario.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridInventario.Location = new System.Drawing.Point(35, 133);
             this.dataGridInventario.Name = "dataGridInventario";
             this.dataGridInventario.RowHeadersWidth = 51;
@@ -374,7 +373,7 @@
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TBBuscarVehiculo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridInventario;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_Producto;
