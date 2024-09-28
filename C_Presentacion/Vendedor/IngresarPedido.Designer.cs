@@ -29,11 +29,27 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label19 = new System.Windows.Forms.Label();
             this.TBNombre = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.BAgregarPedido = new System.Windows.Forms.Button();
+            this.BConfirmarPedido = new System.Windows.Forms.Button();
             this.BSalirPedido = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
@@ -44,27 +60,11 @@
             this.LApellido = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -86,7 +86,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.BAgregarPedido);
+            this.panel1.Controls.Add(this.BConfirmarPedido);
             this.panel1.Controls.Add(this.BSalirPedido);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label7);
@@ -100,208 +100,86 @@
             this.panel1.Size = new System.Drawing.Size(693, 694);
             this.panel1.TabIndex = 128;
             // 
-            // panel4
+            // label20
             // 
-            this.panel4.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel4.Controls.Add(this.label19);
-            this.panel4.Controls.Add(this.TBNombre);
-            this.panel4.Controls.Add(this.button1);
-            this.panel4.Location = new System.Drawing.Point(38, 143);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(592, 44);
-            this.panel4.TabIndex = 129;
+            this.label20.AutoSize = true;
+            this.label20.BackColor = System.Drawing.Color.LightSlateGray;
+            this.label20.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label20.Location = new System.Drawing.Point(358, 305);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(171, 24);
+            this.label20.TabIndex = 147;
+            this.label20.Text = "Fecha Nacimiento";
             // 
-            // TBNombre
+            // label18
             // 
-            this.TBNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.TBNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBNombre.Location = new System.Drawing.Point(257, 10);
-            this.TBNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TBNombre.Name = "TBNombre";
-            this.TBNombre.Size = new System.Drawing.Size(286, 24);
-            this.TBNombre.TabIndex = 95;
-            this.TBNombre.Tag = "";
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.Color.LightSlateGray;
+            this.label18.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label18.Location = new System.Drawing.Point(308, 61);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(96, 24);
+            this.label18.TabIndex = 146;
+            this.label18.Text = "Vendedor";
             // 
-            // button1
+            // label16
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(62)))), ((int)(((byte)(141)))));
-            this.button1.FlatAppearance.BorderSize = 2;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::AgMaGest.Properties.Resources.Icono_Buscar_Vendedor;
-            this.button1.Location = new System.Drawing.Point(549, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(43, 44);
-            this.button1.TabIndex = 128;
-            this.button1.UseVisualStyleBackColor = true;
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.LightSlateGray;
+            this.label16.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label16.Location = new System.Drawing.Point(22, 61);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(129, 24);
+            this.label16.TabIndex = 145;
+            this.label16.Text = "Fecha Pedido";
             // 
-            // panel3
+            // panel6
             // 
-            this.panel3.BackColor = System.Drawing.Color.LightSlateGray;
-            this.panel3.Location = new System.Drawing.Point(14, 621);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(650, 3);
-            this.panel3.TabIndex = 121;
+            this.panel6.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel6.Controls.Add(this.label15);
+            this.panel6.Location = new System.Drawing.Point(14, 18);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(650, 28);
+            this.panel6.TabIndex = 144;
             // 
-            // BAgregarPedido
+            // label15
             // 
-            this.BAgregarPedido.BackColor = System.Drawing.Color.Transparent;
-            this.BAgregarPedido.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BAgregarPedido.FlatAppearance.BorderSize = 2;
-            this.BAgregarPedido.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.BAgregarPedido.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.BAgregarPedido.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCyan;
-            this.BAgregarPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BAgregarPedido.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BAgregarPedido.ForeColor = System.Drawing.Color.LightSeaGreen;
-            this.BAgregarPedido.Location = new System.Drawing.Point(178, 634);
-            this.BAgregarPedido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BAgregarPedido.Name = "BAgregarPedido";
-            this.BAgregarPedido.Size = new System.Drawing.Size(150, 50);
-            this.BAgregarPedido.TabIndex = 127;
-            this.BAgregarPedido.Text = "Confirmar";
-            this.BAgregarPedido.UseVisualStyleBackColor = false;
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.label15.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(62)))), ((int)(((byte)(141)))));
+            this.label15.Location = new System.Drawing.Point(226, 1);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(127, 24);
+            this.label15.TabIndex = 72;
+            this.label15.Text = "Datos Pedido";
             // 
-            // BSalirPedido
+            // label17
             // 
-            this.BSalirPedido.BackColor = System.Drawing.Color.Transparent;
-            this.BSalirPedido.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BSalirPedido.FlatAppearance.BorderSize = 2;
-            this.BSalirPedido.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.BSalirPedido.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.BSalirPedido.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MistyRose;
-            this.BSalirPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BSalirPedido.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BSalirPedido.ForeColor = System.Drawing.Color.Salmon;
-            this.BSalirPedido.Location = new System.Drawing.Point(349, 634);
-            this.BSalirPedido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BSalirPedido.Name = "BSalirPedido";
-            this.BSalirPedido.Size = new System.Drawing.Size(128, 50);
-            this.BSalirPedido.TabIndex = 91;
-            this.BSalirPedido.Text = "Salir";
-            this.BSalirPedido.UseVisualStyleBackColor = false;
-            this.BSalirPedido.Click += new System.EventHandler(this.BSalirPedido_Click);
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.Color.LightSlateGray;
+            this.label17.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label17.Location = new System.Drawing.Point(53, 572);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(64, 23);
+            this.label17.TabIndex = 142;
+            this.label17.Text = "Precio";
             // 
-            // panel2
+            // label14
             // 
-            this.panel2.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.panel2.Controls.Add(this.label9);
-            this.panel2.Location = new System.Drawing.Point(14, 109);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(650, 28);
-            this.panel2.TabIndex = 120;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.label9.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(62)))), ((int)(((byte)(141)))));
-            this.label9.Location = new System.Drawing.Point(226, 1);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(130, 24);
-            this.label9.TabIndex = 72;
-            this.label9.Text = "Datos Cliente";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.LightSlateGray;
-            this.label7.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label7.Location = new System.Drawing.Point(54, 272);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(50, 23);
-            this.label7.TabIndex = 117;
-            this.label7.Text = "CUIL";
-            this.label7.Visible = false;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.LightSlateGray;
-            this.label8.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label8.Location = new System.Drawing.Point(54, 307);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(40, 23);
-            this.label8.TabIndex = 116;
-            this.label8.Text = "DNI";
-            this.label8.Visible = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.LightSlateGray;
-            this.label2.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label2.Location = new System.Drawing.Point(54, 342);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 23);
-            this.label2.TabIndex = 107;
-            this.label2.Text = "Email";
-            this.label2.Visible = false;
-            // 
-            // LCelular
-            // 
-            this.LCelular.AutoSize = true;
-            this.LCelular.BackColor = System.Drawing.Color.LightSlateGray;
-            this.LCelular.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LCelular.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.LCelular.Location = new System.Drawing.Point(358, 342);
-            this.LCelular.Name = "LCelular";
-            this.LCelular.Size = new System.Drawing.Size(73, 23);
-            this.LCelular.TabIndex = 99;
-            this.LCelular.Text = "Celular";
-            this.LCelular.Visible = false;
-            // 
-            // LApellido
-            // 
-            this.LApellido.AutoSize = true;
-            this.LApellido.BackColor = System.Drawing.Color.LightSlateGray;
-            this.LApellido.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LApellido.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.LApellido.Location = new System.Drawing.Point(54, 200);
-            this.LApellido.Name = "LApellido";
-            this.LApellido.Size = new System.Drawing.Size(77, 23);
-            this.LApellido.TabIndex = 91;
-            this.LApellido.Text = "Nombre";
-            this.LApellido.Visible = false;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.panel5.Controls.Add(this.label3);
-            this.panel5.Location = new System.Drawing.Point(14, 382);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(650, 28);
-            this.panel5.TabIndex = 110;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.label3.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(62)))), ((int)(((byte)(141)))));
-            this.label3.Location = new System.Drawing.Point(226, 2);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(143, 24);
-            this.label3.TabIndex = 72;
-            this.label3.Text = "Datos Vehículo";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.LightSlateGray;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(54, 237);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 23);
-            this.label1.TabIndex = 130;
-            this.label1.Text = "Apellido";
-            this.label1.Visible = false;
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.LightSlateGray;
+            this.label14.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label14.Location = new System.Drawing.Point(405, 524);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(43, 23);
+            this.label14.TabIndex = 138;
+            this.label14.Text = "Año";
             // 
             // label4
             // 
@@ -387,74 +265,28 @@
             this.label13.TabIndex = 132;
             this.label13.Text = "Condición";
             // 
-            // label14
+            // label1
             // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.LightSlateGray;
-            this.label14.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label14.Location = new System.Drawing.Point(405, 524);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(43, 23);
-            this.label14.TabIndex = 138;
-            this.label14.Text = "Año";
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.LightSlateGray;
+            this.label1.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label1.Location = new System.Drawing.Point(54, 237);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(79, 23);
+            this.label1.TabIndex = 130;
+            this.label1.Text = "Apellido";
             // 
-            // label17
+            // panel4
             // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.LightSlateGray;
-            this.label17.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label17.Location = new System.Drawing.Point(53, 572);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(64, 23);
-            this.label17.TabIndex = 142;
-            this.label17.Text = "Precio";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.LightSlateGray;
-            this.label16.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label16.Location = new System.Drawing.Point(22, 61);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(129, 24);
-            this.label16.TabIndex = 145;
-            this.label16.Text = "Fecha Pedido";
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.panel6.Controls.Add(this.label15);
-            this.panel6.Location = new System.Drawing.Point(14, 18);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(650, 28);
-            this.panel6.TabIndex = 144;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.label15.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(62)))), ((int)(((byte)(141)))));
-            this.label15.Location = new System.Drawing.Point(226, 1);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(127, 24);
-            this.label15.TabIndex = 72;
-            this.label15.Text = "Datos Pedido";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.Color.LightSlateGray;
-            this.label18.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label18.Location = new System.Drawing.Point(308, 61);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(96, 24);
-            this.label18.TabIndex = 146;
-            this.label18.Text = "Vendedor";
+            this.panel4.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel4.Controls.Add(this.label19);
+            this.panel4.Controls.Add(this.TBNombre);
+            this.panel4.Controls.Add(this.button1);
+            this.panel4.Location = new System.Drawing.Point(38, 143);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(592, 44);
+            this.panel4.TabIndex = 129;
             // 
             // label19
             // 
@@ -467,17 +299,180 @@
             this.label19.TabIndex = 147;
             this.label19.Text = "Buscar por CUIL/CUIT";
             // 
-            // label20
+            // TBNombre
             // 
-            this.label20.AutoSize = true;
-            this.label20.BackColor = System.Drawing.Color.LightSlateGray;
-            this.label20.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label20.Location = new System.Drawing.Point(358, 305);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(171, 24);
-            this.label20.TabIndex = 147;
-            this.label20.Text = "Fecha Nacimiento";
+            this.TBNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.TBNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBNombre.Location = new System.Drawing.Point(257, 10);
+            this.TBNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBNombre.Name = "TBNombre";
+            this.TBNombre.Size = new System.Drawing.Size(286, 24);
+            this.TBNombre.TabIndex = 95;
+            this.TBNombre.Tag = "";
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(62)))), ((int)(((byte)(141)))));
+            this.button1.FlatAppearance.BorderSize = 2;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = global::AgMaGest.Properties.Resources.Icono_Buscar_Vendedor;
+            this.button1.Location = new System.Drawing.Point(549, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(43, 44);
+            this.button1.TabIndex = 128;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.LightSlateGray;
+            this.panel3.Location = new System.Drawing.Point(14, 621);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(650, 3);
+            this.panel3.TabIndex = 121;
+            // 
+            // BConfirmarPedido
+            // 
+            this.BConfirmarPedido.BackColor = System.Drawing.Color.Transparent;
+            this.BConfirmarPedido.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BConfirmarPedido.FlatAppearance.BorderSize = 2;
+            this.BConfirmarPedido.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.BConfirmarPedido.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BConfirmarPedido.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCyan;
+            this.BConfirmarPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BConfirmarPedido.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BConfirmarPedido.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.BConfirmarPedido.Location = new System.Drawing.Point(178, 634);
+            this.BConfirmarPedido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BConfirmarPedido.Name = "BConfirmarPedido";
+            this.BConfirmarPedido.Size = new System.Drawing.Size(150, 50);
+            this.BConfirmarPedido.TabIndex = 127;
+            this.BConfirmarPedido.Text = "Confirmar";
+            this.BConfirmarPedido.UseVisualStyleBackColor = false;
+            this.BConfirmarPedido.Click += new System.EventHandler(this.BConfirmarPedido_Click);
+            // 
+            // BSalirPedido
+            // 
+            this.BSalirPedido.BackColor = System.Drawing.Color.Transparent;
+            this.BSalirPedido.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BSalirPedido.FlatAppearance.BorderSize = 2;
+            this.BSalirPedido.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.BSalirPedido.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BSalirPedido.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MistyRose;
+            this.BSalirPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BSalirPedido.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BSalirPedido.ForeColor = System.Drawing.Color.Salmon;
+            this.BSalirPedido.Location = new System.Drawing.Point(349, 634);
+            this.BSalirPedido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BSalirPedido.Name = "BSalirPedido";
+            this.BSalirPedido.Size = new System.Drawing.Size(128, 50);
+            this.BSalirPedido.TabIndex = 91;
+            this.BSalirPedido.Text = "Salir";
+            this.BSalirPedido.UseVisualStyleBackColor = false;
+            this.BSalirPedido.Click += new System.EventHandler(this.BSalirPedido_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel2.Controls.Add(this.label9);
+            this.panel2.Location = new System.Drawing.Point(14, 109);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(650, 28);
+            this.panel2.TabIndex = 120;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.label9.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(62)))), ((int)(((byte)(141)))));
+            this.label9.Location = new System.Drawing.Point(226, 1);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(130, 24);
+            this.label9.TabIndex = 72;
+            this.label9.Text = "Datos Cliente";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.LightSlateGray;
+            this.label7.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label7.Location = new System.Drawing.Point(54, 272);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(50, 23);
+            this.label7.TabIndex = 117;
+            this.label7.Text = "CUIL";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.LightSlateGray;
+            this.label8.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label8.Location = new System.Drawing.Point(54, 307);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(40, 23);
+            this.label8.TabIndex = 116;
+            this.label8.Text = "DNI";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.LightSlateGray;
+            this.label2.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label2.Location = new System.Drawing.Point(54, 342);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 23);
+            this.label2.TabIndex = 107;
+            this.label2.Text = "Email";
+            // 
+            // LCelular
+            // 
+            this.LCelular.AutoSize = true;
+            this.LCelular.BackColor = System.Drawing.Color.LightSlateGray;
+            this.LCelular.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LCelular.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.LCelular.Location = new System.Drawing.Point(358, 342);
+            this.LCelular.Name = "LCelular";
+            this.LCelular.Size = new System.Drawing.Size(73, 23);
+            this.LCelular.TabIndex = 99;
+            this.LCelular.Text = "Celular";
+            // 
+            // LApellido
+            // 
+            this.LApellido.AutoSize = true;
+            this.LApellido.BackColor = System.Drawing.Color.LightSlateGray;
+            this.LApellido.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LApellido.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.LApellido.Location = new System.Drawing.Point(54, 200);
+            this.LApellido.Name = "LApellido";
+            this.LApellido.Size = new System.Drawing.Size(77, 23);
+            this.LApellido.TabIndex = 91;
+            this.LApellido.Text = "Nombre";
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel5.Controls.Add(this.label3);
+            this.panel5.Location = new System.Drawing.Point(14, 382);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(650, 28);
+            this.panel5.TabIndex = 110;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.label3.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(62)))), ((int)(((byte)(141)))));
+            this.label3.Location = new System.Drawing.Point(226, 2);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(143, 24);
+            this.label3.TabIndex = 72;
+            this.label3.Text = "Datos Vehículo";
             // 
             // IngresarPedido
             // 
@@ -492,14 +487,14 @@
             this.Text = "IngresarPedido";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -508,7 +503,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button BAgregarPedido;
+        private System.Windows.Forms.Button BConfirmarPedido;
         private System.Windows.Forms.Button BSalirPedido;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label9;

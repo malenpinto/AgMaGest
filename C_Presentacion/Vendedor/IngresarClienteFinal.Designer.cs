@@ -29,33 +29,33 @@
         private void InitializeComponent()
         {
             this.BSalirCFinal = new System.Windows.Forms.Button();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.TBDptoCFinal = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.TBPisoCFinal = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.TBCodPostalCFinal = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.TBCuilCFinal = new System.Windows.Forms.TextBox();
+            this.TBDniCFinal = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.TBCiudadCFinal = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
-            this.TBNumeroCalle = new System.Windows.Forms.TextBox();
+            this.TBNumeroCalleCFinal = new System.Windows.Forms.TextBox();
             this.LNumeroCalle = new System.Windows.Forms.Label();
             this.LCalle = new System.Windows.Forms.Label();
-            this.TBLocalidad = new System.Windows.Forms.TextBox();
+            this.TBLocalidadCFinal = new System.Windows.Forms.TextBox();
             this.LLocalidad = new System.Windows.Forms.Label();
-            this.TBCelular = new System.Windows.Forms.TextBox();
+            this.TBCalleCFinal = new System.Windows.Forms.TextBox();
             this.LCelular = new System.Windows.Forms.Label();
-            this.TBApellido = new System.Windows.Forms.TextBox();
-            this.TBNombre = new System.Windows.Forms.TextBox();
+            this.TBApellidoCFinal = new System.Windows.Forms.TextBox();
+            this.TBNombreCFinal = new System.Windows.Forms.TextBox();
             this.LProvincia = new System.Windows.Forms.Label();
             this.LPais = new System.Windows.Forms.Label();
             this.LApellido = new System.Windows.Forms.Label();
@@ -63,11 +63,11 @@
             this.LNombre = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.TBCelularCFinal = new System.Windows.Forms.TextBox();
+            this.TBEmailCFinal = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.CBProvinciaCFinal = new System.Windows.Forms.ComboBox();
+            this.CBPaisCFinal = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.BAgregarCFinal = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
@@ -91,21 +91,21 @@
             this.BSalirCFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BSalirCFinal.Name = "BSalirCFinal";
             this.BSalirCFinal.Size = new System.Drawing.Size(128, 50);
-            this.BSalirCFinal.TabIndex = 91;
+            this.BSalirCFinal.TabIndex = 17;
             this.BSalirCFinal.Text = "Salir";
             this.BSalirCFinal.UseVisualStyleBackColor = false;
             this.BSalirCFinal.Click += new System.EventHandler(this.BSalirCFinal_Click);
             // 
-            // textBox8
+            // TBDptoCFinal
             // 
-            this.textBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(42, 466);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(140, 24);
-            this.textBox8.TabIndex = 126;
+            this.TBDptoCFinal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.TBDptoCFinal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBDptoCFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBDptoCFinal.Location = new System.Drawing.Point(42, 466);
+            this.TBDptoCFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBDptoCFinal.Name = "TBDptoCFinal";
+            this.TBDptoCFinal.Size = new System.Drawing.Size(140, 24);
+            this.TBDptoCFinal.TabIndex = 10;
             // 
             // label11
             // 
@@ -119,16 +119,17 @@
             this.label11.TabIndex = 125;
             this.label11.Text = "Departamento";
             // 
-            // textBox7
+            // TBPisoCFinal
             // 
-            this.textBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(495, 402);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(140, 24);
-            this.textBox7.TabIndex = 124;
+            this.TBPisoCFinal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.TBPisoCFinal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBPisoCFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBPisoCFinal.Location = new System.Drawing.Point(495, 402);
+            this.TBPisoCFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBPisoCFinal.Name = "TBPisoCFinal";
+            this.TBPisoCFinal.Size = new System.Drawing.Size(140, 24);
+            this.TBPisoCFinal.TabIndex = 9;
+            this.TBPisoCFinal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             // 
             // label10
             // 
@@ -142,16 +143,17 @@
             this.label10.TabIndex = 123;
             this.label10.Text = "Piso";
             // 
-            // textBox6
+            // TBCodPostalCFinal
             // 
-            this.textBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(188, 466);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(140, 24);
-            this.textBox6.TabIndex = 122;
+            this.TBCodPostalCFinal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.TBCodPostalCFinal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBCodPostalCFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBCodPostalCFinal.Location = new System.Drawing.Point(188, 466);
+            this.TBCodPostalCFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBCodPostalCFinal.Name = "TBCodPostalCFinal";
+            this.TBCodPostalCFinal.Size = new System.Drawing.Size(140, 24);
+            this.TBCodPostalCFinal.TabIndex = 11;
+            this.TBCodPostalCFinal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             // 
             // label1
             // 
@@ -186,28 +188,30 @@
             this.label9.TabIndex = 72;
             this.label9.Text = "Datos Personales";
             // 
-            // textBox4
+            // TBCuilCFinal
             // 
-            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(349, 149);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(286, 24);
-            this.textBox4.TabIndex = 119;
+            this.TBCuilCFinal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.TBCuilCFinal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBCuilCFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBCuilCFinal.Location = new System.Drawing.Point(349, 149);
+            this.TBCuilCFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBCuilCFinal.Name = "TBCuilCFinal";
+            this.TBCuilCFinal.Size = new System.Drawing.Size(286, 24);
+            this.TBCuilCFinal.TabIndex = 4;
+            this.TBCuilCFinal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             // 
-            // textBox5
+            // TBDniCFinal
             // 
-            this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(42, 149);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(286, 24);
-            this.textBox5.TabIndex = 118;
-            this.textBox5.Tag = "";
+            this.TBDniCFinal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.TBDniCFinal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBDniCFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBDniCFinal.Location = new System.Drawing.Point(42, 149);
+            this.TBDniCFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBDniCFinal.Name = "TBDniCFinal";
+            this.TBDniCFinal.Size = new System.Drawing.Size(286, 24);
+            this.TBDniCFinal.TabIndex = 3;
+            this.TBDniCFinal.Tag = "";
+            this.TBDniCFinal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             // 
             // label7
             // 
@@ -233,16 +237,17 @@
             this.label8.TabIndex = 116;
             this.label8.Text = "DNI";
             // 
-            // textBox3
+            // TBCiudadCFinal
             // 
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(349, 528);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(286, 24);
-            this.textBox3.TabIndex = 115;
+            this.TBCiudadCFinal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.TBCiudadCFinal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBCiudadCFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBCiudadCFinal.Location = new System.Drawing.Point(349, 528);
+            this.TBCiudadCFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBCiudadCFinal.Name = "TBCiudadCFinal";
+            this.TBCiudadCFinal.Size = new System.Drawing.Size(286, 24);
+            this.TBCiudadCFinal.TabIndex = 14;
+            this.TBCiudadCFinal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloLetras_KeyPress);
             // 
             // label6
             // 
@@ -302,16 +307,17 @@
             this.label2.TabIndex = 107;
             this.label2.Text = "Email";
             // 
-            // TBNumeroCalle
+            // TBNumeroCalleCFinal
             // 
-            this.TBNumeroCalle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.TBNumeroCalle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBNumeroCalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBNumeroCalle.Location = new System.Drawing.Point(349, 402);
-            this.TBNumeroCalle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TBNumeroCalle.Name = "TBNumeroCalle";
-            this.TBNumeroCalle.Size = new System.Drawing.Size(140, 24);
-            this.TBNumeroCalle.TabIndex = 106;
+            this.TBNumeroCalleCFinal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.TBNumeroCalleCFinal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBNumeroCalleCFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBNumeroCalleCFinal.Location = new System.Drawing.Point(349, 402);
+            this.TBNumeroCalleCFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBNumeroCalleCFinal.Name = "TBNumeroCalleCFinal";
+            this.TBNumeroCalleCFinal.Size = new System.Drawing.Size(140, 24);
+            this.TBNumeroCalleCFinal.TabIndex = 8;
+            this.TBNumeroCalleCFinal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             // 
             // LNumeroCalle
             // 
@@ -338,16 +344,17 @@
             this.LCalle.TabIndex = 103;
             this.LCalle.Text = "Calle";
             // 
-            // TBLocalidad
+            // TBLocalidadCFinal
             // 
-            this.TBLocalidad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.TBLocalidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBLocalidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBLocalidad.Location = new System.Drawing.Point(42, 590);
-            this.TBLocalidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TBLocalidad.Name = "TBLocalidad";
-            this.TBLocalidad.Size = new System.Drawing.Size(286, 24);
-            this.TBLocalidad.TabIndex = 102;
+            this.TBLocalidadCFinal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.TBLocalidadCFinal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBLocalidadCFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBLocalidadCFinal.Location = new System.Drawing.Point(42, 590);
+            this.TBLocalidadCFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBLocalidadCFinal.Name = "TBLocalidadCFinal";
+            this.TBLocalidadCFinal.Size = new System.Drawing.Size(286, 24);
+            this.TBLocalidadCFinal.TabIndex = 15;
+            this.TBLocalidadCFinal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloLetras_KeyPress);
             // 
             // LLocalidad
             // 
@@ -361,16 +368,16 @@
             this.LLocalidad.TabIndex = 101;
             this.LLocalidad.Text = "Localidad";
             // 
-            // TBCelular
+            // TBCalleCFinal
             // 
-            this.TBCelular.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.TBCelular.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBCelular.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBCelular.Location = new System.Drawing.Point(42, 402);
-            this.TBCelular.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TBCelular.Name = "TBCelular";
-            this.TBCelular.Size = new System.Drawing.Size(286, 24);
-            this.TBCelular.TabIndex = 100;
+            this.TBCalleCFinal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.TBCalleCFinal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBCalleCFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBCalleCFinal.Location = new System.Drawing.Point(42, 402);
+            this.TBCalleCFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBCalleCFinal.Name = "TBCalleCFinal";
+            this.TBCalleCFinal.Size = new System.Drawing.Size(286, 24);
+            this.TBCalleCFinal.TabIndex = 7;
             // 
             // LCelular
             // 
@@ -384,28 +391,30 @@
             this.LCelular.TabIndex = 99;
             this.LCelular.Text = "Celular";
             // 
-            // TBApellido
+            // TBApellidoCFinal
             // 
-            this.TBApellido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.TBApellido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBApellido.Location = new System.Drawing.Point(349, 90);
-            this.TBApellido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TBApellido.Name = "TBApellido";
-            this.TBApellido.Size = new System.Drawing.Size(286, 24);
-            this.TBApellido.TabIndex = 97;
+            this.TBApellidoCFinal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.TBApellidoCFinal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBApellidoCFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBApellidoCFinal.Location = new System.Drawing.Point(349, 90);
+            this.TBApellidoCFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBApellidoCFinal.Name = "TBApellidoCFinal";
+            this.TBApellidoCFinal.Size = new System.Drawing.Size(286, 24);
+            this.TBApellidoCFinal.TabIndex = 2;
+            this.TBApellidoCFinal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloLetras_KeyPress);
             // 
-            // TBNombre
+            // TBNombreCFinal
             // 
-            this.TBNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.TBNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBNombre.Location = new System.Drawing.Point(42, 90);
-            this.TBNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TBNombre.Name = "TBNombre";
-            this.TBNombre.Size = new System.Drawing.Size(286, 24);
-            this.TBNombre.TabIndex = 95;
-            this.TBNombre.Tag = "";
+            this.TBNombreCFinal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.TBNombreCFinal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBNombreCFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBNombreCFinal.Location = new System.Drawing.Point(42, 90);
+            this.TBNombreCFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBNombreCFinal.Name = "TBNombreCFinal";
+            this.TBNombreCFinal.Size = new System.Drawing.Size(286, 24);
+            this.TBNombreCFinal.TabIndex = 1;
+            this.TBNombreCFinal.Tag = "";
+            this.TBNombreCFinal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloLetras_KeyPress);
             // 
             // LProvincia
             // 
@@ -488,64 +497,65 @@
             this.label3.TabIndex = 72;
             this.label3.Text = "Contacto";
             // 
-            // textBox12
+            // TBCelularCFinal
             // 
-            this.textBox12.AccessibleRole = System.Windows.Forms.AccessibleRole.OutlineButton;
-            this.textBox12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.textBox12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox12.Location = new System.Drawing.Point(42, 297);
-            this.textBox12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(286, 24);
-            this.textBox12.TabIndex = 104;
+            this.TBCelularCFinal.AccessibleRole = System.Windows.Forms.AccessibleRole.OutlineButton;
+            this.TBCelularCFinal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.TBCelularCFinal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBCelularCFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBCelularCFinal.Location = new System.Drawing.Point(42, 297);
+            this.TBCelularCFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBCelularCFinal.Name = "TBCelularCFinal";
+            this.TBCelularCFinal.Size = new System.Drawing.Size(286, 24);
+            this.TBCelularCFinal.TabIndex = 5;
+            this.TBCelularCFinal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             // 
-            // textBox13
+            // TBEmailCFinal
             // 
-            this.textBox13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.textBox13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox13.Location = new System.Drawing.Point(349, 297);
-            this.textBox13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(286, 24);
-            this.textBox13.TabIndex = 108;
+            this.TBEmailCFinal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.TBEmailCFinal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBEmailCFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBEmailCFinal.Location = new System.Drawing.Point(349, 297);
+            this.TBEmailCFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBEmailCFinal.Name = "TBEmailCFinal";
+            this.TBEmailCFinal.Size = new System.Drawing.Size(286, 24);
+            this.TBEmailCFinal.TabIndex = 6;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.GhostWhite;
-            this.panel1.Controls.Add(this.comboBox2);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.CBProvinciaCFinal);
+            this.panel1.Controls.Add(this.CBPaisCFinal);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.BAgregarCFinal);
-            this.panel1.Controls.Add(this.textBox8);
+            this.panel1.Controls.Add(this.TBDptoCFinal);
             this.panel1.Controls.Add(this.BSalirCFinal);
             this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.textBox7);
+            this.panel1.Controls.Add(this.TBPisoCFinal);
             this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.textBox6);
+            this.panel1.Controls.Add(this.TBCodPostalCFinal);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.textBox5);
+            this.panel1.Controls.Add(this.TBCuilCFinal);
+            this.panel1.Controls.Add(this.TBDniCFinal);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.TBCiudadCFinal);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.panel6);
-            this.panel1.Controls.Add(this.textBox13);
+            this.panel1.Controls.Add(this.TBEmailCFinal);
             this.panel1.Controls.Add(this.dateTimePicker1);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.TBNumeroCalle);
-            this.panel1.Controls.Add(this.textBox12);
+            this.panel1.Controls.Add(this.TBNumeroCalleCFinal);
+            this.panel1.Controls.Add(this.TBCelularCFinal);
             this.panel1.Controls.Add(this.LNumeroCalle);
             this.panel1.Controls.Add(this.LCalle);
-            this.panel1.Controls.Add(this.TBLocalidad);
+            this.panel1.Controls.Add(this.TBLocalidadCFinal);
             this.panel1.Controls.Add(this.LLocalidad);
-            this.panel1.Controls.Add(this.TBCelular);
+            this.panel1.Controls.Add(this.TBCalleCFinal);
             this.panel1.Controls.Add(this.LCelular);
-            this.panel1.Controls.Add(this.TBApellido);
-            this.panel1.Controls.Add(this.TBNombre);
+            this.panel1.Controls.Add(this.TBApellidoCFinal);
+            this.panel1.Controls.Add(this.TBNombreCFinal);
             this.panel1.Controls.Add(this.LProvincia);
             this.panel1.Controls.Add(this.LPais);
             this.panel1.Controls.Add(this.LApellido);
@@ -557,64 +567,29 @@
             this.panel1.Size = new System.Drawing.Size(693, 694);
             this.panel1.TabIndex = 127;
             // 
-            // comboBox2
+            // CBProvinciaCFinal
             // 
-            this.comboBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Buenos Aires",
-            "Ciudad Autónoma de Buenos Aires",
-            "Catamarca",
-            "Chaco",
-            "Chubut",
-            "Córdoba",
-            "Corrientes",
-            "Entre Ríos",
-            "Formosa",
-            "Jujuy",
-            "La Pampa",
-            "La Rioja",
-            "Mendoza",
-            "Misiones",
-            "Neuquén",
-            "Río Negro",
-            "Salta",
-            "San Juan",
-            "San Luis",
-            "Santa Cruz",
-            "Santa Fe",
-            "Santiago del Estero",
-            "Tierra del Fuego",
-            "Tucumán"});
-            this.comboBox2.Location = new System.Drawing.Point(42, 528);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(281, 24);
-            this.comboBox2.TabIndex = 131;
+            this.CBProvinciaCFinal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.CBProvinciaCFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBProvinciaCFinal.FormattingEnabled = true;
+            this.CBProvinciaCFinal.Items.AddRange(new object[] {
+            "Corrientes"});
+            this.CBProvinciaCFinal.Location = new System.Drawing.Point(42, 528);
+            this.CBProvinciaCFinal.Name = "CBProvinciaCFinal";
+            this.CBProvinciaCFinal.Size = new System.Drawing.Size(281, 24);
+            this.CBProvinciaCFinal.TabIndex = 13;
             // 
-            // comboBox1
+            // CBPaisCFinal
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Argentina",
-            "Bolivia",
-            "Brasil",
-            "Chile",
-            "Colombia",
-            "Ecuador",
-            "Guyana",
-            "Paraguay",
-            "Perú",
-            "Surinam",
-            "Uruguay",
-            "Venezuela",
-            "Otro"});
-            this.comboBox1.Location = new System.Drawing.Point(349, 466);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(281, 24);
-            this.comboBox1.TabIndex = 130;
+            this.CBPaisCFinal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.CBPaisCFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBPaisCFinal.FormattingEnabled = true;
+            this.CBPaisCFinal.Items.AddRange(new object[] {
+            "Argentina"});
+            this.CBPaisCFinal.Location = new System.Drawing.Point(349, 466);
+            this.CBPaisCFinal.Name = "CBPaisCFinal";
+            this.CBPaisCFinal.Size = new System.Drawing.Size(281, 24);
+            this.CBPaisCFinal.TabIndex = 12;
             // 
             // panel3
             // 
@@ -639,9 +614,11 @@
             this.BAgregarCFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BAgregarCFinal.Name = "BAgregarCFinal";
             this.BAgregarCFinal.Size = new System.Drawing.Size(128, 50);
-            this.BAgregarCFinal.TabIndex = 127;
+            this.BAgregarCFinal.TabIndex = 16;
             this.BAgregarCFinal.Text = "Agregar";
             this.BAgregarCFinal.UseVisualStyleBackColor = false;
+            this.BAgregarCFinal.Click += new System.EventHandler(this.BAgregarCFinal_Click);
+            this.BAgregarCFinal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.IngresarClienteFinal_KeyDown);
             // 
             // IngresarClienteFinal
             // 
@@ -669,33 +646,33 @@
 
         #endregion
         private System.Windows.Forms.Button BSalirCFinal;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox TBDptoCFinal;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox TBPisoCFinal;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox TBCodPostalCFinal;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox TBCuilCFinal;
+        private System.Windows.Forms.TextBox TBDniCFinal;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox TBCiudadCFinal;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox TBNumeroCalle;
+        private System.Windows.Forms.TextBox TBNumeroCalleCFinal;
         private System.Windows.Forms.Label LNumeroCalle;
         private System.Windows.Forms.Label LCalle;
-        private System.Windows.Forms.TextBox TBLocalidad;
+        private System.Windows.Forms.TextBox TBLocalidadCFinal;
         private System.Windows.Forms.Label LLocalidad;
-        private System.Windows.Forms.TextBox TBCelular;
+        private System.Windows.Forms.TextBox TBCalleCFinal;
         private System.Windows.Forms.Label LCelular;
-        private System.Windows.Forms.TextBox TBApellido;
-        private System.Windows.Forms.TextBox TBNombre;
+        private System.Windows.Forms.TextBox TBApellidoCFinal;
+        private System.Windows.Forms.TextBox TBNombreCFinal;
         private System.Windows.Forms.Label LProvincia;
         private System.Windows.Forms.Label LPais;
         private System.Windows.Forms.Label LApellido;
@@ -703,12 +680,12 @@
         private System.Windows.Forms.Label LNombre;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox TBCelularCFinal;
+        private System.Windows.Forms.TextBox TBEmailCFinal;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button BAgregarCFinal;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox CBProvinciaCFinal;
+        private System.Windows.Forms.ComboBox CBPaisCFinal;
     }
 }

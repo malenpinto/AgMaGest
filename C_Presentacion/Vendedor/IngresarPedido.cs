@@ -21,5 +21,10 @@ namespace AgMaGest.C_Presentacion.Vendedor
         {
             this.Close();
         }
+
+        private void BConfirmarPedido_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Debe seleccionar un cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 }
