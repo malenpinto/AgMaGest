@@ -23,8 +23,9 @@ namespace AgMaGest.C_Presentacion
             this.Paint += new PaintEventHandler(Form1_Paint);
             BSalir.Paint += new PaintEventHandler(DrawRoundButton);
             BIniciarSesion.Paint += new PaintEventHandler(DrawRoundButton);
-            // Asociar evento KeyPress para el campo de usuario
-            TBUsuario.KeyPress += TBUsuario_KeyPress;
+
+
+            this.KeyPreview = true; // Permite que el formulario capture el evento KeyDown
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
@@ -42,7 +43,17 @@ namespace AgMaGest.C_Presentacion
                 e.Graphics.FillRectangle(brush, rect);
             }
         }
-    
+
+        private void IniciarSesion_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                BIniciarSesion_Click(sender, e); // Llamar al evento que ejecuta la acción de agregar
+                e.Handled = true; // Indica que el evento fue manejado
+                e.SuppressKeyPress = true; // Evita que la tecla Enter haga otra acción
+            }
+        }
+
         private void BIniciarSesion_Click(object sender, EventArgs e)
         {
             string usuario = TBUsuario.Text.Trim();    // Campo Usuario (DNI)
@@ -51,28 +62,21 @@ namespace AgMaGest.C_Presentacion
             // Validar si ambos campos están vacíos
             if (string.IsNullOrEmpty(usuario) && string.IsNullOrEmpty(contrasena))
             {
-                MessageBox.Show("Complete todos los campos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            // Validación del campo Usuario (DNI) - no vacío y solo números
+            // Validación del campo Usuario (DNI) - no vacío
             if (string.IsNullOrEmpty(usuario))
             {
-                MessageBox.Show("Por favor, ingrese su DNI.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            // Validar que el usuario solo contenga números
-            if (!EsSoloNumeros(usuario))
-            {
-                MessageBox.Show("El campo Usuario debe contener solo números (DNI).", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Por favor, ingrese su DNI", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             // Validación del campo Contraseña - no vacío
             if (string.IsNullOrEmpty(contrasena))
             {
-                MessageBox.Show("Por favor, ingrese su contraseña.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Por favor, ingrese su contraseña", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -138,14 +142,6 @@ namespace AgMaGest.C_Presentacion
             Properties.Settings.Default.Save();
         }
 
-        // Método para validar si un string contiene solo números
-        private bool EsSoloNumeros(string input)
-        {
-            // TryParse validará si el string contiene solo números
-            return long.TryParse(input, out _);
-        }
-
-
         private void LoginForm_Load(object sender, EventArgs e)
         {
             // Ocultar los caracteres de la contraseña
@@ -190,20 +186,19 @@ namespace AgMaGest.C_Presentacion
             btn.Region = new Region(path);
         }
 
+        // Validar que solo se puedan ingresar números en el campo usuario (KeyPress Event)
+        private void SoloNumeros_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Este campo solo puede contener números.");
+            }
+        }
+
         private void BSalir_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        // Validar que solo se puedan ingresar números en el campo usuario (KeyPress Event)
-        private void TBUsuario_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Si no es un dígito y no es una tecla de control (como backspace), cancelar el evento
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;  // Bloquear la entrada
-                MessageBox.Show("Solo se permiten números en el campo Usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
     }
 }

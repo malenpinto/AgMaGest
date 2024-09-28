@@ -78,16 +78,16 @@ namespace AgMaGest.C_Presentacion
             // TBUsuario
             // 
             this.TBUsuario.Location = new System.Drawing.Point(631, 378);
-            this.TBUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TBUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.TBUsuario.Name = "TBUsuario";
             this.TBUsuario.Size = new System.Drawing.Size(132, 22);
             this.TBUsuario.TabIndex = 2;
-            this.TBUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBUsuario_KeyPress);
+            this.TBUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             // 
             // TBContrasenia
             // 
             this.TBContrasenia.Location = new System.Drawing.Point(631, 439);
-            this.TBContrasenia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TBContrasenia.Margin = new System.Windows.Forms.Padding(4);
             this.TBContrasenia.Name = "TBContrasenia";
             this.TBContrasenia.Size = new System.Drawing.Size(132, 22);
             this.TBContrasenia.TabIndex = 3;
@@ -99,7 +99,7 @@ namespace AgMaGest.C_Presentacion
             this.CBRecordar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBRecordar.ForeColor = System.Drawing.Color.GhostWhite;
             this.CBRecordar.Location = new System.Drawing.Point(480, 495);
-            this.CBRecordar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CBRecordar.Margin = new System.Windows.Forms.Padding(4);
             this.CBRecordar.Name = "CBRecordar";
             this.CBRecordar.Size = new System.Drawing.Size(172, 25);
             this.CBRecordar.TabIndex = 7;
@@ -114,7 +114,7 @@ namespace AgMaGest.C_Presentacion
             this.BIniciarSesion.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BIniciarSesion.ForeColor = System.Drawing.Color.GhostWhite;
             this.BIniciarSesion.Location = new System.Drawing.Point(480, 545);
-            this.BIniciarSesion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BIniciarSesion.Margin = new System.Windows.Forms.Padding(4);
             this.BIniciarSesion.Name = "BIniciarSesion";
             this.BIniciarSesion.Size = new System.Drawing.Size(132, 62);
             this.BIniciarSesion.TabIndex = 8;
@@ -130,7 +130,7 @@ namespace AgMaGest.C_Presentacion
             this.BSalir.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BSalir.ForeColor = System.Drawing.Color.GhostWhite;
             this.BSalir.Location = new System.Drawing.Point(631, 545);
-            this.BSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BSalir.Margin = new System.Windows.Forms.Padding(4);
             this.BSalir.Name = "BSalir";
             this.BSalir.Size = new System.Drawing.Size(133, 62);
             this.BSalir.TabIndex = 9;
@@ -147,7 +147,7 @@ namespace AgMaGest.C_Presentacion
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1248, 150);
             this.panel1.TabIndex = 10;
@@ -177,7 +177,7 @@ namespace AgMaGest.C_Presentacion
             // 
             this.panel2.BackColor = System.Drawing.Color.GhostWhite;
             this.panel2.Location = new System.Drawing.Point(208, 144);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(785, 2);
             this.panel2.TabIndex = 1;
@@ -186,7 +186,7 @@ namespace AgMaGest.C_Presentacion
             // 
             this.pictureBox1.Image = global::AgMaGest.Properties.Resources.iconoLogoInicio;
             this.pictureBox1.Location = new System.Drawing.Point(252, -64);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(272, 261);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -198,7 +198,7 @@ namespace AgMaGest.C_Presentacion
             this.PBPerfil.BackColor = System.Drawing.Color.Transparent;
             this.PBPerfil.Image = global::AgMaGest.Properties.Resources.Icono_Avatar;
             this.PBPerfil.Location = new System.Drawing.Point(557, 226);
-            this.PBPerfil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PBPerfil.Margin = new System.Windows.Forms.Padding(4);
             this.PBPerfil.Name = "PBPerfil";
             this.PBPerfil.Size = new System.Drawing.Size(133, 124);
             this.PBPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -222,11 +222,12 @@ namespace AgMaGest.C_Presentacion
             this.Controls.Add(this.LContrasenia);
             this.Controls.Add(this.LUsuario);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Iniciar Sesión";
             this.Load += new System.EventHandler(this.LoginForm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.IniciarSesion_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

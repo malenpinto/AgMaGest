@@ -618,7 +618,6 @@
             this.BAgregarCFinal.Text = "Agregar";
             this.BAgregarCFinal.UseVisualStyleBackColor = false;
             this.BAgregarCFinal.Click += new System.EventHandler(this.BAgregarCFinal_Click);
-            this.BAgregarCFinal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.IngresarClienteFinal_KeyDown);
             // 
             // IngresarClienteFinal
             // 
@@ -632,6 +631,7 @@
             this.Name = "IngresarClienteFinal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "IngresarCliente";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.IngresarClienteFinal_KeyDown);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel6.ResumeLayout(false);

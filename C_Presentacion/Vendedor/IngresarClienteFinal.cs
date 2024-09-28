@@ -18,7 +18,6 @@ namespace AgMaGest.C_Presentacion.Vendedor
         {
             InitializeComponent();
             this.KeyPreview = true; // Permite que el formulario capture el evento KeyDown
-            this.KeyDown += new KeyEventHandler(IngresarClienteFinal_KeyDown); // Asociar el evento
         }
 
         private void IngresarClienteFinal_KeyDown(object sender, KeyEventArgs e)
@@ -30,6 +29,7 @@ namespace AgMaGest.C_Presentacion.Vendedor
                 e.SuppressKeyPress = true; // Evita que la tecla Enter haga otra acción
             }
         }
+
         private void BAgregarCFinal_Click(object sender, EventArgs e)
         {
             // Verificar que todos los campos no estén vacíos
