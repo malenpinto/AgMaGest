@@ -61,29 +61,29 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(200)))), ((int)(((byte)(145)))));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(26, 574);
+            this.panel1.Size = new System.Drawing.Size(35, 706);
             this.panel1.TabIndex = 1;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(200)))), ((int)(((byte)(145)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(809, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Location = new System.Drawing.Point(1065, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(26, 574);
+            this.panel2.Size = new System.Drawing.Size(35, 706);
             this.panel2.TabIndex = 2;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(200)))), ((int)(((byte)(145)))));
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(26, 535);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Location = new System.Drawing.Point(35, 658);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(783, 39);
+            this.panel3.Size = new System.Drawing.Size(1030, 48);
             this.panel3.TabIndex = 4;
             // 
             // dataGridEmpleados
@@ -106,18 +106,20 @@
             this.nombre_Empleado,
             this.totalFactura});
             this.dataGridEmpleados.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridEmpleados.Location = new System.Drawing.Point(26, 108);
-            this.dataGridEmpleados.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridEmpleados.Location = new System.Drawing.Point(35, 133);
+            this.dataGridEmpleados.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridEmpleados.Name = "dataGridEmpleados";
             this.dataGridEmpleados.RowHeadersWidth = 51;
             this.dataGridEmpleados.RowTemplate.Height = 24;
-            this.dataGridEmpleados.Size = new System.Drawing.Size(783, 427);
+            this.dataGridEmpleados.Size = new System.Drawing.Size(1030, 525);
             this.dataGridEmpleados.TabIndex = 5;
             // 
             // fechaFactura
             // 
             this.fechaFactura.HeaderText = "Fecha";
+            this.fechaFactura.MinimumWidth = 6;
             this.fechaFactura.Name = "fechaFactura";
+            this.fechaFactura.Width = 125;
             // 
             // num_Factura
             // 
@@ -159,7 +161,9 @@
             // totalFactura
             // 
             this.totalFactura.HeaderText = "Total";
+            this.totalFactura.MinimumWidth = 6;
             this.totalFactura.Name = "totalFactura";
+            this.totalFactura.Width = 125;
             // 
             // panel4
             // 
@@ -167,20 +171,20 @@
             this.panel4.Controls.Add(this.panel6);
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(26, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2);
+            this.panel4.Location = new System.Drawing.Point(35, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(783, 108);
+            this.panel4.Size = new System.Drawing.Size(1030, 133);
             this.panel4.TabIndex = 6;
             // 
             // panel7
             // 
             this.panel7.Controls.Add(this.panel8);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(0, 39);
-            this.panel7.Margin = new System.Windows.Forms.Padding(2);
+            this.panel7.Location = new System.Drawing.Point(0, 48);
+            this.panel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(783, 49);
+            this.panel7.Size = new System.Drawing.Size(1030, 60);
             this.panel7.TabIndex = 3;
             // 
             // panel8
@@ -192,9 +196,9 @@
             this.panel8.Controls.Add(this.label1);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel8.Location = new System.Drawing.Point(0, 0);
-            this.panel8.Margin = new System.Windows.Forms.Padding(2);
+            this.panel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(458, 49);
+            this.panel8.Size = new System.Drawing.Size(611, 60);
             this.panel8.TabIndex = 5;
             // 
             // label2
@@ -202,10 +206,9 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Bahnschrift", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(14, 19);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(19, 23);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(153, 17);
+            this.label2.Size = new System.Drawing.Size(183, 21);
             this.label2.TabIndex = 4;
             this.label2.Text = "Fecha/Núm de Factura";
             // 
@@ -214,10 +217,10 @@
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
             this.pictureBox1.Image = global::AgMaGest.Properties.Resources.Icono_Buscar_Admin;
-            this.pictureBox1.Location = new System.Drawing.Point(424, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Location = new System.Drawing.Point(566, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(34, 49);
+            this.pictureBox1.Size = new System.Drawing.Size(45, 60);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
@@ -226,10 +229,10 @@
             // 
             this.textBox1.BackColor = System.Drawing.Color.Gainsboro;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(197, 9);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox1.Location = new System.Drawing.Point(263, 11);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(216, 27);
+            this.textBox1.Size = new System.Drawing.Size(287, 32);
             this.textBox1.TabIndex = 0;
             // 
             // label1
@@ -237,10 +240,9 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Bahnschrift", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(14, 4);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(19, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 17);
+            this.label1.Size = new System.Drawing.Size(98, 21);
             this.label1.TabIndex = 2;
             this.label1.Text = "Buscar por ";
             // 
@@ -248,10 +250,10 @@
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(200)))), ((int)(((byte)(145)))));
             this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel6.Location = new System.Drawing.Point(0, 88);
-            this.panel6.Margin = new System.Windows.Forms.Padding(2);
+            this.panel6.Location = new System.Drawing.Point(0, 108);
+            this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(783, 20);
+            this.panel6.Size = new System.Drawing.Size(1030, 25);
             this.panel6.TabIndex = 1;
             // 
             // panel5
@@ -259,22 +261,23 @@
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(200)))), ((int)(((byte)(145)))));
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(783, 39);
+            this.panel5.Size = new System.Drawing.Size(1030, 48);
             this.panel5.TabIndex = 0;
             // 
             // VisualizarFacturas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(835, 574);
+            this.ClientSize = new System.Drawing.Size(1100, 706);
             this.Controls.Add(this.dataGridEmpleados);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "VisualizarFacturas";
             this.Text = "FacturasAdmin";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridEmpleados)).EndInit();
