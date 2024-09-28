@@ -58,6 +58,7 @@ namespace AgMaGest.C_Presentacion.Vendedor
             {
                 // Convertir el nombre y apellido a formato de título (primeras letras en mayúsculas)
                 string nombreCompleto = ToTitleCase(TBNombreCFinal.Text) + " " + ToTitleCase(TBApellidoCFinal.Text);
+                
                 // Si todos los campos son válidos, procedemos con la lógica de agregar.
                 MessageBox.Show("Se agrego exitosamente a: "+nombreCompleto, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 

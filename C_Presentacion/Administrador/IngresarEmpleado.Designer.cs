@@ -29,42 +29,41 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox11 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.CBProvinciaEmpleado = new System.Windows.Forms.ComboBox();
+            this.CBPaisEmpleado = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.BAgregarEmpleado = new System.Windows.Forms.Button();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.TBDptoEmpleado = new System.Windows.Forms.TextBox();
             this.BSalirEmpleado = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.TBNumPisoEmpleado = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.TBCodPostalEmpleado = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.TBCuilEmpleado = new System.Windows.Forms.TextBox();
+            this.TBDniEmpleado = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.TBCiudadEmpleado = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.TBEmailEmpleado = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
-            this.TBNumeroCalle = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.TBNumCalleEmpleado = new System.Windows.Forms.TextBox();
+            this.TBCelularEmpleado = new System.Windows.Forms.TextBox();
             this.LNumeroCalle = new System.Windows.Forms.Label();
             this.LCalle = new System.Windows.Forms.Label();
-            this.TBLocalidad = new System.Windows.Forms.TextBox();
+            this.TBLocalidadEmpleado = new System.Windows.Forms.TextBox();
             this.LLocalidad = new System.Windows.Forms.Label();
-            this.TBCelular = new System.Windows.Forms.TextBox();
+            this.TBCalleEmpleado = new System.Windows.Forms.TextBox();
             this.LCelular = new System.Windows.Forms.Label();
-            this.TBApellido = new System.Windows.Forms.TextBox();
-            this.TBNombre = new System.Windows.Forms.TextBox();
+            this.TBApellidoEmpleado = new System.Windows.Forms.TextBox();
+            this.TBNombreEmpleado = new System.Windows.Forms.TextBox();
             this.LProvincia = new System.Windows.Forms.Label();
             this.LPais = new System.Windows.Forms.Label();
             this.LApellido = new System.Windows.Forms.Label();
@@ -72,6 +71,7 @@
             this.LNombre = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.CBPerfilEmpleado = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -81,40 +81,40 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.GhostWhite;
-            this.panel1.Controls.Add(this.textBox11);
+            this.panel1.Controls.Add(this.CBPerfilEmpleado);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.comboBox2);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.CBProvinciaEmpleado);
+            this.panel1.Controls.Add(this.CBPaisEmpleado);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.BAgregarEmpleado);
-            this.panel1.Controls.Add(this.textBox8);
+            this.panel1.Controls.Add(this.TBDptoEmpleado);
             this.panel1.Controls.Add(this.BSalirEmpleado);
             this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.textBox7);
+            this.panel1.Controls.Add(this.TBNumPisoEmpleado);
             this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.textBox6);
+            this.panel1.Controls.Add(this.TBCodPostalEmpleado);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.textBox5);
+            this.panel1.Controls.Add(this.TBCuilEmpleado);
+            this.panel1.Controls.Add(this.TBDniEmpleado);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.TBCiudadEmpleado);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.panel6);
-            this.panel1.Controls.Add(this.textBox13);
+            this.panel1.Controls.Add(this.TBEmailEmpleado);
             this.panel1.Controls.Add(this.dateTimePicker1);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.TBNumeroCalle);
-            this.panel1.Controls.Add(this.textBox12);
+            this.panel1.Controls.Add(this.TBNumCalleEmpleado);
+            this.panel1.Controls.Add(this.TBCelularEmpleado);
             this.panel1.Controls.Add(this.LNumeroCalle);
             this.panel1.Controls.Add(this.LCalle);
-            this.panel1.Controls.Add(this.TBLocalidad);
+            this.panel1.Controls.Add(this.TBLocalidadEmpleado);
             this.panel1.Controls.Add(this.LLocalidad);
-            this.panel1.Controls.Add(this.TBCelular);
+            this.panel1.Controls.Add(this.TBCalleEmpleado);
             this.panel1.Controls.Add(this.LCelular);
-            this.panel1.Controls.Add(this.TBApellido);
-            this.panel1.Controls.Add(this.TBNombre);
+            this.panel1.Controls.Add(this.TBApellidoEmpleado);
+            this.panel1.Controls.Add(this.TBNombreEmpleado);
             this.panel1.Controls.Add(this.LProvincia);
             this.panel1.Controls.Add(this.LPais);
             this.panel1.Controls.Add(this.LApellido);
@@ -125,17 +125,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(693, 694);
             this.panel1.TabIndex = 0;
-            // 
-            // textBox11
-            // 
-            this.textBox11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.textBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.Location = new System.Drawing.Point(49, 223);
-            this.textBox11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(286, 24);
-            this.textBox11.TabIndex = 177;
             // 
             // label5
             // 
@@ -149,64 +138,29 @@
             this.label5.TabIndex = 176;
             this.label5.Text = "Perfil";
             // 
-            // comboBox2
+            // CBProvinciaEmpleado
             // 
-            this.comboBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Buenos Aires",
-            "Ciudad Autónoma de Buenos Aires",
-            "Catamarca",
-            "Chaco",
-            "Chubut",
-            "Córdoba",
-            "Corrientes",
-            "Entre Ríos",
-            "Formosa",
-            "Jujuy",
-            "La Pampa",
-            "La Rioja",
-            "Mendoza",
-            "Misiones",
-            "Neuquén",
-            "Río Negro",
-            "Salta",
-            "San Juan",
-            "San Luis",
-            "Santa Cruz",
-            "Santa Fe",
-            "Santiago del Estero",
-            "Tierra del Fuego",
-            "Tucumán"});
-            this.comboBox2.Location = new System.Drawing.Point(49, 532);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(281, 24);
-            this.comboBox2.TabIndex = 175;
+            this.CBProvinciaEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.CBProvinciaEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBProvinciaEmpleado.FormattingEnabled = true;
+            this.CBProvinciaEmpleado.Items.AddRange(new object[] {
+            "Corrientes"});
+            this.CBProvinciaEmpleado.Location = new System.Drawing.Point(49, 532);
+            this.CBProvinciaEmpleado.Name = "CBProvinciaEmpleado";
+            this.CBProvinciaEmpleado.Size = new System.Drawing.Size(281, 24);
+            this.CBProvinciaEmpleado.TabIndex = 15;
             // 
-            // comboBox1
+            // CBPaisEmpleado
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Argentina",
-            "Bolivia",
-            "Brasil",
-            "Chile",
-            "Colombia",
-            "Ecuador",
-            "Guyana",
-            "Paraguay",
-            "Perú",
-            "Surinam",
-            "Uruguay",
-            "Venezuela",
-            "Otro"});
-            this.comboBox1.Location = new System.Drawing.Point(356, 474);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(281, 24);
-            this.comboBox1.TabIndex = 174;
+            this.CBPaisEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.CBPaisEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBPaisEmpleado.FormattingEnabled = true;
+            this.CBPaisEmpleado.Items.AddRange(new object[] {
+            "Argentina"});
+            this.CBPaisEmpleado.Location = new System.Drawing.Point(356, 474);
+            this.CBPaisEmpleado.Name = "CBPaisEmpleado";
+            this.CBPaisEmpleado.Size = new System.Drawing.Size(281, 24);
+            this.CBPaisEmpleado.TabIndex = 14;
             // 
             // panel3
             // 
@@ -231,20 +185,21 @@
             this.BAgregarEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BAgregarEmpleado.Name = "BAgregarEmpleado";
             this.BAgregarEmpleado.Size = new System.Drawing.Size(128, 50);
-            this.BAgregarEmpleado.TabIndex = 173;
+            this.BAgregarEmpleado.TabIndex = 18;
             this.BAgregarEmpleado.Text = "Agregar";
             this.BAgregarEmpleado.UseVisualStyleBackColor = false;
+            this.BAgregarEmpleado.Click += new System.EventHandler(this.BAgregarEmpleado_Click);
             // 
-            // textBox8
+            // TBDptoEmpleado
             // 
-            this.textBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(49, 474);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(140, 24);
-            this.textBox8.TabIndex = 172;
+            this.TBDptoEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.TBDptoEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBDptoEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBDptoEmpleado.Location = new System.Drawing.Point(49, 474);
+            this.TBDptoEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBDptoEmpleado.Name = "TBDptoEmpleado";
+            this.TBDptoEmpleado.Size = new System.Drawing.Size(140, 24);
+            this.TBDptoEmpleado.TabIndex = 12;
             // 
             // BSalirEmpleado
             // 
@@ -261,7 +216,7 @@
             this.BSalirEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BSalirEmpleado.Name = "BSalirEmpleado";
             this.BSalirEmpleado.Size = new System.Drawing.Size(128, 50);
-            this.BSalirEmpleado.TabIndex = 134;
+            this.BSalirEmpleado.TabIndex = 19;
             this.BSalirEmpleado.Text = "Salir";
             this.BSalirEmpleado.UseVisualStyleBackColor = false;
             this.BSalirEmpleado.Click += new System.EventHandler(this.BSalirEmpleado_Click);
@@ -278,16 +233,17 @@
             this.label11.TabIndex = 171;
             this.label11.Text = "Departamento";
             // 
-            // textBox7
+            // TBNumPisoEmpleado
             // 
-            this.textBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(502, 417);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(140, 24);
-            this.textBox7.TabIndex = 170;
+            this.TBNumPisoEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.TBNumPisoEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBNumPisoEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBNumPisoEmpleado.Location = new System.Drawing.Point(502, 417);
+            this.TBNumPisoEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBNumPisoEmpleado.Name = "TBNumPisoEmpleado";
+            this.TBNumPisoEmpleado.Size = new System.Drawing.Size(140, 24);
+            this.TBNumPisoEmpleado.TabIndex = 11;
+            this.TBNumPisoEmpleado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             // 
             // label10
             // 
@@ -301,16 +257,17 @@
             this.label10.TabIndex = 169;
             this.label10.Text = "Piso";
             // 
-            // textBox6
+            // TBCodPostalEmpleado
             // 
-            this.textBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(195, 474);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(140, 24);
-            this.textBox6.TabIndex = 168;
+            this.TBCodPostalEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.TBCodPostalEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBCodPostalEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBCodPostalEmpleado.Location = new System.Drawing.Point(195, 474);
+            this.TBCodPostalEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBCodPostalEmpleado.Name = "TBCodPostalEmpleado";
+            this.TBCodPostalEmpleado.Size = new System.Drawing.Size(140, 24);
+            this.TBCodPostalEmpleado.TabIndex = 13;
+            this.TBCodPostalEmpleado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             // 
             // label1
             // 
@@ -345,28 +302,30 @@
             this.label9.TabIndex = 72;
             this.label9.Text = "Datos Personales";
             // 
-            // textBox4
+            // TBCuilEmpleado
             // 
-            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(356, 126);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(286, 24);
-            this.textBox4.TabIndex = 163;
+            this.TBCuilEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.TBCuilEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBCuilEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBCuilEmpleado.Location = new System.Drawing.Point(356, 126);
+            this.TBCuilEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBCuilEmpleado.Name = "TBCuilEmpleado";
+            this.TBCuilEmpleado.Size = new System.Drawing.Size(286, 24);
+            this.TBCuilEmpleado.TabIndex = 4;
+            this.TBCuilEmpleado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             // 
-            // textBox5
+            // TBDniEmpleado
             // 
-            this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(49, 126);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(286, 24);
-            this.textBox5.TabIndex = 161;
-            this.textBox5.Tag = "";
+            this.TBDniEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.TBDniEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBDniEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBDniEmpleado.Location = new System.Drawing.Point(49, 126);
+            this.TBDniEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBDniEmpleado.Name = "TBDniEmpleado";
+            this.TBDniEmpleado.Size = new System.Drawing.Size(286, 24);
+            this.TBDniEmpleado.TabIndex = 3;
+            this.TBDniEmpleado.Tag = "";
+            this.TBDniEmpleado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             // 
             // label7
             // 
@@ -392,16 +351,17 @@
             this.label8.TabIndex = 159;
             this.label8.Text = "DNI";
             // 
-            // textBox3
+            // TBCiudadEmpleado
             // 
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(356, 532);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(286, 24);
-            this.textBox3.TabIndex = 158;
+            this.TBCiudadEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.TBCiudadEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBCiudadEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBCiudadEmpleado.Location = new System.Drawing.Point(356, 532);
+            this.TBCiudadEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBCiudadEmpleado.Name = "TBCiudadEmpleado";
+            this.TBCiudadEmpleado.Size = new System.Drawing.Size(286, 24);
+            this.TBCiudadEmpleado.TabIndex = 16;
+            this.TBCiudadEmpleado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloLetras_KeyPress);
             // 
             // label6
             // 
@@ -436,16 +396,16 @@
             this.label4.TabIndex = 72;
             this.label4.Text = "Dirección";
             // 
-            // textBox13
+            // TBEmailEmpleado
             // 
-            this.textBox13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.textBox13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox13.Location = new System.Drawing.Point(356, 326);
-            this.textBox13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(286, 24);
-            this.textBox13.TabIndex = 152;
+            this.TBEmailEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.TBEmailEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBEmailEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBEmailEmpleado.Location = new System.Drawing.Point(356, 326);
+            this.TBEmailEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBEmailEmpleado.Name = "TBEmailEmpleado";
+            this.TBEmailEmpleado.Size = new System.Drawing.Size(286, 24);
+            this.TBEmailEmpleado.TabIndex = 8;
             // 
             // dateTimePicker1
             // 
@@ -458,7 +418,7 @@
             this.dateTimePicker1.MinDate = new System.DateTime(1924, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(136, 26);
-            this.dateTimePicker1.TabIndex = 154;
+            this.dateTimePicker1.TabIndex = 5;
             // 
             // label2
             // 
@@ -472,28 +432,30 @@
             this.label2.TabIndex = 151;
             this.label2.Text = "Email";
             // 
-            // TBNumeroCalle
+            // TBNumCalleEmpleado
             // 
-            this.TBNumeroCalle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.TBNumeroCalle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBNumeroCalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBNumeroCalle.Location = new System.Drawing.Point(356, 417);
-            this.TBNumeroCalle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TBNumeroCalle.Name = "TBNumeroCalle";
-            this.TBNumeroCalle.Size = new System.Drawing.Size(140, 24);
-            this.TBNumeroCalle.TabIndex = 150;
+            this.TBNumCalleEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.TBNumCalleEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBNumCalleEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBNumCalleEmpleado.Location = new System.Drawing.Point(356, 417);
+            this.TBNumCalleEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBNumCalleEmpleado.Name = "TBNumCalleEmpleado";
+            this.TBNumCalleEmpleado.Size = new System.Drawing.Size(140, 24);
+            this.TBNumCalleEmpleado.TabIndex = 10;
+            this.TBNumCalleEmpleado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             // 
-            // textBox12
+            // TBCelularEmpleado
             // 
-            this.textBox12.AccessibleRole = System.Windows.Forms.AccessibleRole.OutlineButton;
-            this.textBox12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.textBox12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox12.Location = new System.Drawing.Point(49, 326);
-            this.textBox12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(286, 24);
-            this.textBox12.TabIndex = 148;
+            this.TBCelularEmpleado.AccessibleRole = System.Windows.Forms.AccessibleRole.OutlineButton;
+            this.TBCelularEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.TBCelularEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBCelularEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBCelularEmpleado.Location = new System.Drawing.Point(49, 326);
+            this.TBCelularEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBCelularEmpleado.Name = "TBCelularEmpleado";
+            this.TBCelularEmpleado.Size = new System.Drawing.Size(286, 24);
+            this.TBCelularEmpleado.TabIndex = 7;
+            this.TBCelularEmpleado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             // 
             // LNumeroCalle
             // 
@@ -520,16 +482,17 @@
             this.LCalle.TabIndex = 146;
             this.LCalle.Text = "Calle";
             // 
-            // TBLocalidad
+            // TBLocalidadEmpleado
             // 
-            this.TBLocalidad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.TBLocalidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBLocalidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBLocalidad.Location = new System.Drawing.Point(49, 592);
-            this.TBLocalidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TBLocalidad.Name = "TBLocalidad";
-            this.TBLocalidad.Size = new System.Drawing.Size(286, 24);
-            this.TBLocalidad.TabIndex = 145;
+            this.TBLocalidadEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.TBLocalidadEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBLocalidadEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBLocalidadEmpleado.Location = new System.Drawing.Point(49, 592);
+            this.TBLocalidadEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBLocalidadEmpleado.Name = "TBLocalidadEmpleado";
+            this.TBLocalidadEmpleado.Size = new System.Drawing.Size(286, 24);
+            this.TBLocalidadEmpleado.TabIndex = 17;
+            this.TBLocalidadEmpleado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloLetras_KeyPress);
             // 
             // LLocalidad
             // 
@@ -543,16 +506,16 @@
             this.LLocalidad.TabIndex = 144;
             this.LLocalidad.Text = "Localidad";
             // 
-            // TBCelular
+            // TBCalleEmpleado
             // 
-            this.TBCelular.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.TBCelular.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBCelular.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBCelular.Location = new System.Drawing.Point(49, 417);
-            this.TBCelular.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TBCelular.Name = "TBCelular";
-            this.TBCelular.Size = new System.Drawing.Size(286, 24);
-            this.TBCelular.TabIndex = 143;
+            this.TBCalleEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.TBCalleEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBCalleEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBCalleEmpleado.Location = new System.Drawing.Point(49, 417);
+            this.TBCalleEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBCalleEmpleado.Name = "TBCalleEmpleado";
+            this.TBCalleEmpleado.Size = new System.Drawing.Size(286, 24);
+            this.TBCalleEmpleado.TabIndex = 9;
             // 
             // LCelular
             // 
@@ -566,28 +529,30 @@
             this.LCelular.TabIndex = 142;
             this.LCelular.Text = "Celular";
             // 
-            // TBApellido
+            // TBApellidoEmpleado
             // 
-            this.TBApellido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.TBApellido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBApellido.Location = new System.Drawing.Point(356, 71);
-            this.TBApellido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TBApellido.Name = "TBApellido";
-            this.TBApellido.Size = new System.Drawing.Size(286, 24);
-            this.TBApellido.TabIndex = 140;
+            this.TBApellidoEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.TBApellidoEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBApellidoEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBApellidoEmpleado.Location = new System.Drawing.Point(356, 71);
+            this.TBApellidoEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBApellidoEmpleado.Name = "TBApellidoEmpleado";
+            this.TBApellidoEmpleado.Size = new System.Drawing.Size(286, 24);
+            this.TBApellidoEmpleado.TabIndex = 2;
+            this.TBApellidoEmpleado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloLetras_KeyPress);
             // 
-            // TBNombre
+            // TBNombreEmpleado
             // 
-            this.TBNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.TBNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBNombre.Location = new System.Drawing.Point(49, 71);
-            this.TBNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TBNombre.Name = "TBNombre";
-            this.TBNombre.Size = new System.Drawing.Size(286, 24);
-            this.TBNombre.TabIndex = 138;
-            this.TBNombre.Tag = "";
+            this.TBNombreEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.TBNombreEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBNombreEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBNombreEmpleado.Location = new System.Drawing.Point(49, 71);
+            this.TBNombreEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBNombreEmpleado.Name = "TBNombreEmpleado";
+            this.TBNombreEmpleado.Size = new System.Drawing.Size(286, 24);
+            this.TBNombreEmpleado.TabIndex = 1;
+            this.TBNombreEmpleado.Tag = "";
+            this.TBNombreEmpleado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloLetras_KeyPress);
             // 
             // LProvincia
             // 
@@ -670,6 +635,20 @@
             this.label3.TabIndex = 72;
             this.label3.Text = "Contacto";
             // 
+            // CBPerfilEmpleado
+            // 
+            this.CBPerfilEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.CBPerfilEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBPerfilEmpleado.FormattingEnabled = true;
+            this.CBPerfilEmpleado.Items.AddRange(new object[] {
+            "Administrador",
+            "Cajero",
+            "Vendedor"});
+            this.CBPerfilEmpleado.Location = new System.Drawing.Point(49, 227);
+            this.CBPerfilEmpleado.Name = "CBPerfilEmpleado";
+            this.CBPerfilEmpleado.Size = new System.Drawing.Size(281, 24);
+            this.CBPerfilEmpleado.TabIndex = 5;
+            // 
             // IngresarEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -682,6 +661,7 @@
             this.Name = "IngresarEmpleado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "IngresarEmpleado";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.IngresarEmpleado_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -697,40 +677,40 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox CBProvinciaEmpleado;
+        private System.Windows.Forms.ComboBox CBPaisEmpleado;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button BAgregarEmpleado;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox TBDptoEmpleado;
         private System.Windows.Forms.Button BSalirEmpleado;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox TBNumPisoEmpleado;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox TBCodPostalEmpleado;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox TBCuilEmpleado;
+        private System.Windows.Forms.TextBox TBDniEmpleado;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox TBCiudadEmpleado;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox TBEmailEmpleado;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox TBNumeroCalle;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox TBNumCalleEmpleado;
+        private System.Windows.Forms.TextBox TBCelularEmpleado;
         private System.Windows.Forms.Label LNumeroCalle;
         private System.Windows.Forms.Label LCalle;
-        private System.Windows.Forms.TextBox TBLocalidad;
+        private System.Windows.Forms.TextBox TBLocalidadEmpleado;
         private System.Windows.Forms.Label LLocalidad;
-        private System.Windows.Forms.TextBox TBCelular;
+        private System.Windows.Forms.TextBox TBCalleEmpleado;
         private System.Windows.Forms.Label LCelular;
-        private System.Windows.Forms.TextBox TBApellido;
-        private System.Windows.Forms.TextBox TBNombre;
+        private System.Windows.Forms.TextBox TBApellidoEmpleado;
+        private System.Windows.Forms.TextBox TBNombreEmpleado;
         private System.Windows.Forms.Label LProvincia;
         private System.Windows.Forms.Label LPais;
         private System.Windows.Forms.Label LApellido;
@@ -738,7 +718,7 @@
         private System.Windows.Forms.Label LNombre;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox CBPerfilEmpleado;
     }
 }

@@ -108,7 +108,7 @@
             this.BAcercaDeVendedor.Name = "BAcercaDeVendedor";
             this.BAcercaDeVendedor.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
             this.BAcercaDeVendedor.Size = new System.Drawing.Size(287, 46);
-            this.BAcercaDeVendedor.TabIndex = 11;
+            this.BAcercaDeVendedor.TabIndex = 10;
             this.BAcercaDeVendedor.Text = "Acerca de";
             this.BAcercaDeVendedor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BAcercaDeVendedor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -141,7 +141,7 @@
             this.BEstadistTrimVend.Name = "BEstadistTrimVend";
             this.BEstadistTrimVend.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.BEstadistTrimVend.Size = new System.Drawing.Size(287, 39);
-            this.BEstadistTrimVend.TabIndex = 1;
+            this.BEstadistTrimVend.TabIndex = 9;
             this.BEstadistTrimVend.Text = "Estadísticas Trimestrales";
             this.BEstadistTrimVend.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BEstadistTrimVend.UseVisualStyleBackColor = true;
@@ -160,7 +160,7 @@
             this.BEstadistMesVend.Name = "BEstadistMesVend";
             this.BEstadistMesVend.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.BEstadistMesVend.Size = new System.Drawing.Size(287, 39);
-            this.BEstadistMesVend.TabIndex = 0;
+            this.BEstadistMesVend.TabIndex = 8;
             this.BEstadistMesVend.Text = "Estadísticas Mensuales";
             this.BEstadistMesVend.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BEstadistMesVend.UseVisualStyleBackColor = true;
@@ -180,7 +180,7 @@
             this.BEstadisticasVendedor.Name = "BEstadisticasVendedor";
             this.BEstadisticasVendedor.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
             this.BEstadisticasVendedor.Size = new System.Drawing.Size(287, 46);
-            this.BEstadisticasVendedor.TabIndex = 8;
+            this.BEstadisticasVendedor.TabIndex = 7;
             this.BEstadisticasVendedor.Text = "Estadísticas";
             this.BEstadisticasVendedor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BEstadisticasVendedor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -213,7 +213,7 @@
             this.BVerReservas.Name = "BVerReservas";
             this.BVerReservas.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.BVerReservas.Size = new System.Drawing.Size(287, 39);
-            this.BVerReservas.TabIndex = 2;
+            this.BVerReservas.TabIndex = 6;
             this.BVerReservas.Text = "Ver Reservas";
             this.BVerReservas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BVerReservas.UseVisualStyleBackColor = true;
@@ -232,7 +232,7 @@
             this.BNuevoTurno.Name = "BNuevoTurno";
             this.BNuevoTurno.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.BNuevoTurno.Size = new System.Drawing.Size(287, 39);
-            this.BNuevoTurno.TabIndex = 0;
+            this.BNuevoTurno.TabIndex = 5;
             this.BNuevoTurno.Text = "Reservar Turno";
             this.BNuevoTurno.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BNuevoTurno.UseVisualStyleBackColor = true;
@@ -252,7 +252,7 @@
             this.BTestDrive.Name = "BTestDrive";
             this.BTestDrive.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
             this.BTestDrive.Size = new System.Drawing.Size(287, 46);
-            this.BTestDrive.TabIndex = 6;
+            this.BTestDrive.TabIndex = 4;
             this.BTestDrive.Text = " Test Drive";
             this.BTestDrive.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BTestDrive.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -273,7 +273,7 @@
             this.BCatalogo.Name = "BCatalogo";
             this.BCatalogo.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
             this.BCatalogo.Size = new System.Drawing.Size(287, 46);
-            this.BCatalogo.TabIndex = 5;
+            this.BCatalogo.TabIndex = 3;
             this.BCatalogo.Text = " Catálogo";
             this.BCatalogo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BCatalogo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -294,7 +294,7 @@
             this.BVentas.Name = "BVentas";
             this.BVentas.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
             this.BVentas.Size = new System.Drawing.Size(287, 46);
-            this.BVentas.TabIndex = 13;
+            this.BVentas.TabIndex = 2;
             this.BVentas.Text = "Ventas";
             this.BVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -325,7 +325,7 @@
             this.BSalir.Name = "BSalir";
             this.BSalir.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
             this.BSalir.Size = new System.Drawing.Size(287, 46);
-            this.BSalir.TabIndex = 10;
+            this.BSalir.TabIndex = 11;
             this.BSalir.Text = " Salir";
             this.BSalir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -439,7 +439,7 @@
             this.BAtrasCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BAtrasCliente.Name = "BAtrasCliente";
             this.BAtrasCliente.Size = new System.Drawing.Size(57, 31);
-            this.BAtrasCliente.TabIndex = 2;
+            this.BAtrasCliente.TabIndex = 13;
             this.BAtrasCliente.UseVisualStyleBackColor = true;
             this.BAtrasCliente.Visible = false;
             this.BAtrasCliente.Click += new System.EventHandler(this.BAtrasCliente_Click);
@@ -501,7 +501,7 @@
             this.BMinimizarCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BMinimizarCliente.Name = "BMinimizarCliente";
             this.BMinimizarCliente.Size = new System.Drawing.Size(37, 31);
-            this.BMinimizarCliente.TabIndex = 2;
+            this.BMinimizarCliente.TabIndex = 14;
             this.BMinimizarCliente.UseVisualStyleBackColor = true;
             this.BMinimizarCliente.Click += new System.EventHandler(this.BMinimizarCliente_Click);
             // 
@@ -515,7 +515,7 @@
             this.BMaximizarCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BMaximizarCliente.Name = "BMaximizarCliente";
             this.BMaximizarCliente.Size = new System.Drawing.Size(35, 31);
-            this.BMaximizarCliente.TabIndex = 1;
+            this.BMaximizarCliente.TabIndex = 15;
             this.BMaximizarCliente.UseVisualStyleBackColor = true;
             this.BMaximizarCliente.Click += new System.EventHandler(this.BMaximizarCliente_Click);
             // 
@@ -529,7 +529,7 @@
             this.BExitCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BExitCliente.Name = "BExitCliente";
             this.BExitCliente.Size = new System.Drawing.Size(39, 31);
-            this.BExitCliente.TabIndex = 5;
+            this.BExitCliente.TabIndex = 16;
             this.BExitCliente.UseVisualStyleBackColor = true;
             this.BExitCliente.Click += new System.EventHandler(this.BExitCliente_Click);
             // 
