@@ -156,6 +156,12 @@
     <Compile Include="C_Presentacion\Vendedor\IngresarClienteEmpresa.Designer.cs">
       <DependentUpon>IngresarClienteEmpresa.cs</DependentUpon>
     </Compile>
+    <Compile Include="C_Presentacion\Vendedor\IngresarPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C_Presentacion\Vendedor\IngresarPedido.Designer.cs">
+      <DependentUpon>IngresarPedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="C_Presentacion\Vendedor\IngresarVenta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +174,12 @@
     <Compile Include="C_Presentacion\Vendedor\InicioVendedor.Designer.cs">
       <DependentUpon>InicioVendedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="C_Presentacion\Vendedor\VisualizarAcercaDe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C_Presentacion\Vendedor\VisualizarAcercaDe.Designer.cs">
+      <DependentUpon>VisualizarAcercaDe.cs</DependentUpon>
+    </Compile>
     <Compile Include="C_Presentacion\Vendedor\VisualizarCatalogo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +191,18 @@
     </Compile>
     <Compile Include="C_Presentacion\Vendedor\VisualizarClientes.Designer.cs">
       <DependentUpon>VisualizarClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="C_Presentacion\Vendedor\VisualizarEstadisticaMensual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C_Presentacion\Vendedor\VisualizarEstadisticaMensual.Designer.cs">
+      <DependentUpon>VisualizarEstadisticaMensual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="C_Presentacion\Vendedor\VisualizarEstadisticaTrimestral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C_Presentacion\Vendedor\VisualizarEstadisticaTrimestral.Designer.cs">
+      <DependentUpon>VisualizarEstadisticaTrimestral.cs</DependentUpon>
     </Compile>
     <Compile Include="C_Presentacion\Vendedor\VisualizarVentas.cs">
       <SubType>Form</SubType>
@@ -248,17 +272,29 @@
     <EmbeddedResource Include="C_Presentacion\Vendedor\IngresarClienteFinal.resx">
       <DependentUpon>IngresarClienteFinal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="C_Presentacion\Vendedor\IngresarPedido.resx">
+      <DependentUpon>IngresarPedido.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="C_Presentacion\Vendedor\IngresarVenta.resx">
       <DependentUpon>IngresarVenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="C_Presentacion\Vendedor\InicioVendedor.resx">
       <DependentUpon>InicioVendedor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="C_Presentacion\Vendedor\VisualizarAcercaDe.resx">
+      <DependentUpon>VisualizarAcercaDe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="C_Presentacion\Vendedor\VisualizarCatalogo.resx">
       <DependentUpon>VisualizarCatalogo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="C_Presentacion\Vendedor\VisualizarClientes.resx">
       <DependentUpon>VisualizarClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="C_Presentacion\Vendedor\VisualizarEstadisticaMensual.resx">
+      <DependentUpon>VisualizarEstadisticaMensual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="C_Presentacion\Vendedor\VisualizarEstadisticaTrimestral.resx">
+      <DependentUpon>VisualizarEstadisticaTrimestral.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="C_Presentacion\Vendedor\VisualizarVentas.resx">
       <DependentUpon>VisualizarVentas.cs</DependentUpon>

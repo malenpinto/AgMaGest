@@ -34,19 +34,21 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dataGridVentas = new System.Windows.Forms.DataGridView();
-            this.id_VerVentas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ver_verVentas = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.editar_Venta = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.cuitCliente_verVentas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cliente_verVentas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaFact_verVentas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalFact__verVentas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.id_VerVentas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descargarFact_verVentas = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.estado_verVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numFact_verVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaFact_verVentas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cuitCliente_verVentas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cliente_verVentas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.detalle_verVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalFact__verVentas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridVentas)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -98,11 +100,13 @@
             this.dataGridVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridVentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_VerVentas,
-            this.ver_verVentas,
-            this.editar_Venta,
+            this.descargarFact_verVentas,
+            this.estado_verVenta,
+            this.numFact_verVenta,
+            this.fechaFact_verVentas,
             this.cuitCliente_verVentas,
             this.Cliente_verVentas,
-            this.fechaFact_verVentas,
+            this.detalle_verVenta,
             this.totalFact__verVentas});
             this.dataGridVentas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridVentas.Location = new System.Drawing.Point(35, 133);
@@ -111,59 +115,6 @@
             this.dataGridVentas.RowTemplate.Height = 24;
             this.dataGridVentas.Size = new System.Drawing.Size(1030, 533);
             this.dataGridVentas.TabIndex = 4;
-            // 
-            // id_VerVentas
-            // 
-            this.id_VerVentas.HeaderText = "ID";
-            this.id_VerVentas.MinimumWidth = 6;
-            this.id_VerVentas.Name = "id_VerVentas";
-            this.id_VerVentas.Width = 80;
-            // 
-            // ver_verVentas
-            // 
-            this.ver_verVentas.HeaderText = "Visualizar";
-            this.ver_verVentas.MinimumWidth = 6;
-            this.ver_verVentas.Name = "ver_verVentas";
-            this.ver_verVentas.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ver_verVentas.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.ver_verVentas.Width = 125;
-            // 
-            // editar_Venta
-            // 
-            this.editar_Venta.HeaderText = "Editar";
-            this.editar_Venta.MinimumWidth = 6;
-            this.editar_Venta.Name = "editar_Venta";
-            this.editar_Venta.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.editar_Venta.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.editar_Venta.Width = 125;
-            // 
-            // cuitCliente_verVentas
-            // 
-            this.cuitCliente_verVentas.HeaderText = "CUIT/CUIL";
-            this.cuitCliente_verVentas.MinimumWidth = 6;
-            this.cuitCliente_verVentas.Name = "cuitCliente_verVentas";
-            this.cuitCliente_verVentas.Width = 125;
-            // 
-            // Cliente_verVentas
-            // 
-            this.Cliente_verVentas.HeaderText = "Cliente";
-            this.Cliente_verVentas.MinimumWidth = 6;
-            this.Cliente_verVentas.Name = "Cliente_verVentas";
-            this.Cliente_verVentas.Width = 250;
-            // 
-            // fechaFact_verVentas
-            // 
-            this.fechaFact_verVentas.HeaderText = "Fecha Venta";
-            this.fechaFact_verVentas.MinimumWidth = 6;
-            this.fechaFact_verVentas.Name = "fechaFact_verVentas";
-            this.fechaFact_verVentas.Width = 125;
-            // 
-            // totalFact__verVentas
-            // 
-            this.totalFact__verVentas.HeaderText = "Total Factura";
-            this.totalFact__verVentas.MinimumWidth = 6;
-            this.totalFact__verVentas.Name = "totalFact__verVentas";
-            this.totalFact__verVentas.Width = 125;
             // 
             // panel5
             // 
@@ -229,6 +180,72 @@
             this.panel6.Size = new System.Drawing.Size(1030, 25);
             this.panel6.TabIndex = 0;
             // 
+            // id_VerVentas
+            // 
+            this.id_VerVentas.HeaderText = "ID Venta";
+            this.id_VerVentas.MinimumWidth = 6;
+            this.id_VerVentas.Name = "id_VerVentas";
+            this.id_VerVentas.Width = 80;
+            // 
+            // descargarFact_verVentas
+            // 
+            this.descargarFact_verVentas.HeaderText = "Descargar Factura";
+            this.descargarFact_verVentas.MinimumWidth = 6;
+            this.descargarFact_verVentas.Name = "descargarFact_verVentas";
+            this.descargarFact_verVentas.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.descargarFact_verVentas.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.descargarFact_verVentas.Width = 125;
+            // 
+            // estado_verVenta
+            // 
+            this.estado_verVenta.HeaderText = "Estado";
+            this.estado_verVenta.MinimumWidth = 6;
+            this.estado_verVenta.Name = "estado_verVenta";
+            this.estado_verVenta.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.estado_verVenta.Width = 125;
+            // 
+            // numFact_verVenta
+            // 
+            this.numFact_verVenta.HeaderText = "Núm Factura";
+            this.numFact_verVenta.MinimumWidth = 6;
+            this.numFact_verVenta.Name = "numFact_verVenta";
+            this.numFact_verVenta.Width = 125;
+            // 
+            // fechaFact_verVentas
+            // 
+            this.fechaFact_verVentas.HeaderText = "Fecha Venta";
+            this.fechaFact_verVentas.MinimumWidth = 6;
+            this.fechaFact_verVentas.Name = "fechaFact_verVentas";
+            this.fechaFact_verVentas.Width = 125;
+            // 
+            // cuitCliente_verVentas
+            // 
+            this.cuitCliente_verVentas.HeaderText = "CUIT/CUIL";
+            this.cuitCliente_verVentas.MinimumWidth = 6;
+            this.cuitCliente_verVentas.Name = "cuitCliente_verVentas";
+            this.cuitCliente_verVentas.Width = 125;
+            // 
+            // Cliente_verVentas
+            // 
+            this.Cliente_verVentas.HeaderText = "Cliente";
+            this.Cliente_verVentas.MinimumWidth = 6;
+            this.Cliente_verVentas.Name = "Cliente_verVentas";
+            this.Cliente_verVentas.Width = 250;
+            // 
+            // detalle_verVenta
+            // 
+            this.detalle_verVenta.HeaderText = "Detalle Factura";
+            this.detalle_verVenta.MinimumWidth = 6;
+            this.detalle_verVenta.Name = "detalle_verVenta";
+            this.detalle_verVenta.Width = 125;
+            // 
+            // totalFact__verVentas
+            // 
+            this.totalFact__verVentas.HeaderText = "Total Factura";
+            this.totalFact__verVentas.MinimumWidth = 6;
+            this.totalFact__verVentas.Name = "totalFact__verVentas";
+            this.totalFact__verVentas.Width = 125;
+            // 
             // VisualizarVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -267,11 +284,13 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_VerVentas;
-        private System.Windows.Forms.DataGridViewButtonColumn ver_verVentas;
-        private System.Windows.Forms.DataGridViewButtonColumn editar_Venta;
+        private System.Windows.Forms.DataGridViewButtonColumn descargarFact_verVentas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado_verVenta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numFact_verVenta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaFact_verVentas;
         private System.Windows.Forms.DataGridViewTextBoxColumn cuitCliente_verVentas;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cliente_verVentas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaFact_verVentas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn detalle_verVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalFact__verVentas;
     }
 }

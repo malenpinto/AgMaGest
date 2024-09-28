@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace AgMaGest.C_Presentacion.Vendedor
 {
-    public partial class VisualizarCatalogo : Form
+    public partial class VisualizarEstadisticaTrimestral : Form
     {
-        public VisualizarCatalogo()
+        public VisualizarEstadisticaTrimestral()
         {
             InitializeComponent();
-        }
-
-        private void BGenerarPedido_Click(object sender, EventArgs e)
-        {
-            IngresarPedido formPedido = new IngresarPedido();
-            formPedido.ShowDialog();
         }
     }
 }

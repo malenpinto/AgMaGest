@@ -17,47 +17,12 @@ namespace AgMaGest.C_Presentacion.Vendedor
             InitializeComponent();
         }
 
-        private void BSalir_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void OcultarSubmenu()
-        {
-            if (panelSubMenuVentas.Visible)
-                panelSubMenuVentas.Visible = false;
-            if (panelSubMenuTestDrive.Visible)
-                panelSubMenuTestDrive.Visible = false;
-            if (panelSubMenuInformes.Visible)
-                panelSubMenuInformes.Visible = false;
-        }
-
-        private void MostrarSubMenu(Panel subMenu)
-        {
-            if (!subMenu.Visible)
-            {
-                OcultarSubmenu();
-                subMenu.Visible = true;
-            }
-            else
-            {
-                subMenu.Visible = false;
-            }
-        }
-
-        #region Cliente
         private void BCliente_Click(object sender, EventArgs e)
         {
             AbrirFormularioHijo(new VisualizarClientes(), "Clientes");
         }
-        #endregion Cliente
 
-        #region Venta        
         private void BVentas_Click(object sender, EventArgs e)
-        {
-            MostrarSubMenu(panelSubMenuVentas);
-        }
-        private void BVentasMensuales_Click(object sender, EventArgs e)
         {
             // Obtener el mes actual en formato largo (por ejemplo, "Septiembre")
             string mesActual = DateTime.Now.ToString("MMMM");
@@ -66,18 +31,16 @@ namespace AgMaGest.C_Presentacion.Vendedor
             mesActual = char.ToUpper(mesActual[0]) + mesActual.Substring(1).ToLower();
 
             // Concatenar "Ventas" con el mes actual
-            string titulo = "Ventas " + mesActual; 
+            string titulo = "Ventas " + mesActual;
 
             AbrirFormularioHijo(new VisualizarVentas(), titulo);
             OcultarSubmenu();
         }
-        private void BNuevaVenta_Click(object sender, EventArgs e)
-        {
-            AbrirFormularioHijo(new IngresarVenta(), "Ingresar Venta"); 
-            OcultarSubmenu();
-        }
 
-        #endregion
+        private void BCatalogo_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new VisualizarCatalogo(), "Catálogo");
+        }
 
         #region Test Drive
         private void BTestDrive_Click(object sender, EventArgs e)
@@ -92,13 +55,6 @@ namespace AgMaGest.C_Presentacion.Vendedor
             OcultarSubmenu();
         }
 
-        private void BModificarReserva_Click(object sender, EventArgs e)
-        {
-            //Nuestro Codigo
-            //
-            OcultarSubmenu();
-        }
-
         private void BVerReservas_Click(object sender, EventArgs e)
         {
             //Nuestro Codigo
@@ -107,38 +63,77 @@ namespace AgMaGest.C_Presentacion.Vendedor
         }
         #endregion
 
-        #region Informes
-        private void BInformes_Click(object sender, EventArgs e)
+        #region Estadísticas
+        private void BEstadisticasVendedor_Click(object sender, EventArgs e)
         {
-            MostrarSubMenu(panelSubMenuInformes);
+            MostrarSubMenu(panelSubMenuEstadisticas);
         }
 
-        private void BInformesMensuales_Click(object sender, EventArgs e)
+        private void BEstadistMesVend_Click(object sender, EventArgs e)
         {
-            //Nuestro Codigo
-            //
+            // Obtener el mes actual en formato largo (por ejemplo, "Septiembre")
+            string mesActual = DateTime.Now.ToString("MMMM");
+
+            // Convertir la primera letra del mes en mayúscula y el resto en minúscula
+            mesActual = char.ToUpper(mesActual[0]) + mesActual.Substring(1).ToLower();
+
+            // Concatenar "Estadísticas" con el mes actual
+            string titulo = "Estadísticas de " + mesActual;
+
+            AbrirFormularioHijo(new VisualizarEstadisticaMensual(), titulo);
             OcultarSubmenu();
         }
 
-        private void BInformesTrimestrales_Click(object sender, EventArgs e)
+        private void BEstadistTrimVend_Click(object sender, EventArgs e)
         {
-            //Nuestro Codigo
-            //
+            // Obtener el mes actual y los dos meses anteriores
+            DateTime mesActual = DateTime.Now;
+            DateTime mesAnterior1 = mesActual.AddMonths(-1);
+            DateTime mesAnterior2 = mesActual.AddMonths(-2);
+
+            // Convertir los nombres de los meses a formato largo (por ejemplo, "Septiembre")
+            string mesActualNombre = mesActual.ToString("MMMM");
+            string mesAnterior1Nombre = mesAnterior1.ToString("MMMM");
+            string mesAnterior2Nombre = mesAnterior2.ToString("MMMM");
+
+            // Convertir la primera letra de cada mes en mayúscula y el resto en minúscula
+            mesActualNombre = char.ToUpper(mesActualNombre[0]) + mesActualNombre.Substring(1).ToLower();
+            mesAnterior1Nombre = char.ToUpper(mesAnterior1Nombre[0]) + mesAnterior1Nombre.Substring(1).ToLower();
+            mesAnterior2Nombre = char.ToUpper(mesAnterior2Nombre[0]) + mesAnterior2Nombre.Substring(1).ToLower();
+
+            // Concatenar "Estadísticas" con los últimos tres meses
+            string titulo = $"Estadísticas de {mesAnterior2Nombre}, {mesAnterior1Nombre} y {mesActualNombre}";
+
+            // Llamar a la función para abrir el formulario con el título generado
+            AbrirFormularioHijo(new VisualizarEstadisticaTrimestral(), titulo);
             OcultarSubmenu();
         }
         #endregion
 
-        private void BCatalogo_Click(object sender, EventArgs e)
+        private void BAcercaDeVendedor_Click(object sender, EventArgs e)
         {
-            AbrirFormularioHijo(new VisualizarCatalogo(), "Catálogo");
-            OcultarSubmenu();
+            AbrirFormularioHijo(new VisualizarAcercaDe(), "Acerca de AgMaGest");
         }
 
-        private void BAyuda_Click(object sender, EventArgs e)
+        private void OcultarSubmenu()
         {
-            //Nuestro Codigo
-            //
-            OcultarSubmenu();
+            if (panelSubMenuTestDrive.Visible)
+                panelSubMenuTestDrive.Visible = false;
+            if (panelSubMenuEstadisticas.Visible)
+                panelSubMenuEstadisticas.Visible = false;
+        }
+
+        private void MostrarSubMenu(Panel subMenu)
+        {
+            if (!subMenu.Visible)
+            {
+                OcultarSubmenu();
+                subMenu.Visible = true;
+            }
+            else
+            {
+                subMenu.Visible = false;
+            }
         }
 
         private Form formularioActivo = null;
@@ -162,7 +157,10 @@ namespace AgMaGest.C_Presentacion.Vendedor
             // Muestra el botón de retroceso
             BAtrasCliente.Visible = true;
         }
-
+        private void BSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
         private void BExitCliente_Click(object sender, EventArgs e)
         {
             Application.Exit();
