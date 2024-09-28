@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -55,13 +56,20 @@ namespace AgMaGest.C_Presentacion.Vendedor
             } 
             else if (VerificarEmail() && VerificarDNIyCUIL())
             {
-                string nombreCompleto = TBNombreCFinal.Text + " " + TBApellidoCFinal.Text;
+                // Convertir el nombre y apellido a formato de título (primeras letras en mayúsculas)
+                string nombreCompleto = ToTitleCase(TBNombreCFinal.Text) + " " + ToTitleCase(TBApellidoCFinal.Text);
                 // Si todos los campos son válidos, procedemos con la lógica de agregar.
-                MessageBox.Show("Se agrego el Cliente: "+nombreCompleto, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Se agrego exitosamente a: "+nombreCompleto, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 
                 // Limpiar todos los campos después de agregar
                 LimpiarCampos();
             }
+        }
+
+        // Función para convertir la primera letra de cada palabra a mayúscula
+        private string ToTitleCase(string input)
+        {
+            return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(input.ToLower());
         }
 
         // Función para limpiar todos los campos del formulario
