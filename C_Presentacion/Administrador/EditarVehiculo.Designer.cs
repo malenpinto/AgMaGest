@@ -30,6 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.BCargarImagenVehiculo = new System.Windows.Forms.Button();
+            this.PBImagenVehiculo = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.TBKilometrajeVehiculo = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -50,15 +51,18 @@
             this.LApellido = new System.Windows.Forms.Label();
             this.LFechaNacimiento = new System.Windows.Forms.Label();
             this.LNombre = new System.Windows.Forms.Label();
-            this.PBImagenVehiculo = new System.Windows.Forms.PictureBox();
+            this.TBPrecioVehiculo = new System.Windows.Forms.TextBox();
+            this.LBPrecio = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBImagenVehiculo)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.GhostWhite;
+            this.panel1.Controls.Add(this.TBPrecioVehiculo);
+            this.panel1.Controls.Add(this.LBPrecio);
             this.panel1.Controls.Add(this.BCargarImagenVehiculo);
             this.panel1.Controls.Add(this.PBImagenVehiculo);
             this.panel1.Controls.Add(this.label1);
@@ -104,6 +108,17 @@
             this.BCargarImagenVehiculo.TabIndex = 184;
             this.BCargarImagenVehiculo.Text = "Cargar Imagen";
             this.BCargarImagenVehiculo.UseVisualStyleBackColor = false;
+            // 
+            // PBImagenVehiculo
+            // 
+            this.PBImagenVehiculo.Image = global::AgMaGest.Properties.Resources.Icono_MasVehiculo;
+            this.PBImagenVehiculo.Location = new System.Drawing.Point(275, 66);
+            this.PBImagenVehiculo.Margin = new System.Windows.Forms.Padding(2);
+            this.PBImagenVehiculo.Name = "PBImagenVehiculo";
+            this.PBImagenVehiculo.Size = new System.Drawing.Size(229, 169);
+            this.PBImagenVehiculo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.PBImagenVehiculo.TabIndex = 183;
+            this.PBImagenVehiculo.TabStop = false;
             // 
             // label1
             // 
@@ -207,6 +222,7 @@
             this.BEditarVehiculo.TabIndex = 173;
             this.BEditarVehiculo.Text = "Editar";
             this.BEditarVehiculo.UseVisualStyleBackColor = false;
+            this.BEditarVehiculo.Click += new System.EventHandler(this.BEditarVehiculo_Click);
             // 
             // BSalirEditarVehiculo
             // 
@@ -226,6 +242,7 @@
             this.BSalirEditarVehiculo.TabIndex = 134;
             this.BSalirEditarVehiculo.Text = "Salir";
             this.BSalirEditarVehiculo.UseVisualStyleBackColor = false;
+            this.BSalirEditarVehiculo.Click += new System.EventHandler(this.BSalirEditarVehiculo_Click);
             // 
             // panel2
             // 
@@ -362,16 +379,30 @@
             this.LNombre.TabIndex = 132;
             this.LNombre.Text = "Condición";
             // 
-            // PBImagenVehiculo
+            // TBPrecioVehiculo
             // 
-            this.PBImagenVehiculo.Image = global::AgMaGest.Properties.Resources.Icono_MasVehiculo;
-            this.PBImagenVehiculo.Location = new System.Drawing.Point(275, 66);
-            this.PBImagenVehiculo.Margin = new System.Windows.Forms.Padding(2);
-            this.PBImagenVehiculo.Name = "PBImagenVehiculo";
-            this.PBImagenVehiculo.Size = new System.Drawing.Size(229, 169);
-            this.PBImagenVehiculo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.PBImagenVehiculo.TabIndex = 183;
-            this.PBImagenVehiculo.TabStop = false;
+            this.TBPrecioVehiculo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.TBPrecioVehiculo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBPrecioVehiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBPrecioVehiculo.Location = new System.Drawing.Point(27, 462);
+            this.TBPrecioVehiculo.Margin = new System.Windows.Forms.Padding(2);
+            this.TBPrecioVehiculo.Name = "TBPrecioVehiculo";
+            this.TBPrecioVehiculo.Size = new System.Drawing.Size(215, 21);
+            this.TBPrecioVehiculo.TabIndex = 188;
+            this.TBPrecioVehiculo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
+            // 
+            // LBPrecio
+            // 
+            this.LBPrecio.AutoSize = true;
+            this.LBPrecio.BackColor = System.Drawing.Color.SeaGreen;
+            this.LBPrecio.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBPrecio.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.LBPrecio.Location = new System.Drawing.Point(27, 438);
+            this.LBPrecio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LBPrecio.Name = "LBPrecio";
+            this.LBPrecio.Size = new System.Drawing.Size(50, 18);
+            this.LBPrecio.TabIndex = 187;
+            this.LBPrecio.Text = "Precio";
             // 
             // EditarVehiculo
             // 
@@ -384,11 +415,12 @@
             this.Name = "EditarVehiculo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditarVehiculo";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EditarVehiculo_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PBImagenVehiculo)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PBImagenVehiculo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -418,5 +450,7 @@
         private System.Windows.Forms.Label LApellido;
         private System.Windows.Forms.Label LFechaNacimiento;
         private System.Windows.Forms.Label LNombre;
+        private System.Windows.Forms.TextBox TBPrecioVehiculo;
+        private System.Windows.Forms.Label LBPrecio;
     }
 }

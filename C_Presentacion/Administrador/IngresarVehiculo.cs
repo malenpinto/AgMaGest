@@ -16,6 +16,17 @@ namespace AgMaGest.C_Presentacion.Administrador
         public IngresarVehiculo()
         {
             InitializeComponent();
+            this.KeyPreview = true; // Permite que el formulario capture el evento KeyDown
+        }
+
+        private void AgregarVehiculo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                BAgregarVehiculo_Click(sender, e); // Llamar al evento que ejecuta la acción de agregar
+                e.Handled = true; // Indica que el evento fue manejado
+                e.SuppressKeyPress = true; // Evita que la tecla Enter haga otra acción
+            }
         }
 
         private void BSalirVehiculo_Click(object sender, EventArgs e)
