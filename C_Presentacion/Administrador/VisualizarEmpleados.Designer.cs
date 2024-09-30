@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -54,6 +54,7 @@
             this.apellido_Empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.email_Empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.direccion_Empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BEditar = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -105,6 +106,7 @@
             // 
             // panel7
             // 
+            this.panel7.Controls.Add(this.BEditar);
             this.panel7.Controls.Add(this.BAgregarEmpleado);
             this.panel7.Controls.Add(this.button1);
             this.panel7.Controls.Add(this.panel8);
@@ -233,14 +235,14 @@
             // 
             // dataGridEmpleados
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridEmpleados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridEmpleados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridEmpleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_Empleado,
@@ -333,6 +335,16 @@
             this.direccion_Empleado.Name = "direccion_Empleado";
             this.direccion_Empleado.Width = 125;
             // 
+            // BEditar
+            // 
+            this.BEditar.Location = new System.Drawing.Point(794, 10);
+            this.BEditar.Name = "BEditar";
+            this.BEditar.Size = new System.Drawing.Size(112, 33);
+            this.BEditar.TabIndex = 10;
+            this.BEditar.Text = "Editar";
+            this.BEditar.UseVisualStyleBackColor = true;
+            this.BEditar.Click += new System.EventHandler(this.BEditar_Click);
+            // 
             // VisualizarEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -384,5 +396,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn apellido_Empleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn email_Empleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn direccion_Empleado;
+        private System.Windows.Forms.Button BEditar;
     }
 }

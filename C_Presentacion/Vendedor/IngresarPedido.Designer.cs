@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label20 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -43,7 +42,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label19 = new System.Windows.Forms.Label();
             this.TBBuscarPedido = new System.Windows.Forms.TextBox();
@@ -70,7 +68,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.GhostWhite;
-            this.panel1.Controls.Add(this.label20);
             this.panel1.Controls.Add(this.label18);
             this.panel1.Controls.Add(this.label16);
             this.panel1.Controls.Add(this.panel6);
@@ -83,7 +80,6 @@
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.BConfirmarPedido);
@@ -99,18 +95,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(693, 694);
             this.panel1.TabIndex = 128;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.BackColor = System.Drawing.Color.LightSlateGray;
-            this.label20.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label20.Location = new System.Drawing.Point(358, 305);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(171, 24);
-            this.label20.TabIndex = 147;
-            this.label20.Text = "Fecha Nacimiento";
             // 
             // label18
             // 
@@ -265,18 +249,6 @@
             this.label13.TabIndex = 132;
             this.label13.Text = "Condición";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.LightSlateGray;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(54, 237);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 23);
-            this.label1.TabIndex = 130;
-            this.label1.Text = "Apellido";
-            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Gainsboro;
@@ -293,11 +265,11 @@
             this.label19.AutoSize = true;
             this.label19.BackColor = System.Drawing.Color.Transparent;
             this.label19.Font = new System.Drawing.Font("Bahnschrift", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(13, 10);
+            this.label19.Location = new System.Drawing.Point(-2, 10);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(178, 21);
+            this.label19.Size = new System.Drawing.Size(245, 21);
             this.label19.TabIndex = 147;
-            this.label19.Text = "Buscar por CUIL/CUIT";
+            this.label19.Text = "Buscar por CUIL/CUIT/Nombre";
             // 
             // TBBuscarPedido
             // 
@@ -310,7 +282,6 @@
             this.TBBuscarPedido.Size = new System.Drawing.Size(286, 24);
             this.TBBuscarPedido.TabIndex = 95;
             this.TBBuscarPedido.Tag = "";
-            this.TBBuscarPedido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             // 
             // BBuscarPedido
             // 
@@ -400,7 +371,7 @@
             this.label7.BackColor = System.Drawing.Color.LightSlateGray;
             this.label7.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label7.Location = new System.Drawing.Point(54, 272);
+            this.label7.Location = new System.Drawing.Point(54, 233);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(50, 23);
             this.label7.TabIndex = 117;
@@ -412,7 +383,7 @@
             this.label8.BackColor = System.Drawing.Color.LightSlateGray;
             this.label8.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label8.Location = new System.Drawing.Point(54, 307);
+            this.label8.Location = new System.Drawing.Point(54, 268);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(40, 23);
             this.label8.TabIndex = 116;
@@ -424,7 +395,7 @@
             this.label2.BackColor = System.Drawing.Color.LightSlateGray;
             this.label2.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label2.Location = new System.Drawing.Point(54, 342);
+            this.label2.Location = new System.Drawing.Point(54, 303);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 23);
             this.label2.TabIndex = 107;
@@ -436,7 +407,7 @@
             this.LCelular.BackColor = System.Drawing.Color.LightSlateGray;
             this.LCelular.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LCelular.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.LCelular.Location = new System.Drawing.Point(358, 342);
+            this.LCelular.Location = new System.Drawing.Point(54, 335);
             this.LCelular.Name = "LCelular";
             this.LCelular.Size = new System.Drawing.Size(73, 23);
             this.LCelular.TabIndex = 99;
@@ -518,7 +489,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button BBuscarPedido;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
@@ -533,6 +503,5 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
     }
 }

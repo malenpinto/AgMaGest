@@ -31,16 +31,10 @@ namespace AgMaGest.C_Presentacion.Administrador
                 string.IsNullOrWhiteSpace(TBTipoVehiculo.Text) ||
                 string.IsNullOrWhiteSpace(TBMarcaVehiculo.Text) ||
                 string.IsNullOrWhiteSpace(TBModeloVehiculo.Text) ||
-                string.IsNullOrWhiteSpace(TBKilometrajeVehiculo.Text))
+                string.IsNullOrWhiteSpace(TBKilometrajeVehiculo.Text)||
+                string.IsNullOrWhiteSpace(TBPrecioVehiculo.Text))
             {
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            // Validar que el kilometraje sea un número
-            if (!int.TryParse(TBKilometrajeVehiculo.Text, out int kilometraje))
-            {
-                MessageBox.Show("El kilometraje debe ser un valor numérico.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -110,6 +104,14 @@ namespace AgMaGest.C_Presentacion.Administrador
                 PBImagenVehiculo.SizeMode = PictureBoxSizeMode.StretchImage; // Ajustar la imagen al tamaño del PictureBox
             }
         }
+        private void SoloNumeros_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Este campo solo puede contener números.");
+            }
+        }
     }
-    }
+}
 
