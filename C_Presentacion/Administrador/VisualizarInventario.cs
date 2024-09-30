@@ -22,5 +22,11 @@ namespace AgMaGest.C_Presentacion.Administrador
             IngresarVehiculo formVehiculo = new IngresarVehiculo();
             formVehiculo.ShowDialog();
         }
+
+        private void BEditarVehiculo_Click(object sender, EventArgs e)
+        {
+            EditarVehiculo formVehiculo = new EditarVehiculo();
+            formVehiculo.ShowDialog();
+        }
     }
 }

@@ -55,6 +55,7 @@
             this.anio_Vehiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.km_Vehiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.condicion_Vehiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BEditarVehiculo = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -67,26 +68,29 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(200)))), ((int)(((byte)(145)))));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(35, 658);
+            this.panel1.Size = new System.Drawing.Size(26, 535);
             this.panel1.TabIndex = 0;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(200)))), ((int)(((byte)(145)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(1065, 0);
+            this.panel2.Location = new System.Drawing.Point(799, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(35, 658);
+            this.panel2.Size = new System.Drawing.Size(26, 535);
             this.panel2.TabIndex = 1;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(200)))), ((int)(((byte)(145)))));
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 658);
+            this.panel3.Location = new System.Drawing.Point(0, 535);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1100, 48);
+            this.panel3.Size = new System.Drawing.Size(825, 39);
             this.panel3.TabIndex = 2;
             // 
             // panel4
@@ -95,20 +99,23 @@
             this.panel4.Controls.Add(this.panel6);
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(35, 0);
+            this.panel4.Location = new System.Drawing.Point(26, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1030, 133);
+            this.panel4.Size = new System.Drawing.Size(773, 108);
             this.panel4.TabIndex = 4;
             // 
             // panel7
             // 
+            this.panel7.Controls.Add(this.BEditarVehiculo);
             this.panel7.Controls.Add(this.BAgregarVehiculo);
             this.panel7.Controls.Add(this.button1);
             this.panel7.Controls.Add(this.panel8);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(0, 48);
+            this.panel7.Location = new System.Drawing.Point(0, 39);
+            this.panel7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1030, 60);
+            this.panel7.Size = new System.Drawing.Size(773, 49);
             this.panel7.TabIndex = 3;
             // 
             // BAgregarVehiculo
@@ -124,10 +131,10 @@
             this.BAgregarVehiculo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
             this.BAgregarVehiculo.Image = global::AgMaGest.Properties.Resources.Icono_MasVehiculo;
             this.BAgregarVehiculo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BAgregarVehiculo.Location = new System.Drawing.Point(590, 0);
-            this.BAgregarVehiculo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BAgregarVehiculo.Location = new System.Drawing.Point(442, 0);
+            this.BAgregarVehiculo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BAgregarVehiculo.Name = "BAgregarVehiculo";
-            this.BAgregarVehiculo.Size = new System.Drawing.Size(257, 60);
+            this.BAgregarVehiculo.Size = new System.Drawing.Size(193, 49);
             this.BAgregarVehiculo.TabIndex = 8;
             this.BAgregarVehiculo.Text = " Nuevo Vehículo";
             this.BAgregarVehiculo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -141,10 +148,10 @@
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(566, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Location = new System.Drawing.Point(424, 0);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(24, 60);
+            this.button1.Size = new System.Drawing.Size(18, 49);
             this.button1.TabIndex = 9;
             this.button1.UseVisualStyleBackColor = true;
             // 
@@ -157,9 +164,9 @@
             this.panel8.Controls.Add(this.label1);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel8.Location = new System.Drawing.Point(0, 0);
-            this.panel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(566, 60);
+            this.panel8.Size = new System.Drawing.Size(424, 49);
             this.panel8.TabIndex = 5;
             // 
             // label2
@@ -167,9 +174,10 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Bahnschrift", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(35, 26);
+            this.label2.Location = new System.Drawing.Point(26, 21);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(166, 21);
+            this.label2.Size = new System.Drawing.Size(141, 17);
             this.label2.TabIndex = 4;
             this.label2.Text = "Código 0Km/Patente";
             // 
@@ -178,10 +186,10 @@
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
             this.pictureBox1.Image = global::AgMaGest.Properties.Resources.Icono_Buscar_Admin;
-            this.pictureBox1.Location = new System.Drawing.Point(521, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(390, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(45, 60);
+            this.pictureBox1.Size = new System.Drawing.Size(34, 49);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
@@ -190,10 +198,10 @@
             // 
             this.TBBuscarVehiculo.BackColor = System.Drawing.Color.Gainsboro;
             this.TBBuscarVehiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBBuscarVehiculo.Location = new System.Drawing.Point(225, 11);
-            this.TBBuscarVehiculo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBBuscarVehiculo.Location = new System.Drawing.Point(169, 9);
+            this.TBBuscarVehiculo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TBBuscarVehiculo.Name = "TBBuscarVehiculo";
-            this.TBBuscarVehiculo.Size = new System.Drawing.Size(287, 32);
+            this.TBBuscarVehiculo.Size = new System.Drawing.Size(216, 27);
             this.TBBuscarVehiculo.TabIndex = 0;
             // 
             // label1
@@ -201,9 +209,10 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Bahnschrift", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(19, 5);
+            this.label1.Location = new System.Drawing.Point(14, 4);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 21);
+            this.label1.Size = new System.Drawing.Size(82, 17);
             this.label1.TabIndex = 2;
             this.label1.Text = "Buscar por ";
             // 
@@ -211,9 +220,10 @@
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(200)))), ((int)(((byte)(145)))));
             this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel6.Location = new System.Drawing.Point(0, 108);
+            this.panel6.Location = new System.Drawing.Point(0, 88);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1030, 25);
+            this.panel6.Size = new System.Drawing.Size(773, 20);
             this.panel6.TabIndex = 1;
             // 
             // panel5
@@ -221,8 +231,9 @@
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(200)))), ((int)(((byte)(145)))));
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1030, 48);
+            this.panel5.Size = new System.Drawing.Size(773, 39);
             this.panel5.TabIndex = 0;
             // 
             // dataGridInventario
@@ -248,11 +259,12 @@
             this.anio_Vehiculo,
             this.km_Vehiculo,
             this.condicion_Vehiculo});
-            this.dataGridInventario.Location = new System.Drawing.Point(35, 133);
+            this.dataGridInventario.Location = new System.Drawing.Point(26, 108);
+            this.dataGridInventario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridInventario.Name = "dataGridInventario";
             this.dataGridInventario.RowHeadersWidth = 51;
             this.dataGridInventario.RowTemplate.Height = 24;
-            this.dataGridInventario.Size = new System.Drawing.Size(1030, 525);
+            this.dataGridInventario.Size = new System.Drawing.Size(772, 427);
             this.dataGridInventario.TabIndex = 5;
             // 
             // id_Producto
@@ -336,17 +348,28 @@
             this.condicion_Vehiculo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.condicion_Vehiculo.Width = 125;
             // 
+            // BEditarVehiculo
+            // 
+            this.BEditarVehiculo.Location = new System.Drawing.Point(672, 13);
+            this.BEditarVehiculo.Name = "BEditarVehiculo";
+            this.BEditarVehiculo.Size = new System.Drawing.Size(75, 23);
+            this.BEditarVehiculo.TabIndex = 10;
+            this.BEditarVehiculo.Text = "Editar";
+            this.BEditarVehiculo.UseVisualStyleBackColor = true;
+            this.BEditarVehiculo.Click += new System.EventHandler(this.BEditarVehiculo_Click);
+            // 
             // VisualizarInventario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1100, 706);
+            this.ClientSize = new System.Drawing.Size(825, 574);
             this.Controls.Add(this.dataGridInventario);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "VisualizarInventario";
             this.Text = "VisualizarInventario";
             this.panel4.ResumeLayout(false);
@@ -387,5 +410,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn anio_Vehiculo;
         private System.Windows.Forms.DataGridViewTextBoxColumn km_Vehiculo;
         private System.Windows.Forms.DataGridViewTextBoxColumn condicion_Vehiculo;
+        private System.Windows.Forms.Button BEditarVehiculo;
     }
 }
