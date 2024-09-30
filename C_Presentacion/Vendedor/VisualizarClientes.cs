@@ -49,5 +49,10 @@ namespace AgMaGest.C_Presentacion.Vendedor
             BAgregarEmpresa.Visible = false;
         }
 
+        private void BEditarEmpresa_Click(object sender, EventArgs e)
+        {
+            EditarClienteEmpresa formEditarEmpresa = new EditarClienteEmpresa();
+            formEditarEmpresa.ShowDialog();
+        }
     }
 }

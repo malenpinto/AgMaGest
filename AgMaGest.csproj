@@ -168,6 +168,12 @@
     <Compile Include="C_Presentacion\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="C_Presentacion\Vendedor\EditarClienteEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C_Presentacion\Vendedor\EditarClienteEmpresa.Designer.cs">
+      <DependentUpon>EditarClienteEmpresa.cs</DependentUpon>
+    </Compile>
     <Compile Include="C_Presentacion\Vendedor\IngresarClienteFinal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,12 +233,6 @@
     </Compile>
     <Compile Include="C_Presentacion\Vendedor\VisualizarVentas.Designer.cs">
       <DependentUpon>VisualizarVentas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -295,6 +295,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="C_Presentacion\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="C_Presentacion\Vendedor\EditarClienteEmpresa.resx">
+      <DependentUpon>EditarClienteEmpresa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="C_Presentacion\Vendedor\IngresarClienteEmpresa.resx">
       <DependentUpon>IngresarClienteEmpresa.cs</DependentUpon>

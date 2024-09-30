@@ -56,12 +56,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.bEditarPersona = new System.Windows.Forms.Button();
+            this.BEditarEmpresa = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridClientes)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridClientes
@@ -372,12 +375,37 @@
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel9.Controls.Add(this.bEditarPersona);
+            this.panel9.Controls.Add(this.BEditarEmpresa);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel9.Location = new System.Drawing.Point(0, 0);
             this.panel9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(1030, 48);
             this.panel9.TabIndex = 5;
+            // 
+            // bEditarPersona
+            // 
+            this.bEditarPersona.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bEditarPersona.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(62)))), ((int)(((byte)(141)))));
+            this.bEditarPersona.Location = new System.Drawing.Point(691, 6);
+            this.bEditarPersona.Name = "bEditarPersona";
+            this.bEditarPersona.Size = new System.Drawing.Size(166, 39);
+            this.bEditarPersona.TabIndex = 1;
+            this.bEditarPersona.Text = "Editar Persona";
+            this.bEditarPersona.UseVisualStyleBackColor = true;
+            // 
+            // BEditarEmpresa
+            // 
+            this.BEditarEmpresa.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BEditarEmpresa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(62)))), ((int)(((byte)(141)))));
+            this.BEditarEmpresa.Location = new System.Drawing.Point(863, 6);
+            this.BEditarEmpresa.Name = "BEditarEmpresa";
+            this.BEditarEmpresa.Size = new System.Drawing.Size(164, 39);
+            this.BEditarEmpresa.TabIndex = 0;
+            this.BEditarEmpresa.Text = "Editar Empresa";
+            this.BEditarEmpresa.UseVisualStyleBackColor = true;
+            this.BEditarEmpresa.Click += new System.EventHandler(this.BEditarEmpresa_Click);
             // 
             // VisualizarClientes
             // 
@@ -400,6 +428,7 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel9.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -431,5 +460,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn email_Cliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn direccion_Cliente;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button BEditarEmpresa;
+        private System.Windows.Forms.Button bEditarPersona;
     }
 }

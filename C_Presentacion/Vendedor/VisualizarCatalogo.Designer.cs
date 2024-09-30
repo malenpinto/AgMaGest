@@ -28,13 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.BGenerarPedido = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
@@ -54,8 +56,6 @@
             this.modelo_Catalogo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.km_Catalogo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.anio_Catalogo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BGenerarPedido = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel5.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -117,6 +117,39 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(340, 60);
             this.panel7.TabIndex = 6;
+            // 
+            // BGenerarPedido
+            // 
+            this.BGenerarPedido.BackColor = System.Drawing.Color.Transparent;
+            this.BGenerarPedido.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BGenerarPedido.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BGenerarPedido.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.BGenerarPedido.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BGenerarPedido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(62)))), ((int)(((byte)(141)))));
+            this.BGenerarPedido.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BGenerarPedido.Location = new System.Drawing.Point(43, 5);
+            this.BGenerarPedido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BGenerarPedido.Name = "BGenerarPedido";
+            this.BGenerarPedido.Size = new System.Drawing.Size(169, 45);
+            this.BGenerarPedido.TabIndex = 8;
+            this.BGenerarPedido.Text = " Generar Pedido";
+            this.BGenerarPedido.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BGenerarPedido.UseVisualStyleBackColor = false;
+            this.BGenerarPedido.Click += new System.EventHandler(this.BGenerarPedido_Click);
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(24, 60);
+            this.button1.TabIndex = 9;
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // panel6
             // 
@@ -199,14 +232,14 @@
             // 
             // dataGridCatalogo
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridCatalogo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridCatalogo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridCatalogo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridCatalogo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_Catalogo,
@@ -307,41 +340,6 @@
             this.anio_Catalogo.MinimumWidth = 6;
             this.anio_Catalogo.Name = "anio_Catalogo";
             this.anio_Catalogo.Width = 125;
-            // 
-            // BGenerarPedido
-            // 
-            this.BGenerarPedido.BackColor = System.Drawing.Color.Transparent;
-            this.BGenerarPedido.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BGenerarPedido.Dock = System.Windows.Forms.DockStyle.Left;
-            this.BGenerarPedido.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.BGenerarPedido.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.BGenerarPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BGenerarPedido.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BGenerarPedido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(62)))), ((int)(((byte)(141)))));
-            this.BGenerarPedido.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BGenerarPedido.Location = new System.Drawing.Point(24, 0);
-            this.BGenerarPedido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BGenerarPedido.Name = "BGenerarPedido";
-            this.BGenerarPedido.Size = new System.Drawing.Size(177, 60);
-            this.BGenerarPedido.TabIndex = 8;
-            this.BGenerarPedido.Text = " Generar Pedido";
-            this.BGenerarPedido.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BGenerarPedido.UseVisualStyleBackColor = false;
-            this.BGenerarPedido.Click += new System.EventHandler(this.BGenerarPedido_Click);
-            // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(24, 60);
-            this.button1.TabIndex = 9;
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // VisualizarCatalogo
             // 
