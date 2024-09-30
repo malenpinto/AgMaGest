@@ -202,6 +202,7 @@
             this.BEditarEmpleado.TabIndex = 18;
             this.BEditarEmpleado.Text = "Editar";
             this.BEditarEmpleado.UseVisualStyleBackColor = false;
+            this.BEditarEmpleado.Click += new System.EventHandler(this.BEditarEmpleado_Click);
             // 
             // TBDptoEditarEmpleado
             // 
@@ -255,6 +256,7 @@
             this.TBNumPisoEditarEmpleado.Name = "TBNumPisoEditarEmpleado";
             this.TBNumPisoEditarEmpleado.Size = new System.Drawing.Size(140, 24);
             this.TBNumPisoEditarEmpleado.TabIndex = 11;
+            this.TBNumPisoEditarEmpleado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             // 
             // label10
             // 
@@ -278,6 +280,7 @@
             this.TBCodPostalEditarEmpleado.Name = "TBCodPostalEditarEmpleado";
             this.TBCodPostalEditarEmpleado.Size = new System.Drawing.Size(140, 24);
             this.TBCodPostalEditarEmpleado.TabIndex = 13;
+            this.TBCodPostalEditarEmpleado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             // 
             // label1
             // 
@@ -322,6 +325,7 @@
             this.TBCuilEditarEmpleado.Name = "TBCuilEditarEmpleado";
             this.TBCuilEditarEmpleado.Size = new System.Drawing.Size(286, 24);
             this.TBCuilEditarEmpleado.TabIndex = 4;
+            this.TBCuilEditarEmpleado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             // 
             // TBDniEditarEmpleado
             // 
@@ -334,6 +338,7 @@
             this.TBDniEditarEmpleado.Size = new System.Drawing.Size(286, 24);
             this.TBDniEditarEmpleado.TabIndex = 3;
             this.TBDniEditarEmpleado.Tag = "";
+            this.TBDniEditarEmpleado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             // 
             // label7
             // 
@@ -369,6 +374,7 @@
             this.TBCiudadEditarEmpleado.Name = "TBCiudadEditarEmpleado";
             this.TBCiudadEditarEmpleado.Size = new System.Drawing.Size(286, 24);
             this.TBCiudadEditarEmpleado.TabIndex = 16;
+            this.TBCiudadEditarEmpleado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloLetras_KeyPress);
             // 
             // label6
             // 
@@ -449,6 +455,7 @@
             this.TBNumCalleEditarEmpleado.Name = "TBNumCalleEditarEmpleado";
             this.TBNumCalleEditarEmpleado.Size = new System.Drawing.Size(140, 24);
             this.TBNumCalleEditarEmpleado.TabIndex = 10;
+            this.TBNumCalleEditarEmpleado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             // 
             // TBCelularEditarEmpleado
             // 
@@ -461,6 +468,7 @@
             this.TBCelularEditarEmpleado.Name = "TBCelularEditarEmpleado";
             this.TBCelularEditarEmpleado.Size = new System.Drawing.Size(286, 24);
             this.TBCelularEditarEmpleado.TabIndex = 7;
+            this.TBCelularEditarEmpleado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             // 
             // LNumeroCalle
             // 
@@ -497,6 +505,7 @@
             this.TBLocalidadEditarEmpleado.Name = "TBLocalidadEditarEmpleado";
             this.TBLocalidadEditarEmpleado.Size = new System.Drawing.Size(286, 24);
             this.TBLocalidadEditarEmpleado.TabIndex = 17;
+            this.TBLocalidadEditarEmpleado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloLetras_KeyPress);
             // 
             // LLocalidad
             // 
@@ -543,6 +552,7 @@
             this.TBApellidoEditarEmpleado.Name = "TBApellidoEditarEmpleado";
             this.TBApellidoEditarEmpleado.Size = new System.Drawing.Size(286, 24);
             this.TBApellidoEditarEmpleado.TabIndex = 2;
+            this.TBApellidoEditarEmpleado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloLetras_KeyPress);
             // 
             // TBNombreEditarEmpleado
             // 
@@ -555,6 +565,7 @@
             this.TBNombreEditarEmpleado.Size = new System.Drawing.Size(286, 24);
             this.TBNombreEditarEmpleado.TabIndex = 1;
             this.TBNombreEditarEmpleado.Tag = "";
+            this.TBNombreEditarEmpleado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloLetras_KeyPress);
             // 
             // LProvincia
             // 
@@ -646,7 +657,9 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EditarEmpleado";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditarEmpleado";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.IngresarEmpleado_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
