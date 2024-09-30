@@ -102,18 +102,20 @@ namespace AgMaGest.C_Presentacion.Cajero
 
         private void BInformeDiario_Click(object sender, EventArgs e)
         {
-            abrirFormularioHijo(new InformeDiario(), "Estadisticas Diarias");
+            abrirFormularioHijo(new InformeDiario(), "Estadísticas Diarias");
             ocultarSubMenu();
         }
 
         private void BInformeMensual_Click(object sender, EventArgs e)
         {
+
+            abrirFormularioHijo(new InformeMensual(), "Estadísticas Mensuales");
             ocultarSubMenu();
         }
 
-        private void BAyuda_Click(object sender, EventArgs e)
+        private void BAcercaDeCajero_Click(object sender, EventArgs e)
         {
-            ocultarSubMenu();
+            abrirFormularioHijo(new InformeMensual(), "Acerca de AgMa Gest");
         }
 
         private Form activeForm = null;

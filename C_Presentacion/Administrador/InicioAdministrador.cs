@@ -98,5 +98,10 @@ namespace AgMaGest.C_Presentacion.Administrador
         {
             Application.Exit();
         }
+
+        private void BAcercaAdmin_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new VisualizarAcercaDeAdmin(), "Acerca de AgMa Gest");
+        }
     }
 }

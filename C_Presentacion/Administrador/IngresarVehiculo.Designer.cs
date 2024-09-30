@@ -89,10 +89,10 @@
             // PBImagenVehiculo
             // 
             this.PBImagenVehiculo.Image = global::AgMaGest.Properties.Resources.Icono_MasVehiculo;
-            this.PBImagenVehiculo.Location = new System.Drawing.Point(275, 69);
+            this.PBImagenVehiculo.Location = new System.Drawing.Point(275, 66);
             this.PBImagenVehiculo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.PBImagenVehiculo.Name = "PBImagenVehiculo";
-            this.PBImagenVehiculo.Size = new System.Drawing.Size(208, 173);
+            this.PBImagenVehiculo.Size = new System.Drawing.Size(229, 169);
             this.PBImagenVehiculo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.PBImagenVehiculo.TabIndex = 183;
             this.PBImagenVehiculo.TabStop = false;

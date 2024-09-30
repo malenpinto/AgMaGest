@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="C_Presentacion\Administrador\VisualizarAcercaDeAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C_Presentacion\Administrador\VisualizarAcercaDeAdmin.Designer.cs">
+      <DependentUpon>VisualizarAcercaDeAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="C_Presentacion\Administrador\VisualizarEstadisticas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +144,12 @@
     <Compile Include="C_Presentacion\Cajero\RegistrarPago.Designer.cs">
       <DependentUpon>RegistrarPago.cs</DependentUpon>
     </Compile>
+    <Compile Include="C_Presentacion\Cajero\VisualizarAcercaDeCajero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C_Presentacion\Cajero\VisualizarAcercaDeCajero.Designer.cs">
+      <DependentUpon>VisualizarAcercaDeCajero.cs</DependentUpon>
+    </Compile>
     <Compile Include="C_Presentacion\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,6 +224,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="C_Presentacion\Administrador\VisualizarAcercaDeAdmin.resx">
+      <DependentUpon>VisualizarAcercaDeAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="C_Presentacion\Administrador\VisualizarEstadisticas.resx">
       <DependentUpon>VisualizarEstadisticas.cs</DependentUpon>
     </EmbeddedResource>
@@ -256,6 +271,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="C_Presentacion\Cajero\RegistrarPago.resx">
       <DependentUpon>RegistrarPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="C_Presentacion\Cajero\VisualizarAcercaDeCajero.resx">
+      <DependentUpon>VisualizarAcercaDeCajero.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="C_Presentacion\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

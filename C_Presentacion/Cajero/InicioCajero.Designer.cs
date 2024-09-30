@@ -30,7 +30,7 @@
         {
             this.PMenu = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.BAyuda = new System.Windows.Forms.Button();
+            this.BAcercaDeCajero = new System.Windows.Forms.Button();
             this.PSubMenuInformes = new System.Windows.Forms.Panel();
             this.BInformeMensual = new System.Windows.Forms.Button();
             this.BInformeDiario = new System.Windows.Forms.Button();
@@ -73,7 +73,7 @@
             this.PMenu.AutoScroll = true;
             this.PMenu.BackColor = System.Drawing.Color.BlueViolet;
             this.PMenu.Controls.Add(this.panel1);
-            this.PMenu.Controls.Add(this.BAyuda);
+            this.PMenu.Controls.Add(this.BAcercaDeCajero);
             this.PMenu.Controls.Add(this.PSubMenuInformes);
             this.PMenu.Controls.Add(this.BInformes);
             this.PMenu.Controls.Add(this.BFacturas);
@@ -96,28 +96,28 @@
             this.panel1.Size = new System.Drawing.Size(215, 2);
             this.panel1.TabIndex = 17;
             // 
-            // BAyuda
+            // BAcercaDeCajero
             // 
-            this.BAyuda.BackColor = System.Drawing.Color.BlueViolet;
-            this.BAyuda.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BAyuda.FlatAppearance.BorderSize = 0;
-            this.BAyuda.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.BAyuda.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Indigo;
-            this.BAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BAyuda.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
-            this.BAyuda.ForeColor = System.Drawing.Color.GhostWhite;
-            this.BAyuda.Image = global::AgMaGest.Properties.Resources.Icono_Acercade;
-            this.BAyuda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BAyuda.Location = new System.Drawing.Point(0, 365);
-            this.BAyuda.Name = "BAyuda";
-            this.BAyuda.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.BAyuda.Size = new System.Drawing.Size(215, 41);
-            this.BAyuda.TabIndex = 16;
-            this.BAyuda.Text = " Acerca de";
-            this.BAyuda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BAyuda.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BAyuda.UseVisualStyleBackColor = false;
-            this.BAyuda.Click += new System.EventHandler(this.BAyuda_Click);
+            this.BAcercaDeCajero.BackColor = System.Drawing.Color.BlueViolet;
+            this.BAcercaDeCajero.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BAcercaDeCajero.FlatAppearance.BorderSize = 0;
+            this.BAcercaDeCajero.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BAcercaDeCajero.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Indigo;
+            this.BAcercaDeCajero.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BAcercaDeCajero.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
+            this.BAcercaDeCajero.ForeColor = System.Drawing.Color.GhostWhite;
+            this.BAcercaDeCajero.Image = global::AgMaGest.Properties.Resources.Icono_Acercade;
+            this.BAcercaDeCajero.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BAcercaDeCajero.Location = new System.Drawing.Point(0, 365);
+            this.BAcercaDeCajero.Name = "BAcercaDeCajero";
+            this.BAcercaDeCajero.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.BAcercaDeCajero.Size = new System.Drawing.Size(215, 41);
+            this.BAcercaDeCajero.TabIndex = 16;
+            this.BAcercaDeCajero.Text = " Acerca de";
+            this.BAcercaDeCajero.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BAcercaDeCajero.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BAcercaDeCajero.UseVisualStyleBackColor = false;
+            this.BAcercaDeCajero.Click += new System.EventHandler(this.BAcercaDeCajero_Click);
             // 
             // PSubMenuInformes
             // 
@@ -522,7 +522,7 @@
         private System.Windows.Forms.Panel PSubMenuInformes;
         private System.Windows.Forms.Button BInformes;
         private System.Windows.Forms.Button BInformeDiario;
-        private System.Windows.Forms.Button BAyuda;
+        private System.Windows.Forms.Button BAcercaDeCajero;
         private System.Windows.Forms.Button BInformeMensual;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;

@@ -85,8 +85,8 @@ namespace AgMaGest.C_Presentacion.Administrador
             DTPFechaFabricacion.Value = DateTime.Now; // Restablecer la fecha al día actual
             
             // Limpiar la imagen del PictureBox (establecer a null)
-            PBImagenVehiculo.Image = Properties.Resources.Icono_MasVehiculo; // Tambien se puede reemplazar con una imagen por defecto
-      
+            PBImagenVehiculo.Image = Properties.Resources.Icono_MasVehiculo; // Tambien se puede reemplazar con una imagen por defecto                                                           // Restablecer el SizeMode a Normal para que no se deforme el PictureBox sin imagen
+            PBImagenVehiculo.SizeMode = PictureBoxSizeMode.Normal;
         }
 
         private void BCargarImagenVehiculo_Click(object sender, EventArgs e)
