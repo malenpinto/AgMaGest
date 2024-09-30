@@ -60,7 +60,7 @@ namespace AgMaGest.C_Presentacion.Administrador
                 string nombreCompleto = ToTitleCase(TBApellidoEditarEmpleado.Text) + " " + ToTitleCase(TBNombreEditarEmpleado.Text);
 
                 // Si todos los campos son válidos, procedemos con la lógica de agregar.
-                MessageBox.Show("Se agrego exitosamente a: " + nombreCompleto, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Se editó exitosamente: " + nombreCompleto, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -117,6 +117,11 @@ namespace AgMaGest.C_Presentacion.Administrador
                 e.Handled = true;
                 MessageBox.Show("Este campo solo puede contener letras.");
             }
+        }
+
+        private void BSalirEditarEmpleado_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

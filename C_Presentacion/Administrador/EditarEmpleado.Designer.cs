@@ -233,6 +233,7 @@
             this.BSalirEditarEmpleado.TabIndex = 19;
             this.BSalirEditarEmpleado.Text = "Salir";
             this.BSalirEditarEmpleado.UseVisualStyleBackColor = false;
+            this.BSalirEditarEmpleado.Click += new System.EventHandler(this.BSalirEditarEmpleado_Click);
             // 
             // label11
             // 
