@@ -22,15 +22,6 @@ namespace AgMaGest.C_Presentacion.Vendedor
             this.Close();
         }
 
-        private void SoloNumeros_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-                MessageBox.Show("Este campo solo puede contener números.");
-            }
-        }
-
         private void BConfirmarPedido_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Debe seleccionar un cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

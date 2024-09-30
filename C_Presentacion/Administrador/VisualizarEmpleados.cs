@@ -23,5 +23,11 @@ namespace AgMaGest.C_Presentacion.Administrador
             IngresarEmpleado formEmpleado = new IngresarEmpleado();
             formEmpleado.ShowDialog();
         }
+
+        private void BEditar_Click(object sender, EventArgs e)
+        {
+            EditarEmpleado formEditarEmpleado = new EditarEmpleado();
+            formEditarEmpleado.ShowDialog();
+        }
     }
 }
