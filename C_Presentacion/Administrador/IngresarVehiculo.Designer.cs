@@ -50,6 +50,7 @@
             this.LApellido = new System.Windows.Forms.Label();
             this.LFechaNacimiento = new System.Windows.Forms.Label();
             this.LNombre = new System.Windows.Forms.Label();
+            this.BCargarImagenVehiculo = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBImagenVehiculo)).BeginInit();
             this.panel2.SuspendLayout();
@@ -58,6 +59,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.GhostWhite;
+            this.panel1.Controls.Add(this.BCargarImagenVehiculo);
             this.panel1.Controls.Add(this.PBImagenVehiculo);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.TBKilometrajeVehiculo);
@@ -354,6 +356,26 @@
             this.LNombre.TabIndex = 132;
             this.LNombre.Text = "Condición";
             // 
+            // BCargarImagenVehiculo
+            // 
+            this.BCargarImagenVehiculo.BackColor = System.Drawing.Color.Transparent;
+            this.BCargarImagenVehiculo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BCargarImagenVehiculo.FlatAppearance.BorderSize = 2;
+            this.BCargarImagenVehiculo.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.BCargarImagenVehiculo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BCargarImagenVehiculo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCyan;
+            this.BCargarImagenVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BCargarImagenVehiculo.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BCargarImagenVehiculo.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.BCargarImagenVehiculo.Location = new System.Drawing.Point(321, 246);
+            this.BCargarImagenVehiculo.Margin = new System.Windows.Forms.Padding(2);
+            this.BCargarImagenVehiculo.Name = "BCargarImagenVehiculo";
+            this.BCargarImagenVehiculo.Size = new System.Drawing.Size(122, 41);
+            this.BCargarImagenVehiculo.TabIndex = 184;
+            this.BCargarImagenVehiculo.Text = "Cargar Imagen";
+            this.BCargarImagenVehiculo.UseVisualStyleBackColor = false;
+            this.BCargarImagenVehiculo.Click += new System.EventHandler(this.BCargarImagenVehiculo_Click);
+            // 
             // IngresarVehiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -400,5 +422,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.PictureBox PBImagenVehiculo;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button BCargarImagenVehiculo;
     }
 }

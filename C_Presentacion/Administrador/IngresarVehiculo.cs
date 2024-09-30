@@ -85,7 +85,30 @@ namespace AgMaGest.C_Presentacion.Administrador
             DTPFechaFabricacion.Value = DateTime.Now; // Restablecer la fecha al día actual
             
             // Limpiar la imagen del PictureBox (establecer a null)
-            PBImagenVehiculo.Image = null; // Tambien se puede reemplazar con una imagen por defecto
+            PBImagenVehiculo.Image = Properties.Resources.Icono_MasVehiculo; // Tambien se puede reemplazar con una imagen por defecto
+      
+        }
+
+        private void BCargarImagenVehiculo_Click(object sender, EventArgs e)
+        {
+            // Crear y configurar el diálogo para seleccionar archivos
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                // Filtrar los tipos de archivo a imágenes
+                Filter = "Archivos de imagen (*.jpg; *.jpeg; *.png)|*.jpg; *.jpeg; *.png",
+                Title = "Seleccionar Imagen del Vehículo"
+            };
+
+            // Mostrar el cuadro de diálogo y verificar si el usuario selecciona un archivo
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                // Obtener la ruta del archivo seleccionado
+                string rutaImagen = openFileDialog.FileName;
+
+                // Cargar la imagen seleccionada en el PictureBox
+                PBImagenVehiculo.Image = Image.FromFile(rutaImagen);
+                PBImagenVehiculo.SizeMode = PictureBoxSizeMode.StretchImage; // Ajustar la imagen al tamaño del PictureBox
+            }
         }
     }
     }
