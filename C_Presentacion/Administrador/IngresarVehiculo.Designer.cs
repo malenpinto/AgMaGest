@@ -138,30 +138,8 @@
             this.CBCondicionVehiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBCondicionVehiculo.FormattingEnabled = true;
             this.CBCondicionVehiculo.Items.AddRange(new object[] {
-            "Buenos Aires",
-            "Ciudad Autónoma de Buenos Aires",
-            "Catamarca",
-            "Chaco",
-            "Chubut",
-            "Córdoba",
-            "Corrientes",
-            "Entre Ríos",
-            "Formosa",
-            "Jujuy",
-            "La Pampa",
-            "La Rioja",
-            "Mendoza",
-            "Misiones",
-            "Neuquén",
-            "Río Negro",
-            "Salta",
-            "San Juan",
-            "San Luis",
-            "Santa Cruz",
-            "Santa Fe",
-            "Santiago del Estero",
-            "Tierra del Fuego",
-            "Tucumán"});
+            "Nuevo",
+            "Usado"});
             this.CBCondicionVehiculo.Location = new System.Drawing.Point(26, 66);
             this.CBCondicionVehiculo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CBCondicionVehiculo.Name = "CBCondicionVehiculo";
