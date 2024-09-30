@@ -86,7 +86,7 @@ namespace AgMaGest.C_Presentacion.Administrador
             
             // Limpiar la imagen del PictureBox (establecer a null)
             PBImagenVehiculo.Image = Properties.Resources.Icono_MasVehiculo; // Tambien se puede reemplazar con una imagen por defecto                                                           // Restablecer el SizeMode a Normal para que no se deforme el PictureBox sin imagen
-            PBImagenVehiculo.SizeMode = PictureBoxSizeMode.Normal;
+            PBImagenVehiculo.SizeMode = PictureBoxSizeMode.CenterImage;
         }
 
         private void BCargarImagenVehiculo_Click(object sender, EventArgs e)

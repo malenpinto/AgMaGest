@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BCargarImagenVehiculo = new System.Windows.Forms.Button();
             this.PBImagenVehiculo = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.TBKilometrajeVehiculo = new System.Windows.Forms.TextBox();
@@ -50,7 +51,6 @@
             this.LApellido = new System.Windows.Forms.Label();
             this.LFechaNacimiento = new System.Windows.Forms.Label();
             this.LNombre = new System.Windows.Forms.Label();
-            this.BCargarImagenVehiculo = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBImagenVehiculo)).BeginInit();
             this.panel2.SuspendLayout();
@@ -81,16 +81,36 @@
             this.panel1.Controls.Add(this.LFechaNacimiento);
             this.panel1.Controls.Add(this.LNombre);
             this.panel1.Location = new System.Drawing.Point(4, 4);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(520, 564);
             this.panel1.TabIndex = 1;
+            // 
+            // BCargarImagenVehiculo
+            // 
+            this.BCargarImagenVehiculo.BackColor = System.Drawing.Color.Transparent;
+            this.BCargarImagenVehiculo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BCargarImagenVehiculo.FlatAppearance.BorderSize = 2;
+            this.BCargarImagenVehiculo.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.BCargarImagenVehiculo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BCargarImagenVehiculo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCyan;
+            this.BCargarImagenVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BCargarImagenVehiculo.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BCargarImagenVehiculo.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.BCargarImagenVehiculo.Location = new System.Drawing.Point(321, 246);
+            this.BCargarImagenVehiculo.Margin = new System.Windows.Forms.Padding(2);
+            this.BCargarImagenVehiculo.Name = "BCargarImagenVehiculo";
+            this.BCargarImagenVehiculo.Size = new System.Drawing.Size(122, 41);
+            this.BCargarImagenVehiculo.TabIndex = 184;
+            this.BCargarImagenVehiculo.Text = "Cargar Imagen";
+            this.BCargarImagenVehiculo.UseVisualStyleBackColor = false;
+            this.BCargarImagenVehiculo.Click += new System.EventHandler(this.BCargarImagenVehiculo_Click);
             // 
             // PBImagenVehiculo
             // 
             this.PBImagenVehiculo.Image = global::AgMaGest.Properties.Resources.Icono_MasVehiculo;
             this.PBImagenVehiculo.Location = new System.Drawing.Point(275, 66);
-            this.PBImagenVehiculo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PBImagenVehiculo.Margin = new System.Windows.Forms.Padding(2);
             this.PBImagenVehiculo.Name = "PBImagenVehiculo";
             this.PBImagenVehiculo.Size = new System.Drawing.Size(229, 169);
             this.PBImagenVehiculo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -116,7 +136,7 @@
             this.TBKilometrajeVehiculo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TBKilometrajeVehiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBKilometrajeVehiculo.Location = new System.Drawing.Point(26, 359);
-            this.TBKilometrajeVehiculo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TBKilometrajeVehiculo.Margin = new System.Windows.Forms.Padding(2);
             this.TBKilometrajeVehiculo.Name = "TBKilometrajeVehiculo";
             this.TBKilometrajeVehiculo.Size = new System.Drawing.Size(215, 21);
             this.TBKilometrajeVehiculo.TabIndex = 181;
@@ -143,7 +163,7 @@
             "Nuevo",
             "Usado"});
             this.CBCondicionVehiculo.Location = new System.Drawing.Point(26, 66);
-            this.CBCondicionVehiculo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CBCondicionVehiculo.Margin = new System.Windows.Forms.Padding(2);
             this.CBCondicionVehiculo.Name = "CBCondicionVehiculo";
             this.CBCondicionVehiculo.Size = new System.Drawing.Size(212, 21);
             this.CBCondicionVehiculo.TabIndex = 179;
@@ -167,7 +187,7 @@
             this.TBModeloVehiculo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TBModeloVehiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBModeloVehiculo.Location = new System.Drawing.Point(26, 299);
-            this.TBModeloVehiculo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TBModeloVehiculo.Margin = new System.Windows.Forms.Padding(2);
             this.TBModeloVehiculo.Name = "TBModeloVehiculo";
             this.TBModeloVehiculo.Size = new System.Drawing.Size(215, 21);
             this.TBModeloVehiculo.TabIndex = 177;
@@ -176,7 +196,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.DarkSlateGray;
             this.panel3.Location = new System.Drawing.Point(16, 505);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(488, 2);
             this.panel3.TabIndex = 166;
@@ -193,7 +213,7 @@
             this.BAgregarVehiculo.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BAgregarVehiculo.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.BAgregarVehiculo.Location = new System.Drawing.Point(155, 515);
-            this.BAgregarVehiculo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BAgregarVehiculo.Margin = new System.Windows.Forms.Padding(2);
             this.BAgregarVehiculo.Name = "BAgregarVehiculo";
             this.BAgregarVehiculo.Size = new System.Drawing.Size(96, 41);
             this.BAgregarVehiculo.TabIndex = 173;
@@ -213,7 +233,7 @@
             this.BSalirVehiculo.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BSalirVehiculo.ForeColor = System.Drawing.Color.Salmon;
             this.BSalirVehiculo.Location = new System.Drawing.Point(267, 515);
-            this.BSalirVehiculo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BSalirVehiculo.Margin = new System.Windows.Forms.Padding(2);
             this.BSalirVehiculo.Name = "BSalirVehiculo";
             this.BSalirVehiculo.Size = new System.Drawing.Size(96, 41);
             this.BSalirVehiculo.TabIndex = 134;
@@ -226,7 +246,7 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(200)))), ((int)(((byte)(145)))));
             this.panel2.Controls.Add(this.label9);
             this.panel2.Location = new System.Drawing.Point(16, 11);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(488, 23);
             this.panel2.TabIndex = 165;
@@ -250,7 +270,7 @@
             this.TBMarcaVehiculo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TBMarcaVehiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBMarcaVehiculo.Location = new System.Drawing.Point(26, 240);
-            this.TBMarcaVehiculo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TBMarcaVehiculo.Margin = new System.Windows.Forms.Padding(2);
             this.TBMarcaVehiculo.Name = "TBMarcaVehiculo";
             this.TBMarcaVehiculo.Size = new System.Drawing.Size(215, 21);
             this.TBMarcaVehiculo.TabIndex = 163;
@@ -261,7 +281,7 @@
             this.TBCodigoPatenteVehiculo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TBCodigoPatenteVehiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBCodigoPatenteVehiculo.Location = new System.Drawing.Point(26, 127);
-            this.TBCodigoPatenteVehiculo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TBCodigoPatenteVehiculo.Margin = new System.Windows.Forms.Padding(2);
             this.TBCodigoPatenteVehiculo.Name = "TBCodigoPatenteVehiculo";
             this.TBCodigoPatenteVehiculo.Size = new System.Drawing.Size(215, 21);
             this.TBCodigoPatenteVehiculo.TabIndex = 161;
@@ -299,7 +319,7 @@
             this.DTPFechaFabricacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DTPFechaFabricacion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DTPFechaFabricacion.Location = new System.Drawing.Point(181, 400);
-            this.DTPFechaFabricacion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DTPFechaFabricacion.Margin = new System.Windows.Forms.Padding(2);
             this.DTPFechaFabricacion.MaxDate = new System.DateTime(3024, 12, 31, 0, 0, 0, 0);
             this.DTPFechaFabricacion.MinDate = new System.DateTime(1924, 1, 1, 0, 0, 0, 0);
             this.DTPFechaFabricacion.Name = "DTPFechaFabricacion";
@@ -312,7 +332,7 @@
             this.TBTipoVehiculo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TBTipoVehiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBTipoVehiculo.Location = new System.Drawing.Point(26, 182);
-            this.TBTipoVehiculo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TBTipoVehiculo.Margin = new System.Windows.Forms.Padding(2);
             this.TBTipoVehiculo.Name = "TBTipoVehiculo";
             this.TBTipoVehiculo.Size = new System.Drawing.Size(215, 21);
             this.TBTipoVehiculo.TabIndex = 140;
@@ -356,26 +376,6 @@
             this.LNombre.TabIndex = 132;
             this.LNombre.Text = "Condición";
             // 
-            // BCargarImagenVehiculo
-            // 
-            this.BCargarImagenVehiculo.BackColor = System.Drawing.Color.Transparent;
-            this.BCargarImagenVehiculo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BCargarImagenVehiculo.FlatAppearance.BorderSize = 2;
-            this.BCargarImagenVehiculo.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.BCargarImagenVehiculo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.BCargarImagenVehiculo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCyan;
-            this.BCargarImagenVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BCargarImagenVehiculo.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BCargarImagenVehiculo.ForeColor = System.Drawing.Color.LightSeaGreen;
-            this.BCargarImagenVehiculo.Location = new System.Drawing.Point(321, 246);
-            this.BCargarImagenVehiculo.Margin = new System.Windows.Forms.Padding(2);
-            this.BCargarImagenVehiculo.Name = "BCargarImagenVehiculo";
-            this.BCargarImagenVehiculo.Size = new System.Drawing.Size(122, 41);
-            this.BCargarImagenVehiculo.TabIndex = 184;
-            this.BCargarImagenVehiculo.Text = "Cargar Imagen";
-            this.BCargarImagenVehiculo.UseVisualStyleBackColor = false;
-            this.BCargarImagenVehiculo.Click += new System.EventHandler(this.BCargarImagenVehiculo_Click);
-            // 
             // IngresarVehiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -384,7 +384,7 @@
             this.ClientSize = new System.Drawing.Size(529, 573);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(529, 573);
             this.Name = "IngresarVehiculo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
