@@ -111,7 +111,7 @@ namespace AgMaGest.C_Presentacion.Cajero
 
         private void BAcercaDeCajero_Click(object sender, EventArgs e)
         {
-            abrirFormularioHijo(new InformeMensual(), "Acerca de AgMa Gest");
+            abrirFormularioHijo(new VisualizarAcercaDeCajero(), "Acerca de AgMa Gest");
         }
 
         private Form activeForm = null;
