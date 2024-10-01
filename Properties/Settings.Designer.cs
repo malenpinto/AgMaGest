@@ -46,5 +46,16 @@ namespace AgMaGest.Properties {
                 this["RecordarUsuario"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-TT9O6S1\\SQLEXPRESS;Initial Catalog=Agmagest;Integrated Securi" +
+            "ty=True;TrustServerCertificate=True")]
+        public string AgmagestConnectionString {
+            get {
+                return ((string)(this["AgmagestConnectionString"]));
+            }
+        }
     }
 }
