@@ -33,5 +33,16 @@ namespace AgMaGest.C_Presentacion.Cajero
             // Opción predeterminada (opcional)
             CBMediosPagos.SelectedIndex = 0; // Selecciona la primera opción por defecto
         }
+
+        private void BConfirmarGenerarPago_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(TBDescPagoCliente.Text) ||
+                string.IsNullOrWhiteSpace(CBMediosPagos.Text))
+            {
+                // Mostrar mensaje de error si falta algún campo
+                MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
     }
 }

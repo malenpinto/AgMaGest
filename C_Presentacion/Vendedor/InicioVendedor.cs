@@ -42,27 +42,6 @@ namespace AgMaGest.C_Presentacion.Vendedor
             AbrirFormularioHijo(new VisualizarCatalogo(), "Catálogo");
         }
 
-        #region Test Drive
-        private void BTestDrive_Click(object sender, EventArgs e)
-        {
-            MostrarSubMenu(panelSubMenuTestDrive);
-        }
-
-        private void BNuevoTurno_Click(object sender, EventArgs e)
-        {
-            //Nuestro Codigo
-            //
-            OcultarSubmenu();
-        }
-
-        private void BVerReservas_Click(object sender, EventArgs e)
-        {
-            //Nuestro Codigo
-            //
-            OcultarSubmenu();
-        }
-        #endregion
-
         #region Estadísticas
         private void BEstadisticasVendedor_Click(object sender, EventArgs e)
         {
@@ -117,8 +96,6 @@ namespace AgMaGest.C_Presentacion.Vendedor
 
         private void OcultarSubmenu()
         {
-            if (panelSubMenuTestDrive.Visible)
-                panelSubMenuTestDrive.Visible = false;
             if (panelSubMenuEstadisticas.Visible)
                 panelSubMenuEstadisticas.Visible = false;
         }
