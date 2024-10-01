@@ -1,0 +1,348 @@
+CREATE DATABASE Agmagest;
+USE Agmagest;
+
+CREATE TABLE Pais
+(
+  id_Pais INT NOT NULL,
+  nombre_Pais VARCHAR(50) NOT NULL,
+  CONSTRAINT PK_Pais PRIMARY KEY (id_Pais)
+);
+
+CREATE TABLE Tipo_Vehiculo
+(
+  id_tipoVehiculo INT NOT NULL,
+  nombre_tipoVehiculo VARCHAR(15) NOT NULL,
+  CONSTRAINT PK_TipoVehiculo PRIMARY KEY (id_tipoVehiculo)
+);
+
+CREATE TABLE Estado_Vehiculo
+(
+  id_Estado INT NOT NULL,
+  nombre_Estado VARCHAR(10) NOT NULL,
+  CONSTRAINT PK_Estado PRIMARY KEY (id_Estado)
+);
+
+CREATE TABLE Tipo_Pago
+(
+  id_TipoPago INT NOT NULL,
+  nombre_tipoPago VARCHAR(20) NOT NULL,
+  CONSTRAINT PK_TipoPago PRIMARY KEY (id_TipoPago)
+);
+
+CREATE TABLE Perfil_Empleado
+(
+  id_perfil INT NOT NULL,
+  nombre_Perfil VARCHAR(20) NOT NULL,
+  CONSTRAINT PK_Perfil PRIMARY KEY (id_perfil)
+);
+
+CREATE TABLE Condicion
+(
+  id_Condicion INT NOT NULL,
+  nombre_Condicion VARCHAR(10) NOT NULL,
+  CONSTRAINT PK_Condicion PRIMARY KEY (id_Condicion)
+);
+
+CREATE TABLE Estado_Pago
+(
+  id_EstadoPago INT NOT NULL,
+  nombre_EstadoPago VARCHAR(20) NOT NULL,
+  CONSTRAINT PK_EstadoPago PRIMARY KEY (id_EstadoPago)
+);
+
+CREATE TABLE Estado_Empleado
+(
+  id_EstadoEmpleado INT NOT NULL,
+  nombre_EstadoEmpleado VARCHAR(15) NOT NULL,
+  CONSTRAINT PK_EstadoEmpleado PRIMARY KEY (id_EstadoEmpleado)
+);
+
+CREATE TABLE Estado_Cliente
+(
+  id_Estado_Cliente INT NOT NULL,
+  nombre_EstadoCliente VARCHAR(10) NOT NULL,
+  CONSTRAINT PK_EstadoCliente PRIMARY KEY (id_Estado_Cliente)
+);
+
+CREATE TABLE Usuario
+(
+  id_Empleado INT NOT NULL,
+  password_Usuario VARCHAR NOT NULL,
+  CONSTRAINT PK_Usuario PRIMARY KEY (id_Empleado),
+  CONSTRAINT FK_Usuario_Empleado FOREIGN KEY (id_Empleado) REFERENCES Empleado(id_Empleado)
+);
+
+CREATE TABLE Estado_Factura
+(
+  id_EstadoFactura INT NOT NULL,
+  nombre_EstadoFactura VARCHAR NOT NULL,
+  CONSTRAINT PK_EstadoFactura PRIMARY KEY (id_EstadoFactura)
+);
+
+CREATE TABLE Provincia
+(
+  id_Provincia INT NOT NULL,
+  nombre_Provincia VARCHAR(50) NOT NULL,
+  id_Pais INT NOT NULL,
+  CONSTRAINT PK_Provincia PRIMARY KEY (id_Provincia),
+  CONSTRAINT FK_Provincia_Pais FOREIGN KEY (id_Pais) REFERENCES Pais(id_Pais)
+);
+
+CREATE TABLE Factura
+(
+  num_Factura INT NOT NULL,
+  fecha_Factura DATE NOT NULL,
+  total_Factura FLOAT NOT NULL,
+  id_EstadoFactura INT NOT NULL,
+  CONSTRAINT PK_Factura PRIMARY KEY (num_Factura),
+  CONSTRAINT FK_Factura_EstadoFactura FOREIGN KEY (id_EstadoFactura) REFERENCES Estado_Factura(id_EstadoFactura)
+);
+
+CREATE TABLE Vehiculos
+(
+  id_Vehiculo INT NOT NULL,
+  marca_Vehiculo VARCHAR(30) NOT NULL,
+  modelo_Vehiculo INT NOT NULL,
+  km_Vehiculo INT NOT NULL,
+  version_Vehiculo INT NOT NULL,
+  anio_Vehiculo INT NOT NULL,
+  patente_Vehiculo VARCHAR,
+  codigo_OKM INT,
+  precio_Vehiculo FLOAT NOT NULL,
+  id_tipoVehiculo INT NOT NULL,
+  id_Estado INT NOT NULL,
+  id_Condicion INT NOT NULL,
+  CONSTRAINT PK_Vehiculo PRIMARY KEY (id_Vehiculo),
+  CONSTRAINT FK_Vehiculos_TipoVehiculo FOREIGN KEY (id_tipoVehiculo) REFERENCES Tipo_Vehiculo(id_tipoVehiculo),
+  CONSTRAINT FK_Vehiculos_EstadoVehiculo FOREIGN KEY (id_Estado) REFERENCES Estado_Vehiculo(id_Estado),
+  CONSTRAINT FK_Vehiculos_Condicion FOREIGN KEY (id_Condicion) REFERENCES Condicion(id_Condicion),
+  CONSTRAINT UQ_Vehiculos_patenteVehiculo UNIQUE (patente_Vehiculo),
+  CONSTRAINT UQ_Vehiculos_codigo0km UNIQUE (codigo_OKM)
+);
+
+CREATE TABLE Pago
+(
+  importe_Pago FLOAT NOT NULL,
+  id_pago INT NOT NULL,
+  descripcion_Pago VARCHAR,
+  id_TipoPago INT NOT NULL,
+  id_EstadoPago INT NOT NULL,
+  num_Factura INT NOT NULL,
+  CONSTRAINT PK_Pago PRIMARY KEY (id_pago),
+  CONSTRAINT FK_Pago_TipoPago FOREIGN KEY (id_TipoPago) REFERENCES Tipo_Pago(id_TipoPago),
+  CONSTRAINT FK_Pago_EstadoPago FOREIGN KEY (id_EstadoPago) REFERENCES Estado_Pago(id_EstadoPago),
+  CONSTRAINT FK_Pago_Factura FOREIGN KEY (num_Factura) REFERENCES Factura(num_Factura)
+);
+
+CREATE TABLE Ciudad
+(
+  id_Ciudad INT NOT NULL,
+  nombre_Ciudad VARCHAR(50) NOT NULL,
+  id_Provincia INT NOT NULL,
+  CONSTRAINT PK_Ciudad PRIMARY KEY (id_Ciudad),
+  CONSTRAINT FK_Ciudad_Provincia FOREIGN KEY (id_Provincia) REFERENCES Provincia(id_Provincia)
+);
+
+CREATE TABLE Localidad
+(
+  id_Localidad INT NOT NULL,
+  nombre_Localidad VARCHAR(50) NOT NULL,
+  id_Ciudad INT NOT NULL,
+  CONSTRAINT PK_Localidad PRIMARY KEY (id_Localidad),
+  CONSTRAINT FK_Localidad_Ciudad FOREIGN KEY (id_Ciudad) REFERENCES Ciudad(id_Ciudad)
+);
+
+CREATE TABLE Empleado
+(
+  id_Empleado INT NOT NULL,
+  nombre_Empleado VARCHAR(50) NOT NULL,
+  apellido_Empleado VARCHAR(60) NOT NULL,
+  dni_Empleado NUMERIC(8) NOT NULL,
+  cuil_Empleado NUMERIC(11) NOT NULL,
+  calle_Empleado VARCHAR(100) NOT NULL,
+  num_Calle_Empleado INT NOT NULL,
+  piso_Empleado INT,
+  dpto_Empleado VARCHAR(2),
+  email_Empleado VARCHAR(100) NOT NULL,
+  celular_Empleado VARCHAR(20) NOT NULL,
+  codigo_PostalEmpleado INT NOT NULL,
+  id_Localidad INT NOT NULL,
+  id_perfil INT NOT NULL,
+  id_Estado INT NOT NULL,
+  CONSTRAINT PK_Empleado PRIMARY KEY (id_Empleado),
+  CONSTRAINT FK_Empleado_Localidad FOREIGN KEY (id_Localidad) REFERENCES Localidad(id_Localidad),
+  CONSTRAINT FK_Empleado_PerfilEmpleado FOREIGN KEY (id_perfil) REFERENCES Perfil_Empleado(id_perfil),
+  CONSTRAINT FK_Empleado_EstadoEmpleado FOREIGN KEY (id_Estado) REFERENCES Estado_Empleado(id_EstadoEmpleado),
+  CONSTRAINT UQ_Empleado_dniEmpleado UNIQUE (dni_Empleado),
+  CONSTRAINT UQ_Empleado_cuilEmpleado UNIQUE (cuil_Empleado),
+  CONSTRAINT UQ_Empleado_emailEmpleado UNIQUE (email_Empleado)
+);
+
+CREATE TABLE Cliente
+(
+  id_Cliente INT NOT NULL,
+  email_Cliente VARCHAR(100) NOT NULL,
+  celular_Cliente VARCHAR NOT NULL,
+  calle_Cliente VARCHAR(100) NOT NULL,
+  num_Calle INT NOT NULL,
+  piso_Cliente INT NOT NULL,
+  dpto_Cliente VARCHAR(2) NOT NULL,
+  codigo_PostalCliente INT NOT NULL,
+  id_Estado_Cliente INT NOT NULL,
+  id_Localidad INT NOT NULL,
+  CONSTRAINT PK_Cliente PRIMARY KEY (id_Cliente),
+  CONSTRAINT FK_Cliente_EstadoCliente FOREIGN KEY (id_Estado_Cliente) REFERENCES Estado_Cliente(id_Estado_Cliente),
+  CONSTRAINT FK_Cliente_Localidad FOREIGN KEY (id_Localidad) REFERENCES Localidad(id_Localidad),
+  CONSTRAINT UQ_Cliente_email UNIQUE (email_Cliente)
+);
+
+CREATE TABLE Cliente_Final
+(
+  id_ClienteFinal INT NOT NULL,
+  nombre_CFinal VARCHAR(50) NOT NULL,
+  apellido_CFinal VARCHAR(50) NOT NULL,
+  dni_CFinal NUMERIC(8) NOT NULL,
+  cuil_CFinal NUMERIC(11) NOT NULL,
+  id_Cliente INT NOT NULL,
+  CONSTRAINT PK_ClienteFinal PRIMARY KEY (id_ClienteFinal),
+  CONSTRAINT FK_ClienteFinal_Cliente FOREIGN KEY (id_Cliente) REFERENCES Cliente(id_Cliente),
+  CONSTRAINT UQ_Cliente_dniCFinal UNIQUE (dni_CFinal),
+  CONSTRAINT UQ_Cliente_cuilCFinal UNIQUE (cuil_CFinal)
+);
+
+CREATE TABLE Cliente_Empresa
+(
+  id_CEmpresa INT NOT NULL,
+  razon_Social_CEmpresa VARCHAR(50) NOT NULL,
+  cuit_CEmpresa NUMERIC(11) NOT NULL,
+  id_Cliente INT NOT NULL,
+  CONSTRAINT PK_ClienteEmpresa PRIMARY KEY (id_CEmpresa),
+  CONSTRAINT FK_ClienteEmpresa_Cliente FOREIGN KEY (id_Cliente) REFERENCES Cliente(id_Cliente),
+  CONSTRAINT UQ_ClienteEmpresa_cuitCEmpresa UNIQUE (cuit_CEmpresa)
+);
+
+CREATE TABLE Pedido
+(
+  id_Pedido INT NOT NULL,
+  id_Empleado INT NOT NULL,
+  num_Factura INT NOT NULL,
+  id_Cliente INT NOT NULL,
+  CONSTRAINT PK_Pedido PRIMARY KEY (id_Pedido),
+  CONSTRAINT FK_Pedido_Empleado FOREIGN KEY (id_Empleado) REFERENCES Empleado(id_Empleado),
+  CONSTRAINT FK_Pedido_Factura FOREIGN KEY (num_Factura) REFERENCES Factura(num_Factura),
+  CONSTRAINT FK_Pedido_Cliente FOREIGN KEY (id_Cliente) REFERENCES Cliente(id_Cliente)
+);
+
+CREATE TABLE Detalle_Pedido
+(
+  subtotal_DetallePedido FLOAT NOT NULL,
+  id_Vehiculo INT NOT NULL,
+  id_Pedido INT NOT NULL,
+  CONSTRAINT PK_DetallePedido PRIMARY KEY (id_Vehiculo, id_Pedido),
+  CONSTRAINT FK_DetallePedido_Vehiculos FOREIGN KEY (id_Vehiculo) REFERENCES Vehiculos(id_Vehiculo),
+  CONSTRAINT FK_DetallePedido_Pedido FOREIGN KEY (id_Pedido) REFERENCES Pedido(id_Pedido)
+);
+
+INSERT INTO Pais (id_Pais, nombre_Pais) 
+VALUES (1, 'Argentina');
+
+INSERT INTO Provincia (id_Provincia, nombre_Provincia, id_Pais) 
+VALUES (1, 'Corrientes', 1);  -- id_Pais refiere a 'Argentina'
+
+INSERT INTO Ciudad (id_Ciudad, nombre_Ciudad, id_Provincia) 
+VALUES (1, 'Corrientes', 1);  -- id_Provincia refiere a 'Corrientes'
+
+INSERT INTO Localidad (id_Localidad, nombre_Localidad, id_Ciudad) 
+VALUES (1, 'Capital', 1);  -- id_Ciudad refiere a 'Corrientes'
+
+INSERT INTO Perfil_Empleado (id_perfil, nombre_Perfil) 
+VALUES (1, 'Administrador'),
+(2, 'Cajero'),
+(3, 'Vendedor');
+
+INSERT INTO Estado_Empleado (id_EstadoEmpleado, nombre_EstadoEmpleado) 
+VALUES (1, 'Activo');
+
+
+INSERT INTO Empleado
+(
+  id_Empleado, nombre_Empleado, apellido_Empleado, dni_Empleado, cuil_Empleado, 
+  calle_Empleado, num_Calle_Empleado, piso_Empleado, dpto_Empleado, 
+  email_Empleado, celular_Empleado, codigo_PostalEmpleado, id_Localidad, 
+  id_perfil, id_Estado
+) 
+VALUES 
+(
+  1, 'Jorge', 'Ramos', 40123456, 20123456789, 
+  'Av. 3 de Abril', 742, 3, 'A', 
+  'jorge.20@example.com', '3794123456', 3400, 1, 
+  1, 1
+);
+
+INSERT INTO Pais (id_Pais, nombre_Pais)
+VALUES (2, 'Paraguay'),
+       (3, 'Brasil'),
+       (4, 'Uruguay');
+
+INSERT INTO Provincia (id_Provincia, nombre_Provincia, id_Pais)
+VALUES (2, 'Buenos Aires', 1),
+       (3, 'Catamarca', 1),
+       (4, 'Chaco', 1),
+       (5, 'Chubut', 1),
+       (6, 'Córdoba', 1),
+       (7, 'Entre Ríos', 1),
+       (8, 'Formosa', 1),
+       (9, 'Jujuy', 1),
+       (10, 'La Pampa', 1),
+       (11, 'La Rioja', 1),
+       (12, 'Mendoza', 1),
+       (13, 'Misiones', 1),
+       (14, 'Neuquén', 1),
+       (15, 'Río Negro', 1),
+       (16, 'Salta', 1),
+       (17, 'San Juan', 1),
+       (18, 'San Luis', 1),
+       (19, 'Santa Cruz', 1),
+       (20, 'Santa Fe', 1),
+       (21, 'Santiago del Estero', 1),
+       (22, 'Tierra del Fuego', 1),
+       (23, 'Tucumán', 1);
+
+INSERT INTO Estado_Empleado (id_EstadoEmpleado, nombre_EstadoEmpleado)
+VALUES (2, 'Inactivo');
+
+INSERT INTO Provincia (id_Provincia, nombre_Provincia, id_Pais)
+VALUES (24, 'Asunción', 2),
+       (25, 'Central', 2),
+       (26, 'Alto Paraná', 2),
+       (27, 'Itapúa', 2);
+
+INSERT INTO Provincia (id_Provincia, nombre_Provincia, id_Pais)
+VALUES (28, 'São Paulo', 3),
+       (29, 'Rio de Janeiro', 3),
+       (30, 'Minas Gerais', 3),
+       (31, 'Bahia', 3);
+
+INSERT INTO Provincia (id_Provincia, nombre_Provincia, id_Pais)
+VALUES (32, 'Montevideo', 4),
+       (33, 'Canelones', 4),
+       (34, 'Maldonado', 4),
+       (35, 'Salto', 4);
+
+INSERT INTO Empleado (
+    id_Empleado, nombre_Empleado, apellido_Empleado, dni_Empleado, cuil_Empleado, 
+    calle_Empleado, num_Calle_Empleado, piso_Empleado, dpto_Empleado, 
+    email_Empleado, celular_Empleado, codigo_PostalEmpleado, id_Localidad, 
+    id_perfil, id_Estado
+)
+VALUES 
+(2, 'María', 'Gómez', 23456789, 20234567890, 'Av. Siempreviva', 456, 3, 'B', 'maria.gomez@email.com', '0987654321', 1010, 1, 1, 1),
+(3, 'Carlos', 'López', 34567890, 20345678901, 'Calle del Sol', 789, NULL, NULL, 'carlos.lopez@email.com', '1122334455', 1515, 1, 1, 1),
+(4, 'Ana', 'Rodríguez', 45678901, 20456789012, 'Avenida Mitre', 101, 1, 'C', 'ana.rodriguez@email.com', '6677889900', 1212, 1, 2, 1),
+(5, 'Luis', 'Martínez', 56789012, 20567890123, 'Paseo de la Reforma', 202, NULL, NULL, 'luis.martinez@email.com', '9988776655', 1313, 1, 2, 2),
+(6, 'Laura', 'Sánchez', 67890123, 20678901234, 'Camino del Bosque', 303, 4, 'D', 'laura.sanchez@email.com', '5544332211', 1616, 1, 3, 1),
+(7, 'Pedro', 'Fernández', 78901234, 20789012345, 'Calle Libertad', 404, NULL, NULL, 'pedro.fernandez@email.com', '4433221100', 1717, 1, 3, 2),
+(8, 'Sofía', 'Ramírez', 89012345, 20890123456, 'Bulevar San Martín', 505, NULL, NULL, 'sofia.ramirez@email.com', '3322110099', 1818, 1, 2, 1),
+(9, 'Diego', 'Ortiz', 90123456, 20901234567, 'Avenida Roca', 606, NULL, NULL, 'diego.ortiz@email.com', '2211009988', 1919, 1, 1, 2),
+(10, 'Gabriela', 'Torres', 11234567, 20112345678, 'Calle Maipú', 707, NULL, NULL, 'gabriela.torres@email.com', '1100998877', 2020, 1, 1, 1),
+(11, 'Juan', 'Pérez', 12345678, 20123456709, 'Calle Falsa', 123, 2, 'A', 'juan.perez@email.com', '1234567890', 1414, 1, 1, 1);
