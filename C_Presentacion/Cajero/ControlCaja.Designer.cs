@@ -56,29 +56,26 @@
             this.panel1.BackColor = System.Drawing.Color.Thistle;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(35, 706);
+            this.panel1.Size = new System.Drawing.Size(26, 574);
             this.panel1.TabIndex = 1;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Thistle;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(35, 658);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Location = new System.Drawing.Point(26, 535);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1065, 48);
+            this.panel3.Size = new System.Drawing.Size(799, 39);
             this.panel3.TabIndex = 3;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Thistle;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(1065, 48);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Location = new System.Drawing.Point(799, 39);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(35, 610);
+            this.panel2.Size = new System.Drawing.Size(26, 496);
             this.panel2.TabIndex = 4;
             // 
             // dataGridView1
@@ -101,11 +98,10 @@
             this.totalMonto,
             this.montoTotalCaja});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(35, 131);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(26, 106);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1030, 527);
+            this.dataGridView1.Size = new System.Drawing.Size(773, 429);
             this.dataGridView1.TabIndex = 7;
             // 
             // idFecha
@@ -164,39 +160,35 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.Thistle;
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(35, 106);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Location = new System.Drawing.Point(26, 86);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1030, 25);
+            this.panel5.Size = new System.Drawing.Size(773, 20);
             this.panel5.TabIndex = 6;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(8, 17);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(6, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(195, 21);
+            this.label1.Size = new System.Drawing.Size(148, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Buscar por Fecha/Monto";
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(287, 11);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Location = new System.Drawing.Point(215, 9);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(237, 32);
+            this.textBox1.Size = new System.Drawing.Size(179, 27);
             this.textBox1.TabIndex = 1;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::AgMaGest.Properties.Resources.Icono_Buscar_Cajero;
-            this.pictureBox1.Location = new System.Drawing.Point(533, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(400, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(45, 60);
+            this.pictureBox1.Size = new System.Drawing.Size(34, 49);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -208,27 +200,25 @@
             this.panel7.Controls.Add(this.textBox1);
             this.panel7.Controls.Add(this.label1);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(35, 48);
-            this.panel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel7.Location = new System.Drawing.Point(26, 39);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1030, 58);
+            this.panel7.Size = new System.Drawing.Size(773, 47);
             this.panel7.TabIndex = 5;
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.Thistle;
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(35, 0);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel6.Location = new System.Drawing.Point(26, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1065, 48);
+            this.panel6.Size = new System.Drawing.Size(799, 39);
             this.panel6.TabIndex = 2;
             // 
             // ControlCaja
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1100, 706);
+            this.ClientSize = new System.Drawing.Size(825, 574);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel7);
@@ -237,7 +227,6 @@
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ControlCaja";
             this.Text = "ControlCaja";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
