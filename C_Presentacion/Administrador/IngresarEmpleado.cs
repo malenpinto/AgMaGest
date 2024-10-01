@@ -9,6 +9,9 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AgMaGest.C_Logica.Entidades;  // Importa la clase Empleado
+using AgMaGest.C_Datos;  // Importa la capa de datos
+
 
 namespace AgMaGest.C_Presentacion.Administrador
 {
@@ -18,7 +21,18 @@ namespace AgMaGest.C_Presentacion.Administrador
         {
             InitializeComponent();
             this.KeyPreview = true; // Permite que el formulario capture el evento KeyDown
+            this.Load += IngresarEmpleado_Load; // Suscribirse al evento Load
+            CBPerfilEmpleado.DataSource = null; // Asegúrate de que esté vacío al principio
+            
         }
+
+        private void IngresarEmpleado_Load(object sender, EventArgs e)
+        {
+            CargarPerfiles();
+            CargarPaises(); // Asegúrate de cargar los países
+            CargarPerfiles(); // Cargar perfiles
+        }
+
 
         private void IngresarEmpleado_KeyDown(object sender, KeyEventArgs e)
         {
@@ -29,6 +43,50 @@ namespace AgMaGest.C_Presentacion.Administrador
                 e.SuppressKeyPress = true; // Evita que la tecla Enter haga otra acción
             }
         }
+
+        private void CargarPaises()
+        {
+            PaisDAL paisDAL = new PaisDAL();
+            List<Pais> paises = paisDAL.ObtenerPaises();
+
+            CBPaisEmpleado.DataSource = paises; // Asignar la lista de países al ComboBox
+            CBPaisEmpleado.DisplayMember = "NombrePais"; // Campo que se mostrará en el ComboBox
+            CBPaisEmpleado.ValueMember = "IdPais"; // Campo que se utilizará como valor
+
+            CBPaisEmpleado.SelectedIndexChanged += CBPaisEmpleado_SelectedIndexChanged; // Suscribirse al evento SelectedIndexChanged
+        }
+
+        private void CBPaisEmpleado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Verificar que el país seleccionado no sea nulo
+            if (CBPaisEmpleado.SelectedValue != null)
+            {
+                int idPais = Convert.ToInt32(CBPaisEmpleado.SelectedValue);
+                CargarProvincias(idPais); // Cargar provincias según el país seleccionado
+            }
+        }
+
+
+        private void CargarProvincias(int idPais)
+        {
+            ProvinciaDAL provinciaDAL = new ProvinciaDAL();
+            List<Provincia> provincias = provinciaDAL.ObtenerProvinciasPorPais(idPais);
+
+            CBProvinciaEmpleado.DataSource = provincias; // Asignar la lista de provincias al ComboBox
+            CBProvinciaEmpleado.DisplayMember = "NombreProvincia"; // Campo que se mostrará en el ComboBox
+            CBProvinciaEmpleado.ValueMember = "IdProvincia"; // Campo que se utilizará como valor
+        }
+
+        private void CargarPerfiles()
+        {
+            EmpleadoDAL empleadoDAL = new EmpleadoDAL();
+            List<PerfilEmpleado> perfiles = empleadoDAL.ObtenerPerfiles();
+
+            CBPerfilEmpleado.DataSource = perfiles; // Asignar la lista de perfiles al ComboBox
+            CBPerfilEmpleado.DisplayMember = "NombrePerfil"; // Campo que se mostrará en el ComboBox
+            CBPerfilEmpleado.ValueMember = "IdPerfil"; // Campo que se utilizará como valor
+        }
+
 
         private void BAgregarEmpleado_Click(object sender, EventArgs e)
         {
@@ -56,11 +114,38 @@ namespace AgMaGest.C_Presentacion.Administrador
             }
             else if (VerificarEmail() && VerificarDNIyCUIL())
             {
-                // Convertir el nombre y apellido a formato de título (primeras letras en mayúsculas)
-                string nombreCompleto = ToTitleCase(TBApellidoEmpleado.Text) + " " + ToTitleCase(TBNombreEmpleado.Text);
-                
-                // Si todos los campos son válidos, procedemos con la lógica de agregar.
-                MessageBox.Show("Se agrego exitosamente a: " + nombreCompleto, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Crear una instancia de EmpleadoDAL
+                EmpleadoDAL empleadoDAL = new EmpleadoDAL(); // Instanciamos EmpleadoDAL
+
+                // Crear un objeto Empleado con los datos del formulario
+                Empleado nuevoEmpleado = new Empleado()
+                {
+                    IdEmpleado = empleadoDAL.ObtenerNuevoIdEmpleado(), // Llamar al método para obtener un nuevo ID
+                    Nombre = TBNombreEmpleado.Text,
+                    Apellido = TBApellidoEmpleado.Text,
+                    DNI = TBDniEmpleado.Text,
+                    CUIL = TBCuilEmpleado.Text,
+                    Celular = TBCelularEmpleado.Text,
+                    Email = TBEmailEmpleado.Text,
+                    Calle = TBCalleEmpleado.Text,
+                    NumeroCalle = TBNumCalleEmpleado.Text,
+                    Piso = TBNumPisoEmpleado.Text,
+                    Dpto = TBDptoEmpleado.Text,
+                    CodigoPostal = TBCodPostalEmpleado.Text,
+                    IdLocalidad = Convert.ToInt32(CBPaisEmpleado.SelectedValue), // Asumiendo que tienes una lista de localidades
+                    IdPerfil = Convert.ToInt32(CBPerfilEmpleado.SelectedValue), // Asumiendo que tienes una lista de perfiles
+                    IdEstado = 1, // O el ID que consideres apropiado
+                    Ciudad = TBCiudadEmpleado.Text,
+                    Pais = CBPaisEmpleado.Text, // Asumiendo que tienes un ComboBox para el país
+                    Provincia = CBProvinciaEmpleado.Text, // Asumiendo que tienes un ComboBox para la provincia
+                    Localidad = TBLocalidadEmpleado.Text // Asumiendo que tienes un TextBox para la localidad
+                };
+
+                // Insertar el empleado en la base de datos
+                empleadoDAL.InsertarEmpleado(nuevoEmpleado);
+
+                // Mostrar mensaje de éxito
+                MessageBox.Show("Empleado agregado exitosamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 // Limpiar todos los campos después de agregar
                 LimpiarCampos();

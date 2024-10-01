@@ -53,6 +53,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AgmagestDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="C_Datos\EmpleadoDAL.cs" />
+    <Compile Include="C_Datos\PaisDAL.cs" />
+    <Compile Include="C_Datos\ProvinciaDAL.cs" />
+    <Compile Include="C_Logica\Entidades\Empleado.cs" />
+    <Compile Include="C_Logica\Entidades\Pais.cs" />
+    <Compile Include="C_Logica\Entidades\PerfilEmpleado.cs" />
+    <Compile Include="C_Logica\Entidades\Provincia.cs" />
     <Compile Include="C_Presentacion\Administrador\EditarEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -368,10 +375,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="C_Datos\" />
-    <Folder Include="C_Logica\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\Logo-Icono-Sin-Fondo.png" />
   </ItemGroup>
