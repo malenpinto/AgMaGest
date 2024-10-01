@@ -94,14 +94,22 @@ namespace AgMaGest.C_Presentacion.Administrador
             LTituloInicioAdmin.Text = " ";  // Cambia al título del menú principal
         }
 
-        private void BSalirVistaAdm_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
 
         private void BAcercaAdmin_Click(object sender, EventArgs e)
         {
             AbrirFormularioHijo(new VisualizarAcercaDeAdmin(), "Acerca de AgMa Gest");
+        }
+
+        private void BCerrarSesionAdmin_Click(object sender, EventArgs e)
+        {
+            // Crear una nueva instancia del formulario de Login
+            LoginForm loginForm = new LoginForm();
+
+            // Mostrar el formulario de Login
+            loginForm.Show();
+
+            // Cerrar el formulario actual (InicioAdministrador)
+            this.Close();
         }
     }
 }

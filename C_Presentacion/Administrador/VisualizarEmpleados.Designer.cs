@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.BEditar = new System.Windows.Forms.Button();
             this.BAgregarEmpleado = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -54,7 +55,6 @@
             this.apellido_Empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.email_Empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.direccion_Empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BEditar = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -67,29 +67,29 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(200)))), ((int)(((byte)(145)))));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(35, 706);
+            this.panel1.Size = new System.Drawing.Size(26, 574);
             this.panel1.TabIndex = 0;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(200)))), ((int)(((byte)(145)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(1065, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Location = new System.Drawing.Point(799, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(35, 706);
+            this.panel2.Size = new System.Drawing.Size(26, 574);
             this.panel2.TabIndex = 1;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(200)))), ((int)(((byte)(145)))));
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(35, 658);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel3.Location = new System.Drawing.Point(26, 535);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1030, 48);
+            this.panel3.Size = new System.Drawing.Size(773, 39);
             this.panel3.TabIndex = 2;
             // 
             // panel4
@@ -98,10 +98,10 @@
             this.panel4.Controls.Add(this.panel6);
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(35, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel4.Location = new System.Drawing.Point(26, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1030, 133);
+            this.panel4.Size = new System.Drawing.Size(773, 108);
             this.panel4.TabIndex = 3;
             // 
             // panel7
@@ -111,11 +111,23 @@
             this.panel7.Controls.Add(this.button1);
             this.panel7.Controls.Add(this.panel8);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(0, 48);
-            this.panel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel7.Location = new System.Drawing.Point(0, 39);
+            this.panel7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1030, 60);
+            this.panel7.Size = new System.Drawing.Size(773, 49);
             this.panel7.TabIndex = 2;
+            // 
+            // BEditar
+            // 
+            this.BEditar.FlatAppearance.BorderSize = 2;
+            this.BEditar.Location = new System.Drawing.Point(596, 8);
+            this.BEditar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BEditar.Name = "BEditar";
+            this.BEditar.Size = new System.Drawing.Size(84, 27);
+            this.BEditar.TabIndex = 10;
+            this.BEditar.Text = "Editar";
+            this.BEditar.UseVisualStyleBackColor = true;
+            this.BEditar.Click += new System.EventHandler(this.BEditar_Click);
             // 
             // BAgregarEmpleado
             // 
@@ -130,10 +142,10 @@
             this.BAgregarEmpleado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
             this.BAgregarEmpleado.Image = global::AgMaGest.Properties.Resources.Icono_MasEmpleado;
             this.BAgregarEmpleado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BAgregarEmpleado.Location = new System.Drawing.Point(548, 0);
-            this.BAgregarEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BAgregarEmpleado.Location = new System.Drawing.Point(411, 0);
+            this.BAgregarEmpleado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BAgregarEmpleado.Name = "BAgregarEmpleado";
-            this.BAgregarEmpleado.Size = new System.Drawing.Size(240, 60);
+            this.BAgregarEmpleado.Size = new System.Drawing.Size(180, 49);
             this.BAgregarEmpleado.TabIndex = 8;
             this.BAgregarEmpleado.Text = " Nuevo Empleado";
             this.BAgregarEmpleado.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -147,10 +159,10 @@
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(524, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Location = new System.Drawing.Point(393, 0);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(24, 60);
+            this.button1.Size = new System.Drawing.Size(18, 49);
             this.button1.TabIndex = 9;
             this.button1.UseVisualStyleBackColor = true;
             // 
@@ -163,9 +175,9 @@
             this.panel8.Controls.Add(this.label1);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel8.Location = new System.Drawing.Point(0, 0);
-            this.panel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(524, 60);
+            this.panel8.Size = new System.Drawing.Size(393, 49);
             this.panel8.TabIndex = 5;
             // 
             // label2
@@ -173,9 +185,10 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Bahnschrift", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(19, 31);
+            this.label2.Location = new System.Drawing.Point(14, 25);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(149, 21);
+            this.label2.Size = new System.Drawing.Size(124, 17);
             this.label2.TabIndex = 4;
             this.label2.Text = "DNI/CUIL/Nombre";
             // 
@@ -184,10 +197,10 @@
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
             this.pictureBox1.Image = global::AgMaGest.Properties.Resources.Icono_Buscar_Admin;
-            this.pictureBox1.Location = new System.Drawing.Point(479, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(359, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(45, 60);
+            this.pictureBox1.Size = new System.Drawing.Size(34, 49);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
@@ -196,10 +209,10 @@
             // 
             this.TBBuscarEmpleado.BackColor = System.Drawing.Color.Gainsboro;
             this.TBBuscarEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBBuscarEmpleado.Location = new System.Drawing.Point(189, 11);
-            this.TBBuscarEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBBuscarEmpleado.Location = new System.Drawing.Point(142, 9);
+            this.TBBuscarEmpleado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TBBuscarEmpleado.Name = "TBBuscarEmpleado";
-            this.TBBuscarEmpleado.Size = new System.Drawing.Size(287, 32);
+            this.TBBuscarEmpleado.Size = new System.Drawing.Size(216, 27);
             this.TBBuscarEmpleado.TabIndex = 0;
             // 
             // label1
@@ -207,9 +220,10 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Bahnschrift", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(19, 5);
+            this.label1.Location = new System.Drawing.Point(14, 4);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 21);
+            this.label1.Size = new System.Drawing.Size(82, 17);
             this.label1.TabIndex = 2;
             this.label1.Text = "Buscar por ";
             // 
@@ -217,10 +231,10 @@
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(200)))), ((int)(((byte)(145)))));
             this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel6.Location = new System.Drawing.Point(0, 108);
-            this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel6.Location = new System.Drawing.Point(0, 88);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1030, 25);
+            this.panel6.Size = new System.Drawing.Size(773, 20);
             this.panel6.TabIndex = 1;
             // 
             // panel5
@@ -228,21 +242,21 @@
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(200)))), ((int)(((byte)(145)))));
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1030, 48);
+            this.panel5.Size = new System.Drawing.Size(773, 39);
             this.panel5.TabIndex = 0;
             // 
             // dataGridEmpleados
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridEmpleados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridEmpleados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridEmpleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_Empleado,
@@ -255,12 +269,12 @@
             this.apellido_Empleado,
             this.email_Empleado,
             this.direccion_Empleado});
-            this.dataGridEmpleados.Location = new System.Drawing.Point(35, 133);
-            this.dataGridEmpleados.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridEmpleados.Location = new System.Drawing.Point(26, 108);
+            this.dataGridEmpleados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridEmpleados.Name = "dataGridEmpleados";
             this.dataGridEmpleados.RowHeadersWidth = 51;
             this.dataGridEmpleados.RowTemplate.Height = 24;
-            this.dataGridEmpleados.Size = new System.Drawing.Size(1030, 525);
+            this.dataGridEmpleados.Size = new System.Drawing.Size(772, 427);
             this.dataGridEmpleados.TabIndex = 4;
             // 
             // id_Empleado
@@ -335,28 +349,18 @@
             this.direccion_Empleado.Name = "direccion_Empleado";
             this.direccion_Empleado.Width = 125;
             // 
-            // BEditar
-            // 
-            this.BEditar.Location = new System.Drawing.Point(794, 10);
-            this.BEditar.Name = "BEditar";
-            this.BEditar.Size = new System.Drawing.Size(112, 33);
-            this.BEditar.TabIndex = 10;
-            this.BEditar.Text = "Editar";
-            this.BEditar.UseVisualStyleBackColor = true;
-            this.BEditar.Click += new System.EventHandler(this.BEditar_Click);
-            // 
             // VisualizarEmpleados
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1100, 706);
+            this.ClientSize = new System.Drawing.Size(825, 574);
             this.Controls.Add(this.dataGridEmpleados);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "VisualizarEmpleados";
             this.Text = "VisualizarEmpleados";
             this.panel4.ResumeLayout(false);

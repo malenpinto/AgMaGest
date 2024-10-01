@@ -42,7 +42,7 @@
             this.BPagos = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.BSalir = new System.Windows.Forms.Button();
+            this.BCerrarSesionCajero = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -80,7 +80,7 @@
             this.PMenu.Controls.Add(this.PSubMenuPagos);
             this.PMenu.Controls.Add(this.BPagos);
             this.PMenu.Controls.Add(this.panel3);
-            this.PMenu.Controls.Add(this.BSalir);
+            this.PMenu.Controls.Add(this.BCerrarSesionCajero);
             this.PMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.PMenu.Location = new System.Drawing.Point(0, 0);
             this.PMenu.Name = "PMenu";
@@ -309,28 +309,28 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // BSalir
+            // BCerrarSesionCajero
             // 
-            this.BSalir.BackColor = System.Drawing.Color.BlueViolet;
-            this.BSalir.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.BSalir.FlatAppearance.BorderSize = 0;
-            this.BSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.BSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Indigo;
-            this.BSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BSalir.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
-            this.BSalir.ForeColor = System.Drawing.Color.GhostWhite;
-            this.BSalir.Image = global::AgMaGest.Properties.Resources.Icono_Exit_Vendedor;
-            this.BSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BSalir.Location = new System.Drawing.Point(0, 558);
-            this.BSalir.Name = "BSalir";
-            this.BSalir.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.BSalir.Size = new System.Drawing.Size(215, 41);
-            this.BSalir.TabIndex = 4;
-            this.BSalir.Text = " Salir";
-            this.BSalir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BSalir.UseVisualStyleBackColor = false;
-            this.BSalir.Click += new System.EventHandler(this.BSalir_Click);
+            this.BCerrarSesionCajero.BackColor = System.Drawing.Color.BlueViolet;
+            this.BCerrarSesionCajero.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.BCerrarSesionCajero.FlatAppearance.BorderSize = 0;
+            this.BCerrarSesionCajero.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BCerrarSesionCajero.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Indigo;
+            this.BCerrarSesionCajero.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BCerrarSesionCajero.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
+            this.BCerrarSesionCajero.ForeColor = System.Drawing.Color.GhostWhite;
+            this.BCerrarSesionCajero.Image = global::AgMaGest.Properties.Resources.Icono_Exit_Vendedor;
+            this.BCerrarSesionCajero.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BCerrarSesionCajero.Location = new System.Drawing.Point(0, 558);
+            this.BCerrarSesionCajero.Name = "BCerrarSesionCajero";
+            this.BCerrarSesionCajero.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.BCerrarSesionCajero.Size = new System.Drawing.Size(215, 41);
+            this.BCerrarSesionCajero.TabIndex = 4;
+            this.BCerrarSesionCajero.Text = " Cerrar Sesión";
+            this.BCerrarSesionCajero.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BCerrarSesionCajero.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BCerrarSesionCajero.UseVisualStyleBackColor = false;
+            this.BCerrarSesionCajero.Click += new System.EventHandler(this.BCerrarSesionCajero_Click);
             // 
             // panel2
             // 
@@ -512,7 +512,7 @@
 
         private System.Windows.Forms.Panel PMenu;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button BSalir;
+        private System.Windows.Forms.Button BCerrarSesionCajero;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button BPagos;
         private System.Windows.Forms.Panel PSubMenuPagos;

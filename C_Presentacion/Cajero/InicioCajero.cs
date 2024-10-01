@@ -63,10 +63,6 @@ namespace AgMaGest.C_Presentacion.Cajero
             mostrarSubMenu(PSubMenuInformes);
         }
 
-        private void BSalir_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
 
         private void BMaximizar_Click(object sender, EventArgs e)
         {
@@ -150,6 +146,18 @@ namespace AgMaGest.C_Presentacion.Cajero
         private void BCerrar_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void BCerrarSesionCajero_Click(object sender, EventArgs e)
+        {
+            // Crear una nueva instancia del formulario de Login
+            LoginForm loginForm = new LoginForm();
+
+            // Mostrar el formulario de Login
+            loginForm.Show();
+
+            // Cerrar el formulario actual (InicioCajero)
+            this.Close();
         }
     }
 }

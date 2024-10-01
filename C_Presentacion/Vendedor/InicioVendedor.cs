@@ -157,10 +157,6 @@ namespace AgMaGest.C_Presentacion.Vendedor
             // Muestra el botón de retroceso
             BAtrasCliente.Visible = true;
         }
-        private void BSalir_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
         private void BExitCliente_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -193,6 +189,18 @@ namespace AgMaGest.C_Presentacion.Vendedor
             // Ocultar el botón de retroceso cuando regreses al menú principal
             BAtrasCliente.Visible = false;
             LTituloInicioCliente.Text = " ";  // Cambia al título del menú principal
+        }
+
+        private void BCerrarSesionVendedor_Click(object sender, EventArgs e)
+        {
+            // Crear una nueva instancia del formulario de Login
+            LoginForm loginForm = new LoginForm();
+
+            // Mostrar el formulario de Login
+            loginForm.Show();
+
+            // Cerrar el formulario actual (InicioVendedor)
+            this.Close();
         }
     }
 }
