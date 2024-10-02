@@ -186,6 +186,12 @@
     <Compile Include="C_Presentacion\Vendedor\EditarClienteEmpresa.Designer.cs">
       <DependentUpon>EditarClienteEmpresa.cs</DependentUpon>
     </Compile>
+    <Compile Include="C_Presentacion\Vendedor\EditarClienteFinal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C_Presentacion\Vendedor\EditarClienteFinal.Designer.cs">
+      <DependentUpon>EditarClienteFinal.cs</DependentUpon>
+    </Compile>
     <Compile Include="C_Presentacion\Vendedor\IngresarClienteFinal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -310,6 +316,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="C_Presentacion\Vendedor\EditarClienteEmpresa.resx">
       <DependentUpon>EditarClienteEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="C_Presentacion\Vendedor\EditarClienteFinal.resx">
+      <DependentUpon>EditarClienteFinal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="C_Presentacion\Vendedor\IngresarClienteEmpresa.resx">
       <DependentUpon>IngresarClienteEmpresa.cs</DependentUpon>

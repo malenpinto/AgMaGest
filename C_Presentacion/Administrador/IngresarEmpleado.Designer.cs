@@ -53,7 +53,7 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.TBEmailEmpleado = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.DTFechaNacEmpleado = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.TBNumCalleEmpleado = new System.Windows.Forms.TextBox();
             this.TBCelularEmpleado = new System.Windows.Forms.TextBox();
@@ -103,7 +103,7 @@
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.TBEmailEmpleado);
-            this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Controls.Add(this.DTFechaNacEmpleado);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.TBNumCalleEmpleado);
             this.panel1.Controls.Add(this.TBCelularEmpleado);
@@ -121,10 +121,10 @@
             this.panel1.Controls.Add(this.LFechaNacimiento);
             this.panel1.Controls.Add(this.LNombre);
             this.panel1.Controls.Add(this.panel5);
-            this.panel1.Location = new System.Drawing.Point(4, 4);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Location = new System.Drawing.Point(5, 5);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(520, 564);
+            this.panel1.Size = new System.Drawing.Size(693, 694);
             this.panel1.TabIndex = 0;
             // 
             // CBPerfilEmpleado
@@ -132,10 +132,10 @@
             this.CBPerfilEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.CBPerfilEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBPerfilEmpleado.FormattingEnabled = true;
-            this.CBPerfilEmpleado.Location = new System.Drawing.Point(37, 184);
-            this.CBPerfilEmpleado.Margin = new System.Windows.Forms.Padding(2);
+            this.CBPerfilEmpleado.Location = new System.Drawing.Point(49, 226);
+            this.CBPerfilEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CBPerfilEmpleado.Name = "CBPerfilEmpleado";
-            this.CBPerfilEmpleado.Size = new System.Drawing.Size(212, 21);
+            this.CBPerfilEmpleado.Size = new System.Drawing.Size(281, 24);
             this.CBPerfilEmpleado.TabIndex = 5;
             // 
             // label5
@@ -144,10 +144,9 @@
             this.label5.BackColor = System.Drawing.Color.SeaGreen;
             this.label5.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label5.Location = new System.Drawing.Point(37, 160);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(49, 197);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 18);
+            this.label5.Size = new System.Drawing.Size(56, 23);
             this.label5.TabIndex = 176;
             this.label5.Text = "Perfil";
             // 
@@ -156,10 +155,10 @@
             this.CBProvinciaEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.CBProvinciaEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBProvinciaEmpleado.FormattingEnabled = true;
-            this.CBProvinciaEmpleado.Location = new System.Drawing.Point(37, 432);
-            this.CBProvinciaEmpleado.Margin = new System.Windows.Forms.Padding(2);
+            this.CBProvinciaEmpleado.Location = new System.Drawing.Point(49, 532);
+            this.CBProvinciaEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CBProvinciaEmpleado.Name = "CBProvinciaEmpleado";
-            this.CBProvinciaEmpleado.Size = new System.Drawing.Size(212, 21);
+            this.CBProvinciaEmpleado.Size = new System.Drawing.Size(281, 24);
             this.CBProvinciaEmpleado.TabIndex = 15;
             // 
             // CBPaisEmpleado
@@ -167,19 +166,19 @@
             this.CBPaisEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.CBPaisEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBPaisEmpleado.FormattingEnabled = true;
-            this.CBPaisEmpleado.Location = new System.Drawing.Point(267, 385);
-            this.CBPaisEmpleado.Margin = new System.Windows.Forms.Padding(2);
+            this.CBPaisEmpleado.Location = new System.Drawing.Point(356, 474);
+            this.CBPaisEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CBPaisEmpleado.Name = "CBPaisEmpleado";
-            this.CBPaisEmpleado.Size = new System.Drawing.Size(212, 21);
+            this.CBPaisEmpleado.Size = new System.Drawing.Size(281, 24);
             this.CBPaisEmpleado.TabIndex = 14;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.panel3.Location = new System.Drawing.Point(16, 505);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Location = new System.Drawing.Point(21, 622);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(488, 2);
+            this.panel3.Size = new System.Drawing.Size(651, 2);
             this.panel3.TabIndex = 166;
             // 
             // BAgregarEmpleado
@@ -193,10 +192,10 @@
             this.BAgregarEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BAgregarEmpleado.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BAgregarEmpleado.ForeColor = System.Drawing.Color.LightSeaGreen;
-            this.BAgregarEmpleado.Location = new System.Drawing.Point(155, 515);
-            this.BAgregarEmpleado.Margin = new System.Windows.Forms.Padding(2);
+            this.BAgregarEmpleado.Location = new System.Drawing.Point(207, 634);
+            this.BAgregarEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BAgregarEmpleado.Name = "BAgregarEmpleado";
-            this.BAgregarEmpleado.Size = new System.Drawing.Size(96, 41);
+            this.BAgregarEmpleado.Size = new System.Drawing.Size(128, 50);
             this.BAgregarEmpleado.TabIndex = 18;
             this.BAgregarEmpleado.Text = "Agregar";
             this.BAgregarEmpleado.UseVisualStyleBackColor = false;
@@ -207,10 +206,10 @@
             this.TBDptoEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.TBDptoEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TBDptoEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBDptoEmpleado.Location = new System.Drawing.Point(37, 385);
-            this.TBDptoEmpleado.Margin = new System.Windows.Forms.Padding(2);
+            this.TBDptoEmpleado.Location = new System.Drawing.Point(49, 474);
+            this.TBDptoEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TBDptoEmpleado.Name = "TBDptoEmpleado";
-            this.TBDptoEmpleado.Size = new System.Drawing.Size(106, 21);
+            this.TBDptoEmpleado.Size = new System.Drawing.Size(141, 24);
             this.TBDptoEmpleado.TabIndex = 12;
             // 
             // BSalirEmpleado
@@ -224,10 +223,10 @@
             this.BSalirEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BSalirEmpleado.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BSalirEmpleado.ForeColor = System.Drawing.Color.Salmon;
-            this.BSalirEmpleado.Location = new System.Drawing.Point(267, 515);
-            this.BSalirEmpleado.Margin = new System.Windows.Forms.Padding(2);
+            this.BSalirEmpleado.Location = new System.Drawing.Point(356, 634);
+            this.BSalirEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BSalirEmpleado.Name = "BSalirEmpleado";
-            this.BSalirEmpleado.Size = new System.Drawing.Size(96, 41);
+            this.BSalirEmpleado.Size = new System.Drawing.Size(128, 50);
             this.BSalirEmpleado.TabIndex = 19;
             this.BSalirEmpleado.Text = "Salir";
             this.BSalirEmpleado.UseVisualStyleBackColor = false;
@@ -239,10 +238,9 @@
             this.label11.BackColor = System.Drawing.Color.SeaGreen;
             this.label11.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label11.Location = new System.Drawing.Point(37, 362);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Location = new System.Drawing.Point(49, 446);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(103, 18);
+            this.label11.Size = new System.Drawing.Size(129, 23);
             this.label11.TabIndex = 171;
             this.label11.Text = "Departamento";
             // 
@@ -251,10 +249,10 @@
             this.TBNumPisoEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.TBNumPisoEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TBNumPisoEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBNumPisoEmpleado.Location = new System.Drawing.Point(376, 339);
-            this.TBNumPisoEmpleado.Margin = new System.Windows.Forms.Padding(2);
+            this.TBNumPisoEmpleado.Location = new System.Drawing.Point(501, 417);
+            this.TBNumPisoEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TBNumPisoEmpleado.Name = "TBNumPisoEmpleado";
-            this.TBNumPisoEmpleado.Size = new System.Drawing.Size(106, 21);
+            this.TBNumPisoEmpleado.Size = new System.Drawing.Size(141, 24);
             this.TBNumPisoEmpleado.TabIndex = 11;
             this.TBNumPisoEmpleado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             // 
@@ -264,10 +262,9 @@
             this.label10.BackColor = System.Drawing.Color.SeaGreen;
             this.label10.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label10.Location = new System.Drawing.Point(378, 316);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Location = new System.Drawing.Point(504, 389);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(37, 18);
+            this.label10.Size = new System.Drawing.Size(47, 23);
             this.label10.TabIndex = 169;
             this.label10.Text = "Piso";
             // 
@@ -276,10 +273,10 @@
             this.TBCodPostalEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.TBCodPostalEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TBCodPostalEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBCodPostalEmpleado.Location = new System.Drawing.Point(146, 385);
-            this.TBCodPostalEmpleado.Margin = new System.Windows.Forms.Padding(2);
+            this.TBCodPostalEmpleado.Location = new System.Drawing.Point(195, 474);
+            this.TBCodPostalEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TBCodPostalEmpleado.Name = "TBCodPostalEmpleado";
-            this.TBCodPostalEmpleado.Size = new System.Drawing.Size(106, 21);
+            this.TBCodPostalEmpleado.Size = new System.Drawing.Size(141, 24);
             this.TBCodPostalEmpleado.TabIndex = 13;
             this.TBCodPostalEmpleado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             // 
@@ -289,10 +286,9 @@
             this.label1.BackColor = System.Drawing.Color.SeaGreen;
             this.label1.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(146, 362);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(195, 446);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 18);
+            this.label1.Size = new System.Drawing.Size(125, 23);
             this.label1.TabIndex = 167;
             this.label1.Text = "Codigo Postal";
             // 
@@ -300,10 +296,10 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(200)))), ((int)(((byte)(145)))));
             this.panel2.Controls.Add(this.label9);
-            this.panel2.Location = new System.Drawing.Point(16, 7);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Location = new System.Drawing.Point(21, 9);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(488, 23);
+            this.panel2.Size = new System.Drawing.Size(651, 28);
             this.panel2.TabIndex = 165;
             // 
             // label9
@@ -312,10 +308,9 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label9.Location = new System.Drawing.Point(184, 1);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Location = new System.Drawing.Point(245, 1);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(137, 19);
+            this.label9.Size = new System.Drawing.Size(168, 24);
             this.label9.TabIndex = 72;
             this.label9.Text = "Datos Personales";
             // 
@@ -324,10 +319,10 @@
             this.TBCuilEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.TBCuilEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TBCuilEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBCuilEmpleado.Location = new System.Drawing.Point(267, 102);
-            this.TBCuilEmpleado.Margin = new System.Windows.Forms.Padding(2);
+            this.TBCuilEmpleado.Location = new System.Drawing.Point(356, 126);
+            this.TBCuilEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TBCuilEmpleado.Name = "TBCuilEmpleado";
-            this.TBCuilEmpleado.Size = new System.Drawing.Size(215, 21);
+            this.TBCuilEmpleado.Size = new System.Drawing.Size(286, 24);
             this.TBCuilEmpleado.TabIndex = 4;
             this.TBCuilEmpleado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             // 
@@ -336,10 +331,10 @@
             this.TBDniEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.TBDniEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TBDniEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBDniEmpleado.Location = new System.Drawing.Point(37, 102);
-            this.TBDniEmpleado.Margin = new System.Windows.Forms.Padding(2);
+            this.TBDniEmpleado.Location = new System.Drawing.Point(49, 126);
+            this.TBDniEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TBDniEmpleado.Name = "TBDniEmpleado";
-            this.TBDniEmpleado.Size = new System.Drawing.Size(215, 21);
+            this.TBDniEmpleado.Size = new System.Drawing.Size(286, 24);
             this.TBDniEmpleado.TabIndex = 3;
             this.TBDniEmpleado.Tag = "";
             this.TBDniEmpleado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
@@ -350,10 +345,9 @@
             this.label7.BackColor = System.Drawing.Color.SeaGreen;
             this.label7.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label7.Location = new System.Drawing.Point(267, 81);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(356, 100);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(40, 18);
+            this.label7.Size = new System.Drawing.Size(50, 23);
             this.label7.TabIndex = 160;
             this.label7.Text = "CUIL";
             // 
@@ -363,10 +357,9 @@
             this.label8.BackColor = System.Drawing.Color.SeaGreen;
             this.label8.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label8.Location = new System.Drawing.Point(37, 81);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Location = new System.Drawing.Point(49, 100);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(33, 18);
+            this.label8.Size = new System.Drawing.Size(40, 23);
             this.label8.TabIndex = 159;
             this.label8.Text = "DNI";
             // 
@@ -375,10 +368,10 @@
             this.TBCiudadEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.TBCiudadEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TBCiudadEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBCiudadEmpleado.Location = new System.Drawing.Point(267, 432);
-            this.TBCiudadEmpleado.Margin = new System.Windows.Forms.Padding(2);
+            this.TBCiudadEmpleado.Location = new System.Drawing.Point(356, 532);
+            this.TBCiudadEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TBCiudadEmpleado.Name = "TBCiudadEmpleado";
-            this.TBCiudadEmpleado.Size = new System.Drawing.Size(215, 21);
+            this.TBCiudadEmpleado.Size = new System.Drawing.Size(286, 24);
             this.TBCiudadEmpleado.TabIndex = 16;
             this.TBCiudadEmpleado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloLetras_KeyPress);
             // 
@@ -388,10 +381,9 @@
             this.label6.BackColor = System.Drawing.Color.SeaGreen;
             this.label6.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label6.Location = new System.Drawing.Point(267, 410);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(356, 505);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 18);
+            this.label6.Size = new System.Drawing.Size(68, 23);
             this.label6.TabIndex = 157;
             this.label6.Text = "Ciudad";
             // 
@@ -399,10 +391,10 @@
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(200)))), ((int)(((byte)(145)))));
             this.panel6.Controls.Add(this.label4);
-            this.panel6.Location = new System.Drawing.Point(16, 291);
-            this.panel6.Margin = new System.Windows.Forms.Padding(2);
+            this.panel6.Location = new System.Drawing.Point(21, 358);
+            this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(488, 23);
+            this.panel6.Size = new System.Drawing.Size(651, 28);
             this.panel6.TabIndex = 156;
             // 
             // label4
@@ -411,10 +403,9 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label4.Location = new System.Drawing.Point(201, 1);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(268, 1);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 19);
+            this.label4.Size = new System.Drawing.Size(95, 24);
             this.label4.TabIndex = 72;
             this.label4.Text = "Dirección";
             // 
@@ -423,24 +414,24 @@
             this.TBEmailEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.TBEmailEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TBEmailEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBEmailEmpleado.Location = new System.Drawing.Point(267, 265);
-            this.TBEmailEmpleado.Margin = new System.Windows.Forms.Padding(2);
+            this.TBEmailEmpleado.Location = new System.Drawing.Point(356, 326);
+            this.TBEmailEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TBEmailEmpleado.Name = "TBEmailEmpleado";
-            this.TBEmailEmpleado.Size = new System.Drawing.Size(215, 21);
+            this.TBEmailEmpleado.Size = new System.Drawing.Size(286, 24);
             this.TBEmailEmpleado.TabIndex = 8;
             // 
-            // dateTimePicker1
+            // DTFechaNacEmpleado
             // 
-            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Gadugi", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(267, 131);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker1.MaxDate = new System.DateTime(3024, 12, 31, 0, 0, 0, 0);
-            this.dateTimePicker1.MinDate = new System.DateTime(1924, 1, 1, 0, 0, 0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(103, 23);
-            this.dateTimePicker1.TabIndex = 5;
+            this.DTFechaNacEmpleado.CalendarFont = new System.Drawing.Font("Gadugi", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DTFechaNacEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DTFechaNacEmpleado.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DTFechaNacEmpleado.Location = new System.Drawing.Point(356, 161);
+            this.DTFechaNacEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DTFechaNacEmpleado.MaxDate = new System.DateTime(3024, 12, 31, 0, 0, 0, 0);
+            this.DTFechaNacEmpleado.MinDate = new System.DateTime(1924, 1, 1, 0, 0, 0, 0);
+            this.DTFechaNacEmpleado.Name = "DTFechaNacEmpleado";
+            this.DTFechaNacEmpleado.Size = new System.Drawing.Size(136, 26);
+            this.DTFechaNacEmpleado.TabIndex = 5;
             // 
             // label2
             // 
@@ -448,10 +439,9 @@
             this.label2.BackColor = System.Drawing.Color.SeaGreen;
             this.label2.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label2.Location = new System.Drawing.Point(267, 243);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(356, 299);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 18);
+            this.label2.Size = new System.Drawing.Size(58, 23);
             this.label2.TabIndex = 151;
             this.label2.Text = "Email";
             // 
@@ -460,10 +450,10 @@
             this.TBNumCalleEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.TBNumCalleEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TBNumCalleEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBNumCalleEmpleado.Location = new System.Drawing.Point(267, 339);
-            this.TBNumCalleEmpleado.Margin = new System.Windows.Forms.Padding(2);
+            this.TBNumCalleEmpleado.Location = new System.Drawing.Point(356, 417);
+            this.TBNumCalleEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TBNumCalleEmpleado.Name = "TBNumCalleEmpleado";
-            this.TBNumCalleEmpleado.Size = new System.Drawing.Size(106, 21);
+            this.TBNumCalleEmpleado.Size = new System.Drawing.Size(141, 24);
             this.TBNumCalleEmpleado.TabIndex = 10;
             this.TBNumCalleEmpleado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             // 
@@ -473,10 +463,10 @@
             this.TBCelularEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.TBCelularEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TBCelularEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBCelularEmpleado.Location = new System.Drawing.Point(37, 265);
-            this.TBCelularEmpleado.Margin = new System.Windows.Forms.Padding(2);
+            this.TBCelularEmpleado.Location = new System.Drawing.Point(49, 326);
+            this.TBCelularEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TBCelularEmpleado.Name = "TBCelularEmpleado";
-            this.TBCelularEmpleado.Size = new System.Drawing.Size(215, 21);
+            this.TBCelularEmpleado.Size = new System.Drawing.Size(286, 24);
             this.TBCelularEmpleado.TabIndex = 7;
             this.TBCelularEmpleado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             // 
@@ -486,10 +476,9 @@
             this.LNumeroCalle.BackColor = System.Drawing.Color.SeaGreen;
             this.LNumeroCalle.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LNumeroCalle.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.LNumeroCalle.Location = new System.Drawing.Point(267, 316);
-            this.LNumeroCalle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LNumeroCalle.Location = new System.Drawing.Point(356, 389);
             this.LNumeroCalle.Name = "LNumeroCalle";
-            this.LNumeroCalle.Size = new System.Drawing.Size(62, 18);
+            this.LNumeroCalle.Size = new System.Drawing.Size(78, 23);
             this.LNumeroCalle.TabIndex = 149;
             this.LNumeroCalle.Text = "Número";
             // 
@@ -500,10 +489,9 @@
             this.LCalle.BackColor = System.Drawing.Color.SeaGreen;
             this.LCalle.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LCalle.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.LCalle.Location = new System.Drawing.Point(37, 316);
-            this.LCalle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LCalle.Location = new System.Drawing.Point(49, 389);
             this.LCalle.Name = "LCalle";
-            this.LCalle.Size = new System.Drawing.Size(41, 18);
+            this.LCalle.Size = new System.Drawing.Size(54, 23);
             this.LCalle.TabIndex = 146;
             this.LCalle.Text = "Calle";
             // 
@@ -512,10 +500,10 @@
             this.TBLocalidadEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.TBLocalidadEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TBLocalidadEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBLocalidadEmpleado.Location = new System.Drawing.Point(37, 481);
-            this.TBLocalidadEmpleado.Margin = new System.Windows.Forms.Padding(2);
+            this.TBLocalidadEmpleado.Location = new System.Drawing.Point(49, 592);
+            this.TBLocalidadEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TBLocalidadEmpleado.Name = "TBLocalidadEmpleado";
-            this.TBLocalidadEmpleado.Size = new System.Drawing.Size(215, 21);
+            this.TBLocalidadEmpleado.Size = new System.Drawing.Size(286, 24);
             this.TBLocalidadEmpleado.TabIndex = 17;
             this.TBLocalidadEmpleado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloLetras_KeyPress);
             // 
@@ -525,10 +513,9 @@
             this.LLocalidad.BackColor = System.Drawing.Color.SeaGreen;
             this.LLocalidad.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LLocalidad.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.LLocalidad.Location = new System.Drawing.Point(37, 458);
-            this.LLocalidad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LLocalidad.Location = new System.Drawing.Point(49, 564);
             this.LLocalidad.Name = "LLocalidad";
-            this.LLocalidad.Size = new System.Drawing.Size(72, 18);
+            this.LLocalidad.Size = new System.Drawing.Size(91, 23);
             this.LLocalidad.TabIndex = 144;
             this.LLocalidad.Text = "Localidad";
             // 
@@ -537,10 +524,10 @@
             this.TBCalleEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.TBCalleEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TBCalleEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBCalleEmpleado.Location = new System.Drawing.Point(37, 339);
-            this.TBCalleEmpleado.Margin = new System.Windows.Forms.Padding(2);
+            this.TBCalleEmpleado.Location = new System.Drawing.Point(49, 417);
+            this.TBCalleEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TBCalleEmpleado.Name = "TBCalleEmpleado";
-            this.TBCalleEmpleado.Size = new System.Drawing.Size(215, 21);
+            this.TBCalleEmpleado.Size = new System.Drawing.Size(286, 24);
             this.TBCalleEmpleado.TabIndex = 9;
             // 
             // LCelular
@@ -549,10 +536,9 @@
             this.LCelular.BackColor = System.Drawing.Color.SeaGreen;
             this.LCelular.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LCelular.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.LCelular.Location = new System.Drawing.Point(37, 242);
-            this.LCelular.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LCelular.Location = new System.Drawing.Point(49, 298);
             this.LCelular.Name = "LCelular";
-            this.LCelular.Size = new System.Drawing.Size(55, 18);
+            this.LCelular.Size = new System.Drawing.Size(73, 23);
             this.LCelular.TabIndex = 142;
             this.LCelular.Text = "Celular";
             // 
@@ -561,10 +547,10 @@
             this.TBApellidoEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.TBApellidoEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TBApellidoEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBApellidoEmpleado.Location = new System.Drawing.Point(267, 58);
-            this.TBApellidoEmpleado.Margin = new System.Windows.Forms.Padding(2);
+            this.TBApellidoEmpleado.Location = new System.Drawing.Point(356, 71);
+            this.TBApellidoEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TBApellidoEmpleado.Name = "TBApellidoEmpleado";
-            this.TBApellidoEmpleado.Size = new System.Drawing.Size(215, 21);
+            this.TBApellidoEmpleado.Size = new System.Drawing.Size(286, 24);
             this.TBApellidoEmpleado.TabIndex = 2;
             this.TBApellidoEmpleado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloLetras_KeyPress);
             // 
@@ -573,10 +559,10 @@
             this.TBNombreEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.TBNombreEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TBNombreEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBNombreEmpleado.Location = new System.Drawing.Point(37, 58);
-            this.TBNombreEmpleado.Margin = new System.Windows.Forms.Padding(2);
+            this.TBNombreEmpleado.Location = new System.Drawing.Point(49, 71);
+            this.TBNombreEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TBNombreEmpleado.Name = "TBNombreEmpleado";
-            this.TBNombreEmpleado.Size = new System.Drawing.Size(215, 21);
+            this.TBNombreEmpleado.Size = new System.Drawing.Size(286, 24);
             this.TBNombreEmpleado.TabIndex = 1;
             this.TBNombreEmpleado.Tag = "";
             this.TBNombreEmpleado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloLetras_KeyPress);
@@ -587,10 +573,9 @@
             this.LProvincia.BackColor = System.Drawing.Color.SeaGreen;
             this.LProvincia.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LProvincia.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.LProvincia.Location = new System.Drawing.Point(37, 409);
-            this.LProvincia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LProvincia.Location = new System.Drawing.Point(49, 503);
             this.LProvincia.Name = "LProvincia";
-            this.LProvincia.Size = new System.Drawing.Size(70, 18);
+            this.LProvincia.Size = new System.Drawing.Size(90, 23);
             this.LProvincia.TabIndex = 137;
             this.LProvincia.Text = "Provincia";
             // 
@@ -600,10 +585,9 @@
             this.LPais.BackColor = System.Drawing.Color.SeaGreen;
             this.LPais.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LPais.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.LPais.Location = new System.Drawing.Point(267, 364);
-            this.LPais.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LPais.Location = new System.Drawing.Point(356, 448);
             this.LPais.Name = "LPais";
-            this.LPais.Size = new System.Drawing.Size(37, 18);
+            this.LPais.Size = new System.Drawing.Size(47, 23);
             this.LPais.TabIndex = 136;
             this.LPais.Text = "País";
             // 
@@ -613,10 +597,9 @@
             this.LApellido.BackColor = System.Drawing.Color.SeaGreen;
             this.LApellido.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LApellido.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.LApellido.Location = new System.Drawing.Point(267, 37);
-            this.LApellido.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LApellido.Location = new System.Drawing.Point(356, 46);
             this.LApellido.Name = "LApellido";
-            this.LApellido.Size = new System.Drawing.Size(62, 18);
+            this.LApellido.Size = new System.Drawing.Size(79, 23);
             this.LApellido.TabIndex = 133;
             this.LApellido.Text = "Apellido";
             // 
@@ -626,10 +609,9 @@
             this.LFechaNacimiento.BackColor = System.Drawing.Color.SeaGreen;
             this.LFechaNacimiento.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LFechaNacimiento.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.LFechaNacimiento.Location = new System.Drawing.Point(37, 132);
-            this.LFechaNacimiento.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LFechaNacimiento.Location = new System.Drawing.Point(49, 162);
             this.LFechaNacimiento.Name = "LFechaNacimiento";
-            this.LFechaNacimiento.Size = new System.Drawing.Size(139, 19);
+            this.LFechaNacimiento.Size = new System.Drawing.Size(171, 24);
             this.LFechaNacimiento.TabIndex = 135;
             this.LFechaNacimiento.Text = "Fecha Nacimiento";
             // 
@@ -639,10 +621,9 @@
             this.LNombre.BackColor = System.Drawing.Color.SeaGreen;
             this.LNombre.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LNombre.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.LNombre.Location = new System.Drawing.Point(37, 37);
-            this.LNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LNombre.Location = new System.Drawing.Point(49, 46);
             this.LNombre.Name = "LNombre";
-            this.LNombre.Size = new System.Drawing.Size(62, 18);
+            this.LNombre.Size = new System.Drawing.Size(77, 23);
             this.LNombre.TabIndex = 132;
             this.LNombre.Text = "Nombre";
             // 
@@ -650,10 +631,10 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(200)))), ((int)(((byte)(145)))));
             this.panel5.Controls.Add(this.label3);
-            this.panel5.Location = new System.Drawing.Point(16, 214);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2);
+            this.panel5.Location = new System.Drawing.Point(21, 263);
+            this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(488, 23);
+            this.panel5.Size = new System.Drawing.Size(651, 28);
             this.panel5.TabIndex = 155;
             // 
             // label3
@@ -662,23 +643,22 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label3.Location = new System.Drawing.Point(201, 1);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(268, 1);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 19);
+            this.label3.Size = new System.Drawing.Size(90, 24);
             this.label3.TabIndex = 72;
             this.label3.Text = "Contacto";
             // 
             // IngresarEmpleado
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
-            this.ClientSize = new System.Drawing.Size(529, 573);
+            this.ClientSize = new System.Drawing.Size(705, 705);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.MaximumSize = new System.Drawing.Size(529, 573);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximumSize = new System.Drawing.Size(705, 705);
             this.Name = "IngresarEmpleado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "IngresarEmpleado";
@@ -720,7 +700,7 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox TBEmailEmpleado;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker DTFechaNacEmpleado;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TBNumCalleEmpleado;
         private System.Windows.Forms.TextBox TBCelularEmpleado;

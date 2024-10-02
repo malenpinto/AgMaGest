@@ -54,5 +54,11 @@ namespace AgMaGest.C_Presentacion.Vendedor
             EditarClienteEmpresa formEditarEmpresa = new EditarClienteEmpresa();
             formEditarEmpresa.ShowDialog();
         }
+
+        private void BEditarCFinal_Click(object sender, EventArgs e)
+        {
+            EditarClienteFinal formEditarCFinal = new EditarClienteFinal();
+            formEditarCFinal.ShowDialog();
+        }
     }
 }

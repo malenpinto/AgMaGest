@@ -255,9 +255,9 @@
             this.panel4.Controls.Add(this.label19);
             this.panel4.Controls.Add(this.TBBuscarPedido);
             this.panel4.Controls.Add(this.BBuscarPedido);
-            this.panel4.Location = new System.Drawing.Point(38, 143);
+            this.panel4.Location = new System.Drawing.Point(25, 143);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(592, 44);
+            this.panel4.Size = new System.Drawing.Size(626, 44);
             this.panel4.TabIndex = 129;
             // 
             // label19
@@ -265,7 +265,7 @@
             this.label19.AutoSize = true;
             this.label19.BackColor = System.Drawing.Color.Transparent;
             this.label19.Font = new System.Drawing.Font("Bahnschrift", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(-2, 10);
+            this.label19.Location = new System.Drawing.Point(2, 10);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(245, 21);
             this.label19.TabIndex = 147;
@@ -276,7 +276,7 @@
             this.TBBuscarPedido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.TBBuscarPedido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TBBuscarPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBBuscarPedido.Location = new System.Drawing.Point(257, 10);
+            this.TBBuscarPedido.Location = new System.Drawing.Point(292, 9);
             this.TBBuscarPedido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TBBuscarPedido.Name = "TBBuscarPedido";
             this.TBBuscarPedido.Size = new System.Drawing.Size(286, 24);
@@ -290,7 +290,7 @@
             this.BBuscarPedido.FlatAppearance.BorderSize = 2;
             this.BBuscarPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BBuscarPedido.Image = global::AgMaGest.Properties.Resources.Icono_Buscar_Vendedor;
-            this.BBuscarPedido.Location = new System.Drawing.Point(549, 0);
+            this.BBuscarPedido.Location = new System.Drawing.Point(583, 0);
             this.BBuscarPedido.Name = "BBuscarPedido";
             this.BBuscarPedido.Size = new System.Drawing.Size(43, 44);
             this.BBuscarPedido.TabIndex = 128;

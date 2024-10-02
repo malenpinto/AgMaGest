@@ -45,9 +45,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.DTFechaNacAgregarCFinal = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
-            this.TBNumeroCalleCFinal = new System.Windows.Forms.TextBox();
+            this.TBNumCalleCFinal = new System.Windows.Forms.TextBox();
             this.LNumeroCalle = new System.Windows.Forms.Label();
             this.LCalle = new System.Windows.Forms.Label();
             this.TBLocalidadCFinal = new System.Windows.Forms.TextBox();
@@ -282,18 +282,18 @@
             this.label4.TabIndex = 72;
             this.label4.Text = "Dirección";
             // 
-            // dateTimePicker1
+            // DTFechaNacAgregarCFinal
             // 
-            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Gadugi", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(349, 184);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dateTimePicker1.MaxDate = new System.DateTime(3024, 12, 31, 0, 0, 0, 0);
-            this.dateTimePicker1.MinDate = new System.DateTime(1924, 1, 1, 0, 0, 0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(136, 26);
-            this.dateTimePicker1.TabIndex = 109;
+            this.DTFechaNacAgregarCFinal.CalendarFont = new System.Drawing.Font("Gadugi", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DTFechaNacAgregarCFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DTFechaNacAgregarCFinal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DTFechaNacAgregarCFinal.Location = new System.Drawing.Point(349, 184);
+            this.DTFechaNacAgregarCFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DTFechaNacAgregarCFinal.MaxDate = new System.DateTime(3024, 12, 31, 0, 0, 0, 0);
+            this.DTFechaNacAgregarCFinal.MinDate = new System.DateTime(1924, 1, 1, 0, 0, 0, 0);
+            this.DTFechaNacAgregarCFinal.Name = "DTFechaNacAgregarCFinal";
+            this.DTFechaNacAgregarCFinal.Size = new System.Drawing.Size(136, 26);
+            this.DTFechaNacAgregarCFinal.TabIndex = 109;
             // 
             // label2
             // 
@@ -307,17 +307,17 @@
             this.label2.TabIndex = 107;
             this.label2.Text = "Email";
             // 
-            // TBNumeroCalleCFinal
+            // TBNumCalleCFinal
             // 
-            this.TBNumeroCalleCFinal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.TBNumeroCalleCFinal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBNumeroCalleCFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBNumeroCalleCFinal.Location = new System.Drawing.Point(349, 402);
-            this.TBNumeroCalleCFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TBNumeroCalleCFinal.Name = "TBNumeroCalleCFinal";
-            this.TBNumeroCalleCFinal.Size = new System.Drawing.Size(140, 24);
-            this.TBNumeroCalleCFinal.TabIndex = 8;
-            this.TBNumeroCalleCFinal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
+            this.TBNumCalleCFinal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.TBNumCalleCFinal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBNumCalleCFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBNumCalleCFinal.Location = new System.Drawing.Point(349, 402);
+            this.TBNumCalleCFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBNumCalleCFinal.Name = "TBNumCalleCFinal";
+            this.TBNumCalleCFinal.Size = new System.Drawing.Size(140, 24);
+            this.TBNumCalleCFinal.TabIndex = 8;
+            this.TBNumCalleCFinal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             // 
             // LNumeroCalle
             // 
@@ -544,9 +544,9 @@
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.TBEmailCFinal);
-            this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Controls.Add(this.DTFechaNacAgregarCFinal);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.TBNumeroCalleCFinal);
+            this.panel1.Controls.Add(this.TBNumCalleCFinal);
             this.panel1.Controls.Add(this.TBCelularCFinal);
             this.panel1.Controls.Add(this.LNumeroCalle);
             this.panel1.Controls.Add(this.LCalle);
@@ -662,9 +662,9 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker DTFechaNacAgregarCFinal;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox TBNumeroCalleCFinal;
+        private System.Windows.Forms.TextBox TBNumCalleCFinal;
         private System.Windows.Forms.Label LNumeroCalle;
         private System.Windows.Forms.Label LCalle;
         private System.Windows.Forms.TextBox TBLocalidadCFinal;

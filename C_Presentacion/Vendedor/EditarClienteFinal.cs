@@ -9,59 +9,56 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace AgMaGest.C_Presentacion.Vendedor
 {
-    public partial class IngresarClienteFinal : Form
+    public partial class EditarClienteFinal : Form
     {
-        public IngresarClienteFinal()
+        public EditarClienteFinal()
         {
             InitializeComponent();
             this.KeyPreview = true; // Permite que el formulario capture el evento KeyDown
         }
 
-        private void IngresarClienteFinal_KeyDown(object sender, KeyEventArgs e)
+        private void EditarClienteFinal_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                BAgregarCFinal_Click(sender, e); // Llamar al evento que ejecuta la acción de agregar
+                BAgregarEditarCFinal_Click(sender, e); // Llamar al evento que ejecuta la acción de agregar
                 e.Handled = true; // Indica que el evento fue manejado
                 e.SuppressKeyPress = true; // Evita que la tecla Enter haga otra acción
             }
         }
 
-        private void BAgregarCFinal_Click(object sender, EventArgs e)
+        private void BAgregarEditarCFinal_Click(object sender, EventArgs e)
         {
             // Verificar que todos los campos no estén vacíos
-            if (string.IsNullOrWhiteSpace(TBNombreCFinal.Text) ||
-                string.IsNullOrWhiteSpace(TBApellidoCFinal.Text) ||
-                string.IsNullOrWhiteSpace(TBDniCFinal.Text) ||
-                string.IsNullOrWhiteSpace(TBCuilCFinal.Text) ||
-                string.IsNullOrWhiteSpace(TBCelularCFinal.Text) ||
-                string.IsNullOrWhiteSpace(TBEmailCFinal.Text) ||
-                string.IsNullOrWhiteSpace(TBCalleCFinal.Text) ||
-                string.IsNullOrWhiteSpace(TBNumCalleCFinal.Text) ||
-                string.IsNullOrWhiteSpace(TBCodPostalCFinal.Text) ||
-                string.IsNullOrWhiteSpace(CBPaisCFinal.Text) ||
-                string.IsNullOrWhiteSpace(CBProvinciaCFinal.Text) ||
-                string.IsNullOrWhiteSpace(TBCiudadCFinal.Text) ||
-                string.IsNullOrWhiteSpace(TBLocalidadCFinal.Text))
+            if (string.IsNullOrWhiteSpace(TBNombreEditarCFinal.Text) ||
+                string.IsNullOrWhiteSpace(TBApellidoEditarCFinal.Text) ||
+                string.IsNullOrWhiteSpace(TBDniEditarCFinal.Text) ||
+                string.IsNullOrWhiteSpace(TBCuilEditarCFinal.Text) ||
+                string.IsNullOrWhiteSpace(TBCelularEditarCFinal.Text) ||
+                string.IsNullOrWhiteSpace(TBEmailEditarCFinal.Text) ||
+                string.IsNullOrWhiteSpace(TBCalleEditarCFinal.Text) ||
+                string.IsNullOrWhiteSpace(TBNumCalleEditarCFinal.Text) ||
+                string.IsNullOrWhiteSpace(TBCodPostalEditarCFinal.Text) ||
+                string.IsNullOrWhiteSpace(CBPaisEditarCFinal.Text) ||
+                string.IsNullOrWhiteSpace(CBProvinciaEditarCFinal.Text) ||
+                string.IsNullOrWhiteSpace(TBCiudadEditarCFinal.Text) ||
+                string.IsNullOrWhiteSpace(TBLocalidadEditarCFinal.Text))
             {
                 // Mostrar mensaje de error si falta algún campo
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-            } 
+            }
             else if (VerificarEmail() && VerificarDNIyCUIL())
             {
                 // Convertir el nombre y apellido a formato de título (primeras letras en mayúsculas)
-                string nombreCompleto = ToTitleCase(TBNombreCFinal.Text) + " " + ToTitleCase(TBApellidoCFinal.Text);
-                
+                string nombreCompleto = ToTitleCase(TBNombreEditarCFinal.Text) + " " + ToTitleCase(TBApellidoEditarCFinal.Text);
+
                 // Si todos los campos son válidos, procedemos con la lógica de agregar.
-                MessageBox.Show("Se agrego exitosamente a: "+nombreCompleto, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
-                // Limpiar todos los campos después de agregar
-                LimpiarCampos();
+                MessageBox.Show("Se editó exitosamente a: " + nombreCompleto, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
         }
 
@@ -71,31 +68,10 @@ namespace AgMaGest.C_Presentacion.Vendedor
             return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(input.ToLower());
         }
 
-        // Función para limpiar todos los campos del formulario
-        private void LimpiarCampos()
-        {
-            TBNombreCFinal.Text = "";
-            TBApellidoCFinal.Text = "";
-            TBDniCFinal.Text = "";
-            TBCuilCFinal.Text = "";
-            DTFechaNacAgregarCFinal.Value = DateTime.Now;
-            TBCelularCFinal.Text = "";
-            TBEmailCFinal.Text = "";
-            TBCalleCFinal.Text = "";
-            TBNumCalleCFinal.Text = "";
-            TBPisoCFinal.Text = "";
-            TBDptoCFinal.Text = "";
-            TBCodPostalCFinal.Text = "";
-            CBPaisCFinal.SelectedIndex = -1; 
-            CBProvinciaCFinal.SelectedIndex = -1;
-            TBCiudadCFinal.Text = "";
-            TBLocalidadCFinal.Text = "";
-        }
-
         // Validar formato de correo electrónico
         private bool VerificarEmail()
         {
-            string email = TBEmailCFinal.Text;
+            string email = TBEmailEditarCFinal.Text;
             string emailPattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
 
             if (!Regex.IsMatch(email, emailPattern))
@@ -109,12 +85,12 @@ namespace AgMaGest.C_Presentacion.Vendedor
         // Validar que el DNI y CUIL tengan el formato adecuado
         private bool VerificarDNIyCUIL()
         {
-            if (TBDniCFinal.Text.Length != 8)
+            if (TBDniEditarCFinal.Text.Length != 8)
             {
                 MessageBox.Show("El DNI debe tener 8 dígitos.");
                 return false;
             }
-            if (TBCuilCFinal.Text.Length != 11)
+            if (TBCuilEditarCFinal.Text.Length != 11)
             {
                 MessageBox.Show("El CUIL debe tener 11 dígitos.");
                 return false;
@@ -142,7 +118,7 @@ namespace AgMaGest.C_Presentacion.Vendedor
             }
         }
 
-        private void BSalirCFinal_Click(object sender, EventArgs e)
+        private void BSalirEditarCFinal_Click(object sender, EventArgs e)
         {
             this.Close();
         }

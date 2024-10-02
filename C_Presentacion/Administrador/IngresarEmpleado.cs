@@ -168,6 +168,7 @@ namespace AgMaGest.C_Presentacion.Administrador
             TBApellidoEmpleado.Text = "";
             TBDniEmpleado.Text = "";
             TBCuilEmpleado.Text = "";
+            DTFechaNacEmpleado.Value = DateTime.Now;
             TBCelularEmpleado.Text = "";
             CBPerfilEmpleado.SelectedIndex = -1;
             TBEmailEmpleado.Text = "";
