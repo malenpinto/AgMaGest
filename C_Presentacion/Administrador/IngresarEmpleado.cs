@@ -88,8 +88,8 @@ namespace AgMaGest.C_Presentacion.Administrador
 
         private void BAgregarEmpleado_Click(object sender, EventArgs e)
         {
-                // Verificar que todos los campos no estén vacíos
-                if (string.IsNullOrWhiteSpace(TBNombreEmpleado.Text) ||
+            // Verificar que todos los campos no estén vacíos
+            if (string.IsNullOrWhiteSpace(TBNombreEmpleado.Text) ||
                 string.IsNullOrWhiteSpace(TBApellidoEmpleado.Text) ||
                 string.IsNullOrWhiteSpace(TBDniEmpleado.Text) ||
                 string.IsNullOrWhiteSpace(TBCuilEmpleado.Text) ||
@@ -97,7 +97,7 @@ namespace AgMaGest.C_Presentacion.Administrador
                 string.IsNullOrWhiteSpace(TBCelularEmpleado.Text) ||
                 string.IsNullOrWhiteSpace(TBEmailEmpleado.Text) ||
                 string.IsNullOrWhiteSpace(TBCalleEmpleado.Text) ||
-                string.IsNullOrWhiteSpace(TBNumCalleEmpleado.Text) ||       
+                string.IsNullOrWhiteSpace(TBNumCalleEmpleado.Text) ||
                 string.IsNullOrWhiteSpace(TBCodPostalEmpleado.Text) ||
                 string.IsNullOrWhiteSpace(CBPaisEmpleado.Text) ||
                 string.IsNullOrWhiteSpace(CBProvinciaEmpleado.Text) ||
@@ -110,41 +110,49 @@ namespace AgMaGest.C_Presentacion.Administrador
             }
             else if (VerificarEmail() && VerificarDNIyCUIL())
             {
-                // Crear una instancia de EmpleadoDAL
-                EmpleadoDAL empleadoDAL = new EmpleadoDAL(); // Instanciamos EmpleadoDAL
-
-                // Crear un objeto Empleado con los datos del formulario
-                Empleado nuevoEmpleado = new Empleado()
+                try
                 {
-                    IdEmpleado = empleadoDAL.ObtenerNuevoIdEmpleado(), // Llamar al método para obtener un nuevo ID
-                    Nombre = TBNombreEmpleado.Text,
-                    Apellido = TBApellidoEmpleado.Text,
-                    DNI = TBDniEmpleado.Text,
-                    CUIL = TBCuilEmpleado.Text,
-                    Celular = TBCelularEmpleado.Text,
-                    Email = TBEmailEmpleado.Text,
-                    Calle = TBCalleEmpleado.Text,
-                    NumeroCalle = TBNumCalleEmpleado.Text,
-                    Piso = TBNumPisoEmpleado.Text,
-                    Dpto = TBDptoEmpleado.Text,
-                    CodigoPostal = TBCodPostalEmpleado.Text,
-                    IdLocalidad = Convert.ToInt32(CBPaisEmpleado.SelectedValue), // 
-                    IdPerfil = Convert.ToInt32(CBPerfilEmpleado.SelectedValue), // Asumiendo que tenemos una lista de perfiles
-                    IdEstado = 1, // 1 estado activo
-                    Ciudad = TBCiudadEmpleado.Text,
-                    Pais = CBPaisEmpleado.Text, // Asumiendo que tienes un ComboBox para el país
-                    Provincia = CBProvinciaEmpleado.Text, // Asumiendo que tienes un ComboBox para la provincia
-                    Localidad = TBLocalidadEmpleado.Text // Asumiendo que tienes un TextBox para la localidad
-                };
+                    // Crear una instancia de EmpleadoDAL
+                    EmpleadoDAL empleadoDAL = new EmpleadoDAL();
 
-                // Insertar el empleado en la base de datos
-                empleadoDAL.InsertarEmpleado(nuevoEmpleado);
+                    // Crear un objeto Empleado con los datos del formulario
+                    Empleado nuevoEmpleado = new Empleado()
+                    {
+                        IdEmpleado = empleadoDAL.ObtenerNuevoIdEmpleado(), // Llamar al método para obtener un nuevo ID
+                        Nombre = TBNombreEmpleado.Text,
+                        Apellido = TBApellidoEmpleado.Text,
+                        DNI = TBDniEmpleado.Text,
+                        CUIL = TBCuilEmpleado.Text,
+                        Celular = TBCelularEmpleado.Text,
+                        Email = TBEmailEmpleado.Text,
+                        Calle = TBCalleEmpleado.Text,
+                        NumeroCalle = TBNumCalleEmpleado.Text,
+                        Piso = TBNumPisoEmpleado.Text,
+                        Dpto = TBDptoEmpleado.Text,
+                        CodigoPostal = TBCodPostalEmpleado.Text,
+                        IdLocalidad = Convert.ToInt32(CBPaisEmpleado.SelectedValue), // 
+                        IdPerfil = Convert.ToInt32(CBPerfilEmpleado.SelectedValue), // Asumiendo que tenemos una lista de perfiles
+                        IdEstado = 1, // 1 estado activo
+                        Ciudad = TBCiudadEmpleado.Text,
+                        Pais = CBPaisEmpleado.Text,
+                        Provincia = CBProvinciaEmpleado.Text,
+                        Localidad = TBLocalidadEmpleado.Text
+                    };
 
-                // Mostrar mensaje de éxito
-                MessageBox.Show("Empleado agregado exitosamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // Insertar el empleado en la base de datos
+                    empleadoDAL.InsertarEmpleado(nuevoEmpleado);
 
-                // Limpiar todos los campos después de agregar
-                LimpiarCampos();
+                    // Mostrar mensaje de éxito
+                    MessageBox.Show("Empleado agregado exitosamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Limpiar todos los campos después de agregar
+                    LimpiarCampos();
+                }
+                catch (Exception ex)
+                {
+                    // Mostrar mensaje de error si se lanza alguna excepción
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
