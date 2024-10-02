@@ -17,7 +17,7 @@ namespace AgMaGest.C_Datos
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("SELECT id_Pais, nombre_Pais FROM Pais", conn);
-                SqlDataReader reader = cmd.ExecuteReader();
+                SqlDataReader reader = cmd.ExecuteReader(); //Lee datos cargados en la tabla Pais
 
                 while (reader.Read())
                 {

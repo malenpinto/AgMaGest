@@ -9,7 +9,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using AgMaGest.C_Logica.Entidades;  // Importa la clase Empleado
+using AgMaGest.C_Logica.Entidades;  // Importa la clase
 using AgMaGest.C_Datos;  // Importa la capa de datos
 
 
@@ -22,17 +22,15 @@ namespace AgMaGest.C_Presentacion.Administrador
             InitializeComponent();
             this.KeyPreview = true; // Permite que el formulario capture el evento KeyDown
             this.Load += IngresarEmpleado_Load; // Suscribirse al evento Load
-            CBPerfilEmpleado.DataSource = null; // Asegúrate de que esté vacío al principio
+            CBPerfilEmpleado.DataSource = null; // Asegurar de que esté vacío al principio
             
         }
 
         private void IngresarEmpleado_Load(object sender, EventArgs e)
         {
-            CargarPerfiles();
-            CargarPaises(); // Asegúrate de cargar los países
+            CargarPaises(); // Asegura de cargar los países
             CargarPerfiles(); // Cargar perfiles
         }
-
 
         private void IngresarEmpleado_KeyDown(object sender, KeyEventArgs e)
         {
@@ -90,8 +88,8 @@ namespace AgMaGest.C_Presentacion.Administrador
 
         private void BAgregarEmpleado_Click(object sender, EventArgs e)
         {
-            // Verificar que todos los campos no estén vacíos
-            if (string.IsNullOrWhiteSpace(TBNombreEmpleado.Text) ||
+                // Verificar que todos los campos no estén vacíos
+                if (string.IsNullOrWhiteSpace(TBNombreEmpleado.Text) ||
                 string.IsNullOrWhiteSpace(TBApellidoEmpleado.Text) ||
                 string.IsNullOrWhiteSpace(TBDniEmpleado.Text) ||
                 string.IsNullOrWhiteSpace(TBCuilEmpleado.Text) ||
@@ -99,9 +97,7 @@ namespace AgMaGest.C_Presentacion.Administrador
                 string.IsNullOrWhiteSpace(TBCelularEmpleado.Text) ||
                 string.IsNullOrWhiteSpace(TBEmailEmpleado.Text) ||
                 string.IsNullOrWhiteSpace(TBCalleEmpleado.Text) ||
-                string.IsNullOrWhiteSpace(TBNumCalleEmpleado.Text) ||
-                string.IsNullOrWhiteSpace(TBNumPisoEmpleado.Text) ||
-                string.IsNullOrWhiteSpace(TBDptoEmpleado.Text) ||
+                string.IsNullOrWhiteSpace(TBNumCalleEmpleado.Text) ||       
                 string.IsNullOrWhiteSpace(TBCodPostalEmpleado.Text) ||
                 string.IsNullOrWhiteSpace(CBPaisEmpleado.Text) ||
                 string.IsNullOrWhiteSpace(CBProvinciaEmpleado.Text) ||
@@ -132,9 +128,9 @@ namespace AgMaGest.C_Presentacion.Administrador
                     Piso = TBNumPisoEmpleado.Text,
                     Dpto = TBDptoEmpleado.Text,
                     CodigoPostal = TBCodPostalEmpleado.Text,
-                    IdLocalidad = Convert.ToInt32(CBPaisEmpleado.SelectedValue), // Asumiendo que tienes una lista de localidades
-                    IdPerfil = Convert.ToInt32(CBPerfilEmpleado.SelectedValue), // Asumiendo que tienes una lista de perfiles
-                    IdEstado = 1, // O el ID que consideres apropiado
+                    IdLocalidad = Convert.ToInt32(CBPaisEmpleado.SelectedValue), // 
+                    IdPerfil = Convert.ToInt32(CBPerfilEmpleado.SelectedValue), // Asumiendo que tenemos una lista de perfiles
+                    IdEstado = 1, // 1 estado activo
                     Ciudad = TBCiudadEmpleado.Text,
                     Pais = CBPaisEmpleado.Text, // Asumiendo que tienes un ComboBox para el país
                     Provincia = CBProvinciaEmpleado.Text, // Asumiendo que tienes un ComboBox para la provincia
