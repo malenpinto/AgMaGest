@@ -7,7 +7,7 @@ namespace AgMaGest.C_Datos
 {
     public class PaisDAL
     {
-        private string connectionString = "Data Source=DESKTOP-TT9O6S1\\SQLEXPRESS;Initial Catalog=Agmagest;Integrated Security=True"; // Define tu cadena de conexión
+        private string connectionString = "Data Source=.\\SQLEXPRESS;Initial Catalog=Agmagest;Integrated Security=True"; // Define tu cadena de conexión
 
         public List<Pais> ObtenerPaises()
         {

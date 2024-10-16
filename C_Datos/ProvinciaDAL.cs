@@ -7,7 +7,7 @@ namespace AgMaGest.C_Datos
 {
     public class ProvinciaDAL
     {
-        private string connectionString = "Data Source=DESKTOP-TT9O6S1\\SQLEXPRESS;Initial Catalog=Agmagest;Integrated Security=True"; // Reemplaza con tu cadena de conexión
+        private string connectionString = "Data Source=.\\SQLEXPRESS;Initial Catalog=Agmagest;Integrated Security=True"; // Reemplaza con tu cadena de conexión
 
         // Método para obtener las provincias de un país específico
         public List<Provincia> ObtenerProvinciasPorPais(int idPais)

@@ -7,7 +7,7 @@ namespace AgMaGest.C_Datos
 {
     public class EmpleadoDAL
     {
-        private string connectionString = "Data Source=DESKTOP-TT9O6S1\\SQLEXPRESS;Initial Catalog=Agmagest;Integrated Security=True";
+        private string connectionString = "Data Source=.\\SQLEXPRESS;Initial Catalog=Agmagest;Integrated Security=True";
 
 
         // Método para obtener la lista de perfiles
