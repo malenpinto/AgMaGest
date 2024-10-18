@@ -48,6 +48,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgmagestDataSet.cs">
+      <DependentUpon>AgmagestDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="AgmagestDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -60,6 +63,7 @@
     <Compile Include="C_Logica\Entidades\Pais.cs" />
     <Compile Include="C_Logica\Entidades\PerfilEmpleado.cs" />
     <Compile Include="C_Logica\Entidades\Provincia.cs" />
+    <Compile Include="C_Logica\Entidades\Vehiculos.cs" />
     <Compile Include="C_Presentacion\Administrador\EditarEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
