@@ -48,9 +48,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AgmagestDataSet.cs">
-      <DependentUpon>AgmagestDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="AgmagestDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
