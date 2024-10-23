@@ -178,7 +178,7 @@ CREATE TABLE Cliente
 (
   id_Cliente INT NOT NULL,
   email_Cliente VARCHAR(100) NOT NULL,
-  celular_Cliente VARCHAR NOT NULL,
+  celular_Cliente VARCHAR(20) NOT NULL,
   calle_Cliente VARCHAR(100) NOT NULL,
   num_Calle INT NOT NULL,
   piso_Cliente INT NOT NULL,
