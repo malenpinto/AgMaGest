@@ -1,80 +1,81 @@
 CREATE DATABASE Agmagest;
 
 USE Agmagest;
+GO
 
 CREATE TABLE Pais
 (
-  id_Pais INT NOT NULL,
+  id_Pais INT IDENTITY(1,1) NOT NULL,
   nombre_Pais VARCHAR(50) NOT NULL,
   CONSTRAINT PK_Pais PRIMARY KEY (id_Pais)
 );
 
 CREATE TABLE Tipo_Vehiculo
 (
-  id_tipoVehiculo INT NOT NULL,
+  id_tipoVehiculo INT IDENTITY(1,1) NOT NULL,
   nombre_tipoVehiculo VARCHAR(15) NOT NULL,
   CONSTRAINT PK_TipoVehiculo PRIMARY KEY (id_tipoVehiculo)
 );
 
 CREATE TABLE Estado_Vehiculo
 (
-  id_Estado INT NOT NULL,
+  id_Estado INT IDENTITY(1,1) NOT NULL,
   nombre_Estado VARCHAR(10) NOT NULL,
   CONSTRAINT PK_Estado PRIMARY KEY (id_Estado)
 );
 
 CREATE TABLE Tipo_Pago
 (
-  id_TipoPago INT NOT NULL,
+  id_TipoPago INT IDENTITY(1,1) NOT NULL,
   nombre_tipoPago VARCHAR(20) NOT NULL,
   CONSTRAINT PK_TipoPago PRIMARY KEY (id_TipoPago)
 );
 
 CREATE TABLE Perfil_Empleado
 (
-  id_perfil INT NOT NULL,
+  id_perfil INT IDENTITY(1,1) NOT NULL,
   nombre_Perfil VARCHAR(20) NOT NULL,
   CONSTRAINT PK_Perfil PRIMARY KEY (id_perfil)
 );
 
 CREATE TABLE Condicion
 (
-  id_Condicion INT NOT NULL,
+  id_Condicion INT IDENTITY(1,1) NOT NULL,
   nombre_Condicion VARCHAR(10) NOT NULL,
   CONSTRAINT PK_Condicion PRIMARY KEY (id_Condicion)
 );
 
 CREATE TABLE Estado_Pago
 (
-  id_EstadoPago INT NOT NULL,
+  id_EstadoPago INT IDENTITY(1,1) NOT NULL,
   nombre_EstadoPago VARCHAR(20) NOT NULL,
   CONSTRAINT PK_EstadoPago PRIMARY KEY (id_EstadoPago)
 );
 
 CREATE TABLE Estado_Empleado
 (
-  id_EstadoEmpleado INT NOT NULL,
+  id_EstadoEmpleado INT IDENTITY(1,1) NOT NULL,
   nombre_EstadoEmpleado VARCHAR(15) NOT NULL,
   CONSTRAINT PK_EstadoEmpleado PRIMARY KEY (id_EstadoEmpleado)
 );
 
 CREATE TABLE Estado_Cliente
 (
-  id_Estado_Cliente INT NOT NULL,
+  id_Estado_Cliente INT IDENTITY(1,1)  NOT NULL,
   nombre_EstadoCliente VARCHAR(10) NOT NULL,
   CONSTRAINT PK_EstadoCliente PRIMARY KEY (id_Estado_Cliente)
 );
 
 CREATE TABLE Estado_Factura
 (
-  id_EstadoFactura INT NOT NULL,
+  id_EstadoFactura INT IDENTITY(1,1) NOT NULL,
   nombre_EstadoFactura VARCHAR(15) NOT NULL,
   CONSTRAINT PK_EstadoFactura PRIMARY KEY (id_EstadoFactura)
 );
 
 CREATE TABLE Provincia
 (
-  id_Provincia INT NOT NULL,
+  id_Provincia INT IDENTITY(1,1) NOT NULL,
   nombre_Provincia VARCHAR(50) NOT NULL,
   id_Pais INT NOT NULL,
   CONSTRAINT PK_Provincia PRIMARY KEY (id_Provincia),
@@ -83,7 +84,7 @@ CREATE TABLE Provincia
 
 CREATE TABLE Factura
 (
-  num_Factura INT NOT NULL,
+  num_Factura INT IDENTITY(1,1) NOT NULL,
   fecha_Factura DATE NOT NULL,
   total_Factura FLOAT NOT NULL,
   id_EstadoFactura INT NOT NULL,
@@ -93,7 +94,7 @@ CREATE TABLE Factura
 
 CREATE TABLE Vehiculos
 (
-  id_Vehiculo INT NOT NULL,
+  id_Vehiculo INT IDENTITY(100,1) NOT NULL,
   marca_Vehiculo VARCHAR(20) NOT NULL,
   modelo_Vehiculo VARCHAR(20) NOT NULL,
   version_Vehiculo VARCHAR(20) NOT NULL,
@@ -115,7 +116,7 @@ CREATE TABLE Vehiculos
 
 CREATE TABLE Pago
 (
-	id_pago INT NOT NULL,
+	id_pago INT IDENTITY(500,1) NOT NULL,
 	descripcion_Pago VARCHAR(50) NULL,
 	importe_Pago FLOAT NOT NULL,
 	id_TipoPago INT NOT NULL,
@@ -129,7 +130,7 @@ CREATE TABLE Pago
 
 CREATE TABLE Localidad
 (
-  id_Localidad INT NOT NULL,
+  id_Localidad INT IDENTITY(1,1) NOT NULL,
   nombre_Localidad VARCHAR(50) NOT NULL,
   id_Provincia INT NOT NULL,
   CONSTRAINT PK_Localidad PRIMARY KEY (id_Localidad),
@@ -138,7 +139,7 @@ CREATE TABLE Localidad
 
 CREATE TABLE Empleado
 (
-  id_Empleado INT NOT NULL,
+  id_Empleado INT IDENTITY(1000,1) NOT NULL,
   cuil_Empleado VARCHAR(11) NOT NULL,
   dni_Empleado VARCHAR(8) NOT NULL,
   nombre_Empleado VARCHAR(50) NOT NULL,
@@ -167,16 +168,18 @@ CREATE TABLE Empleado
 
 CREATE TABLE Usuario
 (
-  id_Usuario INT NOT NULL,
+  id_Usuario INT IDENTITY(1,1) NOT NULL,
   id_Empleado INT NOT NULL,
   password_Usuario VARCHAR(150) NOT NULL,
-  CONSTRAINT PK_Usuario PRIMARY KEY (id_Empleado, id_Usuario),
-  CONSTRAINT FK_Usuario_Empleado FOREIGN KEY (id_Empleado) REFERENCES Empleado(id_Empleado)
+  CONSTRAINT PK_Usuario PRIMARY KEY (id_Usuario),
+  CONSTRAINT FK_Usuario_Empleado FOREIGN KEY (id_Empleado) REFERENCES Empleado(id_Empleado),
+  CONSTRAINT UQ_Usuario_Empleado UNIQUE (id_Empleado) -- Para asegurar que cada empleado tenga solo un usuario
 );
+
 
 CREATE TABLE Cliente
 (
-  id_Cliente INT NOT NULL,
+  id_Cliente INT IDENTITY(1,1)NOT NULL,
   email_Cliente VARCHAR(100) NOT NULL,
   celular_Cliente VARCHAR(20) NOT NULL,
   calle_Cliente VARCHAR(100) NOT NULL,
@@ -194,7 +197,7 @@ CREATE TABLE Cliente
 
 CREATE TABLE Cliente_Final
 (
-  id_ClienteFinal INT NOT NULL,
+  id_ClienteFinal INT IDENTITY(1,1) NOT NULL,
   nombre_CFinal VARCHAR(50) NOT NULL,
   apellido_CFinal VARCHAR(50) NOT NULL,
   dni_CFinal VARCHAR(8) NOT NULL,
@@ -214,7 +217,7 @@ ALTER TABLE Cliente_Final
 
 CREATE TABLE Cliente_Empresa
 (
-  id_CEmpresa INT NOT NULL,
+  id_CEmpresa INT IDENTITY(1,1) NOT NULL,
   cuit_CEmpresa VARCHAR(11) NOT NULL,
   razon_Social_CEmpresa VARCHAR(50) NOT NULL,
   id_Cliente INT NOT NULL,
@@ -227,7 +230,7 @@ CREATE TABLE Cliente_Empresa
 
 CREATE TABLE Pedido
 (
-  id_Pedido INT NOT NULL,
+  id_Pedido INT  IDENTITY(8000,1) NOT NULL,
   id_Empleado INT NOT NULL,
   num_Factura INT NOT NULL,
   id_Cliente INT NOT NULL,
