@@ -139,7 +139,6 @@ CREATE TABLE Localidad
 
 CREATE TABLE Empleado
 (
-  id_Empleado INT IDENTITY(1000,1) NOT NULL,
   cuil_Empleado VARCHAR(11) NOT NULL,
   dni_Empleado VARCHAR(8) NOT NULL,
   nombre_Empleado VARCHAR(50) NOT NULL,
@@ -155,7 +154,7 @@ CREATE TABLE Empleado
   id_Localidad INT NOT NULL,
   id_perfil INT NOT NULL,
   id_Estado INT NOT NULL,
-  CONSTRAINT PK_Empleado PRIMARY KEY (id_Empleado),
+  CONSTRAINT PK_Empleado PRIMARY KEY (cuil_Empleado),
   CONSTRAINT FK_Empleado_Localidad FOREIGN KEY (id_Localidad) REFERENCES Localidad(id_Localidad),
   CONSTRAINT FK_Empleado_PerfilEmpleado FOREIGN KEY (id_perfil) REFERENCES Perfil_Empleado(id_perfil),
   CONSTRAINT FK_Empleado_EstadoEmpleado FOREIGN KEY (id_Estado) REFERENCES Estado_Empleado(id_EstadoEmpleado),
@@ -172,7 +171,7 @@ CREATE TABLE Usuario
   id_Empleado INT NOT NULL,
   password_Usuario VARCHAR(150) NOT NULL,
   CONSTRAINT PK_Usuario PRIMARY KEY (id_Usuario),
-  CONSTRAINT FK_Usuario_Empleado FOREIGN KEY (id_Empleado) REFERENCES Empleado(id_Empleado),
+  CONSTRAINT FK_Usuario_Empleado FOREIGN KEY (cuil_Empleado) REFERENCES Empleado(cuil_Empleado),
   CONSTRAINT UQ_Usuario_Empleado UNIQUE (id_Empleado) -- Para asegurar que cada empleado tenga solo un usuario
 );
 
