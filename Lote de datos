@@ -272,7 +272,13 @@ VALUES
 ('20345678912', '34567892', 'Valeria', 'Páez', 'valeria.paez@correo.com', '3703456789', '1986-09-12', 'San Martín', 345, NULL, NULL, 3600, 112, 2, 1), 
 ('20456789023', '45678903', 'Lucas', 'Ruiz', 'lucas.ruiz@correo.com', '3798889900', '1993-03-01', 'Independencia', 789, 4, 'F', 3400, 2, 3, 1), 
 ('20567890134', '56789014', 'Daniela', 'Aguirre', 'daniela.aguirre@correo.com', '3799990011', '1992-12-12', 'Av. Centenario', 111, NULL, NULL, 3400, 2, 1, 1),
-('20678901245', '67890125', 'Jorge', 'Romero', 'jorge.romero@correo.com', '3791011122', '1987-05-25', 'Francia', 222, 1, 'G', 3400, 2, 2, 1);
+('20678901245', '67890125', 'Jorge', 'Romero', 'jorge.romero@correo.com', '3791011122', '1987-05-25', 'Francia', 222, 1, 'G', 3400, 2, 2, 1),
+('20165966593', '16596659', 'Omar', 'Sanchez', 'omarsan@hotmail.com', '3794585759', '1963-10-24', 'las violetas', 3522, NULL, NULL, 3400, 2, 2, 1),
+('20327575753', '32757575', 'Alfredo', 'Gomez', 'alfredog@gmail.com', '3794525252', '1987-10-24', 'Irigoyen', 2020, NULL, NULL, 3400, 83, 3, 1),
+('20388518199', '38851819', 'Daniel', 'Cabral', 'danielcabral13@gmail.com', '3794181719', '2000-04-13', 'rioja', 300, NULL, NULL, 3400, 145, 2, 1),
+('23326546543', '32654654', 'Cristian Ramiro', 'Ramirez', 'cristianrami@mail.com', '3794858689', '1980-10-24', 'Maipu', 2500, NULL, NULL, 3400, 4, 2, 1),
+('23378566580', '37856658', 'Marcos', 'Benitez', 'benmarcos@gmail.com', '3624568978', '1990-10-24', 'belgrano', 705, 5, 3, 3500, 23, 1, 1),
+('27376586587', '37658658', 'Abigail Tamara', 'Espinoza', 'eabi@mail.com', '3794568923', '2002-05-16', 'Moreno', 2000, 4, 'A', 3400, 6, 1, 1);
 
  
 -- Consultas para ver el lote cargado
