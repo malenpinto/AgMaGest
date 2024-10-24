@@ -35,7 +35,6 @@ namespace AgMaGest.C_Presentacion
             this.LContrasenia = new System.Windows.Forms.Label();
             this.TBUsuario = new System.Windows.Forms.TextBox();
             this.TBContrasenia = new System.Windows.Forms.TextBox();
-            this.CBRecordar = new System.Windows.Forms.CheckBox();
             this.BIniciarSesion = new System.Windows.Forms.Button();
             this.BSalir = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -92,20 +91,6 @@ namespace AgMaGest.C_Presentacion
             this.TBContrasenia.Size = new System.Drawing.Size(132, 22);
             this.TBContrasenia.TabIndex = 3;
             // 
-            // CBRecordar
-            // 
-            this.CBRecordar.AutoSize = true;
-            this.CBRecordar.BackColor = System.Drawing.Color.Transparent;
-            this.CBRecordar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CBRecordar.ForeColor = System.Drawing.Color.GhostWhite;
-            this.CBRecordar.Location = new System.Drawing.Point(480, 495);
-            this.CBRecordar.Margin = new System.Windows.Forms.Padding(4);
-            this.CBRecordar.Name = "CBRecordar";
-            this.CBRecordar.Size = new System.Drawing.Size(172, 25);
-            this.CBRecordar.TabIndex = 7;
-            this.CBRecordar.Text = "Recordar usuario";
-            this.CBRecordar.UseVisualStyleBackColor = false;
-            // 
             // BIniciarSesion
             // 
             this.BIniciarSesion.BackColor = System.Drawing.Color.Gray;
@@ -113,7 +98,7 @@ namespace AgMaGest.C_Presentacion
             this.BIniciarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BIniciarSesion.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BIniciarSesion.ForeColor = System.Drawing.Color.GhostWhite;
-            this.BIniciarSesion.Location = new System.Drawing.Point(480, 545);
+            this.BIniciarSesion.Location = new System.Drawing.Point(480, 512);
             this.BIniciarSesion.Margin = new System.Windows.Forms.Padding(4);
             this.BIniciarSesion.Name = "BIniciarSesion";
             this.BIniciarSesion.Size = new System.Drawing.Size(132, 62);
@@ -129,7 +114,7 @@ namespace AgMaGest.C_Presentacion
             this.BSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BSalir.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BSalir.ForeColor = System.Drawing.Color.GhostWhite;
-            this.BSalir.Location = new System.Drawing.Point(631, 545);
+            this.BSalir.Location = new System.Drawing.Point(631, 512);
             this.BSalir.Margin = new System.Windows.Forms.Padding(4);
             this.BSalir.Name = "BSalir";
             this.BSalir.Size = new System.Drawing.Size(133, 62);
@@ -215,7 +200,6 @@ namespace AgMaGest.C_Presentacion
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.BSalir);
             this.Controls.Add(this.BIniciarSesion);
-            this.Controls.Add(this.CBRecordar);
             this.Controls.Add(this.PBPerfil);
             this.Controls.Add(this.TBContrasenia);
             this.Controls.Add(this.TBUsuario);
@@ -246,7 +230,6 @@ namespace AgMaGest.C_Presentacion
         private System.Windows.Forms.TextBox TBUsuario;
         private System.Windows.Forms.TextBox TBContrasenia;
         private System.Windows.Forms.PictureBox PBPerfil;
-        private System.Windows.Forms.CheckBox CBRecordar;
         private Button BIniciarSesion;
         private Button BSalir;
         private Panel panel1;

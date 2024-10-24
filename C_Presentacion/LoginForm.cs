@@ -124,35 +124,12 @@ namespace AgMaGest.C_Presentacion
                 // Si los datos no coinciden, mostramos un mensaje de error
                 MessageBox.Show("Usuario o contraseña incorrectos", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            // Guardar usuario si la casilla "Recordar" está marcada
-            if (CBRecordar.Checked)
-            {
-                Properties.Settings.Default.UsuarioGuardado = usuario;
-                Properties.Settings.Default.RecordarUsuario = true;
-            }
-            else
-            {
-                // Si la casilla no está marcada, limpiar los valores guardados
-                Properties.Settings.Default.UsuarioGuardado = string.Empty;
-                Properties.Settings.Default.RecordarUsuario = false;
-            }
-
-            // Guardar los cambios en las configuraciones
-            Properties.Settings.Default.Save();
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
             // Ocultar los caracteres de la contraseña
             TBContrasenia.PasswordChar = '●';
-
-            // Cargar el usuario guardado si la casilla de "Recordar" estaba marcada
-            if (Properties.Settings.Default.RecordarUsuario)
-            {
-                TBUsuario.Text = Properties.Settings.Default.UsuarioGuardado;
-                CBRecordar.Checked = true;  // Marcar la casilla de "Recordar Usuario"
-            }
         }
 
         // Método para dibujar botones redondeados

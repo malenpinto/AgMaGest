@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using AgMaGest.C_Logica.Entidades;
 
@@ -7,14 +8,14 @@ namespace AgMaGest.C_Datos
 {
     public class ProvinciaDAL
     {
-        private string connectionString = "Data Source=.\\SQLEXPRESS;Initial Catalog=Agmagest;Integrated Security=True"; // Reemplaza con tu cadena de conexión
+        private string ConnectionString = ConfigurationManager.ConnectionStrings["AgMaGest.Properties.Settings.AgmagestConnectionString"].ConnectionString;
 
         // Método para obtener las provincias de un país específico
         public List<Provincia> ObtenerProvinciasPorPais(int idPais)
         {
             List<Provincia> provincias = new List<Provincia>();
 
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
                 conn.Open();
                 // Consulta para obtener provincias filtradas por el id del país
@@ -38,30 +39,6 @@ namespace AgMaGest.C_Datos
                 }
             }
 
-            return provincias; // Retornando la lista de provincias
-        }
-
-        // Método para obtener todas las provincias (si es necesario)
-        public List<Provincia> ObtenerProvincias()
-        {
-            List<Provincia> provincias = new List<Provincia>();
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("SELECT id_Provincia, nombre_Provincia, id_Pais FROM Provincia", conn);
-                SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                        {
-                            Provincia provincia = new Provincia()
-                            {
-                                IdProvincia = reader.GetInt32(0), // id_Provincia
-                                NombreProvincia = reader.GetString(1), // Nombre_Provincia
-                                IdPais = reader.GetInt32(2) // id_Pais
-                            };
-                    provincias.Add(provincia);
-                }
-            }
             return provincias; // Retornando la lista de provincias
         }
     }

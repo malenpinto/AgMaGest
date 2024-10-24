@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using AgMaGest.C_Logica.Entidades;  // Referencia a la capa lógica donde está la clase Empleado
+using System.Configuration;
+using AgMaGest.C_Logica.Entidades;
 
 namespace AgMaGest.C_Datos
 {
     public class EmpleadoDAL
     {
-        private string connectionString = "Data Source=.\\SQLEXPRESS;Initial Catalog=Agmagest;Integrated Security=True";
+
+        // Obtener la cadena de conexión desde app.config
+        private string ConnectionString = ConfigurationManager.ConnectionStrings["AgMaGest.Properties.Settings.AgmagestConnectionString"].ConnectionString;
 
 
         // Método para obtener la lista de perfiles
@@ -15,33 +18,49 @@ namespace AgMaGest.C_Datos
         {
             List<PerfilEmpleado> perfiles = new List<PerfilEmpleado>();
 
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            try
             {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("SELECT id_perfil, nombre_Perfil FROM Perfil_Empleado", conn);
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                while (reader.Read())
+                using (SqlConnection conn = new SqlConnection(ConnectionString))
                 {
-                    PerfilEmpleado perfil = new PerfilEmpleado()
-                    {
-                        IdPerfil = reader.GetInt32(0), // Asumiendo que id_perfil es el primer campo
-                        NombrePerfil = reader.GetString(1) // Asumiendo que nombre_perfil es el segundo campo
-                    };
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand("SELECT id_perfil, nombre_Perfil FROM Perfil_Empleado", conn);
+                    SqlDataReader reader = cmd.ExecuteReader();
 
-                    perfiles.Add(perfil);
+                    while (reader.Read())
+                    {
+                        PerfilEmpleado perfil = new PerfilEmpleado()
+                        {
+                            IdPerfil = reader.GetInt32(0),  // Asumiendo que id_perfil es el primer campo
+                            NombrePerfil = reader.GetString(1)  // Asumiendo que nombre_Perfil es el segundo campo
+                        };
+
+                        perfiles.Add(perfil);
+                    }
                 }
+            }
+            catch (SqlException ex)
+            {
+                // Manejo de errores relacionados con SQL
+                Console.WriteLine($"Error de SQL: {ex.Message}");
+                throw;  // Lanza la excepción nuevamente para que pueda ser manejada en niveles superiores si es necesario
+            }
+            catch (Exception ex)
+            {
+                // Manejo de otros tipos de errores
+                Console.WriteLine($"Error: {ex.Message}");
+                throw;
             }
 
             return perfiles;
         }
+
 
         // Método para obtener un nuevo ID para el empleado
         public int ObtenerNuevoIdEmpleado()
         {
             int nuevoId = 1; // Valor predeterminado en caso de que no existan empleados en la base de datos
 
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
                 conn.Open();
                 // Consulta para obtener el máximo id_Empleado existente
@@ -59,51 +78,74 @@ namespace AgMaGest.C_Datos
             return nuevoId; // Retornar el nuevo id único
         }
 
-        // Métodos para verificar si el DNI, CUIL o Email ya existen en la base de datos
-
-        public bool ExisteDNI(string dni)
-        {
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Empleado WHERE dni_Empleado = @DNI", conn);
-                cmd.Parameters.AddWithValue("@DNI", dni);
-
-                int count = (int)cmd.ExecuteScalar();
-                return count > 0;  // Devuelve true si el DNI ya existe
-            }
-        }
-
-        public bool ExisteCUIL(string cuil)
-        {
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Empleado WHERE cuil_Empleado = @CUIL", conn);
-                cmd.Parameters.AddWithValue("@CUIL", cuil);
-
-                int count = (int)cmd.ExecuteScalar();
-                return count > 0;  // Devuelve true si el CUIL ya existe
-            }
-        }
-
-        public bool ExisteEmail(string email)
-        {
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Empleado WHERE email_Empleado = @Email", conn);
-                cmd.Parameters.AddWithValue("@Email", email);
-
-                int count = (int)cmd.ExecuteScalar();
-                return count > 0;  // Devuelve true si el email ya existe
-            }
-        }
-
         // Método para insertar un nuevo empleado en la base de datos
-        public void InsertarEmpleado(Empleado empleado)
+        public bool InsertarEmpleado(Empleado empleado)
         {
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConnectionString))
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(
+                        "INSERT INTO Empleado (cuil_Empleado, dni_Empleado, nombre_Empleado, apellido_Empleado, email_Empleado, celular_Empleado, " +
+                        "fechaNac_Empleado, calle_Empleado, num_Calle_Empleado, piso_Empleado, dpto_Empleado, codigo_PostalEmpleado, id_Localidad, id_perfil, id_Estado) " +
+                        "VALUES (@CUIL, @DNI, @Nombre, @Apellido, @Email, @Celular, @FechaNacimiento, @Calle, @NumeroCalle, @Piso, @Dpto, @CodigoPostal, @IdLocalidad, @IdPerfil, @IdEstado)", conn);
+
+
+                    // Añadir los parámetros al comando SQL
+                    cmd.Parameters.AddWithValue("@CUIL", empleado.CUIL);
+                    cmd.Parameters.AddWithValue("@DNI", empleado.DNI);
+                    cmd.Parameters.AddWithValue("@Nombre", empleado.Nombre);
+                    cmd.Parameters.AddWithValue("@Apellido", empleado.Apellido);
+                    cmd.Parameters.AddWithValue("@Email", empleado.Email);
+                    cmd.Parameters.AddWithValue("@Celular", empleado.Celular);
+                    cmd.Parameters.AddWithValue("@FechaNacimiento", empleado.FechaNacimiento);
+                    cmd.Parameters.AddWithValue("@Calle", empleado.Calle);
+                    cmd.Parameters.AddWithValue("@NumeroCalle", empleado.NumeroCalle);
+                    if (empleado.Piso == null)
+                    {
+                        cmd.Parameters.AddWithValue("@Piso", DBNull.Value); // Usa DBNull.Value si es null
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@Piso", empleado.Piso);
+                    }
+                    if (empleado.Dpto == null)
+                    {
+                        cmd.Parameters.AddWithValue("@Dpto", DBNull.Value); // Usa DBNull.Value si es null
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@Dpto", empleado.Dpto);
+                    }
+                    cmd.Parameters.AddWithValue("@CodigoPostal", empleado.CodigoPostal);
+                    cmd.Parameters.AddWithValue("@IdLocalidad", empleado.IdLocalidad);
+                    cmd.Parameters.AddWithValue("@IdPerfil", empleado.IdPerfil);
+                    cmd.Parameters.AddWithValue("@IdEstado", empleado.IdEstado);
+
+                    // Ejecutar el comando de inserción
+                    cmd.ExecuteNonQuery();
+                }
+
+                return true; // Inserción exitosa
+            }
+            catch (SqlException ex)
+            {
+                // Verificar si el error es por duplicado (clave única violada)
+                if (ex.Number == 2627 || ex.Number == 2601) // Violación de índice único
+                {
+                    throw new Exception("Ya existe un empleado con este DNI, CUIL o email.");
+                }
+                throw;
+            }
+        }
+    }
+}
+
+
+        /*public void InsertarEmpleado(Empleado empleado)
+        {
+            using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
                 conn.Open();
 
@@ -124,12 +166,11 @@ namespace AgMaGest.C_Datos
                 }
 
                 SqlCommand cmd = new SqlCommand(
-                   "INSERT INTO Empleado (id_Empleado, nombre_Empleado, apellido_Empleado, dni_Empleado, cuil_Empleado, calle_Empleado, num_Calle_Empleado, " +
+                   "INSERT INTO Empleado (nombre_Empleado, apellido_Empleado, dni_Empleado, cuil_Empleado, calle_Empleado, num_Calle_Empleado, " +
                     "piso_Empleado, dpto_Empleado, email_Empleado, celular_Empleado, codigo_PostalEmpleado, id_Localidad, id_perfil, id_Estado) " +
                     "VALUES (@IdEmpleado, @Nombre, @Apellido, @DNI, @CUIL, @Calle, @NumeroCalle, @Piso, @Dpto, @Email, @Celular, @CodigoPostal, @IdLocalidad, @IdPerfil, @IdEstado)", conn);
 
                 // Añadir los parámetros al comando SQL
-                cmd.Parameters.AddWithValue("@IdEmpleado", empleado.IdEmpleado); // Asegurar de que el IdEmpleado tenga un valor único
                 cmd.Parameters.AddWithValue("@Nombre", empleado.Nombre);
                 cmd.Parameters.AddWithValue("@Apellido", empleado.Apellido);
                 cmd.Parameters.AddWithValue("@DNI", empleado.DNI);
@@ -148,6 +189,4 @@ namespace AgMaGest.C_Datos
                 // Ejecutar el comando de inserción
                 cmd.ExecuteNonQuery();
             }
-        }
-    }
-}
+        }*/

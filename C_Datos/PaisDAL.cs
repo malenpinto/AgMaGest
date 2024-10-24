@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using AgMaGest.C_Logica.Entidades;
 
@@ -7,13 +8,13 @@ namespace AgMaGest.C_Datos
 {
     public class PaisDAL
     {
-        private string connectionString = "Data Source=.\\SQLEXPRESS;Initial Catalog=Agmagest;Integrated Security=True"; // Define tu cadena de conexión
+        private string ConnectionString = ConfigurationManager.ConnectionStrings["AgMaGest.Properties.Settings.AgmagestConnectionString"].ConnectionString;
 
         public List<Pais> ObtenerPaises()
         {
             List<Pais> paises = new List<Pais>();
 
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("SELECT id_Pais, nombre_Pais FROM Pais", conn);

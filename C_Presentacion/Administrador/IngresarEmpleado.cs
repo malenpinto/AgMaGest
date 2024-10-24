@@ -44,121 +44,230 @@ namespace AgMaGest.C_Presentacion.Administrador
 
         private void CargarPaises()
         {
+            // Obtener la lista de paises desde la base de datos
             PaisDAL paisDAL = new PaisDAL();
             List<Pais> paises = paisDAL.ObtenerPaises();
 
+            // Agregar una opción por defecto "Seleccione un País"
+            paises.Insert(0, new Pais { IdPais = 0, NombrePais = "Seleccione un País" });
+
+            // Asignar la lista de países al ComboBox
             CBPaisEmpleado.DataSource = paises; // Asignar la lista de países al ComboBox
             CBPaisEmpleado.DisplayMember = "NombrePais"; // Campo que se mostrará en el ComboBox
             CBPaisEmpleado.ValueMember = "IdPais"; // Campo que se utilizará como valor
 
-            CBPaisEmpleado.SelectedIndexChanged += CBPaisEmpleado_SelectedIndexChanged; // Suscribirse al evento SelectedIndexChanged
-        }
+            // Seleccionar la opción por defecto
+            CBPaisEmpleado.SelectedIndex = 0; 
 
+            // Suscribirse al evento SelectedIndexChanged
+            CBPaisEmpleado.SelectedIndexChanged += CBPaisEmpleado_SelectedIndexChanged;
+        }
+        
         private void CBPaisEmpleado_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Verificar que el país seleccionado no sea nulo
-            if (CBPaisEmpleado.SelectedValue != null)
+            // Obtener el país seleccionado
+            int idPaisSeleccionado = (int)CBPaisEmpleado.SelectedValue;
+
+            // Verificar que no sea la opción "Seleccione un País"
+            if (idPaisSeleccionado != 0)
             {
-                int idPais = Convert.ToInt32(CBPaisEmpleado.SelectedValue);
-                CargarProvincias(idPais); // Cargar provincias según el país seleccionado
+                // Cargar las provincias en función del país seleccionado
+                CargarProvincias(idPaisSeleccionado);
+            }
+            else
+            {
+                // Limpiar las provincias si se selecciona "Seleccione un País"
+                CBProvinciaEmpleado.DataSource = null;
+                CBProvinciaEmpleado.Items.Clear();
+                CBProvinciaEmpleado.Items.Add("Seleccione una Provincia");
+                CBProvinciaEmpleado.SelectedIndex = 0;
             }
         }
 
 
         private void CargarProvincias(int idPais)
         {
+            // Obtener la lista de provincias desde la base de datos
             ProvinciaDAL provinciaDAL = new ProvinciaDAL();
             List<Provincia> provincias = provinciaDAL.ObtenerProvinciasPorPais(idPais);
 
+            // Agregar una opción por defecto "Seleccione una Provincia"
+            provincias.Insert(0, new Provincia { IdProvincia = 0, NombreProvincia = "Seleccione una Provincia" });
+
+            // Asignar la lista de provincias al ComboBox
             CBProvinciaEmpleado.DataSource = provincias; // Asignar la lista de provincias al ComboBox
             CBProvinciaEmpleado.DisplayMember = "NombreProvincia"; // Campo que se mostrará en el ComboBox
             CBProvinciaEmpleado.ValueMember = "IdProvincia"; // Campo que se utilizará como valor
+
+            // Seleccionar la opción por defecto
+            CBProvinciaEmpleado.SelectedIndex = 0;
+
+            // Suscribirse al evento SelectedIndexChanged
+            CBProvinciaEmpleado.SelectedIndexChanged += CBProvinciaEmpleado_SelectedIndexChanged;
+        }
+
+        private void CBProvinciaEmpleado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Obtener el país seleccionado
+            int idProvinciaSeleccionada = (int)CBProvinciaEmpleado.SelectedValue;
+
+            // Verificar que no sea la opción "Seleccione una Provincia"
+            if (idProvinciaSeleccionada != 0)
+            {
+                // Cargar las localidades en función de la provincia seleccionada
+                CargarLocalidades(idProvinciaSeleccionada);
+            }
+            else
+            {
+                // Limpiar las Localidades si se selecciona "Seleccione una Provincia"
+                CBProvinciaEmpleado.DataSource = null;
+                CBProvinciaEmpleado.Items.Clear();
+                CBProvinciaEmpleado.Items.Add("Seleccione una Localidad");
+                CBProvinciaEmpleado.SelectedIndex = 0;
+            }
+        }
+
+        private void CargarLocalidades(int idProvincia)
+        {
+            // Obtener la lista de localidades desde la base de datos
+            LocalidadDAL localidadDAL = new LocalidadDAL();
+            List<Localidad> localidades = localidadDAL.ObtenerLocalidadesPorProvincia(idProvincia);
+
+            // Agregar una opción por defecto "Seleccione una Provincia"
+            localidades.Insert(0, new Localidad { IdProvincia = 0, NombreLocalidad = "Seleccione una Localidad" });
+
+            // Asignar la lista de localidades al ComboBox
+            CBLocalidadEmpleado.DataSource = localidades; // Asignar la lista de localidades al ComboBox
+            CBLocalidadEmpleado.DisplayMember = "NombreLocalidad"; // Campo que se mostrará en el ComboBox
+            CBLocalidadEmpleado.ValueMember = "IdLocalidad"; // Campo que se utilizará como valor
+
+            // Seleccionar la opción por defecto
+            CBLocalidadEmpleado.SelectedIndex = 0;
         }
 
         private void CargarPerfiles()
         {
+            // Obtener la lista de perfiles desde la base de datos
             EmpleadoDAL empleadoDAL = new EmpleadoDAL();
             List<PerfilEmpleado> perfiles = empleadoDAL.ObtenerPerfiles();
+            
+            // Agregar una opción por defecto "Seleccione una"
+            perfiles.Insert(0, new PerfilEmpleado { IdPerfil = 0, NombrePerfil = "Seleccione un perfil" });
 
+            // Asignar la lista al ComboBox
             CBPerfilEmpleado.DataSource = perfiles; // Asignar la lista de perfiles al ComboBox
             CBPerfilEmpleado.DisplayMember = "NombrePerfil"; // Campo que se mostrará en el ComboBox
             CBPerfilEmpleado.ValueMember = "IdPerfil"; // Campo que se utilizará como valor
+
+            // Seleccionar la opción por defecto
+            CBPerfilEmpleado.SelectedIndex = 0;
         }
 
 
         private void BAgregarEmpleado_Click(object sender, EventArgs e)
         {
+            // Validar si se ha seleccionado un perfil
+            if (CBPerfilEmpleado.SelectedValue.ToString() == "0")
+            {
+                MessageBox.Show("Debe seleccionar un perfil.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Validar si se ha seleccionado un país
+            if (CBPaisEmpleado.SelectedValue.ToString() == "0")
+            {
+                MessageBox.Show("Debe seleccionar un país.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Validar si se ha seleccionado una provincia
+            if (CBProvinciaEmpleado.SelectedValue.ToString() == "0")
+            {
+                MessageBox.Show("Debe seleccionar una provincia.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Validar si se ha seleccionado una localidad
+            if (CBLocalidadEmpleado.SelectedValue.ToString() == "0")
+            {
+                MessageBox.Show("Debe seleccionar una localidad.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             // Verificar que todos los campos no estén vacíos
             if (string.IsNullOrWhiteSpace(TBNombreEmpleado.Text) ||
                 string.IsNullOrWhiteSpace(TBApellidoEmpleado.Text) ||
                 string.IsNullOrWhiteSpace(TBDniEmpleado.Text) ||
                 string.IsNullOrWhiteSpace(TBCuilEmpleado.Text) ||
-                string.IsNullOrWhiteSpace(CBPerfilEmpleado.Text) ||
+                CBPerfilEmpleado.SelectedIndex == -1 ||
                 string.IsNullOrWhiteSpace(TBCelularEmpleado.Text) ||
                 string.IsNullOrWhiteSpace(TBEmailEmpleado.Text) ||
                 string.IsNullOrWhiteSpace(TBCalleEmpleado.Text) ||
                 string.IsNullOrWhiteSpace(TBNumCalleEmpleado.Text) ||
                 string.IsNullOrWhiteSpace(TBCodPostalEmpleado.Text) ||
-                string.IsNullOrWhiteSpace(CBPaisEmpleado.Text) ||
-                string.IsNullOrWhiteSpace(CBProvinciaEmpleado.Text) ||
-                string.IsNullOrWhiteSpace(TBCiudadEmpleado.Text) ||
-                string.IsNullOrWhiteSpace(TBLocalidadEmpleado.Text))
+                CBPaisEmpleado.SelectedIndex == -1 ||
+                CBProvinciaEmpleado.SelectedIndex == -1 ||
+                CBLocalidadEmpleado.SelectedIndex == -1)
             {
                 // Mostrar mensaje de error si falta algún campo
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            else if (VerificarEmail() && VerificarDNIyCUIL())
+
+            // Verificar formato de Email, DNI y CUIL
+            if (!VerificarEmail() || !VerificarDNIyCUIL())
             {
-                try
-                {
-                    // Crear una instancia de EmpleadoDAL
-                    EmpleadoDAL empleadoDAL = new EmpleadoDAL();
-
-                    // Crear un objeto Empleado con los datos del formulario
-                    Empleado nuevoEmpleado = new Empleado()
-                    {
-                        IdEmpleado = empleadoDAL.ObtenerNuevoIdEmpleado(), // Llamar al método para obtener un nuevo ID
-                        Nombre = TBNombreEmpleado.Text,
-                        Apellido = TBApellidoEmpleado.Text,
-                        DNI = TBDniEmpleado.Text,
-                        CUIL = TBCuilEmpleado.Text,
-                        Celular = TBCelularEmpleado.Text,
-                        Email = TBEmailEmpleado.Text,
-                        Calle = TBCalleEmpleado.Text,
-                        NumeroCalle = TBNumCalleEmpleado.Text,
-                        Piso = TBNumPisoEmpleado.Text,
-                        Dpto = TBDptoEmpleado.Text,
-                        CodigoPostal = TBCodPostalEmpleado.Text,
-                        IdLocalidad = Convert.ToInt32(CBPaisEmpleado.SelectedValue), // 
-                        IdPerfil = Convert.ToInt32(CBPerfilEmpleado.SelectedValue), // Asumiendo que tenemos una lista de perfiles
-                        IdEstado = 1, // 1 estado activo
-                        Ciudad = TBCiudadEmpleado.Text,
-                        Pais = CBPaisEmpleado.Text,
-                        Provincia = CBProvinciaEmpleado.Text,
-                        Localidad = TBLocalidadEmpleado.Text
-                    };
-
-                    // Insertar el empleado en la base de datos
-                    empleadoDAL.InsertarEmpleado(nuevoEmpleado);
-
-                    // Mostrar mensaje de éxito
-                    MessageBox.Show("Empleado agregado exitosamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    // Limpiar todos los campos después de agregar
-                    LimpiarCampos();
-                }
-                catch (Exception ex)
-                {
-                    // Mostrar mensaje de error si se lanza alguna excepción
-                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                MessageBox.Show("Por favor, revise los formatos de Email, DNI o CUIL.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-        }
 
-        private string ToTitleCase(string input)
-        {
-            return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(input.ToLower());
+            // Validación de la fecha de nacimiento
+            DateTime fechaMinimaSQL = new DateTime(1753, 1, 1);
+            if (DTFechaNacEmpleado.Value < fechaMinimaSQL)
+            {
+                MessageBox.Show("La fecha de nacimiento no es válida. Debe ser posterior al 01/01/1753.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            try
+            {
+                // Crear una instancia de EmpleadoDAL
+                EmpleadoDAL empleadoDAL = new EmpleadoDAL();
+
+                // Crear un objeto Empleado con los datos del formulario
+                Empleado nuevoEmpleado = new Empleado()
+                {
+                    CUIL = TBCuilEmpleado.Text.Trim(),
+                    DNI = TBDniEmpleado.Text.Trim(),
+                    Nombre = TBNombreEmpleado.Text.Trim(),
+                    Apellido = TBApellidoEmpleado.Text.Trim(),
+                    Email = TBEmailEmpleado.Text.Trim(),
+                    Celular = TBCelularEmpleado.Text.Trim(),
+                    FechaNacimiento = DTFechaNacEmpleado.Value, 
+                    Calle = TBCalleEmpleado.Text.Trim(),
+                    NumeroCalle = int.Parse(TBNumCalleEmpleado.Text.Trim()), // Convertir a int
+                    Piso = string.IsNullOrWhiteSpace(TBNumPisoEmpleado.Text) ? (int?)null : int.Parse(TBNumPisoEmpleado.Text.Trim()),
+                    Dpto = string.IsNullOrWhiteSpace(TBDptoEmpleado.Text) ? null : TBDptoEmpleado.Text.Trim(),
+                    CodigoPostal = int.Parse(TBCodPostalEmpleado.Text.Trim()), // Convertir a int
+                    IdPerfil = Convert.ToInt32(CBPerfilEmpleado.SelectedValue), // Asumiendo que tenemos una lista de perfiles
+                    IdEstado = 1, // 1 estado activo
+                    IdLocalidad = Convert.ToInt32(CBLocalidadEmpleado.SelectedValue) // Asignar ID de la localidad
+                };
+
+                // Insertar el empleado en la base de datos
+                empleadoDAL.InsertarEmpleado(nuevoEmpleado);
+
+                // Mostrar mensaje de éxito
+                MessageBox.Show("Empleado agregado exitosamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Limpiar todos los campos después de agregar
+                LimpiarCampos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error al agregar el empleado: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine(ex.ToString()); // Imprimir el error detallado en la consola
+            }
         }
 
         // Función para limpiar todos los campos del formulario
@@ -179,8 +288,7 @@ namespace AgMaGest.C_Presentacion.Administrador
             TBCodPostalEmpleado.Text = "";
             CBPaisEmpleado.SelectedIndex = -1;
             CBProvinciaEmpleado.SelectedIndex = -1;
-            TBCiudadEmpleado.Text = "";
-            TBLocalidadEmpleado.Text = "";
+            CBLocalidadEmpleado.SelectedIndex = -1;
         }
 
         // Validar formato de correo electrónico
