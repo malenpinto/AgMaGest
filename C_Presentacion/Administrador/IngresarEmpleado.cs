@@ -41,7 +41,6 @@ namespace AgMaGest.C_Presentacion.Administrador
                 e.SuppressKeyPress = true; // Evita que la tecla Enter haga otra acción
             }
         }
-
         private void CargarPaises()
         {
             // Obtener la lista de paises desde la base de datos
@@ -52,38 +51,39 @@ namespace AgMaGest.C_Presentacion.Administrador
             paises.Insert(0, new Pais { IdPais = 0, NombrePais = "Seleccione un País" });
 
             // Asignar la lista de países al ComboBox
-            CBPaisEmpleado.DataSource = paises; // Asignar la lista de países al ComboBox
-            CBPaisEmpleado.DisplayMember = "NombrePais"; // Campo que se mostrará en el ComboBox
-            CBPaisEmpleado.ValueMember = "IdPais"; // Campo que se utilizará como valor
+            CBPaisEmpleado.DataSource = paises;
+            CBPaisEmpleado.DisplayMember = "NombrePais";
+            CBPaisEmpleado.ValueMember = "IdPais";
 
             // Seleccionar la opción por defecto
-            CBPaisEmpleado.SelectedIndex = 0; 
+            CBPaisEmpleado.SelectedIndex = 0;
 
-            // Suscribirse al evento SelectedIndexChanged
+            // Desvincular el evento antes de volver a asignarlo
+            CBPaisEmpleado.SelectedIndexChanged -= CBPaisEmpleado_SelectedIndexChanged;
             CBPaisEmpleado.SelectedIndexChanged += CBPaisEmpleado_SelectedIndexChanged;
         }
-        
+
         private void CBPaisEmpleado_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Obtener el país seleccionado
-            int idPaisSeleccionado = (int)CBPaisEmpleado.SelectedValue;
+            if (CBPaisEmpleado.SelectedValue != null)
+            {
+                int idPaisSeleccionado = (int)CBPaisEmpleado.SelectedValue;
 
-            // Verificar que no sea la opción "Seleccione un País"
-            if (idPaisSeleccionado != 0)
-            {
-                // Cargar las provincias en función del país seleccionado
-                CargarProvincias(idPaisSeleccionado);
-            }
-            else
-            {
-                // Limpiar las provincias si se selecciona "Seleccione un País"
-                CBProvinciaEmpleado.DataSource = null;
-                CBProvinciaEmpleado.Items.Clear();
-                CBProvinciaEmpleado.Items.Add("Seleccione una Provincia");
-                CBProvinciaEmpleado.SelectedIndex = 0;
+                if (idPaisSeleccionado != 0)
+                {
+                    // Lógica cuando hay un valor seleccionado
+                    CargarProvincias(idPaisSeleccionado);
+                }
+                else
+                {
+                    // Limpiar las provincias si se selecciona "Seleccione un País"
+                    CBProvinciaEmpleado.DataSource = null;
+                    CBProvinciaEmpleado.Items.Clear();
+                    CBProvinciaEmpleado.Items.Add("Seleccione una Provincia");
+                    CBProvinciaEmpleado.SelectedIndex = 0;
+                }
             }
         }
-
 
         private void CargarProvincias(int idPais)
         {
@@ -95,35 +95,37 @@ namespace AgMaGest.C_Presentacion.Administrador
             provincias.Insert(0, new Provincia { IdProvincia = 0, NombreProvincia = "Seleccione una Provincia" });
 
             // Asignar la lista de provincias al ComboBox
-            CBProvinciaEmpleado.DataSource = provincias; // Asignar la lista de provincias al ComboBox
-            CBProvinciaEmpleado.DisplayMember = "NombreProvincia"; // Campo que se mostrará en el ComboBox
-            CBProvinciaEmpleado.ValueMember = "IdProvincia"; // Campo que se utilizará como valor
+            CBProvinciaEmpleado.DataSource = provincias;
+            CBProvinciaEmpleado.DisplayMember = "NombreProvincia";
+            CBProvinciaEmpleado.ValueMember = "IdProvincia";
 
             // Seleccionar la opción por defecto
             CBProvinciaEmpleado.SelectedIndex = 0;
 
-            // Suscribirse al evento SelectedIndexChanged
+            // Desvincular el evento antes de volver a asignarlo
+            CBProvinciaEmpleado.SelectedIndexChanged -= CBProvinciaEmpleado_SelectedIndexChanged;
             CBProvinciaEmpleado.SelectedIndexChanged += CBProvinciaEmpleado_SelectedIndexChanged;
         }
 
         private void CBProvinciaEmpleado_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Obtener el país seleccionado
-            int idProvinciaSeleccionada = (int)CBProvinciaEmpleado.SelectedValue;
+            if (CBProvinciaEmpleado.SelectedValue != null)
+            {
+                int idProvinciaSeleccionada = (int)CBProvinciaEmpleado.SelectedValue;
 
-            // Verificar que no sea la opción "Seleccione una Provincia"
-            if (idProvinciaSeleccionada != 0)
-            {
-                // Cargar las localidades en función de la provincia seleccionada
-                CargarLocalidades(idProvinciaSeleccionada);
-            }
-            else
-            {
-                // Limpiar las Localidades si se selecciona "Seleccione una Provincia"
-                CBProvinciaEmpleado.DataSource = null;
-                CBProvinciaEmpleado.Items.Clear();
-                CBProvinciaEmpleado.Items.Add("Seleccione una Localidad");
-                CBProvinciaEmpleado.SelectedIndex = 0;
+                if (idProvinciaSeleccionada != 0)
+                {
+                    // Lógica cuando hay un valor seleccionado
+                    CargarLocalidades(idProvinciaSeleccionada);
+                }
+                else
+                {
+                    // Limpiar las localidades si se selecciona "Seleccione una Provincia"
+                    CBLocalidadEmpleado.DataSource = null;
+                    CBLocalidadEmpleado.Items.Clear();
+                    CBLocalidadEmpleado.Items.Add("Seleccione una Localidad");
+                    CBLocalidadEmpleado.SelectedIndex = 0;
+                }
             }
         }
 
@@ -166,6 +168,21 @@ namespace AgMaGest.C_Presentacion.Administrador
 
         private void BAgregarEmpleado_Click(object sender, EventArgs e)
         {
+            // Verificar formato de Email, DNI y CUIL
+            if (!VerificarEmail() || !VerificarDNIyCUIL())
+            {
+                MessageBox.Show("Por favor, revise los formatos de Email, DNI o CUIL.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Validación de la fecha de nacimiento
+            DateTime fechaMinimaSQL = new DateTime(1924, 1, 1);
+            if (DTFechaNacEmpleado.Value < fechaMinimaSQL)
+            {
+                MessageBox.Show("La fecha de nacimiento no es válida. Debe ser posterior al 01/01/1924.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             // Validar si se ha seleccionado un perfil
             if (CBPerfilEmpleado.SelectedValue.ToString() == "0")
             {
@@ -174,21 +191,21 @@ namespace AgMaGest.C_Presentacion.Administrador
             }
 
             // Validar si se ha seleccionado un país
-            if (CBPaisEmpleado.SelectedValue.ToString() == "0")
+            if (CBPaisEmpleado.SelectedValue == null || CBPaisEmpleado.SelectedValue.ToString() == "0")
             {
                 MessageBox.Show("Debe seleccionar un país.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             // Validar si se ha seleccionado una provincia
-            if (CBProvinciaEmpleado.SelectedValue.ToString() == "0")
+            if (CBProvinciaEmpleado.SelectedValue == null || CBProvinciaEmpleado.SelectedValue.ToString() == "0")
             {
                 MessageBox.Show("Debe seleccionar una provincia.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             // Validar si se ha seleccionado una localidad
-            if (CBLocalidadEmpleado.SelectedValue.ToString() == "0")
+            if (CBLocalidadEmpleado.SelectedValue == null || CBLocalidadEmpleado.SelectedValue.ToString() == "0")
             {
                 MessageBox.Show("Debe seleccionar una localidad.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -214,21 +231,6 @@ namespace AgMaGest.C_Presentacion.Administrador
                 return;
             }
 
-            // Verificar formato de Email, DNI y CUIL
-            if (!VerificarEmail() || !VerificarDNIyCUIL())
-            {
-                MessageBox.Show("Por favor, revise los formatos de Email, DNI o CUIL.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            // Validación de la fecha de nacimiento
-            DateTime fechaMinimaSQL = new DateTime(1753, 1, 1);
-            if (DTFechaNacEmpleado.Value < fechaMinimaSQL)
-            {
-                MessageBox.Show("La fecha de nacimiento no es válida. Debe ser posterior al 01/01/1753.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
             try
             {
                 // Crear una instancia de EmpleadoDAL
@@ -239,12 +241,12 @@ namespace AgMaGest.C_Presentacion.Administrador
                 {
                     CUIL = TBCuilEmpleado.Text.Trim(),
                     DNI = TBDniEmpleado.Text.Trim(),
-                    Nombre = TBNombreEmpleado.Text.Trim(),
-                    Apellido = TBApellidoEmpleado.Text.Trim(),
+                    Nombre = ToTitleCase(TBNombreEmpleado.Text.Trim()), // Usar ToTitleCase
+                    Apellido = ToTitleCase(TBApellidoEmpleado.Text.Trim()), // Usar ToTitleCase
                     Email = TBEmailEmpleado.Text.Trim(),
                     Celular = TBCelularEmpleado.Text.Trim(),
-                    FechaNacimiento = DTFechaNacEmpleado.Value, 
-                    Calle = TBCalleEmpleado.Text.Trim(),
+                    FechaNacimiento = DTFechaNacEmpleado.Value,
+                    Calle = ToTitleCase(TBCalleEmpleado.Text.Trim()), // Usar ToTitleCase
                     NumeroCalle = int.Parse(TBNumCalleEmpleado.Text.Trim()), // Convertir a int
                     Piso = string.IsNullOrWhiteSpace(TBNumPisoEmpleado.Text) ? (int?)null : int.Parse(TBNumPisoEmpleado.Text.Trim()),
                     Dpto = string.IsNullOrWhiteSpace(TBDptoEmpleado.Text) ? null : TBDptoEmpleado.Text.Trim(),
@@ -273,22 +275,44 @@ namespace AgMaGest.C_Presentacion.Administrador
         // Función para limpiar todos los campos del formulario
         private void LimpiarCampos()
         {
-            TBNombreEmpleado.Text = "";
-            TBApellidoEmpleado.Text = "";
-            TBDniEmpleado.Text = "";
-            TBCuilEmpleado.Text = "";
+            // Limpiar campos de texto
+            LimpiarTextBoxes(this);
+
+            // Restablecer ComboBox de perfil
+            CBPerfilEmpleado.SelectedIndex = 0;
+
+            // Restablecer Fecha de Nacimiento a la fecha actual
             DTFechaNacEmpleado.Value = DateTime.Now;
-            TBCelularEmpleado.Text = "";
-            CBPerfilEmpleado.SelectedIndex = -1;
-            TBEmailEmpleado.Text = "";
-            TBCalleEmpleado.Text = "";
-            TBNumCalleEmpleado.Text = "";
-            TBNumPisoEmpleado.Text = "";
-            TBDptoEmpleado.Text = "";
-            TBCodPostalEmpleado.Text = "";
-            CBPaisEmpleado.SelectedIndex = -1;
-            CBProvinciaEmpleado.SelectedIndex = -1;
-            CBLocalidadEmpleado.SelectedIndex = -1;
+
+            // Restablecer País, Provincia y Localidad
+            RestablecerComboBox(CBPaisEmpleado, "Seleccione un País");
+            RestablecerComboBox(CBProvinciaEmpleado, "Seleccione una Provincia");
+            RestablecerComboBox(CBLocalidadEmpleado, "Seleccione una Localidad");
+        }
+
+        // Función para limpiar todos los TextBox dentro de un contenedor (puede ser el formulario u otro panel)
+        private void LimpiarTextBoxes(Control parent)
+        {
+            foreach (Control control in parent.Controls)
+            {
+                if (control is TextBox textBox)
+                {
+                    textBox.Clear();
+                }
+                else if (control.HasChildren)
+                {
+                    LimpiarTextBoxes(control); // Llamada recursiva para limpiar TextBox en contenedores anidados
+                }
+            }
+        }
+
+        // Función para restablecer un ComboBox con un mensaje predeterminado
+        private void RestablecerComboBox(ComboBox comboBox, string mensajeDefault)
+        {
+            comboBox.DataSource = null; // Limpiar el ComboBox
+            comboBox.Items.Clear();
+            comboBox.Items.Add(mensajeDefault);
+            comboBox.SelectedIndex = 0;
         }
 
         // Validar formato de correo electrónico
@@ -308,14 +332,15 @@ namespace AgMaGest.C_Presentacion.Administrador
         // Validar que el DNI y CUIL tengan el formato adecuado
         private bool VerificarDNIyCUIL()
         {
-            if (TBDniEmpleado.Text.Length != 8)
+            if (TBDniEmpleado.Text.Length != 8 || !TBDniEmpleado.Text.All(char.IsDigit))
             {
-                MessageBox.Show("El DNI debe tener 8 dígitos.");
+                MessageBox.Show("El DNI debe tener 8 dígitos y solo contener números.");
                 return false;
             }
-            if (TBCuilEmpleado.Text.Length != 11)
+
+            if (TBCuilEmpleado.Text.Length != 11 || !TBCuilEmpleado.Text.All(char.IsDigit))
             {
-                MessageBox.Show("El CUIL debe tener 11 dígitos.");
+                MessageBox.Show("El CUIL debe tener 11 dígitos y solo contener números.");
                 return false;
             }
             return true;
@@ -339,6 +364,12 @@ namespace AgMaGest.C_Presentacion.Administrador
                 e.Handled = true;
                 MessageBox.Show("Este campo solo puede contener letras.");
             }
+        }
+
+        //Funcion para poner mayusculas las primeras letras
+        private string ToTitleCase(string input)
+        {
+            return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(input.ToLower());
         }
 
         private void BSalirEmpleado_Click(object sender, EventArgs e)
