@@ -54,30 +54,6 @@ namespace AgMaGest.C_Datos
             return perfiles;
         }
 
-
-        // Método para obtener un nuevo ID para el empleado
-        public int ObtenerNuevoIdEmpleado()
-        {
-            int nuevoId = 1; // Valor predeterminado en caso de que no existan empleados en la base de datos
-
-            using (SqlConnection conn = new SqlConnection(ConnectionString))
-            {
-                conn.Open();
-                // Consulta para obtener el máximo id_Empleado existente
-                SqlCommand cmd = new SqlCommand("SELECT ISNULL(MAX(id_Empleado), 0) FROM Empleado", conn);
-
-                // Ejecutar la consulta y obtener el resultado
-                object resultado = cmd.ExecuteScalar();
-                if (resultado != null)
-                {
-                    // Sumar 1 al máximo id_Empleado encontrado
-                    nuevoId = Convert.ToInt32(resultado) + 1;
-                }
-            }
-
-            return nuevoId; // Retornar el nuevo id único
-        }
-
         // Método para insertar un nuevo empleado en la base de datos
         public bool InsertarEmpleado(Empleado empleado)
         {
@@ -102,7 +78,9 @@ namespace AgMaGest.C_Datos
                     cmd.Parameters.AddWithValue("@FechaNacimiento", empleado.FechaNacimiento);
                     cmd.Parameters.AddWithValue("@Calle", empleado.Calle);
                     cmd.Parameters.AddWithValue("@NumeroCalle", empleado.NumeroCalle);
-                    if (empleado.Piso == null)
+                    cmd.Parameters.AddWithValue("@Piso", empleado.Piso);
+                    cmd.Parameters.AddWithValue("@Dpto", empleado.Dpto);
+                    /*if (empleado.Piso == null)
                     {
                         cmd.Parameters.AddWithValue("@Piso", DBNull.Value); // Usa DBNull.Value si es null
                     }
@@ -117,7 +95,7 @@ namespace AgMaGest.C_Datos
                     else
                     {
                         cmd.Parameters.AddWithValue("@Dpto", empleado.Dpto);
-                    }
+                    }**/
                     cmd.Parameters.AddWithValue("@CodigoPostal", empleado.CodigoPostal);
                     cmd.Parameters.AddWithValue("@IdLocalidad", empleado.IdLocalidad);
                     cmd.Parameters.AddWithValue("@IdPerfil", empleado.IdPerfil);

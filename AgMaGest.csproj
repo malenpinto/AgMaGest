@@ -57,15 +57,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AgmagestDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="C_Datos\CondicionVehiculoDAL.cs" />
     <Compile Include="C_Datos\EmpleadoDAL.cs" />
+    <Compile Include="C_Datos\EstadoVehiculoDAL.cs" />
     <Compile Include="C_Datos\LocalidadDAL.cs" />
     <Compile Include="C_Datos\PaisDAL.cs" />
     <Compile Include="C_Datos\ProvinciaDAL.cs" />
+    <Compile Include="C_Datos\VehiculoDAL.cs" />
+    <Compile Include="C_Logica\Entidades\CondicionVehiculo.cs" />
     <Compile Include="C_Logica\Entidades\Empleado.cs" />
+    <Compile Include="C_Logica\Entidades\EstadoVehiculo.cs" />
     <Compile Include="C_Logica\Entidades\Localidad.cs" />
     <Compile Include="C_Logica\Entidades\Pais.cs" />
     <Compile Include="C_Logica\Entidades\PerfilEmpleado.cs" />
     <Compile Include="C_Logica\Entidades\Provincia.cs" />
+    <Compile Include="C_Logica\Entidades\TipoVehiculo.cs" />
     <Compile Include="C_Logica\Entidades\Vehiculos.cs" />
     <Compile Include="C_Presentacion\Administrador\EditarEmpleado.cs">
       <SubType>Form</SubType>

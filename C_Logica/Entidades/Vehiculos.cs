@@ -2,13 +2,13 @@
 
 namespace AgMaGest.C_Logica.Entidades
 {
-    internal class Vehiculos
+    public class Vehiculos
     {
         public int IdVehiculo { get; set; } // id_Vehiculo en SQL
         public string Marca { get; set; } // marca_Vehiculo en SQL
         public string Modelo { get; set; } // modelo_Vehiculo en SQL (cambiado a string)
         public string Version { get; set; } // version_Vehiculo en SQL (cambiado a string)
-        public int Kilometro { get; set; } // km_Vehiculo en SQL
+        public int Kilometraje { get; set; } // km_Vehiculo en SQL
         public DateTime Anio { get; set; } // anio_Vehiculo en SQL
         public string Patente { get; set; } // patente_Vehiculo en SQL (nullable)
         public int? CodigoOKM { get; set; } // codigo_OKM en SQL (nullable)
