@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.DTFechaNacEmpleado = new System.Windows.Forms.DateTimePicker();
             this.CBLocalidadEmpleado = new System.Windows.Forms.ComboBox();
             this.CBPerfilEmpleado = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -69,7 +70,6 @@
             this.LNombre = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.DTFechaNacEmpleado = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -122,6 +122,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(693, 694);
             this.panel1.TabIndex = 0;
+            // 
+            // DTFechaNacEmpleado
+            // 
+            this.DTFechaNacEmpleado.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DTFechaNacEmpleado.Location = new System.Drawing.Point(357, 171);
+            this.DTFechaNacEmpleado.MinDate = new System.DateTime(1924, 1, 1, 0, 0, 0, 0);
+            this.DTFechaNacEmpleado.Name = "DTFechaNacEmpleado";
+            this.DTFechaNacEmpleado.Size = new System.Drawing.Size(230, 22);
+            this.DTFechaNacEmpleado.TabIndex = 177;
             // 
             // CBLocalidadEmpleado
             // 
@@ -606,14 +615,6 @@
             this.label3.Size = new System.Drawing.Size(90, 24);
             this.label3.TabIndex = 72;
             this.label3.Text = "Contacto";
-            // 
-            // DTFechaNacEmpleado
-            // 
-            this.DTFechaNacEmpleado.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DTFechaNacEmpleado.Location = new System.Drawing.Point(357, 171);
-            this.DTFechaNacEmpleado.Name = "DTFechaNacEmpleado";
-            this.DTFechaNacEmpleado.Size = new System.Drawing.Size(230, 22);
-            this.DTFechaNacEmpleado.TabIndex = 177;
             // 
             // IngresarEmpleado
             // 

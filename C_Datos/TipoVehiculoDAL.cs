@@ -9,32 +9,34 @@ using System.Threading.Tasks;
 
 namespace AgMaGest.C_Datos
 {
-    public class CondicionVehiculoDAL
+    public class TipoVehiculoDAL
     {
         // Obtener la cadena de conexión desde app.config
         private string ConnectionString = ConfigurationManager.ConnectionStrings["AgMaGest.Properties.Settings.AgmagestConnectionString"].ConnectionString;
 
-        public List<CondicionVehiculo> ObtenerCondicionVehiculo()
+
+        // Método para obtener la lista de perfiles
+        public List<TipoVehiculo> ObtenerTipoVehiculo()
         {
-            List<CondicionVehiculo> condiciones = new List<CondicionVehiculo>();
+            List<TipoVehiculo> tiposVehiculo = new List<TipoVehiculo>();
 
             try
             {
                 using (SqlConnection conn = new SqlConnection(ConnectionString))
                 {
                     conn.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT id_Condicion, nombre_Condicion FROM Condicion", conn);
+                    SqlCommand cmd = new SqlCommand("SELECT id_tipoVehiculo, nombre_tipoVehiculo FROM Tipo_Vehiculo", conn);
                     SqlDataReader reader = cmd.ExecuteReader();
 
                     while (reader.Read())
                     {
-                        CondicionVehiculo condicion = new CondicionVehiculo()
+                        TipoVehiculo tipoVehiculo = new TipoVehiculo()
                         {
-                            IdCondicion = reader.GetInt32(0),
-                            NombreCondicion = reader.GetString(1)
+                            IdTipoVehiculo = reader.GetInt32(0),
+                            NombreTipoVehiculo = reader.GetString(1)
                         };
 
-                        condiciones.Add(condicion);
+                        tiposVehiculo.Add(tipoVehiculo);
                     }
                 }
             }
@@ -51,7 +53,8 @@ namespace AgMaGest.C_Datos
                 throw;
             }
 
-            return condiciones;
+            return tiposVehiculo;
         }
+
     }
 }

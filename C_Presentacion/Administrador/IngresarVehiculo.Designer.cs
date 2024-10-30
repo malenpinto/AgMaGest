@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.TBVersionVehiculo = new System.Windows.Forms.TextBox();
+            this.CBTipoVehiculo = new System.Windows.Forms.ComboBox();
             this.TBPrecioVehiculo = new System.Windows.Forms.TextBox();
             this.LBPrecio = new System.Windows.Forms.Label();
             this.BCargarImagenVehiculo = new System.Windows.Forms.Button();
@@ -49,7 +52,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.DTPFechaFabricacion = new System.Windows.Forms.DateTimePicker();
-            this.TBTipoVehiculo = new System.Windows.Forms.TextBox();
             this.LApellido = new System.Windows.Forms.Label();
             this.LFechaNacimiento = new System.Windows.Forms.Label();
             this.LNombre = new System.Windows.Forms.Label();
@@ -61,6 +63,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.GhostWhite;
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.TBVersionVehiculo);
+            this.panel1.Controls.Add(this.CBTipoVehiculo);
             this.panel1.Controls.Add(this.TBPrecioVehiculo);
             this.panel1.Controls.Add(this.LBPrecio);
             this.panel1.Controls.Add(this.BCargarImagenVehiculo);
@@ -80,7 +85,6 @@
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.DTPFechaFabricacion);
-            this.panel1.Controls.Add(this.TBTipoVehiculo);
             this.panel1.Controls.Add(this.LApellido);
             this.panel1.Controls.Add(this.LFechaNacimiento);
             this.panel1.Controls.Add(this.LNombre);
@@ -90,16 +94,53 @@
             this.panel1.Size = new System.Drawing.Size(693, 694);
             this.panel1.TabIndex = 1;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.SeaGreen;
+            this.label2.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label2.Location = new System.Drawing.Point(35, 373);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(74, 23);
+            this.label2.TabIndex = 188;
+            this.label2.Text = "Versión";
+            // 
+            // TBVersionVehiculo
+            // 
+            this.TBVersionVehiculo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.TBVersionVehiculo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBVersionVehiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBVersionVehiculo.Location = new System.Drawing.Point(35, 403);
+            this.TBVersionVehiculo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBVersionVehiculo.Name = "TBVersionVehiculo";
+            this.TBVersionVehiculo.Size = new System.Drawing.Size(286, 24);
+            this.TBVersionVehiculo.TabIndex = 6;
+            // 
+            // CBTipoVehiculo
+            // 
+            this.CBTipoVehiculo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.CBTipoVehiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBTipoVehiculo.FormattingEnabled = true;
+            this.CBTipoVehiculo.Items.AddRange(new object[] {
+            "Nuevo",
+            "Usado"});
+            this.CBTipoVehiculo.Location = new System.Drawing.Point(35, 206);
+            this.CBTipoVehiculo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CBTipoVehiculo.Name = "CBTipoVehiculo";
+            this.CBTipoVehiculo.Size = new System.Drawing.Size(286, 24);
+            this.CBTipoVehiculo.TabIndex = 3;
+            // 
             // TBPrecioVehiculo
             // 
             this.TBPrecioVehiculo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.TBPrecioVehiculo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TBPrecioVehiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBPrecioVehiculo.Location = new System.Drawing.Point(35, 565);
+            this.TBPrecioVehiculo.Location = new System.Drawing.Point(35, 580);
             this.TBPrecioVehiculo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TBPrecioVehiculo.Name = "TBPrecioVehiculo";
             this.TBPrecioVehiculo.Size = new System.Drawing.Size(286, 24);
-            this.TBPrecioVehiculo.TabIndex = 186;
+            this.TBPrecioVehiculo.TabIndex = 9;
             // 
             // LBPrecio
             // 
@@ -107,7 +148,7 @@
             this.LBPrecio.BackColor = System.Drawing.Color.SeaGreen;
             this.LBPrecio.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBPrecio.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.LBPrecio.Location = new System.Drawing.Point(35, 535);
+            this.LBPrecio.Location = new System.Drawing.Point(35, 550);
             this.LBPrecio.Name = "LBPrecio";
             this.LBPrecio.Size = new System.Drawing.Size(64, 23);
             this.LBPrecio.TabIndex = 185;
@@ -128,7 +169,7 @@
             this.BCargarImagenVehiculo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BCargarImagenVehiculo.Name = "BCargarImagenVehiculo";
             this.BCargarImagenVehiculo.Size = new System.Drawing.Size(163, 50);
-            this.BCargarImagenVehiculo.TabIndex = 184;
+            this.BCargarImagenVehiculo.TabIndex = 11;
             this.BCargarImagenVehiculo.Text = "Cargar Imagen";
             this.BCargarImagenVehiculo.UseVisualStyleBackColor = false;
             this.BCargarImagenVehiculo.Click += new System.EventHandler(this.BCargarImagenVehiculo_Click);
@@ -136,7 +177,7 @@
             // PBImagenVehiculo
             // 
             this.PBImagenVehiculo.Image = global::AgMaGest.Properties.Resources.Icono_MasVehiculo;
-            this.PBImagenVehiculo.Location = new System.Drawing.Point(367, 81);
+            this.PBImagenVehiculo.Location = new System.Drawing.Point(367, 90);
             this.PBImagenVehiculo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PBImagenVehiculo.Name = "PBImagenVehiculo";
             this.PBImagenVehiculo.Size = new System.Drawing.Size(305, 208);
@@ -161,11 +202,11 @@
             this.TBKilometrajeVehiculo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.TBKilometrajeVehiculo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TBKilometrajeVehiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBKilometrajeVehiculo.Location = new System.Drawing.Point(35, 442);
+            this.TBKilometrajeVehiculo.Location = new System.Drawing.Point(35, 467);
             this.TBKilometrajeVehiculo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TBKilometrajeVehiculo.Name = "TBKilometrajeVehiculo";
             this.TBKilometrajeVehiculo.Size = new System.Drawing.Size(286, 24);
-            this.TBKilometrajeVehiculo.TabIndex = 181;
+            this.TBKilometrajeVehiculo.TabIndex = 7;
             this.TBKilometrajeVehiculo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             // 
             // label12
@@ -174,7 +215,7 @@
             this.label12.BackColor = System.Drawing.Color.SeaGreen;
             this.label12.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label12.Location = new System.Drawing.Point(35, 412);
+            this.label12.Location = new System.Drawing.Point(35, 437);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(108, 23);
             this.label12.TabIndex = 180;
@@ -188,11 +229,11 @@
             this.CBCondicionVehiculo.Items.AddRange(new object[] {
             "Nuevo",
             "Usado"});
-            this.CBCondicionVehiculo.Location = new System.Drawing.Point(35, 81);
+            this.CBCondicionVehiculo.Location = new System.Drawing.Point(35, 79);
             this.CBCondicionVehiculo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CBCondicionVehiculo.Name = "CBCondicionVehiculo";
-            this.CBCondicionVehiculo.Size = new System.Drawing.Size(281, 24);
-            this.CBCondicionVehiculo.TabIndex = 179;
+            this.CBCondicionVehiculo.Size = new System.Drawing.Size(286, 24);
+            this.CBCondicionVehiculo.TabIndex = 1;
             // 
             // label5
             // 
@@ -200,7 +241,7 @@
             this.label5.BackColor = System.Drawing.Color.SeaGreen;
             this.label5.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label5.Location = new System.Drawing.Point(35, 338);
+            this.label5.Location = new System.Drawing.Point(35, 308);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(71, 23);
             this.label5.TabIndex = 176;
@@ -211,11 +252,11 @@
             this.TBModeloVehiculo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.TBModeloVehiculo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TBModeloVehiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBModeloVehiculo.Location = new System.Drawing.Point(35, 368);
+            this.TBModeloVehiculo.Location = new System.Drawing.Point(35, 338);
             this.TBModeloVehiculo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TBModeloVehiculo.Name = "TBModeloVehiculo";
             this.TBModeloVehiculo.Size = new System.Drawing.Size(286, 24);
-            this.TBModeloVehiculo.TabIndex = 177;
+            this.TBModeloVehiculo.TabIndex = 5;
             // 
             // panel3
             // 
@@ -241,7 +282,7 @@
             this.BAgregarVehiculo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BAgregarVehiculo.Name = "BAgregarVehiculo";
             this.BAgregarVehiculo.Size = new System.Drawing.Size(128, 50);
-            this.BAgregarVehiculo.TabIndex = 173;
+            this.BAgregarVehiculo.TabIndex = 12;
             this.BAgregarVehiculo.Text = "Agregar";
             this.BAgregarVehiculo.UseVisualStyleBackColor = false;
             this.BAgregarVehiculo.Click += new System.EventHandler(this.BAgregarVehiculo_Click);
@@ -261,7 +302,7 @@
             this.BSalirVehiculo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BSalirVehiculo.Name = "BSalirVehiculo";
             this.BSalirVehiculo.Size = new System.Drawing.Size(128, 50);
-            this.BSalirVehiculo.TabIndex = 134;
+            this.BSalirVehiculo.TabIndex = 13;
             this.BSalirVehiculo.Text = "Salir";
             this.BSalirVehiculo.UseVisualStyleBackColor = false;
             this.BSalirVehiculo.Click += new System.EventHandler(this.BSalirVehiculo_Click);
@@ -293,22 +334,22 @@
             this.TBMarcaVehiculo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.TBMarcaVehiculo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TBMarcaVehiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBMarcaVehiculo.Location = new System.Drawing.Point(35, 295);
+            this.TBMarcaVehiculo.Location = new System.Drawing.Point(35, 272);
             this.TBMarcaVehiculo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TBMarcaVehiculo.Name = "TBMarcaVehiculo";
             this.TBMarcaVehiculo.Size = new System.Drawing.Size(286, 24);
-            this.TBMarcaVehiculo.TabIndex = 163;
+            this.TBMarcaVehiculo.TabIndex = 4;
             // 
             // TBCodigoPatenteVehiculo
             // 
             this.TBCodigoPatenteVehiculo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.TBCodigoPatenteVehiculo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TBCodigoPatenteVehiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBCodigoPatenteVehiculo.Location = new System.Drawing.Point(35, 156);
+            this.TBCodigoPatenteVehiculo.Location = new System.Drawing.Point(35, 144);
             this.TBCodigoPatenteVehiculo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TBCodigoPatenteVehiculo.Name = "TBCodigoPatenteVehiculo";
             this.TBCodigoPatenteVehiculo.Size = new System.Drawing.Size(286, 24);
-            this.TBCodigoPatenteVehiculo.TabIndex = 161;
+            this.TBCodigoPatenteVehiculo.TabIndex = 2;
             this.TBCodigoPatenteVehiculo.Tag = "";
             // 
             // label7
@@ -317,7 +358,7 @@
             this.label7.BackColor = System.Drawing.Color.SeaGreen;
             this.label7.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label7.Location = new System.Drawing.Point(35, 267);
+            this.label7.Location = new System.Drawing.Point(35, 244);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(62, 23);
             this.label7.TabIndex = 160;
@@ -329,7 +370,7 @@
             this.label8.BackColor = System.Drawing.Color.SeaGreen;
             this.label8.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label8.Location = new System.Drawing.Point(35, 196);
+            this.label8.Location = new System.Drawing.Point(35, 178);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(44, 23);
             this.label8.TabIndex = 159;
@@ -340,24 +381,11 @@
             this.DTPFechaFabricacion.CalendarFont = new System.Drawing.Font("Gadugi", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DTPFechaFabricacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DTPFechaFabricacion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DTPFechaFabricacion.Location = new System.Drawing.Point(241, 492);
+            this.DTPFechaFabricacion.Location = new System.Drawing.Point(241, 507);
             this.DTPFechaFabricacion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.DTPFechaFabricacion.MaxDate = new System.DateTime(3024, 12, 31, 0, 0, 0, 0);
-            this.DTPFechaFabricacion.MinDate = new System.DateTime(1924, 1, 1, 0, 0, 0, 0);
             this.DTPFechaFabricacion.Name = "DTPFechaFabricacion";
             this.DTPFechaFabricacion.Size = new System.Drawing.Size(136, 26);
-            this.DTPFechaFabricacion.TabIndex = 154;
-            // 
-            // TBTipoVehiculo
-            // 
-            this.TBTipoVehiculo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.TBTipoVehiculo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBTipoVehiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBTipoVehiculo.Location = new System.Drawing.Point(35, 224);
-            this.TBTipoVehiculo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TBTipoVehiculo.Name = "TBTipoVehiculo";
-            this.TBTipoVehiculo.Size = new System.Drawing.Size(286, 24);
-            this.TBTipoVehiculo.TabIndex = 140;
+            this.DTPFechaFabricacion.TabIndex = 8;
             // 
             // LApellido
             // 
@@ -365,7 +393,7 @@
             this.LApellido.BackColor = System.Drawing.Color.SeaGreen;
             this.LApellido.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LApellido.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.LApellido.Location = new System.Drawing.Point(35, 127);
+            this.LApellido.Location = new System.Drawing.Point(35, 115);
             this.LApellido.Name = "LApellido";
             this.LApellido.Size = new System.Drawing.Size(181, 23);
             this.LApellido.TabIndex = 133;
@@ -377,7 +405,7 @@
             this.LFechaNacimiento.BackColor = System.Drawing.Color.SeaGreen;
             this.LFechaNacimiento.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LFechaNacimiento.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.LFechaNacimiento.Location = new System.Drawing.Point(35, 494);
+            this.LFechaNacimiento.Location = new System.Drawing.Point(35, 509);
             this.LFechaNacimiento.Name = "LFechaNacimiento";
             this.LFechaNacimiento.Size = new System.Drawing.Size(174, 24);
             this.LFechaNacimiento.TabIndex = 135;
@@ -389,7 +417,7 @@
             this.LNombre.BackColor = System.Drawing.Color.SeaGreen;
             this.LNombre.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LNombre.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.LNombre.Location = new System.Drawing.Point(35, 53);
+            this.LNombre.Location = new System.Drawing.Point(35, 51);
             this.LNombre.Name = "LNombre";
             this.LNombre.Size = new System.Drawing.Size(93, 23);
             this.LNombre.TabIndex = 132;
@@ -433,7 +461,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker DTPFechaFabricacion;
-        private System.Windows.Forms.TextBox TBTipoVehiculo;
         private System.Windows.Forms.Label LApellido;
         private System.Windows.Forms.Label LFechaNacimiento;
         private System.Windows.Forms.Label LNombre;
@@ -445,5 +472,8 @@
         private System.Windows.Forms.Button BCargarImagenVehiculo;
         private System.Windows.Forms.TextBox TBPrecioVehiculo;
         private System.Windows.Forms.Label LBPrecio;
+        private System.Windows.Forms.ComboBox CBTipoVehiculo;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox TBVersionVehiculo;
     }
 }

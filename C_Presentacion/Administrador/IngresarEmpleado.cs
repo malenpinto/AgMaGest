@@ -23,7 +23,6 @@ namespace AgMaGest.C_Presentacion.Administrador
             this.KeyPreview = true; // Permite que el formulario capture el evento KeyDown
             this.Load += IngresarEmpleado_Load; // Suscribirse al evento Load
             CBPerfilEmpleado.DataSource = null; // Asegurar de que esté vacío al principio
-            
         }
 
         private void IngresarEmpleado_Load(object sender, EventArgs e)

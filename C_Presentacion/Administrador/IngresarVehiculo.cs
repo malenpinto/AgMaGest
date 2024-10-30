@@ -1,9 +1,12 @@
-﻿using System;
+﻿using AgMaGest.C_Datos;
+using AgMaGest.C_Logica.Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +20,14 @@ namespace AgMaGest.C_Presentacion.Administrador
         {
             InitializeComponent();
             this.KeyPreview = true; // Permite que el formulario capture el evento KeyDown
+            this.Load += IngresarVehiculo_Load; // Suscribirse al evento Load
+            CBTipoVehiculo.DataSource = null; // Asegurar de que esté vacío al principio
+        }
+
+        public void IngresarVehiculo_Load(object sender, EventArgs e)
+        {
+            CargarTipoVehiculos();
+            CargarCondicionVehiculos();
         }
 
         private void AgregarVehiculo_KeyDown(object sender, KeyEventArgs e)
@@ -34,15 +45,58 @@ namespace AgMaGest.C_Presentacion.Administrador
             this.Close();
         }
 
+        private void CargarTipoVehiculos()
+        {
+            // Obtener la lista de tipos de vehiculo desde la base de datos
+            TipoVehiculoDAL tipoVehiculoDAL = new TipoVehiculoDAL();
+            List<TipoVehiculo> tipos = tipoVehiculoDAL.ObtenerTipoVehiculo();
+
+            // Agregar una opción por defecto "Seleccione una"
+            tipos.Insert(0, new TipoVehiculo { IdTipoVehiculo = 0, NombreTipoVehiculo = "Seleccione un tipo" });
+
+            // Asignar la lista al ComboBox
+            CBTipoVehiculo.DataSource = tipos; // Asignar la lista de tipos al ComboBox
+            CBTipoVehiculo.DisplayMember = "NombreTipoVehiculo"; // Campo que se mostrará en el ComboBox
+            CBTipoVehiculo.ValueMember = "IdTipoVehiculo"; // Campo que se utilizará como valor
+
+            // Seleccionar la opción por defecto
+            CBTipoVehiculo.SelectedIndex = 0;
+        }
+
+        private void CargarCondicionVehiculos()
+        {
+            // Obtener la lista de condicion de vehiculo desde la base de datos
+            CondicionVehiculoDAL CondicionVehiculoDAL = new CondicionVehiculoDAL();
+            List<CondicionVehiculo> condiciones = CondicionVehiculoDAL.ObtenerCondicionVehiculo();
+
+            // Agregar una opción por defecto "Seleccione una"
+            condiciones.Insert(0, new CondicionVehiculo { IdCondicion = 0, NombreCondicion = "Seleccione una Condición" });
+
+            // Asignar la lista al ComboBox
+            CBCondicionVehiculo.DataSource = condiciones; // Asignar la lista de tipos al ComboBox
+            CBCondicionVehiculo.DisplayMember = "NombreCondicion"; // Campo que se mostrará en el ComboBox
+            CBCondicionVehiculo.ValueMember = "IdCondicion"; // Campo que se utilizará como valor
+
+            // Seleccionar la opción por defecto
+            CBCondicionVehiculo.SelectedIndex = 0;
+        }
+
         private void BAgregarVehiculo_Click(object sender, EventArgs e)
         {
+            if (CBTipoVehiculo.SelectedValue.ToString() == "0")
+            {
+                MessageBox.Show("Debe seleccionar un Tipo de Vehiculo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             // Verificar que todos los campos estén completos
-            if (string.IsNullOrWhiteSpace(CBCondicionVehiculo.Text) ||
+            if (CBCondicionVehiculo.SelectedIndex == -1 ||
+                CBTipoVehiculo.SelectedIndex == -1 ||
                 string.IsNullOrWhiteSpace(TBCodigoPatenteVehiculo.Text) ||
-                string.IsNullOrWhiteSpace(TBTipoVehiculo.Text) ||
                 string.IsNullOrWhiteSpace(TBMarcaVehiculo.Text) ||
                 string.IsNullOrWhiteSpace(TBModeloVehiculo.Text) ||
-                string.IsNullOrWhiteSpace(TBKilometrajeVehiculo.Text)||
+                string.IsNullOrWhiteSpace(TBVersionVehiculo.Text) ||
+                string.IsNullOrWhiteSpace(TBKilometrajeVehiculo.Text) ||
                 string.IsNullOrWhiteSpace(TBPrecioVehiculo.Text))
             {
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -63,13 +117,58 @@ namespace AgMaGest.C_Presentacion.Administrador
                 return;
             }
 
-            // Si todos los campos son válidos, procedemos con la lógica de agregar
-            string vehiculoInfo = ToTitleCase(TBMarcaVehiculo.Text) + " " + ToTitleCase(TBModeloVehiculo.Text);
+            // Crear instancia de Vehiculos y asignar valores
+            Vehiculos vehiculo = new Vehiculos
+            {
+                Marca = ToTitleCase(TBMarcaVehiculo.Text),
+                Modelo = ToTitleCase(TBModeloVehiculo.Text),
+                Version = ToTitleCase(TBVersionVehiculo.Text),
+                Kilometraje = int.Parse(TBKilometrajeVehiculo.Text),
+                Anio = DTPFechaFabricacion.Value,
+                Precio = double.Parse(TBPrecioVehiculo.Text),
+                IdTipoVehiculo = Convert.ToInt32(CBTipoVehiculo.SelectedValue),
+                IdEstado = 1,
+                IdCondicion = Convert.ToInt32(CBCondicionVehiculo.SelectedValue)
+            };
 
-            MessageBox.Show("Se agregó exitosamente el vehículo: " + vehiculoInfo, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            // Asignar valores a Patente y CodigoOKM según la condición del vehículo
+            string condicionSeleccionada = CBCondicionVehiculo.Text;
+            if (condicionSeleccionada.Equals("Usado", StringComparison.OrdinalIgnoreCase))
+            {
+                vehiculo.Patente = TBCodigoPatenteVehiculo.Text;
+                vehiculo.CodigoOKM = null;
+            }
+            else if (condicionSeleccionada.Equals("Nuevo", StringComparison.OrdinalIgnoreCase))
+            {
+                vehiculo.CodigoOKM = int.TryParse(TBCodigoPatenteVehiculo.Text, out int codigoOkm) ? (int?)codigoOkm : null;
+                vehiculo.Patente = null;
+            }
 
-            // Limpiar los campos después de agregar
-            LimpiarCamposVehiculo();
+            // Convertir imagen a byte array
+            byte[] imagenBytes;
+            using (MemoryStream ms = new MemoryStream())
+            {
+                PBImagenVehiculo.Image.Save(ms, PBImagenVehiculo.Image.RawFormat);
+                imagenBytes = ms.ToArray();
+            }
+
+            // Intentar insertar el vehículo en la base de datos
+            try
+            {
+                VehiculoDAL vehiculoDal = new VehiculoDAL();
+                if (vehiculoDal.InsertarVehiculo(vehiculo, imagenBytes))
+                {
+                    // Si todos los campos son válidos, procedemos con la lógica de agregar
+                    string vehiculoInfo = vehiculo.Marca + " " + vehiculo.Modelo;
+
+                    MessageBox.Show("Se agregó exitosamente el vehículo: " + vehiculoInfo, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LimpiarCamposVehiculo();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al agregar el vehículo: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         // Convertir texto a formato de título
@@ -81,14 +180,15 @@ namespace AgMaGest.C_Presentacion.Administrador
         // Limpiar todos los campos después de agregar
         private void LimpiarCamposVehiculo()
         {
-            CBCondicionVehiculo.SelectedIndex = -1; // Deselecciona cualquier valor en el ComboBox
+            CBCondicionVehiculo.SelectedIndex = 0; // Deselecciona cualquier valor en el ComboBox
             TBCodigoPatenteVehiculo.Clear();
-            TBTipoVehiculo.Clear();
+            CBTipoVehiculo.SelectedIndex = 0;
             TBMarcaVehiculo.Clear();
             TBModeloVehiculo.Clear();
+            TBVersionVehiculo.Clear();
             TBKilometrajeVehiculo.Clear();
             DTPFechaFabricacion.Value = DateTime.Now; // Restablecer la fecha al día actual
-            
+            TBPrecioVehiculo.Clear();
             // Limpiar la imagen del PictureBox (establecer a null)
             PBImagenVehiculo.Image = Properties.Resources.Icono_MasVehiculo; // Tambien se puede reemplazar con una imagen por defecto                                                           // Restablecer el SizeMode a Normal para que no se deforme el PictureBox sin imagen
             PBImagenVehiculo.SizeMode = PictureBoxSizeMode.CenterImage;

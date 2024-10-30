@@ -63,6 +63,7 @@
     <Compile Include="C_Datos\LocalidadDAL.cs" />
     <Compile Include="C_Datos\PaisDAL.cs" />
     <Compile Include="C_Datos\ProvinciaDAL.cs" />
+    <Compile Include="C_Datos\TipoVehiculoDAL.cs" />
     <Compile Include="C_Datos\VehiculoDAL.cs" />
     <Compile Include="C_Logica\Entidades\CondicionVehiculo.cs" />
     <Compile Include="C_Logica\Entidades\Empleado.cs" />

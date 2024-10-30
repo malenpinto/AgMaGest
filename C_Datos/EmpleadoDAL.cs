@@ -80,22 +80,6 @@ namespace AgMaGest.C_Datos
                     cmd.Parameters.AddWithValue("@NumeroCalle", empleado.NumeroCalle);
                     cmd.Parameters.AddWithValue("@Piso", empleado.Piso);
                     cmd.Parameters.AddWithValue("@Dpto", empleado.Dpto);
-                    /*if (empleado.Piso == null)
-                    {
-                        cmd.Parameters.AddWithValue("@Piso", DBNull.Value); // Usa DBNull.Value si es null
-                    }
-                    else
-                    {
-                        cmd.Parameters.AddWithValue("@Piso", empleado.Piso);
-                    }
-                    if (empleado.Dpto == null)
-                    {
-                        cmd.Parameters.AddWithValue("@Dpto", DBNull.Value); // Usa DBNull.Value si es null
-                    }
-                    else
-                    {
-                        cmd.Parameters.AddWithValue("@Dpto", empleado.Dpto);
-                    }**/
                     cmd.Parameters.AddWithValue("@CodigoPostal", empleado.CodigoPostal);
                     cmd.Parameters.AddWithValue("@IdLocalidad", empleado.IdLocalidad);
                     cmd.Parameters.AddWithValue("@IdPerfil", empleado.IdPerfil);
