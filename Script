@@ -123,6 +123,17 @@ CREATE UNIQUE INDEX UQ_Vehiculos_CodigoOKM
 ON Vehiculos(codigo_OKM)
 WHERE codigo_OKM IS NOT NULL;
 
+CREATE TABLE Inventario_Vehiculos
+(
+  id_Inventario INT IDENTITY(1,1) NOT NULL,
+  id_Vehiculo INT NOT NULL,
+  stock INT NOT NULL,
+  precio_unitario FLOAT NOT NULL,
+  CONSTRAINT PK_Inventario PRIMARY KEY (id_Inventario),
+  CONSTRAINT FK_Inventario_Vehiculo FOREIGN KEY (id_Vehiculo) REFERENCES Vehiculos(id_Vehiculo),
+  CONSTRAINT UQ_Inventario_Vehiculo UNIQUE (id_Vehiculo)
+);
+
 CREATE TABLE Pago
 (
 	id_pago INT IDENTITY(500,1) NOT NULL,
