@@ -106,11 +106,22 @@ CREATE TABLE Vehiculos
   id_tipoVehiculo INT NOT NULL,
   id_Estado INT NOT NULL,
   id_Condicion INT NOT NULL,
+  imagen VARBINARY(MAX) NULL,
   CONSTRAINT PK_Vehiculo PRIMARY KEY (id_Vehiculo),
   CONSTRAINT FK_Vehiculos_TipoVehiculo FOREIGN KEY (id_tipoVehiculo) REFERENCES Tipo_Vehiculo(id_tipoVehiculo),
   CONSTRAINT FK_Vehiculos_EstadoVehiculo FOREIGN KEY (id_Estado) REFERENCES Estado_Vehiculo(id_Estado),
-  CONSTRAINT FK_Vehiculos_Condicion FOREIGN KEY (id_Condicion) REFERENCES Condicion(id_Condicion)
+  CONSTRAINT FK_Vehiculos_Condicion FOREIGN KEY (id_Condicion) REFERENCES Condicion(id_Condicion),
+  CONSTRAINT UQ_Vehiculos_Patente UNIQUE (patente_Vehiculo),
+  CONSTRAINT UQ_Vehiculos_CodigoOKM UNIQUE (codigo_OKM)
 );
+
+CREATE UNIQUE INDEX UQ_Vehiculos_Patente
+ON Vehiculos(patente_Vehiculo)
+WHERE patente_Vehiculo IS NOT NULL;
+
+CREATE UNIQUE INDEX UQ_Vehiculos_CodigoOKM
+ON Vehiculos(codigo_OKM)
+WHERE codigo_OKM IS NOT NULL;
 
 CREATE TABLE Pago
 (
