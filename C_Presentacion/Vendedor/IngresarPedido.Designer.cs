@@ -295,6 +295,7 @@
             this.BBuscarPedido.Size = new System.Drawing.Size(43, 44);
             this.BBuscarPedido.TabIndex = 128;
             this.BBuscarPedido.UseVisualStyleBackColor = true;
+            this.BBuscarPedido.Click += new System.EventHandler(this.BBuscarPedido_Click);
             // 
             // panel3
             // 

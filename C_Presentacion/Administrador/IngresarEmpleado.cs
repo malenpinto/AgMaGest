@@ -149,8 +149,8 @@ namespace AgMaGest.C_Presentacion.Administrador
         private void CargarPerfiles()
         {
             // Obtener la lista de perfiles desde la base de datos
-            EmpleadoDAL empleadoDAL = new EmpleadoDAL();
-            List<PerfilEmpleado> perfiles = empleadoDAL.ObtenerPerfiles();
+            PerfilEmpleadoDAL perfilDAL = new PerfilEmpleadoDAL();
+            List<PerfilEmpleado> perfiles = perfilDAL.ObtenerPerfiles();
             
             // Agregar una opción por defecto "Seleccione una"
             perfiles.Insert(0, new PerfilEmpleado { IdPerfil = 0, NombrePerfil = "Seleccione un perfil" });

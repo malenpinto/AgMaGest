@@ -3,56 +3,14 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Configuration;
 using AgMaGest.C_Logica.Entidades;
+using System.Security.Cryptography;
 
 namespace AgMaGest.C_Datos
 {
     public class EmpleadoDAL
     {
-
         // Obtener la cadena de conexión desde app.config
         private string ConnectionString = ConfigurationManager.ConnectionStrings["AgMaGest.Properties.Settings.AgmagestConnectionString"].ConnectionString;
-
-
-        // Método para obtener la lista de perfiles
-        public List<PerfilEmpleado> ObtenerPerfiles()
-        {
-            List<PerfilEmpleado> perfiles = new List<PerfilEmpleado>();
-
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(ConnectionString))
-                {
-                    conn.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT id_perfil, nombre_Perfil FROM Perfil_Empleado", conn);
-                    SqlDataReader reader = cmd.ExecuteReader();
-
-                    while (reader.Read())
-                    {
-                        PerfilEmpleado perfil = new PerfilEmpleado()
-                        {
-                            IdPerfil = reader.GetInt32(0),  // Asumiendo que id_perfil es el primer campo
-                            NombrePerfil = reader.GetString(1)  // Asumiendo que nombre_Perfil es el segundo campo
-                        };
-
-                        perfiles.Add(perfil);
-                    }
-                }
-            }
-            catch (SqlException ex)
-            {
-                // Manejo de errores relacionados con SQL
-                Console.WriteLine($"Error de SQL: {ex.Message}");
-                throw;  // Lanza la excepción nuevamente para que pueda ser manejada en niveles superiores si es necesario
-            }
-            catch (Exception ex)
-            {
-                // Manejo de otros tipos de errores
-                Console.WriteLine($"Error: {ex.Message}");
-                throw;
-            }
-
-            return perfiles;
-        }
 
         // Método para insertar un nuevo empleado en la base de datos
         public bool InsertarEmpleado(Empleado empleado)
@@ -100,6 +58,118 @@ namespace AgMaGest.C_Datos
                 }
                 throw;
             }
+        }
+
+        // Método para actualizar un empleado existente
+        public bool ActualizarEmpleado(Empleado empleado)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConnectionString))
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(
+                        "UPDATE Empleado SET cuil_Empleado = @CUIL, dni_Empleado = @DNI, nombre_Empleado = @Nombre, apellido_Empleado = @Apellido, " +
+                        "email_Empleado = @Email, celular_Empleado = @Celular, fechaNac_Empleado = @FechaNacimiento, calle_Empleado = @Calle, " +
+                        "num_Calle_Empleado = @NumeroCalle, piso_Empleado = @Piso, dpto_Empleado = @Dpto, codigo_PostalEmpleado = @CodigoPostal, " +
+                        "id_Localidad = @IdLocalidad, id_perfil = @IdPerfil, id_Estado = @IdEstado WHERE cuil_Empleado = @CUIL", conn);
+
+                    cmd.Parameters.AddWithValue("@CUIL", empleado.CUIL);
+                    cmd.Parameters.AddWithValue("@DNI", empleado.DNI);
+                    cmd.Parameters.AddWithValue("@Nombre", empleado.Nombre);
+                    cmd.Parameters.AddWithValue("@Apellido", empleado.Apellido);
+                    cmd.Parameters.AddWithValue("@Email", empleado.Email);
+                    cmd.Parameters.AddWithValue("@Celular", empleado.Celular);
+                    cmd.Parameters.AddWithValue("@FechaNacimiento", empleado.FechaNacimiento);
+                    cmd.Parameters.AddWithValue("@Calle", empleado.Calle);
+                    cmd.Parameters.AddWithValue("@NumeroCalle", empleado.NumeroCalle);
+                    cmd.Parameters.AddWithValue("@Piso", empleado.Piso);
+                    cmd.Parameters.AddWithValue("@Dpto", empleado.Dpto);
+                    cmd.Parameters.AddWithValue("@CodigoPostal", empleado.CodigoPostal);
+                    cmd.Parameters.AddWithValue("@IdLocalidad", empleado.IdLocalidad);
+                    cmd.Parameters.AddWithValue("@IdPerfil", empleado.IdPerfil);
+                    cmd.Parameters.AddWithValue("@IdEstado", empleado.IdEstado);
+
+                    cmd.ExecuteNonQuery();
+                }
+                return true;
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine($"Error de SQL: {ex.Message}");
+                throw;
+            }
+        }
+
+        // Método para eliminar un empleado por ID
+        public bool EliminarEmpleado(string cuil)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConnectionString))
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand("DELETE FROM Empleado WHERE cuil_Empleado = @CUIL", conn);
+                    cmd.Parameters.AddWithValue("@CUIL", cuil);
+
+                    cmd.ExecuteNonQuery();
+                }
+
+                return true; // Eliminación exitosa
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine($"Error de SQL: {ex.Message}");
+                throw;
+            }
+        }
+
+        // Método para obtener un empleado por su CUIL
+        public Empleado ObtenerEmpleadoPorCUIL(string cuil)
+        {
+            Empleado empleado = null;
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConnectionString))
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM Empleado WHERE cuil_Empleado = @CUIL", conn);
+                    cmd.Parameters.AddWithValue("@CUIL", cuil);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            empleado = new Empleado
+                            {
+                                CUIL = reader.GetString(0),
+                                DNI = reader.GetString(1),
+                                Nombre = reader.GetString(2),
+                                Apellido = reader.GetString(3),
+                                Email = reader.GetString(4),
+                                Celular = reader.GetString(5),
+                                FechaNacimiento = reader.GetDateTime(6),
+                                Calle = reader.GetString(7),
+                                NumeroCalle = reader.GetInt32(8),
+                                Piso = reader.IsDBNull(9) ? (int?)null : reader.GetInt32(9),
+                                Dpto = reader.IsDBNull(10) ? null : reader.GetString(10),
+                                CodigoPostal = reader.GetInt32(11),
+                                IdLocalidad = reader.GetInt32(12),
+                                IdPerfil = reader.GetInt32(13),
+                                IdEstado = reader.GetInt32(14)
+                            };
+                        }
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine($"Error de SQL: {ex.Message}");
+                throw;
+            }
+
+            return empleado;
         }
     }
 }

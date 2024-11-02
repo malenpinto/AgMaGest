@@ -57,19 +57,30 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AgmagestDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="C_Datos\ClienteDAL.cs" />
+    <Compile Include="C_Datos\ClienteEmpresaDAL.cs" />
+    <Compile Include="C_Datos\ClienteFinalDAL.cs" />
     <Compile Include="C_Datos\CondicionVehiculoDAL.cs" />
+    <Compile Include="C_Datos\DetallePedidoDAL.cs" />
     <Compile Include="C_Datos\EmpleadoDAL.cs" />
     <Compile Include="C_Datos\EstadoVehiculoDAL.cs" />
     <Compile Include="C_Datos\LocalidadDAL.cs" />
     <Compile Include="C_Datos\PaisDAL.cs" />
+    <Compile Include="C_Datos\PedidoDAL.cs" />
+    <Compile Include="C_Datos\PerfilEmpleadoDAL.cs" />
     <Compile Include="C_Datos\ProvinciaDAL.cs" />
     <Compile Include="C_Datos\TipoVehiculoDAL.cs" />
     <Compile Include="C_Datos\VehiculoDAL.cs" />
+    <Compile Include="C_Logica\Entidades\Cliente.cs" />
+    <Compile Include="C_Logica\Entidades\ClienteEmpresa.cs" />
+    <Compile Include="C_Logica\Entidades\ClienteFinal.cs" />
     <Compile Include="C_Logica\Entidades\CondicionVehiculo.cs" />
+    <Compile Include="C_Logica\Entidades\DetallePedido.cs" />
     <Compile Include="C_Logica\Entidades\Empleado.cs" />
     <Compile Include="C_Logica\Entidades\EstadoVehiculo.cs" />
     <Compile Include="C_Logica\Entidades\Localidad.cs" />
     <Compile Include="C_Logica\Entidades\Pais.cs" />
+    <Compile Include="C_Logica\Entidades\Pedido.cs" />
     <Compile Include="C_Logica\Entidades\PerfilEmpleado.cs" />
     <Compile Include="C_Logica\Entidades\Provincia.cs" />
     <Compile Include="C_Logica\Entidades\TipoVehiculo.cs" />
