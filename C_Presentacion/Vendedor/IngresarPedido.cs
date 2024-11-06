@@ -23,7 +23,7 @@ namespace AgMaGest.C_Presentacion.Vendedor
         {
             this.Close();
         }
-
+        /*
         private void BConfirmarPedido_Click(object sender, EventArgs e)
         {
             // Validar que se haya seleccionado un cliente y otros datos necesarios
@@ -97,6 +97,6 @@ namespace AgMaGest.C_Presentacion.Vendedor
             {
                 MessageBox.Show("Cliente no encontrado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-        }
+        }*/
     }
 }

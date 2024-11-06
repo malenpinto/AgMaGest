@@ -63,6 +63,7 @@
     <Compile Include="C_Datos\CondicionVehiculoDAL.cs" />
     <Compile Include="C_Datos\DetallePedidoDAL.cs" />
     <Compile Include="C_Datos\EmpleadoDAL.cs" />
+    <Compile Include="C_Datos\EstadoEmpleadoDAL.cs" />
     <Compile Include="C_Datos\EstadoVehiculoDAL.cs" />
     <Compile Include="C_Datos\LocalidadDAL.cs" />
     <Compile Include="C_Datos\PaisDAL.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="C_Logica\Entidades\CondicionVehiculo.cs" />
     <Compile Include="C_Logica\Entidades\DetallePedido.cs" />
     <Compile Include="C_Logica\Entidades\Empleado.cs" />
+    <Compile Include="C_Logica\Entidades\EstadoEmpleado.cs" />
     <Compile Include="C_Logica\Entidades\EstadoVehiculo.cs" />
     <Compile Include="C_Logica\Entidades\Localidad.cs" />
     <Compile Include="C_Logica\Entidades\Pais.cs" />
@@ -410,7 +412,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\Logo-Icono-Sin-Fondo.png" />
   </ItemGroup>
@@ -531,6 +532,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Icono-GenerarFactura.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono-Editar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono-Borrar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

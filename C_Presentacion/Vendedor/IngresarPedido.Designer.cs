@@ -295,7 +295,6 @@
             this.BBuscarPedido.Size = new System.Drawing.Size(43, 44);
             this.BBuscarPedido.TabIndex = 128;
             this.BBuscarPedido.UseVisualStyleBackColor = true;
-            this.BBuscarPedido.Click += new System.EventHandler(this.BBuscarPedido_Click);
             // 
             // panel3
             // 
@@ -323,7 +322,6 @@
             this.BConfirmarPedido.TabIndex = 127;
             this.BConfirmarPedido.Text = "Confirmar";
             this.BConfirmarPedido.UseVisualStyleBackColor = false;
-            this.BConfirmarPedido.Click += new System.EventHandler(this.BConfirmarPedido_Click);
             // 
             // BSalirPedido
             // 

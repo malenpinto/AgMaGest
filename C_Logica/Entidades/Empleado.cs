@@ -19,5 +19,12 @@ namespace AgMaGest.C_Logica.Entidades
         public int IdLocalidad { get; set; } // ID de la localidad (FK)
         public int IdPerfil { get; set; } // ID del perfil del empleado (FK)
         public int IdEstado { get; set; } // ID del estado del empleado (FK)
+        public string DireccionCompleta { get; set; }
+        public string LocalidadNombre { get; set; }
+        public string ProvinciaNombre { get; set; }
+        public string PaisNombre { get; set; }
+        public string PerfilNombre { get; set; }
+        public string EstadoNombre { get; set; }
+
     }
 }
