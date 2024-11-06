@@ -128,7 +128,6 @@ CREATE TABLE Inventario_Vehiculos
   id_Inventario INT IDENTITY(1,1) NOT NULL,
   id_Vehiculo INT NOT NULL,
   stock INT NOT NULL,
-  precio_unitario FLOAT NOT NULL,
   CONSTRAINT PK_Inventario PRIMARY KEY (id_Inventario),
   CONSTRAINT FK_Inventario_Vehiculo FOREIGN KEY (id_Vehiculo) REFERENCES Vehiculos(id_Vehiculo),
   CONSTRAINT UQ_Inventario_Vehiculo UNIQUE (id_Vehiculo)
@@ -246,18 +245,22 @@ CREATE TABLE Cliente_Empresa
   CONSTRAINT CK_ClienteEmpresa_Cuit CHECK (cuit_CEmpresa LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]')
 
 );
-
+	
 CREATE TABLE Pedido
 (
   id_Pedido INT  IDENTITY(8000,1) NOT NULL,
   cuil_Empleado VARCHAR(11) NOT NULL,
   num_Factura INT NOT NULL,
   id_Cliente INT NOT NULL,
+  fecha_Pedido DATETIME NOT NULL,
   CONSTRAINT PK_Pedido PRIMARY KEY (id_Pedido),
   CONSTRAINT FK_Pedido_Empleado FOREIGN KEY (cuil_Empleado) REFERENCES Empleado(cuil_Empleado),
   CONSTRAINT FK_Pedido_Factura FOREIGN KEY (num_Factura) REFERENCES Factura(num_Factura),
   CONSTRAINT FK_Pedido_Cliente FOREIGN KEY (id_Cliente) REFERENCES Cliente(id_Cliente)
 );
+
+ALTER TABLE Pedido
+ADD CONSTRAINT DF_Pedido_Fecha DEFAULT GETDATE() FOR fecha_Pedido
 
 CREATE TABLE Detalle_Pedido
 (
@@ -268,3 +271,4 @@ CREATE TABLE Detalle_Pedido
   CONSTRAINT FK_DetallePedido_Vehiculos FOREIGN KEY (id_Vehiculo) REFERENCES Vehiculos(id_Vehiculo),
   CONSTRAINT FK_DetallePedido_Pedido FOREIGN KEY (id_Pedido) REFERENCES Pedido(id_Pedido)
 );
+
