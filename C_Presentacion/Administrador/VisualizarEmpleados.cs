@@ -125,5 +125,40 @@ namespace AgMaGest.C_Presentacion.Administrador
             EditarEmpleado formEditarEmpleado = new EditarEmpleado();
             formEditarEmpleado.ShowDialog();
         }
+
+        private void BAsignarUsuario_Click(object sender, EventArgs e)
+        {
+            if (dataGridEmpleados.SelectedRows.Count > 0)
+            {
+                var filaSeleccionada = dataGridEmpleados.SelectedRows[0];
+                string cuilEmpleado = filaSeleccionada.Cells["CUIL"].Value.ToString();
+
+                Usuario usuario = new Usuario
+                {
+                    CuilEmpleado = cuilEmpleado,
+                    //PassswordUsuario = txtPassword.Text
+                };
+
+                UsuarioDAL usuarioDAL = new UsuarioDAL();
+                usuarioDAL.AsignarUsuarioAEmpleado(usuario);
+
+                MessageBox.Show("Usuario asignado con éxito al empleado.");
+            }
+            else
+            {
+                MessageBox.Show("Por favor, seleccione un empleado.");
+            }
+        }
+
+        private void dataGridViewEmpleados_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) // Verificar que se ha seleccionado una fila válida
+            {
+                BAsignarUsuario.Visible = true;
+                BEditar.Visible = true;
+                BEliminar.Visible = true;
+            }
+        }
+
     }
 }

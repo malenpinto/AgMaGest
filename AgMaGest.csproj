@@ -71,6 +71,7 @@
     <Compile Include="C_Datos\PerfilEmpleadoDAL.cs" />
     <Compile Include="C_Datos\ProvinciaDAL.cs" />
     <Compile Include="C_Datos\TipoVehiculoDAL.cs" />
+    <Compile Include="C_Datos\UsuarioDAL.cs" />
     <Compile Include="C_Datos\VehiculoDAL.cs" />
     <Compile Include="C_Logica\Entidades\Cliente.cs" />
     <Compile Include="C_Logica\Entidades\ClienteEmpresa.cs" />
@@ -86,7 +87,14 @@
     <Compile Include="C_Logica\Entidades\PerfilEmpleado.cs" />
     <Compile Include="C_Logica\Entidades\Provincia.cs" />
     <Compile Include="C_Logica\Entidades\TipoVehiculo.cs" />
+    <Compile Include="C_Logica\Entidades\Usuario.cs" />
     <Compile Include="C_Logica\Entidades\Vehiculos.cs" />
+    <Compile Include="C_Presentacion\Administrador\AsignarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C_Presentacion\Administrador\AsignarUsuario.Designer.cs">
+      <DependentUpon>AsignarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="C_Presentacion\Administrador\EditarEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -281,6 +289,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="C_Presentacion\Administrador\AsignarUsuario.resx">
+      <DependentUpon>AsignarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="C_Presentacion\Administrador\EditarEmpleado.resx">
       <DependentUpon>EditarEmpleado.cs</DependentUpon>
     </EmbeddedResource>

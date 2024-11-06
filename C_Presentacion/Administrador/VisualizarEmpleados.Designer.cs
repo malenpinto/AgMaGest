@@ -35,7 +35,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.BEditar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,11 +42,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.BEditar = new System.Windows.Forms.Button();
             this.dataGridEmpleados = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
-            this.BEditarEmpleado = new System.Windows.Forms.Button();
-            this.BAgregarEmpleado = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.estado_Empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.perfil_Empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cuil_Empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,6 +52,11 @@
             this.apellido_Empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.email_Empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.direccion_Empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BAsignarUsuario = new System.Windows.Forms.Button();
+            this.BEliminar = new System.Windows.Forms.Button();
+            this.BEditarEmpleado = new System.Windows.Forms.Button();
+            this.BAgregarEmpleado = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -108,7 +109,8 @@
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.button2);
+            this.panel7.Controls.Add(this.BAsignarUsuario);
+            this.panel7.Controls.Add(this.BEliminar);
             this.panel7.Controls.Add(this.BEditarEmpleado);
             this.panel7.Controls.Add(this.BAgregarEmpleado);
             this.panel7.Controls.Add(this.button1);
@@ -120,18 +122,6 @@
             this.panel7.Size = new System.Drawing.Size(1030, 60);
             this.panel7.TabIndex = 2;
             // 
-            // BEditar
-            // 
-            this.BEditar.FlatAppearance.BorderSize = 2;
-            this.BEditar.Location = new System.Drawing.Point(716, 15);
-            this.BEditar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BEditar.Name = "BEditar";
-            this.BEditar.Size = new System.Drawing.Size(112, 33);
-            this.BEditar.TabIndex = 10;
-            this.BEditar.Text = "Editar";
-            this.BEditar.UseVisualStyleBackColor = true;
-            this.BEditar.Click += new System.EventHandler(this.BEditar_Click);
-            // 
             // button1
             // 
             this.button1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -139,7 +129,7 @@
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(488, 0);
+            this.button1.Location = new System.Drawing.Point(346, 0);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(18, 60);
@@ -157,7 +147,7 @@
             this.panel8.Location = new System.Drawing.Point(0, 0);
             this.panel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(488, 60);
+            this.panel8.Size = new System.Drawing.Size(346, 60);
             this.panel8.TabIndex = 5;
             // 
             // label2
@@ -167,18 +157,18 @@
             this.label2.Font = new System.Drawing.Font("Bahnschrift", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(19, 31);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(149, 21);
+            this.label2.Size = new System.Drawing.Size(47, 21);
             this.label2.TabIndex = 4;
-            this.label2.Text = "DNI/CUIL/Nombre";
+            this.label2.Text = "CUIL";
             // 
             // TBBuscarEmpleado
             // 
             this.TBBuscarEmpleado.BackColor = System.Drawing.Color.Gainsboro;
             this.TBBuscarEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBBuscarEmpleado.Location = new System.Drawing.Point(189, 11);
+            this.TBBuscarEmpleado.Location = new System.Drawing.Point(134, 13);
             this.TBBuscarEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TBBuscarEmpleado.Name = "TBBuscarEmpleado";
-            this.TBBuscarEmpleado.Size = new System.Drawing.Size(247, 32);
+            this.TBBuscarEmpleado.Size = new System.Drawing.Size(160, 32);
             this.TBBuscarEmpleado.TabIndex = 0;
             // 
             // label1
@@ -213,6 +203,18 @@
             this.panel5.Size = new System.Drawing.Size(1030, 48);
             this.panel5.TabIndex = 0;
             // 
+            // BEditar
+            // 
+            this.BEditar.FlatAppearance.BorderSize = 2;
+            this.BEditar.Location = new System.Drawing.Point(716, 15);
+            this.BEditar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BEditar.Name = "BEditar";
+            this.BEditar.Size = new System.Drawing.Size(112, 33);
+            this.BEditar.TabIndex = 10;
+            this.BEditar.Text = "Editar";
+            this.BEditar.UseVisualStyleBackColor = true;
+            this.BEditar.Click += new System.EventHandler(this.BEditar_Click);
+            // 
             // dataGridEmpleados
             // 
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -240,86 +242,6 @@
             this.dataGridEmpleados.RowTemplate.Height = 24;
             this.dataGridEmpleados.Size = new System.Drawing.Size(1029, 526);
             this.dataGridEmpleados.TabIndex = 4;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(866, 0);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(139, 60);
-            this.button2.TabIndex = 11;
-            this.button2.Text = " Eliminar";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // BEditarEmpleado
-            // 
-            this.BEditarEmpleado.BackColor = System.Drawing.Color.Transparent;
-            this.BEditarEmpleado.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BEditarEmpleado.Dock = System.Windows.Forms.DockStyle.Left;
-            this.BEditarEmpleado.FlatAppearance.BorderSize = 0;
-            this.BEditarEmpleado.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.BEditarEmpleado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.BEditarEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BEditarEmpleado.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BEditarEmpleado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
-            this.BEditarEmpleado.Image = ((System.Drawing.Image)(resources.GetObject("BEditarEmpleado.Image")));
-            this.BEditarEmpleado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BEditarEmpleado.Location = new System.Drawing.Point(745, 0);
-            this.BEditarEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BEditarEmpleado.Name = "BEditarEmpleado";
-            this.BEditarEmpleado.Size = new System.Drawing.Size(121, 60);
-            this.BEditarEmpleado.TabIndex = 10;
-            this.BEditarEmpleado.Text = " Editar";
-            this.BEditarEmpleado.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BEditarEmpleado.UseVisualStyleBackColor = false;
-            // 
-            // BAgregarEmpleado
-            // 
-            this.BAgregarEmpleado.BackColor = System.Drawing.Color.Transparent;
-            this.BAgregarEmpleado.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BAgregarEmpleado.Dock = System.Windows.Forms.DockStyle.Left;
-            this.BAgregarEmpleado.FlatAppearance.BorderSize = 0;
-            this.BAgregarEmpleado.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.BAgregarEmpleado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.BAgregarEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BAgregarEmpleado.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BAgregarEmpleado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
-            this.BAgregarEmpleado.Image = global::AgMaGest.Properties.Resources.Icono_MasEmpleado;
-            this.BAgregarEmpleado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BAgregarEmpleado.Location = new System.Drawing.Point(506, 0);
-            this.BAgregarEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BAgregarEmpleado.Name = "BAgregarEmpleado";
-            this.BAgregarEmpleado.Size = new System.Drawing.Size(239, 60);
-            this.BAgregarEmpleado.TabIndex = 8;
-            this.BAgregarEmpleado.Text = " Nuevo Empleado";
-            this.BAgregarEmpleado.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BAgregarEmpleado.UseVisualStyleBackColor = false;
-            this.BAgregarEmpleado.Click += new System.EventHandler(this.BAgregarEmpleado_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox1.Image = global::AgMaGest.Properties.Resources.Icono_Buscar_Admin;
-            this.pictureBox1.Location = new System.Drawing.Point(443, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(45, 60);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
             // 
             // estado_Empleado
             // 
@@ -377,6 +299,113 @@
             this.direccion_Empleado.Name = "direccion_Empleado";
             this.direccion_Empleado.Width = 125;
             // 
+            // BAsignarUsuario
+            // 
+            this.BAsignarUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.BAsignarUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BAsignarUsuario.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BAsignarUsuario.FlatAppearance.BorderSize = 0;
+            this.BAsignarUsuario.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BAsignarUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.BAsignarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BAsignarUsuario.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BAsignarUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
+            this.BAsignarUsuario.Image = global::AgMaGest.Properties.Resources.Icono_MasEmpleado;
+            this.BAsignarUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BAsignarUsuario.Location = new System.Drawing.Point(818, 0);
+            this.BAsignarUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BAsignarUsuario.Name = "BAsignarUsuario";
+            this.BAsignarUsuario.Size = new System.Drawing.Size(139, 60);
+            this.BAsignarUsuario.TabIndex = 12;
+            this.BAsignarUsuario.Text = "Nuevo Usuario";
+            this.BAsignarUsuario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BAsignarUsuario.UseVisualStyleBackColor = false;
+            this.BAsignarUsuario.Visible = false;
+            this.BAsignarUsuario.Click += new System.EventHandler(this.BAsignarUsuario_Click);
+            // 
+            // BEliminar
+            // 
+            this.BEliminar.BackColor = System.Drawing.Color.Transparent;
+            this.BEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BEliminar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BEliminar.FlatAppearance.BorderSize = 0;
+            this.BEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.BEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BEliminar.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
+            this.BEliminar.Image = ((System.Drawing.Image)(resources.GetObject("BEliminar.Image")));
+            this.BEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BEliminar.Location = new System.Drawing.Point(679, 0);
+            this.BEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BEliminar.Name = "BEliminar";
+            this.BEliminar.Size = new System.Drawing.Size(139, 60);
+            this.BEliminar.TabIndex = 11;
+            this.BEliminar.Text = " Eliminar";
+            this.BEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BEliminar.UseVisualStyleBackColor = false;
+            this.BEliminar.Visible = false;
+            // 
+            // BEditarEmpleado
+            // 
+            this.BEditarEmpleado.BackColor = System.Drawing.Color.Transparent;
+            this.BEditarEmpleado.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BEditarEmpleado.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BEditarEmpleado.FlatAppearance.BorderSize = 0;
+            this.BEditarEmpleado.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BEditarEmpleado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.BEditarEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BEditarEmpleado.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BEditarEmpleado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
+            this.BEditarEmpleado.Image = ((System.Drawing.Image)(resources.GetObject("BEditarEmpleado.Image")));
+            this.BEditarEmpleado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BEditarEmpleado.Location = new System.Drawing.Point(558, 0);
+            this.BEditarEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BEditarEmpleado.Name = "BEditarEmpleado";
+            this.BEditarEmpleado.Size = new System.Drawing.Size(121, 60);
+            this.BEditarEmpleado.TabIndex = 10;
+            this.BEditarEmpleado.Text = " Editar";
+            this.BEditarEmpleado.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BEditarEmpleado.UseVisualStyleBackColor = false;
+            this.BEditarEmpleado.Visible = false;
+            // 
+            // BAgregarEmpleado
+            // 
+            this.BAgregarEmpleado.BackColor = System.Drawing.Color.Transparent;
+            this.BAgregarEmpleado.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BAgregarEmpleado.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BAgregarEmpleado.FlatAppearance.BorderSize = 0;
+            this.BAgregarEmpleado.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BAgregarEmpleado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.BAgregarEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BAgregarEmpleado.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BAgregarEmpleado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
+            this.BAgregarEmpleado.Image = global::AgMaGest.Properties.Resources.Icono_MasEmpleado;
+            this.BAgregarEmpleado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BAgregarEmpleado.Location = new System.Drawing.Point(364, 0);
+            this.BAgregarEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BAgregarEmpleado.Name = "BAgregarEmpleado";
+            this.BAgregarEmpleado.Size = new System.Drawing.Size(194, 60);
+            this.BAgregarEmpleado.TabIndex = 8;
+            this.BAgregarEmpleado.Text = "Ingresar Empleado";
+            this.BAgregarEmpleado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BAgregarEmpleado.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BAgregarEmpleado.UseVisualStyleBackColor = false;
+            this.BAgregarEmpleado.Click += new System.EventHandler(this.BAgregarEmpleado_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox1.Image = global::AgMaGest.Properties.Resources.Icono_Buscar_Admin;
+            this.pictureBox1.Location = new System.Drawing.Point(301, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(45, 60);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
             // VisualizarEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -421,7 +450,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button BEditar;
         private System.Windows.Forms.Button BEditarEmpleado;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button BEliminar;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado_Empleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn perfil_Empleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn cuil_Empleado;
@@ -430,5 +459,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn apellido_Empleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn email_Empleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn direccion_Empleado;
+        private System.Windows.Forms.Button BAsignarUsuario;
     }
 }
