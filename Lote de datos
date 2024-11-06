@@ -288,3 +288,51 @@ SELECT * FROM Provincia
 SELECT * FROM Pais
 SELECT * FROM Perfil_Empleado
 SELECT * FROM Estado_Empleado
+
+
+
+--------------------------
+--- DATOS PARA VEHICULO---
+--------------------------
+-- Insertar tipos de vehículo
+INSERT INTO Tipo_Vehiculo (nombre_tipoVehiculo) 
+VALUES ('Sedán'), 
+	   ('SUV'),
+	   ('Pickup'),
+	   ('Hatchback');
+
+-- Insertar estados
+INSERT INTO Estado_Vehiculo (nombre_Estado) 
+VALUES ('Activo'), 
+	   ('Inactivo');
+
+-- Insertar condiciones
+INSERT INTO Condicion (nombre_Condicion) 
+VALUES ('Nuevo'), 
+	   ('Usado');
+
+
+INSERT INTO Vehiculos (marca_Vehiculo, modelo_Vehiculo, version_Vehiculo, km_Vehiculo, anio_Vehiculo, patente_Vehiculo, codigo_OKM, precio_Vehiculo, id_tipoVehiculo, id_Estado, id_Condicion)
+VALUES 
+('Toyota', 'Corolla', 'XLE', 0, '2023-01-01', NULL, 123456, 25000.00, 1, 1, 1),
+('Toyota', 'Hilux', 'SRV', 15000, '2020-05-10', 'ABC123', NULL, 30000.00, 3, 1, 2),
+('Ford', 'F-150', 'Raptor', 2000, '2022-07-15', 'DEF456', NULL, 55000.00, 3, 1, 2),
+('Ford', 'EcoSport', 'Titanium', 0, '2023-03-20', NULL, 123457, 22000.00, 2, 1, 1),
+('Chevrolet', 'Onix', 'LTZ', 5000, '2021-10-01', 'GHI789', NULL, 15000.00, 4, 1, 2),
+('Chevrolet', 'Silverado', 'High Country', 10000, '2021-01-10', 'JKL012', NULL, 45000.00, 3, 1, 2),
+('Volkswagen', 'Tiguan', 'Allspace', 0, '2023-06-10', NULL, 123458, 35000.00, 2, 1, 1),
+('Volkswagen', 'Polo', 'Highline', 8000, '2020-08-25', 'MNO345', NULL, 12000.00, 4, 1, 2),
+('Toyota', 'RAV4', 'Limited', 0, '2023-09-05', NULL, 123459, 40000.00, 2, 1, 1),
+('Ford', 'Focus', 'Titanium', 25000, '2019-04-15', 'PQR678', NULL, 13000.00, 1, 2, 2);
+
+-- Consultas para ver el lote cargado
+SELECT * FROM Vehiculos
+
+SELECT * FROM Inventario_Vehiculos
+
+SELECT v.marca_Vehiculo AS Marca, v.modelo_Vehiculo AS Modelo, SUM(i.stock) AS 'Total stock', v.precio_Vehiculo 'Precio Unitario'
+FROM Vehiculos v
+JOIN Inventario_Vehiculos i ON v.id_Vehiculo = i.id_Vehiculo
+WHERE v.marca_Vehiculo = 'Toyota' AND v.modelo_Vehiculo = 'yaris' AND v.version_Vehiculo = 'XLS'
+GROUP BY v.marca_Vehiculo, v.modelo_Vehiculo, v.precio_Vehiculo
+
