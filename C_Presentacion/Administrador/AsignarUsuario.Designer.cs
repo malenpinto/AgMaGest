@@ -33,19 +33,19 @@
             this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.BAsignarUsuario = new System.Windows.Forms.Button();
-            this.BSalirEditarEmpleado = new System.Windows.Forms.Button();
+            this.BSalirUsuario = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
-            this.TBCuilEditarEmpleado = new System.Windows.Forms.TextBox();
-            this.TBDniEditarEmpleado = new System.Windows.Forms.TextBox();
+            this.TBCuilEmpleado = new System.Windows.Forms.TextBox();
+            this.TBDniEmpleado = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.TBContraseñaUsuario = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.TBCuilUsuario = new System.Windows.Forms.TextBox();
             this.LCelular = new System.Windows.Forms.Label();
-            this.TBApellidoEditarEmpleado = new System.Windows.Forms.TextBox();
-            this.TBNombreEditarEmpleado = new System.Windows.Forms.TextBox();
+            this.TBApellidoEmpleado = new System.Windows.Forms.TextBox();
+            this.TBNombreEmpleado = new System.Windows.Forms.TextBox();
             this.LApellido = new System.Windows.Forms.Label();
             this.LNombre = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -62,18 +62,18 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.BAsignarUsuario);
-            this.panel1.Controls.Add(this.BSalirEditarEmpleado);
+            this.panel1.Controls.Add(this.BSalirUsuario);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.TBCuilEditarEmpleado);
-            this.panel1.Controls.Add(this.TBDniEditarEmpleado);
+            this.panel1.Controls.Add(this.TBCuilEmpleado);
+            this.panel1.Controls.Add(this.TBDniEmpleado);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.TBContraseñaUsuario);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.TBCuilUsuario);
             this.panel1.Controls.Add(this.LCelular);
-            this.panel1.Controls.Add(this.TBApellidoEditarEmpleado);
-            this.panel1.Controls.Add(this.TBNombreEditarEmpleado);
+            this.panel1.Controls.Add(this.TBApellidoEmpleado);
+            this.panel1.Controls.Add(this.TBNombreEmpleado);
             this.panel1.Controls.Add(this.LApellido);
             this.panel1.Controls.Add(this.LNombre);
             this.panel1.Controls.Add(this.panel5);
@@ -134,24 +134,25 @@
             this.BAsignarUsuario.UseVisualStyleBackColor = false;
             this.BAsignarUsuario.Click += new System.EventHandler(this.BAsignarUsuario_Click);
             // 
-            // BSalirEditarEmpleado
+            // BSalirUsuario
             // 
-            this.BSalirEditarEmpleado.BackColor = System.Drawing.Color.Transparent;
-            this.BSalirEditarEmpleado.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BSalirEditarEmpleado.FlatAppearance.BorderSize = 2;
-            this.BSalirEditarEmpleado.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.BSalirEditarEmpleado.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.BSalirEditarEmpleado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MistyRose;
-            this.BSalirEditarEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BSalirEditarEmpleado.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BSalirEditarEmpleado.ForeColor = System.Drawing.Color.Salmon;
-            this.BSalirEditarEmpleado.Location = new System.Drawing.Point(356, 421);
-            this.BSalirEditarEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BSalirEditarEmpleado.Name = "BSalirEditarEmpleado";
-            this.BSalirEditarEmpleado.Size = new System.Drawing.Size(128, 50);
-            this.BSalirEditarEmpleado.TabIndex = 19;
-            this.BSalirEditarEmpleado.Text = "Salir";
-            this.BSalirEditarEmpleado.UseVisualStyleBackColor = false;
+            this.BSalirUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.BSalirUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BSalirUsuario.FlatAppearance.BorderSize = 2;
+            this.BSalirUsuario.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.BSalirUsuario.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BSalirUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MistyRose;
+            this.BSalirUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BSalirUsuario.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BSalirUsuario.ForeColor = System.Drawing.Color.Salmon;
+            this.BSalirUsuario.Location = new System.Drawing.Point(356, 421);
+            this.BSalirUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BSalirUsuario.Name = "BSalirUsuario";
+            this.BSalirUsuario.Size = new System.Drawing.Size(128, 50);
+            this.BSalirUsuario.TabIndex = 19;
+            this.BSalirUsuario.Text = "Salir";
+            this.BSalirUsuario.UseVisualStyleBackColor = false;
+            this.BSalirUsuario.Click += new System.EventHandler(this.BSalirUsuario_Click);
             // 
             // panel2
             // 
@@ -174,28 +175,28 @@
             this.label9.TabIndex = 72;
             this.label9.Text = "Datos del Empleado";
             // 
-            // TBCuilEditarEmpleado
+            // TBCuilEmpleado
             // 
-            this.TBCuilEditarEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.TBCuilEditarEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBCuilEditarEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBCuilEditarEmpleado.Location = new System.Drawing.Point(356, 145);
-            this.TBCuilEditarEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TBCuilEditarEmpleado.Name = "TBCuilEditarEmpleado";
-            this.TBCuilEditarEmpleado.Size = new System.Drawing.Size(286, 24);
-            this.TBCuilEditarEmpleado.TabIndex = 4;
+            this.TBCuilEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.TBCuilEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBCuilEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBCuilEmpleado.Location = new System.Drawing.Point(356, 145);
+            this.TBCuilEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBCuilEmpleado.Name = "TBCuilEmpleado";
+            this.TBCuilEmpleado.Size = new System.Drawing.Size(286, 24);
+            this.TBCuilEmpleado.TabIndex = 4;
             // 
-            // TBDniEditarEmpleado
+            // TBDniEmpleado
             // 
-            this.TBDniEditarEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.TBDniEditarEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBDniEditarEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBDniEditarEmpleado.Location = new System.Drawing.Point(49, 145);
-            this.TBDniEditarEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TBDniEditarEmpleado.Name = "TBDniEditarEmpleado";
-            this.TBDniEditarEmpleado.Size = new System.Drawing.Size(286, 24);
-            this.TBDniEditarEmpleado.TabIndex = 3;
-            this.TBDniEditarEmpleado.Tag = "";
+            this.TBDniEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.TBDniEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBDniEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBDniEmpleado.Location = new System.Drawing.Point(49, 145);
+            this.TBDniEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBDniEmpleado.Name = "TBDniEmpleado";
+            this.TBDniEmpleado.Size = new System.Drawing.Size(286, 24);
+            this.TBDniEmpleado.TabIndex = 3;
+            this.TBDniEmpleado.Tag = "";
             // 
             // label7
             // 
@@ -268,28 +269,28 @@
             this.LCelular.TabIndex = 142;
             this.LCelular.Text = "Cuil";
             // 
-            // TBApellidoEditarEmpleado
+            // TBApellidoEmpleado
             // 
-            this.TBApellidoEditarEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.TBApellidoEditarEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBApellidoEditarEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBApellidoEditarEmpleado.Location = new System.Drawing.Point(356, 90);
-            this.TBApellidoEditarEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TBApellidoEditarEmpleado.Name = "TBApellidoEditarEmpleado";
-            this.TBApellidoEditarEmpleado.Size = new System.Drawing.Size(286, 24);
-            this.TBApellidoEditarEmpleado.TabIndex = 2;
+            this.TBApellidoEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.TBApellidoEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBApellidoEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBApellidoEmpleado.Location = new System.Drawing.Point(356, 90);
+            this.TBApellidoEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBApellidoEmpleado.Name = "TBApellidoEmpleado";
+            this.TBApellidoEmpleado.Size = new System.Drawing.Size(286, 24);
+            this.TBApellidoEmpleado.TabIndex = 2;
             // 
-            // TBNombreEditarEmpleado
+            // TBNombreEmpleado
             // 
-            this.TBNombreEditarEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.TBNombreEditarEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBNombreEditarEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBNombreEditarEmpleado.Location = new System.Drawing.Point(49, 90);
-            this.TBNombreEditarEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TBNombreEditarEmpleado.Name = "TBNombreEditarEmpleado";
-            this.TBNombreEditarEmpleado.Size = new System.Drawing.Size(286, 24);
-            this.TBNombreEditarEmpleado.TabIndex = 1;
-            this.TBNombreEditarEmpleado.Tag = "";
+            this.TBNombreEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.TBNombreEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBNombreEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBNombreEmpleado.Location = new System.Drawing.Point(49, 90);
+            this.TBNombreEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBNombreEmpleado.Name = "TBNombreEmpleado";
+            this.TBNombreEmpleado.Size = new System.Drawing.Size(286, 24);
+            this.TBNombreEmpleado.TabIndex = 1;
+            this.TBNombreEmpleado.Tag = "";
             // 
             // LApellido
             // 
@@ -363,19 +364,19 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button BAsignarUsuario;
-        private System.Windows.Forms.Button BSalirEditarEmpleado;
+        private System.Windows.Forms.Button BSalirUsuario;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox TBCuilEditarEmpleado;
-        private System.Windows.Forms.TextBox TBDniEditarEmpleado;
+        private System.Windows.Forms.TextBox TBCuilEmpleado;
+        private System.Windows.Forms.TextBox TBDniEmpleado;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox TBContraseñaUsuario;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TBCuilUsuario;
         private System.Windows.Forms.Label LCelular;
-        private System.Windows.Forms.TextBox TBApellidoEditarEmpleado;
-        private System.Windows.Forms.TextBox TBNombreEditarEmpleado;
+        private System.Windows.Forms.TextBox TBApellidoEmpleado;
+        private System.Windows.Forms.TextBox TBNombreEmpleado;
         private System.Windows.Forms.Label LApellido;
         private System.Windows.Forms.Label LNombre;
         private System.Windows.Forms.Panel panel5;

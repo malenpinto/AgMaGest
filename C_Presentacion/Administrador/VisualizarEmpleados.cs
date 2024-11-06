@@ -120,7 +120,7 @@ namespace AgMaGest.C_Presentacion.Administrador
             formEmpleado.ShowDialog();
         }
 
-        private void BEditar_Click(object sender, EventArgs e)
+        private void BEditarEmpleado_Click(object sender, EventArgs e)
         {
             EditarEmpleado formEditarEmpleado = new EditarEmpleado();
             formEditarEmpleado.ShowDialog();
@@ -131,18 +131,15 @@ namespace AgMaGest.C_Presentacion.Administrador
             if (dataGridEmpleados.SelectedRows.Count > 0)
             {
                 var filaSeleccionada = dataGridEmpleados.SelectedRows[0];
-                string cuilEmpleado = filaSeleccionada.Cells["CUIL"].Value.ToString();
+                string cuilEmpleado = filaSeleccionada.Cells["cuil_Empleado"].Value.ToString();
+                string nombreEmpleado = filaSeleccionada.Cells["nombre_Empleado"].Value.ToString();
+                string apellidoEmpleado = filaSeleccionada.Cells["apellido_Empleado"].Value.ToString();
+                string dniEmpleado = filaSeleccionada.Cells["dni_Empleado"].Value.ToString();
+                string perfilEmpleado = filaSeleccionada.Cells["PerfilNombre"].Value.ToString();
 
-                Usuario usuario = new Usuario
-                {
-                    CuilEmpleado = cuilEmpleado,
-                    //PassswordUsuario = txtPassword.Text
-                };
-
-                UsuarioDAL usuarioDAL = new UsuarioDAL();
-                usuarioDAL.AsignarUsuarioAEmpleado(usuario);
-
-                MessageBox.Show("Usuario asignado con éxito al empleado.");
+                // Crear y mostrar el formulario AsignarUsuario pasando los datos del empleado
+                AsignarUsuario formAsignarUsuario = new AsignarUsuario(cuilEmpleado, nombreEmpleado, apellidoEmpleado, dniEmpleado, perfilEmpleado);
+                formAsignarUsuario.ShowDialog();
             }
             else
             {
@@ -150,13 +147,20 @@ namespace AgMaGest.C_Presentacion.Administrador
             }
         }
 
-        private void dataGridViewEmpleados_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void DataGridViewEmpleados_SelectionChanged(object sender, EventArgs e)
         {
-            if (e.RowIndex >= 0) // Verificar que se ha seleccionado una fila válida
+            if (dataGridEmpleados.SelectedRows.Count > 0)
             {
                 BAsignarUsuario.Visible = true;
-                BEditar.Visible = true;
-                BEliminar.Visible = true;
+                BEditarEmpleado.Visible = true;
+                BEliminarEmpleado.Visible = true;
+            }
+            else
+            {
+                // Opcionalmente, ocultar los botones si no hay selección
+                BAsignarUsuario.Visible = false;
+                BEditarEmpleado.Visible = false;
+                BEliminarEmpleado.Visible = false;
             }
         }
 
