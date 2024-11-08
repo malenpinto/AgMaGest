@@ -10,6 +10,8 @@ namespace AgMaGest.C_Logica.Entidades
     {
         public int IdUsuario { get; set; } // ID usuario
         public string CuilEmpleado { get; set; } // Cuil del empleado (FK)
-        public string PassswordUsuario { get; set; } //Contaseña Usuario 
+        public string PassswordUsuario { get; set; } //Contaseña Usuario
+        public Empleado Empleado { get; set; }
+        public string PerfilNombre { get; set; }
     }
 }

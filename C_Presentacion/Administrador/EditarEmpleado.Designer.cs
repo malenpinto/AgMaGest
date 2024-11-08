@@ -53,7 +53,7 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.TBEmailEditarEmpleado = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.DTPFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.TBNumCalleEditarEmpleado = new System.Windows.Forms.TextBox();
             this.TBCelularEditarEmpleado = new System.Windows.Forms.TextBox();
@@ -103,7 +103,7 @@
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.TBEmailEditarEmpleado);
-            this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Controls.Add(this.DTPFechaNacimiento);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.TBNumCalleEditarEmpleado);
             this.panel1.Controls.Add(this.TBCelularEditarEmpleado);
@@ -421,18 +421,18 @@
             this.TBEmailEditarEmpleado.Size = new System.Drawing.Size(286, 24);
             this.TBEmailEditarEmpleado.TabIndex = 8;
             // 
-            // dateTimePicker1
+            // DTPFechaNacimiento
             // 
-            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Gadugi", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(356, 161);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dateTimePicker1.MaxDate = new System.DateTime(3024, 12, 31, 0, 0, 0, 0);
-            this.dateTimePicker1.MinDate = new System.DateTime(1924, 1, 1, 0, 0, 0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(136, 26);
-            this.dateTimePicker1.TabIndex = 5;
+            this.DTPFechaNacimiento.CalendarFont = new System.Drawing.Font("Gadugi", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DTPFechaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DTPFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DTPFechaNacimiento.Location = new System.Drawing.Point(356, 161);
+            this.DTPFechaNacimiento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DTPFechaNacimiento.MaxDate = new System.DateTime(3024, 12, 31, 0, 0, 0, 0);
+            this.DTPFechaNacimiento.MinDate = new System.DateTime(1924, 1, 1, 0, 0, 0, 0);
+            this.DTPFechaNacimiento.Name = "DTPFechaNacimiento";
+            this.DTPFechaNacimiento.Size = new System.Drawing.Size(136, 26);
+            this.DTPFechaNacimiento.TabIndex = 5;
             // 
             // label2
             // 
@@ -700,7 +700,7 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox TBEmailEditarEmpleado;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker DTPFechaNacimiento;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TBNumCalleEditarEmpleado;
         private System.Windows.Forms.TextBox TBCelularEditarEmpleado;

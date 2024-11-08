@@ -263,6 +263,7 @@ namespace AgMaGest.C_Presentacion.Administrador
 
                 // Limpiar todos los campos después de agregar
                 LimpiarCampos();
+                this.Close();
             }
             catch (Exception ex)
             {

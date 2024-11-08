@@ -23,7 +23,7 @@ namespace AgMaGest.C_Presentacion.Administrador
             formVehiculo.ShowDialog();
         }
 
-        private void BEditarVehiculo_Click(object sender, EventArgs e)
+        private void BEditarVehiculo_Click_1(object sender, EventArgs e)
         {
             EditarVehiculo formVehiculo = new EditarVehiculo();
             formVehiculo.ShowDialog();

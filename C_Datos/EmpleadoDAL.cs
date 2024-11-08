@@ -171,6 +171,7 @@ namespace AgMaGest.C_Datos
 
             return empleado;
         }
+
         public List<Empleado> ObtenerTodosLosEmpleados()
         {
             List<Empleado> empleados = new List<Empleado>();

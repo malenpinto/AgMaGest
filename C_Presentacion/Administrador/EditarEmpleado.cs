@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AgMaGest.C_Datos;
+using AgMaGest.C_Logica.Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,10 +16,14 @@ namespace AgMaGest.C_Presentacion.Administrador
 {
     public partial class EditarEmpleado : Form
     {
-        public EditarEmpleado()
+        private Empleado empleadoActual;
+        public EditarEmpleado(Empleado empleado)
         {
             InitializeComponent();
-            this.KeyPreview = true; // Permite que el formulario capture el evento KeyDown
+            // Permite que el formulario capture el evento KeyDown
+            this.KeyPreview = true;
+            empleadoActual = empleado;
+            CargarDatosEnCampos();
         }
 
         private void IngresarEmpleado_KeyDown(object sender, KeyEventArgs e)
@@ -30,37 +36,81 @@ namespace AgMaGest.C_Presentacion.Administrador
             }
         }
 
+        private void CargarDatosEnCampos()
+        {
+            if (empleadoActual != null)
+            {
+                TBNombreEditarEmpleado.Text = empleadoActual.Nombre ;
+                TBApellidoEditarEmpleado.Text = empleadoActual.Apellido;
+                TBDniEditarEmpleado.Text = empleadoActual.DNI;
+                TBCuilEditarEmpleado.Text = empleadoActual.CUIL;
+                TBEmailEditarEmpleado.Text = empleadoActual.Email;
+                TBCelularEditarEmpleado.Text = empleadoActual.Celular;
+                DTPFechaNacimiento.Value = empleadoActual.FechaNacimiento;
+                TBCalleEditarEmpleado.Text = empleadoActual.Calle;
+                TBNumCalleEditarEmpleado.Text = empleadoActual.NumeroCalle.ToString(); // Convertir int a string
+                TBNumPisoEditarEmpleado.Text = empleadoActual.Piso.ToString(); // Convertir int a string
+                TBDptoEditarEmpleado.Text = empleadoActual.Dpto.ToString(); // Convertir int a string
+                TBCodPostalEditarEmpleado.Text = empleadoActual.CodigoPostal.ToString(); // Convertir int a string
+                CBPaisEditarEmpleado.SelectedValue = empleadoActual.IdLocalidad;
+            }
+        }
+
         private void BEditarEmpleado_Click(object sender, EventArgs e)
         {
-            // Verificar que todos los campos no estén vacíos
-            if (string.IsNullOrWhiteSpace(TBNombreEditarEmpleado.Text) ||
-                string.IsNullOrWhiteSpace(TBApellidoEditarEmpleado.Text) ||
-                string.IsNullOrWhiteSpace(TBDniEditarEmpleado.Text) ||
-                string.IsNullOrWhiteSpace(TBCuilEditarEmpleado.Text) ||
-                string.IsNullOrWhiteSpace(CBPerfilEditarEmpleado.Text) ||
-                string.IsNullOrWhiteSpace(TBCelularEditarEmpleado.Text) ||
-                string.IsNullOrWhiteSpace(TBEmailEditarEmpleado.Text) ||
-                string.IsNullOrWhiteSpace(TBCalleEditarEmpleado.Text) ||
-                string.IsNullOrWhiteSpace(TBNumCalleEditarEmpleado.Text) ||
-                string.IsNullOrWhiteSpace(TBNumPisoEditarEmpleado.Text) ||
-                string.IsNullOrWhiteSpace(TBDptoEditarEmpleado.Text) ||
-                string.IsNullOrWhiteSpace(TBCodPostalEditarEmpleado.Text) ||
-                string.IsNullOrWhiteSpace(CBPaisEditarEmpleado.Text) ||
-                string.IsNullOrWhiteSpace(CBProvinciaEditarEmpleado.Text) ||
-                string.IsNullOrWhiteSpace(TBCiudadEditarEmpleado.Text) ||
-                string.IsNullOrWhiteSpace(TBLocalidadEditarEmpleado.Text))
+            try
             {
-                // Mostrar mensaje de error si falta algún campo
-                MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            else if (VerificarEmail() && VerificarDNIyCUIL())
-            {
-                // Convertir el nombre y apellido a formato de título (primeras letras en mayúsculas)
-                string nombreCompleto = ToTitleCase(TBApellidoEditarEmpleado.Text) + " " + ToTitleCase(TBNombreEditarEmpleado.Text);
+                // Validar que los campos no estén vacíos
+                if (string.IsNullOrWhiteSpace(TBNombreEditarEmpleado.Text) ||
+                    string.IsNullOrWhiteSpace(TBApellidoEditarEmpleado.Text) ||
+                    string.IsNullOrWhiteSpace(TBDniEditarEmpleado.Text) ||
+                    string.IsNullOrWhiteSpace(TBCuilEditarEmpleado.Text) ||
+                    string.IsNullOrWhiteSpace(TBEmailEditarEmpleado.Text) ||
+                    string.IsNullOrWhiteSpace(TBCelularEditarEmpleado.Text) ||
+                    string.IsNullOrWhiteSpace(TBCalleEditarEmpleado.Text) ||
+                    string.IsNullOrWhiteSpace(TBNumCalleEditarEmpleado.Text) ||
+                    string.IsNullOrWhiteSpace(TBNumPisoEditarEmpleado.Text) ||
+                    string.IsNullOrWhiteSpace(TBDptoEditarEmpleado.Text) ||
+                    string.IsNullOrWhiteSpace(TBCodPostalEditarEmpleado.Text))
+                {
+                    MessageBox.Show("Todos los campos deben estar completos.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
-                // Si todos los campos son válidos, procedemos con la lógica de agregar.
-                MessageBox.Show("Se editó exitosamente: " + nombreCompleto, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Validar y convertir los campos numéricos
+                if (!int.TryParse(TBNumCalleEditarEmpleado.Text, out int numeroCalle) ||
+                    !int.TryParse(TBNumPisoEditarEmpleado.Text, out int piso) ||
+                    !int.TryParse(TBDptoEditarEmpleado.Text, out int dpto) ||
+                    !int.TryParse(TBCodPostalEditarEmpleado.Text, out int codigoPostal))
+                {
+                    MessageBox.Show("Los campos numéricos (Número de Calle, Piso, Dpto, Código Postal) deben contener valores válidos.", "Error de formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Actualiza el objeto empleadoActual con los datos editados
+                empleadoActual.Nombre = TBNombreEditarEmpleado.Text;
+                empleadoActual.Apellido = TBApellidoEditarEmpleado.Text;
+                empleadoActual.DNI = TBDniEditarEmpleado.Text;
+                empleadoActual.CUIL = TBCuilEditarEmpleado.Text;
+                empleadoActual.Email = TBEmailEditarEmpleado.Text;
+                empleadoActual.Celular = TBCelularEditarEmpleado.Text;
+                empleadoActual.FechaNacimiento = DTPFechaNacimiento.Value;
+                empleadoActual.Calle = TBCalleEditarEmpleado.Text;
+                empleadoActual.NumeroCalle = numeroCalle;
+                empleadoActual.Piso = piso;
+                empleadoActual.Dpto = TBDptoEditarEmpleado.Text;
+                empleadoActual.CodigoPostal = codigoPostal;
+
+                // Llamar a la capa de datos para actualizar el empleado
+                var empleadoDAL = new EmpleadoDAL();
+                empleadoDAL.ActualizarEmpleado(empleadoActual);
+
+                MessageBox.Show("Empleado actualizado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al guardar los cambios: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

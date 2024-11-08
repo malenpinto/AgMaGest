@@ -23,6 +23,10 @@ namespace AgMaGest.C_Presentacion.Administrador
             AbrirFormularioHijo(new VisualizarEmpleados(), "Empleados");
         }
 
+        private void BUsuariosAdmin_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new VisualizarUsuarios(), "Usuarios");
+        }
         private void BInventarioAdmin_Click(object sender, EventArgs e)
         {
             AbrirFormularioHijo(new VisualizarInventario(), "Inventario");
@@ -36,6 +40,11 @@ namespace AgMaGest.C_Presentacion.Administrador
         private void BFacturasAdmin_Click(object sender, EventArgs e)
         {
             AbrirFormularioHijo(new VisualizarFacturas(), "Facturas");
+        }
+
+        private void BAcercaAdmin_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new VisualizarAcercaDeAdmin(), "Acerca de AgMaGest");
         }
 
         private Form formularioActivo = null;
@@ -58,6 +67,15 @@ namespace AgMaGest.C_Presentacion.Administrador
 
             // Muestra el botón de retroceso
             BAtrasAdmin.Visible = true;
+        }
+        private void BAtrasAdmin_Click(object sender, EventArgs e)
+        {
+            if (formularioActivo != null)
+                formularioActivo.Close();
+
+            // Ocultar el botón de retroceso cuando regreses al menú principal
+            BAtrasAdmin.Visible = false;
+            LTituloInicioAdmin.Text = " ";  // Cambia al título del menú principal
         }
 
         private void BExitAdmin_Click(object sender, EventArgs e)
@@ -82,22 +100,6 @@ namespace AgMaGest.C_Presentacion.Administrador
         private void BMinimizarAdmin_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void BAtrasAdmin_Click(object sender, EventArgs e)
-        {
-            if (formularioActivo != null)
-                formularioActivo.Close();
-
-            // Ocultar el botón de retroceso cuando regreses al menú principal
-            BAtrasAdmin.Visible = false;
-            LTituloInicioAdmin.Text = " ";  // Cambia al título del menú principal
-        }
-
-
-        private void BAcercaAdmin_Click(object sender, EventArgs e)
-        {
-            AbrirFormularioHijo(new VisualizarAcercaDeAdmin(), "Acerca de AgMa Gest");
         }
 
         private void BCerrarSesionAdmin_Click(object sender, EventArgs e)

@@ -26,6 +26,35 @@ namespace AgMaGest.C_Presentacion.Administrador
             CargarEmpleados();
         }
 
+        private void CargarEmpleados()
+        {
+            // Configurar el DataGridView y establecer AutoGenerateColumns a false
+            ConfigurarDataGridView();
+            dataGridEmpleados.AutoGenerateColumns = false;
+
+            // Obtener los empleados desde la base de datos
+            EmpleadoDAL empleadoDAL = new EmpleadoDAL();
+            List<Empleado> empleados = empleadoDAL.ObtenerTodosLosEmpleados();
+
+            if (empleados != null && empleados.Count > 0)
+            {
+                dataGridEmpleados.DataSource = empleados;
+
+                // Verificar y ocultar columnas innecesarias si existen
+                if (dataGridEmpleados.Columns["Calle"] != null) dataGridEmpleados.Columns["Calle"].Visible = false;
+                if (dataGridEmpleados.Columns["NumeroCalle"] != null) dataGridEmpleados.Columns["NumeroCalle"].Visible = false;
+                if (dataGridEmpleados.Columns["Piso"] != null) dataGridEmpleados.Columns["Piso"].Visible = false;
+                if (dataGridEmpleados.Columns["Dpto"] != null) dataGridEmpleados.Columns["Dpto"].Visible = false;
+                if (dataGridEmpleados.Columns["IdLocalidad"] != null) dataGridEmpleados.Columns["IdLocalidad"].Visible = false;
+                if (dataGridEmpleados.Columns["IdPerfil"] != null) dataGridEmpleados.Columns["IdPerfil"].Visible = false;
+                if (dataGridEmpleados.Columns["IdEstado"] != null) dataGridEmpleados.Columns["IdEstado"].Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("No se encontraron empleados.");
+            }
+        }
+
         private void ConfigurarDataGridView()
         {
             // Limpiar cualquier configuración previa
@@ -84,36 +113,6 @@ namespace AgMaGest.C_Presentacion.Administrador
             dataGridEmpleados.Columns["EstadoNombre"].DisplayIndex = 13;
         }
 
-        private void CargarEmpleados()
-        {
-            // Configurar el DataGridView y establecer AutoGenerateColumns a false
-            ConfigurarDataGridView();
-            dataGridEmpleados.AutoGenerateColumns = false;
-
-            // Obtener los empleados desde la base de datos
-            EmpleadoDAL empleadoDAL = new EmpleadoDAL();
-            List<Empleado> empleados = empleadoDAL.ObtenerTodosLosEmpleados();
-
-            if (empleados != null && empleados.Count > 0)
-            {
-                dataGridEmpleados.DataSource = empleados;
-
-                // Verificar y ocultar columnas innecesarias si existen
-                if (dataGridEmpleados.Columns["Calle"] != null) dataGridEmpleados.Columns["Calle"].Visible = false;
-                if (dataGridEmpleados.Columns["NumeroCalle"] != null) dataGridEmpleados.Columns["NumeroCalle"].Visible = false;
-                if (dataGridEmpleados.Columns["Piso"] != null) dataGridEmpleados.Columns["Piso"].Visible = false;
-                if (dataGridEmpleados.Columns["Dpto"] != null) dataGridEmpleados.Columns["Dpto"].Visible = false;
-                if (dataGridEmpleados.Columns["IdLocalidad"] != null) dataGridEmpleados.Columns["IdLocalidad"].Visible = false;
-                if (dataGridEmpleados.Columns["IdPerfil"] != null) dataGridEmpleados.Columns["IdPerfil"].Visible = false;
-                if (dataGridEmpleados.Columns["IdEstado"] != null) dataGridEmpleados.Columns["IdEstado"].Visible = false;
-            }
-            else
-            {
-                MessageBox.Show("No se encontraron empleados.");
-            }
-        }
-
-
         private void BAgregarEmpleado_Click(object sender, EventArgs e)
         {
             IngresarEmpleado formEmpleado = new IngresarEmpleado();
@@ -122,8 +121,58 @@ namespace AgMaGest.C_Presentacion.Administrador
 
         private void BEditarEmpleado_Click(object sender, EventArgs e)
         {
-            EditarEmpleado formEditarEmpleado = new EditarEmpleado();
-            formEditarEmpleado.ShowDialog();
+            if (dataGridEmpleados.SelectedRows.Count > 0) 
+            {
+                var filaSeleccionada = dataGridEmpleados.SelectedRows[0];
+
+                // Construir el objeto Empleado a partir de las celdas o realizar consultas adicionales si falta información
+                var empleado = new Empleado
+                {
+                    CUIL = filaSeleccionada.Cells["cuil_Empleado"].Value?.ToString(),
+                    DNI = filaSeleccionada.Cells["dni_Empleado"].Value?.ToString(),
+                    Nombre = filaSeleccionada.Cells["nombre_Empleado"].Value?.ToString(),
+                    Apellido = filaSeleccionada.Cells["apellido_Empleado"].Value?.ToString(),
+                    Email = filaSeleccionada.Cells["email_Empleado"].Value?.ToString(),
+                    Celular = filaSeleccionada.Cells["celular_Empleado"].Value?.ToString(),
+                    FechaNacimiento = DateTime.TryParse(filaSeleccionada.Cells["fechaNac_Empleado"].Value?.ToString(), out var fechaNac)
+                                      ? fechaNac
+                                      : DateTime.MinValue,
+                    Calle = filaSeleccionada.Cells["calle_Empleado"].Value?.ToString(),
+                    NumeroCalle = filaSeleccionada.Cells["num_Calle_Empleado"].Value != null
+                                  ? Convert.ToInt32(filaSeleccionada.Cells["num_Calle_Empleado"].Value)
+                                  : 0,
+                    Piso = filaSeleccionada.Cells["piso_Empleado"].Value != null
+                           ? Convert.ToInt32(filaSeleccionada.Cells["piso_Empleado"].Value)
+                           : 0,
+                    Dpto = filaSeleccionada.Cells["dpto_Empleado"].Value?.ToString(),
+                    CodigoPostal = filaSeleccionada.Cells["codigo_PostalEmpleado"].Value != null
+                                   ? Convert.ToInt32(filaSeleccionada.Cells["codigo_PostalEmpleado"].Value)
+                                   : 0,
+                    IdLocalidad = filaSeleccionada.Cells["id_Localidad"].Value != null
+                                  ? Convert.ToInt32(filaSeleccionada.Cells["id_Localidad"].Value)
+                                  : 0,
+                    IdPerfil = filaSeleccionada.Cells["id_perfil"].Value != null
+                               ? Convert.ToInt32(filaSeleccionada.Cells["id_perfil"].Value)
+                               : 0,
+                    IdEstado = filaSeleccionada.Cells["id_Estado"].Value != null
+                               ? Convert.ToInt32(filaSeleccionada.Cells["id_Estado"].Value)
+                               : 0
+                };
+
+                // Completar la dirección completa si no está en el DataGridView
+                empleado.DireccionCompleta = $"{empleado.Calle} {empleado.NumeroCalle}, Piso {empleado.Piso}, Dpto {empleado.Dpto}, CP {empleado.CodigoPostal}";
+
+                // Abre el formulario EditarEmpleado y le pasa el empleado
+                var editarEmpleadoForm = new EditarEmpleado(empleado);
+                editarEmpleadoForm.ShowDialog();
+
+                // Recargar la lista de empleados después de editar
+                CargarEmpleados();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, seleccione un empleado para editar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void BAsignarUsuario_Click(object sender, EventArgs e)
@@ -163,6 +212,5 @@ namespace AgMaGest.C_Presentacion.Administrador
                 BEliminarEmpleado.Visible = false;
             }
         }
-
     }
 }

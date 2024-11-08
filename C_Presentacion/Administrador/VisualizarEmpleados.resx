@@ -118,17 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="BEliminarEmpleado.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAu
-        IgAALiIBquLdkgAAASJJREFUSEtjgAGtegY2lYkqfDCs1KHEr9orbqbcI35VtVfyPzas3C2xR6VLVBlZ
-        Hwgbz2RghRqLACp94r4qPZJ7kfA+lR6Jh6o9kv+wGQ7CQDV/gGouoOnbq9IrYQ81FgFU+iQysBlCDgZa
-        EAo1FgGU+8TDgJKg4KAYK/dIukONRQCtelEelYnSMtTAkvWSXFBjUQEowlR7xHeq9IgDw5V0DIyvRSCH
-        Qo3DBMBg0lbtkXgM9CbWsCUCH1OZKMQHNQ4TjFoAxKMWEMSjFhDEoxYQxMPdAvV+KXWVXsl7WDQShYH1
-        8z71TmFeqHGYAGQ70IKN+Cp6XBio77dqt3gp1hYFMlCZCGyG9EquBbrmJzaDsOIe8e9APF2rV0YIagwU
-        MDAAALsLv72jVaBhAAAAAElFTkSuQmCC
-</value>
-  </data>
   <data name="BEditarEmpleado.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAu
@@ -141,6 +130,17 @@
         BdCifGwlHl1CAB8YdQDVHACM5wKYA5T7Jd1VeqUtiMOSKyAOkPwMNYo8oNonaQtzAFm4R/IA1CjyAdAX
         PUDD/mEYTgj3SDxW7hPXhhpDGVDulVFR7pXwANZ6nsRg5W5xB5leGU6o9lEwCkbBYAYMDAB4n0Tf7Fk2
         egAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="BEliminarEmpleado.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAu
+        IgAALiIBquLdkgAAARxJREFUOE9jAAH5fn4B1W5pc+UeKSsQVu2ViFPpkXiu2iv5Hxkrd0tcUOqW8ISr
+        65cyUJmowg42BARUeiXsVXok7wEVvwRhlV7JL8gGwHGP5D+gBe+AbIi6HolD6p3CUlBjGBiUJ4qCXHEO
+        iG+SgoEWbpHvEpWAGsPAoFWvxaYyUVoG6CpXpX4JT2Kwar+EnVqPpAhDKAMz1BgIUOoUUVXtkbgDdO57
+        YjBQ7T7jmZJcUO0IoN4vpa7aI/4KJUzw4R7J03rd4txQ7QgwahACjxpEGNPHoF4JUK7GrhENA7PJSaxZ
+        RG2mpAhQ8gI2TegYmOv/Al0/XauegQ2qHQn8Z2BU7pcMUOkVf4RNMwJL/FXpEdurOUFaFaoTCBgYAN3u
+        lPHLjVlRAAAAAElFTkSuQmCC
 </value>
   </data>
   <metadata name="estado_Empleado.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
