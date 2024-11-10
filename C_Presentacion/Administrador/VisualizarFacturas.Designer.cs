@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VisualizarFacturas));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -42,19 +43,18 @@
             this.totalFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.BBuscarFactura = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TBBuscarFactura = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridEmpleados)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -89,14 +89,14 @@
             // 
             // dataGridEmpleados
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridEmpleados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridEmpleados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridEmpleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.fechaFactura,
@@ -188,11 +188,21 @@
             this.panel7.Size = new System.Drawing.Size(1030, 60);
             this.panel7.TabIndex = 3;
             // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(200)))), ((int)(((byte)(145)))));
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel10.Location = new System.Drawing.Point(504, 0);
+            this.panel10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(5, 60);
+            this.panel10.TabIndex = 15;
+            // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.Transparent;
+            this.panel8.Controls.Add(this.BBuscarFactura);
             this.panel8.Controls.Add(this.label2);
-            this.panel8.Controls.Add(this.pictureBox1);
             this.panel8.Controls.Add(this.TBBuscarFactura);
             this.panel8.Controls.Add(this.label1);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
@@ -201,6 +211,26 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(504, 60);
             this.panel8.TabIndex = 5;
+            // 
+            // BBuscarFactura
+            // 
+            this.BBuscarFactura.BackColor = System.Drawing.Color.Transparent;
+            this.BBuscarFactura.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BBuscarFactura.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BBuscarFactura.FlatAppearance.BorderSize = 0;
+            this.BBuscarFactura.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BBuscarFactura.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.BBuscarFactura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BBuscarFactura.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BBuscarFactura.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
+            this.BBuscarFactura.Image = ((System.Drawing.Image)(resources.GetObject("BBuscarFactura.Image")));
+            this.BBuscarFactura.Location = new System.Drawing.Point(452, 0);
+            this.BBuscarFactura.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BBuscarFactura.Name = "BBuscarFactura";
+            this.BBuscarFactura.Size = new System.Drawing.Size(52, 60);
+            this.BBuscarFactura.TabIndex = 5;
+            this.BBuscarFactura.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BBuscarFactura.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
@@ -212,19 +242,6 @@
             this.label2.Size = new System.Drawing.Size(183, 21);
             this.label2.TabIndex = 4;
             this.label2.Text = "Fecha/Núm de Factura";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox1.Image = global::AgMaGest.Properties.Resources.Icono_Buscar_Admin;
-            this.pictureBox1.Location = new System.Drawing.Point(459, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(45, 60);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
             // 
             // TBBuscarFactura
             // 
@@ -267,16 +284,6 @@
             this.panel5.Size = new System.Drawing.Size(1030, 48);
             this.panel5.TabIndex = 0;
             // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(200)))), ((int)(((byte)(145)))));
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel10.Location = new System.Drawing.Point(504, 0);
-            this.panel10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(5, 60);
-            this.panel10.TabIndex = 15;
-            // 
             // VisualizarFacturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -296,7 +303,6 @@
             this.panel7.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -313,7 +319,6 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox TBBuscarFactura;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaFactura;
@@ -324,5 +329,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre_Empleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalFactura;
         private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Button BBuscarFactura;
     }
 }

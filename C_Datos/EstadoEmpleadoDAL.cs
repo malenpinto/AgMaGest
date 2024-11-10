@@ -53,6 +53,21 @@ namespace AgMaGest.C_Datos
 
             return estados;
         }
+        public string ObtenerNombreEstado(int idEstado)
+        {
+            using (SqlConnection conn = new SqlConnection(ConnectionString))
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand("SELECT nombre_EstadoEmpleado FROM Estado_Empleado WHERE id_EstadoEmpleado = @IdEstado", conn))
+                {
+                    cmd.Parameters.AddWithValue("@IdEstado", idEstado);
+
+                    object resultado = cmd.ExecuteScalar();
+                    return resultado != null ? resultado.ToString() : "Desconocido"; // Devuelve "Desconocido" si no encuentra el estado.
+                }
+            }
+        }
+
     }
 }
 

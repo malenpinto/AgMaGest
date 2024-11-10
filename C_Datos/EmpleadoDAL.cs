@@ -134,7 +134,19 @@ namespace AgMaGest.C_Datos
                 using (SqlConnection conn = new SqlConnection(ConnectionString))
                 {
                     conn.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM Empleado WHERE cuil_Empleado = @CUIL", conn);
+                    string query = @"
+                        SELECT 
+                            e.cuil_Empleado, e.dni_Empleado, e.nombre_Empleado, e.apellido_Empleado,
+                            e.email_Empleado, e.celular_Empleado, e.fechaNac_Empleado, 
+                            e.calle_Empleado, e.num_Calle_Empleado, e.piso_Empleado, e.dpto_Empleado,
+                            e.codigo_PostalEmpleado, e.id_Localidad, e.id_perfil, e.id_Estado,
+                            l.nombre_Localidad, p.nombre_Provincia
+                        FROM Empleado e
+                        INNER JOIN Localidad l ON e.id_Localidad = l.id_Localidad
+                        INNER JOIN Provincia p ON l.id_Provincia = p.id_Provincia
+                        WHERE e.cuil_Empleado = @CUIL";
+
+                    SqlCommand cmd = new SqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@CUIL", cuil);
 
                     using (SqlDataReader reader = cmd.ExecuteReader())
@@ -145,7 +157,7 @@ namespace AgMaGest.C_Datos
                             {
                                 CUIL = reader.GetString(0),
                                 DNI = reader.GetString(1),
-                                Nombre = reader.GetString(2), 
+                                Nombre = reader.GetString(2),
                                 Apellido = reader.GetString(3),
                                 Email = reader.GetString(4),
                                 Celular = reader.GetString(5),
@@ -157,7 +169,9 @@ namespace AgMaGest.C_Datos
                                 CodigoPostal = reader.GetInt32(11),
                                 IdLocalidad = reader.GetInt32(12),
                                 IdPerfil = reader.GetInt32(13),
-                                IdEstado = reader.GetInt32(14)
+                                IdEstado = reader.GetInt32(14),
+                                LocalidadNombre = reader.GetString(15),  // Nombre de la Localidad
+                                ProvinciaNombre = reader.GetString(16)  // Nombre de la Provincia
                             };
                         }
                     }
@@ -172,6 +186,7 @@ namespace AgMaGest.C_Datos
             return empleado;
         }
 
+
         public List<Empleado> ObtenerTodosLosEmpleados()
         {
             List<Empleado> empleados = new List<Empleado>();
@@ -185,9 +200,8 @@ namespace AgMaGest.C_Datos
                     SqlCommand cmd = new SqlCommand(@"
                         SELECT e.cuil_Empleado, e.dni_Empleado, e.nombre_Empleado, e.apellido_Empleado, e.email_Empleado, 
                                e.celular_Empleado, e.fechaNac_Empleado, 
-                               CONCAT(e.calle_Empleado, ' ', e.num_Calle_Empleado, 
-                                      CASE WHEN e.piso_Empleado IS NOT NULL THEN ' Piso ' + CAST(e.piso_Empleado AS NVARCHAR) ELSE '' END,
-                                      CASE WHEN e.dpto_Empleado IS NOT NULL THEN ' Dpto ' + e.dpto_Empleado ELSE '' END) AS DireccionCompleta,
+                               e.calle_Empleado AS Calle, e.num_Calle_Empleado AS NumeroCalle, 
+                               e.piso_Empleado AS Piso, e.dpto_Empleado AS Dpto,
                                e.codigo_PostalEmpleado AS CodigoPostal,
                                l.nombre_Localidad AS LocalidadNombre, 
                                p.nombre_Provincia AS ProvinciaNombre, 
@@ -214,15 +228,100 @@ namespace AgMaGest.C_Datos
                                 Email = reader.GetString(4),
                                 Celular = reader.GetString(5),
                                 FechaNacimiento = reader.GetDateTime(6),
-                                DireccionCompleta = reader.IsDBNull(7) ? null : reader.GetString(7),
-                                CodigoPostal = reader.IsDBNull(8) ? 0 : reader.GetInt32(8),
 
-                                // Datos adicionales de localidad, provincia, país, perfil y estado
-                                LocalidadNombre = reader.GetString(9),
-                                ProvinciaNombre = reader.GetString(10),
-                                PaisNombre = reader.GetString(11),
-                                PerfilNombre = reader.GetString(12),
-                                EstadoNombre = reader.GetString(13)
+                                // Campos de dirección
+                                Calle = reader.GetString(7),
+                                NumeroCalle = reader.GetInt32(8),
+                                Piso = reader.IsDBNull(9) ? 0 : reader.GetInt32(9),
+                                Dpto = reader.IsDBNull(10) ? null : reader.GetString(10),
+
+                                CodigoPostal = reader.IsDBNull(11) ? 0 : reader.GetInt32(11),
+
+                                // Otros campos
+                                LocalidadNombre = reader.GetString(12),
+                                ProvinciaNombre = reader.GetString(13),
+                                PaisNombre = reader.GetString(14),
+                                PerfilNombre = reader.GetString(15),
+                                EstadoNombre = reader.GetString(16)
+                            };
+
+                            empleados.Add(empleado);
+                        }
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine($"Error de SQL: {ex.Message}");
+                throw;
+            }
+
+            return empleados;
+        }
+
+        public List<Empleado> FiltrarEmpleados(string texto)
+        {
+            List<Empleado> empleados = new List<Empleado>();
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConnectionString))
+                {
+                    conn.Open();
+                    // Consulta SQL con joins y filtro
+                    SqlCommand cmd = new SqlCommand(@"
+                SELECT e.cuil_Empleado, e.dni_Empleado, e.nombre_Empleado, e.apellido_Empleado, e.email_Empleado, 
+                       e.celular_Empleado, e.fechaNac_Empleado, 
+                       e.calle_Empleado AS Calle, e.num_Calle_Empleado AS NumeroCalle, 
+                       e.piso_Empleado AS Piso, e.dpto_Empleado AS Dpto,
+                       e.codigo_PostalEmpleado AS CodigoPostal,
+                       l.nombre_Localidad AS LocalidadNombre, 
+                       p.nombre_Provincia AS ProvinciaNombre, 
+                       pa.nombre_Pais AS PaisNombre,
+                       pr.nombre_Perfil AS PerfilNombre,
+                       es.nombre_EstadoEmpleado AS EstadoNombre
+                FROM Empleado e
+                INNER JOIN Localidad l ON e.id_Localidad = l.id_Localidad
+                INNER JOIN Provincia p ON l.id_Provincia = p.id_Provincia
+                INNER JOIN Pais pa ON p.id_Pais = pa.id_Pais
+                INNER JOIN Perfil_Empleado pr ON e.id_perfil = pr.id_Perfil
+                INNER JOIN Estado_Empleado es ON e.id_Estado = es.id_EstadoEmpleado
+                WHERE e.cuil_Empleado LIKE @texto
+                   OR e.dni_Empleado LIKE @texto
+                   OR e.nombre_Empleado LIKE @texto
+                   OR e.apellido_Empleado LIKE @texto
+                   OR e.email_Empleado LIKE @texto", conn);
+
+                    cmd.Parameters.AddWithValue("@texto", $"%{texto}%");
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Empleado empleado = new Empleado
+                            {
+                                CUIL = reader.GetString(0),
+                                DNI = reader.GetString(1),
+                                Nombre = reader.GetString(2),
+                                Apellido = reader.GetString(3),
+                                Email = reader.GetString(4),
+                                Celular = reader.GetString(5),
+                                FechaNacimiento = reader.GetDateTime(6),
+
+                                // Campos de dirección
+                                Calle = reader.GetString(7),
+                                NumeroCalle = reader.GetInt32(8),
+                                Piso = reader.IsDBNull(9) ? 0 : reader.GetInt32(9),
+                                Dpto = reader.IsDBNull(10) ? null : reader.GetString(10),
+
+                                CodigoPostal = reader.IsDBNull(11) ? 0 : reader.GetInt32(11),
+
+                                // Otros campos
+                                LocalidadNombre = reader.GetString(12),
+                                ProvinciaNombre = reader.GetString(13),
+                                PaisNombre = reader.GetString(14),
+                                PerfilNombre = reader.GetString(15),
+                                EstadoNombre = reader.GetString(16)
                             };
 
                             empleados.Add(empleado);

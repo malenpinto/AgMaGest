@@ -23,12 +23,14 @@ namespace AgMaGest.C_Presentacion.Administrador
             this.KeyPreview = true; // Permite que el formulario capture el evento KeyDown
             this.Load += IngresarEmpleado_Load; // Suscribirse al evento Load
             CBPerfilEmpleado.DataSource = null; // Asegurar de que esté vacío al principio
+            CBEstadoEmpleado.DataSource = null;
         }
 
         private void IngresarEmpleado_Load(object sender, EventArgs e)
         {
             CargarPaises(); // Asegura de cargar los países
             CargarPerfiles(); // Cargar perfiles
+            CargarEstados(); // Cargar Estados
         }
 
         private void IngresarEmpleado_KeyDown(object sender, KeyEventArgs e)
@@ -164,6 +166,24 @@ namespace AgMaGest.C_Presentacion.Administrador
             CBPerfilEmpleado.SelectedIndex = 0;
         }
 
+        private void CargarEstados()
+        {
+            // Obtener la lista de perfiles desde la base de datos
+            EstadoEmpleadoDAL estadoDAL = new EstadoEmpleadoDAL();
+            List<EstadoEmpleado> estados = estadoDAL.ObtenerEstadoEmpleado();
+
+            // Agregar una opción por defecto "Seleccione una"
+            estados.Insert(0, new EstadoEmpleado { IdEstadoEmpleado = 0, NombreEstadoEmpleado = "Seleccione un estado" });
+
+            // Asignar la lista al ComboBox
+            CBEstadoEmpleado.DataSource = estados; // Asignar la lista de perfiles al ComboBox
+            CBEstadoEmpleado.DisplayMember = "NombreEstadoEmpleado"; // Campo que se mostrará en el ComboBox
+            CBEstadoEmpleado.ValueMember = "IdEstadoEmpleado"; // Campo que se utilizará como valor
+
+            // Seleccionar la opción por defecto
+            CBEstadoEmpleado.SelectedIndex = 0;
+        }
+
 
         private void BAgregarEmpleado_Click(object sender, EventArgs e)
         {
@@ -186,6 +206,12 @@ namespace AgMaGest.C_Presentacion.Administrador
             if (CBPerfilEmpleado.SelectedValue.ToString() == "0")
             {
                 MessageBox.Show("Debe seleccionar un perfil.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (CBEstadoEmpleado.SelectedValue.ToString() == "0")
+            {
+                MessageBox.Show("Debe seleccionar un estado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -215,7 +241,6 @@ namespace AgMaGest.C_Presentacion.Administrador
                 string.IsNullOrWhiteSpace(TBApellidoEmpleado.Text) ||
                 string.IsNullOrWhiteSpace(TBDniEmpleado.Text) ||
                 string.IsNullOrWhiteSpace(TBCuilEmpleado.Text) ||
-                CBPerfilEmpleado.SelectedIndex == -1 ||
                 string.IsNullOrWhiteSpace(TBCelularEmpleado.Text) ||
                 string.IsNullOrWhiteSpace(TBEmailEmpleado.Text) ||
                 string.IsNullOrWhiteSpace(TBCalleEmpleado.Text) ||
@@ -223,7 +248,9 @@ namespace AgMaGest.C_Presentacion.Administrador
                 string.IsNullOrWhiteSpace(TBCodPostalEmpleado.Text) ||
                 CBPaisEmpleado.SelectedIndex == -1 ||
                 CBProvinciaEmpleado.SelectedIndex == -1 ||
-                CBLocalidadEmpleado.SelectedIndex == -1)
+                CBLocalidadEmpleado.SelectedIndex == -1 ||
+                CBPerfilEmpleado.SelectedIndex == -1 ||
+                CBEstadoEmpleado.SelectedIndex == -1)
             {
                 // Mostrar mensaje de error si falta algún campo
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -251,7 +278,7 @@ namespace AgMaGest.C_Presentacion.Administrador
                     Dpto = string.IsNullOrWhiteSpace(TBDptoEmpleado.Text) ? "-" : TBDptoEmpleado.Text.Trim(),
                     CodigoPostal = int.Parse(TBCodPostalEmpleado.Text.Trim()), // Convertir a int
                     IdPerfil = Convert.ToInt32(CBPerfilEmpleado.SelectedValue), // Asumiendo que tenemos una lista de perfiles
-                    IdEstado = 1, // 1 estado activo
+                    IdEstado = Convert.ToInt32(CBEstadoEmpleado.SelectedValue),
                     IdLocalidad = Convert.ToInt32(CBLocalidadEmpleado.SelectedValue) // Asignar ID de la localidad
                 };
 
@@ -280,6 +307,7 @@ namespace AgMaGest.C_Presentacion.Administrador
 
             // Restablecer ComboBox de perfil
             CBPerfilEmpleado.SelectedIndex = 0;
+            CBEstadoEmpleado.SelectedIndex = 0;
 
             // Restablecer Fecha de Nacimiento a la fecha actual
             DTFechaNacEmpleado.Value = DateTime.Now;

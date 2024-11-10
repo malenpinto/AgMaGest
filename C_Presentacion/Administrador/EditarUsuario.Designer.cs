@@ -91,7 +91,7 @@
             this.TBEmailEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.TBEmailEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TBEmailEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBEmailEmpleado.Location = new System.Drawing.Point(356, 211);
+            this.TBEmailEmpleado.Location = new System.Drawing.Point(356, 231);
             this.TBEmailEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TBEmailEmpleado.Name = "TBEmailEmpleado";
             this.TBEmailEmpleado.Size = new System.Drawing.Size(286, 24);
@@ -104,7 +104,7 @@
             this.label1.BackColor = System.Drawing.Color.SeaGreen;
             this.label1.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(356, 177);
+            this.label1.Location = new System.Drawing.Point(356, 197);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 23);
             this.label1.TabIndex = 178;
@@ -115,7 +115,7 @@
             this.TBPerfilEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.TBPerfilEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TBPerfilEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBPerfilEmpleado.Location = new System.Drawing.Point(49, 211);
+            this.TBPerfilEmpleado.Location = new System.Drawing.Point(49, 231);
             this.TBPerfilEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TBPerfilEmpleado.Name = "TBPerfilEmpleado";
             this.TBPerfilEmpleado.Size = new System.Drawing.Size(286, 24);
@@ -128,7 +128,7 @@
             this.label5.BackColor = System.Drawing.Color.SeaGreen;
             this.label5.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label5.Location = new System.Drawing.Point(49, 177);
+            this.label5.Location = new System.Drawing.Point(49, 198);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(56, 23);
             this.label5.TabIndex = 176;
@@ -208,7 +208,7 @@
             this.TBCuilEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.TBCuilEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TBCuilEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBCuilEmpleado.Location = new System.Drawing.Point(356, 145);
+            this.TBCuilEmpleado.Location = new System.Drawing.Point(356, 165);
             this.TBCuilEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TBCuilEmpleado.Name = "TBCuilEmpleado";
             this.TBCuilEmpleado.Size = new System.Drawing.Size(286, 24);
@@ -219,7 +219,7 @@
             this.TBDniEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.TBDniEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TBDniEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBDniEmpleado.Location = new System.Drawing.Point(49, 145);
+            this.TBDniEmpleado.Location = new System.Drawing.Point(49, 165);
             this.TBDniEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TBDniEmpleado.Name = "TBDniEmpleado";
             this.TBDniEmpleado.Size = new System.Drawing.Size(286, 24);
@@ -232,7 +232,7 @@
             this.label7.BackColor = System.Drawing.Color.SeaGreen;
             this.label7.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label7.Location = new System.Drawing.Point(356, 119);
+            this.label7.Location = new System.Drawing.Point(356, 134);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(50, 23);
             this.label7.TabIndex = 160;
@@ -244,7 +244,7 @@
             this.label8.BackColor = System.Drawing.Color.SeaGreen;
             this.label8.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label8.Location = new System.Drawing.Point(49, 119);
+            this.label8.Location = new System.Drawing.Point(49, 134);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(40, 23);
             this.label8.TabIndex = 159;
@@ -302,7 +302,7 @@
             this.TBApellidoEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.TBApellidoEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TBApellidoEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBApellidoEmpleado.Location = new System.Drawing.Point(356, 90);
+            this.TBApellidoEmpleado.Location = new System.Drawing.Point(356, 95);
             this.TBApellidoEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TBApellidoEmpleado.Name = "TBApellidoEmpleado";
             this.TBApellidoEmpleado.Size = new System.Drawing.Size(286, 24);
@@ -313,7 +313,7 @@
             this.TBNombreEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.TBNombreEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TBNombreEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBNombreEmpleado.Location = new System.Drawing.Point(49, 90);
+            this.TBNombreEmpleado.Location = new System.Drawing.Point(48, 95);
             this.TBNombreEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TBNombreEmpleado.Name = "TBNombreEmpleado";
             this.TBNombreEmpleado.Size = new System.Drawing.Size(286, 24);
@@ -389,28 +389,28 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox TBPerfilEmpleado;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button BEditarUsuario;
         private System.Windows.Forms.Button BSalirEditarUsuario;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox TBCuilEmpleado;
-        private System.Windows.Forms.TextBox TBDniEmpleado;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox TBContraseñaUsuario;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TBUsuario;
         private System.Windows.Forms.Label LUsuario;
-        private System.Windows.Forms.TextBox TBApellidoEmpleado;
-        private System.Windows.Forms.TextBox TBNombreEmpleado;
         private System.Windows.Forms.Label LApellido;
         private System.Windows.Forms.Label LNombre;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox TBEmailEmpleado;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox TBEmailEmpleado;
+        private System.Windows.Forms.TextBox TBPerfilEmpleado;
+        private System.Windows.Forms.TextBox TBCuilEmpleado;
+        private System.Windows.Forms.TextBox TBDniEmpleado;
+        private System.Windows.Forms.TextBox TBApellidoEmpleado;
+        private System.Windows.Forms.TextBox TBNombreEmpleado;
     }
 }

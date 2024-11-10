@@ -54,5 +54,19 @@ namespace AgMaGest.C_Datos
 
             return perfiles;
         }
+        public string ObtenerNombrePerfil(int idPerfil)
+        {
+            using (SqlConnection conn = new SqlConnection(ConnectionString))
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand("SELECT nombre_Perfil FROM Perfil_Empleado WHERE id_Perfil = @IdPerfil", conn))
+                {
+                    cmd.Parameters.AddWithValue("@IdPerfil", idPerfil);
+
+                    object resultado = cmd.ExecuteScalar();
+                    return resultado != null ? resultado.ToString() : "Desconocido"; // Devuelve "Desconocido" si no encuentra el perfil.
+                }
+            }
+        }
     }
 }

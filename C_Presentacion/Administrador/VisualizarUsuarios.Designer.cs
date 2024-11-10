@@ -49,7 +49,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.PBBuscarUsuario = new System.Windows.Forms.PictureBox();
+            this.BBuscarUsuario = new System.Windows.Forms.Button();
             this.TBBuscarUsuario = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -58,7 +58,6 @@
             this.panel4.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PBBuscarUsuario)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -277,7 +276,7 @@
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.Transparent;
-            this.panel8.Controls.Add(this.PBBuscarUsuario);
+            this.panel8.Controls.Add(this.BBuscarUsuario);
             this.panel8.Controls.Add(this.TBBuscarUsuario);
             this.panel8.Controls.Add(this.label1);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
@@ -287,18 +286,25 @@
             this.panel8.Size = new System.Drawing.Size(484, 60);
             this.panel8.TabIndex = 5;
             // 
-            // PBBuscarUsuario
+            // BBuscarUsuario
             // 
-            this.PBBuscarUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PBBuscarUsuario.Dock = System.Windows.Forms.DockStyle.Right;
-            this.PBBuscarUsuario.Image = global::AgMaGest.Properties.Resources.Icono_Buscar_Admin;
-            this.PBBuscarUsuario.Location = new System.Drawing.Point(439, 0);
-            this.PBBuscarUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.PBBuscarUsuario.Name = "PBBuscarUsuario";
-            this.PBBuscarUsuario.Size = new System.Drawing.Size(45, 60);
-            this.PBBuscarUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.PBBuscarUsuario.TabIndex = 3;
-            this.PBBuscarUsuario.TabStop = false;
+            this.BBuscarUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.BBuscarUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BBuscarUsuario.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BBuscarUsuario.FlatAppearance.BorderSize = 0;
+            this.BBuscarUsuario.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BBuscarUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.BBuscarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BBuscarUsuario.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BBuscarUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
+            this.BBuscarUsuario.Image = ((System.Drawing.Image)(resources.GetObject("BBuscarUsuario.Image")));
+            this.BBuscarUsuario.Location = new System.Drawing.Point(432, 0);
+            this.BBuscarUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BBuscarUsuario.Name = "BBuscarUsuario";
+            this.BBuscarUsuario.Size = new System.Drawing.Size(52, 60);
+            this.BBuscarUsuario.TabIndex = 5;
+            this.BBuscarUsuario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BBuscarUsuario.UseVisualStyleBackColor = false;
             // 
             // TBBuscarUsuario
             // 
@@ -359,7 +365,6 @@
             this.panel7.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PBBuscarUsuario)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -377,7 +382,6 @@
         private System.Windows.Forms.Button BEditarUsuario;
         private System.Windows.Forms.Button BEliminarUsuario;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.PictureBox PBBuscarUsuario;
         private System.Windows.Forms.TextBox TBBuscarUsuario;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
@@ -390,5 +394,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre_Usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellido_Usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn email_Usuario;
+        private System.Windows.Forms.Button BBuscarUsuario;
     }
 }

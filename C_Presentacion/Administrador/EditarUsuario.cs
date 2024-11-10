@@ -26,7 +26,7 @@ namespace AgMaGest.C_Presentacion.Administrador
             {
                 // Mostrar los datos del usuario
                 TBUsuario.Text = usuario.CuilEmpleado;
-                TBContraseñaUsuario.Text = usuario.PassswordUsuario;
+
 
                 // Mostrar los datos del empleado asociado
                 TBCuilEmpleado.Text = usuario.Empleado?.CUIL ?? "N/A";

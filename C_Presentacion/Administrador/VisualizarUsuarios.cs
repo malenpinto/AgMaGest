@@ -131,7 +131,7 @@ namespace AgMaGest.C_Presentacion.Administrador
             }
             else
             {
-                MessageBox.Show("Seleccione un usuario para editar.");
+                MessageBox.Show("Por favor, selecciona un usuario para editar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -148,8 +148,8 @@ namespace AgMaGest.C_Presentacion.Administrador
                 int idUsuario = Convert.ToInt32(filaSeleccionada.Cells["IdUsuario"].Value);
 
                 // Mostrar mensaje de confirmación
-                string mensaje = $"¿Estás seguro que deseas eliminar al usuario?\nCUIL: {cuilEmpleado}\nNombre: {nombreEmpleado} {apellidoEmpleado}";
-                DialogResult resultado = MessageBox.Show(mensaje, "Confirmar Eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                string mensaje = $"¿Estás seguro que deseas eliminar al usuario?\nCUIL: {cuilEmpleado}\nEmpleado/a: {apellidoEmpleado}, {nombreEmpleado}";
+                DialogResult resultado = MessageBox.Show(mensaje, "Confirmar Eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
 
                 if (resultado == DialogResult.Yes)
                 {

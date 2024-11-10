@@ -71,6 +71,7 @@
     <Compile Include="C_Datos\PerfilEmpleadoDAL.cs" />
     <Compile Include="C_Datos\ProvinciaDAL.cs" />
     <Compile Include="C_Datos\TipoVehiculoDAL.cs" />
+    <Compile Include="C_Datos\UbicacionDAL.cs" />
     <Compile Include="C_Datos\UsuarioDAL.cs" />
     <Compile Include="C_Datos\VehiculoDAL.cs" />
     <Compile Include="C_Logica\Entidades\Cliente.cs" />
@@ -523,9 +524,6 @@
     <None Include="Resources\Icono-Proveedor-Admin.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Icono-Buscar-Admin.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Icono-Acercade.png" />
     <None Include="Resources\Icono-Avatar.png" />
   </ItemGroup>
@@ -573,6 +571,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Icono-MasVehiculo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono-Buscar-Admin.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

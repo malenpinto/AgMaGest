@@ -28,14 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VisualizarInventario));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.BEliminarVehiculo = new System.Windows.Forms.Button();
+            this.BEditarVehiculo = new System.Windows.Forms.Button();
+            this.BAgregarVehiculo = new System.Windows.Forms.Button();
+            this.panel10 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.BBuscarVehiculo = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.TBBuscarVehiculo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -53,16 +58,10 @@
             this.anio_Vehiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.km_Vehiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.condicion_Vehiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.BEliminarVehiculo = new System.Windows.Forms.Button();
-            this.BEditarVehiculo = new System.Windows.Forms.Button();
-            this.BAgregarVehiculo = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridInventario)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -121,11 +120,85 @@
             this.panel7.Size = new System.Drawing.Size(1030, 60);
             this.panel7.TabIndex = 3;
             // 
+            // BEliminarVehiculo
+            // 
+            this.BEliminarVehiculo.BackColor = System.Drawing.Color.Transparent;
+            this.BEliminarVehiculo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BEliminarVehiculo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BEliminarVehiculo.FlatAppearance.BorderSize = 0;
+            this.BEliminarVehiculo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BEliminarVehiculo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.BEliminarVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BEliminarVehiculo.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BEliminarVehiculo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
+            this.BEliminarVehiculo.Image = ((System.Drawing.Image)(resources.GetObject("BEliminarVehiculo.Image")));
+            this.BEliminarVehiculo.Location = new System.Drawing.Point(825, 0);
+            this.BEliminarVehiculo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BEliminarVehiculo.Name = "BEliminarVehiculo";
+            this.BEliminarVehiculo.Size = new System.Drawing.Size(54, 60);
+            this.BEliminarVehiculo.TabIndex = 12;
+            this.BEliminarVehiculo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BEliminarVehiculo.UseVisualStyleBackColor = false;
+            // 
+            // BEditarVehiculo
+            // 
+            this.BEditarVehiculo.BackColor = System.Drawing.Color.Transparent;
+            this.BEditarVehiculo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BEditarVehiculo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BEditarVehiculo.FlatAppearance.BorderSize = 0;
+            this.BEditarVehiculo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BEditarVehiculo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.BEditarVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BEditarVehiculo.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BEditarVehiculo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
+            this.BEditarVehiculo.Image = ((System.Drawing.Image)(resources.GetObject("BEditarVehiculo.Image")));
+            this.BEditarVehiculo.Location = new System.Drawing.Point(773, 0);
+            this.BEditarVehiculo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BEditarVehiculo.Name = "BEditarVehiculo";
+            this.BEditarVehiculo.Size = new System.Drawing.Size(52, 60);
+            this.BEditarVehiculo.TabIndex = 13;
+            this.BEditarVehiculo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BEditarVehiculo.UseVisualStyleBackColor = false;
+            this.BEditarVehiculo.Click += new System.EventHandler(this.BEditarVehiculo_Click_1);
+            // 
+            // BAgregarVehiculo
+            // 
+            this.BAgregarVehiculo.BackColor = System.Drawing.Color.Transparent;
+            this.BAgregarVehiculo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BAgregarVehiculo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BAgregarVehiculo.FlatAppearance.BorderSize = 0;
+            this.BAgregarVehiculo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BAgregarVehiculo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.BAgregarVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BAgregarVehiculo.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BAgregarVehiculo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
+            this.BAgregarVehiculo.Image = global::AgMaGest.Properties.Resources.Icono_MasVehiculo;
+            this.BAgregarVehiculo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BAgregarVehiculo.Location = new System.Drawing.Point(514, 0);
+            this.BAgregarVehiculo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BAgregarVehiculo.Name = "BAgregarVehiculo";
+            this.BAgregarVehiculo.Size = new System.Drawing.Size(259, 60);
+            this.BAgregarVehiculo.TabIndex = 8;
+            this.BAgregarVehiculo.Text = " Nuevo Vehículo";
+            this.BAgregarVehiculo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BAgregarVehiculo.UseVisualStyleBackColor = false;
+            this.BAgregarVehiculo.Click += new System.EventHandler(this.BAgregarVehiculo_Click);
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(200)))), ((int)(((byte)(145)))));
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel10.Location = new System.Drawing.Point(509, 0);
+            this.panel10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(5, 60);
+            this.panel10.TabIndex = 14;
+            // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.Transparent;
+            this.panel8.Controls.Add(this.BBuscarVehiculo);
             this.panel8.Controls.Add(this.label2);
-            this.panel8.Controls.Add(this.pictureBox1);
             this.panel8.Controls.Add(this.TBBuscarVehiculo);
             this.panel8.Controls.Add(this.label1);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
@@ -134,6 +207,26 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(509, 60);
             this.panel8.TabIndex = 5;
+            // 
+            // BBuscarVehiculo
+            // 
+            this.BBuscarVehiculo.BackColor = System.Drawing.Color.Transparent;
+            this.BBuscarVehiculo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BBuscarVehiculo.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BBuscarVehiculo.FlatAppearance.BorderSize = 0;
+            this.BBuscarVehiculo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BBuscarVehiculo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.BBuscarVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BBuscarVehiculo.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BBuscarVehiculo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
+            this.BBuscarVehiculo.Image = ((System.Drawing.Image)(resources.GetObject("BBuscarVehiculo.Image")));
+            this.BBuscarVehiculo.Location = new System.Drawing.Point(457, 0);
+            this.BBuscarVehiculo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BBuscarVehiculo.Name = "BBuscarVehiculo";
+            this.BBuscarVehiculo.Size = new System.Drawing.Size(52, 60);
+            this.BBuscarVehiculo.TabIndex = 5;
+            this.BBuscarVehiculo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BBuscarVehiculo.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
@@ -299,93 +392,6 @@
             this.condicion_Vehiculo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.condicion_Vehiculo.Width = 125;
             // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(200)))), ((int)(((byte)(145)))));
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel10.Location = new System.Drawing.Point(509, 0);
-            this.panel10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(5, 60);
-            this.panel10.TabIndex = 14;
-            // 
-            // BEliminarVehiculo
-            // 
-            this.BEliminarVehiculo.BackColor = System.Drawing.Color.Transparent;
-            this.BEliminarVehiculo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BEliminarVehiculo.Dock = System.Windows.Forms.DockStyle.Left;
-            this.BEliminarVehiculo.FlatAppearance.BorderSize = 0;
-            this.BEliminarVehiculo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.BEliminarVehiculo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.BEliminarVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BEliminarVehiculo.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BEliminarVehiculo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
-            this.BEliminarVehiculo.Image = ((System.Drawing.Image)(resources.GetObject("BEliminarVehiculo.Image")));
-            this.BEliminarVehiculo.Location = new System.Drawing.Point(825, 0);
-            this.BEliminarVehiculo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BEliminarVehiculo.Name = "BEliminarVehiculo";
-            this.BEliminarVehiculo.Size = new System.Drawing.Size(54, 60);
-            this.BEliminarVehiculo.TabIndex = 12;
-            this.BEliminarVehiculo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BEliminarVehiculo.UseVisualStyleBackColor = false;
-            // 
-            // BEditarVehiculo
-            // 
-            this.BEditarVehiculo.BackColor = System.Drawing.Color.Transparent;
-            this.BEditarVehiculo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BEditarVehiculo.Dock = System.Windows.Forms.DockStyle.Left;
-            this.BEditarVehiculo.FlatAppearance.BorderSize = 0;
-            this.BEditarVehiculo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.BEditarVehiculo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.BEditarVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BEditarVehiculo.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BEditarVehiculo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
-            this.BEditarVehiculo.Image = ((System.Drawing.Image)(resources.GetObject("BEditarVehiculo.Image")));
-            this.BEditarVehiculo.Location = new System.Drawing.Point(773, 0);
-            this.BEditarVehiculo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BEditarVehiculo.Name = "BEditarVehiculo";
-            this.BEditarVehiculo.Size = new System.Drawing.Size(52, 60);
-            this.BEditarVehiculo.TabIndex = 13;
-            this.BEditarVehiculo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BEditarVehiculo.UseVisualStyleBackColor = false;
-            this.BEditarVehiculo.Click += new System.EventHandler(this.BEditarVehiculo_Click_1);
-            // 
-            // BAgregarVehiculo
-            // 
-            this.BAgregarVehiculo.BackColor = System.Drawing.Color.Transparent;
-            this.BAgregarVehiculo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BAgregarVehiculo.Dock = System.Windows.Forms.DockStyle.Left;
-            this.BAgregarVehiculo.FlatAppearance.BorderSize = 0;
-            this.BAgregarVehiculo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.BAgregarVehiculo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.BAgregarVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BAgregarVehiculo.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BAgregarVehiculo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
-            this.BAgregarVehiculo.Image = global::AgMaGest.Properties.Resources.Icono_MasVehiculo;
-            this.BAgregarVehiculo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BAgregarVehiculo.Location = new System.Drawing.Point(514, 0);
-            this.BAgregarVehiculo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BAgregarVehiculo.Name = "BAgregarVehiculo";
-            this.BAgregarVehiculo.Size = new System.Drawing.Size(259, 60);
-            this.BAgregarVehiculo.TabIndex = 8;
-            this.BAgregarVehiculo.Text = " Nuevo Vehículo";
-            this.BAgregarVehiculo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BAgregarVehiculo.UseVisualStyleBackColor = false;
-            this.BAgregarVehiculo.Click += new System.EventHandler(this.BAgregarVehiculo_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox1.Image = global::AgMaGest.Properties.Resources.Icono_Buscar_Admin;
-            this.pictureBox1.Location = new System.Drawing.Point(464, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(45, 60);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
             // VisualizarInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -405,7 +411,6 @@
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridInventario)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -422,7 +427,6 @@
         private System.Windows.Forms.Button BAgregarVehiculo;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox TBBuscarVehiculo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridInventario;
@@ -440,5 +444,6 @@
         private System.Windows.Forms.Button BEliminarVehiculo;
         private System.Windows.Forms.Button BEditarVehiculo;
         private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Button BBuscarVehiculo;
     }
 }

@@ -31,8 +31,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.DTFechaNacEmpleado = new System.Windows.Forms.DateTimePicker();
             this.CBLocalidadEmpleado = new System.Windows.Forms.ComboBox();
-            this.CBPerfilEmpleado = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.CBProvinciaEmpleado = new System.Windows.Forms.ComboBox();
             this.CBPaisEmpleado = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -70,19 +68,29 @@
             this.LNombre = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.CBEstadoEmpleado = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.CBPerfilEmpleado = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.GhostWhite;
-            this.panel1.Controls.Add(this.DTFechaNacEmpleado);
-            this.panel1.Controls.Add(this.CBLocalidadEmpleado);
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.CBEstadoEmpleado);
+            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.CBPerfilEmpleado);
             this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.DTFechaNacEmpleado);
+            this.panel1.Controls.Add(this.CBLocalidadEmpleado);
             this.panel1.Controls.Add(this.CBProvinciaEmpleado);
             this.panel1.Controls.Add(this.CBPaisEmpleado);
             this.panel1.Controls.Add(this.panel3);
@@ -126,7 +134,7 @@
             // DTFechaNacEmpleado
             // 
             this.DTFechaNacEmpleado.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DTFechaNacEmpleado.Location = new System.Drawing.Point(357, 171);
+            this.DTFechaNacEmpleado.Location = new System.Drawing.Point(361, 165);
             this.DTFechaNacEmpleado.MinDate = new System.DateTime(1924, 1, 1, 0, 0, 0, 0);
             this.DTFechaNacEmpleado.Name = "DTFechaNacEmpleado";
             this.DTFechaNacEmpleado.Size = new System.Drawing.Size(230, 22);
@@ -137,41 +145,18 @@
             this.CBLocalidadEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.CBLocalidadEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBLocalidadEmpleado.FormattingEnabled = true;
-            this.CBLocalidadEmpleado.Location = new System.Drawing.Point(356, 554);
+            this.CBLocalidadEmpleado.Location = new System.Drawing.Point(358, 483);
             this.CBLocalidadEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CBLocalidadEmpleado.Name = "CBLocalidadEmpleado";
             this.CBLocalidadEmpleado.Size = new System.Drawing.Size(281, 24);
             this.CBLocalidadEmpleado.TabIndex = 16;
-            // 
-            // CBPerfilEmpleado
-            // 
-            this.CBPerfilEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.CBPerfilEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CBPerfilEmpleado.FormattingEnabled = true;
-            this.CBPerfilEmpleado.Location = new System.Drawing.Point(49, 226);
-            this.CBPerfilEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.CBPerfilEmpleado.Name = "CBPerfilEmpleado";
-            this.CBPerfilEmpleado.Size = new System.Drawing.Size(281, 24);
-            this.CBPerfilEmpleado.TabIndex = 5;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.SeaGreen;
-            this.label5.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label5.Location = new System.Drawing.Point(49, 197);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 23);
-            this.label5.TabIndex = 176;
-            this.label5.Text = "Perfil";
             // 
             // CBProvinciaEmpleado
             // 
             this.CBProvinciaEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.CBProvinciaEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBProvinciaEmpleado.FormattingEnabled = true;
-            this.CBProvinciaEmpleado.Location = new System.Drawing.Point(49, 554);
+            this.CBProvinciaEmpleado.Location = new System.Drawing.Point(51, 483);
             this.CBProvinciaEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CBProvinciaEmpleado.Name = "CBProvinciaEmpleado";
             this.CBProvinciaEmpleado.Size = new System.Drawing.Size(281, 24);
@@ -182,7 +167,7 @@
             this.CBPaisEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.CBPaisEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBPaisEmpleado.FormattingEnabled = true;
-            this.CBPaisEmpleado.Location = new System.Drawing.Point(356, 490);
+            this.CBPaisEmpleado.Location = new System.Drawing.Point(358, 419);
             this.CBPaisEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CBPaisEmpleado.Name = "CBPaisEmpleado";
             this.CBPaisEmpleado.Size = new System.Drawing.Size(281, 24);
@@ -222,7 +207,7 @@
             this.TBDptoEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.TBDptoEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TBDptoEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBDptoEmpleado.Location = new System.Drawing.Point(49, 490);
+            this.TBDptoEmpleado.Location = new System.Drawing.Point(51, 419);
             this.TBDptoEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TBDptoEmpleado.Name = "TBDptoEmpleado";
             this.TBDptoEmpleado.Size = new System.Drawing.Size(141, 24);
@@ -254,7 +239,7 @@
             this.label11.BackColor = System.Drawing.Color.SeaGreen;
             this.label11.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label11.Location = new System.Drawing.Point(49, 462);
+            this.label11.Location = new System.Drawing.Point(51, 391);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(129, 23);
             this.label11.TabIndex = 171;
@@ -265,7 +250,7 @@
             this.TBNumPisoEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.TBNumPisoEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TBNumPisoEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBNumPisoEmpleado.Location = new System.Drawing.Point(501, 429);
+            this.TBNumPisoEmpleado.Location = new System.Drawing.Point(503, 358);
             this.TBNumPisoEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TBNumPisoEmpleado.Name = "TBNumPisoEmpleado";
             this.TBNumPisoEmpleado.Size = new System.Drawing.Size(141, 24);
@@ -278,7 +263,7 @@
             this.label10.BackColor = System.Drawing.Color.SeaGreen;
             this.label10.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label10.Location = new System.Drawing.Point(504, 401);
+            this.label10.Location = new System.Drawing.Point(506, 330);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(47, 23);
             this.label10.TabIndex = 169;
@@ -289,7 +274,7 @@
             this.TBCodPostalEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.TBCodPostalEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TBCodPostalEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBCodPostalEmpleado.Location = new System.Drawing.Point(195, 490);
+            this.TBCodPostalEmpleado.Location = new System.Drawing.Point(197, 419);
             this.TBCodPostalEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TBCodPostalEmpleado.Name = "TBCodPostalEmpleado";
             this.TBCodPostalEmpleado.Size = new System.Drawing.Size(141, 24);
@@ -302,7 +287,7 @@
             this.label1.BackColor = System.Drawing.Color.SeaGreen;
             this.label1.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(195, 462);
+            this.label1.Location = new System.Drawing.Point(197, 391);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(125, 23);
             this.label1.TabIndex = 167;
@@ -335,7 +320,7 @@
             this.TBCuilEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.TBCuilEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TBCuilEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBCuilEmpleado.Location = new System.Drawing.Point(356, 126);
+            this.TBCuilEmpleado.Location = new System.Drawing.Point(360, 126);
             this.TBCuilEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TBCuilEmpleado.Name = "TBCuilEmpleado";
             this.TBCuilEmpleado.Size = new System.Drawing.Size(286, 24);
@@ -347,7 +332,7 @@
             this.TBDniEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.TBDniEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TBDniEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBDniEmpleado.Location = new System.Drawing.Point(49, 126);
+            this.TBDniEmpleado.Location = new System.Drawing.Point(53, 126);
             this.TBDniEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TBDniEmpleado.Name = "TBDniEmpleado";
             this.TBDniEmpleado.Size = new System.Drawing.Size(286, 24);
@@ -361,7 +346,7 @@
             this.label7.BackColor = System.Drawing.Color.SeaGreen;
             this.label7.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label7.Location = new System.Drawing.Point(356, 100);
+            this.label7.Location = new System.Drawing.Point(360, 100);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(50, 23);
             this.label7.TabIndex = 160;
@@ -373,7 +358,7 @@
             this.label8.BackColor = System.Drawing.Color.SeaGreen;
             this.label8.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label8.Location = new System.Drawing.Point(49, 100);
+            this.label8.Location = new System.Drawing.Point(53, 100);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(40, 23);
             this.label8.TabIndex = 159;
@@ -383,7 +368,7 @@
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(200)))), ((int)(((byte)(145)))));
             this.panel6.Controls.Add(this.label4);
-            this.panel6.Location = new System.Drawing.Point(21, 370);
+            this.panel6.Location = new System.Drawing.Point(21, 299);
             this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(651, 28);
@@ -406,7 +391,7 @@
             this.TBEmailEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.TBEmailEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TBEmailEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBEmailEmpleado.Location = new System.Drawing.Point(356, 326);
+            this.TBEmailEmpleado.Location = new System.Drawing.Point(358, 264);
             this.TBEmailEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TBEmailEmpleado.Name = "TBEmailEmpleado";
             this.TBEmailEmpleado.Size = new System.Drawing.Size(286, 24);
@@ -418,7 +403,7 @@
             this.label2.BackColor = System.Drawing.Color.SeaGreen;
             this.label2.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label2.Location = new System.Drawing.Point(356, 299);
+            this.label2.Location = new System.Drawing.Point(358, 237);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 23);
             this.label2.TabIndex = 151;
@@ -429,7 +414,7 @@
             this.TBNumCalleEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.TBNumCalleEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TBNumCalleEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBNumCalleEmpleado.Location = new System.Drawing.Point(356, 429);
+            this.TBNumCalleEmpleado.Location = new System.Drawing.Point(358, 358);
             this.TBNumCalleEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TBNumCalleEmpleado.Name = "TBNumCalleEmpleado";
             this.TBNumCalleEmpleado.Size = new System.Drawing.Size(141, 24);
@@ -442,7 +427,7 @@
             this.TBCelularEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.TBCelularEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TBCelularEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBCelularEmpleado.Location = new System.Drawing.Point(49, 326);
+            this.TBCelularEmpleado.Location = new System.Drawing.Point(51, 264);
             this.TBCelularEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TBCelularEmpleado.Name = "TBCelularEmpleado";
             this.TBCelularEmpleado.Size = new System.Drawing.Size(286, 24);
@@ -455,7 +440,7 @@
             this.LNumeroCalle.BackColor = System.Drawing.Color.SeaGreen;
             this.LNumeroCalle.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LNumeroCalle.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.LNumeroCalle.Location = new System.Drawing.Point(356, 401);
+            this.LNumeroCalle.Location = new System.Drawing.Point(358, 330);
             this.LNumeroCalle.Name = "LNumeroCalle";
             this.LNumeroCalle.Size = new System.Drawing.Size(78, 23);
             this.LNumeroCalle.TabIndex = 149;
@@ -468,7 +453,7 @@
             this.LCalle.BackColor = System.Drawing.Color.SeaGreen;
             this.LCalle.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LCalle.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.LCalle.Location = new System.Drawing.Point(49, 401);
+            this.LCalle.Location = new System.Drawing.Point(51, 330);
             this.LCalle.Name = "LCalle";
             this.LCalle.Size = new System.Drawing.Size(54, 23);
             this.LCalle.TabIndex = 146;
@@ -480,7 +465,7 @@
             this.LLocalidad.BackColor = System.Drawing.Color.SeaGreen;
             this.LLocalidad.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LLocalidad.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.LLocalidad.Location = new System.Drawing.Point(356, 526);
+            this.LLocalidad.Location = new System.Drawing.Point(358, 455);
             this.LLocalidad.Name = "LLocalidad";
             this.LLocalidad.Size = new System.Drawing.Size(91, 23);
             this.LLocalidad.TabIndex = 144;
@@ -491,7 +476,7 @@
             this.TBCalleEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.TBCalleEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TBCalleEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBCalleEmpleado.Location = new System.Drawing.Point(49, 429);
+            this.TBCalleEmpleado.Location = new System.Drawing.Point(51, 358);
             this.TBCalleEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TBCalleEmpleado.Name = "TBCalleEmpleado";
             this.TBCalleEmpleado.Size = new System.Drawing.Size(286, 24);
@@ -503,7 +488,7 @@
             this.LCelular.BackColor = System.Drawing.Color.SeaGreen;
             this.LCelular.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LCelular.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.LCelular.Location = new System.Drawing.Point(49, 298);
+            this.LCelular.Location = new System.Drawing.Point(51, 236);
             this.LCelular.Name = "LCelular";
             this.LCelular.Size = new System.Drawing.Size(73, 23);
             this.LCelular.TabIndex = 142;
@@ -514,7 +499,7 @@
             this.TBApellidoEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.TBApellidoEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TBApellidoEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBApellidoEmpleado.Location = new System.Drawing.Point(356, 71);
+            this.TBApellidoEmpleado.Location = new System.Drawing.Point(360, 71);
             this.TBApellidoEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TBApellidoEmpleado.Name = "TBApellidoEmpleado";
             this.TBApellidoEmpleado.Size = new System.Drawing.Size(286, 24);
@@ -526,7 +511,7 @@
             this.TBNombreEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.TBNombreEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TBNombreEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBNombreEmpleado.Location = new System.Drawing.Point(49, 71);
+            this.TBNombreEmpleado.Location = new System.Drawing.Point(53, 71);
             this.TBNombreEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TBNombreEmpleado.Name = "TBNombreEmpleado";
             this.TBNombreEmpleado.Size = new System.Drawing.Size(286, 24);
@@ -540,7 +525,7 @@
             this.LProvincia.BackColor = System.Drawing.Color.SeaGreen;
             this.LProvincia.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LProvincia.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.LProvincia.Location = new System.Drawing.Point(49, 525);
+            this.LProvincia.Location = new System.Drawing.Point(51, 456);
             this.LProvincia.Name = "LProvincia";
             this.LProvincia.Size = new System.Drawing.Size(90, 23);
             this.LProvincia.TabIndex = 137;
@@ -552,7 +537,7 @@
             this.LPais.BackColor = System.Drawing.Color.SeaGreen;
             this.LPais.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LPais.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.LPais.Location = new System.Drawing.Point(356, 464);
+            this.LPais.Location = new System.Drawing.Point(358, 393);
             this.LPais.Name = "LPais";
             this.LPais.Size = new System.Drawing.Size(47, 23);
             this.LPais.TabIndex = 136;
@@ -564,7 +549,7 @@
             this.LApellido.BackColor = System.Drawing.Color.SeaGreen;
             this.LApellido.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LApellido.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.LApellido.Location = new System.Drawing.Point(356, 46);
+            this.LApellido.Location = new System.Drawing.Point(360, 46);
             this.LApellido.Name = "LApellido";
             this.LApellido.Size = new System.Drawing.Size(79, 23);
             this.LApellido.TabIndex = 133;
@@ -576,7 +561,7 @@
             this.LFechaNacimiento.BackColor = System.Drawing.Color.SeaGreen;
             this.LFechaNacimiento.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LFechaNacimiento.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.LFechaNacimiento.Location = new System.Drawing.Point(49, 162);
+            this.LFechaNacimiento.Location = new System.Drawing.Point(53, 162);
             this.LFechaNacimiento.Name = "LFechaNacimiento";
             this.LFechaNacimiento.Size = new System.Drawing.Size(171, 24);
             this.LFechaNacimiento.TabIndex = 135;
@@ -588,7 +573,7 @@
             this.LNombre.BackColor = System.Drawing.Color.SeaGreen;
             this.LNombre.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LNombre.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.LNombre.Location = new System.Drawing.Point(49, 46);
+            this.LNombre.Location = new System.Drawing.Point(53, 46);
             this.LNombre.Name = "LNombre";
             this.LNombre.Size = new System.Drawing.Size(77, 23);
             this.LNombre.TabIndex = 132;
@@ -598,7 +583,7 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(200)))), ((int)(((byte)(145)))));
             this.panel5.Controls.Add(this.label3);
-            this.panel5.Location = new System.Drawing.Point(21, 263);
+            this.panel5.Location = new System.Drawing.Point(21, 201);
             this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(651, 28);
@@ -615,6 +600,74 @@
             this.label3.Size = new System.Drawing.Size(90, 24);
             this.label3.TabIndex = 72;
             this.label3.Text = "Contacto";
+            // 
+            // CBEstadoEmpleado
+            // 
+            this.CBEstadoEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.CBEstadoEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBEstadoEmpleado.FormattingEnabled = true;
+            this.CBEstadoEmpleado.Location = new System.Drawing.Point(358, 586);
+            this.CBEstadoEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CBEstadoEmpleado.Name = "CBEstadoEmpleado";
+            this.CBEstadoEmpleado.Size = new System.Drawing.Size(281, 24);
+            this.CBEstadoEmpleado.TabIndex = 182;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.SeaGreen;
+            this.label6.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label6.Location = new System.Drawing.Point(358, 557);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(67, 23);
+            this.label6.TabIndex = 183;
+            this.label6.Text = "Estado";
+            // 
+            // CBPerfilEmpleado
+            // 
+            this.CBPerfilEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.CBPerfilEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBPerfilEmpleado.FormattingEnabled = true;
+            this.CBPerfilEmpleado.Location = new System.Drawing.Point(51, 586);
+            this.CBPerfilEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CBPerfilEmpleado.Name = "CBPerfilEmpleado";
+            this.CBPerfilEmpleado.Size = new System.Drawing.Size(281, 24);
+            this.CBPerfilEmpleado.TabIndex = 180;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.SeaGreen;
+            this.label5.Font = new System.Drawing.Font("Bahnschrift SemiLight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label5.Location = new System.Drawing.Point(51, 557);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(56, 23);
+            this.label5.TabIndex = 181;
+            this.label5.Text = "Perfil";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label12.Location = new System.Drawing.Point(227, 1);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(202, 24);
+            this.label12.TabIndex = 72;
+            this.label12.Text = "Acerca del Empleado";
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(200)))), ((int)(((byte)(145)))));
+            this.panel4.Controls.Add(this.label12);
+            this.panel4.Location = new System.Drawing.Point(21, 520);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(651, 28);
+            this.panel4.TabIndex = 157;
             // 
             // IngresarEmpleado
             // 
@@ -638,6 +691,8 @@
             this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -681,10 +736,14 @@
         private System.Windows.Forms.Label LNombre;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox CBPerfilEmpleado;
         private System.Windows.Forms.Label LLocalidad;
         private System.Windows.Forms.ComboBox CBLocalidadEmpleado;
         private System.Windows.Forms.DateTimePicker DTFechaNacEmpleado;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox CBEstadoEmpleado;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox CBPerfilEmpleado;
+        private System.Windows.Forms.Label label5;
     }
 }

@@ -19,7 +19,15 @@ namespace AgMaGest.C_Logica.Entidades
         public int IdLocalidad { get; set; } // ID de la localidad (FK)
         public int IdPerfil { get; set; } // ID del perfil del empleado (FK)
         public int IdEstado { get; set; } // ID del estado del empleado (FK)
-        public string DireccionCompleta { get; set; } //Calle, num, piso, dpto
+        public string DireccionCompleta
+        {
+            get
+            {
+                return $"{Calle} {NumeroCalle}" +
+                       (Piso.HasValue ? $", Piso {Piso.Value}" : "") +
+                       (!string.IsNullOrWhiteSpace(Dpto) ? $", Dpto {Dpto}" : "");
+            }
+        }
         public string LocalidadNombre { get; set; }
         public string ProvinciaNombre { get; set; }
         public string PaisNombre { get; set; }

@@ -19,6 +19,7 @@ namespace AgMaGest.C_Presentacion.Administrador
         {
             InitializeComponent();
             this.Load += new EventHandler(VisualizarEmpleados_Load);
+            BBuscarEmpleado.Click += new EventHandler(BBuscarEmpleado_Click); 
         }
 
         private void VisualizarEmpleados_Load(object sender, EventArgs e)
@@ -31,28 +32,28 @@ namespace AgMaGest.C_Presentacion.Administrador
             // Configurar el DataGridView y establecer AutoGenerateColumns a false
             ConfigurarDataGridView();
             dataGridEmpleados.AutoGenerateColumns = false;
-
+            
             // Obtener los empleados desde la base de datos
-            EmpleadoDAL empleadoDAL = new EmpleadoDAL();
-            List<Empleado> empleados = empleadoDAL.ObtenerTodosLosEmpleados();
+             EmpleadoDAL empleadoDAL = new EmpleadoDAL();
+             List<Empleado> empleados = empleadoDAL.ObtenerTodosLosEmpleados();
 
-            if (empleados != null && empleados.Count > 0)
-            {
-                dataGridEmpleados.DataSource = empleados;
+             if (empleados != null && empleados.Count > 0)
+             {
+                 dataGridEmpleados.DataSource = empleados;
 
-                // Verificar y ocultar columnas innecesarias si existen
-                if (dataGridEmpleados.Columns["Calle"] != null) dataGridEmpleados.Columns["Calle"].Visible = false;
-                if (dataGridEmpleados.Columns["NumeroCalle"] != null) dataGridEmpleados.Columns["NumeroCalle"].Visible = false;
-                if (dataGridEmpleados.Columns["Piso"] != null) dataGridEmpleados.Columns["Piso"].Visible = false;
-                if (dataGridEmpleados.Columns["Dpto"] != null) dataGridEmpleados.Columns["Dpto"].Visible = false;
-                if (dataGridEmpleados.Columns["IdLocalidad"] != null) dataGridEmpleados.Columns["IdLocalidad"].Visible = false;
-                if (dataGridEmpleados.Columns["IdPerfil"] != null) dataGridEmpleados.Columns["IdPerfil"].Visible = false;
-                if (dataGridEmpleados.Columns["IdEstado"] != null) dataGridEmpleados.Columns["IdEstado"].Visible = false;
-            }
-            else
-            {
-                MessageBox.Show("No se encontraron empleados.");
-            }
+                 // Verificar y ocultar columnas innecesarias si existen
+                 if (dataGridEmpleados.Columns["Calle"] != null) dataGridEmpleados.Columns["Calle"].Visible = false;
+                 if (dataGridEmpleados.Columns["NumeroCalle"] != null) dataGridEmpleados.Columns["NumeroCalle"].Visible = false;
+                 if (dataGridEmpleados.Columns["Piso"] != null) dataGridEmpleados.Columns["Piso"].Visible = false;
+                 if (dataGridEmpleados.Columns["Dpto"] != null) dataGridEmpleados.Columns["Dpto"].Visible = false;
+                 if (dataGridEmpleados.Columns["IdLocalidad"] != null) dataGridEmpleados.Columns["IdLocalidad"].Visible = false;
+                 if (dataGridEmpleados.Columns["IdPerfil"] != null) dataGridEmpleados.Columns["IdPerfil"].Visible = false;
+                 if (dataGridEmpleados.Columns["IdEstado"] != null) dataGridEmpleados.Columns["IdEstado"].Visible = false;
+             }
+             else
+             {
+                 MessageBox.Show("No se encontraron empleados.");
+             }
         }
 
         private void ConfigurarDataGridView()
@@ -113,6 +114,40 @@ namespace AgMaGest.C_Presentacion.Administrador
             dataGridEmpleados.Columns["EstadoNombre"].DisplayIndex = 13;
         }
 
+        private void BBuscarEmpleado_Click(object sender, EventArgs e)
+        {
+            string textoBusqueda = TBBuscarEmpleado.Text.Trim();
+            if (!string.IsNullOrEmpty(textoBusqueda))
+            {
+                FiltrarEmpleados(textoBusqueda);
+            }
+            else
+            {
+                MessageBox.Show("Por favor, ingrese un texto para buscar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+        private void FiltrarEmpleados(string texto)
+        {
+            EmpleadoDAL empleadoDAL = new EmpleadoDAL();
+
+            // Filtrar empleados con el texto de búsqueda
+            List<Empleado> empleadosFiltrados = empleadoDAL.FiltrarEmpleados(texto);
+
+            if (empleadosFiltrados != null && empleadosFiltrados.Count > 0)
+            {
+                // Si se encuentran resultados, asignarlos al DataGridView
+                dataGridEmpleados.DataSource = empleadosFiltrados;
+            }
+            else
+            {
+                // Si no hay resultados, mostrar mensaje y recargar todos los empleados
+                MessageBox.Show("No se encontraron empleados con el criterio de búsqueda.", "Búsqueda sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Recargar todos los empleados
+                CargarEmpleados();
+            }
+        }
+
         private void BAgregarEmpleado_Click(object sender, EventArgs e)
         {
             IngresarEmpleado formEmpleado = new IngresarEmpleado();
@@ -121,57 +156,57 @@ namespace AgMaGest.C_Presentacion.Administrador
 
         private void BEditarEmpleado_Click(object sender, EventArgs e)
         {
-            if (dataGridEmpleados.SelectedRows.Count > 0) 
+            if (dataGridEmpleados.SelectedRows.Count > 0)
             {
-                var filaSeleccionada = dataGridEmpleados.SelectedRows[0];
+                int indiceSeleccionado = dataGridEmpleados.SelectedRows[0].Index;
+                Empleado empleado = (Empleado)dataGridEmpleados.Rows[indiceSeleccionado].DataBoundItem;
 
-                // Construir el objeto Empleado a partir de las celdas o realizar consultas adicionales si falta información
-                var empleado = new Empleado
+                EditarEmpleado editarForm = new EditarEmpleado(empleado);
+                if (editarForm.ShowDialog() == DialogResult.OK)
                 {
-                    CUIL = filaSeleccionada.Cells["cuil_Empleado"].Value?.ToString(),
-                    DNI = filaSeleccionada.Cells["dni_Empleado"].Value?.ToString(),
-                    Nombre = filaSeleccionada.Cells["nombre_Empleado"].Value?.ToString(),
-                    Apellido = filaSeleccionada.Cells["apellido_Empleado"].Value?.ToString(),
-                    Email = filaSeleccionada.Cells["email_Empleado"].Value?.ToString(),
-                    Celular = filaSeleccionada.Cells["celular_Empleado"].Value?.ToString(),
-                    FechaNacimiento = DateTime.TryParse(filaSeleccionada.Cells["fechaNac_Empleado"].Value?.ToString(), out var fechaNac)
-                                      ? fechaNac
-                                      : DateTime.MinValue,
-                    Calle = filaSeleccionada.Cells["calle_Empleado"].Value?.ToString(),
-                    NumeroCalle = filaSeleccionada.Cells["num_Calle_Empleado"].Value != null
-                                  ? Convert.ToInt32(filaSeleccionada.Cells["num_Calle_Empleado"].Value)
-                                  : 0,
-                    Piso = filaSeleccionada.Cells["piso_Empleado"].Value != null
-                           ? Convert.ToInt32(filaSeleccionada.Cells["piso_Empleado"].Value)
-                           : 0,
-                    Dpto = filaSeleccionada.Cells["dpto_Empleado"].Value?.ToString(),
-                    CodigoPostal = filaSeleccionada.Cells["codigo_PostalEmpleado"].Value != null
-                                   ? Convert.ToInt32(filaSeleccionada.Cells["codigo_PostalEmpleado"].Value)
-                                   : 0,
-                    IdLocalidad = filaSeleccionada.Cells["id_Localidad"].Value != null
-                                  ? Convert.ToInt32(filaSeleccionada.Cells["id_Localidad"].Value)
-                                  : 0,
-                    IdPerfil = filaSeleccionada.Cells["id_perfil"].Value != null
-                               ? Convert.ToInt32(filaSeleccionada.Cells["id_perfil"].Value)
-                               : 0,
-                    IdEstado = filaSeleccionada.Cells["id_Estado"].Value != null
-                               ? Convert.ToInt32(filaSeleccionada.Cells["id_Estado"].Value)
-                               : 0
-                };
-
-                // Completar la dirección completa si no está en el DataGridView
-                empleado.DireccionCompleta = $"{empleado.Calle} {empleado.NumeroCalle}, Piso {empleado.Piso}, Dpto {empleado.Dpto}, CP {empleado.CodigoPostal}";
-
-                // Abre el formulario EditarEmpleado y le pasa el empleado
-                var editarEmpleadoForm = new EditarEmpleado(empleado);
-                editarEmpleadoForm.ShowDialog();
-
-                // Recargar la lista de empleados después de editar
-                CargarEmpleados();
+                    CargarEmpleados(); // Recargar datos actualizados
+                }
             }
             else
             {
-                MessageBox.Show("Por favor, seleccione un empleado para editar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, selecciona un empleado para editar.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void BEliminarEmpleado_Click(object sender, EventArgs e)
+        {
+            // Verifica que haya una fila seleccionada en el DataGridView
+            if (dataGridEmpleados.SelectedRows.Count > 0)
+            {
+                // Obtén los valores de la fila seleccionada
+                DataGridViewRow filaSeleccionada = dataGridEmpleados.SelectedRows[0];
+                string cuilEmpleado = filaSeleccionada.Cells["cuil_Empleado"].Value.ToString();
+                string apellidoEmpleado = filaSeleccionada.Cells["apellido_Empleado"].Value.ToString();
+                string nombreEmpleado = filaSeleccionada.Cells["nombre_Empleado"].Value.ToString();
+
+                // Mostrar mensaje de confirmación
+                string mensaje = $"¿Estás seguro que deseas eliminar al usuario?\nCUIL: {cuilEmpleado}\nEmpleado/a: {apellidoEmpleado}, {nombreEmpleado}";
+                DialogResult resultado = MessageBox.Show(mensaje, "Confirmar Eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+
+                if (resultado == DialogResult.Yes)
+                {
+                    // Llama al método para eliminar al usuario
+                    EmpleadoDAL empleadoDAL = new EmpleadoDAL();
+                    if (empleadoDAL.EliminarEmpleado(cuilEmpleado))
+                    {
+                        MessageBox.Show("Empleado eliminado exitosamente.", "Eliminación Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        // Refresca los datos del DataGridView
+                        CargarEmpleados();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo eliminar el empleado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona un empleado para eliminar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -212,5 +247,7 @@ namespace AgMaGest.C_Presentacion.Administrador
                 BEliminarEmpleado.Visible = false;
             }
         }
+
+        
     }
 }
