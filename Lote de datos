@@ -42,17 +42,17 @@ VALUES
 
 INSERT INTO Provincia (nombre_Provincia, id_Pais)
 VALUES 
-	('Asunción', 2),
-    ('Central', 2),
-	('Alto Paraná', 2),
-    ('Itapúa', 2);
+	('São Paulo', 2),
+	('Rio de Janeiro', 2),
+	('Minas Gerais', 2),
+	('Bahia', 2);
 
 INSERT INTO Provincia (nombre_Provincia, id_Pais)
 VALUES 
-	('São Paulo', 3),
-	('Rio de Janeiro', 3),
-	('Minas Gerais', 3),
-	('Bahia', 3);
+	('Asunción', 3),
+    	('Central', 3),
+	('Alto Paraná', 3),
+    	('Itapúa', 3);
 
 INSERT INTO Provincia (nombre_Provincia, id_Pais)
 VALUES
