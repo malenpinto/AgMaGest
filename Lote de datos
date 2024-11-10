@@ -252,35 +252,33 @@ INSERT INTO Estado_Empleado (nombre_EstadoEmpleado)
 VALUES ('Activo'),
 	   ('Inactivo');
 
-INSERT INTO Empleado (cuil_Empleado, dni_Empleado, nombre_Empleado, apellido_Empleado, 
-  email_Empleado, celular_Empleado, fechaNac_Empleado, calle_Empleado, 
-  num_Calle_Empleado, piso_Empleado, dpto_Empleado, codigo_PostalEmpleado, 
-  id_Localidad, id_perfil, id_Estado
+INSERT INTO Empleado (
+    cuil_Empleado, dni_Empleado, nombre_Empleado, apellido_Empleado, email_Empleado, 
+    celular_Empleado, fechaNac_Empleado, calle_Empleado, num_Calle_Empleado, piso_Empleado, 
+    dpto_Empleado, codigo_PostalEmpleado, id_Localidad, id_Perfil, id_Estado
 ) 
 VALUES 
-('20123456789', '12345678', 'Juan', 'Pérez', 'juan.perez@correo.com', '3791234567', '1990-05-10', 'Av. Libertad', 123, NULL, NULL, 3400, 2, 2, 1), 
-('20234567890', '23456789', 'María', 'Gómez', 'maria.gomez@correo.com', '3797654321', '1988-11-25', 'Calle Mitre', 456, NULL, NULL, 3400, 2, 3, 1), 
-('20345678901', '34567890', 'Carlos', 'López', 'carlos.lopez@correo.com', '3791112233', '1995-02-14', 'San Martín', 789, 2, 'A', 3400, 2, 1, 1),
-('20456789012', '45678901', 'Lucía', 'Fernández', 'lucia.fernandez@correo.com', '3792223344', '1992-07-20', 'Belgrano', 101, NULL, NULL, 3400, 2, 2, 1), 
-('20567890123', '56789012', 'Fernando', 'García', 'fernando.garcia@correo.com', '3623334455', '1987-03-05', 'Av. Alvear', 102, 1, 'B', 3500, 72, 3, 1),
-('20678901234', '67890123', 'Natalia', 'Martínez', 'natalia.martinez@correo.com', '3624445566', '1993-08-15', 'Av. Sarmiento', 303, NULL, NULL, 3500, 72, 2, 1),
-('20789012345', '78901234', 'Martín', 'Rodríguez', 'martin.rodriguez@correo.com', '3625556677', '1990-12-30', 'Calle Obligado', 404, 3, 'C', 3500, 72, 1, 1),
-('20890123456', '89012345', 'Verónica', 'Sosa', 'veronica.sosa@correo.com', '3796667788', '1989-10-22', '9 de Julio', 505, NULL, NULL, 3401, 16, 3, 1), 
-('20901234567', '90123456', 'Alejandro', 'Morales', 'alejandro.morales@correo.com', '3797778899', '1991-04-18', 'Pellegrini', 606, 2, 'D', 3401, 16, 2, 1), 
-('20123456780', '12345670', 'Laura', 'Méndez', 'laura.mendez@correo.com', '3701234567', '1985-01-10', 'Av. 25 de Mayo', 123, NULL, NULL, 3600, 112, 1, 1),
-('20234567891', '23456781', 'Esteban', 'Silva', 'esteban.silva@correo.com', '3702345678', '1994-06-22', 'Fotheringham', 234, 1, 'E', 3600, 112, 3, 1),
-('20345678912', '34567892', 'Valeria', 'Páez', 'valeria.paez@correo.com', '3703456789', '1986-09-12', 'San Martín', 345, NULL, NULL, 3600, 112, 2, 1), 
-('20456789023', '45678903', 'Lucas', 'Ruiz', 'lucas.ruiz@correo.com', '3798889900', '1993-03-01', 'Independencia', 789, 4, 'F', 3400, 2, 3, 1), 
-('20567890134', '56789014', 'Daniela', 'Aguirre', 'daniela.aguirre@correo.com', '3799990011', '1992-12-12', 'Av. Centenario', 111, NULL, NULL, 3400, 2, 1, 1),
-('20678901245', '67890125', 'Jorge', 'Romero', 'jorge.romero@correo.com', '3791011122', '1987-05-25', 'Francia', 222, 1, 'G', 3400, 2, 2, 1),
-('20165966593', '16596659', 'Omar', 'Sanchez', 'omarsan@hotmail.com', '3794585759', '1963-10-24', 'las violetas', 3522, NULL, NULL, 3400, 2, 2, 1),
-('20327575753', '32757575', 'Alfredo', 'Gomez', 'alfredog@gmail.com', '3794525252', '1987-10-24', 'Irigoyen', 2020, NULL, NULL, 3400, 83, 3, 1),
-('20388518199', '38851819', 'Daniel', 'Cabral', 'danielcabral13@gmail.com', '3794181719', '2000-04-13', 'rioja', 300, NULL, NULL, 3400, 145, 2, 1),
-('23326546543', '32654654', 'Cristian Ramiro', 'Ramirez', 'cristianrami@mail.com', '3794858689', '1980-10-24', 'Maipu', 2500, NULL, NULL, 3400, 4, 2, 1),
-('23378566580', '37856658', 'Marcos', 'Benitez', 'benmarcos@gmail.com', '3624568978', '1990-10-24', 'belgrano', 705, 5, 3, 3500, 23, 1, 1),
-('27376586587', '37658658', 'Abigail Tamara', 'Espinoza', 'eabi@mail.com', '3794568923', '2002-05-16', 'Moreno', 2000, 4, 'A', 3400, 6, 1, 1);
+    ('20345678901', '34567890', 'Juan Ramon', 'Pérez', 'juan.perez@example.com', '3794456789', '1985-01-23', 'Av. 3 De Abril', 742, 0, NULL, 3400, 2, 1, 1),
+    ('20345678902', '34567891', 'Ana Lucia', 'González', 'ana.gonzalez@hotmail.com', '1123456790', '1990-07-15', 'Moreno', 1234, 2, 'D', 3400, 2, 2, 1),
+    ('20345678903', '34567892', 'María', 'López', 'maria.lopez@example.com', '1123456791', '1982-03-12', 'Calle 1', 456, NULL, NULL, 3400, 2, 1, 2),
+    ('20345678904', '34567893', 'Carlos', 'Martínez', 'carlos.martinez@example.com', '1123456792', '1979-11-22', 'Calle 2', 789, 3, 'B', 3500, 72, 3, 1),
+    ('20345678905', '34567894', 'Laura', 'García', 'laura.garcia@example.com', '1123456793', '1995-06-30', 'San Martin', 101, NULL, NULL, 5004, 112, 3, 2),
+    ('20345678906', '34567895', 'Pedro Antonio', 'Fernández', 'pedro.fernandez@example.com', '1123456794', '1987-08-10', 'Calle 4', 202, 1, 'C', 3600, 112, 3, 1),
+    ('20345678907', '34567896', 'Sofía', 'Rodríguez', 'sofia.rodriguez@example.com', '1123456795', '1992-02-28', 'Calle 5', 303, NULL, NULL, 3400, 2, 2, 1),
+    ('20345678908', '34567897', 'Pablo', 'Gómez', 'pablo.gomez@example.com', '1123456796', '1983-12-14', 'Calle 6', 404, 4, 'D', 5007, 72, 2, 2),
+    ('20345678909', '34567898', 'Lucía', 'Moreno', 'lucia.moreno@example.com', '1123456797', '1991-05-07', 'Calle 7', 505, NULL, NULL, 5008, 112, 3, 1),
+    ('20345678910', '34567899', 'Ricardo', 'Sánchez', 'ricardo.sanchez@example.com', '1123456798', '1980-09-19', 'Calle 8', 606, 5, 'E', 5009, 72, 1, 2),
+    ('20345678911', '34567900', 'Andrea', 'Rivas', 'andrea.rivas@example.com', '1123456799', '1988-04-25', 'Calle 9', 707, NULL, NULL, 5010, 72, 2, 1),
+    ('20345678912', '34567901', 'Diego', 'Álvarez', 'diego.alvarez@example.com', '1123456800', '1977-01-15', 'Calle 10', 808, 2, 'F', 3400, 2, 3, 1),
+    ('20345678913', '34567902', 'Isabel', 'Ruiz', 'isabel.ruiz@example.com', '1123456801', '1993-10-09', 'Calle 11', 909, NULL, NULL, 3400, 2, 2, 2),
+    ('20345678914', '34567903', 'Fernando', 'Castro', 'fernando.castro@example.com', '1123456802', '1984-03-20', 'Calle 12', 1010, 1, 'G', 3400, 2, 3, 1),
+    ('20345678915', '34567904', 'Marta', 'Ortiz', 'marta.ortiz@example.com', '1123456803', '1986-07-14', 'Calle 13', 1111, NULL, NULL, 5014, 23, 3, 2),
+    ('20345678916', '34567905', 'Luis', 'Torres', 'luis.torres@example.com', '1123456804', '1994-05-03', 'Calle 14', 1212, 3, 'H', 5015, 23, 1, 1),
+    ('20345678917', '34567906', 'Silvia', 'Vargas', 'silvia.vargas@example.com', '1123456805', '1992-11-11', 'Calle 15', 1313, NULL, NULL, 3400, 2, 2, 1),
+    ('20345678918', '34567907', 'Eduardo', 'Ramos', 'eduardo.ramos@example.com', '1123456806', '1978-08-17', 'Calle 16', 1414, 4, 'I', 3400, 2, 3, 2),
+    ('20345678919', '34567908', 'Patricia', 'Méndez', 'patricia.mendez@example.com', '1123456807', '1981-02-03', 'Calle 17', 1515, NULL, NULL, 5018, 112, 1, 1),
+    ('20345678920', '34567909', 'Daniel', 'Flores', 'daniel.flores@example.com', '1123456808', '1989-06-22', 'Calle 18', 1616, 5, 'J', 3400, 2, 2, 1);
 
- 
 -- Consultas para ver el lote cargado
 SELECT * FROM Empleado
 SELECT * FROM Localidad
@@ -296,43 +294,40 @@ SELECT * FROM Estado_Empleado
 --------------------------
 -- Insertar tipos de vehículo
 INSERT INTO Tipo_Vehiculo (nombre_tipoVehiculo) 
-VALUES ('Sedán'), 
-	   ('SUV'),
-	   ('Pickup'),
-	   ('Hatchback');
+VALUES ('Sedán'), ('SUV'), ('Pickup'), ('Hatchback');
 
--- Insertar estados
 INSERT INTO Estado_Vehiculo (nombre_Estado) 
-VALUES ('Activo'), 
-	   ('Inactivo');
+VALUES ('Activo'), ('Inactivo');
 
--- Insertar condiciones
 INSERT INTO Condicion (nombre_Condicion) 
-VALUES ('Nuevo'), 
-	   ('Usado');
+VALUES ('Nuevo'), ('Usado');
 
-
-INSERT INTO Vehiculos (marca_Vehiculo, modelo_Vehiculo, version_Vehiculo, km_Vehiculo, anio_Vehiculo, patente_Vehiculo, codigo_OKM, precio_Vehiculo, id_tipoVehiculo, id_Estado, id_Condicion)
+INSERT INTO Vehiculos (
+    marca_Vehiculo, modelo_Vehiculo, version_Vehiculo, km_Vehiculo, 
+    anio_Vehiculo, patente_Vehiculo, codigo_OKM, precio_Vehiculo, 
+    id_tipoVehiculo, id_Estado, id_Condicion, ruta_imagen
+) 
 VALUES 
-('Toyota', 'Corolla', 'XLE', 0, '2023-01-01', NULL, 123456, 25000.00, 1, 1, 1),
-('Toyota', 'Hilux', 'SRV', 15000, '2020-05-10', 'ABC123', NULL, 30000.00, 3, 1, 2),
-('Ford', 'F-150', 'Raptor', 2000, '2022-07-15', 'DEF456', NULL, 55000.00, 3, 1, 2),
-('Ford', 'EcoSport', 'Titanium', 0, '2023-03-20', NULL, 123457, 22000.00, 2, 1, 1),
-('Chevrolet', 'Onix', 'LTZ', 5000, '2021-10-01', 'GHI789', NULL, 15000.00, 4, 1, 2),
-('Chevrolet', 'Silverado', 'High Country', 10000, '2021-01-10', 'JKL012', NULL, 45000.00, 3, 1, 2),
-('Volkswagen', 'Tiguan', 'Allspace', 0, '2023-06-10', NULL, 123458, 35000.00, 2, 1, 1),
-('Volkswagen', 'Polo', 'Highline', 8000, '2020-08-25', 'MNO345', NULL, 12000.00, 4, 1, 2),
-('Toyota', 'RAV4', 'Limited', 0, '2023-09-05', NULL, 123459, 40000.00, 2, 1, 1),
-('Ford', 'Focus', 'Titanium', 25000, '2019-04-15', 'PQR678', NULL, 13000.00, 1, 2, 2);
+    ('Toyota', 'Hilux', 'SRX', 10000, '2022-01-01', 'AA123BC', NULL, 45000, 3, 1, 2, 'images/hilux.jpg'),
+    ('Ford', 'Ranger', 'Limited', 0, '2023-01-01', NULL, 1001, 48000, 3, 1, 1, 'images/ranger.jpg'),
+    ('Volkswagen', 'Amarok', 'V6', 5000, '2021-01-01', 'AB456CD', NULL, 47000, 3, 1, 2, 'images/amarok.jpg'),
+    ('Chevrolet', 'S10', 'High Country', 20000, '2020-01-01', 'AC789DE', NULL, 42000, 3, 1, 2, 'images/s10.jpg'),
+    ('Toyota', 'Corolla', 'XEI', 0, '2023-01-01', NULL, 1002, 30000, 1, 1, 1, 'images/corolla.jpg'),
+    ('Ford', 'Focus', 'Titanium', 25000, '2019-01-01', 'AD012EF', NULL, 25000, 4, 1, 2, 'images/focus.jpg'),
+    ('Volkswagen', 'Golf', 'Trendline', 0, '2023-01-01', NULL, 1003, 28000, 4, 1, 1, 'images/golf.jpg'),
+    ('Chevrolet', 'Onix', 'Premier', 5000, '2022-01-01', 'AE345FG', NULL, 20000, 4, 1, 2, 'images/onix.jpg'),
+    ('Renault', 'Duster', 'Iconic', 0, '2023-01-01', NULL, 1004, 31000, 2, 1, 1, 'images/duster.jpg'),
+    ('Peugeot', '2008', 'Allure', 15000, '2021-01-01', 'AF678HI', NULL, 29000, 2, 1, 2, 'images/2008.jpg'),
+    ('Toyota', 'Etios', 'XS', 0, '2023-01-01', NULL, 1005, 18000, 4, 1, 1, 'images/etios.jpg'),
+    ('Fiat', 'Cronos', 'Precision', 12000, '2021-01-01', 'AG910JK', NULL, 17000, 1, 1, 2, 'images/cronos.jpg'),
+    ('Jeep', 'Renegade', 'Longitude', 20000, '2020-01-01', 'AH111LM', NULL, 32000, 2, 1, 2, 'images/renegade.jpg'),
+    ('Nissan', 'Frontier', 'LE', 0, '2023-01-01', NULL, 1006, 46000, 3, 1, 1, 'images/frontier.jpg'),
+    ('Honda', 'HR-V', 'EXL', 15000, '2021-01-01', 'AI222NO', NULL, 35000, 2, 1, 2, 'images/hrv.jpg'),
+    ('Renault', 'Kangoo', 'Express', 0, '2023-01-01', NULL, 1007, 25000, 3, 1, 1, 'images/kangoo.jpg'),
+    ('Chevrolet', 'Tracker', 'Premier', 0, '2023-01-01', NULL, 1008, 32000, 2, 1, 1, 'images/tracker.jpg'),
+    ('Volkswagen', 'Polo', 'Comfortline', 0, '2023-01-01', NULL, 1009, 22000, 4, 1, 1, 'images/polo.jpg'),
+    ('Toyota', 'Yaris', 'S', 5000, '2022-01-01', 'AJ333PQ', NULL, 21000, 4, 1, 2, 'images/yaris.jpg'),
+    ('Fiat', 'Toro', 'Freedom', 20000, '2020-01-01', 'AK444QR', NULL, 33000, 3, 1, 2, 'images/toro.jpg');
 
 -- Consultas para ver el lote cargado
 SELECT * FROM Vehiculos
-
-SELECT * FROM Inventario_Vehiculos
-
-SELECT v.marca_Vehiculo AS Marca, v.modelo_Vehiculo AS Modelo, SUM(i.stock) AS 'Total stock', v.precio_Vehiculo 'Precio Unitario'
-FROM Vehiculos v
-JOIN Inventario_Vehiculos i ON v.id_Vehiculo = i.id_Vehiculo
-WHERE v.marca_Vehiculo = 'Toyota' AND v.modelo_Vehiculo = 'yaris' AND v.version_Vehiculo = 'XLS'
-GROUP BY v.marca_Vehiculo, v.modelo_Vehiculo, v.precio_Vehiculo
-
