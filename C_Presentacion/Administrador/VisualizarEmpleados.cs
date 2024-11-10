@@ -19,7 +19,7 @@ namespace AgMaGest.C_Presentacion.Administrador
         {
             InitializeComponent();
             this.Load += new EventHandler(VisualizarEmpleados_Load);
-            BBuscarEmpleado.Click += new EventHandler(BBuscarEmpleado_Click); 
+            dataGridEmpleados.CellFormatting += DataGridEmpleados_CellFormatting;
         }
 
         private void VisualizarEmpleados_Load(object sender, EventArgs e)
@@ -62,6 +62,13 @@ namespace AgMaGest.C_Presentacion.Administrador
             dataGridEmpleados.Columns.Clear();
 
             // Configurar las columnas manualmente
+
+            dataGridEmpleados.Columns.Add("EstadoNombre", "Estado");
+            dataGridEmpleados.Columns["EstadoNombre"].DataPropertyName = "EstadoNombre";
+
+            dataGridEmpleados.Columns.Add("PerfilNombre", "Perfil");
+            dataGridEmpleados.Columns["PerfilNombre"].DataPropertyName = "PerfilNombre";
+
             dataGridEmpleados.Columns.Add("cuil_Empleado", "CUIL");
             dataGridEmpleados.Columns["cuil_Empleado"].DataPropertyName = "CUIL";
 
@@ -98,20 +105,13 @@ namespace AgMaGest.C_Presentacion.Administrador
             dataGridEmpleados.Columns.Add("PaisNombre", "País");
             dataGridEmpleados.Columns["PaisNombre"].DataPropertyName = "PaisNombre";
 
-            dataGridEmpleados.Columns.Add("PerfilNombre", "Perfil");
-            dataGridEmpleados.Columns["PerfilNombre"].DataPropertyName = "PerfilNombre";
-
-            dataGridEmpleados.Columns.Add("EstadoNombre", "Estado");
-            dataGridEmpleados.Columns["EstadoNombre"].DataPropertyName = "EstadoNombre";
 
             // Establece el orden de las columnas
-            dataGridEmpleados.Columns["DireccionCompleta"].DisplayIndex = 7;
-            dataGridEmpleados.Columns["CodigoPostal"].DisplayIndex = 8;
-            dataGridEmpleados.Columns["LocalidadNombre"].DisplayIndex = 9;
-            dataGridEmpleados.Columns["ProvinciaNombre"].DisplayIndex = 10;
-            dataGridEmpleados.Columns["PaisNombre"].DisplayIndex = 11;
-            dataGridEmpleados.Columns["PerfilNombre"].DisplayIndex = 12;
-            dataGridEmpleados.Columns["EstadoNombre"].DisplayIndex = 13;
+            dataGridEmpleados.Columns["DireccionCompleta"].DisplayIndex = 9;
+            dataGridEmpleados.Columns["CodigoPostal"].DisplayIndex = 10;
+            dataGridEmpleados.Columns["LocalidadNombre"].DisplayIndex = 11;
+            dataGridEmpleados.Columns["ProvinciaNombre"].DisplayIndex = 12;
+            dataGridEmpleados.Columns["PaisNombre"].DisplayIndex = 13;
         }
 
         private void BBuscarEmpleado_Click(object sender, EventArgs e)
@@ -248,6 +248,26 @@ namespace AgMaGest.C_Presentacion.Administrador
             }
         }
 
-        
+        private void DataGridEmpleados_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            // Verificar si estamos en la columna "EstadoNombre" 
+            if (dataGridEmpleados.Columns[e.ColumnIndex].Name == "EstadoNombre")
+            {
+                // Obtener el valor de la celda de estado
+                string estadoEmpleado = e.Value as string;
+
+                if (estadoEmpleado == "Activo")
+                {
+                    e.CellStyle.BackColor = Color.LightGreen;
+                    e.CellStyle.ForeColor = Color.Black;
+                }
+                else if (estadoEmpleado == "Inactivo")
+                {
+                    e.CellStyle.BackColor = Color.LightCoral;
+                    e.CellStyle.ForeColor = Color.Black; 
+                }
+            }
+        }
+
     }
 }

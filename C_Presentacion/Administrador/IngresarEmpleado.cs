@@ -275,7 +275,7 @@ namespace AgMaGest.C_Presentacion.Administrador
                     Calle = ToTitleCase(TBCalleEmpleado.Text.Trim()), // Usar ToTitleCase
                     NumeroCalle = int.Parse(TBNumCalleEmpleado.Text.Trim()), // Convertir a int
                     Piso = string.IsNullOrWhiteSpace(TBNumPisoEmpleado.Text) ? (int?) 0 : int.Parse(TBNumPisoEmpleado.Text.Trim()),
-                    Dpto = string.IsNullOrWhiteSpace(TBDptoEmpleado.Text) ? "-" : TBDptoEmpleado.Text.Trim(),
+                    Dpto = string.IsNullOrWhiteSpace(TBDptoEmpleado.Text) ? "" : TBDptoEmpleado.Text.Trim(),
                     CodigoPostal = int.Parse(TBCodPostalEmpleado.Text.Trim()), // Convertir a int
                     IdPerfil = Convert.ToInt32(CBPerfilEmpleado.SelectedValue), // Asumiendo que tenemos una lista de perfiles
                     IdEstado = Convert.ToInt32(CBEstadoEmpleado.SelectedValue),

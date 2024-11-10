@@ -146,7 +146,7 @@ namespace AgMaGest.C_Presentacion.Administrador
 
                     TBCalleEditarEmpleado.Text = empleado.Calle;
                     TBNumCalleEditarEmpleado.Text = empleado.NumeroCalle.ToString();
-                    TBNumPisoEditarEmpleado.Text = empleado.Piso?.ToString() ?? "";
+                    TBNumPisoEditarEmpleado.Text = (empleado.Piso ?? 0).ToString();
                     TBDptoEditarEmpleado.Text = empleado.Dpto ?? "";
                     TBCodPostalEditarEmpleado.Text = empleado.CodigoPostal.ToString();
 

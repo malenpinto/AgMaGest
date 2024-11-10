@@ -270,29 +270,29 @@ namespace AgMaGest.C_Datos
                     conn.Open();
                     // Consulta SQL con joins y filtro
                     SqlCommand cmd = new SqlCommand(@"
-                SELECT e.cuil_Empleado, e.dni_Empleado, e.nombre_Empleado, e.apellido_Empleado, e.email_Empleado, 
-                       e.celular_Empleado, e.fechaNac_Empleado, 
-                       e.calle_Empleado AS Calle, e.num_Calle_Empleado AS NumeroCalle, 
-                       e.piso_Empleado AS Piso, e.dpto_Empleado AS Dpto,
-                       e.codigo_PostalEmpleado AS CodigoPostal,
-                       l.nombre_Localidad AS LocalidadNombre, 
-                       p.nombre_Provincia AS ProvinciaNombre, 
-                       pa.nombre_Pais AS PaisNombre,
-                       pr.nombre_Perfil AS PerfilNombre,
-                       es.nombre_EstadoEmpleado AS EstadoNombre
-                FROM Empleado e
-                INNER JOIN Localidad l ON e.id_Localidad = l.id_Localidad
-                INNER JOIN Provincia p ON l.id_Provincia = p.id_Provincia
-                INNER JOIN Pais pa ON p.id_Pais = pa.id_Pais
-                INNER JOIN Perfil_Empleado pr ON e.id_perfil = pr.id_Perfil
-                INNER JOIN Estado_Empleado es ON e.id_Estado = es.id_EstadoEmpleado
-                WHERE e.cuil_Empleado LIKE @texto
-                   OR e.dni_Empleado LIKE @texto
-                   OR e.nombre_Empleado LIKE @texto
-                   OR e.apellido_Empleado LIKE @texto
-                   OR e.email_Empleado LIKE @texto", conn);
+                        SELECT e.cuil_Empleado, e.dni_Empleado, e.nombre_Empleado, e.apellido_Empleado, e.email_Empleado, 
+                               e.celular_Empleado, e.fechaNac_Empleado, 
+                               e.calle_Empleado AS Calle, e.num_Calle_Empleado AS NumeroCalle, 
+                               e.piso_Empleado AS Piso, e.dpto_Empleado AS Dpto,
+                               e.codigo_PostalEmpleado AS CodigoPostal,
+                               l.nombre_Localidad AS LocalidadNombre, 
+                               p.nombre_Provincia AS ProvinciaNombre, 
+                               pa.nombre_Pais AS PaisNombre,
+                               pr.nombre_Perfil AS PerfilNombre,
+                               es.nombre_EstadoEmpleado AS EstadoNombre
+                        FROM Empleado e
+                        INNER JOIN Localidad l ON e.id_Localidad = l.id_Localidad
+                        INNER JOIN Provincia p ON l.id_Provincia = p.id_Provincia
+                        INNER JOIN Pais pa ON p.id_Pais = pa.id_Pais
+                        INNER JOIN Perfil_Empleado pr ON e.id_perfil = pr.id_Perfil
+                        INNER JOIN Estado_Empleado es ON e.id_Estado = es.id_EstadoEmpleado
+                        WHERE e.cuil_Empleado LIKE @texto
+                           OR e.dni_Empleado LIKE @texto
+                           OR e.nombre_Empleado LIKE @texto
+                           OR e.apellido_Empleado LIKE @texto
+                           OR e.email_Empleado LIKE @texto", conn);
 
-                    cmd.Parameters.AddWithValue("@texto", $"%{texto}%");
+                            cmd.Parameters.AddWithValue("@texto", $"%{texto}%");
 
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
