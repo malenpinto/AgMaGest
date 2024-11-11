@@ -14,9 +14,8 @@ namespace AgMaGest.C_Datos
         // Obtener la cadena de conexión desde app.config
         private string ConnectionString = ConfigurationManager.ConnectionStrings["AgMaGest.Properties.Settings.AgmagestConnectionString"].ConnectionString;
 
-
-        // Método para insertar un nuevo empleado en la base de datos
-        public bool InsertarVehiculo(Vehiculos vehiculo, byte[] imagen = null)
+        // Método para insertar un nuevo vehículo en la base de datos
+        public bool InsertarVehiculo(Vehiculos vehiculo, string rutaImagen = null)
         {
             try
             {
@@ -26,9 +25,9 @@ namespace AgMaGest.C_Datos
 
                     // Comando para insertar el vehículo y obtener el ID generado
                     SqlCommand cmd = new SqlCommand(
-                        "INSERT INTO Vehiculos (marca_Vehiculo, modelo_Vehiculo, version_Vehiculo, km_Vehiculo, anio_Vehiculo, patente_Vehiculo," +
-                        "codigo_OKM, precio_Vehiculo, id_tipoVehiculo, id_Estado, id_Condicion, imagen) " +
-                        "VALUES (@Marca, @Modelo, @Version, @KM, @Anio, @Patente, @CodigoOKM, @Precio, @IdTipoVehiculo, @IdEstado, @IdCondicion, @Imagen); " +
+                        "INSERT INTO Vehiculos (marca_Vehiculo, modelo_Vehiculo, version_Vehiculo, km_Vehiculo, anio_Vehiculo, patente_Vehiculo, " +
+                        "codigo_OKM, precio_Vehiculo, id_tipoVehiculo, id_Estado, id_Condicion, ruta_imagen) " +
+                        "VALUES (@Marca, @Modelo, @Version, @KM, @Anio, @Patente, @CodigoOKM, @Precio, @IdTipoVehiculo, @IdEstado, @IdCondicion, @RutaImagen); " +
                         "SELECT SCOPE_IDENTITY();", conn);
 
                     // Añadir los parámetros al comando SQL
@@ -43,7 +42,7 @@ namespace AgMaGest.C_Datos
                     cmd.Parameters.AddWithValue("@IdTipoVehiculo", vehiculo.IdTipoVehiculo);
                     cmd.Parameters.AddWithValue("@IdEstado", vehiculo.IdEstado);
                     cmd.Parameters.AddWithValue("@IdCondicion", vehiculo.IdCondicion);
-                    cmd.Parameters.AddWithValue("@Imagen", imagen ?? (object)DBNull.Value);
+                    cmd.Parameters.AddWithValue("@RutaImagen", rutaImagen ?? (object)DBNull.Value);
 
                     // Ejecutar el comando y obtener el ID del vehículo insertado
                     int idVehiculo = Convert.ToInt32(cmd.ExecuteScalar());
@@ -56,12 +55,11 @@ namespace AgMaGest.C_Datos
                         "END " +
                         "ELSE " +
                         "BEGIN " +
-                        "   INSERT INTO Inventario_Vehiculos (id_Vehiculo, stock, precio_unitario) VALUES (@IdVehiculo, 1, @PrecioUnitario); " +
+                        "   INSERT INTO Inventario_Vehiculos (id_Vehiculo, stock) VALUES (@IdVehiculo, 1); " +
                         "END", conn);
 
                     // Añadir parámetros para el inventario
                     cmdUpdateStock.Parameters.AddWithValue("@IdVehiculo", idVehiculo);
-                    cmdUpdateStock.Parameters.AddWithValue("@PrecioUnitario", vehiculo.Precio);
 
                     // Ejecutar la actualización o inserción en el inventario
                     cmdUpdateStock.ExecuteNonQuery();
@@ -78,6 +76,223 @@ namespace AgMaGest.C_Datos
                 }
                 throw;
             }
+        }
+
+        // Método para obtener un vehículo por ID
+        public Vehiculos ObtenerVehiculoPorId(int idVehiculo)
+        {
+            Vehiculos vehiculo = null;
+
+            using (SqlConnection conn = new SqlConnection(ConnectionString))
+            {
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Vehiculos WHERE id_Vehiculo = @IdVehiculo", conn);
+                cmd.Parameters.AddWithValue("@IdVehiculo", idVehiculo);
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        vehiculo = new Vehiculos
+                        {
+                            IdVehiculo = (int)reader["id_Vehiculo"],
+                            Marca = reader["marca_Vehiculo"].ToString(),
+                            Modelo = reader["modelo_Vehiculo"].ToString(),
+                            Version = reader["version_Vehiculo"].ToString(),
+                            Kilometraje = (int)reader["km_Vehiculo"],
+                            Anio = (DateTime)reader["anio_Vehiculo"],
+                            Patente = reader["patente_Vehiculo"] as string,
+                            CodigoOKM = reader["codigo_OKM"] as int?,
+                            Precio = (double)reader["precio_Vehiculo"],
+                            IdTipoVehiculo = (int)reader["id_tipoVehiculo"],
+                            IdEstado = (int)reader["id_Estado"],
+                            IdCondicion = (int)reader["id_Condicion"],
+                            RutaImagen = reader["ruta_imagen"] as string
+                        };
+                    }
+                }
+            }
+            return vehiculo;
+        }
+
+        // Método para actualizar un vehículo
+        public bool ActualizarVehiculo(Vehiculos vehiculo)
+        {
+            using (SqlConnection conn = new SqlConnection(ConnectionString))
+            {
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand(
+                    "UPDATE Vehiculos SET marca_Vehiculo = @Marca, modelo_Vehiculo = @Modelo, version_Vehiculo = @Version, " +
+                    "km_Vehiculo = @KM, anio_Vehiculo = @Anio, patente_Vehiculo = @Patente, codigo_OKM = @CodigoOKM, precio_Vehiculo = @Precio, " +
+                    "id_tipoVehiculo = @IdTipoVehiculo, id_Estado = @IdEstado, id_Condicion = @IdCondicion, ruta_imagen = @RutaImagen " +
+                    "WHERE id_Vehiculo = @IdVehiculo", conn);
+
+                cmd.Parameters.AddWithValue("@IdVehiculo", vehiculo.IdVehiculo);
+                cmd.Parameters.AddWithValue("@Marca", vehiculo.Marca);
+                cmd.Parameters.AddWithValue("@Modelo", vehiculo.Modelo);
+                cmd.Parameters.AddWithValue("@Version", vehiculo.Version);
+                cmd.Parameters.AddWithValue("@KM", vehiculo.Kilometraje);
+                cmd.Parameters.AddWithValue("@Anio", vehiculo.Anio);
+                cmd.Parameters.AddWithValue("@Patente", (object)vehiculo.Patente ?? DBNull.Value);
+                cmd.Parameters.AddWithValue("@CodigoOKM", (object)vehiculo.CodigoOKM ?? DBNull.Value);
+                cmd.Parameters.AddWithValue("@Precio", vehiculo.Precio);
+                cmd.Parameters.AddWithValue("@IdTipoVehiculo", vehiculo.IdTipoVehiculo);
+                cmd.Parameters.AddWithValue("@IdEstado", vehiculo.IdEstado);
+                cmd.Parameters.AddWithValue("@IdCondicion", vehiculo.IdCondicion);
+                cmd.Parameters.AddWithValue("@RutaImagen", (object)vehiculo.RutaImagen ?? DBNull.Value);
+
+                return cmd.ExecuteNonQuery() > 0;
+            }
+        }
+
+        // Método para eliminar un vehículo
+        public bool EliminarVehiculo(int idVehiculo)
+        {
+            using (SqlConnection conn = new SqlConnection(ConnectionString))
+            {
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand("DELETE FROM Vehiculos WHERE id_Vehiculo = @IdVehiculo", conn);
+                cmd.Parameters.AddWithValue("@IdVehiculo", idVehiculo);
+
+                return cmd.ExecuteNonQuery() > 0;
+            }
+        }
+
+        // Método para obtener todos los vehículos
+        public List<Vehiculos> ObtenerTodosLosVehiculos()
+        {
+            List<Vehiculos> vehiculos = new List<Vehiculos>();
+
+            using (SqlConnection conn = new SqlConnection(ConnectionString))
+            {
+                conn.Open();
+
+                string query = @"
+            SELECT v.id_Vehiculo, v.marca_Vehiculo, v.modelo_Vehiculo, v.version_Vehiculo, 
+                   v.km_Vehiculo, v.anio_Vehiculo, v.patente_Vehiculo, v.codigo_OKM, 
+                   v.precio_Vehiculo, v.id_tipoVehiculo, v.id_Estado, v.id_Condicion, 
+                   v.ruta_imagen, 
+                   t.nombre_tipoVehiculo AS TipoNombre, 
+                   e.nombre_Estado AS EstadoNombre, 
+                   c.nombre_Condicion AS CondicionNombre
+            FROM Vehiculos v
+            LEFT JOIN Tipo_Vehiculo t ON v.id_tipoVehiculo = t.id_tipoVehiculo
+            LEFT JOIN Estado_Vehiculo e ON v.id_Estado = e.id_Estado
+            LEFT JOIN Condicion c ON v.id_Condicion = c.id_Condicion";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        vehiculos.Add(new Vehiculos
+                        {
+                            IdVehiculo = (int)reader["id_Vehiculo"],
+                            Marca = reader["marca_Vehiculo"].ToString(),
+                            Modelo = reader["modelo_Vehiculo"].ToString(),
+                            Version = reader["version_Vehiculo"].ToString(),
+                            Kilometraje = (int)reader["km_Vehiculo"],
+                            Anio = (DateTime)reader["anio_Vehiculo"],
+                            Patente = reader["patente_Vehiculo"] as string,
+                            CodigoOKM = reader["codigo_OKM"] as int?,
+                            Precio = (double)reader["precio_Vehiculo"],
+                            IdTipoVehiculo = (int)reader["id_tipoVehiculo"],
+                            IdEstado = (int)reader["id_Estado"],
+                            IdCondicion = (int)reader["id_Condicion"],
+                            RutaImagen = reader["ruta_imagen"] as string,
+
+                            // Nuevos campos para los nombres
+                            TipoNombre = reader["TipoNombre"].ToString(),
+                            EstadoNombre = reader["EstadoNombre"].ToString(),
+                            CondicionNombre = reader["CondicionNombre"].ToString()
+                        });
+                    }
+                }
+            }
+
+            return vehiculos;
+        }
+
+
+
+        public List<Vehiculos> FiltrarVehiculos(string texto)
+        {
+            List<Vehiculos> vehiculos = new List<Vehiculos>();
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConnectionString))
+                {
+                    conn.Open();
+
+                    // Consulta SQL con joins y filtro
+                    SqlCommand cmd = new SqlCommand(@"
+                SELECT v.id_Vehiculo, 
+                       v.marca_Vehiculo, 
+                       v.modelo_Vehiculo, 
+                       v.version_Vehiculo,
+                       v.anio_Vehiculo, 
+                       v.km_Vehiculo, 
+                       v.patente_Vehiculo, 
+                       v.codigo_OKM, 
+                       v.precio_Vehiculo, 
+                       v.ruta_imagen,
+                       c.nombre_Condicion AS CondicionNombre,
+                       t.nombre_TipoVehiculo AS TipoNombre,
+                       e.nombre_Estado AS EstadoNombre
+                FROM Vehiculos v
+                INNER JOIN Condicion c ON v.id_Condicion = c.id_Condicion
+                INNER JOIN Tipo_Vehiculo t ON v.id_TipoVehiculo = t.id_TipoVehiculo
+                INNER JOIN Estado_Vehiculo e ON v.id_Estado = e.id_Estado
+                WHERE v.marca_Vehiculo LIKE @texto
+                   OR v.modelo_Vehiculo LIKE @texto
+                   OR v.version_Vehiculo LIKE @texto
+                   OR v.anio_Vehiculo LIKE @texto
+                   OR v.patente_Vehiculo LIKE @texto
+                   OR v.codigo_OKM LIKE @texto
+                   OR c.nombre_Condicion LIKE @texto
+                   OR t.nombre_TipoVehiculo LIKE @texto
+                   OR e.nombre_Estado LIKE @texto", conn);
+
+                    cmd.Parameters.AddWithValue("@texto", $"%{texto}%");
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Vehiculos vehiculo = new Vehiculos
+                            {
+                                IdVehiculo = (int)reader["id_Vehiculo"],
+                                Marca = reader["marca_Vehiculo"].ToString(),
+                                Modelo = reader["modelo_Vehiculo"].ToString(),
+                                Version = reader["version_Vehiculo"].ToString(),
+                                Kilometraje = (int)reader["km_Vehiculo"],
+                                Anio = (DateTime)reader["anio_Vehiculo"],
+                                Patente = reader["patente_Vehiculo"] as string,
+                                CodigoOKM = reader["codigo_OKM"] as int?,
+                                Precio = (double)reader["precio_Vehiculo"],
+                                RutaImagen = reader["ruta_imagen"] as string,
+                                CondicionNombre = reader["CondicionNombre"].ToString(),
+                                TipoNombre = reader["TipoNombre"].ToString(),
+                                EstadoNombre = reader["EstadoNombre"].ToString()
+                            };
+
+                            vehiculos.Add(vehiculo);
+                        }
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine($"Error de SQL: {ex.Message}");
+                throw;
+            }
+
+            return vehiculos;
         }
     }
 }

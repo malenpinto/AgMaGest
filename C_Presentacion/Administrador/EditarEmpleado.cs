@@ -22,7 +22,7 @@ namespace AgMaGest.C_Presentacion.Administrador
         public EditarEmpleado(Empleado empleado)
         {
             InitializeComponent();
-            empleadoActual = empleado;
+            this.empleadoActual = empleado;
 
             // Evento Load para inicializar los datos
             this.Load += new System.EventHandler(this.EditarEmpleado_Load);

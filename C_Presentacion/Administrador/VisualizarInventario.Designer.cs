@@ -41,7 +41,6 @@
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.BBuscarVehiculo = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.TBBuscarVehiculo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -132,13 +131,15 @@
             this.BEliminarVehiculo.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BEliminarVehiculo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
             this.BEliminarVehiculo.Image = ((System.Drawing.Image)(resources.GetObject("BEliminarVehiculo.Image")));
-            this.BEliminarVehiculo.Location = new System.Drawing.Point(825, 0);
+            this.BEliminarVehiculo.Location = new System.Drawing.Point(772, 0);
             this.BEliminarVehiculo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BEliminarVehiculo.Name = "BEliminarVehiculo";
             this.BEliminarVehiculo.Size = new System.Drawing.Size(54, 60);
-            this.BEliminarVehiculo.TabIndex = 12;
+            this.BEliminarVehiculo.TabIndex = 4;
             this.BEliminarVehiculo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BEliminarVehiculo.UseVisualStyleBackColor = false;
+            this.BEliminarVehiculo.Visible = false;
+            this.BEliminarVehiculo.Click += new System.EventHandler(this.BEliminarVehiculo_Click);
             // 
             // BEditarVehiculo
             // 
@@ -152,14 +153,15 @@
             this.BEditarVehiculo.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BEditarVehiculo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
             this.BEditarVehiculo.Image = ((System.Drawing.Image)(resources.GetObject("BEditarVehiculo.Image")));
-            this.BEditarVehiculo.Location = new System.Drawing.Point(773, 0);
+            this.BEditarVehiculo.Location = new System.Drawing.Point(720, 0);
             this.BEditarVehiculo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BEditarVehiculo.Name = "BEditarVehiculo";
             this.BEditarVehiculo.Size = new System.Drawing.Size(52, 60);
-            this.BEditarVehiculo.TabIndex = 13;
+            this.BEditarVehiculo.TabIndex = 3;
             this.BEditarVehiculo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BEditarVehiculo.UseVisualStyleBackColor = false;
-            this.BEditarVehiculo.Click += new System.EventHandler(this.BEditarVehiculo_Click_1);
+            this.BEditarVehiculo.Visible = false;
+            this.BEditarVehiculo.Click += new System.EventHandler(this.BEditarVehiculo_Click);
             // 
             // BAgregarVehiculo
             // 
@@ -174,11 +176,11 @@
             this.BAgregarVehiculo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
             this.BAgregarVehiculo.Image = global::AgMaGest.Properties.Resources.Icono_MasVehiculo;
             this.BAgregarVehiculo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BAgregarVehiculo.Location = new System.Drawing.Point(514, 0);
+            this.BAgregarVehiculo.Location = new System.Drawing.Point(461, 0);
             this.BAgregarVehiculo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BAgregarVehiculo.Name = "BAgregarVehiculo";
             this.BAgregarVehiculo.Size = new System.Drawing.Size(259, 60);
-            this.BAgregarVehiculo.TabIndex = 8;
+            this.BAgregarVehiculo.TabIndex = 2;
             this.BAgregarVehiculo.Text = " Nuevo Vehículo";
             this.BAgregarVehiculo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BAgregarVehiculo.UseVisualStyleBackColor = false;
@@ -188,7 +190,7 @@
             // 
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(200)))), ((int)(((byte)(145)))));
             this.panel10.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel10.Location = new System.Drawing.Point(509, 0);
+            this.panel10.Location = new System.Drawing.Point(456, 0);
             this.panel10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(5, 60);
@@ -198,14 +200,13 @@
             // 
             this.panel8.BackColor = System.Drawing.Color.Transparent;
             this.panel8.Controls.Add(this.BBuscarVehiculo);
-            this.panel8.Controls.Add(this.label2);
             this.panel8.Controls.Add(this.TBBuscarVehiculo);
             this.panel8.Controls.Add(this.label1);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel8.Location = new System.Drawing.Point(0, 0);
             this.panel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(509, 60);
+            this.panel8.Size = new System.Drawing.Size(456, 60);
             this.panel8.TabIndex = 5;
             // 
             // BBuscarVehiculo
@@ -220,45 +221,35 @@
             this.BBuscarVehiculo.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BBuscarVehiculo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
             this.BBuscarVehiculo.Image = ((System.Drawing.Image)(resources.GetObject("BBuscarVehiculo.Image")));
-            this.BBuscarVehiculo.Location = new System.Drawing.Point(457, 0);
+            this.BBuscarVehiculo.Location = new System.Drawing.Point(404, 0);
             this.BBuscarVehiculo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BBuscarVehiculo.Name = "BBuscarVehiculo";
             this.BBuscarVehiculo.Size = new System.Drawing.Size(52, 60);
             this.BBuscarVehiculo.TabIndex = 5;
             this.BBuscarVehiculo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BBuscarVehiculo.UseVisualStyleBackColor = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Bahnschrift", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(19, 26);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(166, 21);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Código 0Km/Patente";
+            this.BBuscarVehiculo.Click += new System.EventHandler(this.BBuscarVehiculo_Click);
             // 
             // TBBuscarVehiculo
             // 
             this.TBBuscarVehiculo.BackColor = System.Drawing.Color.Gainsboro;
             this.TBBuscarVehiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBBuscarVehiculo.Location = new System.Drawing.Point(204, 15);
+            this.TBBuscarVehiculo.Location = new System.Drawing.Point(147, 15);
             this.TBBuscarVehiculo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TBBuscarVehiculo.Name = "TBBuscarVehiculo";
             this.TBBuscarVehiculo.Size = new System.Drawing.Size(255, 32);
-            this.TBBuscarVehiculo.TabIndex = 0;
+            this.TBBuscarVehiculo.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Bahnschrift", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(19, 5);
+            this.label1.Location = new System.Drawing.Point(6, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 21);
+            this.label1.Size = new System.Drawing.Size(130, 21);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Buscar por ";
+            this.label1.Text = "Buscar vehículo";
             // 
             // panel6
             // 
@@ -282,6 +273,7 @@
             // 
             // dataGridInventario
             // 
+            this.dataGridInventario.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -310,20 +302,21 @@
             this.dataGridInventario.RowTemplate.Height = 24;
             this.dataGridInventario.Size = new System.Drawing.Size(1029, 526);
             this.dataGridInventario.TabIndex = 5;
+            this.dataGridInventario.SelectionChanged += new System.EventHandler(this.DataGridInventario_SelectionChanged);
             // 
             // id_Producto
             // 
             this.id_Producto.HeaderText = "ID";
             this.id_Producto.MinimumWidth = 6;
             this.id_Producto.Name = "id_Producto";
-            this.id_Producto.Width = 80;
+            this.id_Producto.Width = 89;
             // 
             // editar_Vehiculo
             // 
             this.editar_Vehiculo.HeaderText = "Editar";
             this.editar_Vehiculo.MinimumWidth = 6;
             this.editar_Vehiculo.Name = "editar_Vehiculo";
-            this.editar_Vehiculo.Width = 125;
+            this.editar_Vehiculo.Width = 88;
             // 
             // estado_Vehiculo
             // 
@@ -332,56 +325,56 @@
             this.estado_Vehiculo.Name = "estado_Vehiculo";
             this.estado_Vehiculo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.estado_Vehiculo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.estado_Vehiculo.Width = 125;
+            this.estado_Vehiculo.Width = 89;
             // 
             // patente_Codigo0km_Vehiculo
             // 
             this.patente_Codigo0km_Vehiculo.HeaderText = "Código 0Km/Patente";
             this.patente_Codigo0km_Vehiculo.MinimumWidth = 6;
             this.patente_Codigo0km_Vehiculo.Name = "patente_Codigo0km_Vehiculo";
-            this.patente_Codigo0km_Vehiculo.Width = 125;
+            this.patente_Codigo0km_Vehiculo.Width = 89;
             // 
             // tipo_Vehiculo
             // 
             this.tipo_Vehiculo.HeaderText = "Tipo";
             this.tipo_Vehiculo.MinimumWidth = 6;
             this.tipo_Vehiculo.Name = "tipo_Vehiculo";
-            this.tipo_Vehiculo.Width = 125;
+            this.tipo_Vehiculo.Width = 89;
             // 
             // marca_Vehiculo
             // 
             this.marca_Vehiculo.HeaderText = "Marca";
             this.marca_Vehiculo.MinimumWidth = 6;
             this.marca_Vehiculo.Name = "marca_Vehiculo";
-            this.marca_Vehiculo.Width = 125;
+            this.marca_Vehiculo.Width = 88;
             // 
             // modelo_Vehiculo
             // 
             this.modelo_Vehiculo.HeaderText = "Modelo";
             this.modelo_Vehiculo.MinimumWidth = 6;
             this.modelo_Vehiculo.Name = "modelo_Vehiculo";
-            this.modelo_Vehiculo.Width = 125;
+            this.modelo_Vehiculo.Width = 89;
             // 
             // version_Vehiculo
             // 
             this.version_Vehiculo.HeaderText = "Version";
             this.version_Vehiculo.MinimumWidth = 6;
             this.version_Vehiculo.Name = "version_Vehiculo";
-            this.version_Vehiculo.Width = 125;
+            this.version_Vehiculo.Width = 89;
             // 
             // anio_Vehiculo
             // 
             this.anio_Vehiculo.HeaderText = "Año";
             this.anio_Vehiculo.MinimumWidth = 6;
             this.anio_Vehiculo.Name = "anio_Vehiculo";
-            this.anio_Vehiculo.Width = 125;
+            this.anio_Vehiculo.Width = 89;
             // 
             // km_Vehiculo
             // 
             this.km_Vehiculo.HeaderText = "KM";
             this.km_Vehiculo.MinimumWidth = 6;
             this.km_Vehiculo.Name = "km_Vehiculo";
-            this.km_Vehiculo.Width = 125;
+            this.km_Vehiculo.Width = 88;
             // 
             // condicion_Vehiculo
             // 
@@ -390,7 +383,7 @@
             this.condicion_Vehiculo.Name = "condicion_Vehiculo";
             this.condicion_Vehiculo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.condicion_Vehiculo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.condicion_Vehiculo.Width = 125;
+            this.condicion_Vehiculo.Width = 89;
             // 
             // VisualizarInventario
             // 
@@ -426,7 +419,6 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Button BAgregarVehiculo;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TBBuscarVehiculo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridInventario;

@@ -107,8 +107,8 @@
             // panel7
             // 
             this.panel7.Controls.Add(this.BAsignarUsuario);
-            this.panel7.Controls.Add(this.BEditarEmpleado);
             this.panel7.Controls.Add(this.BEliminarEmpleado);
+            this.panel7.Controls.Add(this.BEditarEmpleado);
             this.panel7.Controls.Add(this.BAgregarEmpleado);
             this.panel7.Controls.Add(this.button2);
             this.panel7.Controls.Add(this.panel8);
@@ -131,7 +131,7 @@
             this.BAsignarUsuario.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BAsignarUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
             this.BAsignarUsuario.Image = global::AgMaGest.Properties.Resources.Icono_User;
-            this.BAsignarUsuario.Location = new System.Drawing.Point(787, 0);
+            this.BAsignarUsuario.Location = new System.Drawing.Point(781, 0);
             this.BAsignarUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BAsignarUsuario.Name = "BAsignarUsuario";
             this.BAsignarUsuario.Size = new System.Drawing.Size(183, 60);
@@ -155,7 +155,7 @@
             this.BEditarEmpleado.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BEditarEmpleado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
             this.BEditarEmpleado.Image = ((System.Drawing.Image)(resources.GetObject("BEditarEmpleado.Image")));
-            this.BEditarEmpleado.Location = new System.Drawing.Point(735, 0);
+            this.BEditarEmpleado.Location = new System.Drawing.Point(675, 0);
             this.BEditarEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BEditarEmpleado.Name = "BEditarEmpleado";
             this.BEditarEmpleado.Size = new System.Drawing.Size(52, 60);
@@ -177,7 +177,7 @@
             this.BEliminarEmpleado.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BEliminarEmpleado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
             this.BEliminarEmpleado.Image = ((System.Drawing.Image)(resources.GetObject("BEliminarEmpleado.Image")));
-            this.BEliminarEmpleado.Location = new System.Drawing.Point(681, 0);
+            this.BEliminarEmpleado.Location = new System.Drawing.Point(727, 0);
             this.BEliminarEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BEliminarEmpleado.Name = "BEliminarEmpleado";
             this.BEliminarEmpleado.Size = new System.Drawing.Size(54, 60);
@@ -200,7 +200,7 @@
             this.BAgregarEmpleado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
             this.BAgregarEmpleado.Image = global::AgMaGest.Properties.Resources.Icono_MasEmpleado;
             this.BAgregarEmpleado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BAgregarEmpleado.Location = new System.Drawing.Point(443, 0);
+            this.BAgregarEmpleado.Location = new System.Drawing.Point(437, 0);
             this.BAgregarEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BAgregarEmpleado.Name = "BAgregarEmpleado";
             this.BAgregarEmpleado.Size = new System.Drawing.Size(238, 60);
@@ -219,7 +219,7 @@
             this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(438, 0);
+            this.button2.Location = new System.Drawing.Point(432, 0);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(5, 60);
@@ -236,7 +236,7 @@
             this.panel8.Location = new System.Drawing.Point(0, 0);
             this.panel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(438, 60);
+            this.panel8.Size = new System.Drawing.Size(432, 60);
             this.panel8.TabIndex = 5;
             // 
             // BBuscarEmpleado
@@ -251,7 +251,7 @@
             this.BBuscarEmpleado.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BBuscarEmpleado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
             this.BBuscarEmpleado.Image = ((System.Drawing.Image)(resources.GetObject("BBuscarEmpleado.Image")));
-            this.BBuscarEmpleado.Location = new System.Drawing.Point(386, 0);
+            this.BBuscarEmpleado.Location = new System.Drawing.Point(380, 0);
             this.BBuscarEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BBuscarEmpleado.Name = "BBuscarEmpleado";
             this.BBuscarEmpleado.Size = new System.Drawing.Size(52, 60);
@@ -264,7 +264,7 @@
             // 
             this.TBBuscarEmpleado.BackColor = System.Drawing.Color.Gainsboro;
             this.TBBuscarEmpleado.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBBuscarEmpleado.Location = new System.Drawing.Point(160, 15);
+            this.TBBuscarEmpleado.Location = new System.Drawing.Point(154, 15);
             this.TBBuscarEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TBBuscarEmpleado.Name = "TBBuscarEmpleado";
             this.TBBuscarEmpleado.Size = new System.Drawing.Size(227, 29);
@@ -275,7 +275,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Bahnschrift", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 19);
+            this.label1.Location = new System.Drawing.Point(3, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(143, 21);
             this.label1.TabIndex = 2;

@@ -305,6 +305,7 @@
             this.BBuscarUsuario.TabIndex = 5;
             this.BBuscarUsuario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BBuscarUsuario.UseVisualStyleBackColor = false;
+            this.BBuscarUsuario.Click += new System.EventHandler(this.BBuscarUsuario_Click);
             // 
             // TBBuscarUsuario
             // 

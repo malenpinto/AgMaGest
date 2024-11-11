@@ -172,5 +172,54 @@ namespace AgMaGest.C_Presentacion.Administrador
                 MessageBox.Show("Por favor, selecciona un usuario para eliminar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void BBuscarUsuario_Click(object sender, EventArgs e)
+        {
+            
+            string textoBusqueda = TBBuscarUsuario.Text.Trim();
+            if (!string.IsNullOrEmpty(textoBusqueda))
+            {
+                FiltrarUsuarios(textoBusqueda);
+            }
+            else
+            {
+                MessageBox.Show("Por favor, ingrese un texto para buscar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
+        }
+
+        private void FiltrarUsuarios(string texto)
+        {
+            UsuarioDAL usuarioDAL = new UsuarioDAL();
+
+            // Filtrar usuarios con el texto de búsqueda
+            List<Usuario> usuariosFiltrados = usuarioDAL.FiltrarUsuarios(texto);
+
+            if (usuariosFiltrados != null && usuariosFiltrados.Count > 0)
+            {
+                // Transformar los datos en un modelo plano
+                var usuariosPlanos = usuariosFiltrados.Select(u => new
+                {
+                    IdUsuario = u.IdUsuario,
+                    CuilEmpleado = u.CuilEmpleado,
+                    PasswordUsuario = u.PassswordUsuario,
+                    DNI = u.Empleado?.DNI,
+                    Nombre = u.Empleado?.Nombre,
+                    Apellido = u.Empleado?.Apellido,
+                    Email = u.Empleado?.Email
+                }).ToList();
+
+                // Asignar los datos transformados al DataGridView
+                dataGridUsuarios.DataSource = usuariosPlanos;
+            }
+            else
+            {
+                // Si no hay resultados, mostrar mensaje y recargar todos los usuarios
+                MessageBox.Show("No se encontraron usuarios con el criterio de búsqueda.", "Búsqueda sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Recargar todos los usuarios
+                CargarUsuarios();
+            }
+        }
     }
 }

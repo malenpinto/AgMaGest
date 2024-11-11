@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Configuration;
 using AgMaGest.C_Logica.Entidades;
 using System.Security.Cryptography;
+using System.Text;
 
 namespace AgMaGest.C_Datos
 {
@@ -336,6 +337,6 @@ namespace AgMaGest.C_Datos
             }
 
             return empleados;
-        }
+        }        
     }
 }

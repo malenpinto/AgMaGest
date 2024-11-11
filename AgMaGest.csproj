@@ -156,6 +156,12 @@
     <Compile Include="C_Presentacion\Administrador\VisualizarEmpleados.Designer.cs">
       <DependentUpon>VisualizarEmpleados.cs</DependentUpon>
     </Compile>
+    <Compile Include="C_Presentacion\Administrador\VisualizarImagen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C_Presentacion\Administrador\VisualizarImagen.Designer.cs">
+      <DependentUpon>VisualizarImagen.cs</DependentUpon>
+    </Compile>
     <Compile Include="C_Presentacion\Administrador\VisualizarInventario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -334,6 +340,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="C_Presentacion\Administrador\VisualizarEmpleados.resx">
       <DependentUpon>VisualizarEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="C_Presentacion\Administrador\VisualizarImagen.resx">
+      <DependentUpon>VisualizarImagen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="C_Presentacion\Administrador\VisualizarInventario.resx">
       <DependentUpon>VisualizarInventario.cs</DependentUpon>
@@ -574,6 +583,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Icono-Buscar-Admin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\Resources\Vehiculos\Hilux .jpg" />
+    <Content Include="bin\Debug\Resources\Vehiculos\Toyota yaris XLS.jpg" />
+    <Content Include="Resources\Images\FordEcoSport.jpg" />
+    <Content Include="Resources\Images\FordKaSe.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

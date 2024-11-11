@@ -29,11 +29,11 @@ namespace AgMaGest.C_Presentacion.Administrador
 
         private void CargarEmpleados()
         {
-            // Configurar el DataGridView y establecer AutoGenerateColumns a false
-            ConfigurarDataGridView();
-            dataGridEmpleados.AutoGenerateColumns = false;
+             // Configurar el DataGridView y establecer AutoGenerateColumns a false
+             ConfigurarDataGridView();
+             dataGridEmpleados.AutoGenerateColumns = false;
             
-            // Obtener los empleados desde la base de datos
+             // Obtener los empleados desde la base de datos
              EmpleadoDAL empleadoDAL = new EmpleadoDAL();
              List<Empleado> empleados = empleadoDAL.ObtenerTodosLosEmpleados();
 

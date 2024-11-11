@@ -230,5 +230,73 @@ namespace AgMaGest.C_Datos
             }
         }
 
+        public List<Usuario> FiltrarUsuarios(string texto)
+        {
+            List<Usuario> usuarios = new List<Usuario>();
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConnectionString))
+                {
+                    conn.Open();
+
+                    // Consulta SQL con filtro
+                    SqlCommand cmd = new SqlCommand(@"
+                        SELECT u.id_Usuario, 
+                               u.cuil_Empleado, 
+                               u.password_Usuario,
+                               e.dni_Empleado,
+                               e.nombre_Empleado,
+                               e.apellido_Empleado,
+                               e.email_Empleado,
+                               pr.nombre_Perfil AS PerfilNombre
+                        FROM Usuario u
+                        INNER JOIN Empleado e ON u.cuil_Empleado = e.cuil_Empleado
+                        INNER JOIN Perfil_Empleado pr ON e.id_perfil = pr.id_Perfil
+                        WHERE u.cuil_Empleado LIKE @texto
+                           OR e.dni_Empleado LIKE @texto
+                           OR e.nombre_Empleado LIKE @texto
+                           OR e.apellido_Empleado LIKE @texto
+                           OR e.email_Empleado LIKE @texto", conn);
+
+                    cmd.Parameters.AddWithValue("@texto", $"%{texto}%");
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            // Crear y llenar el objeto Empleado
+                            Empleado empleado = new Empleado
+                            {
+                                CUIL = reader.GetString(reader.GetOrdinal("cuil_Empleado")),
+                                DNI = reader.GetString(reader.GetOrdinal("dni_Empleado")),
+                                Nombre = reader.GetString(reader.GetOrdinal("nombre_Empleado")),
+                                Apellido = reader.GetString(reader.GetOrdinal("apellido_Empleado")),
+                                Email = reader.GetString(reader.GetOrdinal("email_Empleado"))
+                            };
+
+                            // Crear y llenar el objeto Usuario
+                            Usuario usuario = new Usuario
+                            {
+                                IdUsuario = reader.GetInt32(reader.GetOrdinal("id_Usuario")),
+                                CuilEmpleado = reader.GetString(reader.GetOrdinal("cuil_Empleado")),
+                                PassswordUsuario = reader.GetString(reader.GetOrdinal("password_Usuario")),
+                                Empleado = empleado,
+                                PerfilNombre = reader.GetString(reader.GetOrdinal("PerfilNombre"))
+                            };
+
+                            usuarios.Add(usuario);
+                        }
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine($"Error de SQL: {ex.Message}");
+                throw;
+            }
+
+            return usuarios;
+        }
     }
 }
