@@ -18,5 +18,49 @@ namespace AgMaGest.C_Logica.Entidades
         public int CodigoPostalCliente { get; set; }
         public int IdEstadoCliente { get; set; }
         public int IdLocalidad { get; set; }
+        public string DireccionCompleta
+        {
+            get
+            {
+                return $"{CalleCliente} {NumCalle}" +
+                       (PisoCliente.HasValue ? $", Piso {PisoCliente.Value}" : "") +
+                       (!string.IsNullOrWhiteSpace(DptoCliente) ? $", Dpto {DptoCliente}" : "");
+            }
+        }
+        public string LocalidadNombre { get; set; }
+        public string ProvinciaNombre { get; set; }
+        public string PaisNombre { get; set; }
+        public string CuilCuit
+        {
+            get
+            {
+                if (this is ClienteFinal clienteFinal)
+                {
+                    return clienteFinal.CuilCFinal;
+                }
+                else if (this is ClienteEmpresa clienteEmpresa)
+                {
+                    return clienteEmpresa.CuitCEmpresa;
+                }
+                return string.Empty;
+            }
+        }
+
+        public string NombreCompletoRazonSocial
+        {
+            get
+            {
+                if (this is ClienteFinal clienteFinal)
+                {
+                    return $"{clienteFinal.NombreCFinal} {clienteFinal.ApellidoCFinal}";
+                }
+                else if (this is ClienteEmpresa clienteEmpresa)
+                {
+                    return clienteEmpresa.RazonSocialCEmpresa;
+                }
+                return string.Empty;
+            }
+        }
+        public string EstadoNombre { get; set; }
     }
 }

@@ -19,46 +19,141 @@ namespace AgMaGest.C_Datos
         {
             List<Cliente> clientes = new List<Cliente>();
 
+            // Obtener y añadir los clientes finales
+            clientes.AddRange(ObtenerClientesFinales());
+
+            // Obtener y añadir los clientes de empresa
+            clientes.AddRange(ObtenerClientesEmpresas());
+
+            return clientes;
+        }
+
+        private List<ClienteFinal> ObtenerClientesFinales()
+        {
+            List<ClienteFinal> clientesFinales = new List<ClienteFinal>();
+
             try
             {
                 using (SqlConnection conn = new SqlConnection(ConnectionString))
                 {
                     conn.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM Cliente", conn);
-                    SqlDataReader reader = cmd.ExecuteReader();
 
-                    while (reader.Read())
+                    SqlCommand cmd = new SqlCommand(@"
+                SELECT c.id_Cliente, c.email_Cliente, c.celular_Cliente, 
+                       c.calle_Cliente, c.num_Calle, c.piso_Cliente, 
+                       c.dpto_Cliente, c.codigo_PostalCliente, 
+                       l.nombre_Localidad AS LocalidadNombre, 
+                       p.nombre_Provincia AS ProvinciaNombre, 
+                       pa.nombre_Pais AS PaisNombre,
+                       cf.dni_CFinal, cf.cuil_CFinal, cf.nombre_CFinal, 
+                       cf.apellido_CFinal, cf.fechaNac_CFinal,
+                       ec.nombre_EstadoCliente AS EstadoCliente
+                FROM Cliente c
+                INNER JOIN Cliente_Final cf ON c.id_Cliente = cf.id_Cliente
+                INNER JOIN Localidad l ON c.id_Localidad = l.id_Localidad
+                INNER JOIN Provincia p ON l.id_Provincia = p.id_Provincia
+                INNER JOIN Pais pa ON p.id_Pais = pa.id_Pais
+                INNER JOIN Estado_Cliente ec ON c.id_Estado_Cliente = ec.id_Estado_Cliente", conn);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        Cliente cliente = new Cliente()
+                        while (reader.Read())
                         {
-                            IdCliente = reader.GetInt32(0),
-                            EmailCliente = reader.GetString(1),
-                            CelularCliente = reader.GetString(2),
-                            CalleCliente = reader.GetString(3),
-                            NumCalle = reader.GetInt32(4),
-                            PisoCliente = reader.IsDBNull(5) ? (int?)null : reader.GetInt32(5),
-                            DptoCliente = reader.IsDBNull(6) ? null : reader.GetString(6),
-                            CodigoPostalCliente = reader.GetInt32(7),
-                            IdEstadoCliente = reader.GetInt32(8),
-                            IdLocalidad = reader.GetInt32(9)
-                        };
-                        clientes.Add(cliente);
+                            ClienteFinal clienteFinal = new ClienteFinal
+                            {
+                                IdCliente = reader.GetInt32(reader.GetOrdinal("id_Cliente")),
+                                EmailCliente = reader.GetString(reader.GetOrdinal("email_Cliente")),
+                                CelularCliente = reader.GetString(reader.GetOrdinal("celular_Cliente")),
+                                CalleCliente = reader.GetString(reader.GetOrdinal("calle_Cliente")),
+                                NumCalle = reader.GetInt32(reader.GetOrdinal("num_Calle")),
+                                PisoCliente = reader.IsDBNull(reader.GetOrdinal("piso_Cliente")) ? (int?)null : reader.GetInt32(reader.GetOrdinal("piso_Cliente")),
+                                DptoCliente = reader.IsDBNull(reader.GetOrdinal("dpto_Cliente")) ? null : reader.GetString(reader.GetOrdinal("dpto_Cliente")),
+                                CodigoPostalCliente = reader.GetInt32(reader.GetOrdinal("codigo_PostalCliente")),
+                                LocalidadNombre = reader.GetString(reader.GetOrdinal("LocalidadNombre")),
+                                ProvinciaNombre = reader.GetString(reader.GetOrdinal("ProvinciaNombre")),
+                                PaisNombre = reader.GetString(reader.GetOrdinal("PaisNombre")),
+                                DniCFinal = reader.GetString(reader.GetOrdinal("dni_CFinal")),
+                                CuilCFinal = reader.GetString(reader.GetOrdinal("cuil_CFinal")),
+                                NombreCFinal = reader.GetString(reader.GetOrdinal("nombre_CFinal")),
+                                ApellidoCFinal = reader.GetString(reader.GetOrdinal("apellido_CFinal")),
+                                FechaNacCFinal = reader.GetDateTime(reader.GetOrdinal("fechaNac_CFinal")),
+                                EstadoNombre = reader.GetString(reader.GetOrdinal("EstadoCliente"))
+                            };
+                            clientesFinales.Add(clienteFinal);
+                        }
                     }
                 }
             }
             catch (SqlException ex)
             {
-                Console.WriteLine($"Error de SQL: {ex.Message}");
-                throw;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error: {ex.Message}");
+                Console.WriteLine($"Error de SQL al obtener clientes finales: {ex.Message}");
                 throw;
             }
 
-            return clientes;
+            return clientesFinales;
         }
+
+        private List<ClienteEmpresa> ObtenerClientesEmpresas()
+        {
+            List<ClienteEmpresa> clientesEmpresas = new List<ClienteEmpresa>();
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConnectionString))
+                {
+                    conn.Open();
+
+                    SqlCommand cmd = new SqlCommand(@"
+                SELECT c.id_Cliente, c.email_Cliente, c.celular_Cliente, 
+                       c.calle_Cliente, c.num_Calle, c.piso_Cliente, 
+                       c.dpto_Cliente, c.codigo_PostalCliente, 
+                       l.nombre_Localidad AS LocalidadNombre, 
+                       p.nombre_Provincia AS ProvinciaNombre, 
+                       pa.nombre_Pais AS PaisNombre,
+                       ce.cuit_CEmpresa, ce.razon_Social_CEmpresa,
+                       ec.nombre_EstadoCliente AS EstadoCliente
+                FROM Cliente c
+                INNER JOIN Cliente_Empresa ce ON c.id_Cliente = ce.id_Cliente
+                INNER JOIN Localidad l ON c.id_Localidad = l.id_Localidad
+                INNER JOIN Provincia p ON l.id_Provincia = p.id_Provincia
+                INNER JOIN Pais pa ON p.id_Pais = pa.id_Pais
+                INNER JOIN Estado_Cliente ec ON c.id_Estado_Cliente = ec.id_Estado_Cliente", conn);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            ClienteEmpresa clienteEmpresa = new ClienteEmpresa
+                            {
+                                IdCliente = reader.GetInt32(reader.GetOrdinal("id_Cliente")),
+                                EmailCliente = reader.GetString(reader.GetOrdinal("email_Cliente")),
+                                CelularCliente = reader.GetString(reader.GetOrdinal("celular_Cliente")),
+                                CalleCliente = reader.GetString(reader.GetOrdinal("calle_Cliente")),
+                                NumCalle = reader.GetInt32(reader.GetOrdinal("num_Calle")),
+                                PisoCliente = reader.IsDBNull(reader.GetOrdinal("piso_Cliente")) ? (int?)null : reader.GetInt32(reader.GetOrdinal("piso_Cliente")),
+                                DptoCliente = reader.IsDBNull(reader.GetOrdinal("dpto_Cliente")) ? null : reader.GetString(reader.GetOrdinal("dpto_Cliente")),
+                                CodigoPostalCliente = reader.GetInt32(reader.GetOrdinal("codigo_PostalCliente")),
+                                LocalidadNombre = reader.GetString(reader.GetOrdinal("LocalidadNombre")),
+                                ProvinciaNombre = reader.GetString(reader.GetOrdinal("ProvinciaNombre")),
+                                PaisNombre = reader.GetString(reader.GetOrdinal("PaisNombre")),
+                                CuitCEmpresa = reader.GetString(reader.GetOrdinal("cuit_CEmpresa")),
+                                RazonSocialCEmpresa = reader.GetString(reader.GetOrdinal("razon_Social_CEmpresa")),
+                                EstadoNombre = reader.GetString(reader.GetOrdinal("EstadoCliente"))
+                            };
+                            clientesEmpresas.Add(clienteEmpresa);
+                        }
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine($"Error de SQL al obtener clientes empresas: {ex.Message}");
+                throw;
+            }
+
+            return clientesEmpresas;
+        }
+
 
         // Método para obtener un cliente por ID
         public Cliente ObtenerClientePorId(int idCliente)
@@ -171,5 +266,100 @@ namespace AgMaGest.C_Datos
                 command.ExecuteNonQuery();
             }
         }
+
+        public List<Cliente> FiltrarClientes(string texto)
+        {
+            List<Cliente> clientes = new List<Cliente>();
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConnectionString))
+                {
+                    conn.Open();
+                    // Consulta SQL con joins y filtro
+                    SqlCommand cmd = new SqlCommand(@"
+                SELECT c.cuil_Cliente, c.dni_Cliente, c.nombre_Cliente, c.apellido_Cliente, c.razon_Social_Cliente, c.email_Cliente, 
+                        c.celular_Cliente, c.fechaNac_Cliente, 
+                        c.calle_Cliente AS Calle, c.num_Calle_Cliente AS NumeroCalle, 
+                        c.piso_Cliente AS Piso, c.dpto_Cliente AS Dpto,
+                        c.codigo_PostalCliente AS CodigoPostal,
+                        l.nombre_Localidad AS LocalidadNombre, 
+                        p.nombre_Provincia AS ProvinciaNombre, 
+                        pa.nombre_Pais AS PaisNombre
+                FROM Cliente c
+                INNER JOIN Localidad l ON c.id_Localidad = l.id_Localidad
+                INNER JOIN Provincia p ON l.id_Provincia = p.id_Provincia
+                INNER JOIN Pais pa ON p.id_Pais = pa.id_Pais
+                WHERE (c.cuil_Cliente LIKE @texto OR c.dni_Cliente LIKE @texto OR c.razon_Social_Cliente LIKE @texto)
+                   OR c.nombre_Cliente LIKE @texto
+                   OR c.apellido_Cliente LIKE @texto
+                   OR c.email_Cliente LIKE @texto", conn);
+
+                    cmd.Parameters.AddWithValue("@texto", $"%{texto}%");
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Cliente cliente;
+
+                            if (reader.IsDBNull(4))  // Si no tiene razón social, es un ClienteFinal
+                            {
+                                cliente = new ClienteFinal
+                                {
+                                    CuilCFinal = reader.GetString(0),
+                                    DniCFinal = reader.GetString(1),
+                                    NombreCFinal = reader.GetString(2),
+                                    ApellidoCFinal = reader.GetString(3),
+                                    EmailCliente = reader.GetString(5),
+                                    CelularCliente = reader.GetString(6),
+                                    FechaNacCFinal = reader.GetDateTime(7),
+
+                                    // Campos de dirección
+                                    CalleCliente = reader.GetString(8),
+                                    NumCalle = reader.GetInt32(9),
+                                    PisoCliente = reader.IsDBNull(10) ? 0 : reader.GetInt32(10),
+                                    DptoCliente = reader.IsDBNull(11) ? null : reader.GetString(11),
+                                    CodigoPostalCliente = reader.IsDBNull(12) ? 0 : reader.GetInt32(12),
+                                    LocalidadNombre = reader.GetString(13),
+                                    ProvinciaNombre = reader.GetString(14),
+                                    PaisNombre = reader.GetString(15)
+                                };
+                            }
+                            else  // Si tiene razón social, es un ClienteEmpresa
+                            {
+                                cliente = new ClienteEmpresa
+                                {
+                                    CuitCEmpresa = reader.GetString(0),
+                                    RazonSocialCEmpresa = reader.GetString(4), // Razón social
+                                    EmailCliente = reader.GetString(5),
+                                    CelularCliente = reader.GetString(6),
+
+                                    // Campos de dirección
+                                    CalleCliente = reader.GetString(8),
+                                    NumCalle = reader.GetInt32(9),
+                                    PisoCliente = reader.IsDBNull(10) ? 0 : reader.GetInt32(10),
+                                    DptoCliente = reader.IsDBNull(11) ? null : reader.GetString(11),
+                                    CodigoPostalCliente = reader.IsDBNull(12) ? 0 : reader.GetInt32(12),
+                                    LocalidadNombre = reader.GetString(13),
+                                    ProvinciaNombre = reader.GetString(14),
+                                    PaisNombre = reader.GetString(15)
+                                };
+                            }
+
+                            clientes.Add(cliente);
+                        }
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine($"Error de SQL: {ex.Message}");
+                throw;
+            }
+
+            return clientes;
+        }
+
     }
 }

@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace AgMaGest.C_Logica.Entidades
 {
-    public class ClienteEmpresa
+    public class ClienteEmpresa : Cliente
     {
         public int IdCEmpresa { get; set; }
         public string CuitCEmpresa { get; set; }
         public string RazonSocialCEmpresa { get; set; }
-        public int IdCliente { get; set; }
+        public int IdCliente { get; set; } // <- Relación con Cliente
+
     }
 }

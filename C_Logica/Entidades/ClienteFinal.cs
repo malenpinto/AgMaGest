@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AgMaGest.C_Logica.Entidades
 {
-    public class ClienteFinal
+    public class ClienteFinal : Cliente
     {
         public int IdClienteFinal { get; set; }
         public string NombreCFinal { get; set; }
@@ -14,6 +14,7 @@ namespace AgMaGest.C_Logica.Entidades
         public string DniCFinal { get; set; }
         public string CuilCFinal { get; set; }
         public DateTime FechaNacCFinal { get; set; }
-        public int IdCliente { get; set; }
+        public int IdCliente { get; set; } // <- Relación con Cliente
+
     }
 }
