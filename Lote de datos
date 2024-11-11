@@ -331,6 +331,11 @@ VALUES
 
 -- Consultas para ver el lote cargado
 SELECT * FROM Vehiculos
+SELECT * FROM Tipo_Vehiculo
+SELECT * FROM Estado_Vehiculo
+SELECT * FROM Condicion
+
+SELECT * FROM Inventario_Vehiculos
 
 --------------------------
 --- DATOS PARA CLIENTES---
