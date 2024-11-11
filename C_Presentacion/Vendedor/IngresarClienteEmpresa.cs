@@ -166,37 +166,82 @@ namespace AgMaGest.C_Presentacion.Vendedor
         }
         private void BAgregarCEmpresa_Click(object sender, EventArgs e)
         {
-            // Verificar que todos los campos no estén vacíos
+            // Verificar que no haya campos vacíos
+            if (CBEstadoEmpresa.SelectedValue.ToString() == "0")
+            {
+                MessageBox.Show("Debe seleccionar un estado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (CBPaisEmpresa.SelectedValue == null || CBPaisEmpresa.SelectedValue.ToString() == "0")
+            {
+                MessageBox.Show("Debe seleccionar un país.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (CBProvinciaEmpresa.SelectedValue == null || CBProvinciaEmpresa.SelectedValue.ToString() == "0")
+            {
+                MessageBox.Show("Debe seleccionar una provincia.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (CBLocalidadEmpresa.SelectedValue == null || CBLocalidadEmpresa.SelectedValue.ToString() == "0")
+            {
+                MessageBox.Show("Debe seleccionar una localidad.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (string.IsNullOrWhiteSpace(TBRazonSocial.Text) ||
                 string.IsNullOrWhiteSpace(TBCuitEmpresa.Text) ||
                 string.IsNullOrWhiteSpace(TBTelefonoEmpresa.Text) ||
                 string.IsNullOrWhiteSpace(TBEmailEmpresa.Text) ||
                 string.IsNullOrWhiteSpace(TBCalleEmpresa.Text) ||
                 string.IsNullOrWhiteSpace(TBNumCalleEmpresa.Text) ||
-                string.IsNullOrWhiteSpace(TBNumPisoEmpresa.Text) ||
-                string.IsNullOrWhiteSpace(TBDptoEmpresa.Text) ||
                 string.IsNullOrWhiteSpace(TBCodPostalEmpresa.Text) ||
                 string.IsNullOrWhiteSpace(CBPaisEmpresa.Text) ||
                 string.IsNullOrWhiteSpace(CBProvinciaEmpresa.Text) ||
                 string.IsNullOrWhiteSpace(CBLocalidadEmpresa.Text) ||
-                string.IsNullOrWhiteSpace(CBEstadoEmpresa.Text))
-
+                string.IsNullOrWhiteSpace(CBEstadoEmpresa.Text) ||
+                CBPaisEmpresa.SelectedIndex == -1 ||
+                CBProvinciaEmpresa.SelectedIndex == -1 ||
+                CBLocalidadEmpresa.SelectedIndex == -1 ||
+                CBEstadoEmpresa.SelectedIndex == -1)
             {
-                // Mostrar mensaje de error si falta algún campo
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            else if (VerificarEmail() && VerificarCUIT())
+
+            // Verificar si el email y el CUIT son válidos
+            if (!VerificarEmail() || !VerificarCUIT())
             {
-                // Convertir el nombre y apellido a formato de título (primeras letras en mayúsculas)
-                string nombreCompleto = ToTitleCase(TBRazonSocial.Text);
-
-                // Si todos los campos son válidos, procedemos con la lógica de agregar.
-                MessageBox.Show("Se agrego exitosamente a: " + nombreCompleto, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                // Limpiar todos los campos después de agregar
-                LimpiarCampos();
+                return; // Si no son válidos, salimos de la función
             }
+
+            // Crear un objeto ClienteEmpresa con los datos del formulario
+            ClienteEmpresa nuevoClienteEmpresa = new ClienteEmpresa()
+            {
+                CuitCEmpresa = TBCuitEmpresa.Text.Trim(),
+                RazonSocialCEmpresa = ToTitleCase(TBRazonSocial.Text.Trim()),
+                EmailCliente = TBEmailEmpresa.Text.Trim(),
+                CelularCliente = TBTelefonoEmpresa.Text.Trim(),
+                CalleCliente = ToTitleCase(TBCalleEmpresa.Text.Trim()),
+                NumCalle = int.Parse(TBNumCalleEmpresa.Text.Trim()),
+                PisoCliente = string.IsNullOrWhiteSpace(TBNumPisoEmpresa.Text) ? (int?)0 : int.Parse(TBNumPisoEmpresa.Text.Trim()),
+                DptoCliente = string.IsNullOrWhiteSpace(TBDptoEmpresa.Text) ? "" : TBDptoEmpresa.Text.Trim(),
+                CodigoPostalCliente = int.Parse(TBCodPostalEmpresa.Text.Trim()),
+                IdEstadoCliente = Convert.ToInt32(CBEstadoEmpresa.SelectedValue),
+                IdLocalidad = Convert.ToInt32(CBLocalidadEmpresa.SelectedValue),
+            };
+
+            // Insertar el ClienteEmpresa en la base de datos
+            ClienteEmpresaDAL clienteEmpresaDAL = new ClienteEmpresaDAL();
+            clienteEmpresaDAL.InsertarClienteEmpresa(nuevoClienteEmpresa);
+
+            // Mostrar mensaje de éxito
+            MessageBox.Show("Cliente Empresa agregado exitosamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // Limpiar los campos
+            LimpiarCampos();
         }
 
         // Función para convertir la primera letra de cada palabra a mayúscula
