@@ -331,3 +331,78 @@ VALUES
 
 -- Consultas para ver el lote cargado
 SELECT * FROM Vehiculos
+
+--------------------------
+--- DATOS PARA CLIENTES---
+--------------------------
+--ESTADO DEL CLIENTE
+INSERT INTO Estado_Cliente (nombre_EstadoCliente) 
+VALUES ('Vendido'),
+	   ('Contactado para cerrar'),
+	   ('Visita al salon'),
+	   ('Cliente interesado');
+
+--INSERCION DE CLIENTES
+-- Insertar 10 clientes en la tabla Cliente Empresa
+-- Inserción de clientes empresa
+
+INSERT INTO Cliente (email_Cliente, celular_Cliente, calle_Cliente, num_Calle, piso_Cliente, dpto_Cliente, codigo_PostalCliente, id_Estado_Cliente, id_Localidad) 
+VALUES
+('empresa1@dominio.com', '01123456789', 'Av. Libertador', 1001, 5, 'A', 1001, 1, 1),
+('empresa2@dominio.com', '01123456780', 'Calle Falsa', 202, 3, 'B', 2002, 2, 2),
+('empresa3@dominio.com', '01123456781', 'Calle San Martín', 301, 2, 'C', 3003, 3, 3),
+('empresa4@dominio.com', '01123456782', 'Av. Santa Fe', 400, 4, 'D', 4004, 3, 4),
+('empresa5@dominio.com', '01123456783', 'Calle 9 de Julio', 500, 6, 'E', 5005, 2, 5),
+('empresa6@dominio.com', '01123456784', 'Av. de Mayo', 601, 1, 'F', 6006, 4, 6),
+('empresa7@dominio.com', '01123456785', 'Calle 25 de Mayo', 702, 2, 'G', 7007, 4, 7),
+('empresa8@dominio.com', '01123456786', 'Av. Rivadavia', 803, 7, 'H', 8008, 4, 8),
+('empresa9@dominio.com', '01123456787', 'Calle Reconquista', 904, 8, 'I', 9009, 3, 9),
+('empresa10@dominio.com', '01123456788', 'Av. Corrientes', 1005, 6, 'J', 1010, 2, 10);
+
+-- Inserción de clientes empresa (final)
+INSERT INTO Cliente_Empresa (cuit_CEmpresa, razon_Social_CEmpresa, id_Cliente) 
+VALUES
+('20123456789', 'Empresa XYZ S.A.', 1),
+('20987654321', 'Corporación ABC S.R.L.', 2),
+('20234567890', 'Comercial 123 S.A.', 3),
+('20345678901', 'Fabrica de Calzado S.R.L.', 4),
+('20456789012', 'Distribuciones LMN S.A.', 5),
+('20567890123', 'Servicios Digitales S.A.', 6),
+('20678901234', 'Inmobiliaria Zeta S.R.L.', 7),
+('20789012345', 'Consultora Soluciones S.A.', 8),
+('20890123456', 'Tecnología Global S.A.', 9),
+('20901234567', 'Comercial SR S.R.L.', 10);
+
+-- Inserción de clientes finales
+INSERT INTO Cliente (email_Cliente, celular_Cliente, calle_Cliente, num_Calle, piso_Cliente, dpto_Cliente, codigo_PostalCliente, id_Estado_Cliente, id_Localidad) 
+VALUES
+('juan.perez@dominio.com', '01123456789', 'Av. Libertador', 101, 2, 'A', 1001, 3, 1),   -- id_Cliente = 11
+('ana.gomez@dominio.com', '01123456780', 'Calle Falsa', 202, 3, 'B', 2002, 2, 2),   -- id_Cliente = 12
+('carlos.ramirez@dominio.com', '01123456781', 'Calle San Martín', 303, 4, 'C', 3003, 4, 3),   -- id_Cliente = 13
+('laura.fernandez@dominio.com', '01123456782', 'Av. Santa Fe', 404, 2, 'D', 4004, 4, 4),   -- id_Cliente = 14
+('pedro.martinez@dominio.com', '01123456783', 'Calle 9 de Julio', 505, 5, 'E', 5005, 3, 5),   -- id_Cliente = 15
+('marta.lopez@dominio.com', '01123456784', 'Av. de Mayo', 606, 1, 'F', 6006, 3, 6),   -- id_Cliente = 16
+('luis.rodriguez@dominio.com', '01123456785', 'Calle 25 de Mayo', 707, 6, 'G', 7007, 2, 7),   -- id_Cliente = 17
+('julia.garcia@dominio.com', '01123456786', 'Av. Rivadavia', 808, 4, 'H', 8008, 2, 8),   -- id_Cliente = 18
+('miguel.hernandez@dominio.com', '01123456787', 'Calle Reconquista', 909, 7, 'I', 9009, 1, 9),   -- id_Cliente = 19
+('maria.perez@dominio.com', '01123456788', 'Av. Corrientes', 1010, 6, 'J', 1010, 3, 10);   -- id_Cliente = 20
+
+-- Inserción de clientes finales (finales de los 10 clientes insertados)
+INSERT INTO Cliente_Final (nombre_CFinal, apellido_CFinal, dni_CFinal, cuil_CFinal, fechaNac_CFinal, id_Cliente) 
+VALUES
+('Juan', 'Pérez', '12345678', '20123456789', '1985-01-15', 11),   -- id_Cliente = 11
+('Ana', 'Gómez', '23456789', '20234567890', '1990-02-25', 12),   -- id_Cliente = 12
+('Carlos', 'Ramírez', '34567890', '20345678901', '1987-03-10', 13),   -- id_Cliente = 13
+('Laura', 'Fernández', '45678901', '20456789012', '1995-07-20', 14),   -- id_Cliente = 14
+('Pedro', 'Martínez', '56789012', '20567890123', '1982-09-30', 15),   -- id_Cliente = 15
+('Marta', 'Lopez', '67890123', '20678901234', '1992-12-12', 16),   -- id_Cliente = 16
+('Luis', 'Rodríguez', '78901234', '20789012345', '1980-04-14', 17),   -- id_Cliente = 17
+('Julia', 'García', '89012345', '20890123456', '1988-06-16', 18),   -- id_Cliente = 18
+('Miguel', 'Hernández', '90123456', '20901234567', '1993-11-02', 19),   -- id_Cliente = 19
+('María', 'Pérez', '01234567', '20012345678', '1996-08-21', 20);   -- id_Cliente = 20
+
+
+SELECT * FROM Cliente_Empresa
+SELECT * FROM Cliente_Final
+SELECT * FROM Cliente
+SELECT * FROM Estado_Cliente
