@@ -161,19 +161,6 @@ namespace AgMaGest.C_Presentacion.Vendedor
             }
         }
 
-        private void BBuscarCliente_Click(object sender, EventArgs e)
-        {
-            string textoBusqueda = TBBuscarCliente.Text.Trim();
-            if (!string.IsNullOrEmpty(textoBusqueda))
-            {
-                FiltrarClientes(textoBusqueda);
-            }
-            else
-            {
-                MessageBox.Show("Por favor, ingrese un texto para buscar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
         private void FiltrarClientes(string texto)
         {
             ClienteDAL clienteDAL = new ClienteDAL();
@@ -239,6 +226,17 @@ namespace AgMaGest.C_Presentacion.Vendedor
             formEditarCFinal.ShowDialog();
         }
 
-        
+        private void BBuscarEmpleado_Click(object sender, EventArgs e)
+        {
+            string textoBusqueda = TBBuscarCliente.Text.Trim();
+if (!string.IsNullOrEmpty(textoBusqueda))
+{
+    FiltrarClientes(textoBusqueda);
+}
+else
+{
+    MessageBox.Show("Por favor, ingrese un texto para buscar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+}
+        }
     }
 }

@@ -10,6 +10,8 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using AgMaGest.C_Logica.Entidades;  // Importa la clase
+using AgMaGest.C_Datos;  // Importa la capa de datos
 
 namespace AgMaGest.C_Presentacion.Vendedor
 {
@@ -19,6 +21,140 @@ namespace AgMaGest.C_Presentacion.Vendedor
         {
             InitializeComponent();
             this.KeyPreview = true; // Permite que el formulario capture el evento KeyDown
+            this.KeyPreview = true; // Permite que el formulario capture el evento KeyDown
+            this.Load += IngresarClienteFinal_Load; // Suscribirse al evento Load
+            CBEstadoCFinal.DataSource = null;// Asegurar de que esté vacío al principio
+        }
+
+        private void IngresarClienteFinal_Load(object sender, EventArgs e)
+        {
+            CargarPaises(); // Asegura de cargar los países
+            CargarEstados(); // Cargar Estados
+        }
+
+        private void CargarPaises()
+        {
+            // Obtener la lista de paises desde la base de datos
+            PaisDAL paisDAL = new PaisDAL();
+            List<Pais> paises = paisDAL.ObtenerPaises();
+
+            // Agregar una opción por defecto "Seleccione un País"
+            paises.Insert(0, new Pais { IdPais = 0, NombrePais = "Seleccione un País" });
+
+            // Asignar la lista de países al ComboBox
+            CBPaisCFinal.DataSource = paises;
+            CBPaisCFinal.DisplayMember = "NombrePais";
+            CBPaisCFinal.ValueMember = "IdPais";
+
+            // Seleccionar la opción por defecto
+            CBPaisCFinal.SelectedIndex = 0;
+
+            // Desvincular el evento antes de volver a asignarlo
+            CBPaisCFinal.SelectedIndexChanged -= CBPaisCFinal_SelectedIndexChanged;
+            CBPaisCFinal.SelectedIndexChanged += CBPaisCFinal_SelectedIndexChanged;
+        }
+
+        private void CBPaisCFinal_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CBPaisCFinal.SelectedValue != null)
+            {
+                int idPaisSeleccionado = (int)CBPaisCFinal.SelectedValue;
+
+                if (idPaisSeleccionado != 0)
+                {
+                    // Lógica cuando hay un valor seleccionado
+                    CargarProvincias(idPaisSeleccionado);
+                }
+                else
+                {
+                    // Limpiar las provincias si se selecciona "Seleccione un País"
+                    CBProvinciaCFinal.DataSource = null;
+                    CBProvinciaCFinal.Items.Clear();
+                    CBProvinciaCFinal.Items.Add("Seleccione una Provincia");
+                    CBProvinciaCFinal.SelectedIndex = 0;
+                }
+            }
+        }
+
+        private void CargarProvincias(int idPais)
+        {
+            // Obtener la lista de provincias desde la base de datos
+            ProvinciaDAL provinciaDAL = new ProvinciaDAL();
+            List<Provincia> provincias = provinciaDAL.ObtenerProvinciasPorPais(idPais);
+
+            // Agregar una opción por defecto "Seleccione una Provincia"
+            provincias.Insert(0, new Provincia { IdProvincia = 0, NombreProvincia = "Seleccione una Provincia" });
+
+            // Asignar la lista de provincias al ComboBox
+            CBProvinciaCFinal.DataSource = provincias;
+            CBProvinciaCFinal.DisplayMember = "NombreProvincia";
+            CBProvinciaCFinal.ValueMember = "IdProvincia";
+
+            // Seleccionar la opción por defecto
+            CBProvinciaCFinal.SelectedIndex = 0;
+
+            // Desvincular el evento antes de volver a asignarlo
+            CBProvinciaCFinal.SelectedIndexChanged -= CBProvinciaCFinal_SelectedIndexChanged;
+            CBProvinciaCFinal.SelectedIndexChanged += CBProvinciaCFinal_SelectedIndexChanged;
+        }
+
+        private void CBProvinciaCFinal_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CBProvinciaCFinal.SelectedValue != null)
+            {
+                int idProvinciaSeleccionada = (int)CBProvinciaCFinal.SelectedValue;
+
+                if (idProvinciaSeleccionada != 0)
+                {
+                    // Lógica cuando hay un valor seleccionado
+                    CargarLocalidades(idProvinciaSeleccionada);
+                }
+                else
+                {
+                    // Limpiar las localidades si se selecciona "Seleccione una Provincia"
+                    CBLocalidadCFinal.DataSource = null;
+                    CBLocalidadCFinal.Items.Clear();
+                    CBLocalidadCFinal.Items.Add("Seleccione una Localidad");
+                    CBLocalidadCFinal.SelectedIndex = 0;
+                }
+            }
+        }
+
+        private void CargarLocalidades(int idProvincia)
+        {
+            // Obtener la lista de localidades desde la base de datos
+            LocalidadDAL localidadDAL = new LocalidadDAL();
+            List<Localidad> localidades = localidadDAL.ObtenerLocalidadesPorProvincia(idProvincia);
+
+            // Agregar una opción por defecto "Seleccione una Provincia"
+            localidades.Insert(0, new Localidad { IdProvincia = 0, NombreLocalidad = "Seleccione una Localidad" });
+
+            // Asignar la lista de localidades al ComboBox
+            CBLocalidadCFinal.DataSource = localidades; // Asignar la lista de localidades al ComboBox
+            CBLocalidadCFinal.DisplayMember = "NombreLocalidad"; // Campo que se mostrará en el ComboBox
+            CBLocalidadCFinal.ValueMember = "IdLocalidad"; // Campo que se utilizará como valor
+
+            // Seleccionar la opción por defecto
+            CBLocalidadCFinal.SelectedIndex = 0;
+        }
+
+        private void CargarEstados()
+        {
+            // Obtener la lista de estados de cliente desde la base de datos
+            EstadoClienteDAL estadoClienteDAL = new EstadoClienteDAL();
+            List<EstadoCliente> estados = estadoClienteDAL.ObtenerEstadosCliente();
+
+            // Agregar una opción por defecto "Seleccione un estado"
+            estados.Insert(0, new EstadoCliente { IdEstadoCliente = 0, NombreEstadoCliente = "Seleccione un estado" });
+
+
+            // Asignar la lista al ComboBox
+            CBEstadoCFinal.DataSource = estados; // Asignar la lista de perfiles al ComboBox
+            CBEstadoCFinal.DisplayMember = "NombreEstadoCliente"; // Campo que se mostrará en el ComboBox
+            CBEstadoCFinal.ValueMember = "IdEstadoCliente"; // Campo que se utilizará como valor
+
+            // Seleccionar la opción por defecto
+            CBEstadoCFinal.SelectedIndex = 0;
         }
 
         private void IngresarClienteFinal_KeyDown(object sender, KeyEventArgs e)
@@ -45,8 +181,8 @@ namespace AgMaGest.C_Presentacion.Vendedor
                 string.IsNullOrWhiteSpace(TBCodPostalCFinal.Text) ||
                 string.IsNullOrWhiteSpace(CBPaisCFinal.Text) ||
                 string.IsNullOrWhiteSpace(CBProvinciaCFinal.Text) ||
-                string.IsNullOrWhiteSpace(TBCiudadCFinal.Text) ||
-                string.IsNullOrWhiteSpace(TBLocalidadCFinal.Text))
+                string.IsNullOrWhiteSpace(CBLocalidadCFinal.Text) ||
+                string.IsNullOrWhiteSpace(CBEstadoCFinal.Text))
             {
                 // Mostrar mensaje de error si falta algún campo
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -88,8 +224,7 @@ namespace AgMaGest.C_Presentacion.Vendedor
             TBCodPostalCFinal.Text = "";
             CBPaisCFinal.SelectedIndex = -1; 
             CBProvinciaCFinal.SelectedIndex = -1;
-            TBCiudadCFinal.Text = "";
-            TBLocalidadCFinal.Text = "";
+            
         }
 
         // Validar formato de correo electrónico

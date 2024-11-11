@@ -276,24 +276,44 @@ namespace AgMaGest.C_Datos
                 using (SqlConnection conn = new SqlConnection(ConnectionString))
                 {
                     conn.Open();
-                    // Consulta SQL con joins y filtro
                     SqlCommand cmd = new SqlCommand(@"
-                SELECT c.cuil_Cliente, c.dni_Cliente, c.nombre_Cliente, c.apellido_Cliente, c.razon_Social_Cliente, c.email_Cliente, 
-                        c.celular_Cliente, c.fechaNac_Cliente, 
-                        c.calle_Cliente AS Calle, c.num_Calle_Cliente AS NumeroCalle, 
-                        c.piso_Cliente AS Piso, c.dpto_Cliente AS Dpto,
-                        c.codigo_PostalCliente AS CodigoPostal,
-                        l.nombre_Localidad AS LocalidadNombre, 
-                        p.nombre_Provincia AS ProvinciaNombre, 
-                        pa.nombre_Pais AS PaisNombre
-                FROM Cliente c
-                INNER JOIN Localidad l ON c.id_Localidad = l.id_Localidad
-                INNER JOIN Provincia p ON l.id_Provincia = p.id_Provincia
-                INNER JOIN Pais pa ON p.id_Pais = pa.id_Pais
-                WHERE (c.cuil_Cliente LIKE @texto OR c.dni_Cliente LIKE @texto OR c.razon_Social_Cliente LIKE @texto)
-                   OR c.nombre_Cliente LIKE @texto
-                   OR c.apellido_Cliente LIKE @texto
-                   OR c.email_Cliente LIKE @texto", conn);
+                SELECT 
+                    c.email_Cliente,
+                    c.celular_Cliente,
+                    c.calle_Cliente, 
+                    c.num_Calle, 
+                    c.piso_Cliente, 
+                    c.dpto_Cliente,
+                    c.codigo_PostalCliente,
+                    l.nombre_Localidad AS LocalidadNombre, 
+                    p.nombre_Provincia AS ProvinciaNombre, 
+                    pa.nombre_Pais AS PaisNombre,
+                    cf.cuil_CFinal,
+                    cf.dni_CFinal,
+                    cf.nombre_CFinal,
+                    cf.apellido_CFinal,
+                    cf.fechaNac_CFinal,
+                    ce.cuit_CEmpresa,
+                    ce.razon_Social_CEmpresa,
+                    ec.nombre_EstadoCliente AS EstadoCliente
+                FROM 
+                    Cliente c
+                LEFT JOIN 
+                    Cliente_Final cf ON c.id_Cliente = cf.id_Cliente
+                LEFT JOIN 
+                    Cliente_Empresa ce ON c.id_Cliente = ce.id_Cliente
+                INNER JOIN 
+                    Localidad l ON c.id_Localidad = l.id_Localidad
+                INNER JOIN 
+                    Provincia p ON l.id_Provincia = p.id_Provincia
+                INNER JOIN 
+                    Pais pa ON p.id_Pais = pa.id_Pais
+                INNER JOIN 
+                    Estado_Cliente ec ON c.id_Estado_Cliente = ec.id_Estado_Cliente
+                WHERE 
+                    (cf.cuil_CFinal LIKE @texto OR cf.dni_CFinal LIKE @texto OR cf.nombre_CFinal LIKE @texto OR cf.apellido_CFinal LIKE @texto)
+                    OR (ce.cuit_CEmpresa LIKE @texto OR ce.razon_Social_CEmpresa LIKE @texto)
+                    OR (c.email_Cliente LIKE @texto OR c.celular_Cliente LIKE @texto)", conn);
 
                     cmd.Parameters.AddWithValue("@texto", $"%{texto}%");
 
@@ -303,47 +323,45 @@ namespace AgMaGest.C_Datos
                         {
                             Cliente cliente;
 
-                            if (reader.IsDBNull(4))  // Si no tiene razón social, es un ClienteFinal
+                            if (reader.IsDBNull(15))  // Si no tiene razón social, es un ClienteFinal
                             {
                                 cliente = new ClienteFinal
                                 {
-                                    CuilCFinal = reader.GetString(0),
-                                    DniCFinal = reader.GetString(1),
-                                    NombreCFinal = reader.GetString(2),
-                                    ApellidoCFinal = reader.GetString(3),
-                                    EmailCliente = reader.GetString(5),
-                                    CelularCliente = reader.GetString(6),
-                                    FechaNacCFinal = reader.GetDateTime(7),
-
-                                    // Campos de dirección
-                                    CalleCliente = reader.GetString(8),
-                                    NumCalle = reader.GetInt32(9),
-                                    PisoCliente = reader.IsDBNull(10) ? 0 : reader.GetInt32(10),
-                                    DptoCliente = reader.IsDBNull(11) ? null : reader.GetString(11),
-                                    CodigoPostalCliente = reader.IsDBNull(12) ? 0 : reader.GetInt32(12),
-                                    LocalidadNombre = reader.GetString(13),
-                                    ProvinciaNombre = reader.GetString(14),
-                                    PaisNombre = reader.GetString(15)
+                                    EmailCliente = reader.GetString(0),
+                                    CelularCliente = reader.GetString(1),
+                                    CalleCliente = reader.GetString(2),
+                                    NumCalle = reader.GetInt32(3),
+                                    PisoCliente = reader.IsDBNull(4) ? 0 : reader.GetInt32(4),
+                                    DptoCliente = reader.IsDBNull(5) ? null : reader.GetString(5),
+                                    CodigoPostalCliente = reader.GetInt32(6),
+                                    LocalidadNombre = reader.GetString(7),
+                                    ProvinciaNombre = reader.GetString(8),
+                                    PaisNombre = reader.GetString(9),
+                                    CuilCFinal = reader.GetString(10),
+                                    DniCFinal = reader.GetString(11),
+                                    NombreCFinal = reader.GetString(12),
+                                    ApellidoCFinal = reader.GetString(13),
+                                    FechaNacCFinal = reader.GetDateTime(14),
+                                    EstadoNombre = reader.GetString(17) // EstadoCliente
                                 };
                             }
                             else  // Si tiene razón social, es un ClienteEmpresa
                             {
                                 cliente = new ClienteEmpresa
                                 {
-                                    CuitCEmpresa = reader.GetString(0),
-                                    RazonSocialCEmpresa = reader.GetString(4), // Razón social
-                                    EmailCliente = reader.GetString(5),
-                                    CelularCliente = reader.GetString(6),
-
-                                    // Campos de dirección
-                                    CalleCliente = reader.GetString(8),
-                                    NumCalle = reader.GetInt32(9),
-                                    PisoCliente = reader.IsDBNull(10) ? 0 : reader.GetInt32(10),
-                                    DptoCliente = reader.IsDBNull(11) ? null : reader.GetString(11),
-                                    CodigoPostalCliente = reader.IsDBNull(12) ? 0 : reader.GetInt32(12),
-                                    LocalidadNombre = reader.GetString(13),
-                                    ProvinciaNombre = reader.GetString(14),
-                                    PaisNombre = reader.GetString(15)
+                                    EmailCliente = reader.GetString(0),
+                                    CelularCliente = reader.GetString(1),
+                                    CalleCliente = reader.GetString(2),
+                                    NumCalle = reader.GetInt32(3),
+                                    PisoCliente = reader.IsDBNull(4) ? 0 : reader.GetInt32(4),
+                                    DptoCliente = reader.IsDBNull(5) ? null : reader.GetString(5),
+                                    CodigoPostalCliente = reader.GetInt32(6),
+                                    LocalidadNombre = reader.GetString(7),
+                                    ProvinciaNombre = reader.GetString(8),
+                                    PaisNombre = reader.GetString(9),
+                                    CuitCEmpresa = reader.IsDBNull(15) ? null : reader.GetString(15),
+                                    RazonSocialCEmpresa = reader.IsDBNull(16) ? null : reader.GetString(16),
+                                    EstadoNombre = reader.GetString(17) // EstadoCliente
                                 };
                             }
 

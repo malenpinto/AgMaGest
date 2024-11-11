@@ -51,19 +51,18 @@
             this.BAgregarCliente = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TBBuscarCliente = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.BEditarCFinal = new System.Windows.Forms.Button();
             this.BEditarEmpresa = new System.Windows.Forms.Button();
+            this.BBuscarEmpleado = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridClientes)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel9.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -314,7 +313,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Transparent;
-            this.panel5.Controls.Add(this.pictureBox1);
+            this.panel5.Controls.Add(this.BBuscarEmpleado);
             this.panel5.Controls.Add(this.TBBuscarCliente);
             this.panel5.Controls.Add(this.label1);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
@@ -324,24 +323,11 @@
             this.panel5.Size = new System.Drawing.Size(590, 75);
             this.panel5.TabIndex = 4;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox1.Image = global::AgMaGest.Properties.Resources.Icono_Buscar_Vendedor;
-            this.pictureBox1.Location = new System.Drawing.Point(539, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(51, 75);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
             // TBBuscarCliente
             // 
             this.TBBuscarCliente.BackColor = System.Drawing.Color.Gainsboro;
             this.TBBuscarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBBuscarCliente.Location = new System.Drawing.Point(213, 14);
+            this.TBBuscarCliente.Location = new System.Drawing.Point(185, 14);
             this.TBBuscarCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TBBuscarCliente.Name = "TBBuscarCliente";
             this.TBBuscarCliente.Size = new System.Drawing.Size(322, 37);
@@ -406,6 +392,27 @@
             this.BEditarEmpresa.UseVisualStyleBackColor = true;
             this.BEditarEmpresa.Click += new System.EventHandler(this.BEditarEmpresa_Click);
             // 
+            // BBuscarEmpleado
+            // 
+            this.BBuscarEmpleado.BackColor = System.Drawing.Color.Transparent;
+            this.BBuscarEmpleado.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BBuscarEmpleado.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BBuscarEmpleado.FlatAppearance.BorderSize = 0;
+            this.BBuscarEmpleado.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BBuscarEmpleado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.BBuscarEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BBuscarEmpleado.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BBuscarEmpleado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
+            this.BBuscarEmpleado.Image = global::AgMaGest.Properties.Resources.Icono_Buscar_Vendedor;
+            this.BBuscarEmpleado.Location = new System.Drawing.Point(532, 0);
+            this.BBuscarEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BBuscarEmpleado.Name = "BBuscarEmpleado";
+            this.BBuscarEmpleado.Size = new System.Drawing.Size(58, 75);
+            this.BBuscarEmpleado.TabIndex = 5;
+            this.BBuscarEmpleado.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BBuscarEmpleado.UseVisualStyleBackColor = false;
+            this.BBuscarEmpleado.Click += new System.EventHandler(this.BBuscarEmpleado_Click);
+            // 
             // VisualizarClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -426,7 +433,6 @@
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel9.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -457,8 +463,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn celular_Cliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn email_Cliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn direccion_Cliente;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button BEditarEmpresa;
         private System.Windows.Forms.Button BEditarCFinal;
+        private System.Windows.Forms.Button BBuscarEmpleado;
     }
 }
