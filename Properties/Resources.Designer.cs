@@ -133,6 +133,16 @@ namespace AgMaGest.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Icono_BorrarVendedor {
+            get {
+                object obj = ResourceManager.GetObject("Icono-BorrarVendedor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Icono_Buscar_Admin {
             get {
                 object obj = ResourceManager.GetObject("Icono-Buscar-Admin", resourceCulture);
@@ -156,6 +166,16 @@ namespace AgMaGest.Properties {
         internal static System.Drawing.Bitmap Icono_Buscar_Vendedor {
             get {
                 object obj = ResourceManager.GetObject("Icono-Buscar-Vendedor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icono_BuscarVendedor {
+            get {
+                object obj = ResourceManager.GetObject("Icono-BuscarVendedor", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
