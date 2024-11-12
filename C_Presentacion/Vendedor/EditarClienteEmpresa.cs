@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AgMaGest.C_Datos;
+using AgMaGest.C_Logica.Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,10 +16,35 @@ namespace AgMaGest.C_Presentacion.Vendedor
 {
     public partial class EditarClienteEmpresa : Form
     {
-        public EditarClienteEmpresa()
+        private UbicacionDAL controlador = new UbicacionDAL();
+        private ClienteEmpresa clienteActual;
+
+        public EditarClienteEmpresa(ClienteEmpresa cliente)
         {
             InitializeComponent();
             this.KeyPreview = true; // Permite que el formulario capture el evento KeyDown
+            this.clienteActual = cliente;
+            // Evento Load para inicializar los datos
+            this.Load += new System.EventHandler(this.EditarClienteEmpresa_Load);
+        }
+
+        private void EditarClienteEmpresa_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                // Cargar los datos de los ComboBox
+                CargarComboBox();
+                CargarPaises();
+                // Cargar datos del cliente seleccionado
+                CargarDatosCliente(clienteActual.CuitCEmpresa);
+
+                this.CBPaisEditarEmpresa.SelectedIndexChanged += new System.EventHandler(this.CBPaisEditarEmpresa_SelectedIndexChanged);
+                this.CBProvinciaEditarEmpresa.SelectedIndexChanged += new System.EventHandler(this.CBProvinciaEditarEmpresa_SelectedIndexChanged);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar el formulario: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void EditarClienteEmpresa_KeyDown(object sender, KeyEventArgs e)
@@ -30,36 +57,223 @@ namespace AgMaGest.C_Presentacion.Vendedor
             }
         }
 
+        private void CargarComboBox()
+        {
+            try
+            {
+                // Cargar estados
+                EstadoClienteDAL estadoDAL = new EstadoClienteDAL();
+                CBEditarEstadoEmpresa.DataSource = estadoDAL.ObtenerEstadosCliente();
+                CBEditarEstadoEmpresa.DisplayMember = "NombreEstadoCliente";
+                CBEditarEstadoEmpresa.ValueMember = "IdEstadoCliente";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar los datos de los ComboBox: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void CargarPaises()
+        {
+            List<Pais> paises = controlador.ObtenerPaises();
+            CBPaisEditarEmpresa.DisplayMember = "NombrePais";
+            CBPaisEditarEmpresa.ValueMember = "IdPais";
+            CBPaisEditarEmpresa.DataSource = paises;
+        }
+
+        private void CBPaisEditarEmpresa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CBPaisEditarEmpresa.SelectedValue != null)
+            {
+                int idPais = (int)CBPaisEditarEmpresa.SelectedValue;
+                CargarProvincias(idPais);
+            }
+        }
+
+        private void CargarProvincias(int idPais)
+        {
+            List<Provincia> provincias = controlador.ObtenerProvinciasPorPais(idPais);
+            CBProvinciaEditarEmpresa.DisplayMember = "NombreProvincia";
+            CBProvinciaEditarEmpresa.ValueMember = "IdProvincia";
+            CBProvinciaEditarEmpresa.DataSource = provincias;
+        }
+
+        private void CBProvinciaEditarEmpresa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CBProvinciaEditarEmpresa.SelectedValue != null)
+            {
+                int idProvincia = (int)CBProvinciaEditarEmpresa.SelectedValue;
+                CargarLocalidades(idProvincia);
+            }
+        }
+
+        private void CargarLocalidades(int idProvincia)
+        {
+            List<Localidad> localidades = controlador.ObtenerLocalidadesPorProvincia(idProvincia);
+            CBLocalidadEditarEmpresa.DisplayMember = "NombreLocalidad";
+            CBLocalidadEditarEmpresa.ValueMember = "IdLocalidad";
+            CBLocalidadEditarEmpresa.DataSource = localidades;
+        }
+
+        private void CargarDatosCliente(string cuit)
+        {
+            try
+            {
+                // Obtener los datos del cliente
+                ClienteEmpresaDAL clienteDAL = new ClienteEmpresaDAL();
+                ClienteEmpresa cliente = clienteDAL.ObtenerClienteEmpresaPorCUIT(cuit);
+
+                if (cliente != null)
+                {
+                    // Cargar datos en los TextBox
+                    TBRazonSocialEditar.Text = cliente.RazonSocialCEmpresa;
+                    TBCuitEditarEmpresa.Text = cliente.CuitCEmpresa;
+                    TBTelefonoEditarEmpresa.Text = cliente.CelularCliente;
+                    TBEmailEditarEmpresa.Text = cliente.EmailCliente;
+
+                    TBCalleEditarEmpresa.Text = cliente.CalleCliente;
+                    TBNumCalleEditarEmpresa.Text = cliente.NumCalle.ToString();
+                    TBNumPisoEditarEmpresa.Text = (cliente.PisoCliente ?? 0).ToString();
+                    TBDptoEditarEmpresa.Text = cliente.DptoCliente ?? "";
+                    TBCodPostalEditarEmpresa.Text = cliente.CodigoPostalCliente.ToString();
+
+                    // Cargar y seleccionar los valores de Localidad, Provincia y País
+                    SeleccionarUbicacionCliente(cliente.IdLocalidad);
+
+                    // Seleccionar valores en el ComboBox de Estado
+                    CBEditarEstadoEmpresa.SelectedValue = cliente.IdEstadoCliente;
+                }
+                else
+                {
+                    MessageBox.Show("Cliente no encontrado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar los datos del cliente: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void SeleccionarUbicacionCliente(int idLocalidad)
+        {
+            try
+            {
+                // Obtener la localidad, provincia y país asociados al cliente
+                UbicacionDAL ubicacionDAL = new UbicacionDAL();
+                LocalidadDAL localidadDAL = new LocalidadDAL();
+                Localidad localidad = localidadDAL.ObtenerLocalidadPorId(idLocalidad);
+
+                if (localidad != null)
+                {
+                    ProvinciaDAL provinciaDAL = new ProvinciaDAL();
+                    PaisDAL paisDAL = new PaisDAL();
+                    Provincia provincia = provinciaDAL.ObtenerProvinciaPorId(localidad.IdProvincia);
+                    Pais pais = paisDAL.ObtenerPaisPorId(provincia.IdPais);
+
+                    // Cargar países y seleccionar el correspondiente
+                    List<Pais> paises = ubicacionDAL.ObtenerPaises();
+                    CBPaisEditarEmpresa.DisplayMember = "NombrePais";
+                    CBPaisEditarEmpresa.ValueMember = "IdPais";
+                    CBPaisEditarEmpresa.DataSource = paises;
+                    CBPaisEditarEmpresa.SelectedValue = pais.IdPais;
+
+                    // Cargar provincias y seleccionar la correspondiente
+                    List<Provincia> provincias = ubicacionDAL.ObtenerProvinciasPorPais(pais.IdPais);
+                    CBProvinciaEditarEmpresa.DisplayMember = "NombreProvincia";
+                    CBProvinciaEditarEmpresa.ValueMember = "IdProvincia";
+                    CBProvinciaEditarEmpresa.DataSource = provincias;
+                    CBProvinciaEditarEmpresa.SelectedValue = provincia.IdProvincia;
+
+                    // Cargar localidades y seleccionar la correspondiente
+                    List<Localidad> localidades = ubicacionDAL.ObtenerLocalidadesPorProvincia(provincia.IdProvincia);
+                    CBLocalidadEditarEmpresa.DisplayMember = "NombreLocalidad";
+                    CBLocalidadEditarEmpresa.ValueMember = "IdLocalidad";
+                    CBLocalidadEditarEmpresa.DataSource = localidades;
+                    CBLocalidadEditarEmpresa.SelectedValue = localidad.IdLocalidad;
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró la localidad asociada al cliente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar la ubicación del cliente: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void BEditarCEmpresa_Click(object sender, EventArgs e)
         {
-            // Verificar que todos los campos no estén vacíos
+            try
+            {
+                if (!ValidarCampos()) return;
+
+                // Actualizar los datos del cliente
+                clienteActual.CuitCEmpresa= TBCuitEditarEmpresa.Text;
+                clienteActual.RazonSocialCEmpresa = TBRazonSocialEditar.Text;
+                clienteActual.CelularCliente = TBTelefonoEditarEmpresa.Text;
+                clienteActual.EmailCliente = TBEmailEditarEmpresa.Text;
+
+                clienteActual.CalleCliente = TBCalleEditarEmpresa.Text;
+                clienteActual.NumCalle = int.Parse(TBNumCalleEditarEmpresa.Text);
+                clienteActual.PisoCliente = int.Parse(TBNumPisoEditarEmpresa.Text);
+                clienteActual.DptoCliente = TBDptoEditarEmpresa.Text;
+                clienteActual.CodigoPostalCliente = int.Parse(TBCodPostalEditarEmpresa.Text);
+
+                clienteActual.IdLocalidad = (int)CBLocalidadEditarEmpresa.SelectedValue;
+                clienteActual.IdEstadoCliente = (int)CBEditarEstadoEmpresa.SelectedValue;
+
+                // Llamar al método para guardar los cambios en la base de datos
+                ClienteEmpresaDAL clienteDAL = new ClienteEmpresaDAL();
+                bool actualizado = clienteDAL.ActualizarClienteEmpresa(clienteActual);
+
+                if (actualizado)
+                {
+                    MessageBox.Show("Cliente actualizado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo actualizar el cliente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al guardar los cambios: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private bool ValidarCampos()
+        {
             if (string.IsNullOrWhiteSpace(TBRazonSocialEditar.Text) ||
-                string.IsNullOrWhiteSpace(TBCuitEditarEmpresa.Text) ||
-                string.IsNullOrWhiteSpace(TBTelefonoEditarEmpresa.Text) ||
-                string.IsNullOrWhiteSpace(TBEmailEditarEmpresa.Text) ||
-                string.IsNullOrWhiteSpace(TBCalleEditarEmpresa.Text) ||
-                string.IsNullOrWhiteSpace(TBNumCalleEditarEmpresa.Text) ||
-                string.IsNullOrWhiteSpace(TBNumPisoEditarEmpresa.Text) ||
-                string.IsNullOrWhiteSpace(TBDptoEditarEmpresa.Text) ||
-                string.IsNullOrWhiteSpace(TBCodPostalEditarEmpresa.Text) ||
-                string.IsNullOrWhiteSpace(CBPaisEditarEmpresa.Text) ||
-                string.IsNullOrWhiteSpace(CBProvinciaEditarEmpresa.Text) ||
-                string.IsNullOrWhiteSpace(TBCiudadEditarEmpresa.Text) ||
-                string.IsNullOrWhiteSpace(TBLocalidadEditarEmpresa.Text))
+                string.IsNullOrWhiteSpace(TBCuitEditarEmpresa.Text))
             {
-                // Mostrar mensaje de error si falta algún campo
-                MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                MessageBox.Show("Los campos Razon Social y CUIT son obligatorios.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
             }
-            else if (VerificarEmail() && VerificarCUIT())
+
+            if (!Regex.IsMatch(TBEmailEditarEmpresa.Text, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
             {
-                // Convertir el nombre y apellido a formato de título (primeras letras en mayúsculas)
-                string nombreCompleto = ToTitleCase(TBRazonSocialEditar.Text);
-
-                // Si todos los campos son válidos, procedemos con la lógica de agregar.
-                MessageBox.Show("Se editó exitosamente: " + nombreCompleto, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                MessageBox.Show("El correo electrónico ingresado no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
             }
+
+            if (TBCuitEditarEmpresa.Text.Length != 11 || !long.TryParse(TBCuitEditarEmpresa.Text, out _))
+            {
+                MessageBox.Show("El CUIT debe tener 11 dígitos numéricos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(TBCalleEditarEmpresa.Text) ||
+                !int.TryParse(TBNumCalleEditarEmpresa.Text, out _) ||
+                !int.TryParse(TBCodPostalEditarEmpresa.Text, out _))
+            {
+                MessageBox.Show("Verifique que los campos de dirección sean válidos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true;
         }
 
         // Función para convertir la primera letra de cada palabra a mayúscula

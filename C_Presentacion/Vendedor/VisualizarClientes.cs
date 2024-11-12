@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AgMaGest.C_Presentacion.Vendedor;
+using AgMaGest.C_Presentacion.Administrador;
 
 
 namespace AgMaGest.C_Presentacion.Vendedor
@@ -99,7 +100,7 @@ namespace AgMaGest.C_Presentacion.Vendedor
         // dataGridClientes.Columns["LocalidadNombre"].DisplayIndex = 11;
         // dataGridClientes.Columns["ProvinciaNombre"].DisplayIndex = 12;
         // dataGridClientes.Columns["PaisNombre"].DisplayIndex = 13;
-    
+
 
         private void DataGridClientes_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
@@ -183,6 +184,21 @@ namespace AgMaGest.C_Presentacion.Vendedor
             }
         }
 
+        private void DataGridViewClientes_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridClientes.SelectedRows.Count > 0)
+            {
+                BEditarCliente.Visible = true;
+                BEliminarCliente.Visible = true;
+            }
+            else
+            {
+                // Opcionalmente, ocultar los botones si no hay selección
+                BEditarCliente.Visible = false;
+                BEliminarCliente.Visible = false;
+            }
+        }
+
 
         private void BAgregarCliente_Click_1(object sender, EventArgs e)
         {
@@ -214,29 +230,62 @@ namespace AgMaGest.C_Presentacion.Vendedor
             BAgregarEmpresa.Visible = false;
         }
 
-        private void BEditarEmpresa_Click(object sender, EventArgs e)
-        {
-            EditarClienteEmpresa formEditarEmpresa = new EditarClienteEmpresa();
-            formEditarEmpresa.ShowDialog();
-        }
-
-        private void BEditarCFinal_Click(object sender, EventArgs e)
-        {
-            EditarClienteFinal formEditarCFinal = new EditarClienteFinal();
-            formEditarCFinal.ShowDialog();
-        }
-
         private void BBuscarEmpleado_Click(object sender, EventArgs e)
         {
             string textoBusqueda = TBBuscarCliente.Text.Trim();
-if (!string.IsNullOrEmpty(textoBusqueda))
-{
-    FiltrarClientes(textoBusqueda);
-}
-else
-{
-    MessageBox.Show("Por favor, ingrese un texto para buscar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-}
+                if (!string.IsNullOrEmpty(textoBusqueda))
+                {
+                    FiltrarClientes(textoBusqueda);
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, ingrese un texto para buscar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                 }
+        }
+
+        private void BEditarCliente_Click(object sender, EventArgs e)
+        {
+            // Verificar si hay un cliente seleccionado en el DataGridView
+            if (dataGridClientes.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Debe seleccionar un cliente para editar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Obtener el CUIL/CUIT del cliente seleccionado desde el DataGridView
+            var selectedRow = dataGridClientes.SelectedRows[0];
+            string cuilCuit = selectedRow.Cells["CuilCuit"].Value.ToString();
+
+            // Determinar el tipo de cliente basado en el formato de CUIL/CUIT
+            if (EsCuit(cuilCuit))
+            {
+                // Obtener los datos del cliente empresa (puedes adaptarlo si tienes más propiedades)
+                ClienteEmpresa clienteEmpresa = (ClienteEmpresa)selectedRow.DataBoundItem;
+
+                // Abrir formulario de edición para Cliente Empresa
+                EditarClienteEmpresa formEditarEmpresa = new EditarClienteEmpresa(clienteEmpresa);
+                formEditarEmpresa.ShowDialog();
+            }
+            else
+            {
+                // Obtener los datos del cliente final (puedes adaptarlo si tienes más propiedades)
+                ClienteFinal clienteFinal = (ClienteFinal)selectedRow.DataBoundItem;
+
+                // Abrir formulario de edición para Cliente Final
+                EditarClienteFinal formEditarCFinal = new EditarClienteFinal(clienteFinal);
+                formEditarCFinal.ShowDialog();
+            }
+        }
+
+        // Método auxiliar para verificar si es CUIT (empresa) o CUIL (cliente final)
+        private bool EsCuit(string cuilCuit)
+        {
+            // En Argentina, el CUIT tiene prefijos de 30, o 33 (por ejemplo, para personas jurídicas)
+            // Mientras que el CUIL tiene prefijos típicos de 20, 27, 23 para personas físicas.
+            // Ajustar la lógica según el criterio para diferenciar CUIT y CUIL
+            // Un CUIT de empresa suele empezar con 30 o 33 y tiene longitud de 11 caracteres
+
+            return cuilCuit.Length == 11 && (cuilCuit.StartsWith("30") || cuilCuit.StartsWith("33"));
         }
     }
 }

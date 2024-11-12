@@ -57,6 +57,68 @@ namespace AgMaGest.C_Datos
             return clientesFinales;
         }
 
+        public ClienteFinal ObtenerClienteFinalPorCUIL(string cuil)
+        {
+            ClienteFinal clienteFinal = null;
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConnectionString))
+                {
+                    conn.Open();
+                    string query = @"
+                SELECT 
+                    cf.cuil_CFinal, cf.dni_CFinal, cf.nombre_CFinal, cf.apellido_CFinal,
+                    cf.fechaNac_CFinal, c.email_Cliente, c.celular_Cliente, 
+                    c.calle_Cliente, c.num_Calle, c.piso_Cliente, c.dpto_Cliente,
+                    c.codigo_PostalCliente, c.id_Localidad, c.id_Estado_Cliente,
+                    l.nombre_Localidad, p.nombre_Provincia
+                FROM Cliente_Final cf
+                INNER JOIN Cliente c ON cf.id_Cliente = c.id_Cliente
+                INNER JOIN Localidad l ON c.id_Localidad = l.id_Localidad
+                INNER JOIN Provincia p ON l.id_Provincia = p.id_Provincia
+                WHERE cf.cuil_CFinal = @CUIL";
+
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@CUIL", cuil);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            clienteFinal = new ClienteFinal
+                            {
+                                CuilCFinal = reader.GetString(0),
+                                DniCFinal = reader.GetString(1),
+                                NombreCFinal = reader.GetString(2),
+                                ApellidoCFinal = reader.GetString(3),
+                                EmailCliente = reader.GetString(4),
+                                CelularCliente = reader.GetString(5),
+                                FechaNacCFinal = reader.GetDateTime(6),
+                                CalleCliente = reader.GetString(7),
+                                NumCalle = reader.GetInt32(8),
+                                PisoCliente = reader.IsDBNull(9) ? (int?)null : reader.GetInt32(9),
+                                DptoCliente = reader.IsDBNull(10) ? null : reader.GetString(10),
+                                CodigoPostalCliente = reader.GetInt32(11),
+                                IdLocalidad = reader.GetInt32(12),
+                                IdEstadoCliente = reader.GetInt32(13),
+                                LocalidadNombre = reader.GetString(14),  // Nombre de la Localidad
+                                ProvinciaNombre = reader.GetString(15)   // Nombre de la Provincia
+                            };
+                        }
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine($"Error de SQL: {ex.Message}");
+                throw;
+            }
+
+            return clienteFinal;
+        }
+
+
         // Método para obtener un cliente final por ID
         public ClienteFinal ObtenerClienteFinalPorId(int idClienteFinal)
         {
