@@ -57,43 +57,6 @@ namespace AgMaGest.C_Datos
             return clientesFinales;
         }
 
-        // Método para insertar un nuevo cliente final
-        public bool InsertarClienteFinal(ClienteFinal clienteFinal)
-        {
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(ConnectionString))
-                {
-                    conn.Open();
-                    SqlCommand cmd = new SqlCommand(
-                        "INSERT INTO Cliente_Final (nombre_CFinal, apellido_CFinal, dni_CFinal, cuil_CFinal, fechaNac_CFinal, id_Cliente) " +
-                        "VALUES (@Nombre, @Apellido, @DNI, @CUIL, @FechaNac, @IdCliente)", conn);
-
-                    // Añadir los parámetros al comando SQL
-                    cmd.Parameters.AddWithValue("@Nombre", clienteFinal.NombreCFinal);
-                    cmd.Parameters.AddWithValue("@Apellido", clienteFinal.ApellidoCFinal);
-                    cmd.Parameters.AddWithValue("@DNI", clienteFinal.DniCFinal);
-                    cmd.Parameters.AddWithValue("@CUIL", clienteFinal.CuilCFinal);
-                    cmd.Parameters.AddWithValue("@FechaNac", clienteFinal.FechaNacCFinal);
-                    cmd.Parameters.AddWithValue("@IdCliente", clienteFinal.IdCliente);
-
-                    // Ejecutar el comando de inserción
-                    cmd.ExecuteNonQuery();
-                }
-
-                return true; // Inserción exitosa
-            }
-            catch (SqlException ex)
-            {
-                // Verificar si el error es por duplicado (clave única violada)
-                if (ex.Number == 2627 || ex.Number == 2601) // Violación de índice único
-                {
-                    throw new Exception("Ya existe un cliente final con este DNI o CUIL.");
-                }
-                throw;
-            }
-        }
-
         // Método para obtener un cliente final por ID
         public ClienteFinal ObtenerClienteFinalPorId(int idClienteFinal)
         {

@@ -54,37 +54,7 @@ namespace AgMaGest.C_Datos
             return clientesEmpresa;
         }
 
-        // Método para insertar un nuevo cliente empresa
-        public bool InsertarClienteEmpresa(ClienteEmpresa clienteEmpresa)
-        {
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(ConnectionString))
-                {
-                    conn.Open();
-                    SqlCommand cmd = new SqlCommand(
-                        "INSERT INTO Cliente_Empresa (cuit_CEmpresa, razon_Social_CEmpresa, id_Cliente) " +
-                        "VALUES (@Cuit, @RazonSocial, @IdCliente)", conn);
-
-                    // Añadir los parámetros al comando SQL
-                    cmd.Parameters.AddWithValue("@Cuit", clienteEmpresa.CuitCEmpresa);
-                    cmd.Parameters.AddWithValue("@RazonSocial", clienteEmpresa.RazonSocialCEmpresa);
-                    cmd.Parameters.AddWithValue("@IdCliente", clienteEmpresa.IdCliente);
-
-                    cmd.ExecuteNonQuery();
-                }
-
-                return true; // Inserción exitosa
-            }
-            catch (SqlException ex)
-            {
-                if (ex.Number == 2627 || ex.Number == 2601) // Violación de índice único
-                {
-                    throw new Exception("Ya existe un cliente empresa con este CUIT.");
-                }
-                throw;
-            }
-        }
+        
 
         // Método para actualizar un cliente empresa existente
         public bool ActualizarClienteEmpresa(ClienteEmpresa clienteEmpresa)

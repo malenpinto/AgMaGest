@@ -166,13 +166,7 @@ namespace AgMaGest.C_Presentacion.Vendedor
         }
         private void BAgregarCEmpresa_Click(object sender, EventArgs e)
         {
-            // Verificar que no haya campos vacíos
-            if (CBEstadoEmpresa.SelectedValue.ToString() == "0")
-            {
-                MessageBox.Show("Debe seleccionar un estado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
+            // Verificar que no haya campos vacíos (mismo código que tienes arriba)
             if (CBPaisEmpresa.SelectedValue == null || CBPaisEmpresa.SelectedValue.ToString() == "0")
             {
                 MessageBox.Show("Debe seleccionar un país.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -190,6 +184,11 @@ namespace AgMaGest.C_Presentacion.Vendedor
                 MessageBox.Show("Debe seleccionar una localidad.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if (CBEstadoEmpresa.SelectedValue.ToString() == "0")
+            {
+                MessageBox.Show("Debe seleccionar un estado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             if (string.IsNullOrWhiteSpace(TBRazonSocial.Text) ||
                 string.IsNullOrWhiteSpace(TBCuitEmpresa.Text) ||
@@ -197,15 +196,7 @@ namespace AgMaGest.C_Presentacion.Vendedor
                 string.IsNullOrWhiteSpace(TBEmailEmpresa.Text) ||
                 string.IsNullOrWhiteSpace(TBCalleEmpresa.Text) ||
                 string.IsNullOrWhiteSpace(TBNumCalleEmpresa.Text) ||
-                string.IsNullOrWhiteSpace(TBCodPostalEmpresa.Text) ||
-                string.IsNullOrWhiteSpace(CBPaisEmpresa.Text) ||
-                string.IsNullOrWhiteSpace(CBProvinciaEmpresa.Text) ||
-                string.IsNullOrWhiteSpace(CBLocalidadEmpresa.Text) ||
-                string.IsNullOrWhiteSpace(CBEstadoEmpresa.Text) ||
-                CBPaisEmpresa.SelectedIndex == -1 ||
-                CBProvinciaEmpresa.SelectedIndex == -1 ||
-                CBLocalidadEmpresa.SelectedIndex == -1 ||
-                CBEstadoEmpresa.SelectedIndex == -1)
+                string.IsNullOrWhiteSpace(TBCodPostalEmpresa.Text))
             {
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -234,14 +225,17 @@ namespace AgMaGest.C_Presentacion.Vendedor
             };
 
             // Insertar el ClienteEmpresa en la base de datos
-            ClienteEmpresaDAL clienteEmpresaDAL = new ClienteEmpresaDAL();
-            clienteEmpresaDAL.InsertarClienteEmpresa(nuevoClienteEmpresa);
-
-            // Mostrar mensaje de éxito
-            MessageBox.Show("Cliente Empresa agregado exitosamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            // Limpiar los campos
-            LimpiarCampos();
+            ClienteDAL clienteDAL = new ClienteDAL();
+            try
+            {
+                clienteDAL.InsertarClienteEmpresa(nuevoClienteEmpresa);
+                MessageBox.Show("Cliente Empresa agregado exitosamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LimpiarCampos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al agregar el Cliente Empresa: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         // Función para convertir la primera letra de cada palabra a mayúscula
@@ -264,6 +258,7 @@ namespace AgMaGest.C_Presentacion.Vendedor
             TBCodPostalEmpresa.Text = "";
             CBPaisEmpresa.SelectedIndex = -1;
             CBProvinciaEmpresa.SelectedIndex = -1;
+            CBEstadoEmpresa.SelectedIndex = -1;
         }
 
         // Validar formato de correo electrónico

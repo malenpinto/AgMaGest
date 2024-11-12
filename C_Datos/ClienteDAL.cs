@@ -190,41 +190,105 @@ namespace AgMaGest.C_Datos
         }
 
         // Método para insertar un nuevo cliente
-        public bool InsertarCliente(Cliente cliente)
+
+        // Método para insertar un cliente en la tabla Cliente
+        private int InsertarCliente(Cliente cliente)
+        {
+            int clienteId;
+
+            using (SqlConnection conn = new SqlConnection(ConnectionString))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(
+                    "INSERT INTO Cliente (email_Cliente, celular_Cliente, calle_Cliente, num_Calle, piso_Cliente, dpto_Cliente, codigo_PostalCliente, id_Estado_Cliente, id_Localidad) " +
+                    "OUTPUT INSERTED.id_Cliente " +
+                    "VALUES (@Email, @Celular, @Calle, @NumeroCalle, @Piso, @Dpto, @CodigoPostal, @IdEstadoCliente, @IdLocalidad)", conn);
+
+                // Parámetros
+                cmd.Parameters.AddWithValue("@Email", cliente.EmailCliente);
+                cmd.Parameters.AddWithValue("@Celular", cliente.CelularCliente);
+                cmd.Parameters.AddWithValue("@Calle", cliente.CalleCliente);
+                cmd.Parameters.AddWithValue("@NumeroCalle", cliente.NumCalle);
+                cmd.Parameters.AddWithValue("@Piso", cliente.PisoCliente ?? 0); // Maneja nulo como 0
+                cmd.Parameters.AddWithValue("@Dpto", cliente.DptoCliente ?? string.Empty); // Maneja nulo como cadena vacía
+                cmd.Parameters.AddWithValue("@CodigoPostal", cliente.CodigoPostalCliente);
+                cmd.Parameters.AddWithValue("@IdEstadoCliente", cliente.IdEstadoCliente);
+                cmd.Parameters.AddWithValue("@IdLocalidad", cliente.IdLocalidad);
+
+                // Ejecutar y obtener el ID insertado
+                clienteId = (int)cmd.ExecuteScalar();
+            }
+
+            return clienteId;
+        }
+
+        // Método para insertar un cliente empresa
+        public bool InsertarClienteEmpresa(ClienteEmpresa clienteEmpresa)
         {
             try
             {
+                // Insertar en la tabla Cliente y obtener el id_Cliente
+                int idCliente = InsertarCliente(clienteEmpresa);
+
+                // Luego, insertar en la tabla Cliente_Empresa
                 using (SqlConnection conn = new SqlConnection(ConnectionString))
                 {
                     conn.Open();
                     SqlCommand cmd = new SqlCommand(
-                        "INSERT INTO Cliente (email_Cliente, celular_Cliente, calle_Cliente, num_Calle, piso_Cliente, dpto_Cliente, " +
-                        "codigo_PostalCliente, id_Estado_Cliente, id_Localidad) " +
-                        "VALUES (@Email, @Celular, @Calle, @NumCalle, @Piso, @Dpto, @CodigoPostal, @Estado, @Localidad)", conn);
+                        "INSERT INTO Cliente_Empresa (cuit_CEmpresa, razon_Social_CEmpresa, id_Cliente) " +
+                        "VALUES (@CUIT, @RazonSocial, @IdCliente)", conn);
 
-                    // Añadir los parámetros al comando SQL
-                    cmd.Parameters.AddWithValue("@Email", cliente.EmailCliente);
-                    cmd.Parameters.AddWithValue("@Celular", cliente.CelularCliente);
-                    cmd.Parameters.AddWithValue("@Calle", cliente.CalleCliente);
-                    cmd.Parameters.AddWithValue("@NumCalle", cliente.NumCalle);
-                    cmd.Parameters.AddWithValue("@Piso", cliente.PisoCliente ?? (object)DBNull.Value);
-                    cmd.Parameters.AddWithValue("@Dpto", cliente.DptoCliente ?? (object)DBNull.Value);
-                    cmd.Parameters.AddWithValue("@CodigoPostal", cliente.CodigoPostalCliente);
-                    cmd.Parameters.AddWithValue("@Estado", cliente.IdEstadoCliente);
-                    cmd.Parameters.AddWithValue("@Localidad", cliente.IdLocalidad);
+                    cmd.Parameters.AddWithValue("@CUIT", clienteEmpresa.CuitCEmpresa);
+                    cmd.Parameters.AddWithValue("@RazonSocial", clienteEmpresa.RazonSocialCEmpresa);
+                    cmd.Parameters.AddWithValue("@IdCliente", idCliente);
 
-                    // Ejecutar el comando de inserción
                     cmd.ExecuteNonQuery();
                 }
 
-                return true; // Inserción exitosa
+                return true;
             }
             catch (SqlException ex)
             {
-                // Verificar si el error es por duplicado (clave única violada)
-                if (ex.Number == 2627 || ex.Number == 2601) // Violación de índice único
+                if (ex.Number == 2627) // Clave duplicada
                 {
-                    throw new Exception("Ya existe un cliente con este email o número de celular.");
+                    throw new Exception("Ya existe un cliente empresa con este CUIT.");
+                }
+                throw;
+            }
+        }
+
+        public bool InsertarClienteFinal(ClienteFinal clienteFinal)
+        {
+            try
+            {
+                // Insertar en la tabla Cliente y obtener el id_Cliente
+                int idCliente = InsertarCliente(clienteFinal);
+
+                // Luego, insertar en la tabla Cliente_Final
+                using (SqlConnection conn = new SqlConnection(ConnectionString))
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(
+                        "INSERT INTO Cliente_Final (nombre_CFinal, apellido_CFinal, dni_CFinal, cuil_CFinal, fechaNac_CFinal, id_Cliente) " +
+                        "VALUES (@NombreCFinal, @ApellidoCFinal, @DniCFinal, @CuilCFinal, @FechaNacCFinal, @IdCliente)", conn);
+
+                    cmd.Parameters.AddWithValue("@NombreCFinal", clienteFinal.NombreCFinal);
+                    cmd.Parameters.AddWithValue("@ApellidoCFinal", clienteFinal.ApellidoCFinal);
+                    cmd.Parameters.AddWithValue("@DniCFinal", clienteFinal.DniCFinal);
+                    cmd.Parameters.AddWithValue("@CuilCFinal", clienteFinal.CuilCFinal);
+                    cmd.Parameters.AddWithValue("@FechaNacCFinal", clienteFinal.FechaNacCFinal);
+                    cmd.Parameters.AddWithValue("@IdCliente", idCliente);
+
+                    cmd.ExecuteNonQuery();
+                }
+
+                return true;
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 2627) // Clave duplicada
+                {
+                    throw new Exception("Ya existe un cliente final con este DNI o CUIL.");
                 }
                 throw;
             }

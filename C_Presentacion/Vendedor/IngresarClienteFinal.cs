@@ -170,12 +170,6 @@ namespace AgMaGest.C_Presentacion.Vendedor
         private void BAgregarCFinal_Click(object sender, EventArgs e)
         {
             // Verificar que no haya campos vacíos
-            if (CBEstadoCFinal.SelectedValue.ToString() == "0")
-            {
-                MessageBox.Show("Debe seleccionar un estado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
             if (CBPaisCFinal.SelectedValue == null || CBPaisCFinal.SelectedValue.ToString() == "0")
             {
                 MessageBox.Show("Debe seleccionar un país.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -191,6 +185,12 @@ namespace AgMaGest.C_Presentacion.Vendedor
             if (CBLocalidadCFinal.SelectedValue == null || CBLocalidadCFinal.SelectedValue.ToString() == "0")
             {
                 MessageBox.Show("Debe seleccionar una localidad.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (CBEstadoCFinal.SelectedValue.ToString() == "0")
+            {
+                MessageBox.Show("Debe seleccionar un estado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -242,18 +242,27 @@ namespace AgMaGest.C_Presentacion.Vendedor
             };
 
             // Insertar el ClienteFinal en la base de datos
-            ClienteFinalDAL clienteDAL = new ClienteFinalDAL();
-            clienteDAL.InsertarClienteFinal(nuevoClienteFinal);
+            ClienteDAL clienteDAL = new ClienteDAL();
 
-            // Mostrar mensaje de éxito
-            MessageBox.Show("Cliente Final agregado exitosamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            try
+            {
+                clienteDAL.InsertarClienteFinal(nuevoClienteFinal);
 
-            // Limpiar los campos
-            LimpiarCampos();
+                // Mostrar mensaje de éxito
+                MessageBox.Show("Cliente Final agregado exitosamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Limpiar los campos
+                LimpiarCampos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al agregar el cliente final: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-    // Función para convertir la primera letra de cada palabra a mayúscula
-    private string ToTitleCase(string input)
+
+        // Función para convertir la primera letra de cada palabra a mayúscula
+        private string ToTitleCase(string input)
         {
             return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(input.ToLower());
         }
@@ -275,7 +284,7 @@ namespace AgMaGest.C_Presentacion.Vendedor
             TBCodPostalCFinal.Text = "";
             CBPaisCFinal.SelectedIndex = -1; 
             CBProvinciaCFinal.SelectedIndex = -1;
-            
+            CBEstadoCFinal.SelectedIndex = -1;
         }
 
         // Validar formato de correo electrónico
