@@ -367,16 +367,17 @@ VALUES
 -- Inserción de clientes empresa (final)
 INSERT INTO Cliente_Empresa (cuit_CEmpresa, razon_Social_CEmpresa, id_Cliente) 
 VALUES
-('20123456789', 'Empresa XYZ S.A.', 1),
-('20987654321', 'Corporación ABC S.R.L.', 2),
-('20234567890', 'Comercial 123 S.A.', 3),
-('20345678901', 'Fabrica de Calzado S.R.L.', 4),
-('20456789012', 'Distribuciones LMN S.A.', 5),
-('20567890123', 'Servicios Digitales S.A.', 6),
-('20678901234', 'Inmobiliaria Zeta S.R.L.', 7),
-('20789012345', 'Consultora Soluciones S.A.', 8),
-('20890123456', 'Tecnología Global S.A.', 9),
-('20901234567', 'Comercial SR S.R.L.', 10);
+('30123456789', 'Empresa XYZ S.A.', 1),
+('30987654321', 'Corporación ABC S.R.L.', 2),
+('30234567890', 'Comercial 123 S.A.', 3),
+('30345678901', 'Fabrica de Calzado S.R.L.', 4),
+('30456789012', 'Distribuciones LMN S.A.', 5),
+('30567890123', 'Servicios Digitales S.A.', 6),
+('30678901234', 'Inmobiliaria Zeta S.R.L.', 7),
+('30789012345', 'Consultora Soluciones S.A.', 8),
+('30890123456', 'Tecnología Global S.A.', 9),
+('30901234567', 'Comercial SR S.R.L.', 10);
+
 
 -- Inserción de clientes finales
 INSERT INTO Cliente (email_Cliente, celular_Cliente, calle_Cliente, num_Calle, piso_Cliente, dpto_Cliente, codigo_PostalCliente, id_Estado_Cliente, id_Localidad) 
@@ -406,8 +407,13 @@ VALUES
 ('Miguel', 'Hernández', '90123456', '20901234567', '1993-11-02', 19),   -- id_Cliente = 19
 ('María', 'Pérez', '01234567', '20012345678', '1996-08-21', 20);   -- id_Cliente = 20
 
-
 SELECT * FROM Cliente_Empresa
 SELECT * FROM Cliente_Final
 SELECT * FROM Cliente
 SELECT * FROM Estado_Cliente
+
+
+DBCC CHECKIDENT ('Estado_Cliente', RESEED, 0);
+DBCC CHECKIDENT ('Cliente', RESEED, 0);
+DBCC CHECKIDENT ('Cliente_Final', RESEED, 0);
+DBCC CHECKIDENT ('Cliente_Empresa', RESEED, 0);
