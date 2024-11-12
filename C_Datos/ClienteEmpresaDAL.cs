@@ -65,7 +65,7 @@ namespace AgMaGest.C_Datos
                 {
                     conn.Open();
                     SqlCommand cmd = new SqlCommand(
-                        "UPDATE ClienteEmpresa SET razon_Social_CEmpresa = @RazonSocial, celular_Cliente = @Telefono, " +
+                        "UPDATE Cliente_Empresa SET razon_Social_CEmpresa = @RazonSocial, celular_Cliente = @Telefono, " +
                         "email_Cliente = @Email, calle_Cliente = @Calle, num_Calle = @NumeroCalle, " +
                         "piso_Cliente = @Piso, dpto_Cliente = @Dpto, codigo_PostalCliente = @CodigoPostal, " +
                         "id_Localidad = @IdLocalidad, id_Estado_Cliente = @IdEstado WHERE cuit_CEmpresa = @CUIT", conn);
@@ -155,8 +155,8 @@ namespace AgMaGest.C_Datos
                             {
                                 CuitCEmpresa = reader.GetString(0),
                                 RazonSocialCEmpresa = reader.GetString(1),
-                                CelularCliente = reader.GetString(2),
-                                EmailCliente = reader.GetString(3),
+                                EmailCliente = reader.GetString(2),
+                                CelularCliente = reader.GetString(3),
                                 CalleCliente = reader.GetString(4),
                                 NumCalle = reader.GetInt32(5),
                                 PisoCliente = reader.IsDBNull(6) ? (int?)null : reader.GetInt32(6),
