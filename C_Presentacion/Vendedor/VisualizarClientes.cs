@@ -280,6 +280,69 @@ namespace AgMaGest.C_Presentacion.Vendedor
             }
         }
 
+        private void BEliminarCliente_Click(object sender, EventArgs e)
+        {
+            // Verificar si hay un cliente seleccionado en el DataGridView
+            if (dataGridClientes.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Debe seleccionar un cliente para eliminar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Obtener la fila seleccionada y el CUIL/CUIT del cliente
+            var selectedRow = dataGridClientes.SelectedRows[0];
+            string cuilCuit = selectedRow.Cells["CuilCuit"].Value.ToString();
+
+            // Determinar si el cliente es una empresa o un cliente final basado en el CUIL/CUIT
+            if (EsCuit(cuilCuit))
+            {
+                // Obtener los datos del cliente empresa
+                ClienteEmpresa clienteEmpresa = (ClienteEmpresa)selectedRow.DataBoundItem;
+                string mensaje = $"¿Estás seguro que deseas eliminar a la empresa?\nCUIT: {clienteEmpresa.CuitCEmpresa}\nRazón Social: {clienteEmpresa.RazonSocialCEmpresa}";
+
+                DialogResult resultado = MessageBox.Show(mensaje, "Confirmar Eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (resultado == DialogResult.Yes)
+                {
+                    // Llamar al método de eliminación de cliente empresa
+                    ClienteEmpresaDAL clienteEmpresaDAL = new ClienteEmpresaDAL();
+                    if (clienteEmpresaDAL.EliminarClienteEmpresaPorCuit(cuilCuit))
+                    {
+                        MessageBox.Show("Cliente empresa eliminado exitosamente.", "Eliminación Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        CargarClientes(); // Refrescar DataGridView
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo eliminar el cliente empresa.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+                // Obtener los datos del cliente final
+                ClienteFinal clienteFinal = (ClienteFinal)selectedRow.DataBoundItem;
+                string mensaje = $"¿Estás seguro que deseas eliminar al cliente final?\nCUIL: {clienteFinal.CuilCFinal}\nNombre: {clienteFinal.NombreCFinal} {clienteFinal.ApellidoCFinal}";
+
+                DialogResult resultado = MessageBox.Show(mensaje, "Confirmar Eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (resultado == DialogResult.Yes)
+                {
+                    // Llamar al método de eliminación de cliente final
+                    ClienteFinalDAL clienteFinalDAL = new ClienteFinalDAL();
+                    if (clienteFinalDAL.EliminarClienteFinalPorCuil(cuilCuit))
+                    {
+                        MessageBox.Show("Cliente final eliminado exitosamente.", "Eliminación Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        CargarClientes(); // Refrescar DataGridView
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo eliminar el cliente final.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+
         // Método auxiliar para verificar si es CUIT (empresa) o CUIL (cliente final)
         private bool EsCuit(string cuilCuit)
         {

@@ -253,6 +253,7 @@
             this.BEliminarCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BEliminarCliente.UseVisualStyleBackColor = false;
             this.BEliminarCliente.Visible = false;
+            this.BEliminarCliente.Click += new System.EventHandler(this.BEliminarCliente_Click);
             // 
             // BEditarCliente
             // 
