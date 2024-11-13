@@ -24,7 +24,6 @@ namespace AgMaGest.C_Presentacion.Cajero
         {
             
             //PSubMenuFacturas.Visible = false;
-            PSubMenuInformes.Visible = false;
         }
 
         private void ocultarSubMenu()
@@ -32,8 +31,7 @@ namespace AgMaGest.C_Presentacion.Cajero
           
            // if (PSubMenuFacturas.Visible == true)
            //    PSubMenuFacturas.Visible = false;
-            if (PSubMenuInformes.Visible == true)
-                PSubMenuInformes.Visible = false;
+           
         }
 
         private void mostrarSubMenu(Panel subMenu)
@@ -61,7 +59,7 @@ namespace AgMaGest.C_Presentacion.Cajero
 
         private void BInformes_Click(object sender, EventArgs e)
         {
-            mostrarSubMenu(PSubMenuInformes);
+            abrirFormularioHijo(new InformeMensual(), "Estadísticas Mensuales");
         }
 
 

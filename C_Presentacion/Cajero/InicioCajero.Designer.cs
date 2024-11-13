@@ -31,9 +31,6 @@
             this.PMenu = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.BAcercaDeCajero = new System.Windows.Forms.Button();
-            this.PSubMenuInformes = new System.Windows.Forms.Panel();
-            this.BInformeMensual = new System.Windows.Forms.Button();
-            this.BInformeDiario = new System.Windows.Forms.Button();
             this.BInformes = new System.Windows.Forms.Button();
             this.BFacturas = new System.Windows.Forms.Button();
             this.BPagos = new System.Windows.Forms.Button();
@@ -53,7 +50,6 @@
             this.PFormHijo = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.PMenu.SuspendLayout();
-            this.PSubMenuInformes.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -70,7 +66,6 @@
             this.PMenu.BackColor = System.Drawing.Color.BlueViolet;
             this.PMenu.Controls.Add(this.panel1);
             this.PMenu.Controls.Add(this.BAcercaDeCajero);
-            this.PMenu.Controls.Add(this.PSubMenuInformes);
             this.PMenu.Controls.Add(this.BInformes);
             this.PMenu.Controls.Add(this.BFacturas);
             this.PMenu.Controls.Add(this.BPagos);
@@ -78,19 +73,19 @@
             this.PMenu.Controls.Add(this.BCerrarSesionCajero);
             this.PMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.PMenu.Location = new System.Drawing.Point(0, 0);
-            this.PMenu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.PMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PMenu.Name = "PMenu";
-            this.PMenu.Size = new System.Drawing.Size(322, 922);
+            this.PMenu.Size = new System.Drawing.Size(286, 738);
             this.PMenu.TabIndex = 0;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.GhostWhite;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 856);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel1.Location = new System.Drawing.Point(0, 686);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(322, 3);
+            this.panel1.Size = new System.Drawing.Size(286, 2);
             this.panel1.TabIndex = 17;
             // 
             // BAcercaDeCajero
@@ -105,71 +100,17 @@
             this.BAcercaDeCajero.ForeColor = System.Drawing.Color.GhostWhite;
             this.BAcercaDeCajero.Image = global::AgMaGest.Properties.Resources.Icono_Acercade;
             this.BAcercaDeCajero.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BAcercaDeCajero.Location = new System.Drawing.Point(0, 452);
-            this.BAcercaDeCajero.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BAcercaDeCajero.Location = new System.Drawing.Point(0, 273);
+            this.BAcercaDeCajero.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BAcercaDeCajero.Name = "BAcercaDeCajero";
-            this.BAcercaDeCajero.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.BAcercaDeCajero.Size = new System.Drawing.Size(322, 63);
+            this.BAcercaDeCajero.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.BAcercaDeCajero.Size = new System.Drawing.Size(286, 50);
             this.BAcercaDeCajero.TabIndex = 16;
             this.BAcercaDeCajero.Text = " Acerca de";
             this.BAcercaDeCajero.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BAcercaDeCajero.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BAcercaDeCajero.UseVisualStyleBackColor = false;
             this.BAcercaDeCajero.Click += new System.EventHandler(this.BAcercaDeCajero_Click);
-            // 
-            // PSubMenuInformes
-            // 
-            this.PSubMenuInformes.BackColor = System.Drawing.Color.MediumPurple;
-            this.PSubMenuInformes.Controls.Add(this.BInformeMensual);
-            this.PSubMenuInformes.Controls.Add(this.BInformeDiario);
-            this.PSubMenuInformes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PSubMenuInformes.Location = new System.Drawing.Point(0, 343);
-            this.PSubMenuInformes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.PSubMenuInformes.Name = "PSubMenuInformes";
-            this.PSubMenuInformes.Size = new System.Drawing.Size(322, 109);
-            this.PSubMenuInformes.TabIndex = 15;
-            // 
-            // BInformeMensual
-            // 
-            this.BInformeMensual.BackColor = System.Drawing.Color.Transparent;
-            this.BInformeMensual.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BInformeMensual.FlatAppearance.BorderSize = 0;
-            this.BInformeMensual.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.BInformeMensual.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Indigo;
-            this.BInformeMensual.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BInformeMensual.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BInformeMensual.ForeColor = System.Drawing.Color.GhostWhite;
-            this.BInformeMensual.Location = new System.Drawing.Point(0, 49);
-            this.BInformeMensual.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.BInformeMensual.Name = "BInformeMensual";
-            this.BInformeMensual.Padding = new System.Windows.Forms.Padding(39, 0, 0, 0);
-            this.BInformeMensual.Size = new System.Drawing.Size(322, 49);
-            this.BInformeMensual.TabIndex = 4;
-            this.BInformeMensual.Text = "Estadisticas Mensuales";
-            this.BInformeMensual.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BInformeMensual.UseVisualStyleBackColor = false;
-            this.BInformeMensual.Click += new System.EventHandler(this.BInformeMensual_Click);
-            // 
-            // BInformeDiario
-            // 
-            this.BInformeDiario.BackColor = System.Drawing.Color.Transparent;
-            this.BInformeDiario.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BInformeDiario.FlatAppearance.BorderSize = 0;
-            this.BInformeDiario.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.BInformeDiario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Indigo;
-            this.BInformeDiario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BInformeDiario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BInformeDiario.ForeColor = System.Drawing.Color.GhostWhite;
-            this.BInformeDiario.Location = new System.Drawing.Point(0, 0);
-            this.BInformeDiario.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.BInformeDiario.Name = "BInformeDiario";
-            this.BInformeDiario.Padding = new System.Windows.Forms.Padding(39, 0, 0, 0);
-            this.BInformeDiario.Size = new System.Drawing.Size(322, 49);
-            this.BInformeDiario.TabIndex = 3;
-            this.BInformeDiario.Text = "Estadisticas Diarias";
-            this.BInformeDiario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BInformeDiario.UseVisualStyleBackColor = false;
-            this.BInformeDiario.Click += new System.EventHandler(this.BInformeDiario_Click);
             // 
             // BInformes
             // 
@@ -183,11 +124,11 @@
             this.BInformes.ForeColor = System.Drawing.Color.GhostWhite;
             this.BInformes.Image = global::AgMaGest.Properties.Resources.Icono_Informes;
             this.BInformes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BInformes.Location = new System.Drawing.Point(0, 280);
-            this.BInformes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BInformes.Location = new System.Drawing.Point(0, 223);
+            this.BInformes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BInformes.Name = "BInformes";
-            this.BInformes.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.BInformes.Size = new System.Drawing.Size(322, 63);
+            this.BInformes.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.BInformes.Size = new System.Drawing.Size(286, 50);
             this.BInformes.TabIndex = 14;
             this.BInformes.Text = " Estadisticas";
             this.BInformes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -207,11 +148,11 @@
             this.BFacturas.ForeColor = System.Drawing.Color.GhostWhite;
             this.BFacturas.Image = global::AgMaGest.Properties.Resources.IconoFacturaCajero;
             this.BFacturas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BFacturas.Location = new System.Drawing.Point(0, 217);
-            this.BFacturas.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BFacturas.Location = new System.Drawing.Point(0, 173);
+            this.BFacturas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BFacturas.Name = "BFacturas";
-            this.BFacturas.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.BFacturas.Size = new System.Drawing.Size(322, 63);
+            this.BFacturas.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.BFacturas.Size = new System.Drawing.Size(286, 50);
             this.BFacturas.TabIndex = 10;
             this.BFacturas.Text = " Facturas";
             this.BFacturas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -231,11 +172,11 @@
             this.BPagos.ForeColor = System.Drawing.Color.GhostWhite;
             this.BPagos.Image = global::AgMaGest.Properties.Resources.Icono_Venta;
             this.BPagos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BPagos.Location = new System.Drawing.Point(0, 154);
-            this.BPagos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BPagos.Location = new System.Drawing.Point(0, 123);
+            this.BPagos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BPagos.Name = "BPagos";
-            this.BPagos.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.BPagos.Size = new System.Drawing.Size(322, 63);
+            this.BPagos.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.BPagos.Size = new System.Drawing.Size(286, 50);
             this.BPagos.TabIndex = 7;
             this.BPagos.Text = " Pagos";
             this.BPagos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -248,18 +189,18 @@
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(322, 154);
+            this.panel3.Size = new System.Drawing.Size(286, 123);
             this.panel3.TabIndex = 6;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::AgMaGest.Properties.Resources.Logo_Sin_Fondo_Blanco;
-            this.pictureBox1.Location = new System.Drawing.Point(6, -37);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox1.Location = new System.Drawing.Point(5, -30);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(302, 217);
+            this.pictureBox1.Size = new System.Drawing.Size(268, 174);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -276,11 +217,11 @@
             this.BCerrarSesionCajero.ForeColor = System.Drawing.Color.GhostWhite;
             this.BCerrarSesionCajero.Image = global::AgMaGest.Properties.Resources.Icono_Exit_Vendedor;
             this.BCerrarSesionCajero.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BCerrarSesionCajero.Location = new System.Drawing.Point(0, 859);
-            this.BCerrarSesionCajero.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BCerrarSesionCajero.Location = new System.Drawing.Point(0, 688);
+            this.BCerrarSesionCajero.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BCerrarSesionCajero.Name = "BCerrarSesionCajero";
-            this.BCerrarSesionCajero.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.BCerrarSesionCajero.Size = new System.Drawing.Size(322, 63);
+            this.BCerrarSesionCajero.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.BCerrarSesionCajero.Size = new System.Drawing.Size(286, 50);
             this.BCerrarSesionCajero.TabIndex = 4;
             this.BCerrarSesionCajero.Text = " Cerrar Sesión";
             this.BCerrarSesionCajero.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -299,19 +240,19 @@
             this.panel2.Controls.Add(this.BCerrar);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1238, 38);
+            this.panel2.Size = new System.Drawing.Size(1101, 30);
             this.panel2.TabIndex = 1;
             // 
             // pictureBox4
             // 
             this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Right;
             this.pictureBox4.Image = global::AgMaGest.Properties.Resources.Icono_UsuarioCajero;
-            this.pictureBox4.Location = new System.Drawing.Point(863, 0);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox4.Location = new System.Drawing.Point(769, 0);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(42, 38);
+            this.pictureBox4.Size = new System.Drawing.Size(37, 30);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox4.TabIndex = 6;
             this.pictureBox4.TabStop = false;
@@ -320,10 +261,10 @@
             // 
             this.panel5.Controls.Add(this.LNombreUsuario);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(905, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel5.Location = new System.Drawing.Point(806, 0);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(207, 38);
+            this.panel5.Size = new System.Drawing.Size(184, 30);
             this.panel5.TabIndex = 5;
             // 
             // LNombreUsuario
@@ -331,10 +272,10 @@
             this.LNombreUsuario.AutoSize = true;
             this.LNombreUsuario.Font = new System.Drawing.Font("Berlin Sans FB", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LNombreUsuario.ForeColor = System.Drawing.Color.BlueViolet;
-            this.LNombreUsuario.Location = new System.Drawing.Point(4, 3);
+            this.LNombreUsuario.Location = new System.Drawing.Point(4, 2);
             this.LNombreUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LNombreUsuario.Name = "LNombreUsuario";
-            this.LNombreUsuario.Size = new System.Drawing.Size(189, 29);
+            this.LNombreUsuario.Size = new System.Drawing.Size(163, 24);
             this.LNombreUsuario.TabIndex = 5;
             this.LNombreUsuario.Text = "Nombre Usuario";
             // 
@@ -345,9 +286,9 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.ForeColor = System.Drawing.Color.BlueViolet;
             this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(429, 38);
+            this.panel4.Size = new System.Drawing.Size(381, 30);
             this.panel4.TabIndex = 3;
             // 
             // LTituloInicioCajero
@@ -356,10 +297,10 @@
             this.LTituloInicioCajero.BackColor = System.Drawing.Color.GhostWhite;
             this.LTituloInicioCajero.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LTituloInicioCajero.ForeColor = System.Drawing.Color.BlueViolet;
-            this.LTituloInicioCajero.Location = new System.Drawing.Point(74, 6);
+            this.LTituloInicioCajero.Location = new System.Drawing.Point(66, 5);
             this.LTituloInicioCajero.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LTituloInicioCajero.Name = "LTituloInicioCajero";
-            this.LTituloInicioCajero.Size = new System.Drawing.Size(0, 27);
+            this.LTituloInicioCajero.Size = new System.Drawing.Size(0, 23);
             this.LTituloInicioCajero.TabIndex = 3;
             // 
             // BAtrasCajero
@@ -369,9 +310,9 @@
             this.BAtrasCajero.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BAtrasCajero.Image = global::AgMaGest.Properties.Resources.Icono_BackCajero;
             this.BAtrasCajero.Location = new System.Drawing.Point(0, 0);
-            this.BAtrasCajero.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BAtrasCajero.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BAtrasCajero.Name = "BAtrasCajero";
-            this.BAtrasCajero.Size = new System.Drawing.Size(64, 38);
+            this.BAtrasCajero.Size = new System.Drawing.Size(57, 30);
             this.BAtrasCajero.TabIndex = 0;
             this.BAtrasCajero.UseVisualStyleBackColor = true;
             this.BAtrasCajero.Visible = false;
@@ -384,10 +325,10 @@
             this.BMinimizar.FlatAppearance.BorderSize = 0;
             this.BMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BMinimizar.Image = global::AgMaGest.Properties.Resources.IconoMinimizarCajero;
-            this.BMinimizar.Location = new System.Drawing.Point(1112, 0);
-            this.BMinimizar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BMinimizar.Location = new System.Drawing.Point(990, 0);
+            this.BMinimizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BMinimizar.Name = "BMinimizar";
-            this.BMinimizar.Size = new System.Drawing.Size(42, 38);
+            this.BMinimizar.Size = new System.Drawing.Size(37, 30);
             this.BMinimizar.TabIndex = 2;
             this.BMinimizar.UseVisualStyleBackColor = false;
             this.BMinimizar.Click += new System.EventHandler(this.BMinimizar_Click);
@@ -399,10 +340,10 @@
             this.BMaximizar.FlatAppearance.BorderSize = 0;
             this.BMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BMaximizar.Image = global::AgMaGest.Properties.Resources.IconoMaximizarCajero;
-            this.BMaximizar.Location = new System.Drawing.Point(1154, 0);
-            this.BMaximizar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BMaximizar.Location = new System.Drawing.Point(1027, 0);
+            this.BMaximizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BMaximizar.Name = "BMaximizar";
-            this.BMaximizar.Size = new System.Drawing.Size(42, 38);
+            this.BMaximizar.Size = new System.Drawing.Size(37, 30);
             this.BMaximizar.TabIndex = 1;
             this.BMaximizar.UseVisualStyleBackColor = false;
             this.BMaximizar.Click += new System.EventHandler(this.BMaximizar_Click);
@@ -414,10 +355,10 @@
             this.BCerrar.FlatAppearance.BorderSize = 0;
             this.BCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BCerrar.Image = global::AgMaGest.Properties.Resources.Icono_CloseCajero;
-            this.BCerrar.Location = new System.Drawing.Point(1196, 0);
-            this.BCerrar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BCerrar.Location = new System.Drawing.Point(1064, 0);
+            this.BCerrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BCerrar.Name = "BCerrar";
-            this.BCerrar.Size = new System.Drawing.Size(42, 38);
+            this.BCerrar.Size = new System.Drawing.Size(37, 30);
             this.BCerrar.TabIndex = 4;
             this.BCerrar.UseVisualStyleBackColor = false;
             this.BCerrar.Click += new System.EventHandler(this.BCerrar_Click);
@@ -428,10 +369,10 @@
             this.PFormHijo.Controls.Add(this.pictureBox2);
             this.PFormHijo.Controls.Add(this.panel2);
             this.PFormHijo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PFormHijo.Location = new System.Drawing.Point(322, 0);
-            this.PFormHijo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.PFormHijo.Location = new System.Drawing.Point(286, 0);
+            this.PFormHijo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PFormHijo.Name = "PFormHijo";
-            this.PFormHijo.Size = new System.Drawing.Size(1238, 922);
+            this.PFormHijo.Size = new System.Drawing.Size(1101, 738);
             this.PFormHijo.TabIndex = 2;
             // 
             // pictureBox2
@@ -439,29 +380,28 @@
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox2.ErrorImage = null;
             this.pictureBox2.Image = global::AgMaGest.Properties.Resources.Logo_Icono_Sin_Fondo;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 38);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox2.Location = new System.Drawing.Point(0, 30);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1238, 884);
+            this.pictureBox2.Size = new System.Drawing.Size(1101, 708);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
             // InicioCajero
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1560, 922);
+            this.ClientSize = new System.Drawing.Size(1387, 738);
             this.Controls.Add(this.PFormHijo);
             this.Controls.Add(this.PMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.MinimumSize = new System.Drawing.Size(1534, 908);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MinimumSize = new System.Drawing.Size(1364, 726);
             this.Name = "InicioCajero";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InicioCajero";
             this.PMenu.ResumeLayout(false);
-            this.PSubMenuInformes.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
@@ -484,11 +424,8 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button BPagos;
         private System.Windows.Forms.Button BFacturas;
-        private System.Windows.Forms.Panel PSubMenuInformes;
         private System.Windows.Forms.Button BInformes;
-        private System.Windows.Forms.Button BInformeDiario;
         private System.Windows.Forms.Button BAcercaDeCajero;
-        private System.Windows.Forms.Button BInformeMensual;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button BMinimizar;

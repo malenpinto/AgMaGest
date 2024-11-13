@@ -90,10 +90,40 @@ namespace AgMaGest.C_Presentacion.Cajero
 
         }
 
+
         private void BGenerarVenta_Click(object sender, EventArgs e)
         {
             GenerarPago formPago = new GenerarPago();
             formPago.ShowDialog();
+        }
+        private void BBuscarFacturas_Click(object sender, EventArgs e)
+        {
+            string criterioBusqueda = textBox1.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(criterioBusqueda))
+            {
+                MessageBox.Show("Por favor, ingrese un criterio de búsqueda.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                PedidoDAL pedidoDAL = new PedidoDAL();
+                List<Pedido> pedidosFiltrados = pedidoDAL.BuscarPedidos(criterioBusqueda);
+
+                if (pedidosFiltrados.Count > 0)
+                {
+                    dataGridPagos.DataSource = new BindingList<Pedido>(pedidosFiltrados);
+                }
+                else
+                {
+                    MessageBox.Show("No se encontraron pedidos con el criterio ingresado.", "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al buscar los pedidos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

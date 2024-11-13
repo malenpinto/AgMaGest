@@ -31,14 +31,13 @@ namespace AgMaGest.C_Presentacion.Cajero
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.BGenerarVenta = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -54,9 +53,10 @@ namespace AgMaGest.C_Presentacion.Cajero
             this.nombreCompletoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.montoTotalVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estadoVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BBuscarFacturas = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPagos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,6 +92,7 @@ namespace AgMaGest.C_Presentacion.Cajero
             // 
             // panel4
             // 
+            this.panel4.BackColor = System.Drawing.Color.GhostWhite;
             this.panel4.Controls.Add(this.panel7);
             this.panel4.Controls.Add(this.panel6);
             this.panel4.Controls.Add(this.panel5);
@@ -105,20 +106,18 @@ namespace AgMaGest.C_Presentacion.Cajero
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.GhostWhite;
-            this.panel7.Controls.Add(this.BGenerarVenta);
-            this.panel7.Controls.Add(this.pictureBox1);
+            this.panel7.Controls.Add(this.BBuscarFacturas);
             this.panel7.Controls.Add(this.textBox1);
             this.panel7.Controls.Add(this.label1);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(0, 48);
             this.panel7.Margin = new System.Windows.Forms.Padding(4);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1030, 57);
+            this.panel7.Size = new System.Drawing.Size(598, 57);
             this.panel7.TabIndex = 2;
             // 
             // BGenerarVenta
             // 
-            this.BGenerarVenta.Location = new System.Drawing.Point(695, 11);
+            this.BGenerarVenta.Location = new System.Drawing.Point(662, 4);
             this.BGenerarVenta.Margin = new System.Windows.Forms.Padding(4);
             this.BGenerarVenta.Name = "BGenerarVenta";
             this.BGenerarVenta.Size = new System.Drawing.Size(120, 28);
@@ -126,17 +125,6 @@ namespace AgMaGest.C_Presentacion.Cajero
             this.BGenerarVenta.Text = "Generar Pago";
             this.BGenerarVenta.UseVisualStyleBackColor = true;
             this.BGenerarVenta.Click += new System.EventHandler(this.BGenerarVenta_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::AgMaGest.Properties.Resources.Icono_Buscar_Cajero;
-            this.pictureBox1.Location = new System.Drawing.Point(533, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(45, 60);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
             // 
             // textBox1
             // 
@@ -161,6 +149,7 @@ namespace AgMaGest.C_Presentacion.Cajero
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.Thistle;
+            this.panel6.Controls.Add(this.BGenerarVenta);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Margin = new System.Windows.Forms.Padding(4);
@@ -180,14 +169,14 @@ namespace AgMaGest.C_Presentacion.Cajero
             // 
             // dataGridPagos
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridPagos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridPagos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridPagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridPagos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_Venta,
@@ -278,6 +267,27 @@ namespace AgMaGest.C_Presentacion.Cajero
             this.estadoVenta.Name = "estadoVenta";
             this.estadoVenta.Width = 125;
             // 
+            // BBuscarFacturas
+            // 
+            this.BBuscarFacturas.BackColor = System.Drawing.Color.Transparent;
+            this.BBuscarFacturas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BBuscarFacturas.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BBuscarFacturas.FlatAppearance.BorderSize = 0;
+            this.BBuscarFacturas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BBuscarFacturas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.BBuscarFacturas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BBuscarFacturas.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BBuscarFacturas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
+            this.BBuscarFacturas.Image = global::AgMaGest.Properties.Resources.Icono_Buscar_Cajero;
+            this.BBuscarFacturas.Location = new System.Drawing.Point(546, 0);
+            this.BBuscarFacturas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BBuscarFacturas.Name = "BBuscarFacturas";
+            this.BBuscarFacturas.Size = new System.Drawing.Size(52, 57);
+            this.BBuscarFacturas.TabIndex = 8;
+            this.BBuscarFacturas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BBuscarFacturas.UseVisualStyleBackColor = false;
+            this.BBuscarFacturas.Click += new System.EventHandler(this.BBuscarFacturas_Click);
+            // 
             // RegistrarPago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -295,7 +305,7 @@ namespace AgMaGest.C_Presentacion.Cajero
             this.panel4.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPagos)).EndInit();
             this.ResumeLayout(false);
 
@@ -312,7 +322,6 @@ namespace AgMaGest.C_Presentacion.Cajero
         private System.Windows.Forms.DataGridView dataGridPagos;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button BGenerarVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_Venta;
@@ -325,5 +334,6 @@ namespace AgMaGest.C_Presentacion.Cajero
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreCompletoCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn montoTotalVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn estadoVenta;
+        private System.Windows.Forms.Button BBuscarFacturas;
     }
 }
