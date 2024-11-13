@@ -27,9 +27,9 @@ namespace AgMaGest.C_Presentacion.Vendedor
         {
             try
             {
-                // Obtener la lista de vehículos desde la base de datos
+                // Obtener la lista de vehículos con estado 1 desde la base de datos
                 VehiculoDAL vehiculoDAL = new VehiculoDAL();
-                List<Vehiculos> inventario = vehiculoDAL.ObtenerTodosLosVehiculos(); // Método que obtiene los vehículos
+                List<Vehiculos> inventario = vehiculoDAL.ObtenerVehiculosActivos(); // Ya filtrado por estado en VehiculoDAL
 
                 // Configurar el DataGridView
                 ConfigurarDataGridView();
@@ -49,11 +49,10 @@ namespace AgMaGest.C_Presentacion.Vendedor
                         imagen = AgMaGest.Properties.Resources.VhiculoPorDefecto;
                     }
 
-
                     // Agregar la fila al DataGridView con las nuevas columnas Estado, Condición y Tipo
                     dataGridCatalogo.Rows.Add(
-                        vehiculo.CondicionNombre,    // Nueva columna Condición
-                        vehiculo.TipoNombre,         // Nueva columna Tipo
+                        vehiculo.CondicionNombre,
+                        vehiculo.TipoNombre,
                         imagen,
                         vehiculo.IdVehiculo,
                         vehiculo.Marca,
@@ -64,7 +63,6 @@ namespace AgMaGest.C_Presentacion.Vendedor
                         vehiculo.Patente,
                         vehiculo.CodigoOKM,
                         vehiculo.Precio
-
                     );
                 }
             }
@@ -92,6 +90,7 @@ namespace AgMaGest.C_Presentacion.Vendedor
                 ImageLayout = DataGridViewImageCellLayout.Zoom, // Ajusta la imagen al tamaño de la celda
                 Width = 100
             };
+
             dataGridCatalogo.Columns.Add(imageColumn);
 
             // Configurar las columnas manualmente
@@ -109,23 +108,12 @@ namespace AgMaGest.C_Presentacion.Vendedor
             dataGridCatalogo.AllowUserToAddRows = false;  // No permitir agregar filas vacías
         }
 
-        private void BBuscarVehiculo_Click(object sender, EventArgs e)
-        {
-            string textoBusqueda = TBBuscarVehiculoCatalogo.Text.Trim();
-            if (!string.IsNullOrEmpty(textoBusqueda))
-            {
-                FiltrarVehiculos(textoBusqueda);
-            }
-            else
-            {
-                MessageBox.Show("Por favor, ingrese un texto para buscar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
+
 
         private void FiltrarVehiculos(string texto)
         {
             VehiculoDAL vehiculoDAL = new VehiculoDAL();
-            List<Vehiculos> vehiculosFiltrados = vehiculoDAL.FiltrarVehiculos(texto);
+            List<Vehiculos> vehiculosFiltrados = vehiculoDAL.FiltrarVehiculosActivos(texto);
 
             dataGridCatalogo.Rows.Clear(); // Borra filas existentes
 
@@ -134,15 +122,15 @@ namespace AgMaGest.C_Presentacion.Vendedor
                 foreach (var vehiculo in vehiculosFiltrados)
                 {
                     // Agrega la fila como en CargarInventario()
-                    Image imagen = null;
+                    Image imagen = AgMaGest.Properties.Resources.VhiculoPorDefecto;
                     if (!string.IsNullOrEmpty(vehiculo.RutaImagen) && File.Exists(vehiculo.RutaImagen))
                     {
                         imagen = Image.FromFile(vehiculo.RutaImagen);
                     }
+
                     dataGridCatalogo.Rows.Add(
-                        vehiculo.EstadoNombre,       // Nueva columna Estado
-                        vehiculo.CondicionNombre,    // Nueva columna Condición
-                        vehiculo.TipoNombre,         // Nueva columna Tipo
+                        vehiculo.CondicionNombre,
+                        vehiculo.TipoNombre,
                         imagen,
                         vehiculo.IdVehiculo,
                         vehiculo.Marca,
@@ -153,7 +141,6 @@ namespace AgMaGest.C_Presentacion.Vendedor
                         vehiculo.Patente,
                         vehiculo.CodigoOKM,
                         vehiculo.Precio
-
                     );
                 }
             }
@@ -208,6 +195,19 @@ namespace AgMaGest.C_Presentacion.Vendedor
             int idVehiculo = Convert.ToInt32(selectedRow.Cells["IdVehiculo"].Value);
             IngresarPedido formPedido = new IngresarPedido(idVehiculo);
             formPedido.ShowDialog();
+        }
+
+        private void BBuscarVehiculoCatalogo_Click(object sender, EventArgs e)
+        {
+            string textoBusqueda = TBBuscarVehiculoCatalogo.Text.Trim();
+            if (!string.IsNullOrEmpty(textoBusqueda))
+            {
+                FiltrarVehiculos(textoBusqueda);
+            }
+            else
+            {
+                MessageBox.Show("Por favor, ingrese un texto para buscar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

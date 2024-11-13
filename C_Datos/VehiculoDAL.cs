@@ -217,8 +217,6 @@ namespace AgMaGest.C_Datos
             return vehiculos;
         }
 
-
-
         public List<Vehiculos> FiltrarVehiculos(string texto)
         {
             List<Vehiculos> vehiculos = new List<Vehiculos>();
@@ -293,6 +291,136 @@ namespace AgMaGest.C_Datos
             }
 
             return vehiculos;
+        }
+
+        public List<Vehiculos> ObtenerVehiculosActivos()
+        {
+            List<Vehiculos> inventario = new List<Vehiculos>();
+            string query = @"
+                    SELECT 
+                        v.id_Vehiculo,
+                        v.marca_Vehiculo,
+                        v.modelo_Vehiculo,
+                        v.version_Vehiculo,
+                        v.km_Vehiculo,
+                        v.anio_Vehiculo,
+                        v.patente_Vehiculo,
+                        v.codigo_OKM,
+                        v.precio_Vehiculo,
+                        v.ruta_imagen,
+                        t.nombre_TipoVehiculo AS TipoNombre,
+                        c.nombre_Condicion AS CondicionNombre
+                    FROM Vehiculos v
+                    JOIN Tipo_Vehiculo t ON v.id_tipoVehiculo = t.id_tipoVehiculo
+                    JOIN Condicion c ON v.id_Condicion = c.id_Condicion
+                    WHERE v.id_Estado = 1";  // Filtrar solo vehículos con estado 1
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConnectionString))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Vehiculos vehiculo = new Vehiculos
+                                {
+                                    IdVehiculo = reader.GetInt32(reader.GetOrdinal("id_Vehiculo")),
+                                    Marca = reader.GetString(reader.GetOrdinal("marca_Vehiculo")),
+                                    Modelo = reader.GetString(reader.GetOrdinal("modelo_Vehiculo")),
+                                    Version = reader.GetString(reader.GetOrdinal("version_Vehiculo")),
+                                    Kilometraje = reader.GetInt32(reader.GetOrdinal("km_Vehiculo")),
+                                    Anio = reader.GetDateTime(reader.GetOrdinal("anio_Vehiculo")),
+                                    Patente = reader.IsDBNull(reader.GetOrdinal("patente_Vehiculo")) ? null : reader.GetString(reader.GetOrdinal("patente_Vehiculo")),
+                                    CodigoOKM = reader.IsDBNull(reader.GetOrdinal("codigo_OKM")) ? (int?)null : reader.GetInt32(reader.GetOrdinal("codigo_OKM")),
+                                    Precio = reader.GetDouble(reader.GetOrdinal("precio_Vehiculo")),
+                                    RutaImagen = reader.IsDBNull(reader.GetOrdinal("ruta_imagen")) ? null : reader.GetString(reader.GetOrdinal("ruta_imagen")),
+                                    CondicionNombre = reader.GetString(reader.GetOrdinal("CondicionNombre")),
+                                    TipoNombre = reader.GetString(reader.GetOrdinal("TipoNombre"))
+                                };
+                                inventario.Add(vehiculo);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine($"Error de SQL: {ex.Message}");
+                throw;
+            }
+
+            return inventario;
+        }
+
+        public List<Vehiculos> FiltrarVehiculosActivos(string texto)
+        {
+            List<Vehiculos> vehiculosFiltrados = new List<Vehiculos>();
+            string query = @"
+                    SELECT 
+                        v.id_Vehiculo,
+                        v.marca_Vehiculo,
+                        v.modelo_Vehiculo,
+                        v.version_Vehiculo,
+                        v.km_Vehiculo,
+                        v.anio_Vehiculo,
+                        v.patente_Vehiculo,
+                        v.codigo_OKM,
+                        v.precio_Vehiculo,
+                        v.ruta_imagen,
+                        t.nombre_TipoVehiculo AS TipoNombre,
+                        c.nombre_Condicion AS CondicionNombre
+                    FROM Vehiculos v
+                    JOIN Tipo_Vehiculo t ON v.id_tipoVehiculo = t.id_tipoVehiculo
+                    JOIN Condicion c ON v.id_Condicion = c.id_Condicion
+                    WHERE v.id_Estado = 1 AND 
+                          (v.marca_Vehiculo LIKE @texto OR 
+                           v.modelo_Vehiculo LIKE @texto OR 
+                           v.version_Vehiculo LIKE @texto)"; // Ajusta los campos según tus necesidades
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConnectionString))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@texto", "%" + texto + "%");
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Vehiculos vehiculo = new Vehiculos
+                                {
+                                    IdVehiculo = reader.GetInt32(reader.GetOrdinal("id_Vehiculo")),
+                                    Marca = reader.GetString(reader.GetOrdinal("marca_Vehiculo")),
+                                    Modelo = reader.GetString(reader.GetOrdinal("modelo_Vehiculo")),
+                                    Version = reader.GetString(reader.GetOrdinal("version_Vehiculo")),
+                                    Kilometraje = reader.GetInt32(reader.GetOrdinal("km_Vehiculo")),
+                                    Anio = reader.GetDateTime(reader.GetOrdinal("anio_Vehiculo")),
+                                    Patente = reader.IsDBNull(reader.GetOrdinal("patente_Vehiculo")) ? null : reader.GetString(reader.GetOrdinal("patente_Vehiculo")),
+                                    CodigoOKM = reader.IsDBNull(reader.GetOrdinal("codigo_OKM")) ? (int?)null : reader.GetInt32(reader.GetOrdinal("codigo_OKM")),
+                                    Precio = reader.GetDouble(reader.GetOrdinal("precio_Vehiculo")),
+                                    RutaImagen = reader.IsDBNull(reader.GetOrdinal("ruta_imagen")) ? null : reader.GetString(reader.GetOrdinal("ruta_imagen")),
+                                    CondicionNombre = reader.GetString(reader.GetOrdinal("CondicionNombre")),
+                                    TipoNombre = reader.GetString(reader.GetOrdinal("TipoNombre"))
+                                };
+                                vehiculosFiltrados.Add(vehiculo);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine($"Error de SQL: {ex.Message}");
+                throw;
+            }
+
+            return vehiculosFiltrados;
         }
     }
 }

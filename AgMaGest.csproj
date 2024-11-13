@@ -84,6 +84,7 @@
     <Compile Include="C_Logica\Entidades\Empleado.cs" />
     <Compile Include="C_Logica\Entidades\EstadoCliente.cs" />
     <Compile Include="C_Logica\Entidades\EstadoEmpleado.cs" />
+    <Compile Include="C_Logica\Entidades\EstadoPedido.cs" />
     <Compile Include="C_Logica\Entidades\EstadoVehiculo.cs" />
     <Compile Include="C_Logica\Entidades\Factura.cs" />
     <Compile Include="C_Logica\Entidades\Localidad.cs" />

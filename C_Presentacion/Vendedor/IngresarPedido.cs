@@ -31,32 +31,9 @@ namespace AgMaGest.C_Presentacion.Vendedor
             // Establecer la fecha actual en el campo de Fecha Pedido
             TBFechaPedido.Text = DateTime.Now.ToString("dd/MM/yyyy");
             TBFechaPedido.ReadOnly = true; // Hacer que este campo sea de solo lectura
-
-            /*string cuilEmpleado = SesionActual.UsuarioLogueado?.CuilEmpleado;
-
-            if (!string.IsNullOrEmpty(cuilEmpleado))
-            {
-                
-                EmpleadoDAL empleadoDAL = new EmpleadoDAL();
-                Empleado empleado= empleadoDAL.ObtenerEmpleadoPorCUIL(cuilEmpleado);
-
-
-                if (empleado != null)
-                {
-                    // Asignar los datos del empleado a los controles correspondientes
-                    TBVendedor.Text = $"{empleado.Nombre} {empleado.Apellido}";
-                    TBCuilVendedor.Text = empleado.CUIL;
-                }
-                else
-                {
-                    MessageBox.Show("No se encontraron datos del empleado.");
-                }
-            }
-            else
-            {
-                MessageBox.Show("No hay un usuario logueado.");
-            }*/
-
+            Empleado empleado= LoginForm.EmpleadoLogin;
+            TBVendedor.Text = $"{empleado.Nombre} {empleado.Apellido}";
+            TBCuilVendedor.Text = empleado.CUIL;
         }
 
         private void CargarDatosVehiculo(int idVehiculo)
@@ -128,6 +105,7 @@ namespace AgMaGest.C_Presentacion.Vendedor
         }
         private void BBuscarPedido_Click(object sender, EventArgs e)
         {
+            // Obtener el CUIL/CUIT ingresado por el usuario
             string cuilCuit = TBBuscarClientePedido.Text.Trim();
 
             if (string.IsNullOrEmpty(cuilCuit))
@@ -136,41 +114,64 @@ namespace AgMaGest.C_Presentacion.Vendedor
                 return;
             }
 
-            ClienteDAL clienteDAL = new ClienteDAL();
-            List<Cliente> clientes = clienteDAL.FiltrarClientesPorCuilCuit(cuilCuit);
-
-            if (clientes.Count > 0)
+            try
             {
-                Cliente cliente = clientes[0]; // Se asume que solo habrá un resultado
-                idClienteSeleccionado = cliente.IdCliente; // Asignar el ID del cliente encontrado
+                ClienteDAL clienteDAL = new ClienteDAL();
+                // Filtrar clientes únicamente por el CUIL/CUIT ingresado
+                List<Cliente> clientes = clienteDAL.FiltrarClientesConID(cuilCuit);
 
-                if (cliente is ClienteFinal final)
+                if (clientes.Count == 1)
                 {
-                    TBNombreClientePedido.Text = $"{final.NombreCFinal} {final.ApellidoCFinal}";
-                    TBCuilCuitClientePedido.Text = final.CuilCFinal;
-                }
-                else if (cliente is ClienteEmpresa empresa)
-                {
-                    TBNombreClientePedido.Text = empresa.RazonSocialCEmpresa;
-                    TBCuilCuitClientePedido.Text = empresa.CuitCEmpresa;
-                }
+                    // Si hay exactamente un cliente encontrado
+                    Cliente cliente = clientes[0];
+                    idClienteSeleccionado = cliente.IdCliente; // Guardamos el ID del cliente encontrado
 
-                TBEmailClientePedido.Text = cliente.EmailCliente;
-                TBCelularClientePedido.Text = cliente.CelularCliente;
+                    // Verificar si el cliente es final o empresa para llenar los datos correspondientes
+                    if (cliente is ClienteFinal final)
+                    {
+                        TBNombreClientePedido.Text = $"{final.NombreCFinal} {final.ApellidoCFinal}";
+                        TBCuilCuitClientePedido.Text = final.CuilCFinal;
+                    }
+                    else if (cliente is ClienteEmpresa empresa)
+                    {
+                        TBNombreClientePedido.Text = empresa.RazonSocialCEmpresa;
+                        TBCuilCuitClientePedido.Text = empresa.CuitCEmpresa;
+                    }
+
+                    // Llenar el resto de los datos del cliente
+                    TBEmailClientePedido.Text = cliente.EmailCliente;
+                    TBCelularClientePedido.Text = cliente.CelularCliente;
+                }
+                else if (clientes.Count > 1)
+                {
+                    // Si hay múltiples coincidencias, notificar al usuario
+                    MessageBox.Show("Se encontraron múltiples clientes con el CUIL/CUIT ingresado. Por favor, refine su búsqueda.");
+                }
+                else
+                {
+                    // Si no se encontraron clientes
+                    MessageBox.Show("No se encontraron clientes con el CUIL o CUIT ingresado.");
+
+                    // Limpiar los campos si no se encontró el cliente
+                    LimpiarCamposCliente();
+                    idClienteSeleccionado = 0; // Restablecer el ID del cliente si no se encontró
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("No se encontraron clientes con el CUIL o CUIT ingresado.");
-                // Limpiar los campos si no se encontró el cliente
-                TBNombreClientePedido.Clear();
-                TBCuilCuitClientePedido.Clear();
-                TBEmailClientePedido.Clear();
-                TBCelularClientePedido.Clear();
-
-                idClienteSeleccionado = 0; // Restablecer el ID del cliente si no se encontró
+                // Manejo de errores generales
+                MessageBox.Show($"Ocurrió un error al buscar el cliente: {ex.Message}");
             }
         }
 
+        // Método auxiliar para limpiar los campos
+        private void LimpiarCamposCliente()
+        {
+            TBNombreClientePedido.Clear();
+            TBCuilCuitClientePedido.Clear();
+            TBEmailClientePedido.Clear();
+            TBCelularClientePedido.Clear();
+        }
         private void BConfirmarPedido_Click(object sender, EventArgs e)
         {
             try
@@ -188,15 +189,29 @@ namespace AgMaGest.C_Presentacion.Vendedor
                 int idVehiculo = this.idVehiculo;
                 DateTime fechaPedido = DateTime.Now;
                 double montoPedido = double.Parse(TBPrecioPedido.Text);
+                int idEstadoPedido = 1;
 
                 // Llamar al método para insertar el pedido en la base de datos
                 PedidoDAL pedidoDAL = new PedidoDAL();
-                bool resultado = pedidoDAL.InsertarPedido(cuilEmpleado, idCliente, idVehiculo, fechaPedido, montoPedido);
+                bool resultado = pedidoDAL.InsertarPedido(cuilEmpleado, idCliente, idVehiculo, fechaPedido, montoPedido, idEstadoPedido);
 
                 if (resultado)
                 {
-                    MessageBox.Show("Pedido registrado exitosamente.");
-                    this.Close(); // Cerrar el formulario si el pedido se ha confirmado correctamente
+                    // Actualizar el estado del vehículo a 2 (asignado a un pedido o confirmado)
+                    int estadoConfirmado = 2;
+
+
+                    bool estadoVehiculoActualizado = pedidoDAL.ActualizarEstadoVehiculo(idVehiculo, estadoConfirmado);
+
+                    if (estadoVehiculoActualizado)
+                    {
+                        MessageBox.Show("Pedido registrado y estado del vehículo actualizado exitosamente.");
+                        this.Close(); // Cerrar el formulario si el pedido y el estado del vehículo se han confirmado correctamente
+                    }
+                    else
+                    {
+                        MessageBox.Show("Pedido registrado, pero no se pudo actualizar el estado del vehículo.");
+                    }
                 }
                 else
                 {

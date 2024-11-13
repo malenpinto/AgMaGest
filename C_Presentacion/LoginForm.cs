@@ -20,6 +20,7 @@ namespace AgMaGest.C_Presentacion
 {
     public partial class LoginForm : Form
     {
+        public static Empleado EmpleadoLogin { get; private set; }
         private UsuarioDAL usuarioDAL = new UsuarioDAL();
         public LoginForm()
         {
@@ -97,6 +98,9 @@ namespace AgMaGest.C_Presentacion
                     return;
                 }
 
+                EmpleadoLogin = empleado;
+
+
                 Form form;
                 switch (rol)
                 {
@@ -113,6 +117,7 @@ namespace AgMaGest.C_Presentacion
                         MessageBox.Show("Rol desconocido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                 }
+
 
                 form.Show();
                 this.Hide();

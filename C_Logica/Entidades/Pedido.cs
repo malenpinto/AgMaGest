@@ -14,5 +14,6 @@ namespace AgMaGest.C_Logica.Entidades
         public int IdVehiculo { get; set; } //Id del vehiculo
         public DateTime FechaPedido { get; set; } // Fecha de realizacion del pedido
         public double MontoPedido { get; set; } // Id del monto a pagar
+        public int IdEstadoPedido { get; set; }
     }
 }

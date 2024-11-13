@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
             this.BGenerarPedido = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.BBuscarVehiculoCatalogo = new System.Windows.Forms.Button();
@@ -53,7 +54,6 @@
             this.modelo_Catalogo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.km_Catalogo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.anio_Catalogo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel10 = new System.Windows.Forms.Panel();
             this.panel5.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -115,6 +115,16 @@
             this.panel7.Size = new System.Drawing.Size(533, 60);
             this.panel7.TabIndex = 6;
             // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel10.Location = new System.Drawing.Point(0, 0);
+            this.panel10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(5, 60);
+            this.panel10.TabIndex = 15;
+            // 
             // BGenerarPedido
             // 
             this.BGenerarPedido.BackColor = System.Drawing.Color.Transparent;
@@ -167,6 +177,7 @@
             this.BBuscarVehiculoCatalogo.TabIndex = 6;
             this.BBuscarVehiculoCatalogo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BBuscarVehiculoCatalogo.UseVisualStyleBackColor = false;
+            this.BBuscarVehiculoCatalogo.Click += new System.EventHandler(this.BBuscarVehiculoCatalogo_Click);
             // 
             // TBBuscarVehiculoCatalogo
             // 
@@ -199,14 +210,14 @@
             // 
             // dataGridCatalogo
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridCatalogo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridCatalogo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridCatalogo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridCatalogo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_Catalogo,
@@ -308,16 +319,6 @@
             this.anio_Catalogo.MinimumWidth = 6;
             this.anio_Catalogo.Name = "anio_Catalogo";
             this.anio_Catalogo.Width = 125;
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel10.Location = new System.Drawing.Point(0, 0);
-            this.panel10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(5, 60);
-            this.panel10.TabIndex = 15;
             // 
             // VisualizarCatalogo
             // 
