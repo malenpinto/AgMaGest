@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AgMaGest.C_Logica;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,12 @@ namespace AgMaGest.C_Presentacion.Vendedor
         public InicioVendedor()
         {
             InitializeComponent();
+            
+        }
+
+        private void InicioVendedor_Load(object sender, EventArgs e)
+        {
+            
         }
 
         private void BCliente_Click(object sender, EventArgs e)

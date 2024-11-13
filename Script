@@ -59,6 +59,13 @@ CREATE TABLE Estado_Empleado
   CONSTRAINT PK_EstadoEmpleado PRIMARY KEY (id_EstadoEmpleado)
 );
 
+CREATE TABLE Estado_Pedido
+(
+  id_EstadoPedido INT IDENTITY(1,1) NOT NULL,
+  nombre_EstadoPago VARCHAR(30) NOT NULL,
+  CONSTRAINT PK_EstadoPedido PRIMARY KEY (id_EstadoPedido)
+);
+
 CREATE TABLE Estado_Cliente
 (
   id_Estado_Cliente INT IDENTITY(1,1)  NOT NULL,
