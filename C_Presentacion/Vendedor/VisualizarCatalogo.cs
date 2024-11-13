@@ -43,6 +43,12 @@ namespace AgMaGest.C_Presentacion.Vendedor
                     {
                         imagen = Image.FromFile(vehiculo.RutaImagen);
                     }
+                    else
+                    {
+                        // Asignar imagen por defecto si no se encuentra la imagen
+                        imagen = AgMaGest.Properties.Resources.VhiculoPorDefecto;
+                    }
+
 
                     // Agregar la fila al DataGridView con las nuevas columnas Estado, Condición y Tipo
                     dataGridCatalogo.Rows.Add(
@@ -190,11 +196,17 @@ namespace AgMaGest.C_Presentacion.Vendedor
                 // Opcionalmente, ocultar los botones si no hay selección
                 BGenerarPedido.Visible = false;
             }
+
         }
 
         private void BGenerarPedido_Click(object sender, EventArgs e)
         {
-            IngresarPedido formPedido = new IngresarPedido();
+            // Obtener la fila seleccionada
+            var selectedRow = dataGridCatalogo.SelectedRows[0];
+
+            // Obtener el id_Vehiculo de la fila seleccionada (debe estar en una columna del DataGridView)
+            int idVehiculo = Convert.ToInt32(selectedRow.Cells["IdVehiculo"].Value);
+            IngresarPedido formPedido = new IngresarPedido(idVehiculo);
             formPedido.ShowDialog();
         }
     }

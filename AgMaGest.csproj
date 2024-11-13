@@ -592,6 +592,7 @@
   <ItemGroup>
     <Content Include="bin\Debug\Resources\Vehiculos\Hilux .jpg" />
     <Content Include="bin\Debug\Resources\Vehiculos\Toyota yaris XLS.jpg" />
+    <None Include="Resources\VhiculoPorDefecto.png" />
     <None Include="Resources\Icono-BorrarVendedor.png" />
     <None Include="Resources\Icono-BuscarVendedor.png" />
     <Content Include="Resources\Images\FordEcoSport.jpg" />
