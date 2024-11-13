@@ -67,6 +67,7 @@
     <Compile Include="C_Datos\EstadoEmpleadoDAL.cs" />
     <Compile Include="C_Datos\EstadoVehiculoDAL.cs" />
     <Compile Include="C_Datos\LocalidadDAL.cs" />
+    <Compile Include="C_Datos\PagoDAL.cs" />
     <Compile Include="C_Datos\PaisDAL.cs" />
     <Compile Include="C_Datos\PedidoDAL.cs" />
     <Compile Include="C_Datos\PerfilEmpleadoDAL.cs" />
@@ -84,7 +85,9 @@
     <Compile Include="C_Logica\Entidades\EstadoCliente.cs" />
     <Compile Include="C_Logica\Entidades\EstadoEmpleado.cs" />
     <Compile Include="C_Logica\Entidades\EstadoVehiculo.cs" />
+    <Compile Include="C_Logica\Entidades\Factura.cs" />
     <Compile Include="C_Logica\Entidades\Localidad.cs" />
+    <Compile Include="C_Logica\Entidades\Pago.cs" />
     <Compile Include="C_Logica\Entidades\Pais.cs" />
     <Compile Include="C_Logica\Entidades\Pedido.cs" />
     <Compile Include="C_Logica\Entidades\PerfilEmpleado.cs" />

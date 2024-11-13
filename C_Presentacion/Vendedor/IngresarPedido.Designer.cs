@@ -204,7 +204,7 @@
             this.TBFechaPedido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.TBFechaPedido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TBFechaPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBFechaPedido.Location = new System.Drawing.Point(159, 48);
+            this.TBFechaPedido.Location = new System.Drawing.Point(171, 45);
             this.TBFechaPedido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TBFechaPedido.Name = "TBFechaPedido";
             this.TBFechaPedido.Size = new System.Drawing.Size(142, 24);
@@ -544,6 +544,7 @@
             this.BConfirmarPedido.TabIndex = 127;
             this.BConfirmarPedido.Text = "Confirmar";
             this.BConfirmarPedido.UseVisualStyleBackColor = false;
+            this.BConfirmarPedido.Click += new System.EventHandler(this.BConfirmarPedido_Click);
             // 
             // BSalirPedido
             // 

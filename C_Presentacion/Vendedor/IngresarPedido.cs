@@ -16,6 +16,7 @@ namespace AgMaGest.C_Presentacion.Vendedor
     public partial class IngresarPedido : Form
     {
         private int idVehiculo;
+        private int idClienteSeleccionado;
 
         public IngresarPedido(int idVehiculo)
         {
@@ -30,21 +31,33 @@ namespace AgMaGest.C_Presentacion.Vendedor
             // Establecer la fecha actual en el campo de Fecha Pedido
             TBFechaPedido.Text = DateTime.Now.ToString("dd/MM/yyyy");
             TBFechaPedido.ReadOnly = true; // Hacer que este campo sea de solo lectura
-        }
 
-        /*private void CargarDatosEmpleado(string cuilEmpleado)
-        {
-            // Lógica para obtener datos del empleado desde la base de datos
-            Empleado empleado = EmpleadoDAL.ObtenerEmpleadoPorCuil(cuilEmpleado); // Método ficticio en EmpleadoDAL
+            /*string cuilEmpleado = SesionActual.UsuarioLogueado?.CuilEmpleado;
 
-            if (empleado != null)
+            if (!string.IsNullOrEmpty(cuilEmpleado))
             {
-                txtVendedor.Text = empleado.NombreCompleto;
-                txtCuilEmpleado.Text = empleado.CUIL;
-                txtVendedor.ReadOnly = true;
-                txtCuilEmpleado.ReadOnly = true;
+                
+                EmpleadoDAL empleadoDAL = new EmpleadoDAL();
+                Empleado empleado= empleadoDAL.ObtenerEmpleadoPorCUIL(cuilEmpleado);
+
+
+                if (empleado != null)
+                {
+                    // Asignar los datos del empleado a los controles correspondientes
+                    TBVendedor.Text = $"{empleado.Nombre} {empleado.Apellido}";
+                    TBCuilVendedor.Text = empleado.CUIL;
+                }
+                else
+                {
+                    MessageBox.Show("No se encontraron datos del empleado.");
+                }
             }
-        }*/
+            else
+            {
+                MessageBox.Show("No hay un usuario logueado.");
+            }*/
+
+        }
 
         private void CargarDatosVehiculo(int idVehiculo)
         {
@@ -129,6 +142,7 @@ namespace AgMaGest.C_Presentacion.Vendedor
             if (clientes.Count > 0)
             {
                 Cliente cliente = clientes[0]; // Se asume que solo habrá un resultado
+                idClienteSeleccionado = cliente.IdCliente; // Asignar el ID del cliente encontrado
 
                 if (cliente is ClienteFinal final)
                 {
@@ -152,15 +166,52 @@ namespace AgMaGest.C_Presentacion.Vendedor
                 TBCuilCuitClientePedido.Clear();
                 TBEmailClientePedido.Clear();
                 TBCelularClientePedido.Clear();
+
+                idClienteSeleccionado = 0; // Restablecer el ID del cliente si no se encontró
             }
         }
 
+        private void BConfirmarPedido_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Verificar que el cliente esté seleccionado y el monto esté completo
+                if (idClienteSeleccionado == 0 || string.IsNullOrEmpty(TBPrecioPedido.Text))
+                {
+                    MessageBox.Show("Por favor, asegúrese de que todos los campos obligatorios están completos.");
+                    return;
+                }
+
+                // Datos necesarios para el pedido
+                string cuilEmpleado = TBCuilVendedor.Text;
+                int idCliente = idClienteSeleccionado;
+                int idVehiculo = this.idVehiculo;
+                DateTime fechaPedido = DateTime.Now;
+                double montoPedido = double.Parse(TBPrecioPedido.Text);
+
+                // Llamar al método para insertar el pedido en la base de datos
+                PedidoDAL pedidoDAL = new PedidoDAL();
+                bool resultado = pedidoDAL.InsertarPedido(cuilEmpleado, idCliente, idVehiculo, fechaPedido, montoPedido);
+
+                if (resultado)
+                {
+                    MessageBox.Show("Pedido registrado exitosamente.");
+                    this.Close(); // Cerrar el formulario si el pedido se ha confirmado correctamente
+                }
+                else
+                {
+                    MessageBox.Show("Error al registrar el pedido.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
 
         private void BSalirPedido_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-      
     }
 }
