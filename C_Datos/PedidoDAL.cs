@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using AgMaGest.C_Logica.Entidades;
 using System.Configuration;
+using System.Data;
 
 
 namespace AgMaGest.C_Datos
@@ -81,6 +82,68 @@ namespace AgMaGest.C_Datos
             }
 
             return resultado;
+        }
+
+        public DataTable ObtenerPedidos()
+        {
+            DataTable tablaPedidos = new DataTable();
+
+            string query = "SELECT * FROM Pedido"; // Ajusta la consulta según las columnas que desees mostrar.
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConnectionString))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+                        adapter.Fill(tablaPedidos);
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine($"Error de SQL: {ex.Message}");
+                throw;
+            }
+
+            return tablaPedidos;
+        }
+
+        public DataTable BuscarPedidos(string criterioBusqueda)
+        {
+            DataTable tablaPedidos = new DataTable();
+
+            string query = @"
+                SELECT * 
+                FROM Pedido 
+                WHERE id_Pedido LIKE @CriterioBusqueda 
+                   OR cuil_Empleado LIKE @CriterioBusqueda";
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConnectionString))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@CriterioBusqueda", $"%{criterioBusqueda}%");
+
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        {
+                            adapter.Fill(tablaPedidos);
+                        }
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine($"Error de SQL: {ex.Message}");
+                throw;
+            }
+
+            return tablaPedidos;
         }
 
     }
