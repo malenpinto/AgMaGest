@@ -84,42 +84,27 @@ namespace AgMaGest.C_Datos
             return resultado;
         }
 
-        public DataTable ObtenerPedidos()
+        public List<Pedido> ObtenerPedidos()
         {
-            DataTable tablaPedidos = new DataTable();
-
-            string query = "SELECT * FROM Pedido"; // Ajusta la consulta según las columnas que desees mostrar.
-
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(ConnectionString))
-                {
-                    conn.Open();
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
-                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
-                    {
-                        adapter.Fill(tablaPedidos);
-                    }
-                }
-            }
-            catch (SqlException ex)
-            {
-                Console.WriteLine($"Error de SQL: {ex.Message}");
-                throw;
-            }
-
-            return tablaPedidos;
-        }
-
-        public DataTable BuscarPedidos(string criterioBusqueda)
-        {
-            DataTable tablaPedidos = new DataTable();
+            List<Pedido> listaPedidos = new List<Pedido>();
 
             string query = @"
-                SELECT * 
-                FROM Pedido 
-                WHERE id_Pedido LIKE @CriterioBusqueda 
-                   OR cuil_Empleado LIKE @CriterioBusqueda";
+        SELECT 
+            p.id_Pedido,
+            p.cuil_Empleado,
+            e.nombre_Empleado,
+            e.apellido_Empleado,
+            p.id_Cliente,
+            p.id_Vehiculo,
+            p.fecha_Pedido,
+            p.monto_Pedido,
+            p.id_EstadoPedido
+        FROM 
+            Pedido p
+        INNER JOIN 
+            Empleado e
+        ON 
+            p.cuil_Empleado = e.cuil_Empleado";
 
             try
             {
@@ -127,12 +112,23 @@ namespace AgMaGest.C_Datos
                 {
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(query, conn))
+                    using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        cmd.Parameters.AddWithValue("@CriterioBusqueda", $"%{criterioBusqueda}%");
-
-                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        while (reader.Read())
                         {
-                            adapter.Fill(tablaPedidos);
+                            Pedido pedido = new Pedido
+                            {
+                                IdPedido = reader.GetInt32(reader.GetOrdinal("id_Pedido")),
+                                CUIL = reader.GetString(reader.GetOrdinal("cuil_Empleado")),
+                                NombreEmpleado = reader.GetString(reader.GetOrdinal("nombre_Empleado")),
+                                ApellidoEmpleado = reader.GetString(reader.GetOrdinal("apellido_Empleado")),
+                                IdCliente = reader.GetInt32(reader.GetOrdinal("id_Cliente")),
+                                IdVehiculo = reader.GetInt32(reader.GetOrdinal("id_Vehiculo")),
+                                FechaPedido = reader.GetDateTime(reader.GetOrdinal("fecha_Pedido")),
+                                MontoPedido = reader.GetDouble(reader.GetOrdinal("monto_Pedido")),
+                                IdEstadoPedido = reader.GetInt32(reader.GetOrdinal("id_EstadoPedido"))
+                            };
+                            listaPedidos.Add(pedido);
                         }
                     }
                 }
@@ -143,8 +139,75 @@ namespace AgMaGest.C_Datos
                 throw;
             }
 
-            return tablaPedidos;
+            return listaPedidos;
         }
+
+
+        public List<Pedido> BuscarPedidos(string criterioBusqueda)
+        {
+            List<Pedido> listaPedidos = new List<Pedido>();
+
+            string query = @"
+        SELECT 
+            p.id_Pedido,
+            p.cuil_Empleado,
+            p.id_Cliente,
+            p.id_Vehiculo,
+            p.fecha_Pedido,
+            p.monto_Pedido,
+            p.id_EstadoPedido,
+            e.nombre_Empleado,
+            e.apellido_Empleado
+        FROM Pedido p
+        INNER JOIN Empleado e ON p.cuil_Empleado = e.cuil_Empleado
+        WHERE p.id_Pedido LIKE @CriterioBusqueda 
+           OR p.cuil_Empleado LIKE @CriterioBusqueda 
+           OR e.nombre_Empleado LIKE @CriterioBusqueda
+           OR e.apellido_Empleado LIKE @CriterioBusqueda";
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConnectionString))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@CriterioBusqueda", $"%{criterioBusqueda}%");
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Pedido pedido = new Pedido
+                                {
+                                    IdPedido = reader.GetInt32(reader.GetOrdinal("id_Pedido")),
+                                    CUIL = reader.GetString(reader.GetOrdinal("cuil_Empleado")),
+                                    IdCliente = reader.GetInt32(reader.GetOrdinal("id_Cliente")),
+                                    IdVehiculo = reader.GetInt32(reader.GetOrdinal("id_Vehiculo")),
+                                    FechaPedido = reader.GetDateTime(reader.GetOrdinal("fecha_Pedido")),
+                                    MontoPedido = reader.GetDouble(reader.GetOrdinal("monto_Pedido")),
+                                    IdEstadoPedido = reader.GetInt32(reader.GetOrdinal("id_EstadoPedido")),
+
+                                    // Nuevos campos provenientes de la tabla Empleado
+                                    NombreEmpleado = reader.GetString(reader.GetOrdinal("nombre_Empleado")),
+                                    ApellidoEmpleado = reader.GetString(reader.GetOrdinal("apellido_Empleado"))
+                                };
+                                listaPedidos.Add(pedido);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine($"Error de SQL: {ex.Message}");
+                throw;
+            }
+
+            return listaPedidos;
+        }
+
+
 
     }
 }

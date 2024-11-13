@@ -15,5 +15,9 @@ namespace AgMaGest.C_Logica.Entidades
         public DateTime FechaPedido { get; set; } // Fecha de realizacion del pedido
         public double MontoPedido { get; set; } // Id del monto a pagar
         public int IdEstadoPedido { get; set; }
+
+        // Nuevas propiedades para los datos del empleado
+        public string NombreEmpleado { get; set; }
+        public string ApellidoEmpleado { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using AgMaGest.C_Datos;
+using AgMaGest.C_Logica.Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,27 +16,8 @@ namespace AgMaGest.C_Presentacion.Vendedor
     {
         public VisualizarVentas()
         {
-            this.dataGridVentas = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridVentas)).BeginInit();
-            this.SuspendLayout();
-
-            // Configuración del DataGridView
-            this.dataGridVentas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridVentas.Location = new System.Drawing.Point(12, 12);
-            this.dataGridVentas.Name = "dataGridVentas";
-            this.dataGridVentas.Size = new System.Drawing.Size(760, 400);
-            this.dataGridVentas.TabIndex = 0;
-
-            // Configuración del formulario
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridVentas);
-            this.Load += new System.EventHandler(this.VisualizarVentas_Load);
-            this.Name = "VisualizarVentas";
-            this.Text = "Visualizar Ventas";
-
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridVentas)).EndInit();
-            this.ResumeLayout(false);
+            InitializeComponent();
+            this.Load += new EventHandler(VisualizarVentas_Load);
         }
 
         private void VisualizarVentas_Load(object sender, EventArgs e)
@@ -47,9 +29,22 @@ namespace AgMaGest.C_Presentacion.Vendedor
         {
             try
             {
+                // Configura el DataGridView y establece AutoGenerateColumns a false
+                ConfigurarDataGridView();
+                dataGridVentas.AutoGenerateColumns = false;
+
+                // Obtener los pedidos desde la base de datos
                 PedidoDAL pedidoDAL = new PedidoDAL();
-                DataTable pedidos = pedidoDAL.ObtenerPedidos();
-                dataGridVentas.DataSource = pedidos; // Asigna la fuente de datos al DataGridView
+                List<Pedido> listaPedidos = pedidoDAL.ObtenerPedidos();
+
+                if (listaPedidos != null && listaPedidos.Count > 0)
+                {
+                    dataGridVentas.DataSource = new BindingList<Pedido>(listaPedidos);
+                }
+                else
+                {
+                    MessageBox.Show("No se encontraron pedidos en la base de datos.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             catch (Exception ex)
             {
@@ -57,6 +52,43 @@ namespace AgMaGest.C_Presentacion.Vendedor
             }
         }
 
+        private void ConfigurarDataGridView()
+        {
+            // Limpiar cualquier configuración previa
+            dataGridVentas.Columns.Clear();
+
+            // Configurar las columnas manualmente
+
+            dataGridVentas.Columns.Add("IdPedido", "ID Pedido");
+            dataGridVentas.Columns["IdPedido"].DataPropertyName = "IdPedido";
+
+            dataGridVentas.Columns.Add("CUIL", "CUIL Empleado");
+            dataGridVentas.Columns["CUIL"].DataPropertyName = "CUIL";
+
+            dataGridVentas.Columns.Add("NombreEmpleado", "Nombre Empleado");
+            dataGridVentas.Columns["NombreEmpleado"].DataPropertyName = "NombreEmpleado";
+
+            dataGridVentas.Columns.Add("ApellidoEmpleado", "Apellido Empleado");
+            dataGridVentas.Columns["ApellidoEmpleado"].DataPropertyName = "ApellidoEmpleado";
+
+            dataGridVentas.Columns.Add("IdCliente", "ID Cliente");
+            dataGridVentas.Columns["IdCliente"].DataPropertyName = "IdCliente";
+
+            dataGridVentas.Columns.Add("IdVehiculo", "ID Vehículo");
+            dataGridVentas.Columns["IdVehiculo"].DataPropertyName = "IdVehiculo";
+
+            dataGridVentas.Columns.Add("FechaPedido", "Fecha del Pedido");
+            dataGridVentas.Columns["FechaPedido"].DataPropertyName = "FechaPedido";
+            dataGridVentas.Columns["FechaPedido"].DefaultCellStyle.Format = "dd/MM/yyyy";
+
+            dataGridVentas.Columns.Add("MontoPedido", "Monto Pedido");
+            dataGridVentas.Columns["MontoPedido"].DataPropertyName = "MontoPedido";
+            dataGridVentas.Columns["MontoPedido"].DefaultCellStyle.Format = "MontoPedido"; 
+
+            dataGridVentas.Columns.Add("IdEstadoPedido", "Estado Pedido");
+            dataGridVentas.Columns["IdEstadoPedido"].DataPropertyName = "IdEstadoPedido";
+
+        }
         private void SoloNumeros_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
@@ -79,11 +111,11 @@ namespace AgMaGest.C_Presentacion.Vendedor
             try
             {
                 PedidoDAL pedidoDAL = new PedidoDAL();
-                DataTable pedidosFiltrados = pedidoDAL.BuscarPedidos(criterioBusqueda);
+                List<Pedido> pedidosFiltrados = pedidoDAL.BuscarPedidos(criterioBusqueda);
 
-                if (pedidosFiltrados.Rows.Count > 0)
+                if (pedidosFiltrados.Count > 0)
                 {
-                    dataGridVentas.DataSource = pedidosFiltrados;
+                    dataGridVentas.DataSource = new BindingList<Pedido>(pedidosFiltrados);
                 }
                 else
                 {
