@@ -258,26 +258,26 @@ INSERT INTO Empleado (
     dpto_Empleado, codigo_PostalEmpleado, id_Localidad, id_Perfil, id_Estado
 ) 
 VALUES 
-    ('20345678901', '34567890', 'Juan Ramon', 'Pérez', 'juan.perez@example.com', '3794456789', '1985-01-23', 'Av. 3 De Abril', 742, 0, NULL, 3400, 2, 1, 1),
-    ('20345678902', '34567891', 'Ana Lucia', 'González', 'ana.gonzalez@hotmail.com', '1123456790', '1990-07-15', 'Moreno', 1234, 2, 'D', 3400, 2, 2, 1),
-    ('20345678903', '34567892', 'María', 'López', 'maria.lopez@example.com', '1123456791', '1982-03-12', 'Calle 1', 456, NULL, NULL, 3400, 2, 1, 2),
-    ('20345678904', '34567893', 'Carlos', 'Martínez', 'carlos.martinez@example.com', '1123456792', '1979-11-22', 'Calle 2', 789, 3, 'B', 3500, 72, 3, 1),
-    ('20345678905', '34567894', 'Laura', 'García', 'laura.garcia@example.com', '1123456793', '1995-06-30', 'San Martin', 101, NULL, NULL, 5004, 112, 3, 2),
-    ('20345678906', '34567895', 'Pedro Antonio', 'Fernández', 'pedro.fernandez@example.com', '1123456794', '1987-08-10', 'Calle 4', 202, 1, 'C', 3600, 112, 3, 1),
-    ('20345678907', '34567896', 'Sofía', 'Rodríguez', 'sofia.rodriguez@example.com', '1123456795', '1992-02-28', 'Calle 5', 303, NULL, NULL, 3400, 2, 2, 1),
-    ('20345678908', '34567897', 'Pablo', 'Gómez', 'pablo.gomez@example.com', '1123456796', '1983-12-14', 'Calle 6', 404, 4, 'D', 5007, 72, 2, 2),
-    ('20345678909', '34567898', 'Lucía', 'Moreno', 'lucia.moreno@example.com', '1123456797', '1991-05-07', 'Calle 7', 505, NULL, NULL, 5008, 112, 3, 1),
-    ('20345678910', '34567899', 'Ricardo', 'Sánchez', 'ricardo.sanchez@example.com', '1123456798', '1980-09-19', 'Calle 8', 606, 5, 'E', 5009, 72, 1, 2),
-    ('20345678911', '34567900', 'Andrea', 'Rivas', 'andrea.rivas@example.com', '1123456799', '1988-04-25', 'Calle 9', 707, NULL, NULL, 5010, 72, 2, 1),
-    ('20345678912', '34567901', 'Diego', 'Álvarez', 'diego.alvarez@example.com', '1123456800', '1977-01-15', 'Calle 10', 808, 2, 'F', 3400, 2, 3, 1),
-    ('20345678913', '34567902', 'Isabel', 'Ruiz', 'isabel.ruiz@example.com', '1123456801', '1993-10-09', 'Calle 11', 909, NULL, NULL, 3400, 2, 2, 2),
-    ('20345678914', '34567903', 'Fernando', 'Castro', 'fernando.castro@example.com', '1123456802', '1984-03-20', 'Calle 12', 1010, 1, 'G', 3400, 2, 3, 1),
-    ('20345678915', '34567904', 'Marta', 'Ortiz', 'marta.ortiz@example.com', '1123456803', '1986-07-14', 'Calle 13', 1111, NULL, NULL, 5014, 23, 3, 2),
-    ('20345678916', '34567905', 'Luis', 'Torres', 'luis.torres@example.com', '1123456804', '1994-05-03', 'Calle 14', 1212, 3, 'H', 5015, 23, 1, 1),
-    ('20345678917', '34567906', 'Silvia', 'Vargas', 'silvia.vargas@example.com', '1123456805', '1992-11-11', 'Calle 15', 1313, NULL, NULL, 3400, 2, 2, 1),
-    ('20345678918', '34567907', 'Eduardo', 'Ramos', 'eduardo.ramos@example.com', '1123456806', '1978-08-17', 'Calle 16', 1414, 4, 'I', 3400, 2, 3, 2),
-    ('20345678919', '34567908', 'Patricia', 'Méndez', 'patricia.mendez@example.com', '1123456807', '1981-02-03', 'Calle 17', 1515, NULL, NULL, 5018, 112, 1, 1),
-    ('20345678920', '34567909', 'Daniel', 'Flores', 'daniel.flores@example.com', '1123456808', '1989-06-22', 'Calle 18', 1616, 5, 'J', 3400, 2, 2, 1);
+    ('20386213693', '38621369', 'Juan Ramon', 'Pérez', 'juan.perez@example.com', '3794456789', '1985-01-23', 'Av. Sarmiento', 872, 0, NULL, 3400, 2, 1, 1),
+    ('20215638712', '21563871', 'Ana Lucia', 'González', 'ana.gonzalez@hotmail.com', '1123456790', '1990-07-15', 'Av. Libertad', 2453, 2, 'D', 3400, 2, 2, 1),
+    ('20204567382', '20456738', 'María', 'López', 'maria.lopez@example.com', '1123456791', '1982-03-12', 'Calle Tucumán', 1324, NULL, NULL, 3400, 2, 1, 2),
+    ('20391287645', '39128764', 'Carlos', 'Martínez', 'carlos.martinez@example.com', '1123456792', '1979-11-22', 'Calle San Juan', 678, 3, 'B', 3500, 72, 3, 1),
+    ('20184927635', '18492763', 'Laura', 'García', 'laura.garcia@example.com', '1123456793', '1995-06-30', 'Av. Ferré', 532, NULL, NULL, 5004, 112, 3, 2),
+    ('20263891207', '26389120', 'Pedro Antonio', 'Fernández', 'pedro.fernandez@example.com', '1123456794', '1987-08-10', 'Calle Catamarca', 915, 1, 'C', 3600, 112, 3, 1),
+    ('20319745208', '31974520', 'Sofía', 'Rodríguez', 'sofia.rodriguez@example.com', '1123456795', '1992-02-28', 'Calle Entre Ríos', 451, NULL, NULL, 3400, 2, 2, 1),
+    ('20275138927', '27513892', 'Pablo', 'Gómez', 'pablo.gomez@example.com', '1123456796', '1983-12-14', 'Calle Mendoza', 387, 4, 'D', 5007, 72, 2, 2),
+    ('20342915673', '34291567', 'Lucía', 'Moreno', 'lucia.moreno@example.com', '1123456797', '1991-05-07', 'Calle Salta', 1129, NULL, NULL, 5008, 112, 3, 1),
+    ('20254018392', '25401839', 'Ricardo', 'Sánchez', 'ricardo.sanchez@example.com', '1123456798', '1980-09-19', 'Calle Jujuy', 719, 5, 'E', 5009, 72, 1, 2),
+    ('20317482650', '31748265', 'Andrea', 'Rivas', 'andrea.rivas@example.com', '1123456799', '1988-04-25', 'Calle Córdoba', 902, NULL, NULL, 5010, 72, 2, 1),
+    ('20287394162', '28739416', 'Diego', 'Álvarez', 'diego.alvarez@example.com', '1123456800', '1977-01-15', 'Calle Rioja', 345, 2, 'F', 3400, 2, 3, 1),
+    ('20275938245', '27593824', 'Isabel', 'Ruiz', 'isabel.ruiz@example.com', '1123456801', '1993-10-09', 'Calle Misiones', 487, NULL, NULL, 3400, 2, 2, 2),
+    ('20341928543', '34192854', 'Fernando', 'Castro', 'fernando.castro@example.com', '1123456802', '1984-03-20', 'Calle Formosa', 663, 1, 'G', 3400, 2, 3, 1),
+    ('20368471927', '36847192', 'Marta', 'Ortiz', 'marta.ortiz@example.com', '1123456803', '1986-07-14', 'Calle Belgrano', 198, NULL, NULL, 5014, 23, 3, 2),
+    ('20231947284', '23194728', 'Luis', 'Torres', 'luis.torres@example.com', '1123456804', '1994-05-03', 'Calle Corrientes', 102, 3, 'H', 5015, 23, 1, 1),
+    ('20318594723', '31859472', 'Silvia', 'Vargas', 'silvia.vargas@example.com', '1123456805', '1992-11-11', 'Calle La Rioja', 774, NULL, NULL, 3400, 2, 2, 1),
+    ('20264731958', '26473195', 'Eduardo', 'Ramos', 'eduardo.ramos@example.com', '1123456806', '1978-08-17', 'Calle Santa Fe', 812, 4, 'I', 3400, 2, 3, 2),
+    ('20257384916', '25738491', 'Patricia', 'Méndez', 'patricia.mendez@example.com', '1123456807', '1981-02-03', 'Calle San Luis', 524, NULL, NULL, 5018, 112, 1, 1),
+    ('20352817396', '35281739', 'Daniel', 'Flores', 'daniel.flores@example.com', '1123456808', '1989-06-22', 'Calle Santiago', 678, 5, 'J', 3400, 2, 2, 1);
 
 -- Consultas para ver el lote cargado
 SELECT * FROM Empleado
