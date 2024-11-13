@@ -43,7 +43,7 @@ namespace AgMaGest.C_Presentacion.Cajero
             this.label1 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridPagos = new System.Windows.Forms.DataGridView();
             this.id_Venta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.generarPago = new System.Windows.Forms.DataGridViewButtonColumn();
             this.editarVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,7 +57,7 @@ namespace AgMaGest.C_Presentacion.Cajero
             this.panel4.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridPagos)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -65,7 +65,7 @@ namespace AgMaGest.C_Presentacion.Cajero
             this.panel1.BackColor = System.Drawing.Color.Thistle;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(35, 706);
             this.panel1.TabIndex = 0;
@@ -75,7 +75,7 @@ namespace AgMaGest.C_Presentacion.Cajero
             this.panel2.BackColor = System.Drawing.Color.Thistle;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(1065, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(35, 706);
             this.panel2.TabIndex = 1;
@@ -85,7 +85,7 @@ namespace AgMaGest.C_Presentacion.Cajero
             this.panel3.BackColor = System.Drawing.Color.Thistle;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(35, 658);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1030, 48);
             this.panel3.TabIndex = 2;
@@ -97,7 +97,7 @@ namespace AgMaGest.C_Presentacion.Cajero
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(35, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1030, 130);
             this.panel4.TabIndex = 3;
@@ -111,7 +111,7 @@ namespace AgMaGest.C_Presentacion.Cajero
             this.panel7.Controls.Add(this.label1);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(0, 48);
-            this.panel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel7.Margin = new System.Windows.Forms.Padding(4);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1030, 57);
             this.panel7.TabIndex = 2;
@@ -119,7 +119,7 @@ namespace AgMaGest.C_Presentacion.Cajero
             // BGenerarVenta
             // 
             this.BGenerarVenta.Location = new System.Drawing.Point(695, 11);
-            this.BGenerarVenta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BGenerarVenta.Margin = new System.Windows.Forms.Padding(4);
             this.BGenerarVenta.Name = "BGenerarVenta";
             this.BGenerarVenta.Size = new System.Drawing.Size(120, 28);
             this.BGenerarVenta.TabIndex = 3;
@@ -131,7 +131,7 @@ namespace AgMaGest.C_Presentacion.Cajero
             // 
             this.pictureBox1.Image = global::AgMaGest.Properties.Resources.Icono_Buscar_Cajero;
             this.pictureBox1.Location = new System.Drawing.Point(533, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(45, 60);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -142,7 +142,7 @@ namespace AgMaGest.C_Presentacion.Cajero
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(287, 11);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(237, 32);
             this.textBox1.TabIndex = 1;
@@ -163,7 +163,7 @@ namespace AgMaGest.C_Presentacion.Cajero
             this.panel6.BackColor = System.Drawing.Color.Thistle;
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1030, 48);
             this.panel6.TabIndex = 1;
@@ -173,12 +173,12 @@ namespace AgMaGest.C_Presentacion.Cajero
             this.panel5.BackColor = System.Drawing.Color.Thistle;
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel5.Location = new System.Drawing.Point(0, 105);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1030, 25);
             this.panel5.TabIndex = 0;
             // 
-            // dataGridView1
+            // dataGridPagos
             // 
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -187,9 +187,9 @@ namespace AgMaGest.C_Presentacion.Cajero
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridPagos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridPagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridPagos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_Venta,
             this.generarPago,
             this.editarVenta,
@@ -200,13 +200,13 @@ namespace AgMaGest.C_Presentacion.Cajero
             this.nombreCompletoCliente,
             this.montoTotalVenta,
             this.estadoVenta});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(35, 130);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1030, 528);
-            this.dataGridView1.TabIndex = 4;
+            this.dataGridPagos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridPagos.Location = new System.Drawing.Point(35, 130);
+            this.dataGridPagos.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridPagos.Name = "dataGridPagos";
+            this.dataGridPagos.RowHeadersWidth = 51;
+            this.dataGridPagos.Size = new System.Drawing.Size(1030, 528);
+            this.dataGridPagos.TabIndex = 4;
             // 
             // id_Venta
             // 
@@ -283,20 +283,20 @@ namespace AgMaGest.C_Presentacion.Cajero
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1100, 706);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridPagos);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RegistrarPago";
             this.Text = "RegistrarPago";
             this.panel4.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridPagos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -309,7 +309,7 @@ namespace AgMaGest.C_Presentacion.Cajero
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridPagos;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
