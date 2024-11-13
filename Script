@@ -112,20 +112,6 @@ CREATE TABLE Inventario_Vehiculos
   CONSTRAINT FK_Inventario_Vehiculo FOREIGN KEY (id_Vehiculo) REFERENCES Vehiculos(id_Vehiculo)
 );
 
-CREATE TABLE Pago
-(
-	id_pago INT IDENTITY(500,1) NOT NULL,
-	descripcion_Pago VARCHAR(50) NULL,
-	importe_Pago FLOAT NOT NULL,
-	id_TipoPago INT NOT NULL,
-	id_EstadoPago INT NOT NULL,
-	num_Factura INT NOT NULL,
-	CONSTRAINT PK_Pago PRIMARY KEY (id_pago),
-	CONSTRAINT FK_Pago_TipoPago FOREIGN KEY (id_TipoPago) REFERENCES Tipo_Pago(id_TipoPago),
-	CONSTRAINT FK_Pago_EstadoPago FOREIGN KEY (id_EstadoPago) REFERENCES Estado_Pago(id_EstadoPago),
-	CONSTRAINT FK_Pago_Factura FOREIGN KEY (num_Factura) REFERENCES Factura(num_Factura)
-);
-
 CREATE TABLE Localidad
 (
   id_Localidad INT IDENTITY(1,1) NOT NULL,
