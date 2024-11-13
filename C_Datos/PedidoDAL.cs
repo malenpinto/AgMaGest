@@ -55,8 +55,8 @@ namespace AgMaGest.C_Datos
             bool resultado = false;
 
             string query = @"
-                UPDATE Vehiculo
-                SET id_EstadoVehiculo = @NuevoEstado
+                UPDATE Vehiculos
+                SET id_Estado = @NuevoEstado
                 WHERE id_Vehiculo = @IdVehiculo";
 
             try

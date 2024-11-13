@@ -481,7 +481,7 @@ namespace AgMaGest.C_Datos
                                     IdCliente = reader.GetInt32(reader.GetOrdinal("id_Cliente")),
                                     EmailCliente = reader.GetString(reader.GetOrdinal("email_Cliente")),
                                     CelularCliente = reader.GetString(reader.GetOrdinal("celular_Cliente")),
-                                    RazonSocialCEmpresa = reader.GetString(reader.GetOrdinal("razonSocial_CEmpresa")),
+                                    RazonSocialCEmpresa = reader.GetString(reader.GetOrdinal("razon_Social_CEmpresa")),
                                     CuitCEmpresa = reader.GetString(reader.GetOrdinal("cuit_CEmpresa"))
                                 });
                             }

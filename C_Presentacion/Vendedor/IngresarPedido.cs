@@ -130,11 +130,13 @@ namespace AgMaGest.C_Presentacion.Vendedor
                     // Verificar si el cliente es final o empresa
                     if (cliente is ClienteFinal final)
                     {
+                        idClienteSeleccionado = final.IdCliente;
                         TBNombreClientePedido.Text = $"{final.NombreCFinal} {final.ApellidoCFinal}";
                         TBCuilCuitClientePedido.Text = final.CuilCFinal;
                     }
                     else if (cliente is ClienteEmpresa empresa)
                     {
+                        idClienteSeleccionado = empresa.IdCliente;
                         TBNombreClientePedido.Text = empresa.RazonSocialCEmpresa;
                         TBCuilCuitClientePedido.Text = empresa.CuitCEmpresa;
                     }
@@ -172,56 +174,57 @@ namespace AgMaGest.C_Presentacion.Vendedor
             TBCelularClientePedido.Clear();
         }
         private void BConfirmarPedido_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                // Verificar que el cliente esté seleccionado y el monto esté completo
-                if (idClienteSeleccionado == 0 || string.IsNullOrEmpty(TBPrecioPedido.Text))
-                {
-                    MessageBox.Show("Por favor, asegúrese de que todos los campos obligatorios están completos.");
-                    return;
-                }
+         {
+             try
+             {
+                 // Verificar que el cliente esté seleccionado y el monto esté completo
+                 if (idClienteSeleccionado == 0 || string.IsNullOrEmpty(TBPrecioPedido.Text))
+                 {
+                     MessageBox.Show("Por favor, asegúrese de que todos los campos obligatorios están completos.");
+                     return;
+                 }
 
-                // Datos necesarios para el pedido
-                string cuilEmpleado = TBCuilVendedor.Text;
-                int idCliente = idClienteSeleccionado;
-                int idVehiculo = this.idVehiculo;
-                DateTime fechaPedido = DateTime.Now;
-                double montoPedido = double.Parse(TBPrecioPedido.Text);
-                int idEstadoPedido = 1;
+                 // Datos necesarios para el pedido
+                 string cuilEmpleado = TBCuilVendedor.Text;
+                 int idCliente = idClienteSeleccionado;
+                 int idVehiculo = this.idVehiculo;
+                 DateTime fechaPedido = DateTime.Now;
+                 double montoPedido = double.Parse(TBPrecioPedido.Text);
+                 int idEstadoPedido = 1;
 
-                // Llamar al método para insertar el pedido en la base de datos
-                PedidoDAL pedidoDAL = new PedidoDAL();
-                bool resultado = pedidoDAL.InsertarPedido(cuilEmpleado, idCliente, idVehiculo, fechaPedido, montoPedido, idEstadoPedido);
+                 // Llamar al método para insertar el pedido en la base de datos
+                 PedidoDAL pedidoDAL = new PedidoDAL();
+                 bool resultado = pedidoDAL.InsertarPedido(cuilEmpleado, idCliente, idVehiculo, fechaPedido, montoPedido, idEstadoPedido);
 
-                if (resultado)
-                {
-                    // Actualizar el estado del vehículo a 2 (asignado a un pedido o confirmado)
-                    int estadoConfirmado = 2;
+                 if (resultado)
+                 {
+                     // Actualizar el estado del vehículo a 2 (asignado a un pedido o confirmado)
+                     int estadoConfirmado = 2;
 
 
-                    bool estadoVehiculoActualizado = pedidoDAL.ActualizarEstadoVehiculo(idVehiculo, estadoConfirmado);
+                     bool estadoVehiculoActualizado = pedidoDAL.ActualizarEstadoVehiculo(idVehiculo, estadoConfirmado);
 
-                    if (estadoVehiculoActualizado)
-                    {
-                        MessageBox.Show("Pedido registrado y estado del vehículo actualizado exitosamente.");
-                        this.Close(); // Cerrar el formulario si el pedido y el estado del vehículo se han confirmado correctamente
-                    }
-                    else
-                    {
-                        MessageBox.Show("Pedido registrado, pero no se pudo actualizar el estado del vehículo.");
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Error al registrar el pedido.");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error: {ex.Message}");
-            }
-        }
+                     if (estadoVehiculoActualizado)
+                     {
+                         MessageBox.Show("Pedido registrado y estado del vehículo actualizado exitosamente.");
+                         this.Close(); // Cerrar el formulario si el pedido y el estado del vehículo se han confirmado correctamente
+                     }
+                     else
+                     {
+                         MessageBox.Show("Pedido registrado, pero no se pudo actualizar el estado del vehículo.");
+                     }
+                 }
+                 else
+                 {
+                     MessageBox.Show("Error al registrar el pedido.");
+                 }
+             }
+             catch (Exception ex)
+             {
+                 MessageBox.Show($"Error: {ex.Message}");
+             }
+         }
+
 
         private void BSalirPedido_Click(object sender, EventArgs e)
         {
