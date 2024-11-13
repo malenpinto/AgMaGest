@@ -440,6 +440,59 @@ namespace AgMaGest.C_Datos
             return clientes;
         }
 
+        public List<Cliente> FiltrarClientesConID(string cuilCuit)
+        {
+            var clientes = new List<Cliente>();
+            string query = @"
+                SELECT c.id_Cliente, c.email_Cliente, c.celular_Cliente, 
+                       cf.nombre_CFinal, cf.apellido_CFinal, cf.cuil_CFinal,
+                       ce.razon_Social_CEmpresa, ce.cuit_CEmpresa
+                FROM Cliente c
+                LEFT JOIN Cliente_Final cf ON c.id_Cliente = cf.id_Cliente
+                LEFT JOIN Cliente_Empresa ce ON c.id_Cliente = ce.id_Cliente
+                WHERE cf.cuil_CFinal = @CuilCuit OR ce.cuit_CEmpresa = @CuilCuit";
+
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+                using (var command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@CuilCuit", cuilCuit);
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            if (!reader.IsDBNull(reader.GetOrdinal("nombre_CFinal")))
+                            {
+                                clientes.Add(new ClienteFinal
+                                {
+                                    IdCliente = reader.GetInt32(reader.GetOrdinal("id_Cliente")),
+                                    EmailCliente = reader.GetString(reader.GetOrdinal("email_Cliente")),
+                                    CelularCliente = reader.GetString(reader.GetOrdinal("celular_Cliente")),
+                                    NombreCFinal = reader.GetString(reader.GetOrdinal("nombre_CFinal")),
+                                    ApellidoCFinal = reader.GetString(reader.GetOrdinal("apellido_CFinal")),
+                                    CuilCFinal = reader.GetString(reader.GetOrdinal("cuil_CFinal"))
+                                });
+                            }
+                            else if (!reader.IsDBNull(reader.GetOrdinal("razon_Social_CEmpresa")))
+                            {
+                                clientes.Add(new ClienteEmpresa
+                                {
+                                    IdCliente = reader.GetInt32(reader.GetOrdinal("id_Cliente")),
+                                    EmailCliente = reader.GetString(reader.GetOrdinal("email_Cliente")),
+                                    CelularCliente = reader.GetString(reader.GetOrdinal("celular_Cliente")),
+                                    RazonSocialCEmpresa = reader.GetString(reader.GetOrdinal("razonSocial_CEmpresa")),
+                                    CuitCEmpresa = reader.GetString(reader.GetOrdinal("cuit_CEmpresa"))
+                                });
+                            }
+                        }
+                    }
+                }
+            }
+
+            return clientes;
+        }
+        /*
 
         public List<Cliente> FiltrarClientesConID(string texto)
         {
@@ -560,7 +613,7 @@ namespace AgMaGest.C_Datos
             }
 
             return clientes;
-        }
+        }*/
 
     }
 }

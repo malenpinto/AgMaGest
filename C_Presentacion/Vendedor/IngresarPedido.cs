@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -124,9 +125,9 @@ namespace AgMaGest.C_Presentacion.Vendedor
                 {
                     // Si hay exactamente un cliente encontrado
                     Cliente cliente = clientes[0];
-                    idClienteSeleccionado = cliente.IdCliente; // Guardamos el ID del cliente encontrado
+                    idClienteSeleccionado = cliente.IdCliente; // Asignar el ID del cliente
 
-                    // Verificar si el cliente es final o empresa para llenar los datos correspondientes
+                    // Verificar si el cliente es final o empresa
                     if (cliente is ClienteFinal final)
                     {
                         TBNombreClientePedido.Text = $"{final.NombreCFinal} {final.ApellidoCFinal}";
@@ -138,28 +139,26 @@ namespace AgMaGest.C_Presentacion.Vendedor
                         TBCuilCuitClientePedido.Text = empresa.CuitCEmpresa;
                     }
 
-                    // Llenar el resto de los datos del cliente
+                    // Llenar datos comunes del cliente
                     TBEmailClientePedido.Text = cliente.EmailCliente;
                     TBCelularClientePedido.Text = cliente.CelularCliente;
+
+                    // Confirmar que el ID se asignó correctamente
+                    Debug.WriteLine($"ID Cliente Seleccionado: {idClienteSeleccionado}");
                 }
                 else if (clientes.Count > 1)
                 {
-                    // Si hay múltiples coincidencias, notificar al usuario
                     MessageBox.Show("Se encontraron múltiples clientes con el CUIL/CUIT ingresado. Por favor, refine su búsqueda.");
                 }
                 else
                 {
-                    // Si no se encontraron clientes
                     MessageBox.Show("No se encontraron clientes con el CUIL o CUIT ingresado.");
-
-                    // Limpiar los campos si no se encontró el cliente
                     LimpiarCamposCliente();
                     idClienteSeleccionado = 0; // Restablecer el ID del cliente si no se encontró
                 }
             }
             catch (Exception ex)
             {
-                // Manejo de errores generales
                 MessageBox.Show($"Ocurrió un error al buscar el cliente: {ex.Message}");
             }
         }
