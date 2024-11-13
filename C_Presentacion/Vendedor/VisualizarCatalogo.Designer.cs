@@ -36,12 +36,9 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.BGenerarPedido = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.BBuscarVehiculoCatalogo = new System.Windows.Forms.Button();
+            this.TBBuscarVehiculoCatalogo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.dataGridCatalogo = new System.Windows.Forms.DataGridView();
@@ -56,10 +53,10 @@
             this.modelo_Catalogo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.km_Catalogo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.anio_Catalogo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel10 = new System.Windows.Forms.Panel();
             this.panel5.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCatalogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -110,116 +107,86 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.GhostWhite;
+            this.panel7.Controls.Add(this.panel10);
             this.panel7.Controls.Add(this.BGenerarPedido);
-            this.panel7.Controls.Add(this.button1);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(690, 0);
+            this.panel7.Location = new System.Drawing.Point(497, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(340, 60);
+            this.panel7.Size = new System.Drawing.Size(533, 60);
             this.panel7.TabIndex = 6;
             // 
             // BGenerarPedido
             // 
             this.BGenerarPedido.BackColor = System.Drawing.Color.Transparent;
             this.BGenerarPedido.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BGenerarPedido.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BGenerarPedido.FlatAppearance.BorderSize = 2;
+            this.BGenerarPedido.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue;
             this.BGenerarPedido.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.BGenerarPedido.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BGenerarPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BGenerarPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BGenerarPedido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(62)))), ((int)(((byte)(141)))));
-            this.BGenerarPedido.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BGenerarPedido.Location = new System.Drawing.Point(43, 5);
+            this.BGenerarPedido.Location = new System.Drawing.Point(41, 9);
             this.BGenerarPedido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BGenerarPedido.Name = "BGenerarPedido";
-            this.BGenerarPedido.Size = new System.Drawing.Size(169, 45);
-            this.BGenerarPedido.TabIndex = 8;
-            this.BGenerarPedido.Text = " Generar Pedido";
-            this.BGenerarPedido.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BGenerarPedido.Size = new System.Drawing.Size(191, 41);
+            this.BGenerarPedido.TabIndex = 10;
+            this.BGenerarPedido.Text = "+ Generar Pedido";
+            this.BGenerarPedido.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BGenerarPedido.UseVisualStyleBackColor = false;
+            this.BGenerarPedido.Visible = false;
             this.BGenerarPedido.Click += new System.EventHandler(this.BGenerarPedido_Click);
-            // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(24, 60);
-            this.button1.TabIndex = 9;
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.GhostWhite;
-            this.panel6.Controls.Add(this.radioButton2);
-            this.panel6.Controls.Add(this.radioButton1);
-            this.panel6.Controls.Add(this.pictureBox1);
-            this.panel6.Controls.Add(this.textBox1);
+            this.panel6.Controls.Add(this.BBuscarVehiculoCatalogo);
+            this.panel6.Controls.Add(this.TBBuscarVehiculoCatalogo);
             this.panel6.Controls.Add(this.label1);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(690, 60);
+            this.panel6.Size = new System.Drawing.Size(497, 60);
             this.panel6.TabIndex = 5;
             // 
-            // radioButton2
+            // BBuscarVehiculoCatalogo
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(165, 31);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(81, 23);
-            this.radioButton2.TabIndex = 5;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Usado";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.BBuscarVehiculoCatalogo.BackColor = System.Drawing.Color.Transparent;
+            this.BBuscarVehiculoCatalogo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BBuscarVehiculoCatalogo.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BBuscarVehiculoCatalogo.FlatAppearance.BorderSize = 0;
+            this.BBuscarVehiculoCatalogo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BBuscarVehiculoCatalogo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.BBuscarVehiculoCatalogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BBuscarVehiculoCatalogo.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BBuscarVehiculoCatalogo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
+            this.BBuscarVehiculoCatalogo.Image = global::AgMaGest.Properties.Resources.Icono_Buscar_Vendedor;
+            this.BBuscarVehiculoCatalogo.Location = new System.Drawing.Point(445, 0);
+            this.BBuscarVehiculoCatalogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BBuscarVehiculoCatalogo.Name = "BBuscarVehiculoCatalogo";
+            this.BBuscarVehiculoCatalogo.Size = new System.Drawing.Size(52, 60);
+            this.BBuscarVehiculoCatalogo.TabIndex = 6;
+            this.BBuscarVehiculoCatalogo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BBuscarVehiculoCatalogo.UseVisualStyleBackColor = false;
             // 
-            // radioButton1
+            // TBBuscarVehiculoCatalogo
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(61, 32);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(85, 23);
-            this.radioButton1.TabIndex = 4;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Nuevo";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox1.Image = global::AgMaGest.Properties.Resources.Icono_Buscar_Vendedor;
-            this.pictureBox1.Location = new System.Drawing.Point(645, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(45, 60);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(339, 13);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(289, 32);
-            this.textBox1.TabIndex = 0;
+            this.TBBuscarVehiculoCatalogo.BackColor = System.Drawing.Color.Gainsboro;
+            this.TBBuscarVehiculoCatalogo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBBuscarVehiculoCatalogo.Location = new System.Drawing.Point(181, 13);
+            this.TBBuscarVehiculoCatalogo.Name = "TBBuscarVehiculoCatalogo";
+            this.TBBuscarVehiculoCatalogo.Size = new System.Drawing.Size(244, 32);
+            this.TBBuscarVehiculoCatalogo.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Bahnschrift", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(30, 8);
+            this.label1.Location = new System.Drawing.Point(19, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(276, 21);
+            this.label1.Size = new System.Drawing.Size(130, 21);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Buscar por Marca/ Modelo/ Versión";
+            this.label1.Text = "Buscar Vehículo";
             // 
             // panel8
             // 
@@ -260,6 +227,7 @@
             this.dataGridCatalogo.RowTemplate.Height = 24;
             this.dataGridCatalogo.Size = new System.Drawing.Size(1030, 525);
             this.dataGridCatalogo.TabIndex = 5;
+            this.dataGridCatalogo.SelectionChanged += new System.EventHandler(this.DataGridCatalogo_SelectionChanged);
             // 
             // id_Catalogo
             // 
@@ -341,6 +309,16 @@
             this.anio_Catalogo.Name = "anio_Catalogo";
             this.anio_Catalogo.Width = 125;
             // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel10.Location = new System.Drawing.Point(0, 0);
+            this.panel10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(5, 60);
+            this.panel10.TabIndex = 15;
+            // 
             // VisualizarCatalogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -361,7 +339,6 @@
             this.panel7.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCatalogo)).EndInit();
             this.ResumeLayout(false);
 
@@ -376,13 +353,10 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.DataGridView dataGridCatalogo;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TBBuscarVehiculoCatalogo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_Catalogo;
         private System.Windows.Forms.DataGridViewButtonColumn nuevo_pedido_Catalogo;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado_Catalogo;
@@ -394,7 +368,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn modelo_Catalogo;
         private System.Windows.Forms.DataGridViewTextBoxColumn km_Catalogo;
         private System.Windows.Forms.DataGridViewTextBoxColumn anio_Catalogo;
+        private System.Windows.Forms.Button BBuscarVehiculoCatalogo;
         private System.Windows.Forms.Button BGenerarPedido;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel10;
     }
 }

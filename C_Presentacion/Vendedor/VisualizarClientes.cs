@@ -22,6 +22,9 @@ namespace AgMaGest.C_Presentacion.Vendedor
             InitializeComponent();
             this.Load += new EventHandler(VisualizarClientes_Load);
             dataGridClientes.CellFormatting += DataGridClientes_CellFormatting;
+
+            panel4.Click += new EventHandler(Panel4_Click);
+            panel4.Leave += new EventHandler(Panel4_Leave);
         }
 
         private void VisualizarClientes_Load(object sender, EventArgs e)
@@ -286,6 +289,30 @@ namespace AgMaGest.C_Presentacion.Vendedor
             // Un CUIT de empresa suele empezar con 30 o 33 y tiene longitud de 11 caracteres
 
             return cuilCuit.Length == 11 && (cuilCuit.StartsWith("30") || cuilCuit.StartsWith("33"));
+        }
+
+        private void Panel4_Click(object sender, EventArgs e)
+        {
+            // Ocultar todos los botones solo si están visibles
+            OcultarBotones();
+        }
+
+        private void Panel4_Leave(object sender, EventArgs e)
+        {
+            // Ocultar todos los botones solo si están visibles cuando el panel pierde el foco
+            OcultarBotones();
+        }
+
+        // Método para ocultar todos los botones
+        private void OcultarBotones()
+        {
+            if (BAgregarPersona.Visible || BAgregarEmpresa.Visible || BEditarCliente.Visible || BEliminarCliente.Visible)
+            {
+                BAgregarPersona.Visible = false;
+                BAgregarEmpresa.Visible = false;
+                BEditarCliente.Visible = false;
+                BEliminarCliente.Visible = false;
+            }
         }
     }
 }
