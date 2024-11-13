@@ -279,13 +279,13 @@ VALUES
     ('20257384916', '25738491', 'Patricia', 'Méndez', 'patricia.mendez@example.com', '1123456807', '1981-02-03', 'Calle San Luis', 524, NULL, NULL, 5018, 112, 1, 1),
     ('20352817396', '35281739', 'Daniel', 'Flores', 'daniel.flores@example.com', '1123456808', '1989-06-22', 'Calle Santiago', 678, 5, 'J', 3400, 2, 2, 1);
 
--- Consultas para ver el lote cargado
+/*-- Consultas para ver el lote cargado
 SELECT * FROM Empleado
 SELECT * FROM Localidad
 SELECT * FROM Provincia
 SELECT * FROM Pais
 SELECT * FROM Perfil_Empleado
-SELECT * FROM Estado_Empleado
+SELECT * FROM Estado_Empleado*/
 
 
 
@@ -329,13 +329,13 @@ VALUES
     ('Toyota', 'Yaris', 'S', 5000, '2022-01-01', 'AJ333PQ', NULL, 21000, 4, 1, 2, 'images/yaris.jpg'),
     ('Fiat', 'Toro', 'Freedom', 20000, '2020-01-01', 'AK444QR', NULL, 33000, 3, 1, 2, 'images/toro.jpg');
 
--- Consultas para ver el lote cargado
+/*-- Consultas para ver el lote cargado
 SELECT * FROM Vehiculos
 SELECT * FROM Tipo_Vehiculo
 SELECT * FROM Estado_Vehiculo
 SELECT * FROM Condicion
 
-SELECT * FROM Inventario_Vehiculos
+SELECT * FROM Inventario_Vehiculos*/
 
 --------------------------
 --- DATOS PARA CLIENTES---
@@ -407,13 +407,30 @@ VALUES
 ('Miguel', 'Hernández', '90123456', '20901234567', '1993-11-02', 19),   -- id_Cliente = 19
 ('María', 'Pérez', '01234567', '20012345678', '1996-08-21', 20);   -- id_Cliente = 20
 
-SELECT * FROM Cliente_Empresa
+/*SELECT * FROM Cliente_Empresa
 SELECT * FROM Cliente_Final
 SELECT * FROM Cliente
-SELECT * FROM Estado_Cliente
+SELECT * FROM Estado_Cliente*/
 
 
-DBCC CHECKIDENT ('Estado_Cliente', RESEED, 0);
-DBCC CHECKIDENT ('Cliente', RESEED, 0);
-DBCC CHECKIDENT ('Cliente_Final', RESEED, 0);
-DBCC CHECKIDENT ('Cliente_Empresa', RESEED, 0);
+---------------------------------
+--- DATOS PARA PEEDIDO Y PAGO ---
+---------------------------------
+INSERT INTO Tipo_Pago (nombre_TipoPago) VALUES 
+('Tarjeta de crédito'),
+('Transferencia bancaria'),
+('Efectivo');
+
+INSERT INTO Estado_Pedido (nombre_EstadoPago) VALUES 
+('Pendiente'),
+('Realizado'),
+('Cancelado');
+
+INSERT INTO Estado_Pago (nombre_EstadoPago) VALUES 
+('Pendiente'),
+('Pagado'),
+('Rechazado');
+
+/*SELECT * FROM Tipo_Pago
+SELECT * FROM Estado_Pago
+SELECT * FROM Estado_Pedido*/
