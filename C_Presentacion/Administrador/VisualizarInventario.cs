@@ -45,6 +45,11 @@ namespace AgMaGest.C_Presentacion.Administrador
                     {
                         imagen = Image.FromFile(vehiculo.RutaImagen);
                     }
+                    else
+                    {
+                        // Asignar imagen por defecto si no se encuentra la imagen
+                        imagen = AgMaGest.Properties.Resources.VhiculoPorDefecto;
+                    }
 
                     // Agregar la fila al DataGridView con las nuevas columnas Estado, Condición y Tipo
                     dataGridInventario.Rows.Add(

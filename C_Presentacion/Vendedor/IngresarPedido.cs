@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,89 +15,152 @@ namespace AgMaGest.C_Presentacion.Vendedor
 {
     public partial class IngresarPedido : Form
     {
-        public IngresarPedido()
+        private int idVehiculo;
+
+        public IngresarPedido(int idVehiculo)
         {
             InitializeComponent();
+            this.idVehiculo = idVehiculo;
+            CargarDatosVehiculo(idVehiculo);
+            IngresarPedido_Load(this, EventArgs.Empty);
         }
+
+        private void IngresarPedido_Load(object sender, EventArgs e)
+        {
+            // Establecer la fecha actual en el campo de Fecha Pedido
+            TBFechaPedido.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            TBFechaPedido.ReadOnly = true; // Hacer que este campo sea de solo lectura
+        }
+
+        /*private void CargarDatosEmpleado(string cuilEmpleado)
+        {
+            // Lógica para obtener datos del empleado desde la base de datos
+            Empleado empleado = EmpleadoDAL.ObtenerEmpleadoPorCuil(cuilEmpleado); // Método ficticio en EmpleadoDAL
+
+            if (empleado != null)
+            {
+                txtVendedor.Text = empleado.NombreCompleto;
+                txtCuilEmpleado.Text = empleado.CUIL;
+                txtVendedor.ReadOnly = true;
+                txtCuilEmpleado.ReadOnly = true;
+            }
+        }*/
+
+        private void CargarDatosVehiculo(int idVehiculo)
+        {
+            VehiculoDAL vehiculoDAL = new VehiculoDAL();
+            Vehiculos vehiculo = vehiculoDAL.ObtenerVehiculoPorId(idVehiculo);
+
+            if (vehiculo != null)
+            {
+                TBCondicionPedido.Text = vehiculo.CondicionNombre;
+                if (vehiculo.IdCondicion == 2)
+                {
+                    TBCodPatPedido.Text = vehiculo.Patente;
+                    TBCondicionPedido.Text = "Usado";
+                }
+                else if (vehiculo.IdCondicion == 1)
+                {
+                    TBCodPatPedido.Text = vehiculo.CodigoOKM.ToString();
+                    TBCondicionPedido.Text = "Nuevo";
+                }
+
+                TBMarcaPedido.Text = vehiculo.Marca;
+                TBModeloPedido.Text = vehiculo.Modelo;
+                TBVersionPedido.Text = vehiculo.Version;
+                TBKmPedido.Text = vehiculo.Kilometraje.ToString();
+                TBAnioPedido.Text = vehiculo.Anio.ToString("yyyy"); // Muestra solo el año
+                TBPrecioPedido.Text = vehiculo.Precio.ToString("F2"); // Muestra el precio con dos decimales
+
+                // Hacer que los campos sean de solo lectura
+                TBCondicionPedido.ReadOnly = true;
+                TBCodPatPedido.ReadOnly = true;
+                TBMarcaPedido.ReadOnly = true;
+                TBModeloPedido.ReadOnly = true;
+                TBVersionPedido.ReadOnly = true;
+                TBKmPedido.ReadOnly = true;
+                TBAnioPedido.ReadOnly = true;
+                TBPrecioPedido.ReadOnly = true;
+
+                // Cargar la imagen del vehículo en PBVehiculoPedido o una imagen por defecto
+                if (!string.IsNullOrEmpty(vehiculo.RutaImagen) && System.IO.File.Exists(vehiculo.RutaImagen))
+                {
+                    PBVehiculoPedido.Image = Image.FromFile(vehiculo.RutaImagen);
+                }
+                else
+                {
+                    PBVehiculoPedido.Image = AgMaGest.Properties.Resources.VhiculoPorDefecto;
+                }
+            }
+        }
+
+        private void CargarImagenVehiculo(string rutaImagen, PictureBox pictureBox)
+        {
+            if (!string.IsNullOrEmpty(rutaImagen) && File.Exists(rutaImagen))
+            {
+                try
+                {
+                    pictureBox.Image = Image.FromFile(rutaImagen);
+                    pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al cargar la imagen: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("La imagen del vehículo no se encuentra en la ruta especificada.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+        private void BBuscarPedido_Click(object sender, EventArgs e)
+        {
+            string cuilCuit = TBBuscarClientePedido.Text.Trim();
+
+            if (string.IsNullOrEmpty(cuilCuit))
+            {
+                MessageBox.Show("Por favor, ingrese un CUIL o CUIT para buscar.");
+                return;
+            }
+
+            ClienteDAL clienteDAL = new ClienteDAL();
+            List<Cliente> clientes = clienteDAL.FiltrarClientesPorCuilCuit(cuilCuit);
+
+            if (clientes.Count > 0)
+            {
+                Cliente cliente = clientes[0]; // Se asume que solo habrá un resultado
+
+                if (cliente is ClienteFinal final)
+                {
+                    TBNombreClientePedido.Text = $"{final.NombreCFinal} {final.ApellidoCFinal}";
+                    TBCuilCuitClientePedido.Text = final.CuilCFinal;
+                }
+                else if (cliente is ClienteEmpresa empresa)
+                {
+                    TBNombreClientePedido.Text = empresa.RazonSocialCEmpresa;
+                    TBCuilCuitClientePedido.Text = empresa.CuitCEmpresa;
+                }
+
+                TBEmailClientePedido.Text = cliente.EmailCliente;
+                TBCelularClientePedido.Text = cliente.CelularCliente;
+            }
+            else
+            {
+                MessageBox.Show("No se encontraron clientes con el CUIL o CUIT ingresado.");
+                // Limpiar los campos si no se encontró el cliente
+                TBNombreClientePedido.Clear();
+                TBCuilCuitClientePedido.Clear();
+                TBEmailClientePedido.Clear();
+                TBCelularClientePedido.Clear();
+            }
+        }
+
 
         private void BSalirPedido_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        /*
-        private void BConfirmarPedido_Click(object sender, EventArgs e)
-        {
-            // Validar que se haya seleccionado un cliente y otros datos necesarios
-            if (string.IsNullOrEmpty(txtCUILCliente.Text) ||
-                string.IsNullOrEmpty(txtNumFactura.Text) ||
-                string.IsNullOrEmpty(txtIdCliente.Text))
-            {
-                MessageBox.Show("Debe seleccionar un cliente y completar todos los campos obligatorios.",
-                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
 
-            try
-            {
-                // Crear un nuevo objeto Pedido con los datos del formulario
-                Pedido pedido = new Pedido
-                {
-                    CUIL = txtCUILCliente.Text,
-                    NumFactura = int.Parse(txtNumFactura.Text),
-                    IdCliente = int.Parse(txtIdCliente.Text),
-                    FechaPedido = DateTime.Now // Toma la fecha y hora actual
-                };
-
-                // Insertar el pedido usando PedidoDAL
-                PedidoDAL pedidoDAL = new PedidoDAL();
-                pedidoDAL.InsertarPedido(pedido);
-
-                MessageBox.Show("Pedido registrado exitosamente con ID: " + pedido.IdPedido,
-                                "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                // Limpiar campos después de guardar
-                LimpiarCampos();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al registrar el pedido: " + ex.Message,
-                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void LimpiarCampos()
-        {
-            txtCUILCliente.Clear();
-            txtNumFactura.Clear();
-            txtIdCliente.Clear();
-            // Limpia otros campos si es necesario
-        }
-
-        private void BBuscarPedido_Click(object sender, EventArgs e)
-        {
-            string criterioBusqueda = TBBuscarPedido.Text;
-
-            if (string.IsNullOrEmpty(criterioBusqueda))
-            {
-                MessageBox.Show("Por favor, ingrese un criterio de búsqueda.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            ClienteDAL clienteDAL = new ClienteDAL();
-            Cliente cliente = clienteDAL.ObtenerClientePorCUILoNombre(criterioBusqueda);
-
-            if (cliente != null)
-            {
-                txtNombreCliente.Text = cliente.Nombre;
-                txtCUILCliente.Text = cliente.CUIL;
-                txtDNICliente.Text = cliente.DNI;
-                txtEmailCliente.Text = cliente.Email;
-                txtCelularCliente.Text = cliente.Celular;
-            }
-            else
-            {
-                MessageBox.Show("Cliente no encontrado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }*/
+      
     }
 }

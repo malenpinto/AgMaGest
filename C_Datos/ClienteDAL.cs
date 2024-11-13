@@ -369,5 +369,76 @@ namespace AgMaGest.C_Datos
             return clientes;
         }
 
+        public List<Cliente> FiltrarClientesPorCuilCuit(string cuilCuit)
+        {
+            List<Cliente> clientes = new List<Cliente>();
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConnectionString))
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(@"
+                SELECT 
+                    cf.cuil_CFinal,
+                    cf.nombre_CFinal,
+                    cf.apellido_CFinal,
+                    ce.cuit_CEmpresa,
+                    ce.razon_Social_CEmpresa,
+                    c.email_Cliente,
+                    c.celular_Cliente
+                FROM 
+                    Cliente c
+                LEFT JOIN 
+                    Cliente_Final cf ON c.id_Cliente = cf.id_Cliente
+                LEFT JOIN 
+                    Cliente_Empresa ce ON c.id_Cliente = ce.id_Cliente
+                WHERE 
+                    (cf.cuil_CFinal = @cuilCuit) OR (ce.cuit_CEmpresa = @cuilCuit)", conn);
+
+                    cmd.Parameters.AddWithValue("@cuilCuit", cuilCuit);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Cliente cliente;
+
+                            if (reader.IsDBNull(3))  // Si no tiene razón social, es un ClienteFinal
+                            {
+                                cliente = new ClienteFinal
+                                {
+                                    CuilCFinal = reader.GetString(0),
+                                    NombreCFinal = reader.GetString(1),
+                                    ApellidoCFinal = reader.GetString(2),
+                                    EmailCliente = reader.GetString(5),
+                                    CelularCliente = reader.GetString(6)
+                                };
+                            }
+                            else  // Si tiene razón social, es un ClienteEmpresa
+                            {
+                                cliente = new ClienteEmpresa
+                                {
+                                    CuitCEmpresa = reader.GetString(3),
+                                    RazonSocialCEmpresa = reader.GetString(4),
+                                    EmailCliente = reader.GetString(5),
+                                    CelularCliente = reader.GetString(6)
+                                };
+                            }
+
+                            clientes.Add(cliente);
+                        }
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine($"Error de SQL: {ex.Message}");
+                throw;
+            }
+
+            return clientes;
+        }
+
     }
 }
