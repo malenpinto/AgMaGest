@@ -298,5 +298,42 @@ namespace AgMaGest.C_Datos
 
             return usuarios;
         }
+
+        public string VerificarCredenciales(string cuil, string contrasena)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConnectionString))
+                {
+                    conn.Open();
+                    string query = "SELECT P.nombre_Perfil FROM Usuario U " +
+                                   "JOIN Empleado E ON U.cuil_Empleado = E.cuil_Empleado " +
+                                   "JOIN Perfil_Empleado P ON E.id_perfil = P.id_perfil " +
+                                   "WHERE E.cuil_Empleado = @cuil AND U.password_Usuario = @contrasena";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@cuil", cuil);
+                        cmd.Parameters.AddWithValue("@contrasena", contrasena);
+
+                        object result = cmd.ExecuteScalar();
+                        if (result != null)
+                        {
+                            return result.ToString();
+                        }
+                        else
+                        {
+                            return null;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al conectar con la base de datos: {ex.Message}");
+                return null;
+            }
+
+        }
     }
 }

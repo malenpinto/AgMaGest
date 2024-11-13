@@ -12,11 +12,15 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AgMaGest.C_Datos;
+using AgMaGest.C_Logica.Entidades;
+using AgMaGest.C_Logica;
 
 namespace AgMaGest.C_Presentacion
 {
     public partial class LoginForm : Form
     {
+        private UsuarioDAL usuarioDAL = new UsuarioDAL();
         public LoginForm()
         {
             InitializeComponent();
@@ -56,20 +60,20 @@ namespace AgMaGest.C_Presentacion
 
         private void BIniciarSesion_Click(object sender, EventArgs e)
         {
-            string usuario = TBUsuario.Text.Trim();    // Campo Usuario (DNI)
+            string cuil = TBUsuario.Text.Trim();    // Campo Usuario (CUIL)
             string contrasena = TBContrasenia.Text.Trim();    // Campo Contraseña
 
             // Validar si ambos campos están vacíos
-            if (string.IsNullOrEmpty(usuario) && string.IsNullOrEmpty(contrasena))
+            if (string.IsNullOrEmpty(cuil) && string.IsNullOrEmpty(contrasena))
             {
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            // Validación del campo Usuario (DNI) - no vacío
-            if (string.IsNullOrEmpty(usuario))
+            // Validación del campo Usuario (CUIL) - no vacío
+            if (string.IsNullOrEmpty(cuil))
             {
-                MessageBox.Show("Por favor, ingrese su DNI", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Por favor, ingrese su CUIL", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -80,43 +84,28 @@ namespace AgMaGest.C_Presentacion
                 return;
             }
 
-            // Simulación de la verificación del rol del usuario
-            // Definimos usuarios y contraseñas estáticos
-            string usuarioVendedor = "1234";
-            string contraseñaVendedor = "asdf";
-
-            string usuarioAdministrador = "12345";
-            string contraseñaAdministrador = "asdfg";
-
-            string usuarioCajero = "123456";
-            string contraseñaCajero = "asdfgh";
-
-            // Obtenemos los valores ingresados
-            string usuarioIngresado = TBUsuario.Text;
-            string contraseñaIngresada = TBContrasenia.Text;
-
-            // Verificación para usuario Vendedor
-            if (usuarioIngresado == usuarioVendedor && contraseñaIngresada == contraseñaVendedor)
+            // Verificar las credenciales del usuario contra la base de datos
+            string rol = usuarioDAL.VerificarCredenciales(cuil, contrasena);
+            if (rol != null)
             {
-                // Abre el formulario de InicioVendedor
-                InicioVendedor formVendedor = new InicioVendedor();
-                formVendedor.Show();
-                this.Hide(); // Oculta el formulario de login
-            }
-            // Verificación para usuario Administrador
-            else if (usuarioIngresado == usuarioAdministrador && contraseñaIngresada == contraseñaAdministrador)
-            {
-                // Abre el formulario de InicioAdministrador
-                InicioAdministrador formAdmin = new InicioAdministrador();
-                formAdmin.Show();
-                this.Hide(); // Oculta el formulario de login
-            }
-            //Verificacion para usuario Cajero
-            else if (usuarioIngresado == usuarioCajero && contraseñaIngresada == contraseñaCajero)
-            {
-                // Abre el formulario de InicioAdministrador
-                InicioCajero formCajero = new InicioCajero();
-                formCajero.Show();
+                Form form;
+                switch (rol)
+                {
+                    case "Vendedor":
+                        form = new InicioVendedor();
+                        break;
+                    case "Administrador":
+                        form = new InicioAdministrador();
+                        break;
+                    case "Cajero":
+                        form = new InicioCajero();
+                        break;
+                    default:
+                        MessageBox.Show("Rol desconocido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                }
+
+                form.Show();
                 this.Hide(); // Oculta el formulario de login
             }
             else
@@ -125,6 +114,7 @@ namespace AgMaGest.C_Presentacion
                 MessageBox.Show("Usuario o contraseña incorrectos", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
