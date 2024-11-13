@@ -102,17 +102,16 @@ namespace AgMaGest.C_Datos
             }
         }
 
-
         // Método para eliminar un cliente empresa por ID
-        public bool EliminarClienteEmpresa(int idCEmpresa)
+        public bool EliminarClienteEmpresaPorCuit(string cuit)
         {
             try
             {
                 using (SqlConnection conn = new SqlConnection(ConnectionString))
                 {
                     conn.Open();
-                    SqlCommand cmd = new SqlCommand("DELETE FROM Cliente_Empresa WHERE id_CEmpresa = @IdCEmpresa", conn);
-                    cmd.Parameters.AddWithValue("@IdCEmpresa", idCEmpresa);
+                    SqlCommand cmd = new SqlCommand("DELETE FROM Cliente_Empresa WHERE cuit_CEmpresa = @Cuit", conn);
+                    cmd.Parameters.AddWithValue("@Cuit", cuit);
 
                     cmd.ExecuteNonQuery();
                 }
@@ -130,7 +129,6 @@ namespace AgMaGest.C_Datos
                 throw;
             }
         }
-
         public ClienteEmpresa ObtenerClienteEmpresaPorCUIT(string cuit)
         {
             ClienteEmpresa clienteEmpresa = null;
@@ -185,10 +183,8 @@ namespace AgMaGest.C_Datos
                 Console.WriteLine($"Error de SQL: {ex.Message}");
                 throw;
             }
-
             return clienteEmpresa;
         }
-
     }
 }
 

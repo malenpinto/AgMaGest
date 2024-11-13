@@ -331,6 +331,8 @@ namespace AgMaGest.C_Datos
             }
         }
 
+
+
         public List<Cliente> FiltrarClientes(string texto)
         {
             List<Cliente> clientes = new List<Cliente>();

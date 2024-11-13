@@ -118,38 +118,6 @@ namespace AgMaGest.C_Datos
             return clienteFinal;
         }
 
-
-        // Método para obtener un cliente final por ID
-        public ClienteFinal ObtenerClienteFinalPorId(int idClienteFinal)
-        {
-            ClienteFinal clienteFinal = null;
-
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
-            {
-                SqlCommand command = new SqlCommand("SELECT * FROM Cliente_Final WHERE id_ClienteFinal = @idClienteFinal", connection);
-                command.Parameters.AddWithValue("@idClienteFinal", idClienteFinal);
-                connection.Open();
-
-                using (SqlDataReader reader = command.ExecuteReader())
-                {
-                    if (reader.Read())
-                    {
-                        clienteFinal = new ClienteFinal
-                        {
-                            IdClienteFinal = reader.GetInt32(0),
-                            NombreCFinal = reader.GetString(1),
-                            ApellidoCFinal = reader.GetString(2),
-                            DniCFinal = reader.GetString(3),
-                            CuilCFinal = reader.GetString(4),
-                            FechaNacCFinal = reader.GetDateTime(5),
-                            IdCliente = reader.GetInt32(6)
-                        };
-                    }
-                }
-            }
-            return clienteFinal;
-        }
-
         // Método para actualizar un cliente final existente
         public bool ActualizarClienteFinal(ClienteFinal clienteFinal)
         {
@@ -207,16 +175,16 @@ namespace AgMaGest.C_Datos
             }
         }
 
-        // Método para eliminar un cliente final por ID
-        public bool EliminarClienteFinal(int idClienteFinal)
+        // Método para eliminar un cliente final por CUIL
+        public bool EliminarClienteFinalPorCuil(string cuil)
         {
             try
             {
                 using (SqlConnection conn = new SqlConnection(ConnectionString))
                 {
                     conn.Open();
-                    SqlCommand cmd = new SqlCommand("DELETE FROM Cliente_Final WHERE id_ClienteFinal = @IdClienteFinal", conn);
-                    cmd.Parameters.AddWithValue("@IdClienteFinal", idClienteFinal);
+                    SqlCommand cmd = new SqlCommand("DELETE FROM Cliente_Final WHERE cuil_CFinal = @Cuil", conn);
+                    cmd.Parameters.AddWithValue("@Cuil", cuil);
 
                     // Ejecutar el comando de eliminación
                     cmd.ExecuteNonQuery();
@@ -235,6 +203,5 @@ namespace AgMaGest.C_Datos
                 throw;
             }
         }
-
     }
 }
