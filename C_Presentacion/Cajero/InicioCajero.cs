@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AgMaGest.C_Logica.Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,10 @@ namespace AgMaGest.C_Presentacion.Cajero
 {
     public partial class InicioCajero : Form
     {
-        public InicioCajero()
+        public InicioCajero(Empleado empleado)
         {
             InitializeComponent();
+            LNombreUsuario.Text = $"{empleado.Nombre}";
             personalizarDiseño();
         }
 

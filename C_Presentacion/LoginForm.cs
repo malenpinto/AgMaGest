@@ -88,17 +88,26 @@ namespace AgMaGest.C_Presentacion
             string rol = usuarioDAL.VerificarCredenciales(cuil, contrasena);
             if (rol != null)
             {
+                EmpleadoDAL empleadoDAL = new EmpleadoDAL();
+                Empleado empleado = empleadoDAL.ObtenerEmpleadoPorCUIL(cuil);
+
+                if (empleado == null)
+                {
+                    MessageBox.Show("Empleado no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
                 Form form;
                 switch (rol)
                 {
                     case "Vendedor":
-                        form = new InicioVendedor();
+                        form = new InicioVendedor(empleado); // Pasar el empleado al formulario de inicio del vendedor
                         break;
                     case "Administrador":
-                        form = new InicioAdministrador();
+                        form = new InicioAdministrador(empleado);
                         break;
                     case "Cajero":
-                        form = new InicioCajero();
+                        form = new InicioCajero(empleado);
                         break;
                     default:
                         MessageBox.Show("Rol desconocido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -106,15 +115,14 @@ namespace AgMaGest.C_Presentacion
                 }
 
                 form.Show();
-                this.Hide(); // Oculta el formulario de login
+                this.Hide();
             }
             else
             {
-                // Si los datos no coinciden, mostramos un mensaje de error
                 MessageBox.Show("Usuario o contraseña incorrectos", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+    
 
         private void LoginForm_Load(object sender, EventArgs e)
         {

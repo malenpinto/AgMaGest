@@ -1,4 +1,5 @@
-﻿using AgMaGest.C_Presentacion.Vendedor;
+﻿using AgMaGest.C_Logica.Entidades;
+using AgMaGest.C_Presentacion.Vendedor;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +14,10 @@ namespace AgMaGest.C_Presentacion.Administrador
 {
     public partial class InicioAdministrador : Form
     {
-        public InicioAdministrador()
+        public InicioAdministrador(Empleado empleado)
         {
             InitializeComponent();
+            LUsuarioEmpleado.Text = $"{empleado.Nombre}";
         }
 
         private void BEmpleadosAdmin_Click(object sender, EventArgs e)

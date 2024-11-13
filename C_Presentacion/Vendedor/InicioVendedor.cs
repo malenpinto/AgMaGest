@@ -1,4 +1,5 @@
 ﻿using AgMaGest.C_Logica;
+using AgMaGest.C_Logica.Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,10 +14,11 @@ namespace AgMaGest.C_Presentacion.Vendedor
 {
     public partial class InicioVendedor : Form
     {
-        public InicioVendedor()
+        public InicioVendedor(Empleado empleado)
         {
             InitializeComponent();
-            
+            LNombreUsuario.Text = $"{empleado.Nombre}";
+
         }
 
         private void InicioVendedor_Load(object sender, EventArgs e)
