@@ -22,15 +22,14 @@ namespace AgMaGest.C_Presentacion.Cajero
 
         private void personalizarDiseño()
         {
-            PSubMenuPagos.Visible = false;
+            
             //PSubMenuFacturas.Visible = false;
             PSubMenuInformes.Visible = false;
         }
 
         private void ocultarSubMenu()
         {
-            if (PSubMenuPagos.Visible == true)
-                PSubMenuPagos.Visible = false;
+          
            // if (PSubMenuFacturas.Visible == true)
            //    PSubMenuFacturas.Visible = false;
             if (PSubMenuInformes.Visible == true)
@@ -51,8 +50,8 @@ namespace AgMaGest.C_Presentacion.Cajero
 
         private void BPagos_Click(object sender, EventArgs e)
         {
-            mostrarSubMenu(PSubMenuPagos);
-
+            abrirFormularioHijo(new RegistrarPago(), "Registrar Pago");
+            ocultarSubMenu();
         }
 
         private void BFacturas_Click(object sender, EventArgs e)
@@ -85,18 +84,7 @@ namespace AgMaGest.C_Presentacion.Cajero
             this.WindowState = FormWindowState.Minimized;
         }
 
-       //#region Pagos Poner las regiones
-        private void BRegistrarPagos_Click(object sender, EventArgs e)
-        {
-            abrirFormularioHijo(new RegistrarPago(), "Registrar Pago");
-            ocultarSubMenu();
-        }
-
-        private void BControlCaja_Click(object sender, EventArgs e)
-        {
-            abrirFormularioHijo(new ControlCaja(), "Control Caja");
-            ocultarSubMenu();
-        }
+   
 
         private void BInformeDiario_Click(object sender, EventArgs e)
         {
