@@ -258,9 +258,9 @@ INSERT INTO Empleado (
     dpto_Empleado, codigo_PostalEmpleado, id_Localidad, id_Perfil, id_Estado
 ) 
 VALUES 
-    ('20386213693', '38621369', 'Juan Ramon', 'Pérez', 'juan.perez@example.com', '3794456789', '1985-01-23', 'Av. Sarmiento', 872, 0, NULL, 3400, 2, 1, 1),
-    ('20215638712', '21563871', 'Ana Lucia', 'González', 'ana.gonzalez@hotmail.com', '1123456790', '1990-07-15', 'Av. Libertad', 2453, 2, 'D', 3400, 2, 2, 1),
-    ('20204567382', '20456738', 'María', 'López', 'maria.lopez@example.com', '1123456791', '1982-03-12', 'Calle Tucumán', 1324, NULL, NULL, 3400, 2, 1, 2),
+    ('20386213693', '38621369', 'Juan Ramon', 'Pérez', 'juan.perez@example.com', '3794456789', '1985-01-23', 'Av. Sarmiento', 872, 0, NULL, 3400, 2, 3, 1),
+    ('20215638712', '21563871', 'Ana Lucia', 'González', 'ana.gonzalez@hotmail.com', '1123456790', '1990-07-15', 'Av. Libertad', 2453, 2, 'D', 3400, 2, 1, 1),
+    ('20204567382', '20456738', 'María', 'López', 'maria.lopez@example.com', '1123456791', '1982-03-12', 'Calle Tucumán', 1324, NULL, NULL, 3400, 2, 3, 2),
     ('20391287645', '39128764', 'Carlos', 'Martínez', 'carlos.martinez@example.com', '1123456792', '1979-11-22', 'Calle San Juan', 678, 3, 'B', 3500, 72, 3, 1),
     ('20184927635', '18492763', 'Laura', 'García', 'laura.garcia@example.com', '1123456793', '1995-06-30', 'Av. Ferré', 532, NULL, NULL, 5004, 112, 3, 2),
     ('20263891207', '26389120', 'Pedro Antonio', 'Fernández', 'pedro.fernandez@example.com', '1123456794', '1987-08-10', 'Calle Catamarca', 915, 1, 'C', 3600, 112, 3, 1),
