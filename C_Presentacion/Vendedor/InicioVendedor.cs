@@ -43,7 +43,6 @@ namespace AgMaGest.C_Presentacion.Vendedor
             string titulo = "Ventas " + mesActual;
 
             AbrirFormularioHijo(new VisualizarVentas(), titulo);
-            OcultarSubmenu();
         }
 
         private void BCatalogo_Click(object sender, EventArgs e)
@@ -54,11 +53,7 @@ namespace AgMaGest.C_Presentacion.Vendedor
         #region Estadísticas
         private void BEstadisticasVendedor_Click(object sender, EventArgs e)
         {
-            MostrarSubMenu(panelSubMenuEstadisticas);
-        }
 
-        private void BEstadistMesVend_Click(object sender, EventArgs e)
-        {
             // Obtener el mes actual en formato largo (por ejemplo, "Septiembre")
             string mesActual = DateTime.Now.ToString("MMMM");
 
@@ -69,33 +64,9 @@ namespace AgMaGest.C_Presentacion.Vendedor
             string titulo = "Estadísticas de " + mesActual;
 
             AbrirFormularioHijo(new VisualizarEstadisticaMensual(), titulo);
-            OcultarSubmenu();
         }
 
-        private void BEstadistTrimVend_Click(object sender, EventArgs e)
-        {
-            // Obtener el mes actual y los dos meses anteriores
-            DateTime mesActual = DateTime.Now;
-            DateTime mesAnterior1 = mesActual.AddMonths(-1);
-            DateTime mesAnterior2 = mesActual.AddMonths(-2);
-
-            // Convertir los nombres de los meses a formato largo (por ejemplo, "Septiembre")
-            string mesActualNombre = mesActual.ToString("MMMM");
-            string mesAnterior1Nombre = mesAnterior1.ToString("MMMM");
-            string mesAnterior2Nombre = mesAnterior2.ToString("MMMM");
-
-            // Convertir la primera letra de cada mes en mayúscula y el resto en minúscula
-            mesActualNombre = char.ToUpper(mesActualNombre[0]) + mesActualNombre.Substring(1).ToLower();
-            mesAnterior1Nombre = char.ToUpper(mesAnterior1Nombre[0]) + mesAnterior1Nombre.Substring(1).ToLower();
-            mesAnterior2Nombre = char.ToUpper(mesAnterior2Nombre[0]) + mesAnterior2Nombre.Substring(1).ToLower();
-
-            // Concatenar "Estadísticas" con los últimos tres meses
-            string titulo = $"Estadísticas de {mesAnterior2Nombre}, {mesAnterior1Nombre} y {mesActualNombre}";
-
-            // Llamar a la función para abrir el formulario con el título generado
-            AbrirFormularioHijo(new VisualizarEstadisticaTrimestral(), titulo);
-            OcultarSubmenu();
-        }
+        
         #endregion
 
         private void BAcercaDeVendedor_Click(object sender, EventArgs e)
@@ -103,24 +74,8 @@ namespace AgMaGest.C_Presentacion.Vendedor
             AbrirFormularioHijo(new VisualizarAcercaDe(), "Acerca de AgMaGest");
         }
 
-        private void OcultarSubmenu()
-        {
-            if (panelSubMenuEstadisticas.Visible)
-                panelSubMenuEstadisticas.Visible = false;
-        }
-
-        private void MostrarSubMenu(Panel subMenu)
-        {
-            if (!subMenu.Visible)
-            {
-                OcultarSubmenu();
-                subMenu.Visible = true;
-            }
-            else
-            {
-                subMenu.Visible = false;
-            }
-        }
+        
+       
 
         private Form formularioActivo = null;
 
