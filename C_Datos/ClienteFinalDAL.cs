@@ -159,20 +159,38 @@ namespace AgMaGest.C_Datos
                 {
                     conn.Open();
                     SqlCommand cmd = new SqlCommand(
-                        "UPDATE Cliente_Final SET nombre_CFinal = @Nombre, apellido_CFinal = @Apellido, dni_CFinal = @DNI, " +
-                        "cuil_CFinal = @CUIL, fechaNac_CFinal = @FechaNac, id_Cliente = @IdCliente WHERE id_ClienteFinal = @IdClienteFinal", conn);
+                        "UPDATE Cliente SET celular_Cliente = @Telefono, email_Cliente = @Email, calle_Cliente = @Calle, " +
+                         "num_Calle = @NumeroCalle, piso_Cliente = @Piso, dpto_Cliente = @Dpto, " +
+                         "codigo_PostalCliente = @CodigoPostal, id_Localidad = @IdLocalidad, " +
+                         "id_Estado_Cliente = @IdEstado " +
+                         "WHERE id_Cliente = @IdCliente", conn);
 
-                    // Añadir los parámetros al comando SQL
-                    cmd.Parameters.AddWithValue("@Nombre", clienteFinal.NombreCFinal);
-                    cmd.Parameters.AddWithValue("@Apellido", clienteFinal.ApellidoCFinal);
-                    cmd.Parameters.AddWithValue("@DNI", clienteFinal.DniCFinal);
-                    cmd.Parameters.AddWithValue("@CUIL", clienteFinal.CuilCFinal);
-                    cmd.Parameters.AddWithValue("@FechaNac", clienteFinal.FechaNacCFinal);
+                    cmd.Parameters.AddWithValue("@Telefono", clienteFinal.CelularCliente);
+                    cmd.Parameters.AddWithValue("@Email", clienteFinal.EmailCliente);
+                    cmd.Parameters.AddWithValue("@Calle", clienteFinal.CalleCliente);
+                    cmd.Parameters.AddWithValue("@NumeroCalle", clienteFinal.NumCalle);
+                    cmd.Parameters.AddWithValue("@Piso", clienteFinal.PisoCliente);
+                    cmd.Parameters.AddWithValue("@Dpto", clienteFinal.DptoCliente);
+                    cmd.Parameters.AddWithValue("@CodigoPostal", clienteFinal.CodigoPostalCliente);
+                    cmd.Parameters.AddWithValue("@IdLocalidad", clienteFinal.IdLocalidad);
+                    cmd.Parameters.AddWithValue("@IdEstado", clienteFinal.IdEstadoCliente);
                     cmd.Parameters.AddWithValue("@IdCliente", clienteFinal.IdCliente);
-                    cmd.Parameters.AddWithValue("@IdClienteFinal", clienteFinal.IdClienteFinal);
 
-                    // Ejecutar el comando de actualización
                     cmd.ExecuteNonQuery();
+
+                    SqlCommand cmdFinal = new SqlCommand(
+                    "UPDATE Cliente_Final SET nombre_CFinal = @Nombre, apellido_CFinal = @Apellido, " +
+                    "dni_CFinal = @Dni, cuil_CFinal = @Cuil, fechaNac_CFinal = @FechaNac " +
+                    "WHERE id_Cliente = @IdCliente", conn);
+
+                    cmdFinal.Parameters.AddWithValue("@Nombre", clienteFinal.NombreCFinal);
+                    cmdFinal.Parameters.AddWithValue("@Apellido", clienteFinal.ApellidoCFinal);
+                    cmdFinal.Parameters.AddWithValue("@Dni", clienteFinal.DniCFinal);
+                    cmdFinal.Parameters.AddWithValue("@Cuil", clienteFinal.CuilCFinal);
+                    cmdFinal.Parameters.AddWithValue("@FechaNac", clienteFinal.FechaNacCFinal);
+                    cmdFinal.Parameters.AddWithValue("@IdCliente", clienteFinal.IdCliente); 
+
+                    cmdFinal.ExecuteNonQuery();
                 }
 
                 return true; // Actualización exitosa

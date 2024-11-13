@@ -65,13 +65,12 @@ namespace AgMaGest.C_Datos
                 {
                     conn.Open();
                     SqlCommand cmd = new SqlCommand(
-                        "UPDATE Cliente_Empresa SET razon_Social_CEmpresa = @RazonSocial, celular_Cliente = @Telefono, " +
-                        "email_Cliente = @Email, calle_Cliente = @Calle, num_Calle = @NumeroCalle, " +
-                        "piso_Cliente = @Piso, dpto_Cliente = @Dpto, codigo_PostalCliente = @CodigoPostal, " +
-                        "id_Localidad = @IdLocalidad, id_Estado_Cliente = @IdEstado WHERE cuit_CEmpresa = @CUIT", conn);
+                         "UPDATE Cliente SET celular_Cliente = @Telefono, email_Cliente = @Email, calle_Cliente = @Calle, " +
+                         "num_Calle = @NumeroCalle, piso_Cliente = @Piso, dpto_Cliente = @Dpto, " +
+                         "codigo_PostalCliente = @CodigoPostal, id_Localidad = @IdLocalidad, " +
+                         "id_Estado_Cliente = @IdEstado " +
+                         "WHERE id_Cliente = @IdCliente", conn);
 
-                    cmd.Parameters.AddWithValue("@CUIT", clienteEmpresa.CuitCEmpresa);
-                    cmd.Parameters.AddWithValue("@RazonSocial", clienteEmpresa.RazonSocialCEmpresa);
                     cmd.Parameters.AddWithValue("@Telefono", clienteEmpresa.CelularCliente);
                     cmd.Parameters.AddWithValue("@Email", clienteEmpresa.EmailCliente);
                     cmd.Parameters.AddWithValue("@Calle", clienteEmpresa.CalleCliente);
@@ -81,6 +80,16 @@ namespace AgMaGest.C_Datos
                     cmd.Parameters.AddWithValue("@CodigoPostal", clienteEmpresa.CodigoPostalCliente);
                     cmd.Parameters.AddWithValue("@IdLocalidad", clienteEmpresa.IdLocalidad);
                     cmd.Parameters.AddWithValue("@IdEstado", clienteEmpresa.IdEstadoCliente);
+                    cmd.Parameters.AddWithValue("@IdCliente", clienteEmpresa.IdCliente); 
+
+                    cmd.ExecuteNonQuery();
+
+                    SqlCommand cmdEmpresa = new SqlCommand(
+                        "UPDATE Cliente_Empresa SET razon_Social_CEmpresa = @RazonSocial " +
+                        "WHERE cuit_CEmpresa = @CUIT", conn);
+
+                    cmd.Parameters.AddWithValue("@RazonSocial", clienteEmpresa.RazonSocialCEmpresa);
+                    cmd.Parameters.AddWithValue("@CUIT", clienteEmpresa.CuitCEmpresa);
 
                     cmd.ExecuteNonQuery();
                 }

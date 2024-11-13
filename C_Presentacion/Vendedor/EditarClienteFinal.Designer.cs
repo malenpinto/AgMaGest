@@ -202,6 +202,8 @@
             this.BAgregarEditarCFinal.TabIndex = 16;
             this.BAgregarEditarCFinal.Text = "Editar";
             this.BAgregarEditarCFinal.UseVisualStyleBackColor = false;
+            this.BAgregarEditarCFinal.Click += new System.EventHandler(this.BAgregarEditarCFinal_Click);
+
             // 
             // TBDptoEditarCFinal
             // 
