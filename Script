@@ -66,13 +66,6 @@ CREATE TABLE Estado_Cliente
   CONSTRAINT PK_EstadoCliente PRIMARY KEY (id_Estado_Cliente)
 );
 
-CREATE TABLE Estado_Factura
-(
-  id_EstadoFactura INT IDENTITY(1,1) NOT NULL,
-  nombre_EstadoFactura VARCHAR(15) NOT NULL,
-  CONSTRAINT PK_EstadoFactura PRIMARY KEY (id_EstadoFactura)
-);
-
 CREATE TABLE Provincia
 (
   id_Provincia INT IDENTITY(1,1) NOT NULL,
@@ -81,17 +74,6 @@ CREATE TABLE Provincia
   CONSTRAINT PK_Provincia PRIMARY KEY (id_Provincia),
   CONSTRAINT FK_Provincia_Pais FOREIGN KEY (id_Pais) REFERENCES Pais(id_Pais)
 );
-
-CREATE TABLE Factura
-(
-  num_Factura INT IDENTITY(1,1) NOT NULL,
-  fecha_Factura DATE NOT NULL,
-  total_Factura FLOAT NOT NULL,
-  id_EstadoFactura INT NOT NULL,
-  CONSTRAINT PK_Factura PRIMARY KEY (num_Factura),
-  CONSTRAINT FK_Factura_EstadoFactura FOREIGN KEY (id_EstadoFactura) REFERENCES Estado_Factura(id_EstadoFactura)
-);
-
 
 CREATE TABLE Vehiculos
 (
@@ -242,30 +224,46 @@ CREATE TABLE Cliente_Empresa
   CONSTRAINT CK_ClienteEmpresa_Cuit CHECK (cuit_CEmpresa LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]')
 
 );
-	
+
 CREATE TABLE Pedido
 (
-  id_Pedido INT  IDENTITY(8000,1) NOT NULL,
+  id_Pedido INT IDENTITY(8000,1) NOT NULL,
   cuil_Empleado VARCHAR(11) NOT NULL,
-  num_Factura INT NOT NULL,
   id_Cliente INT NOT NULL,
+  id_Vehiculo INT NOT NULL,
   fecha_Pedido DATETIME NOT NULL,
+  monto_Pedido FLOAT NOT NULL,
   CONSTRAINT PK_Pedido PRIMARY KEY (id_Pedido),
   CONSTRAINT FK_Pedido_Empleado FOREIGN KEY (cuil_Empleado) REFERENCES Empleado(cuil_Empleado),
-  CONSTRAINT FK_Pedido_Factura FOREIGN KEY (num_Factura) REFERENCES Factura(num_Factura),
-  CONSTRAINT FK_Pedido_Cliente FOREIGN KEY (id_Cliente) REFERENCES Cliente(id_Cliente)
+  CONSTRAINT FK_Pedido_Cliente FOREIGN KEY (id_Cliente) REFERENCES Cliente(id_Cliente),
+  CONSTRAINT FK_Pedido_Vehiculo FOREIGN KEY (id_Vehiculo) REFERENCES Vehiculos(id_Vehiculo)
 );
 
 ALTER TABLE Pedido
-ADD CONSTRAINT DF_Pedido_Fecha DEFAULT GETDATE() FOR fecha_Pedido
+ADD CONSTRAINT DF_Pedido_Fecha DEFAULT GETDATE() FOR fecha_Pedido;
 
-CREATE TABLE Detalle_Pedido
+CREATE TABLE Pago
 (
-  id_Vehiculo INT NOT NULL,
-  id_Pedido INT NOT NULL,
-  subtotal_DetallePedido FLOAT NOT NULL,
-  CONSTRAINT PK_DetallePedido PRIMARY KEY (id_Vehiculo, id_Pedido),
-  CONSTRAINT FK_DetallePedido_Vehiculos FOREIGN KEY (id_Vehiculo) REFERENCES Vehiculos(id_Vehiculo),
-  CONSTRAINT FK_DetallePedido_Pedido FOREIGN KEY (id_Pedido) REFERENCES Pedido(id_Pedido)
+  id_pago INT IDENTITY(500,1) NOT NULL,
+  descripcion_Pago VARCHAR(50) NULL,
+  importe_Pago FLOAT NOT NULL,
+  id_TipoPago INT NOT NULL,
+  id_EstadoPago INT NOT NULL,
+  id_Pedido INT NOT NULL, 
+  CONSTRAINT PK_Pago PRIMARY KEY (id_pago),
+  CONSTRAINT FK_Pago_TipoPago FOREIGN KEY (id_TipoPago) REFERENCES Tipo_Pago(id_TipoPago),
+  CONSTRAINT FK_Pago_EstadoPago FOREIGN KEY (id_EstadoPago) REFERENCES Estado_Pago(id_EstadoPago),
+  CONSTRAINT FK_Pago_Pedido FOREIGN KEY (id_Pedido) REFERENCES Pedido(id_Pedido)
 );
+
+CREATE TABLE Factura
+(
+  num_Factura INT IDENTITY(1,1) NOT NULL,
+  fecha_Factura DATE NOT NULL,
+  total_Factura FLOAT NOT NULL,
+  id_pago INT NOT NULL,
+  CONSTRAINT PK_Factura PRIMARY KEY (num_Factura),
+  CONSTRAINT FK_Factura_Paggo FOREIGN KEY (id_pago) REFERENCES Pago(id_pago)
+);
+
 
