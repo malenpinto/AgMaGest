@@ -10,5 +10,6 @@ namespace AgMaGest.C_Logica.Entidades
     {
         public int IdEstadoPedido { get; set; } // ID del estado del empleado
         public string NombreEstadoPedido { get; set; } // Nombre del estado del empleado
+        
     }
 }

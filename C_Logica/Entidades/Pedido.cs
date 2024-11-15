@@ -30,5 +30,13 @@ namespace AgMaGest.C_Logica.Entidades
 
         // Propiedad para la imagen del vehículo
         public Image Imagen { get; set; }
+        public class VendedorEstadistica
+        {
+            public string CUIL { get; set; }
+            public string NombreEmpleado { get; set; }
+            public string ApellidoEmpleado { get; set; }
+            public int CantidadPedidos { get; set; }
+            public double TotalVentas { get; set; }
+        }
     }
 }

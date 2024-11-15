@@ -31,43 +31,45 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.chartEstMen = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            ((System.ComponentModel.ISupportInitialize)(this.chartEstMen)).BeginInit();
+            this.chartPedidos = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            ((System.ComponentModel.ISupportInitialize)(this.chartPedidos)).BeginInit();
             this.SuspendLayout();
             // 
-            // chartEstMen
+            // chartPedidos
             // 
             chartArea1.Name = "ChartArea1";
-            this.chartEstMen.ChartAreas.Add(chartArea1);
+            this.chartPedidos.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
-            this.chartEstMen.Legends.Add(legend1);
-            this.chartEstMen.Location = new System.Drawing.Point(120, 90);
-            this.chartEstMen.Name = "chartEstMen";
-            this.chartEstMen.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
+            this.chartPedidos.Legends.Add(legend1);
+            this.chartPedidos.Location = new System.Drawing.Point(135, 112);
+            this.chartPedidos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chartPedidos.Name = "chartPedidos";
+            this.chartPedidos.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
-            this.chartEstMen.Series.Add(series1);
-            this.chartEstMen.Size = new System.Drawing.Size(571, 382);
-            this.chartEstMen.TabIndex = 0;
+            this.chartPedidos.Series.Add(series1);
+            this.chartPedidos.Size = new System.Drawing.Size(642, 478);
+            this.chartPedidos.TabIndex = 0;
             // 
-            // VisualizarEstadisticaMensual
+            // VisualizarEstadisticas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(1100, 706);
-            this.Controls.Add(this.chartEstMen);
+            this.ClientSize = new System.Drawing.Size(1238, 882);
+            this.Controls.Add(this.chartPedidos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "VisualizarEstadisticaMensual";
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Name = "VisualizarEstadisticas";
             this.Text = "VisualizarEstadisticaMensual";
-            ((System.ComponentModel.ISupportInitialize)(this.chartEstMen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartPedidos)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartEstMen;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartPedidos;
     }
 }
