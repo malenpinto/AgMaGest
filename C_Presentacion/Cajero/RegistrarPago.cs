@@ -18,6 +18,7 @@ namespace AgMaGest.C_Presentacion.Cajero
     {
         public RegistrarPago()
         {
+            InitializeComponent();
             this.Load += new EventHandler(VisualizarVentas_Load);
             dataGridPagos.CellClick += DataGridPagos_CellClick;
             dataGridPagos.CellFormatting += DataGridPagos_CellFormatting;
@@ -25,6 +26,7 @@ namespace AgMaGest.C_Presentacion.Cajero
 
         private void VisualizarVentas_Load(object sender, EventArgs e)
         {
+            
             CargarPedidos();
         }
 
