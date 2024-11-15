@@ -14,8 +14,6 @@ namespace AgMaGest.C_Presentacion.Cajero
 {
     public partial class GenerarPagoCEmpresa : Form
     {
-        private string cuitCliente;
-
         public GenerarPagoCEmpresa(string cuilCuit, Pedido pedido)
         {
             InitializeComponent();
