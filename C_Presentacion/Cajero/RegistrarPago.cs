@@ -161,8 +161,8 @@ namespace AgMaGest.C_Presentacion.Cajero
             else
             {
                 // Abre el formulario para cliente final con datos del pedido
-                /*GenerarPagoCFinal formFinal = new GenerarPagoCFinal(cuilCuit, pedido);
-                formFinal.ShowDialog();*/
+                GenerarPagoCFinal formFinal = new GenerarPagoCFinal(cuilCuit, pedido);
+                formFinal.ShowDialog();
             }
         }
 
