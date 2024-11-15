@@ -421,7 +421,7 @@ INSERT INTO Tipo_Pago (nombre_TipoPago) VALUES
 ('Transferencia bancaria'),
 ('Efectivo');
 
-INSERT INTO Estado_Pedido (nombre_EstadoPago) VALUES 
+INSERT INTO Estado_Pedido (nombre_EstadoPedido) VALUES 
 ('Pendiente'),
 ('Realizado'),
 ('Cancelado');
