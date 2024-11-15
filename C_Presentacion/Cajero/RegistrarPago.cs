@@ -127,7 +127,6 @@ namespace AgMaGest.C_Presentacion.Cajero
 
             dataGridPagos.Columns.Add("MontoPedido", "Monto Pedido");
             dataGridPagos.Columns["MontoPedido"].DataPropertyName = "MontoPedido";
-            dataGridPagos.Columns["MontoPedido"].DefaultCellStyle.Format = "C2";
 
 
             dataGridPagos.AllowUserToAddRows = false;
@@ -141,7 +140,6 @@ namespace AgMaGest.C_Presentacion.Cajero
                 return;
             }
 
-            // Obtener la fila seleccionada y el valor de "DetallesCliente" (CUIT/CUIL del cliente)
             var selectedRow = dataGridPagos.SelectedRows[0];
             string cuilCuit = selectedRow.Cells["DetallesCliente"].Value?.ToString();
 
@@ -151,20 +149,23 @@ namespace AgMaGest.C_Presentacion.Cajero
                 return;
             }
 
-            // Determinar si es un CUIT (Cliente Empresa) o un CUIL (Cliente Final)
+            // Obtener el pedido seleccionado
+            Pedido pedido = selectedRow.DataBoundItem as Pedido;
+
             if (EsCuit(cuilCuit))
             {
-                // Abre el formulario para cliente empresa y pasa los datos del pedido
-                GenerarPagoCEmpresa formEmpresa = new GenerarPagoCEmpresa();
+                // Abre el formulario para cliente empresa con datos del pedido
+                GenerarPagoCEmpresa formEmpresa = new GenerarPagoCEmpresa(cuilCuit, pedido);
                 formEmpresa.ShowDialog();
             }
             else
             {
-                // Abre el formulario para cliente final y pasa los datos del pedido
-                GenerarPagoCFinal formFinal = new GenerarPagoCFinal();
-                formFinal.ShowDialog();
+                // Abre el formulario para cliente final con datos del pedido
+                /*GenerarPagoCFinal formFinal = new GenerarPagoCFinal(cuilCuit, pedido);
+                formFinal.ShowDialog();*/
             }
         }
+
         private bool EsCuit(string cuilCuit)
         {
             // En Argentina, el CUIT tiene prefijos de 30, o 33 (por ejemplo, para personas jurídicas)
@@ -235,7 +236,7 @@ namespace AgMaGest.C_Presentacion.Cajero
                 {
                     switch (estadoPedido.ToLower())
                     {
-                        case "completado":
+                        case "realizado":
                             e.CellStyle.BackColor = Color.LightGreen;
                             e.CellStyle.ForeColor = Color.Black;
                             break;
@@ -267,7 +268,6 @@ namespace AgMaGest.C_Presentacion.Cajero
             }
             else
             {
-                // Opcionalmente, ocultar los botones si no hay selección
                 BGenerarPago.Visible = false;
             }
         }

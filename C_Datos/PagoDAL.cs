@@ -23,18 +23,30 @@ namespace AgMaGest.C_Datos
                 using (SqlConnection conn = new SqlConnection(ConnectionString))
                 {
                     conn.Open();
+
+                    // El SQL para insertar un nuevo pago en la tabla
                     string query = @"
-                    INSERT INTO Pago (descripcion_Pago, importe_Pago, id_TipoPago, id_EstadoPago, id_Pedido)
-                    VALUES (@Descripcion, @Importe, @IdTipoPago, @IdEstadoPago, @IdPedido)";
+                        INSERT INTO Pago (descripcion_Pago, importe_Pago, id_TipoPago, id_EstadoPago, id_Pedido)
+                        VALUES (@Descripcion, @Importe, @IdTipoPago, @IdEstadoPago, @IdPedido);
+            
+                        -- Obtener el id_pago recién insertado
+                        SELECT SCOPE_IDENTITY();";
 
                     SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@Descripcion", pago.Descripcion ?? (object)DBNull.Value);
+                    // Asignar valores a los parámetros
+                    cmd.Parameters.AddWithValue("@Descripcion", string.IsNullOrEmpty(pago.Descripcion) ? (object)DBNull.Value : pago.Descripcion);
                     cmd.Parameters.AddWithValue("@Importe", pago.Importe);
                     cmd.Parameters.AddWithValue("@IdTipoPago", pago.IdTipoPago);
                     cmd.Parameters.AddWithValue("@IdEstadoPago", pago.IdEstadoPago);
                     cmd.Parameters.AddWithValue("@IdPedido", pago.IdPedido);
 
-                    resultado = cmd.ExecuteNonQuery() > 0;
+                    // Ejecutar el comando y recuperar el ID del pago recién insertado
+                    object result = cmd.ExecuteScalar();
+                    if (result != null)
+                    {
+                        pago.IdPago = Convert.ToInt32(result);  // Asignar el ID al objeto pago
+                        resultado = true;
+                    }
                 }
             }
             catch (SqlException ex)
@@ -45,6 +57,7 @@ namespace AgMaGest.C_Datos
 
             return resultado;
         }
+
 
         // Método para obtener una lista de pagos por ID de pedido
         public List<Pago> ObtenerPagosPorPedido(int idPedido)

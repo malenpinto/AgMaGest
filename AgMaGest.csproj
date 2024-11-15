@@ -66,12 +66,14 @@
     <Compile Include="C_Datos\EstadoClienteDAL.cs" />
     <Compile Include="C_Datos\EstadoEmpleadoDAL.cs" />
     <Compile Include="C_Datos\EstadoVehiculoDAL.cs" />
+    <Compile Include="C_Datos\FacturaDAL.cs" />
     <Compile Include="C_Datos\LocalidadDAL.cs" />
     <Compile Include="C_Datos\PagoDAL.cs" />
     <Compile Include="C_Datos\PaisDAL.cs" />
     <Compile Include="C_Datos\PedidoDAL.cs" />
     <Compile Include="C_Datos\PerfilEmpleadoDAL.cs" />
     <Compile Include="C_Datos\ProvinciaDAL.cs" />
+    <Compile Include="C_Datos\TipoPagoDAL.cs" />
     <Compile Include="C_Datos\TipoVehiculoDAL.cs" />
     <Compile Include="C_Datos\UbicacionDAL.cs" />
     <Compile Include="C_Datos\UsuarioDAL.cs" />
@@ -181,17 +183,11 @@
     <Compile Include="C_Presentacion\Administrador\VisualizarUsuarios.Designer.cs">
       <DependentUpon>VisualizarUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="C_Presentacion\Cajero\ControlCaja.cs">
+    <Compile Include="C_Presentacion\Cajero\VisualizarFacturas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="C_Presentacion\Cajero\ControlCaja.Designer.cs">
-      <DependentUpon>ControlCaja.cs</DependentUpon>
-    </Compile>
-    <Compile Include="C_Presentacion\Cajero\Facturas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="C_Presentacion\Cajero\Facturas.Designer.cs">
-      <DependentUpon>Facturas.cs</DependentUpon>
+    <Compile Include="C_Presentacion\Cajero\VisualizarFacturas.Designer.cs">
+      <DependentUpon>VisualizarFacturas.cs</DependentUpon>
     </Compile>
     <Compile Include="C_Presentacion\Cajero\GenerarPagoCFinal.cs">
       <SubType>Form</SubType>
@@ -205,17 +201,11 @@
     <Compile Include="C_Presentacion\Cajero\GenerarPagoCEmpresa.Designer.cs">
       <DependentUpon>GenerarPagoCEmpresa.cs</DependentUpon>
     </Compile>
-    <Compile Include="C_Presentacion\Cajero\InformeDiario.cs">
+    <Compile Include="C_Presentacion\Cajero\Estadisticas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="C_Presentacion\Cajero\InformeDiario.Designer.cs">
-      <DependentUpon>InformeDiario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="C_Presentacion\Cajero\InformeMensual.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="C_Presentacion\Cajero\InformeMensual.Designer.cs">
-      <DependentUpon>InformeMensual.cs</DependentUpon>
+    <Compile Include="C_Presentacion\Cajero\Estadisticas.Designer.cs">
+      <DependentUpon>Estadisticas.cs</DependentUpon>
     </Compile>
     <Compile Include="C_Presentacion\Cajero\InicioCajero.cs">
       <SubType>Form</SubType>
@@ -351,11 +341,8 @@
     <EmbeddedResource Include="C_Presentacion\Administrador\VisualizarUsuarios.resx">
       <DependentUpon>VisualizarUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="C_Presentacion\Cajero\ControlCaja.resx">
-      <DependentUpon>ControlCaja.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="C_Presentacion\Cajero\Facturas.resx">
-      <DependentUpon>Facturas.cs</DependentUpon>
+    <EmbeddedResource Include="C_Presentacion\Cajero\VisualizarFacturas.resx">
+      <DependentUpon>VisualizarFacturas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="C_Presentacion\Cajero\GenerarPagoCFinal.resx">
       <DependentUpon>GenerarPagoCFinal.cs</DependentUpon>
@@ -363,11 +350,8 @@
     <EmbeddedResource Include="C_Presentacion\Cajero\GenerarPagoCEmpresa.resx">
       <DependentUpon>GenerarPagoCEmpresa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="C_Presentacion\Cajero\InformeDiario.resx">
-      <DependentUpon>InformeDiario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="C_Presentacion\Cajero\InformeMensual.resx">
-      <DependentUpon>InformeMensual.cs</DependentUpon>
+    <EmbeddedResource Include="C_Presentacion\Cajero\Estadisticas.resx">
+      <DependentUpon>Estadisticas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="C_Presentacion\Cajero\InicioCajero.resx">
       <DependentUpon>InicioCajero.cs</DependentUpon>

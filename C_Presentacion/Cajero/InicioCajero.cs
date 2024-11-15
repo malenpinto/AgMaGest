@@ -17,49 +17,24 @@ namespace AgMaGest.C_Presentacion.Cajero
         {
             InitializeComponent();
             LNombreUsuario.Text = $"{empleado.Nombre}";
-            personalizarDiseño();
         }
 
-        private void personalizarDiseño()
-        {
-            
-            //PSubMenuFacturas.Visible = false;
-        }
+        
 
-        private void ocultarSubMenu()
-        {
-          
-           // if (PSubMenuFacturas.Visible == true)
-           //    PSubMenuFacturas.Visible = false;
-           
-        }
-
-        private void mostrarSubMenu(Panel subMenu)
-        {
-            if (subMenu.Visible == false)
-            {
-                ocultarSubMenu();
-                subMenu.Visible = true;
-            }
-            else
-                subMenu.Visible = false;
-
-        }
 
         private void BPagos_Click(object sender, EventArgs e)
         {
             abrirFormularioHijo(new RegistrarPago(), "Registrar Pago");
-            ocultarSubMenu();
         }
 
         private void BFacturas_Click(object sender, EventArgs e)
         {
-            abrirFormularioHijo(new Facturas(), "Lista de Facturas");
+            abrirFormularioHijo(new VisualizarFacturas(), "Lista de Facturas");
         }
 
         private void BInformes_Click(object sender, EventArgs e)
         {
-            abrirFormularioHijo(new InformeMensual(), "Estadísticas Mensuales");
+            abrirFormularioHijo(new Estadisticas(), "Estadísticas");
         }
 
 
@@ -82,24 +57,9 @@ namespace AgMaGest.C_Presentacion.Cajero
             this.WindowState = FormWindowState.Minimized;
         }
 
-   
-
-        private void BInformeDiario_Click(object sender, EventArgs e)
-        {
-            abrirFormularioHijo(new InformeDiario(), "Estadísticas Diarias");
-            ocultarSubMenu();
-        }
-
-        private void BInformeMensual_Click(object sender, EventArgs e)
-        {
-
-            abrirFormularioHijo(new InformeMensual(), "Estadísticas Mensuales");
-            ocultarSubMenu();
-        }
-
         private void BAcercaDeCajero_Click(object sender, EventArgs e)
         {
-            abrirFormularioHijo(new VisualizarAcercaDeCajero(), "Acerca de AgMa Gest");
+            abrirFormularioHijo(new VisualizarAcercaDeCajero(), "Acerca de AgMaGest");
         }
 
         private Form activeForm = null;

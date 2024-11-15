@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AgMaGest.C_Presentacion.Cajero
 {
-    public partial class Facturas : Form
+    public partial class Estadisticas : Form
     {
-        public Facturas()
+        public Estadisticas()
         {
             InitializeComponent();
         }

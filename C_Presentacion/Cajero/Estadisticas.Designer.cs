@@ -1,6 +1,6 @@
 ﻿namespace AgMaGest.C_Presentacion.Cajero
 {
-    partial class InformeMensual
+    partial class Estadisticas
     {
         /// <summary>
         /// Required designer variable.

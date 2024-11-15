@@ -84,6 +84,33 @@ namespace AgMaGest.C_Datos
             return resultado;
         }
 
+        public bool ActualizarEstadoPedido(int idPedido, int nuevoEstado)
+        {
+            bool resultado = false;
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConnectionString))
+                {
+                    conn.Open();
+                    string query = "UPDATE Pedido SET id_EstadoPedido = @NuevoEstado WHERE id_Pedido = @IdPedido";
+
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@NuevoEstado", nuevoEstado);
+                    cmd.Parameters.AddWithValue("@IdPedido", idPedido);
+
+                    resultado = cmd.ExecuteNonQuery() > 0;
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine($"Error de SQL: {ex.Message}");
+                throw;
+            }
+
+            return resultado;
+        }
+
         public List<Pedido> ObtenerPedidos()
         {
             List<Pedido> listaPedidos = new List<Pedido>();
@@ -220,8 +247,5 @@ namespace AgMaGest.C_Datos
 
             return listaPedidos;
         }
-
-
-
     }
 }

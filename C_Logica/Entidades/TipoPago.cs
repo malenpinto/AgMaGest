@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AgMaGest.C_Logica.Entidades
 {
-    internal class TipoPago
+    public class TipoPago
     {
         public int IdTipoPago { get; set; }
         public string NombreTipoPago { get; set; }

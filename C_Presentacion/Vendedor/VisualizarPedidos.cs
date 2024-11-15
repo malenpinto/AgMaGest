@@ -129,7 +129,6 @@ namespace AgMaGest.C_Presentacion.Vendedor
 
             dataGridPedidos.Columns.Add("MontoPedido", "Monto Pedido");
             dataGridPedidos.Columns["MontoPedido"].DataPropertyName = "MontoPedido";
-            dataGridPedidos.Columns["MontoPedido"].DefaultCellStyle.Format = "C2";
 
 
             dataGridPedidos.AllowUserToAddRows = false;
@@ -193,7 +192,7 @@ namespace AgMaGest.C_Presentacion.Vendedor
                 {
                     switch (estadoPedido.ToLower())
                     {
-                        case "completado":
+                        case "realizado":
                             e.CellStyle.BackColor = Color.LightGreen;
                             e.CellStyle.ForeColor = Color.Black;
                             break;
