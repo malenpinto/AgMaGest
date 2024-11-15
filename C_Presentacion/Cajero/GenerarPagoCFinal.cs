@@ -79,7 +79,7 @@ namespace AgMaGest.C_Presentacion.Cajero
 
         private void BConfirmarPago_Click(object sender, EventArgs e)
         {
-            try
+            /*try
             {
                 // Crear el objeto Pago con los datos ingresados
                 Pago nuevoPago = new Pago
@@ -106,6 +106,14 @@ namespace AgMaGest.C_Presentacion.Cajero
 
                     if (estadoActualizado)
                     {
+                        ClienteFinalDAL clienteDAL = new ClienteFinalDAL();
+                        bool clienteEstadoActualizado = clienteDAL.ActualizarEstadoCliente(TBCuilPagoCFinal.Text, 1);
+
+                        if (!clienteEstadoActualizado)
+                        {
+                            MessageBox.Show("Error al actualizar el estado del cliente.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+
                         // Crear y registrar la factura
                         Factura nuevaFactura = new Factura
                         {
@@ -119,7 +127,7 @@ namespace AgMaGest.C_Presentacion.Cajero
 
                         if (facturaGenerada)
                         {
-                            MessageBox.Show($"Pago registrado, estado del pedido actualizado, y factura #{nuevaFactura.NumFactura} generada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show($"Pago registrado, estado del pedido actualizado, estado del cliente cambiado y factura #{nuevaFactura.NumFactura} generada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.Close();
                         }
                         else
@@ -140,7 +148,7 @@ namespace AgMaGest.C_Presentacion.Cajero
             catch (Exception ex)
             {
                 MessageBox.Show($"Ocurrió un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            }*/
         }
     }
 }
