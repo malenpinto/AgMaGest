@@ -39,24 +39,34 @@ namespace AgMaGest.C_Presentacion.Vendedor
                 PedidoDAL pedidoDAL = new PedidoDAL();
                 List<Pedido> listaPedidos = pedidoDAL.ObtenerPedidos();
 
-                if (listaPedidos != null && listaPedidos.Count > 0)
+                // Validar las imágenes antes de asignar al DataGridView
+                foreach (var pedido in listaPedidos)
                 {
-                    foreach (var pedido in listaPedidos)
+                    // Verificar si la imagen del vehículo está asignada
+                    if (pedido.Imagen == null)
                     {
-                        pedido.DetallesVehiculo = $"{pedido.Vehiculo.CondicionNombre} - {pedido.Vehiculo.Marca} - {pedido.Vehiculo.TipoNombre} - {pedido.Vehiculo.Modelo} - {pedido.Vehiculo.Anio.Year}";
-
-                        // Cargar la imagen del vehículo
-                        pedido.Imagen = null;
-                        if (!string.IsNullOrEmpty(pedido.Vehiculo.RutaImagen) && File.Exists(pedido.Vehiculo.RutaImagen))
-                        {
-                            pedido.Imagen = Image.FromFile(pedido.Vehiculo.RutaImagen);
-                        }
-                        else
-                        {
-                            pedido.Imagen = Properties.Resources.VhiculoPorDefecto; // Imagen predeterminada
-                        }
+                        Console.WriteLine("Imagen no asignada para el pedido con ID: " + pedido.IdPedido);
                     }
 
+                    // Validación de que la ruta de la imagen sea válida
+                    if (!string.IsNullOrEmpty(pedido.Vehiculo.RutaImagen) && File.Exists(pedido.Vehiculo.RutaImagen))
+                    {
+                        // Verifica si la ruta existe y es válida
+                        pedido.Imagen = Image.FromFile(pedido.Vehiculo.RutaImagen);
+                    }
+                    else
+                    {
+                        // Asigna la imagen por defecto si la ruta no es válida o no existe
+                        pedido.Imagen = Properties.Resources.VhiculoPorDefecto;
+                    }
+
+                    // Asegúrate de que el campo "DetallesVehiculo" se cargue
+                    pedido.DetallesVehiculo = $"{pedido.Vehiculo.CondicionNombre} - {pedido.Vehiculo.Marca} - {pedido.Vehiculo.TipoNombre} - {pedido.Vehiculo.Modelo} - {pedido.Vehiculo.Anio.Year}";
+                }
+
+                // Asignar la lista de pedidos al DataGridView
+                if (listaPedidos != null && listaPedidos.Count > 0)
+                {
                     dataGridPedidos.DataSource = new BindingList<Pedido>(listaPedidos);
                 }
                 else
@@ -103,6 +113,7 @@ namespace AgMaGest.C_Presentacion.Vendedor
                 Width = 100
             };
             dataGridPedidos.Columns.Add(imageColumn);
+
 
             dataGridPedidos.Columns.Add("DetallesVehiculo", "Detalles Vehiculo");
             dataGridPedidos.Columns["DetallesVehiculo"].DataPropertyName = "DetallesVehiculo";

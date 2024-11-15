@@ -149,7 +149,6 @@ namespace AgMaGest.C_Datos
             return listaPedidos;
         }
 
-
         public List<Pedido> BuscarPedidos(string criterioBusqueda)
         {
             List<Pedido> listaPedidos = new List<Pedido>();
