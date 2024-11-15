@@ -128,7 +128,8 @@ namespace AgMaGest.C_Presentacion.Administrador
 
             // Crear el contenido del archivo
             StringBuilder facturaContent = new StringBuilder();
-            facturaContent.AppendLine("Factura Detalles");
+            facturaContent.AppendLine("Factura Dallas");
+            facturaContent.AppendLine("CUIT: 30 52695368 0");
             facturaContent.AppendLine("---------------------------------------------------");
             facturaContent.AppendLine($"Número de Factura: {factura.NumFactura}");
             facturaContent.AppendLine($"Fecha de Factura: {factura.FechaFactura.ToString("dd/MM/yyyy")}");
