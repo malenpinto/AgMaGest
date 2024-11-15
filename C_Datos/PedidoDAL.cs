@@ -87,25 +87,26 @@ namespace AgMaGest.C_Datos
         public List<Pedido> ObtenerPedidos()
         {
             List<Pedido> listaPedidos = new List<Pedido>();
+            ClienteDAL clienteDAL = new ClienteDAL(); // Instancia de ClienteDAL para obtener los datos del cliente
 
             string query = @"
-                SELECT 
-                    p.id_Pedido,
-                    p.cuil_Empleado,
-                    e.nombre_Empleado,
-                    e.apellido_Empleado,
-                    p.id_Cliente,
-                    p.id_Vehiculo,
-                    p.fecha_Pedido,
-                    p.monto_Pedido,
-                    p.id_EstadoPedido,
-                    ep.nombre_EstadoPedido
-                FROM 
-                    Pedido p
-                INNER JOIN 
-                    Empleado e ON p.cuil_Empleado = e.cuil_Empleado
-                INNER JOIN 
-                    Estado_Pedido ep ON p.id_EstadoPedido = ep.id_EstadoPedido";
+        SELECT 
+            p.id_Pedido,
+            p.cuil_Empleado,
+            e.nombre_Empleado,
+            e.apellido_Empleado,
+            p.id_Cliente,
+            p.id_Vehiculo,
+            p.fecha_Pedido,
+            p.monto_Pedido,
+            p.id_EstadoPedido,
+            ep.nombre_EstadoPedido
+        FROM 
+            Pedido p
+        INNER JOIN 
+            Empleado e ON p.cuil_Empleado = e.cuil_Empleado
+        INNER JOIN 
+            Estado_Pedido ep ON p.id_EstadoPedido = ep.id_EstadoPedido";
 
             try
             {
@@ -135,6 +136,13 @@ namespace AgMaGest.C_Datos
                             VehiculoDAL vehiculoDAL = new VehiculoDAL();
                             pedido.Vehiculo = vehiculoDAL.ObtenerVehiculoPorId(pedido.IdVehiculo);
 
+                            // Obtener datos del cliente usando IdCliente
+                            var cliente = clienteDAL.FiltrarClientePorId(pedido.IdCliente);
+                            if (cliente != null)
+                            {
+                                pedido.DetallesCliente = cliente.CuilCuit; // Usa la propiedad CuilCuit del cliente
+                            }
+
                             listaPedidos.Add(pedido);
                         }
                     }
@@ -154,22 +162,22 @@ namespace AgMaGest.C_Datos
             List<Pedido> listaPedidos = new List<Pedido>();
 
             string query = @"
-        SELECT 
-            p.id_Pedido,
-            p.cuil_Empleado,
-            p.id_Cliente,
-            p.id_Vehiculo,
-            p.fecha_Pedido,
-            p.monto_Pedido,
-            p.id_EstadoPedido,
-            e.nombre_Empleado,
-            e.apellido_Empleado
-        FROM Pedido p
-        INNER JOIN Empleado e ON p.cuil_Empleado = e.cuil_Empleado
-        WHERE p.id_Pedido LIKE @CriterioBusqueda 
-           OR p.cuil_Empleado LIKE @CriterioBusqueda 
-           OR e.nombre_Empleado LIKE @CriterioBusqueda
-           OR e.apellido_Empleado LIKE @CriterioBusqueda";
+                SELECT 
+                    p.id_Pedido,
+                    p.cuil_Empleado,
+                    p.id_Cliente,
+                    p.id_Vehiculo,
+                    p.fecha_Pedido,
+                    p.monto_Pedido,
+                    p.id_EstadoPedido,
+                    e.nombre_Empleado,
+                    e.apellido_Empleado
+                FROM Pedido p
+                INNER JOIN Empleado e ON p.cuil_Empleado = e.cuil_Empleado
+                WHERE p.id_Pedido LIKE @CriterioBusqueda 
+                   OR p.cuil_Empleado LIKE @CriterioBusqueda 
+                   OR e.nombre_Empleado LIKE @CriterioBusqueda
+                   OR e.apellido_Empleado LIKE @CriterioBusqueda";
 
             try
             {

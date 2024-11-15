@@ -492,128 +492,58 @@ namespace AgMaGest.C_Datos
 
             return clientes;
         }
-        /*
-
-        public List<Cliente> FiltrarClientesConID(string texto)
+        public Cliente FiltrarClientePorId(int idCliente)
         {
-            List<Cliente> clientes = new List<Cliente>();
+            Cliente cliente = null;
+            string query = @"
+                SELECT c.id_Cliente, c.email_Cliente, c.celular_Cliente, 
+                       cf.nombre_CFinal, cf.apellido_CFinal, cf.cuil_CFinal,
+                       ce.razon_Social_CEmpresa, ce.cuit_CEmpresa
+                FROM Cliente c
+                LEFT JOIN Cliente_Final cf ON c.id_Cliente = cf.id_Cliente
+                LEFT JOIN Cliente_Empresa ce ON c.id_Cliente = ce.id_Cliente
+                WHERE c.id_Cliente = @IdCliente";
 
-            try
+            using (var connection = new SqlConnection(ConnectionString))
             {
-                using (SqlConnection conn = new SqlConnection(ConnectionString))
+                connection.Open();
+                using (var command = new SqlCommand(query, connection))
                 {
-                    conn.Open();
-
-                    // Consulta mejorada: incluye id_Cliente explícitamente
-                    SqlCommand cmd = new SqlCommand(@"
-                SELECT 
-                    c.id_Cliente,
-                    c.email_Cliente,
-                    c.celular_Cliente,
-                    c.calle_Cliente, 
-                    c.num_Calle, 
-                    c.piso_Cliente, 
-                    c.dpto_Cliente,
-                    c.codigo_PostalCliente,
-                    l.nombre_Localidad AS LocalidadNombre, 
-                    p.nombre_Provincia AS ProvinciaNombre, 
-                    pa.nombre_Pais AS PaisNombre,
-                    cf.cuil_CFinal,
-                    cf.dni_CFinal,
-                    cf.nombre_CFinal,
-                    cf.apellido_CFinal,
-                    cf.fechaNac_CFinal,
-                    ce.cuit_CEmpresa,
-                    ce.razon_Social_CEmpresa,
-                    ec.nombre_EstadoCliente AS EstadoCliente
-                FROM 
-                    Cliente c
-                LEFT JOIN 
-                    Cliente_Final cf ON c.id_Cliente = cf.id_Cliente
-                LEFT JOIN 
-                    Cliente_Empresa ce ON c.id_Cliente = ce.id_Cliente
-                INNER JOIN 
-                    Localidad l ON c.id_Localidad = l.id_Localidad
-                INNER JOIN 
-                    Provincia p ON l.id_Provincia = p.id_Provincia
-                INNER JOIN 
-                    Pais pa ON p.id_Pais = pa.id_Pais
-                INNER JOIN 
-                    Estado_Cliente ec ON c.id_Estado_Cliente = ec.id_Estado_Cliente
-                WHERE 
-                    (cf.cuil_CFinal LIKE @texto OR cf.dni_CFinal LIKE @texto OR cf.nombre_CFinal LIKE @texto OR cf.apellido_CFinal LIKE @texto)
-                    OR (ce.cuit_CEmpresa LIKE @texto OR ce.razon_Social_CEmpresa LIKE @texto)
-                    OR (c.email_Cliente LIKE @texto OR c.celular_Cliente LIKE @texto)", conn);
-
-                    cmd.Parameters.AddWithValue("@texto", $"%{texto}%");
-
-                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    command.Parameters.AddWithValue("@IdCliente", idCliente);
+                    using (var reader = command.ExecuteReader())
                     {
-                        while (reader.Read())
+                        if (reader.Read())
                         {
-                            Cliente cliente;
-
-                            // Determinar si es ClienteFinal o ClienteEmpresa basado en los campos disponibles
-                            if (reader.IsDBNull(reader.GetOrdinal("razon_Social_CEmpresa")))
+                            if (!reader.IsDBNull(reader.GetOrdinal("nombre_CFinal")))
                             {
-                                // Es un ClienteFinal
                                 cliente = new ClienteFinal
                                 {
                                     IdCliente = reader.GetInt32(reader.GetOrdinal("id_Cliente")),
                                     EmailCliente = reader.GetString(reader.GetOrdinal("email_Cliente")),
                                     CelularCliente = reader.GetString(reader.GetOrdinal("celular_Cliente")),
-                                    CalleCliente = reader.GetString(reader.GetOrdinal("calle_Cliente")),
-                                    NumCalle = reader.GetInt32(reader.GetOrdinal("num_Calle")),
-                                    PisoCliente = reader.IsDBNull(reader.GetOrdinal("piso_Cliente")) ? 0 : reader.GetInt32(reader.GetOrdinal("piso_Cliente")),
-                                    DptoCliente = reader.IsDBNull(reader.GetOrdinal("dpto_Cliente")) ? null : reader.GetString(reader.GetOrdinal("dpto_Cliente")),
-                                    CodigoPostalCliente = reader.GetInt32(reader.GetOrdinal("codigo_PostalCliente")),
-                                    LocalidadNombre = reader.GetString(reader.GetOrdinal("LocalidadNombre")),
-                                    ProvinciaNombre = reader.GetString(reader.GetOrdinal("ProvinciaNombre")),
-                                    PaisNombre = reader.GetString(reader.GetOrdinal("PaisNombre")),
-                                    CuilCFinal = reader.GetString(reader.GetOrdinal("cuil_CFinal")),
-                                    DniCFinal = reader.GetString(reader.GetOrdinal("dni_CFinal")),
                                     NombreCFinal = reader.GetString(reader.GetOrdinal("nombre_CFinal")),
                                     ApellidoCFinal = reader.GetString(reader.GetOrdinal("apellido_CFinal")),
-                                    FechaNacCFinal = reader.GetDateTime(reader.GetOrdinal("fechaNac_CFinal")),
-                                    EstadoNombre = reader.GetString(reader.GetOrdinal("EstadoCliente"))
+                                    CuilCFinal = reader.GetString(reader.GetOrdinal("cuil_CFinal"))
                                 };
                             }
-                            else
+                            else if (!reader.IsDBNull(reader.GetOrdinal("razon_Social_CEmpresa")))
                             {
-                                // Es un ClienteEmpresa
                                 cliente = new ClienteEmpresa
                                 {
                                     IdCliente = reader.GetInt32(reader.GetOrdinal("id_Cliente")),
                                     EmailCliente = reader.GetString(reader.GetOrdinal("email_Cliente")),
                                     CelularCliente = reader.GetString(reader.GetOrdinal("celular_Cliente")),
-                                    CalleCliente = reader.GetString(reader.GetOrdinal("calle_Cliente")),
-                                    NumCalle = reader.GetInt32(reader.GetOrdinal("num_Calle")),
-                                    PisoCliente = reader.IsDBNull(reader.GetOrdinal("piso_Cliente")) ? 0 : reader.GetInt32(reader.GetOrdinal("piso_Cliente")),
-                                    DptoCliente = reader.IsDBNull(reader.GetOrdinal("dpto_Cliente")) ? null : reader.GetString(reader.GetOrdinal("dpto_Cliente")),
-                                    CodigoPostalCliente = reader.GetInt32(reader.GetOrdinal("codigo_PostalCliente")),
-                                    LocalidadNombre = reader.GetString(reader.GetOrdinal("LocalidadNombre")),
-                                    ProvinciaNombre = reader.GetString(reader.GetOrdinal("ProvinciaNombre")),
-                                    PaisNombre = reader.GetString(reader.GetOrdinal("PaisNombre")),
-                                    CuitCEmpresa = reader.GetString(reader.GetOrdinal("cuit_CEmpresa")),
                                     RazonSocialCEmpresa = reader.GetString(reader.GetOrdinal("razon_Social_CEmpresa")),
-                                    EstadoNombre = reader.GetString(reader.GetOrdinal("EstadoCliente"))
+                                    CuitCEmpresa = reader.GetString(reader.GetOrdinal("cuit_CEmpresa"))
                                 };
                             }
-
-                            // Agregar cliente a la lista
-                            clientes.Add(cliente);
                         }
                     }
                 }
             }
-            catch (SqlException ex)
-            {
-                Console.WriteLine($"Error de SQL: {ex.Message}");
-                throw;
-            }
 
-            return clientes;
-        }*/
+            return cliente;
+        }
 
     }
 }

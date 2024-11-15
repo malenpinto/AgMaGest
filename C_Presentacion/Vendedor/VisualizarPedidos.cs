@@ -103,8 +103,9 @@ namespace AgMaGest.C_Presentacion.Vendedor
             dataGridPedidos.Columns["NombreEmpleado"].DataPropertyName = "NombreEmpleado";
 
 
-            dataGridPedidos.Columns.Add("IdCliente", "ID Cliente");
-            dataGridPedidos.Columns["IdCliente"].DataPropertyName = "IdCliente";
+            // Columna para el CUIL o CUIT del cliente
+            dataGridPedidos.Columns.Add("DetallesCliente", "CUIL/CUIT Cliente");
+            dataGridPedidos.Columns["DetallesCliente"].DataPropertyName = "DetallesCliente";
 
             // Columna para los detalles del vehículo
             DataGridViewImageColumn imageColumn = new DataGridViewImageColumn
@@ -132,15 +133,6 @@ namespace AgMaGest.C_Presentacion.Vendedor
 
 
             dataGridPedidos.AllowUserToAddRows = false;
-        }
-
-        private void SoloNumeros_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-                MessageBox.Show("Este campo solo puede contener números.");
-            }
         }
 
         private void BBuscarFacturas_Click(object sender, EventArgs e)
@@ -174,7 +166,6 @@ namespace AgMaGest.C_Presentacion.Vendedor
 
         }
 
-
         private void DataGridPedidos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == dataGridPedidos.Columns["Imagen"].Index && e.RowIndex >= 0)
@@ -191,7 +182,6 @@ namespace AgMaGest.C_Presentacion.Vendedor
                 }
             }
         }
-
         
         private void DataGridPedidos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {

@@ -245,7 +245,6 @@
             this.TBBuscarFactura.Name = "TBBuscarFactura";
             this.TBBuscarFactura.Size = new System.Drawing.Size(237, 32);
             this.TBBuscarFactura.TabIndex = 0;
-            this.TBBuscarFactura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             // 
             // label1
             // 
