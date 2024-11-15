@@ -24,6 +24,8 @@ namespace AgMaGest.C_Presentacion.Administrador
         {
             InitializeComponent();
             this.Load += FacturasAdmin_Load; // Maneja el evento Load para inicializar la vista
+            this.dataGridFacturas.CellContentClick += new DataGridViewCellEventHandler(this.dataGridFacturas_CellContentClick);
+
         }
 
         private void FacturasAdmin_Load(object sender, EventArgs e)
