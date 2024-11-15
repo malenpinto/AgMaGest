@@ -42,20 +42,20 @@
             System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.chartPedidosAnuales = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            ((System.ComponentModel.ISupportInitialize)(this.chartPedidosAnuales)).BeginInit();
             this.SuspendLayout();
             // 
-            // chart1
+            // chartPedidosAnuales
             // 
             chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
+            this.chartPedidosAnuales.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(255, 169);
-            this.chart1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.chart1.Name = "chart1";
-            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
+            this.chartPedidosAnuales.Legends.Add(legend1);
+            this.chartPedidosAnuales.Location = new System.Drawing.Point(287, 211);
+            this.chartPedidosAnuales.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.chartPedidosAnuales.Name = "chartPedidosAnuales";
+            this.chartPedidosAnuales.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Enero";
@@ -92,39 +92,39 @@
             series12.ChartArea = "ChartArea1";
             series12.Legend = "Legend1";
             series12.Name = "Diciembre";
-            this.chart1.Series.Add(series1);
-            this.chart1.Series.Add(series2);
-            this.chart1.Series.Add(series3);
-            this.chart1.Series.Add(series4);
-            this.chart1.Series.Add(series5);
-            this.chart1.Series.Add(series6);
-            this.chart1.Series.Add(series7);
-            this.chart1.Series.Add(series8);
-            this.chart1.Series.Add(series9);
-            this.chart1.Series.Add(series10);
-            this.chart1.Series.Add(series11);
-            this.chart1.Series.Add(series12);
-            this.chart1.Size = new System.Drawing.Size(604, 369);
-            this.chart1.TabIndex = 1;
-            this.chart1.Text = "chart1";
+            this.chartPedidosAnuales.Series.Add(series1);
+            this.chartPedidosAnuales.Series.Add(series2);
+            this.chartPedidosAnuales.Series.Add(series3);
+            this.chartPedidosAnuales.Series.Add(series4);
+            this.chartPedidosAnuales.Series.Add(series5);
+            this.chartPedidosAnuales.Series.Add(series6);
+            this.chartPedidosAnuales.Series.Add(series7);
+            this.chartPedidosAnuales.Series.Add(series8);
+            this.chartPedidosAnuales.Series.Add(series9);
+            this.chartPedidosAnuales.Series.Add(series10);
+            this.chartPedidosAnuales.Series.Add(series11);
+            this.chartPedidosAnuales.Series.Add(series12);
+            this.chartPedidosAnuales.Size = new System.Drawing.Size(680, 461);
+            this.chartPedidosAnuales.TabIndex = 1;
+            this.chartPedidosAnuales.Text = "chart1";
             // 
             // InformeMensual
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1100, 706);
-            this.Controls.Add(this.chart1);
+            this.ClientSize = new System.Drawing.Size(1238, 882);
+            this.Controls.Add(this.chartPedidosAnuales);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "InformeMensual";
             this.Text = "InformeMensual";
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartPedidosAnuales)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartPedidosAnuales;
     }
 }
