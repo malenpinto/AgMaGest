@@ -199,7 +199,7 @@ namespace AgMaGest.C_Presentacion.Cajero
             {
                 // Obtiene el objeto Pedido vinculado a la fila seleccionada
                 Pedido pedido = (Pedido)dataGridPagos.Rows[e.RowIndex].DataBoundItem;
-
+                    
                 if (pedido?.Vehiculo?.Imagen != null)
                 {
                     // Muestra la imagen en un formulario de visualización
