@@ -1,14 +1,20 @@
 ﻿using AgMaGest.C_Datos;
 using AgMaGest.C_Logica.Entidades;
+using PdfSharp.Drawing;
+using PdfSharp.Pdf;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
+
 
 namespace AgMaGest.C_Presentacion.Administrador
 {
@@ -136,9 +142,31 @@ namespace AgMaGest.C_Presentacion.Administrador
 
         private void DescargarFactura(Factura factura)
         {
-            // Lógica para descargar la factura
-            MessageBox.Show($"Descargando la factura número {factura.NumFactura}.", "Descarga", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            // Aquí puedes implementar la lógica específica para la descarga del archivo de la factura
+            // Ruta donde se guardará el archivo de texto (por ejemplo, en el escritorio)
+            string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), $"Factura_{factura.NumFactura}.txt");
+
+            // Crear el contenido del archivo
+            StringBuilder facturaContent = new StringBuilder();
+            facturaContent.AppendLine("Factura Detalles");
+            facturaContent.AppendLine("---------------------------------------------------");
+            facturaContent.AppendLine($"Número de Factura: {factura.NumFactura}");
+            facturaContent.AppendLine($"Fecha de Factura: {factura.FechaFactura.ToString("dd/MM/yyyy")}");
+            facturaContent.AppendLine($"Total de Factura: {factura.TotalFactura:C}");
+            facturaContent.AppendLine($"ID de Pago: {factura.IdPago}");
+            // Aquí puedes agregar más detalles, como el estado de la factura si lo has implementado
+            //facturaContent.AppendLine($"Estado: {factura.EstadoFactura}"); // Si tienes el estado en la factura
+
+            // Escribir el contenido en el archivo de texto
+            try
+            {
+                File.WriteAllText(filePath, facturaContent.ToString());
+                MessageBox.Show($"Factura descargada con éxito en: {filePath}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al generar el archivo de factura: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
     }
 }
