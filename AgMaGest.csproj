@@ -93,6 +93,7 @@
     <Compile Include="C_Logica\Entidades\Pedido.cs" />
     <Compile Include="C_Logica\Entidades\PerfilEmpleado.cs" />
     <Compile Include="C_Logica\Entidades\Provincia.cs" />
+    <Compile Include="C_Logica\Entidades\TipoPago.cs" />
     <Compile Include="C_Logica\Entidades\TipoVehiculo.cs" />
     <Compile Include="C_Logica\Entidades\Usuario.cs" />
     <Compile Include="C_Logica\Entidades\Vehiculos.cs" />

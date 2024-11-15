@@ -29,6 +29,15 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.TBMontoPagoCFinal = new System.Windows.Forms.TextBox();
+            this.TBCantidadPagoCFinal = new System.Windows.Forms.TextBox();
+            this.TBVehiculoPagoCFinal = new System.Windows.Forms.TextBox();
+            this.TBEmailPagoCFinal = new System.Windows.Forms.TextBox();
+            this.TBCelularPagoCFinal = new System.Windows.Forms.TextBox();
+            this.TBCuilPagoCFinal = new System.Windows.Forms.TextBox();
+            this.TBDniPagoCFinal = new System.Windows.Forms.TextBox();
+            this.TBApellidoPagoCFinal = new System.Windows.Forms.TextBox();
+            this.TBNombrePagoCFinal = new System.Windows.Forms.TextBox();
             this.TBDescPagoCliente = new System.Windows.Forms.TextBox();
             this.LDescPago = new System.Windows.Forms.Label();
             this.LEmailCliente = new System.Windows.Forms.Label();
@@ -41,7 +50,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.LMontoTotal = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.dateTimePickerClienteVenta = new System.Windows.Forms.DateTimePicker();
+            this.DTPFechaNacPagoCFinal = new System.Windows.Forms.DateTimePicker();
             this.LFechaNacimientoClienteVenta = new System.Windows.Forms.Label();
             this.LCuilClienteVenta = new System.Windows.Forms.Label();
             this.LDniClienteVenta = new System.Windows.Forms.Label();
@@ -51,15 +60,6 @@
             this.BSalirGenerarPago = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.TBNombrePagoCFinal = new System.Windows.Forms.TextBox();
-            this.TBApellidoPagoCFinal = new System.Windows.Forms.TextBox();
-            this.TBDniPagoCFinal = new System.Windows.Forms.TextBox();
-            this.TBCuilPagoCFinal = new System.Windows.Forms.TextBox();
-            this.TBCelularPagoCFinal = new System.Windows.Forms.TextBox();
-            this.TBEmailEditarCFinal = new System.Windows.Forms.TextBox();
-            this.TBVehiculoPagoCFinal = new System.Windows.Forms.TextBox();
-            this.TBCantidadPagoCFinal = new System.Windows.Forms.TextBox();
-            this.TBMontoPagoCFinal = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -71,7 +71,7 @@
             this.panel1.Controls.Add(this.TBMontoPagoCFinal);
             this.panel1.Controls.Add(this.TBCantidadPagoCFinal);
             this.panel1.Controls.Add(this.TBVehiculoPagoCFinal);
-            this.panel1.Controls.Add(this.TBEmailEditarCFinal);
+            this.panel1.Controls.Add(this.TBEmailPagoCFinal);
             this.panel1.Controls.Add(this.TBCelularPagoCFinal);
             this.panel1.Controls.Add(this.TBCuilPagoCFinal);
             this.panel1.Controls.Add(this.TBDniPagoCFinal);
@@ -88,7 +88,7 @@
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.LMontoTotal);
             this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.dateTimePickerClienteVenta);
+            this.panel1.Controls.Add(this.DTPFechaNacPagoCFinal);
             this.panel1.Controls.Add(this.LFechaNacimientoClienteVenta);
             this.panel1.Controls.Add(this.LCuilClienteVenta);
             this.panel1.Controls.Add(this.LDniClienteVenta);
@@ -102,6 +102,108 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(778, 861);
             this.panel1.TabIndex = 0;
+            // 
+            // TBMontoPagoCFinal
+            // 
+            this.TBMontoPagoCFinal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.TBMontoPagoCFinal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBMontoPagoCFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBMontoPagoCFinal.Location = new System.Drawing.Point(420, 586);
+            this.TBMontoPagoCFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBMontoPagoCFinal.Name = "TBMontoPagoCFinal";
+            this.TBMontoPagoCFinal.Size = new System.Drawing.Size(267, 28);
+            this.TBMontoPagoCFinal.TabIndex = 141;
+            // 
+            // TBCantidadPagoCFinal
+            // 
+            this.TBCantidadPagoCFinal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.TBCantidadPagoCFinal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBCantidadPagoCFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBCantidadPagoCFinal.Location = new System.Drawing.Point(421, 492);
+            this.TBCantidadPagoCFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBCantidadPagoCFinal.Name = "TBCantidadPagoCFinal";
+            this.TBCantidadPagoCFinal.Size = new System.Drawing.Size(267, 28);
+            this.TBCantidadPagoCFinal.TabIndex = 140;
+            // 
+            // TBVehiculoPagoCFinal
+            // 
+            this.TBVehiculoPagoCFinal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.TBVehiculoPagoCFinal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBVehiculoPagoCFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBVehiculoPagoCFinal.Location = new System.Drawing.Point(82, 492);
+            this.TBVehiculoPagoCFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBVehiculoPagoCFinal.Name = "TBVehiculoPagoCFinal";
+            this.TBVehiculoPagoCFinal.Size = new System.Drawing.Size(267, 28);
+            this.TBVehiculoPagoCFinal.TabIndex = 139;
+            // 
+            // TBEmailPagoCFinal
+            // 
+            this.TBEmailPagoCFinal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.TBEmailPagoCFinal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBEmailPagoCFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBEmailPagoCFinal.Location = new System.Drawing.Point(417, 331);
+            this.TBEmailPagoCFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBEmailPagoCFinal.Name = "TBEmailPagoCFinal";
+            this.TBEmailPagoCFinal.Size = new System.Drawing.Size(279, 28);
+            this.TBEmailPagoCFinal.TabIndex = 138;
+            // 
+            // TBCelularPagoCFinal
+            // 
+            this.TBCelularPagoCFinal.AccessibleRole = System.Windows.Forms.AccessibleRole.OutlineButton;
+            this.TBCelularPagoCFinal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.TBCelularPagoCFinal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBCelularPagoCFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBCelularPagoCFinal.Location = new System.Drawing.Point(86, 331);
+            this.TBCelularPagoCFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBCelularPagoCFinal.Name = "TBCelularPagoCFinal";
+            this.TBCelularPagoCFinal.Size = new System.Drawing.Size(263, 28);
+            this.TBCelularPagoCFinal.TabIndex = 137;
+            // 
+            // TBCuilPagoCFinal
+            // 
+            this.TBCuilPagoCFinal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.TBCuilPagoCFinal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBCuilPagoCFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBCuilPagoCFinal.Location = new System.Drawing.Point(415, 198);
+            this.TBCuilPagoCFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBCuilPagoCFinal.Name = "TBCuilPagoCFinal";
+            this.TBCuilPagoCFinal.Size = new System.Drawing.Size(287, 28);
+            this.TBCuilPagoCFinal.TabIndex = 136;
+            // 
+            // TBDniPagoCFinal
+            // 
+            this.TBDniPagoCFinal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.TBDniPagoCFinal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBDniPagoCFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBDniPagoCFinal.Location = new System.Drawing.Point(86, 198);
+            this.TBDniPagoCFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBDniPagoCFinal.Name = "TBDniPagoCFinal";
+            this.TBDniPagoCFinal.Size = new System.Drawing.Size(263, 28);
+            this.TBDniPagoCFinal.TabIndex = 135;
+            this.TBDniPagoCFinal.Tag = "";
+            // 
+            // TBApellidoPagoCFinal
+            // 
+            this.TBApellidoPagoCFinal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.TBApellidoPagoCFinal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBApellidoPagoCFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBApellidoPagoCFinal.Location = new System.Drawing.Point(415, 115);
+            this.TBApellidoPagoCFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBApellidoPagoCFinal.Name = "TBApellidoPagoCFinal";
+            this.TBApellidoPagoCFinal.Size = new System.Drawing.Size(287, 28);
+            this.TBApellidoPagoCFinal.TabIndex = 134;
+            // 
+            // TBNombrePagoCFinal
+            // 
+            this.TBNombrePagoCFinal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.TBNombrePagoCFinal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBNombrePagoCFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBNombrePagoCFinal.Location = new System.Drawing.Point(82, 115);
+            this.TBNombrePagoCFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBNombrePagoCFinal.Name = "TBNombrePagoCFinal";
+            this.TBNombrePagoCFinal.Size = new System.Drawing.Size(267, 28);
+            this.TBNombrePagoCFinal.TabIndex = 133;
+            this.TBNombrePagoCFinal.Tag = "";
             // 
             // TBDescPagoCliente
             // 
@@ -235,18 +337,18 @@
             this.panel4.Size = new System.Drawing.Size(732, 2);
             this.panel4.TabIndex = 122;
             // 
-            // dateTimePickerClienteVenta
+            // DTPFechaNacPagoCFinal
             // 
-            this.dateTimePickerClienteVenta.CalendarFont = new System.Drawing.Font("Gadugi", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerClienteVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerClienteVenta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerClienteVenta.Location = new System.Drawing.Point(417, 240);
-            this.dateTimePickerClienteVenta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dateTimePickerClienteVenta.MaxDate = new System.DateTime(3024, 12, 31, 0, 0, 0, 0);
-            this.dateTimePickerClienteVenta.MinDate = new System.DateTime(1924, 1, 1, 0, 0, 0, 0);
-            this.dateTimePickerClienteVenta.Name = "dateTimePickerClienteVenta";
-            this.dateTimePickerClienteVenta.Size = new System.Drawing.Size(152, 30);
-            this.dateTimePickerClienteVenta.TabIndex = 120;
+            this.DTPFechaNacPagoCFinal.CalendarFont = new System.Drawing.Font("Gadugi", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DTPFechaNacPagoCFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DTPFechaNacPagoCFinal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DTPFechaNacPagoCFinal.Location = new System.Drawing.Point(417, 240);
+            this.DTPFechaNacPagoCFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DTPFechaNacPagoCFinal.MaxDate = new System.DateTime(3024, 12, 31, 0, 0, 0, 0);
+            this.DTPFechaNacPagoCFinal.MinDate = new System.DateTime(1924, 1, 1, 0, 0, 0, 0);
+            this.DTPFechaNacPagoCFinal.Name = "DTPFechaNacPagoCFinal";
+            this.DTPFechaNacPagoCFinal.Size = new System.Drawing.Size(152, 30);
+            this.DTPFechaNacPagoCFinal.TabIndex = 120;
             // 
             // LFechaNacimientoClienteVenta
             // 
@@ -323,7 +425,6 @@
             this.BConfirmarGenerarPago.TabIndex = 2;
             this.BConfirmarGenerarPago.Text = "Confirmar";
             this.BConfirmarGenerarPago.UseVisualStyleBackColor = true;
-            this.BConfirmarGenerarPago.Click += new System.EventHandler(this.BConfirmarGenerarPago_Click);
             // 
             // BSalirGenerarPago
             // 
@@ -364,108 +465,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Datos del Cliente";
             // 
-            // TBNombrePagoCFinal
-            // 
-            this.TBNombrePagoCFinal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.TBNombrePagoCFinal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBNombrePagoCFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBNombrePagoCFinal.Location = new System.Drawing.Point(82, 115);
-            this.TBNombrePagoCFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TBNombrePagoCFinal.Name = "TBNombrePagoCFinal";
-            this.TBNombrePagoCFinal.Size = new System.Drawing.Size(267, 28);
-            this.TBNombrePagoCFinal.TabIndex = 133;
-            this.TBNombrePagoCFinal.Tag = "";
-            // 
-            // TBApellidoPagoCFinal
-            // 
-            this.TBApellidoPagoCFinal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.TBApellidoPagoCFinal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBApellidoPagoCFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBApellidoPagoCFinal.Location = new System.Drawing.Point(415, 115);
-            this.TBApellidoPagoCFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TBApellidoPagoCFinal.Name = "TBApellidoPagoCFinal";
-            this.TBApellidoPagoCFinal.Size = new System.Drawing.Size(287, 28);
-            this.TBApellidoPagoCFinal.TabIndex = 134;
-            // 
-            // TBDniPagoCFinal
-            // 
-            this.TBDniPagoCFinal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.TBDniPagoCFinal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBDniPagoCFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBDniPagoCFinal.Location = new System.Drawing.Point(86, 198);
-            this.TBDniPagoCFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TBDniPagoCFinal.Name = "TBDniPagoCFinal";
-            this.TBDniPagoCFinal.Size = new System.Drawing.Size(263, 28);
-            this.TBDniPagoCFinal.TabIndex = 135;
-            this.TBDniPagoCFinal.Tag = "";
-            // 
-            // TBCuilPagoCFinal
-            // 
-            this.TBCuilPagoCFinal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.TBCuilPagoCFinal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBCuilPagoCFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBCuilPagoCFinal.Location = new System.Drawing.Point(415, 198);
-            this.TBCuilPagoCFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TBCuilPagoCFinal.Name = "TBCuilPagoCFinal";
-            this.TBCuilPagoCFinal.Size = new System.Drawing.Size(287, 28);
-            this.TBCuilPagoCFinal.TabIndex = 136;
-            // 
-            // TBCelularPagoCFinal
-            // 
-            this.TBCelularPagoCFinal.AccessibleRole = System.Windows.Forms.AccessibleRole.OutlineButton;
-            this.TBCelularPagoCFinal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.TBCelularPagoCFinal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBCelularPagoCFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBCelularPagoCFinal.Location = new System.Drawing.Point(86, 331);
-            this.TBCelularPagoCFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TBCelularPagoCFinal.Name = "TBCelularPagoCFinal";
-            this.TBCelularPagoCFinal.Size = new System.Drawing.Size(263, 28);
-            this.TBCelularPagoCFinal.TabIndex = 137;
-            // 
-            // TBEmailEditarCFinal
-            // 
-            this.TBEmailEditarCFinal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.TBEmailEditarCFinal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBEmailEditarCFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBEmailEditarCFinal.Location = new System.Drawing.Point(417, 331);
-            this.TBEmailEditarCFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TBEmailEditarCFinal.Name = "TBEmailEditarCFinal";
-            this.TBEmailEditarCFinal.Size = new System.Drawing.Size(279, 28);
-            this.TBEmailEditarCFinal.TabIndex = 138;
-            // 
-            // TBVehiculoPagoCFinal
-            // 
-            this.TBVehiculoPagoCFinal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.TBVehiculoPagoCFinal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBVehiculoPagoCFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBVehiculoPagoCFinal.Location = new System.Drawing.Point(82, 492);
-            this.TBVehiculoPagoCFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TBVehiculoPagoCFinal.Name = "TBVehiculoPagoCFinal";
-            this.TBVehiculoPagoCFinal.Size = new System.Drawing.Size(267, 28);
-            this.TBVehiculoPagoCFinal.TabIndex = 139;
-            // 
-            // TBCantidadPagoCFinal
-            // 
-            this.TBCantidadPagoCFinal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.TBCantidadPagoCFinal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBCantidadPagoCFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBCantidadPagoCFinal.Location = new System.Drawing.Point(421, 492);
-            this.TBCantidadPagoCFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TBCantidadPagoCFinal.Name = "TBCantidadPagoCFinal";
-            this.TBCantidadPagoCFinal.Size = new System.Drawing.Size(267, 28);
-            this.TBCantidadPagoCFinal.TabIndex = 140;
-            // 
-            // TBMontoPagoCFinal
-            // 
-            this.TBMontoPagoCFinal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.TBMontoPagoCFinal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBMontoPagoCFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBMontoPagoCFinal.Location = new System.Drawing.Point(420, 586);
-            this.TBMontoPagoCFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TBMontoPagoCFinal.Name = "TBMontoPagoCFinal";
-            this.TBMontoPagoCFinal.Size = new System.Drawing.Size(267, 28);
-            this.TBMontoPagoCFinal.TabIndex = 141;
-            // 
             // GenerarPago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -502,7 +501,7 @@
         private System.Windows.Forms.Label LDniClienteVenta;
         private System.Windows.Forms.Label LCuilClienteVenta;
         private System.Windows.Forms.Label LFechaNacimientoClienteVenta;
-        private System.Windows.Forms.DateTimePicker dateTimePickerClienteVenta;
+        private System.Windows.Forms.DateTimePicker DTPFechaNacPagoCFinal;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label LVehiculoDescripcion;
         private System.Windows.Forms.Panel panel3;
@@ -522,7 +521,7 @@
         private System.Windows.Forms.TextBox TBCelularPagoCFinal;
         private System.Windows.Forms.TextBox TBCantidadPagoCFinal;
         private System.Windows.Forms.TextBox TBVehiculoPagoCFinal;
-        private System.Windows.Forms.TextBox TBEmailEditarCFinal;
+        private System.Windows.Forms.TextBox TBEmailPagoCFinal;
         private System.Windows.Forms.TextBox TBMontoPagoCFinal;
     }
 }

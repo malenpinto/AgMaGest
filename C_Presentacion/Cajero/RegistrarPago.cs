@@ -232,7 +232,7 @@ namespace AgMaGest.C_Presentacion.Cajero
 
         private void BGenerarPago_Click(object sender, EventArgs e)
         {
-            /*
+            
             // Verificar si hay una fila seleccionada en el DataGridView
             if (dataGridPagos.SelectedRows.Count == 0)
             {
@@ -249,16 +249,16 @@ namespace AgMaGest.C_Presentacion.Cajero
             {
                 // Abre el formulario para cliente empresa y pasa los datos del pedido
                 GenerarPagoEmpresa formEmpresa = new GenerarPagoEmpresa();
-                formEmpresa.CargarPedidos((Pedido)selectedRow.DataBoundItem); // Asegúrate de implementar el método `CargarDatosPedido`
+                formEmpresa.CargarDatosPedido(((Pedido)selectedRow.DataBoundItem); // Asegúrate de implementar el método `CargarDatosPedido`
                 formEmpresa.ShowDialog();
             }
             else
             {
                 // Abre el formulario para cliente final y pasa los datos del pedido
                 GenerarPago formFinal = new GenerarPago();
-                formFinal.CargarPedidos((Pedido)selectedRow.DataBoundItem); // Asegúrate de implementar el método `CargarDatosPedido`
+                formFinal.CargarDatosPedido(((Pedido)selectedRow.DataBoundItem); // Asegúrate de implementar el método `CargarDatosPedido`
                 formFinal.ShowDialog();
-            }*/
+            }
         }
         private bool EsCuit(string cuilCuit)
         {
