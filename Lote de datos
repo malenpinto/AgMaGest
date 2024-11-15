@@ -423,13 +423,11 @@ INSERT INTO Tipo_Pago (nombre_TipoPago) VALUES
 
 INSERT INTO Estado_Pedido (nombre_EstadoPedido) VALUES 
 ('Pendiente'),
-('Realizado'),
-('Cancelado');
+('Confirmado');
 
 INSERT INTO Estado_Pago (nombre_EstadoPago) VALUES 
 ('Pendiente'),
-('Pagado'),
-('Rechazado');
+('Pagado');
 
 /*SELECT * FROM Tipo_Pago
 SELECT * FROM Estado_Pago
