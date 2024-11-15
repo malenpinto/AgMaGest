@@ -54,37 +54,73 @@ namespace AgMaGest.C_Datos
         public List<Factura> ObtenerFacturas()
         {
             List<Factura> listaFacturas = new List<Factura>();
+            ClienteDAL clienteDAL = new ClienteDAL(); // Instancia para validar si es CUIL o CUIT
 
             try
             {
-                // Establece la conexión con la base de datos
                 using (SqlConnection connection = new SqlConnection(ConnectionString))
                 {
                     connection.Open();
 
-                    // Ajusta la consulta para obtener datos del vehículo
+                    // Consulta SQL para obtener las facturas
                     string query = @"
-                        SELECT 
-                            f.num_Factura, 
-                            f.fecha_Factura, 
-                            f.total_Factura, 
-                            f.id_pago, 
-                            e.cuil_Empleado AS CUIL_Empleado, 
-                            CONCAT(e.nombre_Empleado, ' ', e.apellido_Empleado) AS NombreCompleto,
-                            CONCAT(v.marca_Vehiculo, ' ', v.modelo_Vehiculo,' ', v.anio_Vehiculo) AS DetallesVehiculo
-                        FROM Factura f
-                        INNER JOIN Pago p ON f.id_pago = p.id_pago
-                        INNER JOIN Pedido pe ON p.id_Pedido = pe.id_Pedido
-                        INNER JOIN Empleado e ON pe.cuil_Empleado = e.cuil_Empleado
-                        INNER JOIN Vehiculos v ON pe.id_Vehiculo = v.id_Vehiculo";
+                SELECT 
+                    f.num_Factura, 
+                    f.fecha_Factura, 
+                    f.total_Factura, 
+                    f.id_pago, 
+                    e.cuil_Empleado AS CUIL_Empleado, 
+                    CONCAT(e.nombre_Empleado, ' ', e.apellido_Empleado) AS NombreCompleto,
+                    CONCAT(v.marca_Vehiculo, ' ', v.modelo_Vehiculo, ' ', v.anio_Vehiculo) AS DetallesVehiculo,
+                    c.id_Cliente,
+                    cf.nombre_CFinal, 
+                    cf.apellido_CFinal, 
+                    cf.cuil_CFinal,
+                    ce.razon_Social_CEmpresa, 
+                    ce.cuit_CEmpresa
+                FROM Factura f
+                INNER JOIN Pago p ON f.id_pago = p.id_pago
+                INNER JOIN Pedido pe ON p.id_Pedido = pe.id_Pedido
+                INNER JOIN Empleado e ON pe.cuil_Empleado = e.cuil_Empleado
+                INNER JOIN Vehiculos v ON pe.id_Vehiculo = v.id_Vehiculo
+                INNER JOIN Cliente c ON pe.id_Cliente = c.id_Cliente
+                LEFT JOIN Cliente_Final cf ON c.id_Cliente = cf.id_Cliente
+                LEFT JOIN Cliente_Empresa ce ON c.id_Cliente = ce.id_Cliente";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
-                            // Procesa cada registro de la consulta
                             while (reader.Read())
                             {
+                                // Determinar si es Cliente Final o Empresa
+                                string nombreCliente;
+                                string cuilCuitCliente;
+
+                                if (!reader.IsDBNull(reader.GetOrdinal("nombre_CFinal")) &&
+                                    !reader.IsDBNull(reader.GetOrdinal("apellido_CFinal")) &&
+                                    !reader.IsDBNull(reader.GetOrdinal("cuil_CFinal")))
+                                {
+                                    // Es Cliente Final
+                                    string nombre = reader.GetString(reader.GetOrdinal("nombre_CFinal"));
+                                    string apellido = reader.GetString(reader.GetOrdinal("apellido_CFinal"));
+                                    cuilCuitCliente = reader.GetString(reader.GetOrdinal("cuil_CFinal"));
+                                    nombreCliente = $"{nombre} {apellido}";
+                                }
+                                else if (!reader.IsDBNull(reader.GetOrdinal("razon_Social_CEmpresa")) &&
+                                         !reader.IsDBNull(reader.GetOrdinal("cuit_CEmpresa")))
+                                {
+                                    // Es Cliente Empresa
+                                    cuilCuitCliente = reader.GetString(reader.GetOrdinal("cuit_CEmpresa"));
+                                    nombreCliente = reader.GetString(reader.GetOrdinal("razon_Social_CEmpresa"));
+                                }
+                                else
+                                {
+                                    cuilCuitCliente = "N/A";
+                                    nombreCliente = "Cliente desconocido";
+                                }
+
+                                // Crear la factura con los datos obtenidos
                                 Factura factura = new Factura
                                 {
                                     NumFactura = reader.GetInt32(reader.GetOrdinal("num_Factura")),
@@ -97,7 +133,9 @@ namespace AgMaGest.C_Datos
                                         : reader.GetString(reader.GetOrdinal("NombreCompleto")),
                                     DetallesVehiculo = reader.IsDBNull(reader.GetOrdinal("DetallesVehiculo"))
                                         ? "Sin detalles"
-                                        : reader.GetString(reader.GetOrdinal("DetallesVehiculo"))
+                                        : reader.GetString(reader.GetOrdinal("DetallesVehiculo")),
+                                    CUIL_Cliente = cuilCuitCliente,
+                                    NombreCliente = nombreCliente
                                 };
 
                                 listaFacturas.Add(factura);
@@ -117,6 +155,8 @@ namespace AgMaGest.C_Datos
 
             return listaFacturas;
         }
+
+
 
 
 

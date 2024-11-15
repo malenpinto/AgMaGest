@@ -33,7 +33,7 @@ namespace AgMaGest.C_Presentacion.Administrador
             var serie = new Series("Vendedor del Mes");
 
             // Configuración de la serie
-            serie.ChartType = SeriesChartType.Bar;  // Tipo de gráfico: barra
+            serie.ChartType = SeriesChartType.Column;  // Tipo de gráfico: barra
             chartVendedor.Series.Add(serie);
 
             // Recorrer las estadísticas y agregar los valores al gráfico

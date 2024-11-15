@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -41,12 +41,17 @@
             this.BBuscarFacturas = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dataGridFacturas = new System.Windows.Forms.DataGridView();
-            this.idFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descargarFactura = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.editarFactura = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.totalFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estadoFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.editar_Vehiculo = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.estado_Vehiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.patente_Codigo0km_Vehiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipo_Vehiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.marca_Vehiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modelo_Vehiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.version_Vehiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.anio_Vehiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.km_Vehiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.condicion_Vehiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel7.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridFacturas)).BeginInit();
@@ -181,76 +186,117 @@
             // 
             // dataGridFacturas
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridFacturas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridFacturas.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridFacturas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridFacturas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idFecha,
-            this.idFactura,
-            this.descargarFactura,
-            this.editarFactura,
-            this.totalFactura,
-            this.estadoFactura});
+            this.id_Producto,
+            this.editar_Vehiculo,
+            this.estado_Vehiculo,
+            this.patente_Codigo0km_Vehiculo,
+            this.tipo_Vehiculo,
+            this.marca_Vehiculo,
+            this.modelo_Vehiculo,
+            this.version_Vehiculo,
+            this.anio_Vehiculo,
+            this.km_Vehiculo,
+            this.condicion_Vehiculo});
             this.dataGridFacturas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridFacturas.Location = new System.Drawing.Point(35, 131);
-            this.dataGridFacturas.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridFacturas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridFacturas.Name = "dataGridFacturas";
             this.dataGridFacturas.RowHeadersWidth = 51;
+            this.dataGridFacturas.RowTemplate.Height = 24;
             this.dataGridFacturas.Size = new System.Drawing.Size(1030, 527);
             this.dataGridFacturas.TabIndex = 13;
             // 
-            // idFecha
+            // id_Producto
             // 
-            this.idFecha.HeaderText = "Fecha";
-            this.idFecha.MinimumWidth = 6;
-            this.idFecha.Name = "idFecha";
-            this.idFecha.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.idFecha.Width = 125;
+            this.id_Producto.HeaderText = "ID";
+            this.id_Producto.MinimumWidth = 6;
+            this.id_Producto.Name = "id_Producto";
+            this.id_Producto.Width = 89;
             // 
-            // idFactura
+            // editar_Vehiculo
             // 
-            this.idFactura.HeaderText = "Num Factura";
-            this.idFactura.MinimumWidth = 6;
-            this.idFactura.Name = "idFactura";
-            this.idFactura.Width = 125;
+            this.editar_Vehiculo.HeaderText = "Editar";
+            this.editar_Vehiculo.MinimumWidth = 6;
+            this.editar_Vehiculo.Name = "editar_Vehiculo";
+            this.editar_Vehiculo.Width = 88;
             // 
-            // descargarFactura
+            // estado_Vehiculo
             // 
-            this.descargarFactura.HeaderText = "Descargar Factura";
-            this.descargarFactura.MinimumWidth = 6;
-            this.descargarFactura.Name = "descargarFactura";
-            this.descargarFactura.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.descargarFactura.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.descargarFactura.Width = 125;
+            this.estado_Vehiculo.HeaderText = "Estado";
+            this.estado_Vehiculo.MinimumWidth = 6;
+            this.estado_Vehiculo.Name = "estado_Vehiculo";
+            this.estado_Vehiculo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.estado_Vehiculo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.estado_Vehiculo.Width = 89;
             // 
-            // editarFactura
+            // patente_Codigo0km_Vehiculo
             // 
-            this.editarFactura.HeaderText = "Editar";
-            this.editarFactura.MinimumWidth = 6;
-            this.editarFactura.Name = "editarFactura";
-            this.editarFactura.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.editarFactura.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.editarFactura.Width = 125;
+            this.patente_Codigo0km_Vehiculo.HeaderText = "Código 0Km/Patente";
+            this.patente_Codigo0km_Vehiculo.MinimumWidth = 6;
+            this.patente_Codigo0km_Vehiculo.Name = "patente_Codigo0km_Vehiculo";
+            this.patente_Codigo0km_Vehiculo.Width = 89;
             // 
-            // totalFactura
+            // tipo_Vehiculo
             // 
-            this.totalFactura.HeaderText = "Total";
-            this.totalFactura.MinimumWidth = 6;
-            this.totalFactura.Name = "totalFactura";
-            this.totalFactura.Width = 125;
+            this.tipo_Vehiculo.HeaderText = "Tipo";
+            this.tipo_Vehiculo.MinimumWidth = 6;
+            this.tipo_Vehiculo.Name = "tipo_Vehiculo";
+            this.tipo_Vehiculo.Width = 89;
             // 
-            // estadoFactura
+            // marca_Vehiculo
             // 
-            this.estadoFactura.HeaderText = "Estado";
-            this.estadoFactura.MinimumWidth = 6;
-            this.estadoFactura.Name = "estadoFactura";
-            this.estadoFactura.Width = 125;
+            this.marca_Vehiculo.HeaderText = "Marca";
+            this.marca_Vehiculo.MinimumWidth = 6;
+            this.marca_Vehiculo.Name = "marca_Vehiculo";
+            this.marca_Vehiculo.Width = 88;
+            // 
+            // modelo_Vehiculo
+            // 
+            this.modelo_Vehiculo.HeaderText = "Modelo";
+            this.modelo_Vehiculo.MinimumWidth = 6;
+            this.modelo_Vehiculo.Name = "modelo_Vehiculo";
+            this.modelo_Vehiculo.Width = 89;
+            // 
+            // version_Vehiculo
+            // 
+            this.version_Vehiculo.HeaderText = "Version";
+            this.version_Vehiculo.MinimumWidth = 6;
+            this.version_Vehiculo.Name = "version_Vehiculo";
+            this.version_Vehiculo.Width = 89;
+            // 
+            // anio_Vehiculo
+            // 
+            this.anio_Vehiculo.HeaderText = "Año";
+            this.anio_Vehiculo.MinimumWidth = 6;
+            this.anio_Vehiculo.Name = "anio_Vehiculo";
+            this.anio_Vehiculo.Width = 89;
+            // 
+            // km_Vehiculo
+            // 
+            this.km_Vehiculo.HeaderText = "KM";
+            this.km_Vehiculo.MinimumWidth = 6;
+            this.km_Vehiculo.Name = "km_Vehiculo";
+            this.km_Vehiculo.Width = 88;
+            // 
+            // condicion_Vehiculo
+            // 
+            this.condicion_Vehiculo.HeaderText = "Condición";
+            this.condicion_Vehiculo.MinimumWidth = 6;
+            this.condicion_Vehiculo.Name = "condicion_Vehiculo";
+            this.condicion_Vehiculo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.condicion_Vehiculo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.condicion_Vehiculo.Width = 89;
             // 
             // VisualizarFacturas
             // 
@@ -285,16 +331,21 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.DataGridView dataGridFacturas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idFecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idFactura;
-        private System.Windows.Forms.DataGridViewButtonColumn descargarFactura;
-        private System.Windows.Forms.DataGridViewButtonColumn editarFactura;
-        private System.Windows.Forms.DataGridViewTextBoxColumn totalFactura;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estadoFactura;
         private System.Windows.Forms.Button BBuscarFacturas;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TextBox TBBuscarFactura;
         private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.DataGridView dataGridFacturas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_Producto;
+        private System.Windows.Forms.DataGridViewButtonColumn editar_Vehiculo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado_Vehiculo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn patente_Codigo0km_Vehiculo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipo_Vehiculo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn marca_Vehiculo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn modelo_Vehiculo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn version_Vehiculo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn anio_Vehiculo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn km_Vehiculo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn condicion_Vehiculo;
     }
 }

@@ -85,6 +85,12 @@ namespace AgMaGest.C_Presentacion.Cajero
             dataGridFacturas.Columns.Add("NombreCompleto", "Nombre Completo");
             dataGridFacturas.Columns["NombreCompleto"].DataPropertyName = "NombreCompleto";
 
+            dataGridFacturas.Columns.Add("CUIL_Cliente", "CUIL del Cliente");
+            dataGridFacturas.Columns["CUIL_Cliente"].DataPropertyName = "CUIL_Cliente";
+
+            dataGridFacturas.Columns.Add("NombreCliente", "Nombre del Cliente");
+            dataGridFacturas.Columns["NombreCliente"].DataPropertyName = "NombreCliente";
+
             dataGridFacturas.Columns.Add("DetallesVehiculo", "Detalles del Vehículo");
             dataGridFacturas.Columns["DetallesVehiculo"].DataPropertyName = "DetallesVehiculo";
 
@@ -158,6 +164,8 @@ namespace AgMaGest.C_Presentacion.Cajero
             facturaContent.AppendLine($"ID de Pago: {factura.IdPago}");
             facturaContent.AppendLine($"Cuil: {factura.CUIL_Empleado}");
             facturaContent.AppendLine($"Empleado: {factura.NombreCompleto}");
+            facturaContent.AppendLine($"CUIL Cliente: {factura.CUIL_Cliente}");
+            facturaContent.AppendLine($"Cliente: {factura.NombreCliente}");
             facturaContent.AppendLine($"Vehículo: {factura.DetallesVehiculo}");
 
             // Escribir el contenido en el archivo de texto
