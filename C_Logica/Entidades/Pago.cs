@@ -23,6 +23,8 @@ namespace AgMaGest.C_Logica.Entidades
         // Propiedad para mostrar los detalles del vehículo en el DataGridView
         public string DetallesVehiculo { get; set; }
 
+        // Propiedad para almacenar el CUIL/CUIT del cliente
+        public string DetallesCliente { get; set; }
         // Propiedad para la imagen del vehículo
         public Image Imagen { get; set; }
     }

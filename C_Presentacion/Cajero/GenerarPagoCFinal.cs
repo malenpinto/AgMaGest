@@ -12,11 +12,10 @@ using System.Windows.Forms;
 
 namespace AgMaGest.C_Presentacion.Cajero
 {
-    public partial class GenerarPago : Form
+    public partial class GenerarPagoCFinal : Form
     {
-        private PedidoDAL pedidoDAL = new PedidoDAL();
-        private Pedido pedidoActual;
-        public GenerarPago()
+
+        public GenerarPagoCFinal()
         {
             InitializeComponent();
         }

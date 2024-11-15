@@ -57,7 +57,7 @@ namespace AgMaGest.C_Presentacion.Vendedor
             // Concatenar "Estadísticas" con el mes actual
             string titulo = "Estadísticas de " + mesActual;
 
-            AbrirFormularioHijo(new VisualizarEstadisticaMensual(), titulo);
+            AbrirFormularioHijo(new VisualizarEstadisticas(), titulo);
         }
 
         private void BAcercaDeVendedor_Click(object sender, EventArgs e)

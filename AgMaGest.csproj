@@ -193,17 +193,17 @@
     <Compile Include="C_Presentacion\Cajero\Facturas.Designer.cs">
       <DependentUpon>Facturas.cs</DependentUpon>
     </Compile>
-    <Compile Include="C_Presentacion\Cajero\GenerarPago.cs">
+    <Compile Include="C_Presentacion\Cajero\GenerarPagoCFinal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="C_Presentacion\Cajero\GenerarPago.Designer.cs">
-      <DependentUpon>GenerarPago.cs</DependentUpon>
+    <Compile Include="C_Presentacion\Cajero\GenerarPagoCFinal.Designer.cs">
+      <DependentUpon>GenerarPagoCFinal.cs</DependentUpon>
     </Compile>
-    <Compile Include="C_Presentacion\Cajero\GenerarPagoEmpresa.cs">
+    <Compile Include="C_Presentacion\Cajero\GenerarPagoCEmpresa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="C_Presentacion\Cajero\GenerarPagoEmpresa.Designer.cs">
-      <DependentUpon>GenerarPagoEmpresa.cs</DependentUpon>
+    <Compile Include="C_Presentacion\Cajero\GenerarPagoCEmpresa.Designer.cs">
+      <DependentUpon>GenerarPagoCEmpresa.cs</DependentUpon>
     </Compile>
     <Compile Include="C_Presentacion\Cajero\InformeDiario.cs">
       <SubType>Form</SubType>
@@ -295,17 +295,11 @@
     <Compile Include="C_Presentacion\Vendedor\VisualizarClientes.Designer.cs">
       <DependentUpon>VisualizarClientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="C_Presentacion\Vendedor\VisualizarEstadisticaMensual.cs">
+    <Compile Include="C_Presentacion\Vendedor\VisualizarEstadisticas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="C_Presentacion\Vendedor\VisualizarEstadisticaMensual.Designer.cs">
-      <DependentUpon>VisualizarEstadisticaMensual.cs</DependentUpon>
-    </Compile>
-    <Compile Include="C_Presentacion\Vendedor\VisualizarEstadisticaTrimestral.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="C_Presentacion\Vendedor\VisualizarEstadisticaTrimestral.Designer.cs">
-      <DependentUpon>VisualizarEstadisticaTrimestral.cs</DependentUpon>
+    <Compile Include="C_Presentacion\Vendedor\VisualizarEstadisticas.Designer.cs">
+      <DependentUpon>VisualizarEstadisticas.cs</DependentUpon>
     </Compile>
     <Compile Include="C_Presentacion\Vendedor\VisualizarPedidos.cs">
       <SubType>Form</SubType>
@@ -363,11 +357,11 @@
     <EmbeddedResource Include="C_Presentacion\Cajero\Facturas.resx">
       <DependentUpon>Facturas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="C_Presentacion\Cajero\GenerarPago.resx">
-      <DependentUpon>GenerarPago.cs</DependentUpon>
+    <EmbeddedResource Include="C_Presentacion\Cajero\GenerarPagoCFinal.resx">
+      <DependentUpon>GenerarPagoCFinal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="C_Presentacion\Cajero\GenerarPagoEmpresa.resx">
-      <DependentUpon>GenerarPagoEmpresa.cs</DependentUpon>
+    <EmbeddedResource Include="C_Presentacion\Cajero\GenerarPagoCEmpresa.resx">
+      <DependentUpon>GenerarPagoCEmpresa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="C_Presentacion\Cajero\InformeDiario.resx">
       <DependentUpon>InformeDiario.cs</DependentUpon>
@@ -414,11 +408,8 @@
     <EmbeddedResource Include="C_Presentacion\Vendedor\VisualizarClientes.resx">
       <DependentUpon>VisualizarClientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="C_Presentacion\Vendedor\VisualizarEstadisticaMensual.resx">
-      <DependentUpon>VisualizarEstadisticaMensual.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="C_Presentacion\Vendedor\VisualizarEstadisticaTrimestral.resx">
-      <DependentUpon>VisualizarEstadisticaTrimestral.cs</DependentUpon>
+    <EmbeddedResource Include="C_Presentacion\Vendedor\VisualizarEstadisticas.resx">
+      <DependentUpon>VisualizarEstadisticas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="C_Presentacion\Vendedor\VisualizarPedidos.resx">
       <DependentUpon>VisualizarPedidos.cs</DependentUpon>

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AgMaGest.C_Presentacion.Vendedor
 {
-    public partial class VisualizarEstadisticaMensual : Form
+    public partial class VisualizarEstadisticas : Form
     {
-        public VisualizarEstadisticaMensual()
+        public VisualizarEstadisticas()
         {
             InitializeComponent();
         }

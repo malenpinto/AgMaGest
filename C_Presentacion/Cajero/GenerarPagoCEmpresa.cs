@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AgMaGest.C_Presentacion.Vendedor
+namespace AgMaGest.C_Presentacion.Cajero
 {
-    public partial class VisualizarEstadisticaTrimestral : Form
+    public partial class GenerarPagoCEmpresa : Form
     {
-        public VisualizarEstadisticaTrimestral()
+        public GenerarPagoCEmpresa()
         {
             InitializeComponent();
+        }
+
+        private void BSalirGenerarPago_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

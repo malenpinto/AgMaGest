@@ -102,8 +102,9 @@ namespace AgMaGest.C_Presentacion.Cajero
             dataGridPagos.Columns.Add("NombreEmpleado", "Nombre ");
             dataGridPagos.Columns["NombreEmpleado"].DataPropertyName = "NombreEmpleado";
 
-            dataGridPagos.Columns.Add("IdCliente", "ID Cliente");
-            dataGridPagos.Columns["IdCliente"].DataPropertyName = "IdCliente";
+            // Columna para el CUIL o CUIT del cliente
+            dataGridPagos.Columns.Add("DetallesCliente", "CUIL/CUIT Cliente");
+            dataGridPagos.Columns["DetallesCliente"].DataPropertyName = "DetallesCliente";
 
             // Columna para los detalles del vehículo
             DataGridViewImageColumn imageColumn = new DataGridViewImageColumn
@@ -131,21 +132,49 @@ namespace AgMaGest.C_Presentacion.Cajero
 
             dataGridPagos.AllowUserToAddRows = false;
         }
-
-        private void SoloNumeros_KeyPress(object sender, KeyPressEventArgs e)
+        private void BGenerarPago_Click(object sender, EventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            // Verificar si hay una fila seleccionada en el DataGridView
+            if (dataGridPagos.SelectedRows.Count == 0)
             {
-                e.Handled = true;
-                MessageBox.Show("Este campo solo puede contener números.");
+                MessageBox.Show("Debe seleccionar un pedido para generar el pago.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Obtener la fila seleccionada y el valor de "DetallesCliente" (CUIT/CUIL del cliente)
+            var selectedRow = dataGridPagos.SelectedRows[0];
+            string cuilCuit = selectedRow.Cells["DetallesCliente"].Value?.ToString();
+
+            if (string.IsNullOrEmpty(cuilCuit))
+            {
+                MessageBox.Show("No se encontró el CUIL/CUIT del cliente para el pedido seleccionado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Determinar si es un CUIT (Cliente Empresa) o un CUIL (Cliente Final)
+            if (EsCuit(cuilCuit))
+            {
+                // Abre el formulario para cliente empresa y pasa los datos del pedido
+                GenerarPagoCEmpresa formEmpresa = new GenerarPagoCEmpresa();
+                formEmpresa.ShowDialog();
+            }
+            else
+            {
+                // Abre el formulario para cliente final y pasa los datos del pedido
+                GenerarPagoCFinal formFinal = new GenerarPagoCFinal();
+                formFinal.ShowDialog();
             }
         }
-
-        private void BGenerarVenta_Click(object sender, EventArgs e)
+        private bool EsCuit(string cuilCuit)
         {
-            GenerarPago formPago = new GenerarPago();
-            formPago.ShowDialog();
+            // En Argentina, el CUIT tiene prefijos de 30, o 33 (por ejemplo, para personas jurídicas)
+            // Mientras que el CUIL tiene prefijos típicos de 20, 27, 23 para personas físicas.
+            // Ajustar la lógica según el criterio para diferenciar CUIT y CUIL
+            // Un CUIT de empresa suele empezar con 30 o 33 y tiene longitud de 11 caracteres
+
+            return cuilCuit.Length == 11 && (cuilCuit.StartsWith("30") || cuilCuit.StartsWith("33"));
         }
+
         private void BBuscarFacturas_Click(object sender, EventArgs e)
         {
             string criterioBusqueda = TBBuscarPedido.Text.Trim();
@@ -230,44 +259,18 @@ namespace AgMaGest.C_Presentacion.Cajero
             }
         }
 
-        private void BGenerarPago_Click(object sender, EventArgs e)
+        private void DataGridViewClientes_SelectionChanged(object sender, EventArgs e)
         {
-            
-            // Verificar si hay una fila seleccionada en el DataGridView
-            if (dataGridPagos.SelectedRows.Count == 0)
+            if (dataGridPagos.SelectedRows.Count > 0)
             {
-                MessageBox.Show("Debe seleccionar un pedido para generar el pago.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            // Obtener la fila seleccionada y el CUIT/CUIL del pedido
-            var selectedRow = dataGridPagos.SelectedRows[0];
-            string cuilCuit = selectedRow.Cells["CuilCuit"].Value.ToString();
-
-            // Lógica para determinar si es cliente empresa o cliente final
-            if (EsCuit(cuilCuit))
-            {
-                // Abre el formulario para cliente empresa y pasa los datos del pedido
-                GenerarPagoEmpresa formEmpresa = new GenerarPagoEmpresa();
-                formEmpresa.CargarDatosPedido(((Pedido)selectedRow.DataBoundItem); // Asegúrate de implementar el método `CargarDatosPedido`
-                formEmpresa.ShowDialog();
+                BGenerarPago.Visible = true;
             }
             else
             {
-                // Abre el formulario para cliente final y pasa los datos del pedido
-                GenerarPago formFinal = new GenerarPago();
-                formFinal.CargarDatosPedido(((Pedido)selectedRow.DataBoundItem); // Asegúrate de implementar el método `CargarDatosPedido`
-                formFinal.ShowDialog();
+                // Opcionalmente, ocultar los botones si no hay selección
+                BGenerarPago.Visible = false;
             }
         }
-        private bool EsCuit(string cuilCuit)
-        {
-            // En Argentina, el CUIT tiene prefijos de 30, o 33 (por ejemplo, para personas jurídicas)
-            // Mientras que el CUIL tiene prefijos típicos de 20, 27, 23 para personas físicas.
-            // Ajustar la lógica según el criterio para diferenciar CUIT y CUIL
-            // Un CUIT de empresa suele empezar con 30 o 33 y tiene longitud de 11 caracteres
 
-            return cuilCuit.Length == 11 && (cuilCuit.StartsWith("30") || cuilCuit.StartsWith("33"));
-        }
     }
 }
