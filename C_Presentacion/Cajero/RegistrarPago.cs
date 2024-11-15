@@ -40,32 +40,32 @@ namespace AgMaGest.C_Presentacion.Cajero
                 PedidoDAL pedidoDAL = new PedidoDAL();
                 List<Pedido> listaPedidos = pedidoDAL.ObtenerPedidos();
 
-                // Validar las imágenes antes de asignar al DataGridView
                 foreach (var pedido in listaPedidos)
                 {
-                    // Verificar si la imagen del vehículo está asignada
-                    if (pedido.Imagen == null)
+                    try
                     {
-                        Console.WriteLine("Imagen no asignada para el pedido con ID: " + pedido.IdPedido);
+                        if (!string.IsNullOrEmpty(pedido.Vehiculo?.RutaImagen) && File.Exists(pedido.Vehiculo.RutaImagen))
+                        {
+                            // Carga la imagen desde la ruta especificada
+                            pedido.Imagen = Image.FromFile(pedido.Vehiculo.RutaImagen);
+                        }
+                        else
+                        {
+                            // Asigna la imagen por defecto si la ruta no es válida o no existe
+                            pedido.Imagen = Properties.Resources.VhiculoPorDefecto;
+                        }
                     }
-
-                    // Validación de que la ruta de la imagen sea válida
-                    if (!string.IsNullOrEmpty(pedido.Vehiculo.RutaImagen) && File.Exists(pedido.Vehiculo.RutaImagen))
+                    catch (Exception ex)
                     {
-                        // Verifica si la ruta existe y es válida
-                        pedido.Imagen = Image.FromFile(pedido.Vehiculo.RutaImagen);
-                    }
-                    else
-                    {
-                        // Asigna la imagen por defecto si la ruta no es válida o no existe
+                        Console.WriteLine("Error al cargar la imagen para el pedido con ID: " + pedido.IdPedido + " - " + ex.Message);
+                        // Asigna la imagen por defecto en caso de error
                         pedido.Imagen = Properties.Resources.VhiculoPorDefecto;
                     }
 
-                    // Asegúrate de que el campo "DetallesVehiculo" se cargue
+                    // Carga el campo "DetallesVehiculo"
                     pedido.DetallesVehiculo = $"{pedido.Vehiculo.CondicionNombre} - {pedido.Vehiculo.Marca} - {pedido.Vehiculo.TipoNombre} - {pedido.Vehiculo.Modelo} - {pedido.Vehiculo.Anio.Year}";
                 }
 
-                // Asignar la lista de pedidos al DataGridView
                 if (listaPedidos != null && listaPedidos.Count > 0)
                 {
                     dataGridPagos.DataSource = new BindingList<Pedido>(listaPedidos);
@@ -96,11 +96,11 @@ namespace AgMaGest.C_Presentacion.Cajero
             dataGridPagos.Columns.Add("CUIL", "CUIL Empleado");
             dataGridPagos.Columns["CUIL"].DataPropertyName = "CUIL";
 
-            dataGridPagos.Columns.Add("NombreEmpleado", "Nombre ");
-            dataGridPagos.Columns["NombreEmpleado"].DataPropertyName = "NombreEmpleado";
-
             dataGridPagos.Columns.Add("ApellidoEmpleado", "Apellido ");
             dataGridPagos.Columns["ApellidoEmpleado"].DataPropertyName = "ApellidoEmpleado";
+
+            dataGridPagos.Columns.Add("NombreEmpleado", "Nombre ");
+            dataGridPagos.Columns["NombreEmpleado"].DataPropertyName = "NombreEmpleado";
 
             dataGridPagos.Columns.Add("IdCliente", "ID Cliente");
             dataGridPagos.Columns["IdCliente"].DataPropertyName = "IdCliente";
@@ -111,7 +111,8 @@ namespace AgMaGest.C_Presentacion.Cajero
                 Name = "Imagen",
                 HeaderText = "Imagen",
                 ImageLayout = DataGridViewImageCellLayout.Zoom, // Ajusta la imagen al tamaño de la celda
-                Width = 100
+                Width = 100,
+                DataPropertyName = "Imagen" // Importante: esta propiedad debe estar configurada
             };
             dataGridPagos.Columns.Add(imageColumn);
 
@@ -177,11 +178,11 @@ namespace AgMaGest.C_Presentacion.Cajero
         }
 
 
-        /*private void DataGridPedidos_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void DataGridPagos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == dataGridPedidos.Columns["Imagen"].Index && e.RowIndex >= 0)
+            if (e.ColumnIndex == dataGridPagos.Columns["Imagen"].Index && e.RowIndex >= 0)
             {
-                var imagen = dataGridPedidos.Rows[e.RowIndex].Cells["Imagen"].Value as Image;
+                var imagen = dataGridPagos.Rows[e.RowIndex].Cells["Imagen"].Value as Image;
                 if (imagen != null)
                 {
                     VisualizarImagen formImagen = new VisualizarImagen(imagen);
@@ -192,30 +193,9 @@ namespace AgMaGest.C_Presentacion.Cajero
                     MessageBox.Show("No hay imagen disponible para este pedido.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-        }*/
-
-        private void DataGridPagos_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // Verifica que la columna sea la de la imagen y que la fila sea válida
-            if (e.ColumnIndex == dataGridPagos.Columns["Imagen"].Index && e.RowIndex >= 0)
-            {
-                // Obtiene el objeto Pedido vinculado a la fila seleccionada
-                Pedido pedido = (Pedido)dataGridPagos.Rows[e.RowIndex].DataBoundItem;
-                    
-                if (pedido?.Vehiculo?.Imagen != null)
-                {
-                    // Muestra la imagen en un formulario de visualización
-                    VisualizarImagen formImagen = new VisualizarImagen(pedido.Vehiculo.Imagen);
-                    formImagen.ShowDialog();
-                }
-                else
-                {
-                    MessageBox.Show("No hay imagen disponible para este pedido.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
         }
 
-
+       
         private void DataGridPagos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (dataGridPagos.Columns[e.ColumnIndex].Name == "NombreEstadoPedido")
@@ -250,8 +230,9 @@ namespace AgMaGest.C_Presentacion.Cajero
             }
         }
 
-        /*private void BGenerarPago_Click(object sender, EventArgs e)
+        private void BGenerarPago_Click(object sender, EventArgs e)
         {
+            /*
             // Verificar si hay una fila seleccionada en el DataGridView
             if (dataGridPagos.SelectedRows.Count == 0)
             {
@@ -277,8 +258,8 @@ namespace AgMaGest.C_Presentacion.Cajero
                 GenerarPago formFinal = new GenerarPago();
                 formFinal.CargarPedidos((Pedido)selectedRow.DataBoundItem); // Asegúrate de implementar el método `CargarDatosPedido`
                 formFinal.ShowDialog();
-            }
-        }*/
+            }*/
+        }
         private bool EsCuit(string cuilCuit)
         {
             // En Argentina, el CUIT tiene prefijos de 30, o 33 (por ejemplo, para personas jurídicas)
