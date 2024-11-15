@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,5 +20,12 @@ namespace AgMaGest.C_Logica.Entidades
         // Nuevas propiedades para los datos del empleado
         public string NombreEmpleado { get; set; }
         public string ApellidoEmpleado { get; set; }
+        public string NombreEstadoPedido { get; set; }
+        public Vehiculos Vehiculo { get; set; }
+        // Propiedad para mostrar los detalles del vehículo en el DataGridView
+        public string DetallesVehiculo { get; set; }
+
+        // Propiedad para la imagen del vehículo
+        public Image Imagen { get; set; }
     }
 }

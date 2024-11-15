@@ -35,18 +35,27 @@ namespace AgMaGest.C_Presentacion.Administrador
 
         private void BAsignarUsuario_Click(object sender, EventArgs e)
         {
+            UsuarioDAL usuarioDAL = new UsuarioDAL();
+
+            // Verifica si el usuario ya existe
+            if (usuarioDAL.UsuarioExiste(TBCuilUsuario.Text))
+            {
+                MessageBox.Show("Este usuario ya está registrado.");
+                return; // Detiene el proceso si el usuario ya existe
+            }
+
+            // Crea y asigna el usuario si no existe
             Usuario usuario = new Usuario
             {
                 CuilEmpleado = TBCuilUsuario.Text,
                 PassswordUsuario = TBContraseñaUsuario.Text
             };
 
-            UsuarioDAL usuarioDAL = new UsuarioDAL();
             usuarioDAL.AsignarUsuarioAEmpleado(usuario);
-
             MessageBox.Show("Usuario asignado correctamente.");
             this.Close(); // Cerrar el formulario después de guardar
         }
+
 
         private void BSalirUsuario_Click(object sender, EventArgs e)
         {

@@ -230,6 +230,20 @@ namespace AgMaGest.C_Datos
             }
         }
 
+        public bool UsuarioExiste(string cuilEmpleado)
+        {
+            using (SqlConnection conn = new SqlConnection(ConnectionString))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Usuario WHERE cuil_Empleado = @CuilEmpleado", conn);
+                cmd.Parameters.AddWithValue("@CuilEmpleado", cuilEmpleado);
+
+                int count = (int)cmd.ExecuteScalar();
+                return count > 0;
+            }
+        }
+
+
         public List<Usuario> FiltrarUsuarios(string texto)
         {
             List<Usuario> usuarios = new List<Usuario>();
@@ -333,6 +347,7 @@ namespace AgMaGest.C_Datos
                 Console.WriteLine($"Error al conectar con la base de datos: {ex.Message}");
                 return null;
             }
+
 
         }
     }

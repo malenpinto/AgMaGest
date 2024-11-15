@@ -89,22 +89,23 @@ namespace AgMaGest.C_Datos
             List<Pedido> listaPedidos = new List<Pedido>();
 
             string query = @"
-        SELECT 
-            p.id_Pedido,
-            p.cuil_Empleado,
-            e.nombre_Empleado,
-            e.apellido_Empleado,
-            p.id_Cliente,
-            p.id_Vehiculo,
-            p.fecha_Pedido,
-            p.monto_Pedido,
-            p.id_EstadoPedido
-        FROM 
-            Pedido p
-        INNER JOIN 
-            Empleado e
-        ON 
-            p.cuil_Empleado = e.cuil_Empleado";
+                SELECT 
+                    p.id_Pedido,
+                    p.cuil_Empleado,
+                    e.nombre_Empleado,
+                    e.apellido_Empleado,
+                    p.id_Cliente,
+                    p.id_Vehiculo,
+                    p.fecha_Pedido,
+                    p.monto_Pedido,
+                    p.id_EstadoPedido,
+                    ep.nombre_EstadoPedido
+                FROM 
+                    Pedido p
+                INNER JOIN 
+                    Empleado e ON p.cuil_Empleado = e.cuil_Empleado
+                INNER JOIN 
+                    Estado_Pedido ep ON p.id_EstadoPedido = ep.id_EstadoPedido";
 
             try
             {
@@ -126,8 +127,14 @@ namespace AgMaGest.C_Datos
                                 IdVehiculo = reader.GetInt32(reader.GetOrdinal("id_Vehiculo")),
                                 FechaPedido = reader.GetDateTime(reader.GetOrdinal("fecha_Pedido")),
                                 MontoPedido = reader.GetDouble(reader.GetOrdinal("monto_Pedido")),
-                                IdEstadoPedido = reader.GetInt32(reader.GetOrdinal("id_EstadoPedido"))
+                                IdEstadoPedido = reader.GetInt32(reader.GetOrdinal("id_EstadoPedido")),
+                                NombreEstadoPedido = reader.GetString(reader.GetOrdinal("nombre_EstadoPedido"))
                             };
+
+                            // Obtener los detalles del vehículo
+                            VehiculoDAL vehiculoDAL = new VehiculoDAL();
+                            pedido.Vehiculo = vehiculoDAL.ObtenerVehiculoPorId(pedido.IdVehiculo);
+
                             listaPedidos.Add(pedido);
                         }
                     }

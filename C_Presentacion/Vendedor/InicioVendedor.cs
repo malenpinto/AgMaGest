@@ -21,17 +21,12 @@ namespace AgMaGest.C_Presentacion.Vendedor
 
         }
 
-        private void InicioVendedor_Load(object sender, EventArgs e)
-        {
-            
-        }
-
         private void BCliente_Click(object sender, EventArgs e)
         {
             AbrirFormularioHijo(new VisualizarClientes(), "Clientes");
         }
 
-        private void BVentas_Click(object sender, EventArgs e)
+        private void BPedidoVendedor_Click(object sender, EventArgs e)
         {
             // Obtener el mes actual en formato largo (por ejemplo, "Septiembre")
             string mesActual = DateTime.Now.ToString("MMMM");
@@ -40,9 +35,9 @@ namespace AgMaGest.C_Presentacion.Vendedor
             mesActual = char.ToUpper(mesActual[0]) + mesActual.Substring(1).ToLower();
 
             // Concatenar "Ventas" con el mes actual
-            string titulo = "Ventas " + mesActual;
+            string titulo = "Pedidos " + mesActual;
 
-            AbrirFormularioHijo(new VisualizarVentas(), titulo);
+            AbrirFormularioHijo(new VisualizarPedidos(), titulo);
         }
 
         private void BCatalogo_Click(object sender, EventArgs e)
@@ -50,7 +45,6 @@ namespace AgMaGest.C_Presentacion.Vendedor
             AbrirFormularioHijo(new VisualizarCatalogo(), "Catálogo");
         }
 
-        #region Estadísticas
         private void BEstadisticasVendedor_Click(object sender, EventArgs e)
         {
 
@@ -66,17 +60,12 @@ namespace AgMaGest.C_Presentacion.Vendedor
             AbrirFormularioHijo(new VisualizarEstadisticaMensual(), titulo);
         }
 
-        
-        #endregion
-
         private void BAcercaDeVendedor_Click(object sender, EventArgs e)
         {
             AbrirFormularioHijo(new VisualizarAcercaDe(), "Acerca de AgMaGest");
         }
 
         
-       
-
         private Form formularioActivo = null;
 
         private void AbrirFormularioHijo(Form formHijo, string titulo)

@@ -87,7 +87,20 @@ namespace AgMaGest.C_Datos
             {
                 conn.Open();
 
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Vehiculos WHERE id_Vehiculo = @IdVehiculo", conn);
+                SqlCommand cmd = new SqlCommand(@"
+                    SELECT v.id_Vehiculo, v.marca_Vehiculo, v.modelo_Vehiculo, v.version_Vehiculo, 
+                           v.km_Vehiculo, v.anio_Vehiculo, v.patente_Vehiculo, v.codigo_OKM, 
+                           v.precio_Vehiculo, v.id_tipoVehiculo, v.id_Estado, v.id_Condicion, 
+                           v.ruta_imagen,
+                           t.nombre_TipoVehiculo AS TipoNombre,
+                           e.nombre_Estado AS EstadoNombre,
+                           c.nombre_Condicion AS CondicionNombre
+                    FROM Vehiculos v
+                    LEFT JOIN Tipo_Vehiculo t ON v.id_tipoVehiculo = t.id_tipoVehiculo
+                    LEFT JOIN Estado_Vehiculo e ON v.id_Estado = e.id_Estado
+                    LEFT JOIN Condicion c ON v.id_Condicion = c.id_Condicion
+                    WHERE v.id_Vehiculo = @IdVehiculo", conn);
+
                 cmd.Parameters.AddWithValue("@IdVehiculo", idVehiculo);
 
                 using (SqlDataReader reader = cmd.ExecuteReader())
@@ -108,13 +121,19 @@ namespace AgMaGest.C_Datos
                             IdTipoVehiculo = (int)reader["id_tipoVehiculo"],
                             IdEstado = (int)reader["id_Estado"],
                             IdCondicion = (int)reader["id_Condicion"],
-                            RutaImagen = reader["ruta_imagen"] as string
+                            RutaImagen = reader["ruta_imagen"] as string,
+                    
+                            // Nuevos campos para mostrar los nombres
+                            TipoNombre = reader["TipoNombre"].ToString(),
+                            EstadoNombre = reader["EstadoNombre"].ToString(),
+                            CondicionNombre = reader["CondicionNombre"].ToString()
                         };
                     }
                 }
             }
             return vehiculo;
         }
+
 
         // Método para actualizar un vehículo
         public bool ActualizarVehiculo(Vehiculos vehiculo)
@@ -171,17 +190,17 @@ namespace AgMaGest.C_Datos
                 conn.Open();
 
                 string query = @"
-            SELECT v.id_Vehiculo, v.marca_Vehiculo, v.modelo_Vehiculo, v.version_Vehiculo, 
-                   v.km_Vehiculo, v.anio_Vehiculo, v.patente_Vehiculo, v.codigo_OKM, 
-                   v.precio_Vehiculo, v.id_tipoVehiculo, v.id_Estado, v.id_Condicion, 
-                   v.ruta_imagen, 
-                   t.nombre_tipoVehiculo AS TipoNombre, 
-                   e.nombre_Estado AS EstadoNombre, 
-                   c.nombre_Condicion AS CondicionNombre
-            FROM Vehiculos v
-            LEFT JOIN Tipo_Vehiculo t ON v.id_tipoVehiculo = t.id_tipoVehiculo
-            LEFT JOIN Estado_Vehiculo e ON v.id_Estado = e.id_Estado
-            LEFT JOIN Condicion c ON v.id_Condicion = c.id_Condicion";
+                    SELECT v.id_Vehiculo, v.marca_Vehiculo, v.modelo_Vehiculo, v.version_Vehiculo, 
+                           v.km_Vehiculo, v.anio_Vehiculo, v.patente_Vehiculo, v.codigo_OKM, 
+                           v.precio_Vehiculo, v.id_tipoVehiculo, v.id_Estado, v.id_Condicion, 
+                           v.ruta_imagen, 
+                           t.nombre_tipoVehiculo AS TipoNombre, 
+                           e.nombre_Estado AS EstadoNombre, 
+                           c.nombre_Condicion AS CondicionNombre
+                    FROM Vehiculos v
+                    LEFT JOIN Tipo_Vehiculo t ON v.id_tipoVehiculo = t.id_tipoVehiculo
+                    LEFT JOIN Estado_Vehiculo e ON v.id_Estado = e.id_Estado
+                    LEFT JOIN Condicion c ON v.id_Condicion = c.id_Condicion";
 
                 SqlCommand cmd = new SqlCommand(query, conn);
 

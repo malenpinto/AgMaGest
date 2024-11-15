@@ -1,6 +1,6 @@
 ﻿namespace AgMaGest.C_Presentacion.Vendedor
 {
-    partial class VisualizarVentas
+    partial class VisualizarPedidos
     {
         /// <summary>
         /// Required designer variable.
@@ -33,7 +33,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.dataGridVentas = new System.Windows.Forms.DataGridView();
+            this.dataGridPedidos = new System.Windows.Forms.DataGridView();
             this.id_VerVentas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descargarFact_verVentas = new System.Windows.Forms.DataGridViewButtonColumn();
             this.estado_verVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,7 +50,7 @@
             this.TBBuscarFactura = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridVentas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridPedidos)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel7.SuspendLayout();
             this.SuspendLayout();
@@ -87,7 +87,7 @@
             this.panel4.Size = new System.Drawing.Size(1030, 48);
             this.panel4.TabIndex = 3;
             // 
-            // dataGridVentas
+            // dataGridPedidos
             // 
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -96,9 +96,9 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridVentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridVentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridPedidos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridPedidos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_VerVentas,
             this.descargarFact_verVentas,
             this.estado_verVenta,
@@ -108,13 +108,13 @@
             this.Cliente_verVentas,
             this.detalle_verVenta,
             this.totalFact__verVentas});
-            this.dataGridVentas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridVentas.Location = new System.Drawing.Point(35, 133);
-            this.dataGridVentas.Name = "dataGridVentas";
-            this.dataGridVentas.RowHeadersWidth = 51;
-            this.dataGridVentas.RowTemplate.Height = 24;
-            this.dataGridVentas.Size = new System.Drawing.Size(1030, 533);
-            this.dataGridVentas.TabIndex = 4;
+            this.dataGridPedidos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridPedidos.Location = new System.Drawing.Point(35, 133);
+            this.dataGridPedidos.Name = "dataGridPedidos";
+            this.dataGridPedidos.RowHeadersWidth = 51;
+            this.dataGridPedidos.RowTemplate.Height = 24;
+            this.dataGridPedidos.Size = new System.Drawing.Size(1030, 533);
+            this.dataGridPedidos.TabIndex = 4;
             // 
             // id_VerVentas
             // 
@@ -252,11 +252,11 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Bahnschrift", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(15, 18);
+            this.label1.Location = new System.Drawing.Point(15, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 21);
+            this.label1.Size = new System.Drawing.Size(127, 21);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Buscar Ventas";
+            this.label1.Text = "Buscar Pedidos";
             // 
             // panel6
             // 
@@ -267,22 +267,22 @@
             this.panel6.Size = new System.Drawing.Size(1030, 25);
             this.panel6.TabIndex = 0;
             // 
-            // VisualizarVentas
+            // VisualizarPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(1100, 706);
-            this.Controls.Add(this.dataGridVentas);
+            this.Controls.Add(this.dataGridPedidos);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "VisualizarVentas";
+            this.Name = "VisualizarPedidos";
             this.Text = "VisualizarVentas";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridVentas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridPedidos)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
@@ -296,7 +296,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.DataGridView dataGridVentas;
+        private System.Windows.Forms.DataGridView dataGridPedidos;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;

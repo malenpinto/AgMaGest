@@ -33,7 +33,7 @@
             this.BAcercaDeVendedor = new System.Windows.Forms.Button();
             this.BEstadisticasVendedor = new System.Windows.Forms.Button();
             this.BCatalogo = new System.Windows.Forms.Button();
-            this.BVentas = new System.Windows.Forms.Button();
+            this.BPedidoVendedor = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.BCerrarSesionVendedor = new System.Windows.Forms.Button();
             this.BCliente = new System.Windows.Forms.Button();
@@ -70,7 +70,7 @@
             this.PanelMenuLateral.Controls.Add(this.BAcercaDeVendedor);
             this.PanelMenuLateral.Controls.Add(this.BEstadisticasVendedor);
             this.PanelMenuLateral.Controls.Add(this.BCatalogo);
-            this.PanelMenuLateral.Controls.Add(this.BVentas);
+            this.PanelMenuLateral.Controls.Add(this.BPedidoVendedor);
             this.PanelMenuLateral.Controls.Add(this.panel1);
             this.PanelMenuLateral.Controls.Add(this.BCerrarSesionVendedor);
             this.PanelMenuLateral.Controls.Add(this.BCliente);
@@ -145,26 +145,26 @@
             this.BCatalogo.UseVisualStyleBackColor = true;
             this.BCatalogo.Click += new System.EventHandler(this.BCatalogo_Click);
             // 
-            // BVentas
+            // BPedidoVendedor
             // 
-            this.BVentas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BVentas.FlatAppearance.BorderSize = 0;
-            this.BVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BVentas.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BVentas.ForeColor = System.Drawing.Color.GhostWhite;
-            this.BVentas.Image = ((System.Drawing.Image)(resources.GetObject("BVentas.Image")));
-            this.BVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BVentas.Location = new System.Drawing.Point(0, 149);
-            this.BVentas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BVentas.Name = "BVentas";
-            this.BVentas.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.BVentas.Size = new System.Drawing.Size(287, 46);
-            this.BVentas.TabIndex = 2;
-            this.BVentas.Text = "Ventas";
-            this.BVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BVentas.UseVisualStyleBackColor = true;
-            this.BVentas.Click += new System.EventHandler(this.BVentas_Click);
+            this.BPedidoVendedor.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BPedidoVendedor.FlatAppearance.BorderSize = 0;
+            this.BPedidoVendedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BPedidoVendedor.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BPedidoVendedor.ForeColor = System.Drawing.Color.GhostWhite;
+            this.BPedidoVendedor.Image = ((System.Drawing.Image)(resources.GetObject("BPedidoVendedor.Image")));
+            this.BPedidoVendedor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BPedidoVendedor.Location = new System.Drawing.Point(0, 149);
+            this.BPedidoVendedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BPedidoVendedor.Name = "BPedidoVendedor";
+            this.BPedidoVendedor.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.BPedidoVendedor.Size = new System.Drawing.Size(287, 46);
+            this.BPedidoVendedor.TabIndex = 2;
+            this.BPedidoVendedor.Text = "Pedidos";
+            this.BPedidoVendedor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BPedidoVendedor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BPedidoVendedor.UseVisualStyleBackColor = true;
+            this.BPedidoVendedor.Click += new System.EventHandler(this.BPedidoVendedor_Click);
             // 
             // panel1
             // 
@@ -452,6 +452,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label LTituloInicioCliente;
         private System.Windows.Forms.Button BAtrasCliente;
-        private System.Windows.Forms.Button BVentas;
+        private System.Windows.Forms.Button BPedidoVendedor;
     }
 }
