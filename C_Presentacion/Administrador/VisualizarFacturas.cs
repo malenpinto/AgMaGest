@@ -70,9 +70,6 @@ namespace AgMaGest.C_Presentacion.Administrador
             dataGridFacturas.Columns.Add("NumFactura", "Número de Factura");
             dataGridFacturas.Columns["NumFactura"].DataPropertyName = "NumFactura";
 
-            dataGridFacturas.Columns.Add("Estado", "Estado");
-            dataGridFacturas.Columns["Estado"].DataPropertyName = "Estado";
-
             var descargarButtonColumn = new DataGridViewButtonColumn
             {
                 Name = "DescargarFactura",
@@ -88,8 +85,12 @@ namespace AgMaGest.C_Presentacion.Administrador
             dataGridFacturas.Columns.Add("NombreCompleto", "Nombre Completo");
             dataGridFacturas.Columns["NombreCompleto"].DataPropertyName = "NombreCompleto";
 
+            dataGridFacturas.Columns.Add("DetallesVehiculo", "Detalles del Vehículo");
+            dataGridFacturas.Columns["DetallesVehiculo"].DataPropertyName = "DetallesVehiculo";
+
             dataGridFacturas.Columns.Add("TotalFactura", "Total de la Factura");
             dataGridFacturas.Columns["TotalFactura"].DataPropertyName = "TotalFactura";
+
 
             // Configuraciones generales del DataGridView
             dataGridFacturas.AutoGenerateColumns = false;
@@ -155,8 +156,10 @@ namespace AgMaGest.C_Presentacion.Administrador
             facturaContent.AppendLine($"Fecha de Factura: {factura.FechaFactura.ToString("dd/MM/yyyy")}");
             facturaContent.AppendLine($"Total de Factura: {factura.TotalFactura:C}");
             facturaContent.AppendLine($"ID de Pago: {factura.IdPago}");
-            // Aquí puedes agregar más detalles, como el estado de la factura si lo has implementado
-            //facturaContent.AppendLine($"Estado: {factura.EstadoFactura}"); // Si tienes el estado en la factura
+            facturaContent.AppendLine($"Cuil: {factura.CUIL_Empleado}");
+            facturaContent.AppendLine($"Empleado: {factura.NombreCompleto}");
+            facturaContent.AppendLine($"Vehículo: {factura.DetallesVehiculo}");
+
 
             // Escribir el contenido en el archivo de texto
             try

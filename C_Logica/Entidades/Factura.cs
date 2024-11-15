@@ -12,5 +12,9 @@ namespace AgMaGest.C_Logica.Entidades
         public DateTime FechaFactura { get; set; }
         public double TotalFactura { get; set; } 
         public int IdPago { get; set; }
+
+        public string CUIL_Empleado { get; set; }
+        public string NombreCompleto { get; set; }
+        public string DetallesVehiculo { get; set; }
     }
 }

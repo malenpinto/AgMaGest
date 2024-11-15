@@ -57,15 +57,32 @@ namespace AgMaGest.C_Datos
 
             try
             {
+                // Establece la conexión con la base de datos
                 using (SqlConnection connection = new SqlConnection(ConnectionString))
                 {
                     connection.Open();
 
-                    string query = "SELECT num_Factura, fecha_Factura, total_Factura, id_pago FROM Factura";
+                    // Ajusta la consulta para obtener datos del vehículo
+                    string query = @"
+                        SELECT 
+                            f.num_Factura, 
+                            f.fecha_Factura, 
+                            f.total_Factura, 
+                            f.id_pago, 
+                            e.cuil_Empleado AS CUIL_Empleado, 
+                            CONCAT(e.nombre_Empleado, ' ', e.apellido_Empleado) AS NombreCompleto,
+                            CONCAT(v.marca_Vehiculo, ' ', v.modelo_Vehiculo,' ', v.anio_Vehiculo) AS DetallesVehiculo
+                        FROM Factura f
+                        INNER JOIN Pago p ON f.id_pago = p.id_pago
+                        INNER JOIN Pedido pe ON p.id_Pedido = pe.id_Pedido
+                        INNER JOIN Empleado e ON pe.cuil_Empleado = e.cuil_Empleado
+                        INNER JOIN Vehiculos v ON pe.id_Vehiculo = v.id_Vehiculo";
+
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
+                            // Procesa cada registro de la consulta
                             while (reader.Read())
                             {
                                 Factura factura = new Factura
@@ -73,7 +90,14 @@ namespace AgMaGest.C_Datos
                                     NumFactura = reader.GetInt32(reader.GetOrdinal("num_Factura")),
                                     FechaFactura = reader.GetDateTime(reader.GetOrdinal("fecha_Factura")),
                                     TotalFactura = reader.GetDouble(reader.GetOrdinal("total_Factura")),
-                                    IdPago = reader.GetInt32(reader.GetOrdinal("id_pago"))
+                                    IdPago = reader.GetInt32(reader.GetOrdinal("id_pago")),
+                                    CUIL_Empleado = reader.GetString(reader.GetOrdinal("CUIL_Empleado")),
+                                    NombreCompleto = reader.IsDBNull(reader.GetOrdinal("NombreCompleto"))
+                                        ? "N/A"
+                                        : reader.GetString(reader.GetOrdinal("NombreCompleto")),
+                                    DetallesVehiculo = reader.IsDBNull(reader.GetOrdinal("DetallesVehiculo"))
+                                        ? "Sin detalles"
+                                        : reader.GetString(reader.GetOrdinal("DetallesVehiculo"))
                                 };
 
                                 listaFacturas.Add(factura);
@@ -82,14 +106,21 @@ namespace AgMaGest.C_Datos
                     }
                 }
             }
+            catch (SqlException sqlEx)
+            {
+                throw new Exception("Error SQL al obtener las facturas: " + sqlEx.Message);
+            }
             catch (Exception ex)
             {
-                // Manejo del error
-                throw new Exception("Error al obtener las facturas: " + ex.Message);
+                throw new Exception("Error general al obtener las facturas: " + ex.Message);
             }
 
             return listaFacturas;
         }
+
+
+
+
 
         public List<Factura> BuscarFacturas(string criterio)
         {

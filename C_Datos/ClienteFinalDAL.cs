@@ -174,6 +174,28 @@ namespace AgMaGest.C_Datos
                 throw;
             }
         }
+        public bool ActualizarEstadoCliente(int idCliente, int nuevoEstado)
+        {
+            try
+            {
+                using (var connection = new SqlConnection(ConnectionString))
+                {
+                    connection.Open();
+                    string query = "UPDATE Cliente SET id_Estado_Cliente = @nuevoEstado WHERE id_Cliente = @idCliente";
+                    using (var command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@nuevoEstado", nuevoEstado);
+                        command.Parameters.AddWithValue("@idCliente", idCliente);
+                        int filasAfectadas = command.ExecuteNonQuery();
+                        return filasAfectadas > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al actualizar el estado del cliente: " + ex.Message);
+            }
+        }
 
         // Método para eliminar un cliente final por CUIL
         public bool EliminarClienteFinalPorCuil(string cuil)
