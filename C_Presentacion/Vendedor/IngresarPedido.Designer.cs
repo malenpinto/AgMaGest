@@ -510,7 +510,7 @@
             this.BBuscarPedido.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(62)))), ((int)(((byte)(141)))));
             this.BBuscarPedido.FlatAppearance.BorderSize = 2;
             this.BBuscarPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BBuscarPedido.Image = global::AgMaGest.Properties.Resources.Icono_Buscar_Vendedor;
+            this.BBuscarPedido.Image = global::AgMaGest.Properties.Resources.Icono_BorrarVendedor;
             this.BBuscarPedido.Location = new System.Drawing.Point(583, 0);
             this.BBuscarPedido.Name = "BBuscarPedido";
             this.BBuscarPedido.Size = new System.Drawing.Size(43, 44);

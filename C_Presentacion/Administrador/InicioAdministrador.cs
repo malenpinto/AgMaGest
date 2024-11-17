@@ -3,7 +3,9 @@ using AgMaGest.C_Presentacion.Vendedor;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -42,6 +44,36 @@ namespace AgMaGest.C_Presentacion.Administrador
         private void BFacturasAdmin_Click(object sender, EventArgs e)
         {
             AbrirFormularioHijo(new VisualizarFacturas(), "Facturas");
+        }
+
+        private void BBackUpBD_Click(object sender, EventArgs e)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["Agmagest.Properties.Settings.AgmagestConnectionString"].ConnectionString;
+            string backupFilePath = @"C:\Respaldos\RespaldoBaseDatos.bak";
+
+            try
+            {
+                // Comando SQL para realizar el respaldo
+                string backupQuery = $"BACKUP DATABASE [Agmagest] TO DISK = '{backupFilePath}' WITH FORMAT, MEDIANAME = 'SQLServerBackups', NAME = 'Full Backup of Agmagest';";
+
+                // Conexión a SQL Server
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    SqlCommand command = new SqlCommand(backupQuery, connection);
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                }
+
+                MessageBox.Show($"Copia de seguridad realizada exitosamente en: {backupFilePath}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Abrir ubicación del respaldo
+                System.Diagnostics.Process.Start("explorer.exe", "/select," + backupFilePath);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al realizar la copia de seguridad: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void BAcercaAdmin_Click(object sender, EventArgs e)

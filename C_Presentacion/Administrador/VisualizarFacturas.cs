@@ -146,7 +146,7 @@ namespace AgMaGest.C_Presentacion.Administrador
 
                 if (facturaSeleccionada != null)
                 {
-                    DescargarFactura(facturaSeleccionada);
+                    GenerarPDF(facturaSeleccionada);
                 }
                 else
                 {
@@ -155,42 +155,98 @@ namespace AgMaGest.C_Presentacion.Administrador
             }
             else
             {
-                MessageBox.Show("Debe seleccionar una fila para descargar la factura.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Debe seleccionar una fila para generar el PDF de la factura.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
-        private void DescargarFactura(Factura factura)
+        private void GenerarPDF(Factura factura)
         {
-            // Ruta donde se guardará el archivo de texto (por ejemplo, en el escritorio)
-            string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), $"Factura_{factura.NumFactura}.txt");
-
-            // Crear el contenido del archivo
-            StringBuilder facturaContent = new StringBuilder();
-            facturaContent.AppendLine("Factura Dallas");
-            facturaContent.AppendLine("CUIT: 30 52695368 0");
-            facturaContent.AppendLine("---------------------------------------------------");
-            facturaContent.AppendLine($"Número de Factura: {factura.NumFactura}");
-            facturaContent.AppendLine($"Fecha de Factura: {factura.FechaFactura.ToString("dd/MM/yyyy")}");
-            facturaContent.AppendLine($"Total de Factura: {factura.TotalFactura:C}");
-            facturaContent.AppendLine($"ID de Pago: {factura.IdPago}");
-            facturaContent.AppendLine($"CUIL Empleado: {factura.CUIL_Empleado}");
-            facturaContent.AppendLine($"Empleado: {factura.NombreCompleto}");
-            facturaContent.AppendLine($"CUIL Cliente: {factura.CUIL_Cliente}");
-            facturaContent.AppendLine($"Cliente: {factura.NombreCliente}");
-            facturaContent.AppendLine($"Vehículo: {factura.DetallesVehiculo}");
-
-
-            // Escribir el contenido en el archivo de texto
             try
             {
-                File.WriteAllText(filePath, facturaContent.ToString());
-                MessageBox.Show($"Factura descargada con éxito en: {filePath}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Crear un nuevo documento PDF
+                PdfDocument documento = new PdfDocument();
+                documento.Info.Title = $"Factura {factura.NumFactura}";
+
+                // Agregar una página al documento
+                PdfPage pagina = documento.AddPage();
+                pagina.Size = PdfSharp.PageSize.A4; // Establecer tamaño A4
+
+                // Crear un objeto para dibujar en la página
+                XGraphics graficos = XGraphics.FromPdfPage(pagina);
+
+                // Definir fuentes
+                XFont fuenteTitulo = new XFont("Arial", 14, XFontStyleEx.Bold);
+                XFont fuenteSubtitulo = new XFont("Arial", 14, XFontStyleEx.Bold);
+                XFont fuenteNormal = new XFont("Arial", 10);
+
+                // Coordenadas iniciales
+                double posY = 40;
+
+                // Dibujar Encabezado
+                graficos.DrawRectangle(XPens.Black, new XRect(40, posY, 500, 50));
+                graficos.DrawString("Factura", fuenteTitulo, XBrushes.Black, new XPoint(40, posY));
+                posY += 20;
+
+                graficos.DrawString($"Fecha: {factura.FechaFactura:dd/MM/yyyy}", fuenteNormal, XBrushes.Black, new XPoint(40, posY));
+                graficos.DrawString($"N.º de Factura: {factura.NumFactura}", fuenteNormal, XBrushes.Black, new XPoint(300, posY));
+                posY += 20;
+
+                graficos.DrawString($"Id. de Cliente: {factura.CUIL_Cliente}", fuenteNormal, XBrushes.Black, new XPoint(40, posY));
+                graficos.DrawString($"Para: {factura.NombreCliente}", fuenteNormal, XBrushes.Black, new XPoint(300, posY));
+                posY += 40;
+
+                // Dibujar Detalles del Vendedor
+                graficos.DrawString("Vendedor", fuenteSubtitulo, XBrushes.Black, new XPoint(40, posY));
+                posY += 20;
+
+                graficos.DrawString($"Nombre: {factura.NombreCompleto}", fuenteNormal, XBrushes.Black, new XPoint(40, posY));
+                graficos.DrawString($"CUIL: {factura.CUIL_Empleado}", fuenteNormal, XBrushes.Black, new XPoint(300, posY));
+                posY += 20;
+
+                graficos.DrawString($"Condiciones de Pago: Contado", fuenteNormal, XBrushes.Black, new XPoint(40, posY));
+                posY += 40;
+
+                // Dibujar Tabla de Detalles
+                graficos.DrawString("DETALLES DEL VEHÍCULO", fuenteSubtitulo, XBrushes.Black, new XPoint(40, posY));
+                posY += 20;
+
+                graficos.DrawRectangle(XPens.Black, new XRect(40, posY, 500, 20));
+                graficos.DrawString($"Descripción", fuenteNormal, XBrushes.Black, new XPoint(50, posY + 5));
+                graficos.DrawString("Importe", fuenteNormal, XBrushes.Black, new XPoint(400, posY + 5));
+                posY += 20;
+
+                graficos.DrawRectangle(XPens.Black, new XRect(40, posY, 500, 20));
+                graficos.DrawString(factura.DetallesVehiculo, fuenteNormal, XBrushes.Black, new XPoint(50, posY + 5));
+                graficos.DrawString($"{factura.TotalFactura:C}", fuenteNormal, XBrushes.Black, new XPoint(400, posY + 5));
+                posY += 40;
+
+                // Dibujar Total de la Factura
+                graficos.DrawString($"Total Factura: {factura.TotalFactura:C}", fuenteSubtitulo, XBrushes.Black, new XPoint(40, posY));
+                posY += 40;
+
+                // Dibujar Pie de Página
+                graficos.DrawString("¡Gracias por su confianza!", fuenteNormal, XBrushes.Black, new XPoint(40, posY));
+                posY += 20;
+
+                graficos.DrawString("AgMaGest 2024 © | Corrientes, CP 3400 | Phone: 111-222-3333 | Fax: 111-222-3334",
+                    fuenteNormal, XBrushes.Black, new XPoint(40, posY));
+
+                // Guardar el archivo PDF
+                string rutaArchivo = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), $"Factura_{factura.NumFactura}.pdf");
+                documento.Save(rutaArchivo);
+
+                // Notificar al usuario
+                MessageBox.Show($"PDF generado con éxito en: {rutaArchivo}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Abrir el archivo PDF
+                System.Diagnostics.Process.Start(rutaArchivo);
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al generar el archivo de factura: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error al generar el PDF: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void DataGridFacturas_SelectionChanged(object sender, EventArgs e)
         {
