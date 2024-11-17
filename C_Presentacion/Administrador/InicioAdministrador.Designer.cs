@@ -53,6 +53,7 @@
             this.BExitAdmin = new System.Windows.Forms.Button();
             this.panelContenedorAdmin = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.panelMenuLateralAdmin.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -264,6 +265,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.GhostWhite;
+            this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.pBUsuarioAdmin);
             this.panel3.Controls.Add(this.panel5);
@@ -287,7 +289,7 @@
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(381, 31);
+            this.panel4.Size = new System.Drawing.Size(388, 31);
             this.panel4.TabIndex = 14;
             // 
             // LTituloInicioAdmin
@@ -431,6 +433,20 @@
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = global::AgMaGest.Properties.Resources.Icono_Back_Admin;
+            this.button1.Location = new System.Drawing.Point(388, 0);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(57, 31);
+            this.button1.TabIndex = 15;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
+            // 
             // InicioAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -485,5 +501,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button BUsuariosAdmin;
+        private System.Windows.Forms.Button button1;
     }
 }

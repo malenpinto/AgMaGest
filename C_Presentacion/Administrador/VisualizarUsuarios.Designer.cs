@@ -1,4 +1,6 @@
-﻿namespace AgMaGest.C_Presentacion.Administrador
+﻿using System.Windows.Forms;
+
+namespace AgMaGest.C_Presentacion.Administrador
 {
     partial class VisualizarUsuarios
     {
@@ -29,6 +31,8 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VisualizarUsuarios));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -52,6 +56,7 @@
             this.BBuscarUsuario = new System.Windows.Forms.Button();
             this.TBBuscarUsuario = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.BRefrescarUsuarios = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridUsuarios)).BeginInit();
@@ -92,14 +97,16 @@
             // 
             // dataGridUsuarios
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            this.dataGridUsuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.perfil_Usuario,
@@ -118,55 +125,59 @@
             this.dataGridUsuarios.RowTemplate.Height = 24;
             this.dataGridUsuarios.Size = new System.Drawing.Size(1030, 525);
             this.dataGridUsuarios.TabIndex = 5;
+            this.dataGridUsuarios.SelectionChanged += new System.EventHandler(this.DataGridUsuario_SelectionChanged);
             // 
             // perfil_Usuario
             // 
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            this.perfil_Usuario.DefaultCellStyle = dataGridViewCellStyle3;
             this.perfil_Usuario.HeaderText = "Perfil ";
             this.perfil_Usuario.MinimumWidth = 6;
             this.perfil_Usuario.Name = "perfil_Usuario";
-            this.perfil_Usuario.Width = 122;
+            this.perfil_Usuario.Width = 82;
             // 
             // usuario
             // 
             this.usuario.HeaderText = "Usuario";
             this.usuario.MinimumWidth = 6;
             this.usuario.Name = "usuario";
-            this.usuario.Width = 122;
+            this.usuario.Width = 97;
             // 
             // password_Usuario
             // 
             this.password_Usuario.HeaderText = "Password";
             this.password_Usuario.MinimumWidth = 6;
             this.password_Usuario.Name = "password_Usuario";
-            this.password_Usuario.Width = 122;
+            this.password_Usuario.Width = 116;
             // 
             // cuil_Usuario
             // 
             this.cuil_Usuario.HeaderText = "CUIL";
             this.cuil_Usuario.MinimumWidth = 6;
             this.cuil_Usuario.Name = "cuil_Usuario";
-            this.cuil_Usuario.Width = 123;
+            this.cuil_Usuario.Width = 73;
             // 
             // dni_Usuario
             // 
             this.dni_Usuario.HeaderText = "DNI";
             this.dni_Usuario.MinimumWidth = 6;
             this.dni_Usuario.Name = "dni_Usuario";
-            this.dni_Usuario.Width = 122;
+            this.dni_Usuario.Width = 68;
             // 
             // nombre_Usuario
             // 
             this.nombre_Usuario.HeaderText = "Nombre";
             this.nombre_Usuario.MinimumWidth = 6;
             this.nombre_Usuario.Name = "nombre_Usuario";
-            this.nombre_Usuario.Width = 122;
+            this.nombre_Usuario.Width = 105;
             // 
             // apellido_Usuario
             // 
             this.apellido_Usuario.HeaderText = "Apellido";
             this.apellido_Usuario.MinimumWidth = 6;
             this.apellido_Usuario.Name = "apellido_Usuario";
-            this.apellido_Usuario.Width = 122;
+            this.apellido_Usuario.Width = 107;
             // 
             // email_Usuario
             // 
@@ -215,7 +226,7 @@
             this.BEliminarUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
             this.BEliminarUsuario.Image = ((System.Drawing.Image)(resources.GetObject("BEliminarUsuario.Image")));
             this.BEliminarUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BEliminarUsuario.Location = new System.Drawing.Point(649, 0);
+            this.BEliminarUsuario.Location = new System.Drawing.Point(638, 0);
             this.BEliminarUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BEliminarUsuario.Name = "BEliminarUsuario";
             this.BEliminarUsuario.Size = new System.Drawing.Size(128, 60);
@@ -223,6 +234,7 @@
             this.BEliminarUsuario.Text = " Eliminar";
             this.BEliminarUsuario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BEliminarUsuario.UseVisualStyleBackColor = false;
+            this.BEliminarUsuario.Visible = false;
             this.BEliminarUsuario.Click += new System.EventHandler(this.BEliminarUsuario_Click);
             // 
             // BEditarUsuario
@@ -238,7 +250,7 @@
             this.BEditarUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
             this.BEditarUsuario.Image = ((System.Drawing.Image)(resources.GetObject("BEditarUsuario.Image")));
             this.BEditarUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BEditarUsuario.Location = new System.Drawing.Point(500, 0);
+            this.BEditarUsuario.Location = new System.Drawing.Point(489, 0);
             this.BEditarUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BEditarUsuario.Name = "BEditarUsuario";
             this.BEditarUsuario.Size = new System.Drawing.Size(149, 60);
@@ -246,6 +258,7 @@
             this.BEditarUsuario.Text = " Editar";
             this.BEditarUsuario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BEditarUsuario.UseVisualStyleBackColor = false;
+            this.BEditarUsuario.Visible = false;
             this.BEditarUsuario.Click += new System.EventHandler(this.BEditarUsuario_Click);
             // 
             // button2
@@ -256,7 +269,7 @@
             this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(489, 0);
+            this.button2.Location = new System.Drawing.Point(478, 0);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(11, 60);
@@ -267,7 +280,7 @@
             // 
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(200)))), ((int)(((byte)(145)))));
             this.panel10.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel10.Location = new System.Drawing.Point(484, 0);
+            this.panel10.Location = new System.Drawing.Point(473, 0);
             this.panel10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(5, 60);
@@ -279,11 +292,12 @@
             this.panel8.Controls.Add(this.BBuscarUsuario);
             this.panel8.Controls.Add(this.TBBuscarUsuario);
             this.panel8.Controls.Add(this.label1);
+            this.panel8.Controls.Add(this.BRefrescarUsuarios);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel8.Location = new System.Drawing.Point(0, 0);
             this.panel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(484, 60);
+            this.panel8.Size = new System.Drawing.Size(473, 60);
             this.panel8.TabIndex = 5;
             // 
             // BBuscarUsuario
@@ -297,8 +311,8 @@
             this.BBuscarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BBuscarUsuario.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BBuscarUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
-            this.BBuscarUsuario.Image = ((System.Drawing.Image)(resources.GetObject("BBuscarUsuario.Image")));
-            this.BBuscarUsuario.Location = new System.Drawing.Point(432, 0);
+            this.BBuscarUsuario.Image = global::AgMaGest.Properties.Resources.Icono_BuscarAdmin;
+            this.BBuscarUsuario.Location = new System.Drawing.Point(369, 0);
             this.BBuscarUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BBuscarUsuario.Name = "BBuscarUsuario";
             this.BBuscarUsuario.Size = new System.Drawing.Size(52, 60);
@@ -310,11 +324,11 @@
             // TBBuscarUsuario
             // 
             this.TBBuscarUsuario.BackColor = System.Drawing.Color.Gainsboro;
-            this.TBBuscarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBBuscarUsuario.Location = new System.Drawing.Point(166, 13);
+            this.TBBuscarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBBuscarUsuario.Location = new System.Drawing.Point(159, 16);
             this.TBBuscarUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TBBuscarUsuario.Name = "TBBuscarUsuario";
-            this.TBBuscarUsuario.Size = new System.Drawing.Size(267, 32);
+            this.TBBuscarUsuario.Size = new System.Drawing.Size(199, 27);
             this.TBBuscarUsuario.TabIndex = 0;
             // 
             // label1
@@ -322,11 +336,32 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Bahnschrift", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(11, 20);
+            this.label1.Location = new System.Drawing.Point(3, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(135, 21);
+            this.label1.Size = new System.Drawing.Size(126, 21);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Buscar por CUIL";
+            this.label1.Text = "Buscar Usuario";
+            // 
+            // BRefrescarUsuarios
+            // 
+            this.BRefrescarUsuarios.BackColor = System.Drawing.Color.Transparent;
+            this.BRefrescarUsuarios.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BRefrescarUsuarios.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BRefrescarUsuarios.FlatAppearance.BorderSize = 0;
+            this.BRefrescarUsuarios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BRefrescarUsuarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.BRefrescarUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BRefrescarUsuarios.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BRefrescarUsuarios.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
+            this.BRefrescarUsuarios.Image = global::AgMaGest.Properties.Resources.Icono_RefescarAdmin;
+            this.BRefrescarUsuarios.Location = new System.Drawing.Point(421, 0);
+            this.BRefrescarUsuarios.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BRefrescarUsuarios.Name = "BRefrescarUsuarios";
+            this.BRefrescarUsuarios.Size = new System.Drawing.Size(52, 60);
+            this.BRefrescarUsuarios.TabIndex = 6;
+            this.BRefrescarUsuarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BRefrescarUsuarios.UseVisualStyleBackColor = false;
+            this.BRefrescarUsuarios.Click += new System.EventHandler(this.BRefrescarUsuarios_Click);
             // 
             // panel6
             // 
@@ -387,6 +422,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Button BBuscarUsuario;
+        private System.Windows.Forms.Button BRefrescarUsuarios;
         private System.Windows.Forms.DataGridViewTextBoxColumn perfil_Usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn password_Usuario;
@@ -395,6 +432,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre_Usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellido_Usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn email_Usuario;
-        private System.Windows.Forms.Button BBuscarUsuario;
     }
 }

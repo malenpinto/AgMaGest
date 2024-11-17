@@ -143,46 +143,37 @@
         egAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="BBuscarEmpleado.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAu
-        IgAALiIBquLdkgAAAr9JREFUSEutVD1rFFEU3YgoFjbGZN7bWTE4b3ZlhYBdOkEsLAQLk06xUNQigo2N
-        zWK1xvnIBjuLLfUPpFMLEexiQBCJpVpYiGQFDX6QeM7bu/OxmYkr8cCF5d3PPXPurQyjFtUOeLFzwo/0
-        vAnVE9gnE+rfJlDfYWteqLomdM41Fo5UJWV0HI8PaxR86EfqAxpslVqoNmAr9Vhfbbaa+yR9Z8xgciQ9
-        8zFtYdEiC3XPBPrKqVZlr5QpBie3xXMF1DooeYH3RRPpW36s75hIPYK9BWU/0ybqmxeoS5WtypiUy4Oc
-        W1qykwfqlReps42F8YMSlqDRdqZMWG2xcKZJrx67pyUkj/4HzXCO4lOBOlo6EUDeMdC1JAfmRXq58Hsg
-        8GYaqNY5+U7Fs0BuF3mbkvu+3nGnxZUCnD4dNCDnRbSUwUSTM6D3s83Fd0H+LJ7zw1HngwZ+6CzK80gw
-        99waBlxN8iPn9jZFcYkGAVSLPI+EZlQ7hJznaQPV3vYduKFJAKQozyPBLKkJKOhlJv9uUYO1QQDoeizP
-        I8GLJgxy3iX5gbpRaVX2iLsP3pYkAEtEnYvrrzCxOwuKfvRz9Vc/rp4RVwoeLvzNDRtEJWCJRrkvjQfj
-        VWj/zWA4SPY138SdglcRDVbSQGzofXVd3IVgIQxG7mUHYIFql+4PryIm6CXBtpHuWp1DilYt+KCW8457
-        QSZPi1tz5s2S2S8l8yAlvIp2+jRpk0tEnVspQi38oAPOhw1xX+Arv6x0IOgiCuX/yT8YzkzPRO6clCwA
-        OORV9EK9zNuSO8tiVi34oOTc0oLJ837161isLpfSRZCyemdymreF688N5RJR55SiVQuGYRHSwsmHmuxM
-        VwZjDGJDK93hJQL61LpznDzbhE29WJ+XsN3D0jJElxc6H8W9exTRhd+r4v4/IF2khZOzuAmrJ/8A/nnG
-        sBbrhGMAAAAASUVORK5CYII=
-</value>
-  </data>
-  <metadata name="estado_Empleado.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="id_Producto.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="perfil_Empleado.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="editar_Vehiculo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="cuil_Empleado.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="estado_Vehiculo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="dni_Empleado.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="patente_Codigo0km_Vehiculo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="nombre_Empleado.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="tipo_Vehiculo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="apellido_Empleado.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="marca_Vehiculo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="email_Empleado.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="modelo_Vehiculo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="direccion_Empleado.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="version_Vehiculo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="anio_Vehiculo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="km_Vehiculo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="condicion_Vehiculo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
 </root>

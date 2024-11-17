@@ -72,7 +72,6 @@ namespace AgMaGest.C_Presentacion.Vendedor
             }
         }
 
-
         private void ConfigurarDataGridView()
         {
             // Limpiar cualquier configuración previa
@@ -108,7 +107,18 @@ namespace AgMaGest.C_Presentacion.Vendedor
             dataGridCatalogo.AllowUserToAddRows = false;  // No permitir agregar filas vacías
         }
 
-
+        private void BBuscarVehiculoCatalogo_Click(object sender, EventArgs e)
+        {
+            string textoBusqueda = TBBuscarVehiculoCatalogo.Text.Trim();
+            if (!string.IsNullOrEmpty(textoBusqueda))
+            {
+                FiltrarVehiculos(textoBusqueda);
+            }
+            else
+            {
+                MessageBox.Show("Por favor, ingrese un texto para buscar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
 
         private void FiltrarVehiculos(string texto)
         {
@@ -151,6 +161,17 @@ namespace AgMaGest.C_Presentacion.Vendedor
             }
         }
 
+        private void BGenerarPedido_Click(object sender, EventArgs e)
+        {
+            // Obtener la fila seleccionada
+            var selectedRow = dataGridCatalogo.SelectedRows[0];
+
+            // Obtener el id_Vehiculo de la fila seleccionada (debe estar en una columna del DataGridView)
+            int idVehiculo = Convert.ToInt32(selectedRow.Cells["IdVehiculo"].Value);
+            IngresarPedido formPedido = new IngresarPedido(idVehiculo);
+            formPedido.ShowDialog();
+        }
+
         private void DataGridCatalogo_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             // Asegúrate de que el clic sea en la columna de la imagen
@@ -184,30 +205,6 @@ namespace AgMaGest.C_Presentacion.Vendedor
                 BGenerarPedido.Visible = false;
             }
 
-        }
-
-        private void BGenerarPedido_Click(object sender, EventArgs e)
-        {
-            // Obtener la fila seleccionada
-            var selectedRow = dataGridCatalogo.SelectedRows[0];
-
-            // Obtener el id_Vehiculo de la fila seleccionada (debe estar en una columna del DataGridView)
-            int idVehiculo = Convert.ToInt32(selectedRow.Cells["IdVehiculo"].Value);
-            IngresarPedido formPedido = new IngresarPedido(idVehiculo);
-            formPedido.ShowDialog();
-        }
-
-        private void BBuscarVehiculoCatalogo_Click(object sender, EventArgs e)
-        {
-            string textoBusqueda = TBBuscarVehiculoCatalogo.Text.Trim();
-            if (!string.IsNullOrEmpty(textoBusqueda))
-            {
-                FiltrarVehiculos(textoBusqueda);
-            }
-            else
-            {
-                MessageBox.Show("Por favor, ingrese un texto para buscar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
         }
     }
 }

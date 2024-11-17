@@ -21,7 +21,6 @@ namespace AgMaGest.C_Presentacion.Administrador
         {
             InitializeComponent();
             CargarInventario();
-            dataGridInventario.CellClick += DataGridInventario_CellClick;
             dataGridInventario.CellFormatting += DataGridVehiculos_CellFormatting;
         }
 
@@ -142,6 +141,11 @@ namespace AgMaGest.C_Presentacion.Administrador
                     {
                         imagen = Image.FromFile(vehiculo.RutaImagen);
                     }
+                    else
+                    {
+                        // Asignar imagen por defecto si no se encuentra la imagen
+                        imagen = AgMaGest.Properties.Resources.VhiculoPorDefecto;
+                    }
                     dataGridInventario.Rows.Add(
                         vehiculo.EstadoNombre,       // Nueva columna Estado
                         vehiculo.CondicionNombre,    // Nueva columna Condición
@@ -165,6 +169,11 @@ namespace AgMaGest.C_Presentacion.Administrador
                 MessageBox.Show("No se encontraron vehículos con el criterio de búsqueda.", "Búsqueda sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 CargarInventario();
             }
+        }
+
+        private void BRefrescarVehiculos_Click(object sender, EventArgs e)
+        {
+            CargarInventario();
         }
 
         private void BAgregarVehiculo_Click(object sender, EventArgs e)

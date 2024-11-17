@@ -64,28 +64,28 @@ namespace AgMaGest.C_Datos
 
                     // Consulta SQL para obtener las facturas
                     string query = @"
-                SELECT 
-                    f.num_Factura, 
-                    f.fecha_Factura, 
-                    f.total_Factura, 
-                    f.id_pago, 
-                    e.cuil_Empleado AS CUIL_Empleado, 
-                    CONCAT(e.nombre_Empleado, ' ', e.apellido_Empleado) AS NombreCompleto,
-                    CONCAT(v.marca_Vehiculo, ' ', v.modelo_Vehiculo, ' ', v.anio_Vehiculo) AS DetallesVehiculo,
-                    c.id_Cliente,
-                    cf.nombre_CFinal, 
-                    cf.apellido_CFinal, 
-                    cf.cuil_CFinal,
-                    ce.razon_Social_CEmpresa, 
-                    ce.cuit_CEmpresa
-                FROM Factura f
-                INNER JOIN Pago p ON f.id_pago = p.id_pago
-                INNER JOIN Pedido pe ON p.id_Pedido = pe.id_Pedido
-                INNER JOIN Empleado e ON pe.cuil_Empleado = e.cuil_Empleado
-                INNER JOIN Vehiculos v ON pe.id_Vehiculo = v.id_Vehiculo
-                INNER JOIN Cliente c ON pe.id_Cliente = c.id_Cliente
-                LEFT JOIN Cliente_Final cf ON c.id_Cliente = cf.id_Cliente
-                LEFT JOIN Cliente_Empresa ce ON c.id_Cliente = ce.id_Cliente";
+                        SELECT 
+                            f.num_Factura, 
+                            f.fecha_Factura, 
+                            f.total_Factura, 
+                            f.id_pago, 
+                            e.cuil_Empleado AS CUIL_Empleado, 
+                            CONCAT(e.nombre_Empleado, ' ', e.apellido_Empleado) AS NombreCompleto,
+                            CONCAT(v.marca_Vehiculo, ' ', v.modelo_Vehiculo, ' ', v.anio_Vehiculo) AS DetallesVehiculo,
+                            c.id_Cliente,
+                            cf.nombre_CFinal, 
+                            cf.apellido_CFinal, 
+                            cf.cuil_CFinal,
+                            ce.razon_Social_CEmpresa, 
+                            ce.cuit_CEmpresa
+                        FROM Factura f
+                        INNER JOIN Pago p ON f.id_pago = p.id_pago
+                        INNER JOIN Pedido pe ON p.id_Pedido = pe.id_Pedido
+                        INNER JOIN Empleado e ON pe.cuil_Empleado = e.cuil_Empleado
+                        INNER JOIN Vehiculos v ON pe.id_Vehiculo = v.id_Vehiculo
+                        INNER JOIN Cliente c ON pe.id_Cliente = c.id_Cliente
+                        LEFT JOIN Cliente_Final cf ON c.id_Cliente = cf.id_Cliente
+                        LEFT JOIN Cliente_Empresa ce ON c.id_Cliente = ce.id_Cliente";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
@@ -156,12 +156,6 @@ namespace AgMaGest.C_Datos
             return listaFacturas;
         }
 
-
-
-
-
-
-
         public List<Factura> BuscarFacturas(string criterio)
         {
             List<Factura> listaFacturas = new List<Factura>();
@@ -172,11 +166,48 @@ namespace AgMaGest.C_Datos
                 {
                     connection.Open();
 
-                    string query = @"SELECT NumFactura, FechaFactura, TotalFactura, IdPago 
-                                     FROM Facturas
-                                     WHERE CAST(NumFactura AS NVARCHAR) LIKE @Criterio 
-                                     OR CAST(TotalFactura AS NVARCHAR) LIKE @Criterio
-                                     OR CAST(IdPago AS NVARCHAR) LIKE @Criterio";
+                    string query = @"
+                        SELECT 
+                            f.num_Factura, 
+                            f.fecha_Factura, 
+                            f.total_Factura, 
+                            f.id_pago, 
+                            e.cuil_Empleado AS CUIL_Empleado, 
+                            e.nombre_Empleado,
+                            e.apellido_Empleado,
+                            CONCAT(e.nombre_Empleado, ' ', e.apellido_Empleado) AS NombreCompleto,
+                            v.marca_Vehiculo, 
+                            v.modelo_Vehiculo, 
+                            v.anio_Vehiculo,
+                            CONCAT(v.marca_Vehiculo, ' ', v.modelo_Vehiculo, ' ', v.anio_Vehiculo) AS DetallesVehiculo,
+                            c.id_Cliente,
+                            cf.nombre_CFinal, 
+                            cf.apellido_CFinal, 
+                            cf.cuil_CFinal,
+                            ce.razon_Social_CEmpresa, 
+                            ce.cuit_CEmpresa
+                        FROM Factura f
+                        INNER JOIN Pago p ON f.id_pago = p.id_pago
+                        INNER JOIN Pedido pe ON p.id_Pedido = pe.id_Pedido
+                        INNER JOIN Empleado e ON pe.cuil_Empleado = e.cuil_Empleado
+                        INNER JOIN Vehiculos v ON pe.id_Vehiculo = v.id_Vehiculo
+                        INNER JOIN Cliente c ON pe.id_Cliente = c.id_Cliente
+                        LEFT JOIN Cliente_Final cf ON c.id_Cliente = cf.id_Cliente
+                        LEFT JOIN Cliente_Empresa ce ON c.id_Cliente = ce.id_Cliente
+                        WHERE 
+                            CAST(f.num_Factura AS NVARCHAR) LIKE @Criterio
+                            OR CAST(f.total_Factura AS NVARCHAR) LIKE @Criterio
+                            OR CAST(f.id_pago AS NVARCHAR) LIKE @Criterio
+                            OR cf.nombre_CFinal LIKE @Criterio
+                            OR cf.apellido_CFinal LIKE @Criterio
+                            OR cf.cuil_CFinal LIKE @Criterio
+                            OR ce.razon_Social_CEmpresa LIKE @Criterio
+                            OR ce.cuit_CEmpresa LIKE @Criterio
+                            OR e.nombre_Empleado LIKE @Criterio
+                            OR e.apellido_Empleado LIKE @Criterio
+                            OR v.marca_Vehiculo LIKE @Criterio
+                            OR v.modelo_Vehiculo LIKE @Criterio
+                            OR CAST(v.anio_Vehiculo AS NVARCHAR) LIKE @Criterio";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
@@ -186,12 +217,70 @@ namespace AgMaGest.C_Datos
                         {
                             while (reader.Read())
                             {
+                                // Validación del cliente (Cliente Final o Empresa)
+                                string nombreCliente;
+                                string cuilCuitCliente;
+
+                                if (!reader.IsDBNull(reader.GetOrdinal("nombre_CFinal")) &&
+                                    !reader.IsDBNull(reader.GetOrdinal("apellido_CFinal")) &&
+                                    !reader.IsDBNull(reader.GetOrdinal("cuil_CFinal")))
+                                {
+                                    // Es Cliente Final
+                                    string nombre = reader.GetString(reader.GetOrdinal("nombre_CFinal"));
+                                    string apellido = reader.GetString(reader.GetOrdinal("apellido_CFinal"));
+                                    cuilCuitCliente = reader.GetString(reader.GetOrdinal("cuil_CFinal"));
+                                    nombreCliente = $"{nombre} {apellido}";
+                                }
+                                else if (!reader.IsDBNull(reader.GetOrdinal("razon_Social_CEmpresa")) &&
+                                         !reader.IsDBNull(reader.GetOrdinal("cuit_CEmpresa")))
+                                {
+                                    // Es Cliente Empresa
+                                    cuilCuitCliente = reader.GetString(reader.GetOrdinal("cuit_CEmpresa"));
+                                    nombreCliente = reader.GetString(reader.GetOrdinal("razon_Social_CEmpresa"));
+                                }
+                                else
+                                {
+                                    cuilCuitCliente = "N/A";
+                                    nombreCliente = "Cliente desconocido";
+                                }
+
+                                // Validación del empleado
+                                string nombreEmpleado;
+                                if (!reader.IsDBNull(reader.GetOrdinal("nombre_Empleado")) &&
+                                    !reader.IsDBNull(reader.GetOrdinal("apellido_Empleado")))
+                                {
+                                    nombreEmpleado = reader.GetString(reader.GetOrdinal("NombreCompleto"));
+                                }
+                                else
+                                {
+                                    nombreEmpleado = "Empleado desconocido";
+                                }
+
+                                // Validación del vehículo
+                                string detallesVehiculo;
+                                if (!reader.IsDBNull(reader.GetOrdinal("marca_Vehiculo")) &&
+                                    !reader.IsDBNull(reader.GetOrdinal("modelo_Vehiculo")) &&
+                                    !reader.IsDBNull(reader.GetOrdinal("anio_Vehiculo")))
+                                {
+                                    detallesVehiculo = reader.GetString(reader.GetOrdinal("DetallesVehiculo"));
+                                }
+                                else
+                                {
+                                    detallesVehiculo = "Vehículo desconocido";
+                                }
+
+                                // Crear la factura con los datos obtenidos
                                 Factura factura = new Factura
                                 {
-                                    NumFactura = reader.GetInt32(reader.GetOrdinal("NumFactura")),
-                                    FechaFactura = reader.GetDateTime(reader.GetOrdinal("FechaFactura")),
-                                    TotalFactura = reader.GetDouble(reader.GetOrdinal("TotalFactura")),
-                                    IdPago = reader.GetInt32(reader.GetOrdinal("IdPago"))
+                                    NumFactura = reader.GetInt32(reader.GetOrdinal("num_Factura")),
+                                    FechaFactura = reader.GetDateTime(reader.GetOrdinal("fecha_Factura")),
+                                    TotalFactura = reader.GetDouble(reader.GetOrdinal("total_Factura")),
+                                    IdPago = reader.GetInt32(reader.GetOrdinal("id_pago")),
+                                    CUIL_Empleado = reader.GetString(reader.GetOrdinal("CUIL_Empleado")),
+                                    NombreCompleto = nombreEmpleado,
+                                    DetallesVehiculo = detallesVehiculo,
+                                    CUIL_Cliente = cuilCuitCliente,
+                                    NombreCliente = nombreCliente
                                 };
 
                                 listaFacturas.Add(factura);
@@ -200,11 +289,14 @@ namespace AgMaGest.C_Datos
                     }
                 }
             }
+            catch (SqlException sqlEx)
+            {
+                throw new Exception("Error SQL al buscar facturas: " + sqlEx.Message);
+            }
             catch (Exception ex)
             {
-                throw new Exception("Error al buscar facturas: " + ex.Message);
+                throw new Exception("Error general al buscar facturas: " + ex.Message);
             }
-
             return listaFacturas;
         }
     }

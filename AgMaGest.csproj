@@ -129,6 +129,7 @@
     <Compile Include="C_Datos\EmpleadoDAL.cs" />
     <Compile Include="C_Datos\EstadoClienteDAL.cs" />
     <Compile Include="C_Datos\EstadoEmpleadoDAL.cs" />
+    <Compile Include="C_Datos\EstadoPagoDAL.cs" />
     <Compile Include="C_Datos\EstadoVehiculoDAL.cs" />
     <Compile Include="C_Datos\FacturaDAL.cs" />
     <Compile Include="C_Datos\LocalidadDAL.cs" />
@@ -150,6 +151,7 @@
     <Compile Include="C_Logica\Entidades\Empleado.cs" />
     <Compile Include="C_Logica\Entidades\EstadoCliente.cs" />
     <Compile Include="C_Logica\Entidades\EstadoEmpleado.cs" />
+    <Compile Include="C_Logica\Entidades\EstadoPago.cs" />
     <Compile Include="C_Logica\Entidades\EstadoPedido.cs" />
     <Compile Include="C_Logica\Entidades\EstadoVehiculo.cs" />
     <Compile Include="C_Logica\Entidades\Factura.cs" />
@@ -289,6 +291,12 @@
     <Compile Include="C_Presentacion\Cajero\VisualizarAcercaDeCajero.Designer.cs">
       <DependentUpon>VisualizarAcercaDeCajero.cs</DependentUpon>
     </Compile>
+    <Compile Include="C_Presentacion\Cajero\VisualizarPagos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C_Presentacion\Cajero\VisualizarPagos.Designer.cs">
+      <DependentUpon>VisualizarPagos.cs</DependentUpon>
+    </Compile>
     <Compile Include="C_Presentacion\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -426,6 +434,9 @@
     <EmbeddedResource Include="C_Presentacion\Cajero\VisualizarAcercaDeCajero.resx">
       <DependentUpon>VisualizarAcercaDeCajero.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="C_Presentacion\Cajero\VisualizarPagos.resx">
+      <DependentUpon>VisualizarPagos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="C_Presentacion\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -549,9 +560,6 @@
     <None Include="Resources\Icono-Close-Vendedor.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Icono-Buscar-Vendedor.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Logo-Sin-Fondo-Blanco.png" />
   </ItemGroup>
   <ItemGroup>
@@ -601,9 +609,6 @@
     <None Include="Resources\Icono-UsuarioCajero.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Icono-Buscar-Cajero.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Icono-Acercade1.png" />
   </ItemGroup>
   <ItemGroup>
@@ -628,19 +633,24 @@
     <None Include="Resources\Icono-MasVehiculo2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Icono-Buscar-Admin.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="bin\Release\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Debug\Resources\Vehiculos\Hilux .jpg" />
     <Content Include="bin\Debug\Resources\Vehiculos\Toyota yaris XLS.jpg" />
+    <None Include="Resources\Icono-BorrarVendedor1.png" />
+    <None Include="Resources\Icono-EditarVendedor.png" />
+    <None Include="Resources\Icono-BuscarVendedor.png" />
+    <None Include="Resources\Icono-RefescarVendedor.png" />
+    <None Include="Resources\Icono-RegistrarPago.png" />
+    <None Include="Resources\Icono-DescargarCejero.png" />
+    <None Include="Resources\Icono-BuscarCajero.png" />
+    <None Include="Resources\Icono-RefescarCajero.png" />
     <None Include="Resources\VhiculoPorDefecto.png" />
     <None Include="Resources\Icono-BorrarVendedor.png" />
-    <None Include="Resources\Icono-BuscarVendedor.png" />
-    <Content Include="Resources\Images\FordEcoSport.jpg" />
-    <Content Include="Resources\Images\FordKaSe.jpg" />
+    <None Include="Resources\Icono-RefescarAdmin.png" />
+    <None Include="Resources\Icono-BuscarAdmin.png" />
+    <None Include="Resources\Icono-DescargarAdmin.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets" Condition="Exists('packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets')" />

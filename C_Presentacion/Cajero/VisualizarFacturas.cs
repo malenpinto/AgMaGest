@@ -24,8 +24,6 @@ namespace AgMaGest.C_Presentacion.Cajero
         {
             InitializeComponent();
             this.Load += Facturas_Load; // Maneja el evento Load para inicializar la vista
-            this.dataGridFacturas.CellContentClick += new DataGridViewCellEventHandler(this.dataGridFacturas_CellContentClick);
-
         }
 
         private void Facturas_Load(object sender, EventArgs e)
@@ -38,8 +36,9 @@ namespace AgMaGest.C_Presentacion.Cajero
             try
             {
                 ConfigurarDataGridView();
+                dataGridFacturas.AutoGenerateColumns = false;
 
-                FacturaDAL facturaDAL = new FacturaDAL(); // Clase para acceder a la base de datos
+                FacturaDAL facturaDAL = new FacturaDAL(); 
                 List<Factura> listaFacturas = facturaDAL.ObtenerFacturas();
 
                 if (listaFacturas != null && listaFacturas.Count > 0)
@@ -70,15 +69,6 @@ namespace AgMaGest.C_Presentacion.Cajero
             dataGridFacturas.Columns.Add("NumFactura", "Número de Factura");
             dataGridFacturas.Columns["NumFactura"].DataPropertyName = "NumFactura";
 
-            var descargarButtonColumn = new DataGridViewButtonColumn
-            {
-                Name = "DescargarFactura",
-                HeaderText = "Descargar Factura",
-                Text = "Descargar",
-                UseColumnTextForButtonValue = true
-            };
-            dataGridFacturas.Columns.Add(descargarButtonColumn);
-
             dataGridFacturas.Columns.Add("CUIL_Empleado", "CUIL Empleado");
             dataGridFacturas.Columns["CUIL_Empleado"].DataPropertyName = "CUIL_Empleado";
 
@@ -97,13 +87,12 @@ namespace AgMaGest.C_Presentacion.Cajero
             dataGridFacturas.Columns.Add("TotalFactura", "Total de la Factura");
             dataGridFacturas.Columns["TotalFactura"].DataPropertyName = "TotalFactura";
 
+
             // Configuraciones generales del DataGridView
             dataGridFacturas.AutoGenerateColumns = false;
             dataGridFacturas.AllowUserToAddRows = false;
             dataGridFacturas.ReadOnly = true;
-            dataGridFacturas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
-
 
         private void BBuscarFacturas_Click(object sender, EventArgs e)
         {
@@ -114,18 +103,27 @@ namespace AgMaGest.C_Presentacion.Cajero
                 MessageBox.Show("Por favor, ingrese un criterio de búsqueda.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
             try
             {
+                // Buscar las facturas
                 FacturaDAL facturaDAL = new FacturaDAL();
                 List<Factura> facturasFiltradas = facturaDAL.BuscarFacturas(criterioBusqueda);
 
-                if (facturasFiltradas.Count > 0)
+                if (facturasFiltradas != null && facturasFiltradas.Count > 0)
                 {
+                    // Cargar solo las facturas filtradas
                     dataGridFacturas.DataSource = new BindingList<Factura>(facturasFiltradas);
                 }
                 else
                 {
                     MessageBox.Show("No se encontraron facturas con el criterio ingresado.", "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Recargar todas las facturas solo si el DataGridView está vacío o no tiene datos relevantes
+                    if (dataGridFacturas.Rows.Count == 0 || dataGridFacturas.DataSource == null)
+                    {
+                        CargarFacturas();
+                    }
                 }
             }
             catch (Exception ex)
@@ -134,18 +132,30 @@ namespace AgMaGest.C_Presentacion.Cajero
             }
         }
 
-        // Maneja el evento CellContentClick para el botón de descargar factura
-        private void dataGridFacturas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void BRefrescarFactura_Click(object sender, EventArgs e)
         {
-            if (e.ColumnIndex == dataGridFacturas.Columns["DescargarFactura"].Index && e.RowIndex >= 0)
+            CargarFacturas();
+        }
+
+        private void BDescargar_Click(object sender, EventArgs e)
+        {
+            if (dataGridFacturas.SelectedRows.Count > 0)
             {
                 // Obtener la factura seleccionada
-                Factura facturaSeleccionada = dataGridFacturas.Rows[e.RowIndex].DataBoundItem as Factura;
+                Factura facturaSeleccionada = dataGridFacturas.SelectedRows[0].DataBoundItem as Factura;
+
                 if (facturaSeleccionada != null)
                 {
-                    // Implementa la lógica para descargar la factura
                     DescargarFactura(facturaSeleccionada);
                 }
+                else
+                {
+                    MessageBox.Show("No se pudo obtener la información de la factura seleccionada.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar una fila para descargar la factura.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -156,17 +166,19 @@ namespace AgMaGest.C_Presentacion.Cajero
 
             // Crear el contenido del archivo
             StringBuilder facturaContent = new StringBuilder();
-            facturaContent.AppendLine("Factura Detalles");
+            facturaContent.AppendLine("Factura Dallas");
+            facturaContent.AppendLine("CUIT: 30 52695368 0");
             facturaContent.AppendLine("---------------------------------------------------");
             facturaContent.AppendLine($"Número de Factura: {factura.NumFactura}");
             facturaContent.AppendLine($"Fecha de Factura: {factura.FechaFactura.ToString("dd/MM/yyyy")}");
             facturaContent.AppendLine($"Total de Factura: {factura.TotalFactura:C}");
             facturaContent.AppendLine($"ID de Pago: {factura.IdPago}");
-            facturaContent.AppendLine($"Cuil: {factura.CUIL_Empleado}");
+            facturaContent.AppendLine($"CUIL Empleado: {factura.CUIL_Empleado}");
             facturaContent.AppendLine($"Empleado: {factura.NombreCompleto}");
             facturaContent.AppendLine($"CUIL Cliente: {factura.CUIL_Cliente}");
             facturaContent.AppendLine($"Cliente: {factura.NombreCliente}");
             facturaContent.AppendLine($"Vehículo: {factura.DetallesVehiculo}");
+
 
             // Escribir el contenido en el archivo de texto
             try
@@ -180,5 +192,17 @@ namespace AgMaGest.C_Presentacion.Cajero
             }
         }
 
+        private void DataGridFacturas_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridFacturas.SelectedRows.Count > 0)
+            {
+                BDescargar.Visible = true;
+            }
+            else
+            {
+                // Opcionalmente, ocultar los botones si no hay selección
+                BDescargar.Visible = false;
+            }
+        }
     }
 }

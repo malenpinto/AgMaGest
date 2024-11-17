@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridClientes = new System.Windows.Forms.DataGridView();
             this.id_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.editar_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,18 +46,19 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.BEliminarCliente = new System.Windows.Forms.Button();
-            this.BEditarCliente = new System.Windows.Forms.Button();
             this.BAgregarEmpresa = new System.Windows.Forms.Button();
             this.BAgregarPersona = new System.Windows.Forms.Button();
-            this.BAgregarCliente = new System.Windows.Forms.Button();
+            this.panel10 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.BBuscarEmpleado = new System.Windows.Forms.Button();
             this.TBBuscarCliente = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
+            this.BEliminarCliente = new System.Windows.Forms.Button();
+            this.BEditarCliente = new System.Windows.Forms.Button();
+            this.BAgregarCliente = new System.Windows.Forms.Button();
+            this.BBuscarCliente = new System.Windows.Forms.Button();
+            this.BRefrescarCliente = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridClientes)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -67,16 +68,16 @@
             // 
             // dataGridClientes
             // 
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.dataGridClientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            this.dataGridClientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_Cliente,
@@ -87,14 +88,14 @@
             this.celular_Cliente,
             this.email_Cliente,
             this.direccion_Cliente});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridClientes.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridClientes.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridClientes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridClientes.Location = new System.Drawing.Point(35, 133);
             this.dataGridClientes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -227,55 +228,11 @@
             this.panel4.Controls.Add(this.BAgregarCliente);
             this.panel4.Controls.Add(this.panel10);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(497, 0);
+            this.panel4.Location = new System.Drawing.Point(473, 0);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(533, 60);
+            this.panel4.Size = new System.Drawing.Size(557, 60);
             this.panel4.TabIndex = 4;
-            // 
-            // BEliminarCliente
-            // 
-            this.BEliminarCliente.BackColor = System.Drawing.Color.Transparent;
-            this.BEliminarCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BEliminarCliente.Dock = System.Windows.Forms.DockStyle.Left;
-            this.BEliminarCliente.FlatAppearance.BorderSize = 0;
-            this.BEliminarCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.BEliminarCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.BEliminarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BEliminarCliente.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BEliminarCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
-            this.BEliminarCliente.Image = global::AgMaGest.Properties.Resources.Icono_BorrarVendedor;
-            this.BEliminarCliente.Location = new System.Drawing.Point(264, 0);
-            this.BEliminarCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BEliminarCliente.Name = "BEliminarCliente";
-            this.BEliminarCliente.Size = new System.Drawing.Size(52, 60);
-            this.BEliminarCliente.TabIndex = 9;
-            this.BEliminarCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BEliminarCliente.UseVisualStyleBackColor = false;
-            this.BEliminarCliente.Visible = false;
-            this.BEliminarCliente.Click += new System.EventHandler(this.BEliminarCliente_Click);
-            // 
-            // BEditarCliente
-            // 
-            this.BEditarCliente.BackColor = System.Drawing.Color.Transparent;
-            this.BEditarCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BEditarCliente.Dock = System.Windows.Forms.DockStyle.Left;
-            this.BEditarCliente.FlatAppearance.BorderSize = 0;
-            this.BEditarCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.BEditarCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.BEditarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BEditarCliente.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BEditarCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
-            this.BEditarCliente.Image = global::AgMaGest.Properties.Resources.Icono_BuscarVendedor;
-            this.BEditarCliente.Location = new System.Drawing.Point(212, 0);
-            this.BEditarCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BEditarCliente.Name = "BEditarCliente";
-            this.BEditarCliente.Size = new System.Drawing.Size(52, 60);
-            this.BEditarCliente.TabIndex = 8;
-            this.BEditarCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BEditarCliente.UseVisualStyleBackColor = false;
-            this.BEditarCliente.Visible = false;
-            this.BEditarCliente.Click += new System.EventHandler(this.BEditarCliente_Click);
             // 
             // BAgregarEmpresa
             // 
@@ -319,71 +276,38 @@
             this.BAgregarPersona.Visible = false;
             this.BAgregarPersona.Click += new System.EventHandler(this.BAgregarPersona_Click);
             // 
-            // BAgregarCliente
+            // panel10
             // 
-            this.BAgregarCliente.BackColor = System.Drawing.Color.Transparent;
-            this.BAgregarCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BAgregarCliente.Dock = System.Windows.Forms.DockStyle.Left;
-            this.BAgregarCliente.FlatAppearance.BorderSize = 0;
-            this.BAgregarCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.BAgregarCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.BAgregarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BAgregarCliente.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BAgregarCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(62)))), ((int)(((byte)(141)))));
-            this.BAgregarCliente.Image = global::AgMaGest.Properties.Resources.Icono_MasCliente;
-            this.BAgregarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BAgregarCliente.Location = new System.Drawing.Point(5, 0);
-            this.BAgregarCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BAgregarCliente.Name = "BAgregarCliente";
-            this.BAgregarCliente.Size = new System.Drawing.Size(207, 60);
-            this.BAgregarCliente.TabIndex = 4;
-            this.BAgregarCliente.Text = " Nuevo Cliente";
-            this.BAgregarCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BAgregarCliente.UseVisualStyleBackColor = false;
-            this.BAgregarCliente.Click += new System.EventHandler(this.BAgregarCliente_Click_1);
+            this.panel10.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel10.Location = new System.Drawing.Point(0, 0);
+            this.panel10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(5, 60);
+            this.panel10.TabIndex = 16;
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Transparent;
-            this.panel5.Controls.Add(this.BBuscarEmpleado);
+            this.panel5.Controls.Add(this.BBuscarCliente);
             this.panel5.Controls.Add(this.TBBuscarCliente);
             this.panel5.Controls.Add(this.label1);
+            this.panel5.Controls.Add(this.BRefrescarCliente);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(497, 60);
+            this.panel5.Size = new System.Drawing.Size(473, 60);
             this.panel5.TabIndex = 4;
-            // 
-            // BBuscarEmpleado
-            // 
-            this.BBuscarEmpleado.BackColor = System.Drawing.Color.Transparent;
-            this.BBuscarEmpleado.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BBuscarEmpleado.Dock = System.Windows.Forms.DockStyle.Right;
-            this.BBuscarEmpleado.FlatAppearance.BorderSize = 0;
-            this.BBuscarEmpleado.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.BBuscarEmpleado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.BBuscarEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BBuscarEmpleado.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BBuscarEmpleado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
-            this.BBuscarEmpleado.Image = global::AgMaGest.Properties.Resources.Icono_Buscar_Vendedor;
-            this.BBuscarEmpleado.Location = new System.Drawing.Point(445, 0);
-            this.BBuscarEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BBuscarEmpleado.Name = "BBuscarEmpleado";
-            this.BBuscarEmpleado.Size = new System.Drawing.Size(52, 60);
-            this.BBuscarEmpleado.TabIndex = 5;
-            this.BBuscarEmpleado.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BBuscarEmpleado.UseVisualStyleBackColor = false;
-            this.BBuscarEmpleado.Click += new System.EventHandler(this.BBuscarEmpleado_Click);
             // 
             // TBBuscarCliente
             // 
             this.TBBuscarCliente.BackColor = System.Drawing.Color.Gainsboro;
-            this.TBBuscarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBBuscarCliente.Location = new System.Drawing.Point(151, 13);
+            this.TBBuscarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.TBBuscarCliente.Location = new System.Drawing.Point(159, 16);
             this.TBBuscarCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TBBuscarCliente.Name = "TBBuscarCliente";
-            this.TBBuscarCliente.Size = new System.Drawing.Size(287, 32);
+            this.TBBuscarCliente.Size = new System.Drawing.Size(199, 27);
             this.TBBuscarCliente.TabIndex = 0;
             // 
             // label1
@@ -391,7 +315,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Bahnschrift", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 18);
+            this.label1.Location = new System.Drawing.Point(3, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(121, 21);
             this.label1.TabIndex = 2;
@@ -417,15 +341,111 @@
             this.panel9.Size = new System.Drawing.Size(1030, 48);
             this.panel9.TabIndex = 5;
             // 
-            // panel10
+            // BEliminarCliente
             // 
-            this.panel10.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel10.Location = new System.Drawing.Point(0, 0);
-            this.panel10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(5, 60);
-            this.panel10.TabIndex = 16;
+            this.BEliminarCliente.BackColor = System.Drawing.Color.Transparent;
+            this.BEliminarCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BEliminarCliente.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BEliminarCliente.FlatAppearance.BorderSize = 0;
+            this.BEliminarCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BEliminarCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.BEliminarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BEliminarCliente.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BEliminarCliente.Image = global::AgMaGest.Properties.Resources.Icono_BorrarVendedor;
+            this.BEliminarCliente.Location = new System.Drawing.Point(264, 0);
+            this.BEliminarCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BEliminarCliente.Name = "BEliminarCliente";
+            this.BEliminarCliente.Size = new System.Drawing.Size(52, 60);
+            this.BEliminarCliente.TabIndex = 9;
+            this.BEliminarCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BEliminarCliente.UseVisualStyleBackColor = false;
+            this.BEliminarCliente.Visible = false;
+            this.BEliminarCliente.Click += new System.EventHandler(this.BEliminarCliente_Click);
+            // 
+            // BEditarCliente
+            // 
+            this.BEditarCliente.BackColor = System.Drawing.Color.Transparent;
+            this.BEditarCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BEditarCliente.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BEditarCliente.FlatAppearance.BorderSize = 0;
+            this.BEditarCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BEditarCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.BEditarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BEditarCliente.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BEditarCliente.Image = global::AgMaGest.Properties.Resources.Icono_EditarVendedor;
+            this.BEditarCliente.Location = new System.Drawing.Point(212, 0);
+            this.BEditarCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BEditarCliente.Name = "BEditarCliente";
+            this.BEditarCliente.Size = new System.Drawing.Size(52, 60);
+            this.BEditarCliente.TabIndex = 8;
+            this.BEditarCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BEditarCliente.UseVisualStyleBackColor = false;
+            this.BEditarCliente.Visible = false;
+            this.BEditarCliente.Click += new System.EventHandler(this.BEditarCliente_Click);
+            // 
+            // BAgregarCliente
+            // 
+            this.BAgregarCliente.BackColor = System.Drawing.Color.Transparent;
+            this.BAgregarCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BAgregarCliente.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BAgregarCliente.FlatAppearance.BorderSize = 0;
+            this.BAgregarCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BAgregarCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.BAgregarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BAgregarCliente.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BAgregarCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(62)))), ((int)(((byte)(141)))));
+            this.BAgregarCliente.Image = global::AgMaGest.Properties.Resources.Icono_MasCliente;
+            this.BAgregarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BAgregarCliente.Location = new System.Drawing.Point(5, 0);
+            this.BAgregarCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BAgregarCliente.Name = "BAgregarCliente";
+            this.BAgregarCliente.Size = new System.Drawing.Size(207, 60);
+            this.BAgregarCliente.TabIndex = 4;
+            this.BAgregarCliente.Text = " Nuevo Cliente";
+            this.BAgregarCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BAgregarCliente.UseVisualStyleBackColor = false;
+            this.BAgregarCliente.Click += new System.EventHandler(this.BAgregarCliente_Click_1);
+            // 
+            // BBuscarCliente
+            // 
+            this.BBuscarCliente.BackColor = System.Drawing.Color.Transparent;
+            this.BBuscarCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BBuscarCliente.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BBuscarCliente.FlatAppearance.BorderSize = 0;
+            this.BBuscarCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BBuscarCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.BBuscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BBuscarCliente.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BBuscarCliente.Image = global::AgMaGest.Properties.Resources.Icono_BuscarVendedor;
+            this.BBuscarCliente.Location = new System.Drawing.Point(369, 0);
+            this.BBuscarCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BBuscarCliente.Name = "BBuscarCliente";
+            this.BBuscarCliente.Size = new System.Drawing.Size(52, 60);
+            this.BBuscarCliente.TabIndex = 5;
+            this.BBuscarCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BBuscarCliente.UseVisualStyleBackColor = false;
+            this.BBuscarCliente.Click += new System.EventHandler(this.BBuscarEmpleado_Click);
+            // 
+            // BRefrescarCliente
+            // 
+            this.BRefrescarCliente.BackColor = System.Drawing.Color.Transparent;
+            this.BRefrescarCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BRefrescarCliente.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BRefrescarCliente.FlatAppearance.BorderSize = 0;
+            this.BRefrescarCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BRefrescarCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.BRefrescarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BRefrescarCliente.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BRefrescarCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
+            this.BRefrescarCliente.Image = global::AgMaGest.Properties.Resources.Icono_RefescarVendedor;
+            this.BRefrescarCliente.Location = new System.Drawing.Point(421, 0);
+            this.BRefrescarCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BRefrescarCliente.Name = "BRefrescarCliente";
+            this.BRefrescarCliente.Size = new System.Drawing.Size(52, 60);
+            this.BRefrescarCliente.TabIndex = 9;
+            this.BRefrescarCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BRefrescarCliente.UseVisualStyleBackColor = false;
+            this.BRefrescarCliente.Click += new System.EventHandler(this.BRefrescarCliente_Click);
             // 
             // VisualizarClientes
             // 
@@ -475,9 +495,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn celular_Cliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn email_Cliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn direccion_Cliente;
-        private System.Windows.Forms.Button BBuscarEmpleado;
+        private System.Windows.Forms.Button BBuscarCliente;
         private System.Windows.Forms.Button BEliminarCliente;
         private System.Windows.Forms.Button BEditarCliente;
         private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Button BRefrescarCliente;
     }
 }

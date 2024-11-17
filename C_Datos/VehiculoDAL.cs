@@ -246,21 +246,22 @@ namespace AgMaGest.C_Datos
                 {
                     conn.Open();
 
-                    // Consulta SQL con joins y filtro
+                    // Consulta SQL con filtro dinámico
                     SqlCommand cmd = new SqlCommand(@"
-                SELECT v.id_Vehiculo, 
-                       v.marca_Vehiculo, 
-                       v.modelo_Vehiculo, 
-                       v.version_Vehiculo,
-                       v.anio_Vehiculo, 
-                       v.km_Vehiculo, 
-                       v.patente_Vehiculo, 
-                       v.codigo_OKM, 
-                       v.precio_Vehiculo, 
-                       v.ruta_imagen,
-                       c.nombre_Condicion AS CondicionNombre,
-                       t.nombre_TipoVehiculo AS TipoNombre,
-                       e.nombre_Estado AS EstadoNombre
+                SELECT 
+                    v.id_Vehiculo, 
+                    v.marca_Vehiculo, 
+                    v.modelo_Vehiculo, 
+                    v.version_Vehiculo,
+                    v.anio_Vehiculo, 
+                    v.km_Vehiculo, 
+                    v.patente_Vehiculo, 
+                    v.codigo_OKM, 
+                    v.precio_Vehiculo, 
+                    v.ruta_imagen,
+                    c.nombre_Condicion AS CondicionNombre,
+                    t.nombre_TipoVehiculo AS TipoNombre,
+                    e.nombre_Estado AS EstadoNombre
                 FROM Vehiculos v
                 INNER JOIN Condicion c ON v.id_Condicion = c.id_Condicion
                 INNER JOIN Tipo_Vehiculo t ON v.id_TipoVehiculo = t.id_TipoVehiculo
@@ -275,13 +276,15 @@ namespace AgMaGest.C_Datos
                    OR t.nombre_TipoVehiculo LIKE @texto
                    OR e.nombre_Estado LIKE @texto", conn);
 
+                    // Parámetro de búsqueda
                     cmd.Parameters.AddWithValue("@texto", $"%{texto}%");
 
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            Vehiculos vehiculo = new Vehiculos
+                            // Crear y agregar cada vehículo a la lista
+                            vehiculos.Add(new Vehiculos
                             {
                                 IdVehiculo = (int)reader["id_Vehiculo"],
                                 Marca = reader["marca_Vehiculo"].ToString(),
@@ -296,9 +299,7 @@ namespace AgMaGest.C_Datos
                                 CondicionNombre = reader["CondicionNombre"].ToString(),
                                 TipoNombre = reader["TipoNombre"].ToString(),
                                 EstadoNombre = reader["EstadoNombre"].ToString()
-                            };
-
-                            vehiculos.Add(vehiculo);
+                            });
                         }
                     }
                 }
@@ -311,6 +312,7 @@ namespace AgMaGest.C_Datos
 
             return vehiculos;
         }
+
 
         public List<Vehiculos> ObtenerVehiculosActivos()
         {

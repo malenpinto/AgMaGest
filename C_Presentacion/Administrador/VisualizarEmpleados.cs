@@ -148,6 +148,11 @@ namespace AgMaGest.C_Presentacion.Administrador
             }
         }
 
+        private void BRefrescarEmpleado_Click(object sender, EventArgs e)
+        {
+            CargarEmpleados();
+        }
+
         private void BAgregarEmpleado_Click(object sender, EventArgs e)
         {
             IngresarEmpleado formEmpleado = new IngresarEmpleado();
@@ -231,23 +236,6 @@ namespace AgMaGest.C_Presentacion.Administrador
             }
         }
 
-        private void DataGridViewEmpleados_SelectionChanged(object sender, EventArgs e)
-        {
-            if (dataGridEmpleados.SelectedRows.Count > 0)
-            {
-                BAsignarUsuario.Visible = true;
-                BEditarEmpleado.Visible = true;
-                BEliminarEmpleado.Visible = true;
-            }
-            else
-            {
-                // Opcionalmente, ocultar los botones si no hay selección
-                BAsignarUsuario.Visible = false;
-                BEditarEmpleado.Visible = false;
-                BEliminarEmpleado.Visible = false;
-            }
-        }
-
         private void DataGridEmpleados_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             // Verificar si estamos en la columna "EstadoNombre" 
@@ -269,5 +257,19 @@ namespace AgMaGest.C_Presentacion.Administrador
             }
         }
 
+        private void DataGridEmpleado_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridEmpleados.SelectedRows.Count > 0)
+            {
+                BEditarEmpleado.Visible = true;
+                BEliminarEmpleado.Visible = true;
+            }
+            else
+            {
+                // Opcionalmente, ocultar los botones si no hay selección
+                BEditarEmpleado.Visible = false;
+                BEliminarEmpleado.Visible = false;
+            }
+        }
     }
 }

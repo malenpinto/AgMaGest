@@ -36,28 +36,31 @@ namespace AgMaGest.C_Presentacion.Cajero
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.BGenerarPago = new System.Windows.Forms.Button();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.TBBuscarPedido = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.BBuscarFacturas = new System.Windows.Forms.Button();
-            this.TBBuscarPedido = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dataGridPagos = new System.Windows.Forms.DataGridView();
-            this.id_Venta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.generarPago = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.editarVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eliminarVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dniVendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreCompletoVendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cuil_cuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreCompletoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.montoTotalVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estadoVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.montoTotalVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreCompletoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cuil_cuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreCompletoVendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dniVendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eliminarVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.editarVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.generarPago = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.id_Venta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridPedidos = new System.Windows.Forms.DataGridView();
+            this.BBuscarPedido = new System.Windows.Forms.Button();
+            this.BRefrescarPedido = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
-            this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridPagos)).BeginInit();
+            this.panel8.SuspendLayout();
+            this.panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridPedidos)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -93,11 +96,9 @@ namespace AgMaGest.C_Presentacion.Cajero
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.GhostWhite;
-            this.panel4.Controls.Add(this.panel10);
-            this.panel4.Controls.Add(this.BGenerarPago);
+            this.panel4.Controls.Add(this.panel8);
             this.panel4.Controls.Add(this.panel6);
             this.panel4.Controls.Add(this.panel5);
-            this.panel4.Controls.Add(this.panel7);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(35, 0);
             this.panel4.Margin = new System.Windows.Forms.Padding(4);
@@ -105,14 +106,18 @@ namespace AgMaGest.C_Presentacion.Cajero
             this.panel4.Size = new System.Drawing.Size(1030, 130);
             this.panel4.TabIndex = 3;
             // 
-            // panel10
+            // panel8
             // 
-            this.panel10.BackColor = System.Drawing.Color.Thistle;
-            this.panel10.Location = new System.Drawing.Point(499, 48);
-            this.panel10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(5, 60);
-            this.panel10.TabIndex = 17;
+            this.panel8.BackColor = System.Drawing.Color.GhostWhite;
+            this.panel8.Controls.Add(this.BGenerarPago);
+            this.panel8.Controls.Add(this.panel10);
+            this.panel8.Controls.Add(this.panel9);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel8.Location = new System.Drawing.Point(0, 48);
+            this.panel8.Margin = new System.Windows.Forms.Padding(4);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(1030, 57);
+            this.panel8.TabIndex = 12;
             // 
             // BGenerarPago
             // 
@@ -124,7 +129,7 @@ namespace AgMaGest.C_Presentacion.Cajero
             this.BGenerarPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BGenerarPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BGenerarPago.ForeColor = System.Drawing.Color.BlueViolet;
-            this.BGenerarPago.Location = new System.Drawing.Point(531, 55);
+            this.BGenerarPago.Location = new System.Drawing.Point(495, 7);
             this.BGenerarPago.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BGenerarPago.Name = "BGenerarPago";
             this.BGenerarPago.Size = new System.Drawing.Size(177, 41);
@@ -134,6 +139,51 @@ namespace AgMaGest.C_Presentacion.Cajero
             this.BGenerarPago.UseVisualStyleBackColor = false;
             this.BGenerarPago.Visible = false;
             this.BGenerarPago.Click += new System.EventHandler(this.BGenerarPago_Click);
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.Thistle;
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel10.Location = new System.Drawing.Point(473, 0);
+            this.panel10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(5, 57);
+            this.panel10.TabIndex = 18;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.Transparent;
+            this.panel9.Controls.Add(this.TBBuscarPedido);
+            this.panel9.Controls.Add(this.label2);
+            this.panel9.Controls.Add(this.BBuscarPedido);
+            this.panel9.Controls.Add(this.BRefrescarPedido);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel9.Location = new System.Drawing.Point(0, 0);
+            this.panel9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(473, 57);
+            this.panel9.TabIndex = 10;
+            // 
+            // TBBuscarPedido
+            // 
+            this.TBBuscarPedido.BackColor = System.Drawing.Color.Gainsboro;
+            this.TBBuscarPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.TBBuscarPedido.Location = new System.Drawing.Point(159, 16);
+            this.TBBuscarPedido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBBuscarPedido.Name = "TBBuscarPedido";
+            this.TBBuscarPedido.Size = new System.Drawing.Size(199, 27);
+            this.TBBuscarPedido.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Bahnschrift", 10F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(3, 19);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(127, 21);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Buscar Pedidos";
             // 
             // panel6
             // 
@@ -155,60 +205,77 @@ namespace AgMaGest.C_Presentacion.Cajero
             this.panel5.Size = new System.Drawing.Size(1030, 25);
             this.panel5.TabIndex = 0;
             // 
-            // panel7
+            // estadoVenta
             // 
-            this.panel7.BackColor = System.Drawing.Color.GhostWhite;
-            this.panel7.Controls.Add(this.BBuscarFacturas);
-            this.panel7.Controls.Add(this.TBBuscarPedido);
-            this.panel7.Controls.Add(this.label1);
-            this.panel7.Location = new System.Drawing.Point(0, 48);
-            this.panel7.Margin = new System.Windows.Forms.Padding(4);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(492, 57);
-            this.panel7.TabIndex = 2;
+            this.estadoVenta.HeaderText = "Estado venta";
+            this.estadoVenta.MinimumWidth = 6;
+            this.estadoVenta.Name = "estadoVenta";
+            this.estadoVenta.Width = 125;
             // 
-            // BBuscarFacturas
+            // montoTotalVenta
             // 
-            this.BBuscarFacturas.BackColor = System.Drawing.Color.Transparent;
-            this.BBuscarFacturas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BBuscarFacturas.Dock = System.Windows.Forms.DockStyle.Right;
-            this.BBuscarFacturas.FlatAppearance.BorderSize = 0;
-            this.BBuscarFacturas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.BBuscarFacturas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.BBuscarFacturas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BBuscarFacturas.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BBuscarFacturas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
-            this.BBuscarFacturas.Image = global::AgMaGest.Properties.Resources.Icono_Buscar_Cajero;
-            this.BBuscarFacturas.Location = new System.Drawing.Point(440, 0);
-            this.BBuscarFacturas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BBuscarFacturas.Name = "BBuscarFacturas";
-            this.BBuscarFacturas.Size = new System.Drawing.Size(52, 57);
-            this.BBuscarFacturas.TabIndex = 8;
-            this.BBuscarFacturas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BBuscarFacturas.UseVisualStyleBackColor = false;
-            this.BBuscarFacturas.Click += new System.EventHandler(this.BBuscarFacturas_Click);
+            this.montoTotalVenta.HeaderText = "Total a pagar";
+            this.montoTotalVenta.MinimumWidth = 6;
+            this.montoTotalVenta.Name = "montoTotalVenta";
+            this.montoTotalVenta.Width = 125;
             // 
-            // TBBuscarPedido
+            // nombreCompletoCliente
             // 
-            this.TBBuscarPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBBuscarPedido.Location = new System.Drawing.Point(173, 11);
-            this.TBBuscarPedido.Margin = new System.Windows.Forms.Padding(4);
-            this.TBBuscarPedido.Name = "TBBuscarPedido";
-            this.TBBuscarPedido.Size = new System.Drawing.Size(237, 32);
-            this.TBBuscarPedido.TabIndex = 1;
+            this.nombreCompletoCliente.HeaderText = "Cliente";
+            this.nombreCompletoCliente.MinimumWidth = 6;
+            this.nombreCompletoCliente.Name = "nombreCompletoCliente";
+            this.nombreCompletoCliente.Width = 125;
             // 
-            // label1
+            // cuil_cuit
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(8, 17);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 21);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Buscar Pagos";
+            this.cuil_cuit.HeaderText = "CUIL/CUIT";
+            this.cuil_cuit.MinimumWidth = 6;
+            this.cuil_cuit.Name = "cuil_cuit";
+            this.cuil_cuit.Width = 125;
             // 
-            // dataGridPagos
+            // nombreCompletoVendedor
+            // 
+            this.nombreCompletoVendedor.HeaderText = "Vendedor";
+            this.nombreCompletoVendedor.MinimumWidth = 6;
+            this.nombreCompletoVendedor.Name = "nombreCompletoVendedor";
+            this.nombreCompletoVendedor.Width = 125;
+            // 
+            // dniVendedor
+            // 
+            this.dniVendedor.HeaderText = "DNI Vendedor";
+            this.dniVendedor.MinimumWidth = 6;
+            this.dniVendedor.Name = "dniVendedor";
+            this.dniVendedor.Width = 125;
+            // 
+            // eliminarVenta
+            // 
+            this.eliminarVenta.HeaderText = "Eliminar";
+            this.eliminarVenta.MinimumWidth = 6;
+            this.eliminarVenta.Name = "eliminarVenta";
+            this.eliminarVenta.Width = 125;
+            // 
+            // editarVenta
+            // 
+            this.editarVenta.HeaderText = "Editar";
+            this.editarVenta.MinimumWidth = 6;
+            this.editarVenta.Name = "editarVenta";
+            this.editarVenta.Width = 125;
+            // 
+            // generarPago
+            // 
+            this.generarPago.HeaderText = "Generar Pago";
+            this.generarPago.MinimumWidth = 6;
+            this.generarPago.Name = "generarPago";
+            this.generarPago.Width = 125;
+            // 
+            // id_Venta
+            // 
+            this.id_Venta.HeaderText = "ID Venta";
+            this.id_Venta.MinimumWidth = 6;
+            this.id_Venta.Name = "id_Venta";
+            this.id_Venta.Width = 125;
+            // 
+            // dataGridPedidos
             // 
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -217,9 +284,9 @@ namespace AgMaGest.C_Presentacion.Cajero
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridPagos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridPagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridPagos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridPedidos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridPedidos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_Venta,
             this.generarPago,
             this.editarVenta,
@@ -230,91 +297,61 @@ namespace AgMaGest.C_Presentacion.Cajero
             this.nombreCompletoCliente,
             this.montoTotalVenta,
             this.estadoVenta});
-            this.dataGridPagos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridPagos.Location = new System.Drawing.Point(35, 130);
-            this.dataGridPagos.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridPagos.Name = "dataGridPagos";
-            this.dataGridPagos.RowHeadersWidth = 51;
-            this.dataGridPagos.Size = new System.Drawing.Size(1030, 528);
-            this.dataGridPagos.TabIndex = 4;
-            this.dataGridPagos.SelectionChanged += new System.EventHandler(this.DataGridViewClientes_SelectionChanged);
+            this.dataGridPedidos.Location = new System.Drawing.Point(35, 130);
+            this.dataGridPedidos.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridPedidos.Name = "dataGridPedidos";
+            this.dataGridPedidos.RowHeadersWidth = 51;
+            this.dataGridPedidos.Size = new System.Drawing.Size(1030, 528);
+            this.dataGridPedidos.TabIndex = 4;
+            this.dataGridPedidos.SelectionChanged += new System.EventHandler(this.DataGridViewClientes_SelectionChanged);
             // 
-            // id_Venta
+            // BBuscarPedido
             // 
-            this.id_Venta.HeaderText = "ID Venta";
-            this.id_Venta.MinimumWidth = 6;
-            this.id_Venta.Name = "id_Venta";
-            this.id_Venta.Width = 125;
+            this.BBuscarPedido.BackColor = System.Drawing.Color.Transparent;
+            this.BBuscarPedido.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BBuscarPedido.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BBuscarPedido.FlatAppearance.BorderSize = 0;
+            this.BBuscarPedido.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BBuscarPedido.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.BBuscarPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BBuscarPedido.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BBuscarPedido.Image = global::AgMaGest.Properties.Resources.Icono_BuscarCajero;
+            this.BBuscarPedido.Location = new System.Drawing.Point(369, 0);
+            this.BBuscarPedido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BBuscarPedido.Name = "BBuscarPedido";
+            this.BBuscarPedido.Size = new System.Drawing.Size(52, 57);
+            this.BBuscarPedido.TabIndex = 9;
+            this.BBuscarPedido.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BBuscarPedido.UseVisualStyleBackColor = false;
+            this.BBuscarPedido.Click += new System.EventHandler(this.BBuscarPedido_Click);
             // 
-            // generarPago
+            // BRefrescarPedido
             // 
-            this.generarPago.HeaderText = "Generar Pago";
-            this.generarPago.MinimumWidth = 6;
-            this.generarPago.Name = "generarPago";
-            this.generarPago.Width = 125;
-            // 
-            // editarVenta
-            // 
-            this.editarVenta.HeaderText = "Editar";
-            this.editarVenta.MinimumWidth = 6;
-            this.editarVenta.Name = "editarVenta";
-            this.editarVenta.Width = 125;
-            // 
-            // eliminarVenta
-            // 
-            this.eliminarVenta.HeaderText = "Eliminar";
-            this.eliminarVenta.MinimumWidth = 6;
-            this.eliminarVenta.Name = "eliminarVenta";
-            this.eliminarVenta.Width = 125;
-            // 
-            // dniVendedor
-            // 
-            this.dniVendedor.HeaderText = "DNI Vendedor";
-            this.dniVendedor.MinimumWidth = 6;
-            this.dniVendedor.Name = "dniVendedor";
-            this.dniVendedor.Width = 125;
-            // 
-            // nombreCompletoVendedor
-            // 
-            this.nombreCompletoVendedor.HeaderText = "Vendedor";
-            this.nombreCompletoVendedor.MinimumWidth = 6;
-            this.nombreCompletoVendedor.Name = "nombreCompletoVendedor";
-            this.nombreCompletoVendedor.Width = 125;
-            // 
-            // cuil_cuit
-            // 
-            this.cuil_cuit.HeaderText = "CUIL/CUIT";
-            this.cuil_cuit.MinimumWidth = 6;
-            this.cuil_cuit.Name = "cuil_cuit";
-            this.cuil_cuit.Width = 125;
-            // 
-            // nombreCompletoCliente
-            // 
-            this.nombreCompletoCliente.HeaderText = "Cliente";
-            this.nombreCompletoCliente.MinimumWidth = 6;
-            this.nombreCompletoCliente.Name = "nombreCompletoCliente";
-            this.nombreCompletoCliente.Width = 125;
-            // 
-            // montoTotalVenta
-            // 
-            this.montoTotalVenta.HeaderText = "Total a pagar";
-            this.montoTotalVenta.MinimumWidth = 6;
-            this.montoTotalVenta.Name = "montoTotalVenta";
-            this.montoTotalVenta.Width = 125;
-            // 
-            // estadoVenta
-            // 
-            this.estadoVenta.HeaderText = "Estado venta";
-            this.estadoVenta.MinimumWidth = 6;
-            this.estadoVenta.Name = "estadoVenta";
-            this.estadoVenta.Width = 125;
+            this.BRefrescarPedido.BackColor = System.Drawing.Color.Transparent;
+            this.BRefrescarPedido.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BRefrescarPedido.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BRefrescarPedido.FlatAppearance.BorderSize = 0;
+            this.BRefrescarPedido.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BRefrescarPedido.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.BRefrescarPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BRefrescarPedido.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BRefrescarPedido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
+            this.BRefrescarPedido.Image = global::AgMaGest.Properties.Resources.Icono_RefescarCajero;
+            this.BRefrescarPedido.Location = new System.Drawing.Point(421, 0);
+            this.BRefrescarPedido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BRefrescarPedido.Name = "BRefrescarPedido";
+            this.BRefrescarPedido.Size = new System.Drawing.Size(52, 57);
+            this.BRefrescarPedido.TabIndex = 10;
+            this.BRefrescarPedido.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BRefrescarPedido.UseVisualStyleBackColor = false;
+            this.BRefrescarPedido.Click += new System.EventHandler(this.BRefrescarPedido_Click);
             // 
             // RegistrarPago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1100, 706);
-            this.Controls.Add(this.dataGridPagos);
+            this.Controls.Add(this.dataGridPedidos);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -324,9 +361,10 @@ namespace AgMaGest.C_Presentacion.Cajero
             this.Name = "RegistrarPago";
             this.Text = "RegistrarPago";
             this.panel4.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridPagos)).EndInit();
+            this.panel8.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridPedidos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -339,22 +377,24 @@ namespace AgMaGest.C_Presentacion.Cajero
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.DataGridView dataGridPagos;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox TBBuscarPedido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_Venta;
-        private System.Windows.Forms.DataGridViewButtonColumn generarPago;
-        private System.Windows.Forms.DataGridViewTextBoxColumn editarVenta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn eliminarVenta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dniVendedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreCompletoVendedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cuil_cuit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreCompletoCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn montoTotalVenta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estadoVenta;
-        private System.Windows.Forms.Button BBuscarFacturas;
         private System.Windows.Forms.Button BGenerarPago;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estadoVenta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn montoTotalVenta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreCompletoCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cuil_cuit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreCompletoVendedor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dniVendedor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn eliminarVenta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn editarVenta;
+        private System.Windows.Forms.DataGridViewButtonColumn generarPago;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_Venta;
+        private System.Windows.Forms.DataGridView dataGridPedidos;
+        private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.TextBox TBBuscarPedido;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button BBuscarPedido;
+        private System.Windows.Forms.Button BRefrescarPedido;
     }
 }

@@ -19,12 +19,15 @@ namespace AgMaGest.C_Presentacion.Cajero
             LNombreUsuario.Text = $"{empleado.Nombre}";
         }
 
-        
+        private void BRegistrarPago_Click(object sender, EventArgs e)
+        {
 
+            abrirFormularioHijo(new RegistrarPago(), "Registrar Pago");
+        }
 
         private void BPagos_Click(object sender, EventArgs e)
         {
-            abrirFormularioHijo(new RegistrarPago(), "Registrar Pago");
+            abrirFormularioHijo(new VisualizarPagos(), "Pagos");
         }
 
         private void BFacturas_Click(object sender, EventArgs e)
@@ -36,7 +39,6 @@ namespace AgMaGest.C_Presentacion.Cajero
         {
             abrirFormularioHijo(new Estadisticas(), "Estadísticas");
         }
-
 
         private void BMaximizar_Click(object sender, EventArgs e)
         {

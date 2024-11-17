@@ -20,13 +20,12 @@ namespace AgMaGest.C_Presentacion.Cajero
         {
             InitializeComponent();
             this.Load += new EventHandler(VisualizarVentas_Load);
-            dataGridPagos.CellClick += DataGridPagos_CellClick;
-            dataGridPagos.CellFormatting += DataGridPagos_CellFormatting;
+            dataGridPedidos.CellClick += DataGridPagos_CellClick;
+            dataGridPedidos.CellFormatting += DataGridPagos_CellFormatting;
         }
 
         private void VisualizarVentas_Load(object sender, EventArgs e)
-        {
-            
+        {            
             CargarPedidos();
         }
 
@@ -35,7 +34,7 @@ namespace AgMaGest.C_Presentacion.Cajero
             try
             {
                 ConfigurarDataGridView();
-                dataGridPagos.AutoGenerateColumns = false;
+                dataGridPedidos.AutoGenerateColumns = false;
 
                 PedidoDAL pedidoDAL = new PedidoDAL();
                 List<Pedido> listaPedidos = pedidoDAL.ObtenerPedidos();
@@ -68,7 +67,7 @@ namespace AgMaGest.C_Presentacion.Cajero
 
                 if (listaPedidos != null && listaPedidos.Count > 0)
                 {
-                    dataGridPagos.DataSource = new BindingList<Pedido>(listaPedidos);
+                    dataGridPedidos.DataSource = new BindingList<Pedido>(listaPedidos);
                 }
                 else
                 {
@@ -84,27 +83,29 @@ namespace AgMaGest.C_Presentacion.Cajero
         private void ConfigurarDataGridView()
         {
             // Limpiar cualquier configuración previa
-            dataGridPagos.Columns.Clear();
+            dataGridPedidos.Columns.Clear();
 
             // Configurar las columnas estándar
-            dataGridPagos.Columns.Add("NombreEstadoPedido", "Estado Pedido");
-            dataGridPagos.Columns["NombreEstadoPedido"].DataPropertyName = "NombreEstadoPedido";
+            dataGridPedidos.Columns.Add("IdPedido", "ID Pedido");
+            dataGridPedidos.Columns["IdPedido"].DataPropertyName = "IdPedido";
 
-            dataGridPagos.Columns.Add("IdPedido", "ID Pedido");
-            dataGridPagos.Columns["IdPedido"].DataPropertyName = "IdPedido";
+            dataGridPedidos.Columns.Add("NombreEstadoPedido", "Estado del Pedido");
+            dataGridPedidos.Columns["NombreEstadoPedido"].DataPropertyName = "NombreEstadoPedido";
 
-            dataGridPagos.Columns.Add("CUIL", "CUIL Empleado");
-            dataGridPagos.Columns["CUIL"].DataPropertyName = "CUIL";
+            dataGridPedidos.Columns.Add("CUIL", "CUIL Empleado");
+            dataGridPedidos.Columns["CUIL"].DataPropertyName = "CUIL";
 
-            dataGridPagos.Columns.Add("ApellidoEmpleado", "Apellido ");
-            dataGridPagos.Columns["ApellidoEmpleado"].DataPropertyName = "ApellidoEmpleado";
+            dataGridPedidos.Columns.Add("ApellidoEmpleado", "Apellido ");
+            dataGridPedidos.Columns["ApellidoEmpleado"].DataPropertyName = "ApellidoEmpleado";
 
-            dataGridPagos.Columns.Add("NombreEmpleado", "Nombre ");
-            dataGridPagos.Columns["NombreEmpleado"].DataPropertyName = "NombreEmpleado";
+            dataGridPedidos.Columns.Add("NombreEmpleado", "Nombre ");
+            dataGridPedidos.Columns["NombreEmpleado"].DataPropertyName = "NombreEmpleado";
 
-            // Columna para el CUIL o CUIT del cliente
-            dataGridPagos.Columns.Add("DetallesCliente", "CUIL/CUIT Cliente");
-            dataGridPagos.Columns["DetallesCliente"].DataPropertyName = "DetallesCliente";
+            dataGridPedidos.Columns.Add("CUIL_Cliente", "CUIL del Cliente");
+            dataGridPedidos.Columns["CUIL_Cliente"].DataPropertyName = "CUIL_Cliente";
+
+            dataGridPedidos.Columns.Add("NombreCliente", "Nombre del Cliente");
+            dataGridPedidos.Columns["NombreCliente"].DataPropertyName = "NombreCliente";
 
             // Columna para los detalles del vehículo
             DataGridViewImageColumn imageColumn = new DataGridViewImageColumn
@@ -115,33 +116,68 @@ namespace AgMaGest.C_Presentacion.Cajero
                 Width = 100,
                 DataPropertyName = "Imagen" // Importante: esta propiedad debe estar configurada
             };
-            dataGridPagos.Columns.Add(imageColumn);
+            dataGridPedidos.Columns.Add(imageColumn);
 
-            dataGridPagos.Columns.Add("DetallesVehiculo", "Detalles Vehiculo");
-            dataGridPagos.Columns["DetallesVehiculo"].DataPropertyName = "DetallesVehiculo";
+            dataGridPedidos.Columns.Add("DetallesVehiculo", "Detalles Vehiculo");
+            dataGridPedidos.Columns["DetallesVehiculo"].DataPropertyName = "DetallesVehiculo";
 
             // Configurar las columnas para fecha y monto
-            dataGridPagos.Columns.Add("FechaPedido", "Fecha del Pedido");
-            dataGridPagos.Columns["FechaPedido"].DataPropertyName = "FechaPedido";
-            dataGridPagos.Columns["FechaPedido"].DefaultCellStyle.Format = "dd/MM/yyyy";
+            dataGridPedidos.Columns.Add("FechaPedido", "Fecha del Pedido");
+            dataGridPedidos.Columns["FechaPedido"].DataPropertyName = "FechaPedido";
+            dataGridPedidos.Columns["FechaPedido"].DefaultCellStyle.Format = "dd/MM/yyyy";
 
-            dataGridPagos.Columns.Add("MontoPedido", "Monto Pedido");
-            dataGridPagos.Columns["MontoPedido"].DataPropertyName = "MontoPedido";
+            dataGridPedidos.Columns.Add("MontoPedido", "Monto Pedido");
+            dataGridPedidos.Columns["MontoPedido"].DataPropertyName = "MontoPedido";
 
-
-            dataGridPagos.AllowUserToAddRows = false;
+            dataGridPedidos.AllowUserToAddRows = false;
         }
+
+        private void BBuscarPedido_Click(object sender, EventArgs e)
+        {
+            string criterioBusqueda = TBBuscarPedido.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(criterioBusqueda))
+            {
+                MessageBox.Show("Por favor, ingrese un criterio de búsqueda.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                PedidoDAL pedidoDAL = new PedidoDAL();
+                List<Pedido> pedidosFiltrados = pedidoDAL.BuscarPedidos(criterioBusqueda);
+
+                if (pedidosFiltrados.Count > 0)
+                {
+                    dataGridPedidos.DataSource = new BindingList<Pedido>(pedidosFiltrados);
+                }
+                else
+                {
+                    MessageBox.Show("No se encontraron pedidos con el criterio ingresado.", "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al buscar los pedidos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void BRefrescarPedido_Click(object sender, EventArgs e)
+        {
+            CargarPedidos();
+        }
+
         private void BGenerarPago_Click(object sender, EventArgs e)
         {
             // Verificar si hay una fila seleccionada en el DataGridView
-            if (dataGridPagos.SelectedRows.Count == 0)
+            if (dataGridPedidos.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Debe seleccionar un pedido para generar el pago.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            var selectedRow = dataGridPagos.SelectedRows[0];
-            string cuilCuit = selectedRow.Cells["DetallesCliente"].Value?.ToString();
+            var selectedRow = dataGridPedidos.SelectedRows[0];
+            string cuilCuit = selectedRow.Cells["CUIL_Cliente"].Value?.ToString();
 
             if (string.IsNullOrEmpty(cuilCuit))
             {
@@ -151,6 +187,16 @@ namespace AgMaGest.C_Presentacion.Cajero
 
             // Obtener el pedido seleccionado
             Pedido pedido = selectedRow.DataBoundItem as Pedido;
+
+            // Verificar el estado del pago
+            PedidoDAL pedidoDAL = new PedidoDAL();
+            int estadoActualPago = pedidoDAL.ObtenerEstadoPagoPorPedido(pedido.IdPedido);
+
+            if (estadoActualPago == 1)
+            {
+                MessageBox.Show("El pedido seleccionado ya tiene un pago confirmado. No se puede generar un nuevo pago.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             if (EsCuit(cuilCuit))
             {
@@ -176,43 +222,11 @@ namespace AgMaGest.C_Presentacion.Cajero
             return cuilCuit.Length == 11 && (cuilCuit.StartsWith("30") || cuilCuit.StartsWith("33"));
         }
 
-        private void BBuscarFacturas_Click(object sender, EventArgs e)
-        {
-            string criterioBusqueda = TBBuscarPedido.Text.Trim();
-
-            if (string.IsNullOrWhiteSpace(criterioBusqueda))
-            {
-                MessageBox.Show("Por favor, ingrese un criterio de búsqueda.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            try
-            {
-                PedidoDAL pedidoDAL = new PedidoDAL();
-                List<Pedido> pedidosFiltrados = pedidoDAL.BuscarPedidos(criterioBusqueda);
-
-                if (pedidosFiltrados.Count > 0)
-                {
-                    dataGridPagos.DataSource = new BindingList<Pedido>(pedidosFiltrados);
-                }
-                else
-                {
-                    MessageBox.Show("No se encontraron pedidos con el criterio ingresado.", "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al buscar los pedidos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-        }
-
-
         private void DataGridPagos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == dataGridPagos.Columns["Imagen"].Index && e.RowIndex >= 0)
+            if (e.ColumnIndex == dataGridPedidos.Columns["Imagen"].Index && e.RowIndex >= 0)
             {
-                var imagen = dataGridPagos.Rows[e.RowIndex].Cells["Imagen"].Value as Image;
+                var imagen = dataGridPedidos.Rows[e.RowIndex].Cells["Imagen"].Value as Image;
                 if (imagen != null)
                 {
                     VisualizarImagen formImagen = new VisualizarImagen(imagen);
@@ -224,11 +238,10 @@ namespace AgMaGest.C_Presentacion.Cajero
                 }
             }
         }
-
        
         private void DataGridPagos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (dataGridPagos.Columns[e.ColumnIndex].Name == "NombreEstadoPedido")
+            if (dataGridPedidos.Columns[e.ColumnIndex].Name == "NombreEstadoPedido")
             {
                 string estadoPedido = e.Value?.ToString();
 
@@ -236,17 +249,12 @@ namespace AgMaGest.C_Presentacion.Cajero
                 {
                     switch (estadoPedido.ToLower())
                     {
-                        case "realizado":
+                        case "confirmado":
                             e.CellStyle.BackColor = Color.LightGreen;
                             e.CellStyle.ForeColor = Color.Black;
                             break;
 
                         case "pendiente":
-                            e.CellStyle.BackColor = Color.LightYellow;
-                            e.CellStyle.ForeColor = Color.Black;
-                            break;
-
-                        case "cancelado":
                             e.CellStyle.BackColor = Color.LightCoral;
                             e.CellStyle.ForeColor = Color.White;
                             break;
@@ -262,7 +270,7 @@ namespace AgMaGest.C_Presentacion.Cajero
 
         private void DataGridViewClientes_SelectionChanged(object sender, EventArgs e)
         {
-            if (dataGridPagos.SelectedRows.Count > 0)
+            if (dataGridPedidos.SelectedRows.Count > 0)
             {
                 BGenerarPago.Visible = true;
             }
@@ -271,6 +279,5 @@ namespace AgMaGest.C_Presentacion.Cajero
                 BGenerarPago.Visible = false;
             }
         }
-
     }
 }

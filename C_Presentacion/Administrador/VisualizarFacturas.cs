@@ -24,8 +24,6 @@ namespace AgMaGest.C_Presentacion.Administrador
         {
             InitializeComponent();
             this.Load += FacturasAdmin_Load; // Maneja el evento Load para inicializar la vista
-            this.dataGridFacturas.CellContentClick += new DataGridViewCellEventHandler(this.dataGridFacturas_CellContentClick);
-
         }
 
         private void FacturasAdmin_Load(object sender, EventArgs e)
@@ -38,8 +36,9 @@ namespace AgMaGest.C_Presentacion.Administrador
             try
             {
                 ConfigurarDataGridView();
+                dataGridFacturas.AutoGenerateColumns = false;
 
-                FacturaDAL facturaDAL = new FacturaDAL(); // Clase para acceder a la base de datos
+                FacturaDAL facturaDAL = new FacturaDAL(); 
                 List<Factura> listaFacturas = facturaDAL.ObtenerFacturas();
 
                 if (listaFacturas != null && listaFacturas.Count > 0)
@@ -70,15 +69,6 @@ namespace AgMaGest.C_Presentacion.Administrador
             dataGridFacturas.Columns.Add("NumFactura", "Número de Factura");
             dataGridFacturas.Columns["NumFactura"].DataPropertyName = "NumFactura";
 
-            var descargarButtonColumn = new DataGridViewButtonColumn
-            {
-                Name = "DescargarFactura",
-                HeaderText = "Descargar Factura",
-                Text = "Descargar",
-                UseColumnTextForButtonValue = true
-            };
-            dataGridFacturas.Columns.Add(descargarButtonColumn);
-
             dataGridFacturas.Columns.Add("CUIL_Empleado", "CUIL Empleado");
             dataGridFacturas.Columns["CUIL_Empleado"].DataPropertyName = "CUIL_Empleado";
 
@@ -102,22 +92,70 @@ namespace AgMaGest.C_Presentacion.Administrador
             dataGridFacturas.AutoGenerateColumns = false;
             dataGridFacturas.AllowUserToAddRows = false;
             dataGridFacturas.ReadOnly = true;
-            dataGridFacturas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
-
-        // Maneja el evento CellContentClick para el botón de descargar factura
-        private void dataGridFacturas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void BBuscarFactura_Click(object sender, EventArgs e)
         {
-            if (e.ColumnIndex == dataGridFacturas.Columns["DescargarFactura"].Index && e.RowIndex >= 0)
+            string criterioBusqueda = TBBuscarFactura.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(criterioBusqueda))
+            {
+                MessageBox.Show("Por favor, ingrese un criterio de búsqueda.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                // Buscar las facturas
+                FacturaDAL facturaDAL = new FacturaDAL();
+                List<Factura> facturasFiltradas = facturaDAL.BuscarFacturas(criterioBusqueda);
+
+                if (facturasFiltradas != null && facturasFiltradas.Count > 0)
+                {
+                    // Cargar solo las facturas filtradas
+                    dataGridFacturas.DataSource = new BindingList<Factura>(facturasFiltradas);
+                }
+                else
+                {
+                    MessageBox.Show("No se encontraron facturas con el criterio ingresado.", "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Recargar todas las facturas solo si el DataGridView está vacío o no tiene datos relevantes
+                    if (dataGridFacturas.Rows.Count == 0 || dataGridFacturas.DataSource == null)
+                    {
+                        CargarFacturas();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al buscar las facturas: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void BRefrescarFacturas_Click(object sender, EventArgs e)
+        {
+            CargarFacturas();
+        }
+
+        private void BDescargar_Click(object sender, EventArgs e)
+        {
+            if (dataGridFacturas.SelectedRows.Count > 0)
             {
                 // Obtener la factura seleccionada
-                Factura facturaSeleccionada = dataGridFacturas.Rows[e.RowIndex].DataBoundItem as Factura;
+                Factura facturaSeleccionada = dataGridFacturas.SelectedRows[0].DataBoundItem as Factura;
+
                 if (facturaSeleccionada != null)
                 {
-                    // Implementa la lógica para descargar la factura
                     DescargarFactura(facturaSeleccionada);
                 }
+                else
+                {
+                    MessageBox.Show("No se pudo obtener la información de la factura seleccionada.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar una fila para descargar la factura.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -154,36 +192,17 @@ namespace AgMaGest.C_Presentacion.Administrador
             }
         }
 
-        private void BBuscarFactura_Click(object sender, EventArgs e)
+        private void DataGridFacturas_SelectionChanged(object sender, EventArgs e)
         {
-            /*string criterioBusqueda = TBBuscarFactura.Text.Trim();
-
-            if (string.IsNullOrWhiteSpace(criterioBusqueda))
+            if (dataGridFacturas.SelectedRows.Count > 0)
             {
-                MessageBox.Show("Por favor, ingrese un criterio de búsqueda.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                BDescargar.Visible = true;
             }
-            try
+            else
             {
-                FacturaDAL facturaDAL = new FacturaDAL();
-                List<Factura> facturasFiltradas = facturaDAL.BuscarFacturas(criterioBusqueda);
-
-                if (facturasFiltradas != null && facturasFiltradas.Count > 0)
-                {
-                    // Aquí solo se filtran las facturas sin necesidad de llamar a CargarFacturas()
-                    dataGridFacturas.DataSource = new BindingList<Factura>(facturasFiltradas);
-                }
-                else
-                {
-                    MessageBox.Show("No se encontraron facturas con el criterio ingresado.", "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    dataGridFacturas.DataSource = null; // Limpia el DataGridView
-                }
-
+                // Opcionalmente, ocultar los botones si no hay selección
+                BDescargar.Visible = false;
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al buscar las facturas: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }*/
         }
     }
 }

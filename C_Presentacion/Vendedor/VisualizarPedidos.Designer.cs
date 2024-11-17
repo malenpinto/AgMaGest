@@ -46,9 +46,10 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.BBuscarFacturas = new System.Windows.Forms.Button();
-            this.TBBuscarFactura = new System.Windows.Forms.TextBox();
+            this.BBuscarCliente = new System.Windows.Forms.Button();
+            this.TBBuscarPedido = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.BRefrescarPedidos = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPedidos)).BeginInit();
             this.panel5.SuspendLayout();
@@ -198,7 +199,7 @@
             // 
             this.panel10.BackColor = System.Drawing.Color.LightSteelBlue;
             this.panel10.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel10.Location = new System.Drawing.Point(475, 0);
+            this.panel10.Location = new System.Drawing.Point(473, 0);
             this.panel10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(5, 60);
@@ -207,55 +208,76 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.Transparent;
-            this.panel7.Controls.Add(this.BBuscarFacturas);
-            this.panel7.Controls.Add(this.TBBuscarFactura);
+            this.panel7.Controls.Add(this.BBuscarCliente);
+            this.panel7.Controls.Add(this.TBBuscarPedido);
             this.panel7.Controls.Add(this.label1);
+            this.panel7.Controls.Add(this.BRefrescarPedidos);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(475, 60);
+            this.panel7.Size = new System.Drawing.Size(473, 60);
             this.panel7.TabIndex = 5;
             // 
-            // BBuscarFacturas
+            // BBuscarCliente
             // 
-            this.BBuscarFacturas.BackColor = System.Drawing.Color.Transparent;
-            this.BBuscarFacturas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BBuscarFacturas.Dock = System.Windows.Forms.DockStyle.Right;
-            this.BBuscarFacturas.FlatAppearance.BorderSize = 0;
-            this.BBuscarFacturas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.BBuscarFacturas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.BBuscarFacturas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BBuscarFacturas.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BBuscarFacturas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
-            this.BBuscarFacturas.Image = global::AgMaGest.Properties.Resources.Icono_Buscar_Vendedor;
-            this.BBuscarFacturas.Location = new System.Drawing.Point(423, 0);
-            this.BBuscarFacturas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BBuscarFacturas.Name = "BBuscarFacturas";
-            this.BBuscarFacturas.Size = new System.Drawing.Size(52, 60);
-            this.BBuscarFacturas.TabIndex = 7;
-            this.BBuscarFacturas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BBuscarFacturas.UseVisualStyleBackColor = false;
-            this.BBuscarFacturas.Click += new System.EventHandler(this.BBuscarFacturas_Click);
+            this.BBuscarCliente.BackColor = System.Drawing.Color.Transparent;
+            this.BBuscarCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BBuscarCliente.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BBuscarCliente.FlatAppearance.BorderSize = 0;
+            this.BBuscarCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BBuscarCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.BBuscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BBuscarCliente.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BBuscarCliente.Image = global::AgMaGest.Properties.Resources.Icono_BuscarVendedor;
+            this.BBuscarCliente.Location = new System.Drawing.Point(369, 0);
+            this.BBuscarCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BBuscarCliente.Name = "BBuscarCliente";
+            this.BBuscarCliente.Size = new System.Drawing.Size(52, 60);
+            this.BBuscarCliente.TabIndex = 9;
+            this.BBuscarCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BBuscarCliente.UseVisualStyleBackColor = false;
+            this.BBuscarCliente.Click += new System.EventHandler(this.BBuscarCliente_Click);
             // 
-            // TBBuscarFactura
+            // TBBuscarPedido
             // 
-            this.TBBuscarFactura.BackColor = System.Drawing.Color.Gainsboro;
-            this.TBBuscarFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBBuscarFactura.Location = new System.Drawing.Point(176, 15);
-            this.TBBuscarFactura.Name = "TBBuscarFactura";
-            this.TBBuscarFactura.Size = new System.Drawing.Size(237, 32);
-            this.TBBuscarFactura.TabIndex = 0;
+            this.TBBuscarPedido.BackColor = System.Drawing.Color.Gainsboro;
+            this.TBBuscarPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.TBBuscarPedido.Location = new System.Drawing.Point(159, 16);
+            this.TBBuscarPedido.Name = "TBBuscarPedido";
+            this.TBBuscarPedido.Size = new System.Drawing.Size(199, 27);
+            this.TBBuscarPedido.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Bahnschrift", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(15, 21);
+            this.label1.Location = new System.Drawing.Point(3, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(127, 21);
             this.label1.TabIndex = 2;
             this.label1.Text = "Buscar Pedidos";
+            // 
+            // BRefrescarPedidos
+            // 
+            this.BRefrescarPedidos.BackColor = System.Drawing.Color.Transparent;
+            this.BRefrescarPedidos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BRefrescarPedidos.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BRefrescarPedidos.FlatAppearance.BorderSize = 0;
+            this.BRefrescarPedidos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BRefrescarPedidos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.BRefrescarPedidos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BRefrescarPedidos.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BRefrescarPedidos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
+            this.BRefrescarPedidos.Image = global::AgMaGest.Properties.Resources.Icono_RefescarVendedor;
+            this.BRefrescarPedidos.Location = new System.Drawing.Point(421, 0);
+            this.BRefrescarPedidos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BRefrescarPedidos.Name = "BRefrescarPedidos";
+            this.BRefrescarPedidos.Size = new System.Drawing.Size(52, 60);
+            this.BRefrescarPedidos.TabIndex = 8;
+            this.BRefrescarPedidos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BRefrescarPedidos.UseVisualStyleBackColor = false;
+            this.BRefrescarPedidos.Click += new System.EventHandler(this.BRefrescarPedidos_Click);
             // 
             // panel6
             // 
@@ -299,7 +321,7 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.TextBox TBBuscarFactura;
+        private System.Windows.Forms.TextBox TBBuscarPedido;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_VerVentas;
         private System.Windows.Forms.DataGridViewButtonColumn descargarFact_verVentas;
@@ -310,7 +332,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Cliente_verVentas;
         private System.Windows.Forms.DataGridViewTextBoxColumn detalle_verVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalFact__verVentas;
-        private System.Windows.Forms.Button BBuscarFacturas;
         private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Button BRefrescarPedidos;
+        private System.Windows.Forms.Button BBuscarCliente;
     }
 }

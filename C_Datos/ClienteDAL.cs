@@ -256,6 +256,7 @@ namespace AgMaGest.C_Datos
                 throw;
             }
         }
+
         public bool ActualizarEstadoCliente(int idCliente, int nuevoEstado)
         {
             try
@@ -263,7 +264,7 @@ namespace AgMaGest.C_Datos
                 using (var connection = new SqlConnection(ConnectionString))
                 {
                     connection.Open();
-                    string query = "UPDATE Cliente SET IdEstadoCliente = @nuevoEstado WHERE id_Cliente = @idCliente";
+                    string query = "UPDATE Cliente SET id_Estado_Cliente = @nuevoEstado WHERE id_Cliente = @idCliente";
                     using (var command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@nuevoEstado", nuevoEstado);
@@ -289,43 +290,43 @@ namespace AgMaGest.C_Datos
                 {
                     conn.Open();
                     SqlCommand cmd = new SqlCommand(@"
-                SELECT 
-                    c.email_Cliente,
-                    c.celular_Cliente,
-                    c.calle_Cliente, 
-                    c.num_Calle, 
-                    c.piso_Cliente, 
-                    c.dpto_Cliente,
-                    c.codigo_PostalCliente,
-                    l.nombre_Localidad AS LocalidadNombre, 
-                    p.nombre_Provincia AS ProvinciaNombre, 
-                    pa.nombre_Pais AS PaisNombre,
-                    cf.cuil_CFinal,
-                    cf.dni_CFinal,
-                    cf.nombre_CFinal,
-                    cf.apellido_CFinal,
-                    cf.fechaNac_CFinal,
-                    ce.cuit_CEmpresa,
-                    ce.razon_Social_CEmpresa,
-                    ec.nombre_EstadoCliente AS EstadoCliente
-                FROM 
-                    Cliente c
-                LEFT JOIN 
-                    Cliente_Final cf ON c.id_Cliente = cf.id_Cliente
-                LEFT JOIN 
-                    Cliente_Empresa ce ON c.id_Cliente = ce.id_Cliente
-                INNER JOIN 
-                    Localidad l ON c.id_Localidad = l.id_Localidad
-                INNER JOIN 
-                    Provincia p ON l.id_Provincia = p.id_Provincia
-                INNER JOIN 
-                    Pais pa ON p.id_Pais = pa.id_Pais
-                INNER JOIN 
-                    Estado_Cliente ec ON c.id_Estado_Cliente = ec.id_Estado_Cliente
-                WHERE 
-                    (cf.cuil_CFinal LIKE @texto OR cf.dni_CFinal LIKE @texto OR cf.nombre_CFinal LIKE @texto OR cf.apellido_CFinal LIKE @texto)
-                    OR (ce.cuit_CEmpresa LIKE @texto OR ce.razon_Social_CEmpresa LIKE @texto)
-                    OR (c.email_Cliente LIKE @texto OR c.celular_Cliente LIKE @texto)", conn);
+                        SELECT 
+                            c.email_Cliente,
+                            c.celular_Cliente,
+                            c.calle_Cliente, 
+                            c.num_Calle, 
+                            c.piso_Cliente, 
+                            c.dpto_Cliente,
+                            c.codigo_PostalCliente,
+                            l.nombre_Localidad AS LocalidadNombre, 
+                            p.nombre_Provincia AS ProvinciaNombre, 
+                            pa.nombre_Pais AS PaisNombre,
+                            cf.cuil_CFinal,
+                            cf.dni_CFinal,
+                            cf.nombre_CFinal,
+                            cf.apellido_CFinal,
+                            cf.fechaNac_CFinal,
+                            ce.cuit_CEmpresa,
+                            ce.razon_Social_CEmpresa,
+                            ec.nombre_EstadoCliente AS EstadoCliente
+                        FROM 
+                            Cliente c
+                        LEFT JOIN 
+                            Cliente_Final cf ON c.id_Cliente = cf.id_Cliente
+                        LEFT JOIN 
+                            Cliente_Empresa ce ON c.id_Cliente = ce.id_Cliente
+                        INNER JOIN 
+                            Localidad l ON c.id_Localidad = l.id_Localidad
+                        INNER JOIN 
+                            Provincia p ON l.id_Provincia = p.id_Provincia
+                        INNER JOIN 
+                            Pais pa ON p.id_Pais = pa.id_Pais
+                        INNER JOIN 
+                            Estado_Cliente ec ON c.id_Estado_Cliente = ec.id_Estado_Cliente
+                        WHERE 
+                            (cf.cuil_CFinal LIKE @texto OR cf.dni_CFinal LIKE @texto OR cf.nombre_CFinal LIKE @texto OR cf.apellido_CFinal LIKE @texto)
+                            OR (ce.cuit_CEmpresa LIKE @texto OR ce.razon_Social_CEmpresa LIKE @texto)
+                            OR (c.email_Cliente LIKE @texto OR c.celular_Cliente LIKE @texto)", conn);
 
                     cmd.Parameters.AddWithValue("@texto", $"%{texto}%");
 

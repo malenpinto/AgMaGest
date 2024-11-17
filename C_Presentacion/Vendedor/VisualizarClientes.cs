@@ -97,72 +97,17 @@ namespace AgMaGest.C_Presentacion.Vendedor
             dataGridClientes.Columns["PaisNombre"].DataPropertyName = "PaisNombre";
         }
 
-        // Establece el orden de las columnas
-        // dataGridClientes.Columns["DireccionCompleta"].DisplayIndex = 9;
-        // dataGridClientes.Columns["CodigoPostal"].DisplayIndex = 10;
-        // dataGridClientes.Columns["LocalidadNombre"].DisplayIndex = 11;
-        // dataGridClientes.Columns["ProvinciaNombre"].DisplayIndex = 12;
-        // dataGridClientes.Columns["PaisNombre"].DisplayIndex = 13;
-
-
-        private void DataGridClientes_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        private void BBuscarEmpleado_Click(object sender, EventArgs e)
         {
-            var cliente = dataGridClientes.Rows[e.RowIndex].DataBoundItem;
-
-            // Verificar si estamos en la columna "CUIL/CUIT" 
-            if (dataGridClientes.Columns[e.ColumnIndex].Name == "cuilCuit")
-            {
-                if (cliente is ClienteEmpresa clienteEmpresa)
+            string textoBusqueda = TBBuscarCliente.Text.Trim();
+                if (!string.IsNullOrEmpty(textoBusqueda))
                 {
-                    e.Value = clienteEmpresa.CuitCEmpresa;
+                    FiltrarClientes(textoBusqueda);
                 }
-                else if (cliente is ClienteFinal clienteFinal)
+                else
                 {
-                    e.Value = clienteFinal.CuilCFinal;
-                }
-            }
-
-            // Verificar si estamos en la columna "Nombre"
-            else if (dataGridClientes.Columns[e.ColumnIndex].Name == "nombreCliente")
-            {
-                if (cliente is ClienteEmpresa clienteEmpresa)
-                {
-                    e.Value = clienteEmpresa.RazonSocialCEmpresa;
-                }
-                else if (cliente is ClienteFinal clienteFinal)
-                {
-                    e.Value = $"{clienteFinal.NombreCFinal} {clienteFinal.ApellidoCFinal}";
-                }
-            }
-
-
-            // Verificar si estamos en la columna "EstadoCliente" (o el nombre que tenga en tu DataGrid)
-            if (dataGridClientes.Columns[e.ColumnIndex].Name == "EstadoNombre")
-            {
-                // Obtener el valor de la celda de estado
-                string estadoCliente = e.Value as string;
-
-                if (estadoCliente == "Vendido")
-                {
-                    e.CellStyle.BackColor = Color.LightGreen;
-                    e.CellStyle.ForeColor = Color.Black;
-                }
-                else if (estadoCliente == "Contactado para cerrar")
-                {
-                    e.CellStyle.BackColor = Color.LightYellow;
-                    e.CellStyle.ForeColor = Color.Black;
-                }
-                else if (estadoCliente == "Visita al salon")
-                {
-                    e.CellStyle.BackColor = Color.LightBlue;
-                    e.CellStyle.ForeColor = Color.Black;
-                }
-                else if (estadoCliente == "Cliente interesado")
-                {
-                    e.CellStyle.BackColor = Color.LightCoral;
-                    e.CellStyle.ForeColor = Color.Black;
-                }
-            }
+                    MessageBox.Show("Por favor, ingrese un texto para buscar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                 }
         }
 
         private void FiltrarClientes(string texto)
@@ -187,21 +132,10 @@ namespace AgMaGest.C_Presentacion.Vendedor
             }
         }
 
-        private void DataGridViewClientes_SelectionChanged(object sender, EventArgs e)
+        private void BRefrescarCliente_Click(object sender, EventArgs e)
         {
-            if (dataGridClientes.SelectedRows.Count > 0)
-            {
-                BEditarCliente.Visible = true;
-                BEliminarCliente.Visible = true;
-            }
-            else
-            {
-                // Opcionalmente, ocultar los botones si no hay selección
-                BEditarCliente.Visible = false;
-                BEliminarCliente.Visible = false;
-            }
+            CargarClientes();
         }
-
 
         private void BAgregarCliente_Click_1(object sender, EventArgs e)
         {
@@ -231,19 +165,6 @@ namespace AgMaGest.C_Presentacion.Vendedor
             formEmpresa.ShowDialog();
             BAgregarPersona.Visible = false;
             BAgregarEmpresa.Visible = false;
-        }
-
-        private void BBuscarEmpleado_Click(object sender, EventArgs e)
-        {
-            string textoBusqueda = TBBuscarCliente.Text.Trim();
-                if (!string.IsNullOrEmpty(textoBusqueda))
-                {
-                    FiltrarClientes(textoBusqueda);
-                }
-                else
-                {
-                    MessageBox.Show("Por favor, ingrese un texto para buscar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                 }
         }
 
         private void BEditarCliente_Click(object sender, EventArgs e)
@@ -375,6 +296,80 @@ namespace AgMaGest.C_Presentacion.Vendedor
                 BAgregarEmpresa.Visible = false;
                 BEditarCliente.Visible = false;
                 BEliminarCliente.Visible = false;
+            }
+        }
+
+        private void DataGridViewClientes_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridClientes.SelectedRows.Count > 0)
+            {
+                BEditarCliente.Visible = true;
+                BEliminarCliente.Visible = true;
+            }
+            else
+            {
+                // Opcionalmente, ocultar los botones si no hay selección
+                BEditarCliente.Visible = false;
+                BEliminarCliente.Visible = false;
+            }
+        }
+
+        private void DataGridClientes_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            var cliente = dataGridClientes.Rows[e.RowIndex].DataBoundItem;
+
+            // Verificar si estamos en la columna "CUIL/CUIT" 
+            if (dataGridClientes.Columns[e.ColumnIndex].Name == "cuilCuit")
+            {
+                if (cliente is ClienteEmpresa clienteEmpresa)
+                {
+                    e.Value = clienteEmpresa.CuitCEmpresa;
+                }
+                else if (cliente is ClienteFinal clienteFinal)
+                {
+                    e.Value = clienteFinal.CuilCFinal;
+                }
+            }
+
+            // Verificar si estamos en la columna "Nombre"
+            else if (dataGridClientes.Columns[e.ColumnIndex].Name == "nombreCliente")
+            {
+                if (cliente is ClienteEmpresa clienteEmpresa)
+                {
+                    e.Value = clienteEmpresa.RazonSocialCEmpresa;
+                }
+                else if (cliente is ClienteFinal clienteFinal)
+                {
+                    e.Value = $"{clienteFinal.NombreCFinal} {clienteFinal.ApellidoCFinal}";
+                }
+            }
+
+            // Verificar si estamos en la columna "EstadoCliente" (o el nombre que tenga en tu DataGrid)
+            if (dataGridClientes.Columns[e.ColumnIndex].Name == "EstadoNombre")
+            {
+                // Obtener el valor de la celda de estado
+                string estadoCliente = e.Value as string;
+
+                if (estadoCliente == "Vendido")
+                {
+                    e.CellStyle.BackColor = Color.LightGreen;
+                    e.CellStyle.ForeColor = Color.Black;
+                }
+                else if (estadoCliente == "Contactado para cerrar")
+                {
+                    e.CellStyle.BackColor = Color.LightYellow;
+                    e.CellStyle.ForeColor = Color.Black;
+                }
+                else if (estadoCliente == "Visita al salon")
+                {
+                    e.CellStyle.BackColor = Color.LightBlue;
+                    e.CellStyle.ForeColor = Color.Black;
+                }
+                else if (estadoCliente == "Cliente interesado")
+                {
+                    e.CellStyle.BackColor = Color.LightCoral;
+                    e.CellStyle.ForeColor = Color.Black;
+                }
             }
         }
     }

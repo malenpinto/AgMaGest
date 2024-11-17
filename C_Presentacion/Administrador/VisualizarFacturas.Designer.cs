@@ -30,16 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VisualizarFacturas));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.BDescargar = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.BBuscarFactura = new System.Windows.Forms.Button();
             this.TBBuscarFactura = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.BRefrescarFacturas = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dataGridFacturas = new System.Windows.Forms.DataGridView();
@@ -104,6 +107,7 @@
             // 
             // panel7
             // 
+            this.panel7.Controls.Add(this.BDescargar);
             this.panel7.Controls.Add(this.panel10);
             this.panel7.Controls.Add(this.panel8);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -113,11 +117,34 @@
             this.panel7.Size = new System.Drawing.Size(1030, 60);
             this.panel7.TabIndex = 3;
             // 
+            // BDescargar
+            // 
+            this.BDescargar.BackColor = System.Drawing.Color.Transparent;
+            this.BDescargar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BDescargar.FlatAppearance.BorderSize = 0;
+            this.BDescargar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BDescargar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.BDescargar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BDescargar.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BDescargar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
+            this.BDescargar.Image = global::AgMaGest.Properties.Resources.Icono_DescargarAdmin;
+            this.BDescargar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BDescargar.Location = new System.Drawing.Point(494, -1);
+            this.BDescargar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BDescargar.Name = "BDescargar";
+            this.BDescargar.Size = new System.Drawing.Size(184, 60);
+            this.BDescargar.TabIndex = 16;
+            this.BDescargar.Text = " Descargar";
+            this.BDescargar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BDescargar.UseVisualStyleBackColor = false;
+            this.BDescargar.Visible = false;
+            this.BDescargar.Click += new System.EventHandler(this.BDescargar_Click);
+            // 
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(200)))), ((int)(((byte)(145)))));
             this.panel10.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel10.Location = new System.Drawing.Point(540, 0);
+            this.panel10.Location = new System.Drawing.Point(473, 0);
             this.panel10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(5, 60);
@@ -129,11 +156,12 @@
             this.panel8.Controls.Add(this.BBuscarFactura);
             this.panel8.Controls.Add(this.TBBuscarFactura);
             this.panel8.Controls.Add(this.label1);
+            this.panel8.Controls.Add(this.BRefrescarFacturas);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel8.Location = new System.Drawing.Point(0, 0);
             this.panel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(540, 60);
+            this.panel8.Size = new System.Drawing.Size(473, 60);
             this.panel8.TabIndex = 5;
             // 
             // BBuscarFactura
@@ -148,7 +176,7 @@
             this.BBuscarFactura.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BBuscarFactura.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
             this.BBuscarFactura.Image = ((System.Drawing.Image)(resources.GetObject("BBuscarFactura.Image")));
-            this.BBuscarFactura.Location = new System.Drawing.Point(488, 0);
+            this.BBuscarFactura.Location = new System.Drawing.Point(369, 0);
             this.BBuscarFactura.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BBuscarFactura.Name = "BBuscarFactura";
             this.BBuscarFactura.Size = new System.Drawing.Size(52, 60);
@@ -160,11 +188,11 @@
             // TBBuscarFactura
             // 
             this.TBBuscarFactura.BackColor = System.Drawing.Color.Gainsboro;
-            this.TBBuscarFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBBuscarFactura.Location = new System.Drawing.Point(232, 13);
+            this.TBBuscarFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBBuscarFactura.Location = new System.Drawing.Point(159, 16);
             this.TBBuscarFactura.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TBBuscarFactura.Name = "TBBuscarFactura";
-            this.TBBuscarFactura.Size = new System.Drawing.Size(250, 32);
+            this.TBBuscarFactura.Size = new System.Drawing.Size(199, 27);
             this.TBBuscarFactura.TabIndex = 0;
             // 
             // label1
@@ -172,11 +200,32 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Bahnschrift", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(18, 20);
+            this.label1.Location = new System.Drawing.Point(3, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(126, 21);
             this.label1.TabIndex = 2;
             this.label1.Text = "Buscar Factura";
+            // 
+            // BRefrescarFacturas
+            // 
+            this.BRefrescarFacturas.BackColor = System.Drawing.Color.Transparent;
+            this.BRefrescarFacturas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BRefrescarFacturas.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BRefrescarFacturas.FlatAppearance.BorderSize = 0;
+            this.BRefrescarFacturas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BRefrescarFacturas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.BRefrescarFacturas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BRefrescarFacturas.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BRefrescarFacturas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
+            this.BRefrescarFacturas.Image = global::AgMaGest.Properties.Resources.Icono_RefescarAdmin;
+            this.BRefrescarFacturas.Location = new System.Drawing.Point(421, 0);
+            this.BRefrescarFacturas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BRefrescarFacturas.Name = "BRefrescarFacturas";
+            this.BRefrescarFacturas.Size = new System.Drawing.Size(52, 60);
+            this.BRefrescarFacturas.TabIndex = 7;
+            this.BRefrescarFacturas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BRefrescarFacturas.UseVisualStyleBackColor = false;
+            this.BRefrescarFacturas.Click += new System.EventHandler(this.BRefrescarFacturas_Click);
             // 
             // panel6
             // 
@@ -200,15 +249,17 @@
             // 
             // dataGridFacturas
             // 
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            this.dataGridFacturas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridFacturas.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridFacturas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridFacturas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridFacturas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_Producto,
@@ -230,20 +281,21 @@
             this.dataGridFacturas.RowTemplate.Height = 24;
             this.dataGridFacturas.Size = new System.Drawing.Size(1030, 525);
             this.dataGridFacturas.TabIndex = 7;
+            this.dataGridFacturas.SelectionChanged += new System.EventHandler(this.DataGridFacturas_SelectionChanged);
             // 
             // id_Producto
             // 
             this.id_Producto.HeaderText = "ID";
             this.id_Producto.MinimumWidth = 6;
             this.id_Producto.Name = "id_Producto";
-            this.id_Producto.Width = 89;
+            this.id_Producto.Width = 52;
             // 
             // editar_Vehiculo
             // 
             this.editar_Vehiculo.HeaderText = "Editar";
             this.editar_Vehiculo.MinimumWidth = 6;
             this.editar_Vehiculo.Name = "editar_Vehiculo";
-            this.editar_Vehiculo.Width = 88;
+            this.editar_Vehiculo.Width = 55;
             // 
             // estado_Vehiculo
             // 
@@ -252,56 +304,56 @@
             this.estado_Vehiculo.Name = "estado_Vehiculo";
             this.estado_Vehiculo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.estado_Vehiculo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.estado_Vehiculo.Width = 89;
+            this.estado_Vehiculo.Width = 62;
             // 
             // patente_Codigo0km_Vehiculo
             // 
             this.patente_Codigo0km_Vehiculo.HeaderText = "Código 0Km/Patente";
             this.patente_Codigo0km_Vehiculo.MinimumWidth = 6;
             this.patente_Codigo0km_Vehiculo.Name = "patente_Codigo0km_Vehiculo";
-            this.patente_Codigo0km_Vehiculo.Width = 89;
+            this.patente_Codigo0km_Vehiculo.Width = 173;
             // 
             // tipo_Vehiculo
             // 
             this.tipo_Vehiculo.HeaderText = "Tipo";
             this.tipo_Vehiculo.MinimumWidth = 6;
             this.tipo_Vehiculo.Name = "tipo_Vehiculo";
-            this.tipo_Vehiculo.Width = 89;
+            this.tipo_Vehiculo.Width = 67;
             // 
             // marca_Vehiculo
             // 
             this.marca_Vehiculo.HeaderText = "Marca";
             this.marca_Vehiculo.MinimumWidth = 6;
             this.marca_Vehiculo.Name = "marca_Vehiculo";
-            this.marca_Vehiculo.Width = 88;
+            this.marca_Vehiculo.Width = 86;
             // 
             // modelo_Vehiculo
             // 
             this.modelo_Vehiculo.HeaderText = "Modelo";
             this.modelo_Vehiculo.MinimumWidth = 6;
             this.modelo_Vehiculo.Name = "modelo_Vehiculo";
-            this.modelo_Vehiculo.Width = 89;
+            this.modelo_Vehiculo.Width = 95;
             // 
             // version_Vehiculo
             // 
             this.version_Vehiculo.HeaderText = "Version";
             this.version_Vehiculo.MinimumWidth = 6;
             this.version_Vehiculo.Name = "version_Vehiculo";
-            this.version_Vehiculo.Width = 89;
+            this.version_Vehiculo.Width = 92;
             // 
             // anio_Vehiculo
             // 
             this.anio_Vehiculo.HeaderText = "Año";
             this.anio_Vehiculo.MinimumWidth = 6;
             this.anio_Vehiculo.Name = "anio_Vehiculo";
-            this.anio_Vehiculo.Width = 89;
+            this.anio_Vehiculo.Width = 67;
             // 
             // km_Vehiculo
             // 
             this.km_Vehiculo.HeaderText = "KM";
             this.km_Vehiculo.MinimumWidth = 6;
             this.km_Vehiculo.Name = "km_Vehiculo";
-            this.km_Vehiculo.Width = 88;
+            this.km_Vehiculo.Width = 60;
             // 
             // condicion_Vehiculo
             // 
@@ -310,7 +362,7 @@
             this.condicion_Vehiculo.Name = "condicion_Vehiculo";
             this.condicion_Vehiculo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.condicion_Vehiculo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.condicion_Vehiculo.Width = 89;
+            this.condicion_Vehiculo.Width = 92;
             // 
             // VisualizarFacturas
             // 
@@ -361,5 +413,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn anio_Vehiculo;
         private System.Windows.Forms.DataGridViewTextBoxColumn km_Vehiculo;
         private System.Windows.Forms.DataGridViewTextBoxColumn condicion_Vehiculo;
+        private System.Windows.Forms.Button BRefrescarFacturas;
+        private System.Windows.Forms.Button BDescargar;
     }
 }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -41,6 +41,7 @@
             this.BBuscarVehiculoCatalogo = new System.Windows.Forms.Button();
             this.TBBuscarVehiculoCatalogo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.BRefrescarVehiculos = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.dataGridCatalogo = new System.Windows.Forms.DataGridView();
             this.id_Catalogo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -110,9 +111,9 @@
             this.panel7.Controls.Add(this.panel10);
             this.panel7.Controls.Add(this.BGenerarPedido);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(497, 0);
+            this.panel7.Location = new System.Drawing.Point(473, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(533, 60);
+            this.panel7.Size = new System.Drawing.Size(557, 60);
             this.panel7.TabIndex = 6;
             // 
             // panel10
@@ -135,7 +136,7 @@
             this.BGenerarPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BGenerarPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BGenerarPedido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(62)))), ((int)(((byte)(141)))));
-            this.BGenerarPedido.Location = new System.Drawing.Point(41, 9);
+            this.BGenerarPedido.Location = new System.Drawing.Point(20, 9);
             this.BGenerarPedido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BGenerarPedido.Name = "BGenerarPedido";
             this.BGenerarPedido.Size = new System.Drawing.Size(191, 41);
@@ -152,10 +153,11 @@
             this.panel6.Controls.Add(this.BBuscarVehiculoCatalogo);
             this.panel6.Controls.Add(this.TBBuscarVehiculoCatalogo);
             this.panel6.Controls.Add(this.label1);
+            this.panel6.Controls.Add(this.BRefrescarVehiculos);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(497, 60);
+            this.panel6.Size = new System.Drawing.Size(473, 60);
             this.panel6.TabIndex = 5;
             // 
             // BBuscarVehiculoCatalogo
@@ -168,9 +170,8 @@
             this.BBuscarVehiculoCatalogo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.BBuscarVehiculoCatalogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BBuscarVehiculoCatalogo.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BBuscarVehiculoCatalogo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
-            this.BBuscarVehiculoCatalogo.Image = global::AgMaGest.Properties.Resources.Icono_Buscar_Vendedor;
-            this.BBuscarVehiculoCatalogo.Location = new System.Drawing.Point(445, 0);
+            this.BBuscarVehiculoCatalogo.Image = global::AgMaGest.Properties.Resources.Icono_BuscarVendedor;
+            this.BBuscarVehiculoCatalogo.Location = new System.Drawing.Point(369, 0);
             this.BBuscarVehiculoCatalogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BBuscarVehiculoCatalogo.Name = "BBuscarVehiculoCatalogo";
             this.BBuscarVehiculoCatalogo.Size = new System.Drawing.Size(52, 60);
@@ -182,22 +183,42 @@
             // TBBuscarVehiculoCatalogo
             // 
             this.TBBuscarVehiculoCatalogo.BackColor = System.Drawing.Color.Gainsboro;
-            this.TBBuscarVehiculoCatalogo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBBuscarVehiculoCatalogo.Location = new System.Drawing.Point(181, 13);
+            this.TBBuscarVehiculoCatalogo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.TBBuscarVehiculoCatalogo.Location = new System.Drawing.Point(159, 16);
             this.TBBuscarVehiculoCatalogo.Name = "TBBuscarVehiculoCatalogo";
-            this.TBBuscarVehiculoCatalogo.Size = new System.Drawing.Size(244, 32);
+            this.TBBuscarVehiculoCatalogo.Size = new System.Drawing.Size(199, 27);
             this.TBBuscarVehiculoCatalogo.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(19, 20);
+            this.label1.Font = new System.Drawing.Font("Bahnschrift", 10F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(3, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(130, 21);
             this.label1.TabIndex = 2;
             this.label1.Text = "Buscar Vehículo";
+            // 
+            // BRefrescarVehiculos
+            // 
+            this.BRefrescarVehiculos.BackColor = System.Drawing.Color.Transparent;
+            this.BRefrescarVehiculos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BRefrescarVehiculos.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BRefrescarVehiculos.FlatAppearance.BorderSize = 0;
+            this.BRefrescarVehiculos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BRefrescarVehiculos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.BRefrescarVehiculos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BRefrescarVehiculos.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BRefrescarVehiculos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
+            this.BRefrescarVehiculos.Image = global::AgMaGest.Properties.Resources.Icono_RefescarVendedor;
+            this.BRefrescarVehiculos.Location = new System.Drawing.Point(421, 0);
+            this.BRefrescarVehiculos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BRefrescarVehiculos.Name = "BRefrescarVehiculos";
+            this.BRefrescarVehiculos.Size = new System.Drawing.Size(52, 60);
+            this.BRefrescarVehiculos.TabIndex = 9;
+            this.BRefrescarVehiculos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BRefrescarVehiculos.UseVisualStyleBackColor = false;
             // 
             // panel8
             // 
@@ -210,14 +231,14 @@
             // 
             // dataGridCatalogo
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridCatalogo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridCatalogo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridCatalogo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridCatalogo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_Catalogo,
@@ -372,5 +393,6 @@
         private System.Windows.Forms.Button BBuscarVehiculoCatalogo;
         private System.Windows.Forms.Button BGenerarPedido;
         private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Button BRefrescarVehiculos;
     }
 }

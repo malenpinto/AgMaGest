@@ -17,11 +17,6 @@ namespace AgMaGest.C_Presentacion.Administrador
         public VisualizarUsuarios()
         {
             InitializeComponent();
-            this.Load += new EventHandler(VisualizarUsuarios_Load);
-        }
-
-        private void VisualizarUsuarios_Load(object sender, EventArgs e)
-        {
             CargarUsuarios();
         }
 
@@ -84,18 +79,62 @@ namespace AgMaGest.C_Presentacion.Administrador
             dataGridUsuarios.Columns["Email"].DataPropertyName = "Email";
             dataGridUsuarios.Columns["Email"].MinimumWidth = 200;
 
+            dataGridUsuarios.AutoGenerateColumns = false;
             dataGridUsuarios.CellFormatting += dataGridUsuarios_CellFormatting;
         }
 
-        private void dataGridUsuarios_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        private void BBuscarUsuario_Click(object sender, EventArgs e)
         {
-            // Verificar si la columna es la de contraseña
-            if (dataGridUsuarios.Columns[e.ColumnIndex].Name == "password_Usuario")
+
+            string textoBusqueda = TBBuscarUsuario.Text.Trim();
+            if (!string.IsNullOrEmpty(textoBusqueda))
             {
-                // Mostrar asteriscos en lugar del valor real
-                e.Value = new string('*', 8); // Cambiar la cantidad según prefieras
-                e.FormattingApplied = true;
+                FiltrarUsuarios(textoBusqueda);
             }
+            else
+            {
+                MessageBox.Show("Por favor, ingrese un texto para buscar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+        }
+
+        private void FiltrarUsuarios(string texto)
+        {
+            UsuarioDAL usuarioDAL = new UsuarioDAL();
+
+            // Filtrar usuarios con el texto de búsqueda
+            List<Usuario> usuariosFiltrados = usuarioDAL.FiltrarUsuarios(texto);
+
+            if (usuariosFiltrados != null && usuariosFiltrados.Count > 0)
+            {
+                // Transformar los datos en un modelo plano
+                var usuariosPlanos = usuariosFiltrados.Select(u => new
+                {
+                    IdUsuario = u.IdUsuario,
+                    CuilEmpleado = u.CuilEmpleado,
+                    PasswordUsuario = u.PassswordUsuario,
+                    DNI = u.Empleado?.DNI,
+                    Nombre = u.Empleado?.Nombre,
+                    Apellido = u.Empleado?.Apellido,
+                    Email = u.Empleado?.Email
+                }).ToList();
+
+                // Asignar los datos transformados al DataGridView
+                dataGridUsuarios.DataSource = usuariosPlanos;
+            }
+            else
+            {
+                // Si no hay resultados, mostrar mensaje y recargar todos los usuarios
+                MessageBox.Show("No se encontraron usuarios con el criterio de búsqueda.", "Búsqueda sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Recargar todos los usuarios
+                CargarUsuarios();
+            }
+        }
+
+        private void BRefrescarUsuarios_Click(object sender, EventArgs e)
+        {
+            CargarUsuarios();
         }
 
         private void BEditarUsuario_Click(object sender, EventArgs e)
@@ -173,52 +212,38 @@ namespace AgMaGest.C_Presentacion.Administrador
             }
         }
 
-        private void BBuscarUsuario_Click(object sender, EventArgs e)
+        private void dataGridUsuarios_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            
-            string textoBusqueda = TBBuscarUsuario.Text.Trim();
-            if (!string.IsNullOrEmpty(textoBusqueda))
+            // Verificar si la columna es la de contraseña
+            if (dataGridUsuarios.Columns[e.ColumnIndex].Name == "password_Usuario")
             {
-                FiltrarUsuarios(textoBusqueda);
+                // Mostrar asteriscos en lugar del valor real
+                e.Value = new string('*', 8); // Cambiar la cantidad según prefieras
+                e.FormattingApplied = true;
             }
-            else
-            {
-                MessageBox.Show("Por favor, ingrese un texto para buscar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            
         }
 
-        private void FiltrarUsuarios(string texto)
+        private void DataGridUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            UsuarioDAL usuarioDAL = new UsuarioDAL();
-
-            // Filtrar usuarios con el texto de búsqueda
-            List<Usuario> usuariosFiltrados = usuarioDAL.FiltrarUsuarios(texto);
-
-            if (usuariosFiltrados != null && usuariosFiltrados.Count > 0)
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
-                // Transformar los datos en un modelo plano
-                var usuariosPlanos = usuariosFiltrados.Select(u => new
-                {
-                    IdUsuario = u.IdUsuario,
-                    CuilEmpleado = u.CuilEmpleado,
-                    PasswordUsuario = u.PassswordUsuario,
-                    DNI = u.Empleado?.DNI,
-                    Nombre = u.Empleado?.Nombre,
-                    Apellido = u.Empleado?.Apellido,
-                    Email = u.Empleado?.Email
-                }).ToList();
+                BEditarUsuario.Enabled = true;
+                BEliminarUsuario.Enabled = true;
+            }
+        }
 
-                // Asignar los datos transformados al DataGridView
-                dataGridUsuarios.DataSource = usuariosPlanos;
+        private void DataGridUsuario_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridUsuarios.SelectedRows.Count > 0)
+            {
+                BEditarUsuario.Visible = true;
+                BEliminarUsuario.Visible = true;
             }
             else
             {
-                // Si no hay resultados, mostrar mensaje y recargar todos los usuarios
-                MessageBox.Show("No se encontraron usuarios con el criterio de búsqueda.", "Búsqueda sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                // Recargar todos los usuarios
-                CargarUsuarios();
+                // Opcionalmente, ocultar los botones si no hay selección
+                BEditarUsuario.Visible = false;
+                BEliminarUsuario.Visible = false;
             }
         }
     }

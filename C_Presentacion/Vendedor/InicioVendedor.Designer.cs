@@ -97,7 +97,7 @@
             this.BAcercaDeVendedor.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
             this.BAcercaDeVendedor.Size = new System.Drawing.Size(287, 46);
             this.BAcercaDeVendedor.TabIndex = 10;
-            this.BAcercaDeVendedor.Text = "Acerca de";
+            this.BAcercaDeVendedor.Text = " Acerca de";
             this.BAcercaDeVendedor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BAcercaDeVendedor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BAcercaDeVendedor.UseVisualStyleBackColor = true;
@@ -118,7 +118,7 @@
             this.BEstadisticasVendedor.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
             this.BEstadisticasVendedor.Size = new System.Drawing.Size(287, 46);
             this.BEstadisticasVendedor.TabIndex = 7;
-            this.BEstadisticasVendedor.Text = "Estadísticas";
+            this.BEstadisticasVendedor.Text = " Estadísticas";
             this.BEstadisticasVendedor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BEstadisticasVendedor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BEstadisticasVendedor.UseVisualStyleBackColor = true;
@@ -160,7 +160,7 @@
             this.BPedidoVendedor.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
             this.BPedidoVendedor.Size = new System.Drawing.Size(287, 46);
             this.BPedidoVendedor.TabIndex = 2;
-            this.BPedidoVendedor.Text = "Pedidos";
+            this.BPedidoVendedor.Text = " Pedidos";
             this.BPedidoVendedor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BPedidoVendedor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BPedidoVendedor.UseVisualStyleBackColor = true;

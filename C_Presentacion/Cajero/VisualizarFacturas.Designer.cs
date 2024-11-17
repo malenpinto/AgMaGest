@@ -38,7 +38,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.TBBuscarFactura = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.BBuscarFacturas = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dataGridFacturas = new System.Windows.Forms.DataGridView();
             this.id_Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,6 +51,9 @@
             this.anio_Vehiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.km_Vehiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.condicion_Vehiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BDescargar = new System.Windows.Forms.Button();
+            this.BBuscarFacturas = new System.Windows.Forms.Button();
+            this.BRefrescarFactura = new System.Windows.Forms.Button();
             this.panel7.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridFacturas)).BeginInit();
@@ -100,6 +102,7 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.GhostWhite;
+            this.panel7.Controls.Add(this.BDescargar);
             this.panel7.Controls.Add(this.panel10);
             this.panel7.Controls.Add(this.panel4);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
@@ -113,7 +116,7 @@
             // 
             this.panel10.BackColor = System.Drawing.Color.Thistle;
             this.panel10.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel10.Location = new System.Drawing.Point(525, 0);
+            this.panel10.Location = new System.Drawing.Point(473, 0);
             this.panel10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(5, 58);
@@ -125,54 +128,34 @@
             this.panel4.Controls.Add(this.TBBuscarFactura);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.BBuscarFacturas);
+            this.panel4.Controls.Add(this.BRefrescarFactura);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(525, 58);
+            this.panel4.Size = new System.Drawing.Size(473, 58);
             this.panel4.TabIndex = 10;
             // 
             // TBBuscarFactura
             // 
             this.TBBuscarFactura.BackColor = System.Drawing.Color.Gainsboro;
-            this.TBBuscarFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBBuscarFactura.Location = new System.Drawing.Point(168, 12);
+            this.TBBuscarFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.TBBuscarFactura.Location = new System.Drawing.Point(159, 16);
             this.TBBuscarFactura.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TBBuscarFactura.Name = "TBBuscarFactura";
-            this.TBBuscarFactura.Size = new System.Drawing.Size(287, 32);
+            this.TBBuscarFactura.Size = new System.Drawing.Size(199, 27);
             this.TBBuscarFactura.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(18, 21);
+            this.label1.Font = new System.Drawing.Font("Bahnschrift", 10F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(3, 19);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(126, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "Buscar Factura";
-            // 
-            // BBuscarFacturas
-            // 
-            this.BBuscarFacturas.BackColor = System.Drawing.Color.Transparent;
-            this.BBuscarFacturas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BBuscarFacturas.Dock = System.Windows.Forms.DockStyle.Right;
-            this.BBuscarFacturas.FlatAppearance.BorderSize = 0;
-            this.BBuscarFacturas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.BBuscarFacturas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.BBuscarFacturas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BBuscarFacturas.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BBuscarFacturas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
-            this.BBuscarFacturas.Image = global::AgMaGest.Properties.Resources.Icono_Buscar_Cajero;
-            this.BBuscarFacturas.Location = new System.Drawing.Point(473, 0);
-            this.BBuscarFacturas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BBuscarFacturas.Name = "BBuscarFacturas";
-            this.BBuscarFacturas.Size = new System.Drawing.Size(52, 58);
-            this.BBuscarFacturas.TabIndex = 9;
-            this.BBuscarFacturas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BBuscarFacturas.UseVisualStyleBackColor = false;
-            this.BBuscarFacturas.Click += new System.EventHandler(this.BBuscarFacturas_Click);
             // 
             // panel5
             // 
@@ -216,6 +199,7 @@
             this.dataGridFacturas.RowTemplate.Height = 24;
             this.dataGridFacturas.Size = new System.Drawing.Size(1030, 527);
             this.dataGridFacturas.TabIndex = 13;
+            this.dataGridFacturas.SelectionChanged += new System.EventHandler(this.DataGridFacturas_SelectionChanged);
             // 
             // id_Producto
             // 
@@ -298,6 +282,70 @@
             this.condicion_Vehiculo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.condicion_Vehiculo.Width = 89;
             // 
+            // BDescargar
+            // 
+            this.BDescargar.BackColor = System.Drawing.Color.Transparent;
+            this.BDescargar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BDescargar.FlatAppearance.BorderSize = 0;
+            this.BDescargar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BDescargar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.BDescargar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BDescargar.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BDescargar.ForeColor = System.Drawing.Color.BlueViolet;
+            this.BDescargar.Image = global::AgMaGest.Properties.Resources.Icono_DescargarCejero;
+            this.BDescargar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BDescargar.Location = new System.Drawing.Point(494, -1);
+            this.BDescargar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BDescargar.Name = "BDescargar";
+            this.BDescargar.Size = new System.Drawing.Size(184, 60);
+            this.BDescargar.TabIndex = 19;
+            this.BDescargar.Text = " Descargar";
+            this.BDescargar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BDescargar.UseVisualStyleBackColor = false;
+            this.BDescargar.Visible = false;
+            this.BDescargar.Click += new System.EventHandler(this.BDescargar_Click);
+            // 
+            // BBuscarFacturas
+            // 
+            this.BBuscarFacturas.BackColor = System.Drawing.Color.Transparent;
+            this.BBuscarFacturas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BBuscarFacturas.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BBuscarFacturas.FlatAppearance.BorderSize = 0;
+            this.BBuscarFacturas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BBuscarFacturas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.BBuscarFacturas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BBuscarFacturas.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BBuscarFacturas.Image = global::AgMaGest.Properties.Resources.Icono_BuscarCajero;
+            this.BBuscarFacturas.Location = new System.Drawing.Point(369, 0);
+            this.BBuscarFacturas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BBuscarFacturas.Name = "BBuscarFacturas";
+            this.BBuscarFacturas.Size = new System.Drawing.Size(52, 58);
+            this.BBuscarFacturas.TabIndex = 9;
+            this.BBuscarFacturas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BBuscarFacturas.UseVisualStyleBackColor = false;
+            this.BBuscarFacturas.Click += new System.EventHandler(this.BBuscarFacturas_Click);
+            // 
+            // BRefrescarFactura
+            // 
+            this.BRefrescarFactura.BackColor = System.Drawing.Color.Transparent;
+            this.BRefrescarFactura.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BRefrescarFactura.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BRefrescarFactura.FlatAppearance.BorderSize = 0;
+            this.BRefrescarFactura.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BRefrescarFactura.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.BRefrescarFactura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BRefrescarFactura.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BRefrescarFactura.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(141)))), ((int)(((byte)(25)))));
+            this.BRefrescarFactura.Image = global::AgMaGest.Properties.Resources.Icono_RefescarCajero;
+            this.BRefrescarFactura.Location = new System.Drawing.Point(421, 0);
+            this.BRefrescarFactura.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BRefrescarFactura.Name = "BRefrescarFactura";
+            this.BRefrescarFactura.Size = new System.Drawing.Size(52, 58);
+            this.BRefrescarFactura.TabIndex = 10;
+            this.BRefrescarFactura.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BRefrescarFactura.UseVisualStyleBackColor = false;
+            this.BRefrescarFactura.Click += new System.EventHandler(this.BRefrescarFactura_Click);
+            // 
             // VisualizarFacturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -347,5 +395,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn anio_Vehiculo;
         private System.Windows.Forms.DataGridViewTextBoxColumn km_Vehiculo;
         private System.Windows.Forms.DataGridViewTextBoxColumn condicion_Vehiculo;
+        private System.Windows.Forms.Button BRefrescarFactura;
+        private System.Windows.Forms.Button BDescargar;
     }
 }

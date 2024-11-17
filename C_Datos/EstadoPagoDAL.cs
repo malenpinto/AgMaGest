@@ -9,34 +9,34 @@ using System.Threading.Tasks;
 
 namespace AgMaGest.C_Datos
 {
-    public class TipoVehiculoDAL
+    public class EstadoPagoDAL
     {
         // Obtener la cadena de conexión desde app.config
         private string ConnectionString = ConfigurationManager.ConnectionStrings["AgMaGest.Properties.Settings.AgmagestConnectionString"].ConnectionString;
 
 
         // Método para obtener la lista de perfiles
-        public List<TipoVehiculo> ObtenerTipoVehiculo()
+        public List<EstadoPago> ObtenerTipoPago()
         {
-            List<TipoVehiculo> tiposVehiculo = new List<TipoVehiculo>();
+            List<EstadoPago> estadosPago = new List<EstadoPago>();
 
             try
             {
                 using (SqlConnection conn = new SqlConnection(ConnectionString))
                 {
                     conn.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT id_tipoVehiculo, nombre_tipoVehiculo FROM Tipo_Vehiculo", conn);
+                    SqlCommand cmd = new SqlCommand("SELECT id_EstadoPago, nombre_EstadoPago FROM Estado_Pago", conn);
                     SqlDataReader reader = cmd.ExecuteReader();
 
                     while (reader.Read())
                     {
-                        TipoVehiculo tipoVehiculo = new TipoVehiculo()
+                        EstadoPago estadoPago = new EstadoPago()
                         {
-                            IdTipoVehiculo = reader.GetInt32(0),
-                            NombreTipoVehiculo = reader.GetString(1)
+                            IdEstadoPago = reader.GetInt32(0),
+                            NombreEstadoPago = reader.GetString(1)
                         };
 
-                        tiposVehiculo.Add(tipoVehiculo);
+                        estadosPago.Add(estadoPago);
                     }
                 }
             }
@@ -53,7 +53,7 @@ namespace AgMaGest.C_Datos
                 throw;
             }
 
-            return tiposVehiculo;
+            return estadosPago;
         }
     }
 }

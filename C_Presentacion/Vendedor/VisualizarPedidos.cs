@@ -19,12 +19,12 @@ namespace AgMaGest.C_Presentacion.Vendedor
         public VisualizarPedidos()
         {
             InitializeComponent();
-            this.Load += new EventHandler(VisualizarVentas_Load);
+            this.Load += new EventHandler(VisualizarPedidos_Load);
             dataGridPedidos.CellClick += DataGridPedidos_CellClick;
             dataGridPedidos.CellFormatting += DataGridPedidos_CellFormatting;
         }
 
-        private void VisualizarVentas_Load(object sender, EventArgs e)
+        private void VisualizarPedidos_Load(object sender, EventArgs e)
         {
             CargarPedidos();
         }
@@ -86,15 +86,14 @@ namespace AgMaGest.C_Presentacion.Vendedor
             dataGridPedidos.Columns.Clear();
 
             // Configurar las columnas estándar
-            dataGridPedidos.Columns.Add("NombreEstadoPedido", "Estado Pedido");
-            dataGridPedidos.Columns["NombreEstadoPedido"].DataPropertyName = "NombreEstadoPedido";
-
             dataGridPedidos.Columns.Add("IdPedido", "ID Pedido");
             dataGridPedidos.Columns["IdPedido"].DataPropertyName = "IdPedido";
 
+            dataGridPedidos.Columns.Add("NombreEstadoPedido", "Estado del Pedido");
+            dataGridPedidos.Columns["NombreEstadoPedido"].DataPropertyName = "NombreEstadoPedido";
+
             dataGridPedidos.Columns.Add("CUIL", "CUIL Empleado");
             dataGridPedidos.Columns["CUIL"].DataPropertyName = "CUIL";
-
 
             dataGridPedidos.Columns.Add("ApellidoEmpleado", "Apellido ");
             dataGridPedidos.Columns["ApellidoEmpleado"].DataPropertyName = "ApellidoEmpleado";
@@ -102,10 +101,11 @@ namespace AgMaGest.C_Presentacion.Vendedor
             dataGridPedidos.Columns.Add("NombreEmpleado", "Nombre ");
             dataGridPedidos.Columns["NombreEmpleado"].DataPropertyName = "NombreEmpleado";
 
+            dataGridPedidos.Columns.Add("CUIL_Cliente", "CUIL del Cliente");
+            dataGridPedidos.Columns["CUIL_Cliente"].DataPropertyName = "CUIL_Cliente";
 
-            // Columna para el CUIL o CUIT del cliente
-            dataGridPedidos.Columns.Add("DetallesCliente", "CUIL/CUIT Cliente");
-            dataGridPedidos.Columns["DetallesCliente"].DataPropertyName = "DetallesCliente";
+            dataGridPedidos.Columns.Add("NombreCliente", "Nombre del Cliente");
+            dataGridPedidos.Columns["NombreCliente"].DataPropertyName = "NombreCliente";
 
             // Columna para los detalles del vehículo
             DataGridViewImageColumn imageColumn = new DataGridViewImageColumn
@@ -118,7 +118,6 @@ namespace AgMaGest.C_Presentacion.Vendedor
             };
             dataGridPedidos.Columns.Add(imageColumn);
 
-
             dataGridPedidos.Columns.Add("DetallesVehiculo", "Detalles Vehiculo");
             dataGridPedidos.Columns["DetallesVehiculo"].DataPropertyName = "DetallesVehiculo";
 
@@ -130,13 +129,12 @@ namespace AgMaGest.C_Presentacion.Vendedor
             dataGridPedidos.Columns.Add("MontoPedido", "Monto Pedido");
             dataGridPedidos.Columns["MontoPedido"].DataPropertyName = "MontoPedido";
 
-
             dataGridPedidos.AllowUserToAddRows = false;
         }
 
-        private void BBuscarFacturas_Click(object sender, EventArgs e)
+        private void BBuscarCliente_Click(object sender, EventArgs e)
         {
-            string criterioBusqueda = TBBuscarFactura.Text.Trim();
+            string criterioBusqueda = TBBuscarPedido.Text.Trim();
 
             if (string.IsNullOrWhiteSpace(criterioBusqueda))
             {
@@ -146,23 +144,35 @@ namespace AgMaGest.C_Presentacion.Vendedor
 
             try
             {
+                // Buscar los pedidos
                 PedidoDAL pedidoDAL = new PedidoDAL();
                 List<Pedido> pedidosFiltrados = pedidoDAL.BuscarPedidos(criterioBusqueda);
 
-                if (pedidosFiltrados.Count > 0)
+                if (pedidosFiltrados != null && pedidosFiltrados.Count > 0)
                 {
+                    // Cargar solo los pedidos filtrados
                     dataGridPedidos.DataSource = new BindingList<Pedido>(pedidosFiltrados);
                 }
                 else
                 {
                     MessageBox.Show("No se encontraron pedidos con el criterio ingresado.", "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Recargar todos los pedidos solo si el DataGridView está vacío o no tiene datos relevantes
+                    if (dataGridPedidos.Rows.Count == 0 || dataGridPedidos.DataSource == null)
+                    {
+                        CargarPedidos();
+                    }
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error al buscar los pedidos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
 
+        private void BRefrescarPedidos_Click(object sender, EventArgs e)
+        {
+            CargarPedidos();
         }
 
         private void DataGridPedidos_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -192,19 +202,14 @@ namespace AgMaGest.C_Presentacion.Vendedor
                 {
                     switch (estadoPedido.ToLower())
                     {
-                        case "realizado":
+                        case "confirmado":
                             e.CellStyle.BackColor = Color.LightGreen;
                             e.CellStyle.ForeColor = Color.Black;
                             break;
 
                         case "pendiente":
-                            e.CellStyle.BackColor = Color.LightYellow;
-                            e.CellStyle.ForeColor = Color.Black;
-                            break;
-
-                        case "cancelado":
                             e.CellStyle.BackColor = Color.LightCoral;
-                            e.CellStyle.ForeColor = Color.White;
+                            e.CellStyle.ForeColor = Color.Black;
                             break;
 
                         default:
@@ -215,6 +220,5 @@ namespace AgMaGest.C_Presentacion.Vendedor
                 }
             }
         }
-
     }
 }

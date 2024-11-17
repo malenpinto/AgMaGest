@@ -19,7 +19,7 @@ namespace AgMaGest.C_Presentacion.Cajero
             InitializeComponent();
             CargarDatosCliente(cuilCuit);
             CargarDatosPedido(pedido);
-            CargarComboBox();
+            CargarTipoPago();
             ConfigurarCamposNoEditables();
         }
 
@@ -54,37 +54,40 @@ namespace AgMaGest.C_Presentacion.Cajero
             }
         }
 
-        private void CargarComboBox()
+        private void CargarTipoPago()
         {
-            try
-            {
-                // Cargar tipo
-                TipoPagoDAL tipoDAL = new TipoPagoDAL();
-                CBMediosPagos.DataSource = tipoDAL.ObtenerTipoPago();
-                CBMediosPagos.DisplayMember = "NombreTipoPago";
-                CBMediosPagos.ValueMember = "IdTipoPago";            
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al cargar los datos de los ComboBox: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+            // Obtener la lista de perfiles desde la base de datos
+            TipoPagoDAL tipoPagoDAL = new TipoPagoDAL();
+            List<TipoPago> tipos = tipoPagoDAL.ObtenerTipoPago();
 
-        private void BSalirGenerarPago_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            // Agregar una opción por defecto "Seleccione una"
+            tipos.Insert(0, new TipoPago { IdTipoPago = 0, NombreTipoPago = "Seleccione un tipo" });
+
+            // Asignar la lista al ComboBox
+            CBMediosPagos.DataSource = tipos; // Asignar la lista de perfiles al ComboBox
+            CBMediosPagos.DisplayMember = "NombreTipoPago"; // Campo que se mostrará en el ComboBox
+            CBMediosPagos.ValueMember = "IdTipoPago"; // Campo que se utilizará como valor
+
+            // Seleccionar la opción por defecto
+            CBMediosPagos.SelectedIndex = 0;
         }
 
         private void BConfirmarGenerarPago_Click(object sender, EventArgs e)
         {
             try
             {
+                if (CBMediosPagos.SelectedValue.ToString() == "0")
+                {
+                    MessageBox.Show("Debe seleccionar un perfil.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
                 // Crear el objeto Pago con los datos ingresados
                 Pago nuevoPago = new Pago
                 {
                     Descripcion = TBDescPago.Text,
                     Importe = (Double)decimal.Parse(TBMontoPago.Text),
-                    IdTipoPago = (int)CBMediosPagos.SelectedValue,
+                    IdTipoPago = Convert.ToInt32(CBMediosPagos.SelectedValue),
                     IdEstadoPago = 1,  // Estado inicial del pago
                     IdPedido = int.Parse(TBNumPedido.Text)
                 };
@@ -117,28 +120,59 @@ namespace AgMaGest.C_Presentacion.Cajero
 
                         if (facturaGenerada)
                         {
-                            MessageBox.Show($"Pago registrado, estado del pedido actualizado, y factura #{nuevaFactura.NumFactura} generada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            this.Close();
+                            // Actualizar el estado del pago a 1 (confirmado)
+                            bool estadoPagoActualizado = pagoDAL.ActualizarEstadoPago(nuevoPago.IdPago, 1);
+
+                            if (estadoPagoActualizado)
+                            {
+                                // Obtener el idCliente asociado al pedido
+                                int idCliente = pedidoDAL.ObtenerIdClientePorPedido(idPedido);
+
+                                if (idCliente > 0)
+                                {
+                                    ClienteDAL clienteDAL = new ClienteDAL();
+                                    bool estadoClienteActualizado = clienteDAL.ActualizarEstadoCliente(idCliente, 1);
+
+                                    if (estadoClienteActualizado)
+                                    {
+                                        MessageBox.Show($"Pago registrado, estado del pedido y cliente actualizados, y factura #{nuevaFactura.NumFactura} generada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        this.Close();
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Error al actualizar el estado del cliente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("No se encontró el cliente asociado al pedido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error al actualizar el estado del pago.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
                         else
                         {
-                            MessageBox.Show("Error al generar la factura.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Error al actualizar el estado del pedido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Error al actualizar el estado del pedido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Error al registrar el pago.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                }
-                else
-                {
-                    MessageBox.Show("Error al registrar el pago.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Ocurrió un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void BSalirGenerarPago_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -165,22 +165,31 @@ namespace AgMaGest.C_Presentacion.Administrador
 
         private void CargarImagenVehiculo(string rutaImagen)
         {
-            if (!string.IsNullOrEmpty(rutaImagen) && File.Exists(rutaImagen))
+            try
             {
-                try
+                // Validar si la imagen existe en la ruta especificada
+                if (!string.IsNullOrEmpty(rutaImagen) && File.Exists(rutaImagen))
                 {
                     PBImagenEditar.Image = Image.FromFile(rutaImagen);
-                    PBImagenEditar.SizeMode = PictureBoxSizeMode.Zoom;
-                    rutaImagenSeleccionada = rutaImagen; // Guarda la ruta de la imagen actual
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show($"Error al cargar la imagen: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    // Cargar imagen por defecto si no se encuentra la imagen
+                    PBImagenEditar.Image = AgMaGest.Properties.Resources.VhiculoPorDefecto;
                 }
+
+                // Configurar el modo de visualización
+                PBImagenEditar.SizeMode = PictureBoxSizeMode.Zoom;
+
+                // Actualizar la ruta seleccionada (si aplica)
+                rutaImagenSeleccionada = rutaImagen;
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("La imagen del vehículo no se encuentra en la ruta especificada.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                // Manejar errores de carga de imagen
+                MessageBox.Show($"Error al cargar la imagen: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                PBImagenEditar.Image = AgMaGest.Properties.Resources.VhiculoPorDefecto; // Imagen por defecto en caso de error
+                PBImagenEditar.SizeMode = PictureBoxSizeMode.Zoom;
             }
         }
 

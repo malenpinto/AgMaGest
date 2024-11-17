@@ -285,15 +285,20 @@ namespace AgMaGest.C_Datos
                         INNER JOIN Localidad l ON e.id_Localidad = l.id_Localidad
                         INNER JOIN Provincia p ON l.id_Provincia = p.id_Provincia
                         INNER JOIN Pais pa ON p.id_Pais = pa.id_Pais
-                        INNER JOIN Perfil_Empleado pr ON e.id_perfil = pr.id_Perfil
+                        INNER JOIN Perfil_Empleado pr ON e.id_perfil = pr.id_perfil
                         INNER JOIN Estado_Empleado es ON e.id_Estado = es.id_EstadoEmpleado
                         WHERE e.cuil_Empleado LIKE @texto
                            OR e.dni_Empleado LIKE @texto
                            OR e.nombre_Empleado LIKE @texto
                            OR e.apellido_Empleado LIKE @texto
-                           OR e.email_Empleado LIKE @texto", conn);
+                           OR e.email_Empleado LIKE @texto
+                           OR l.nombre_Localidad LIKE @texto
+                           OR p.nombre_Provincia LIKE @texto
+                           OR pa.nombre_Pais LIKE @texto
+                           OR (pr.nombre_Perfil IN ('Activo', 'Inactivo') AND pr.nombre_Perfil LIKE @texto)
+                           OR es.nombre_EstadoEmpleado LIKE @texto", conn);
 
-                            cmd.Parameters.AddWithValue("@texto", $"%{texto}%");
+                    cmd.Parameters.AddWithValue("@texto", $"%{texto}%");
 
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
@@ -301,28 +306,23 @@ namespace AgMaGest.C_Datos
                         {
                             Empleado empleado = new Empleado
                             {
-                                CUIL = reader.GetString(0),
-                                DNI = reader.GetString(1),
-                                Nombre = reader.GetString(2),
-                                Apellido = reader.GetString(3),
-                                Email = reader.GetString(4),
-                                Celular = reader.GetString(5),
-                                FechaNacimiento = reader.GetDateTime(6),
-
-                                // Campos de dirección
-                                Calle = reader.GetString(7),
-                                NumeroCalle = reader.GetInt32(8),
-                                Piso = reader.IsDBNull(9) ? 0 : reader.GetInt32(9),
-                                Dpto = reader.IsDBNull(10) ? null : reader.GetString(10),
-
-                                CodigoPostal = reader.IsDBNull(11) ? 0 : reader.GetInt32(11),
-
-                                // Otros campos
-                                LocalidadNombre = reader.GetString(12),
-                                ProvinciaNombre = reader.GetString(13),
-                                PaisNombre = reader.GetString(14),
-                                PerfilNombre = reader.GetString(15),
-                                EstadoNombre = reader.GetString(16)
+                                CUIL = reader.GetString(reader.GetOrdinal("cuil_Empleado")),
+                                DNI = reader.GetString(reader.GetOrdinal("dni_Empleado")),
+                                Nombre = reader.GetString(reader.GetOrdinal("nombre_Empleado")),
+                                Apellido = reader.GetString(reader.GetOrdinal("apellido_Empleado")),
+                                Email = reader.GetString(reader.GetOrdinal("email_Empleado")),
+                                Celular = reader.GetString(reader.GetOrdinal("celular_Empleado")),
+                                FechaNacimiento = reader.GetDateTime(reader.GetOrdinal("fechaNac_Empleado")),
+                                Calle = reader.GetString(reader.GetOrdinal("Calle")),
+                                NumeroCalle = reader.GetInt32(reader.GetOrdinal("NumeroCalle")),
+                                Piso = reader.IsDBNull(reader.GetOrdinal("Piso")) ? (int?)null : reader.GetInt32(reader.GetOrdinal("Piso")),
+                                Dpto = reader.IsDBNull(reader.GetOrdinal("Dpto")) ? null : reader.GetString(reader.GetOrdinal("Dpto")),
+                                CodigoPostal = reader.GetInt32(reader.GetOrdinal("CodigoPostal")),
+                                LocalidadNombre = reader.GetString(reader.GetOrdinal("LocalidadNombre")),
+                                ProvinciaNombre = reader.GetString(reader.GetOrdinal("ProvinciaNombre")),
+                                PaisNombre = reader.GetString(reader.GetOrdinal("PaisNombre")),
+                                PerfilNombre = reader.GetString(reader.GetOrdinal("PerfilNombre")),
+                                EstadoNombre = reader.GetString(reader.GetOrdinal("EstadoNombre"))
                             };
 
                             empleados.Add(empleado);
@@ -330,13 +330,17 @@ namespace AgMaGest.C_Datos
                     }
                 }
             }
-            catch (SqlException ex)
+            catch (SqlException sqlEx)
             {
-                Console.WriteLine($"Error de SQL: {ex.Message}");
-                throw;
+                throw new Exception("Error SQL al filtrar empleados: " + sqlEx.Message);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error general al filtrar empleados: " + ex.Message);
             }
 
             return empleados;
-        }        
+        }
+
     }
 }

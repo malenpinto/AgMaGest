@@ -17,16 +17,18 @@ namespace AgMaGest.C_Logica.Entidades
         public double MontoPedido { get; set; } // Id del monto a pagar
         public int IdEstadoPedido { get; set; }
 
-        // Nuevas propiedades para los datos del empleado
+        // Propiedades para los datos del empleado
         public string NombreEmpleado { get; set; }
         public string ApellidoEmpleado { get; set; }
         public string NombreEstadoPedido { get; set; }
         public Vehiculos Vehiculo { get; set; }
+
         // Propiedad para mostrar los detalles del vehículo en el DataGridView
         public string DetallesVehiculo { get; set; }
 
-        // Propiedad para almacenar el CUIL/CUIT del cliente
-        public string DetallesCliente { get; set; }
+        // Propiedades para los datos del empleado
+        public string CUIL_Cliente { get; set; }
+        public string NombreCliente { get; set; }
 
         // Propiedad para la imagen del vehículo
         public Image Imagen { get; set; }

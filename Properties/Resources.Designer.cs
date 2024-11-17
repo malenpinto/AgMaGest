@@ -143,9 +143,9 @@ namespace AgMaGest.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Icono_Buscar_Admin {
+        internal static System.Drawing.Bitmap Icono_BuscarAdmin {
             get {
-                object obj = ResourceManager.GetObject("Icono-Buscar-Admin", resourceCulture);
+                object obj = ResourceManager.GetObject("Icono-BuscarAdmin", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,19 +153,9 @@ namespace AgMaGest.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Icono_Buscar_Cajero {
+        internal static System.Drawing.Bitmap Icono_BuscarCajero {
             get {
-                object obj = ResourceManager.GetObject("Icono-Buscar-Cajero", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Icono_Buscar_Vendedor {
-            get {
-                object obj = ResourceManager.GetObject("Icono-Buscar-Vendedor", resourceCulture);
+                object obj = ResourceManager.GetObject("Icono-BuscarCajero", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -243,9 +233,39 @@ namespace AgMaGest.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Icono_DescargarAdmin {
+            get {
+                object obj = ResourceManager.GetObject("Icono-DescargarAdmin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icono_DescargarCejero {
+            get {
+                object obj = ResourceManager.GetObject("Icono-DescargarCejero", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Icono_Editar {
             get {
                 object obj = ResourceManager.GetObject("Icono-Editar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icono_EditarVendedor {
+            get {
+                object obj = ResourceManager.GetObject("Icono-EditarVendedor", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -376,6 +396,46 @@ namespace AgMaGest.Properties {
         internal static System.Drawing.Bitmap Icono_Proveedor_Admin {
             get {
                 object obj = ResourceManager.GetObject("Icono-Proveedor-Admin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icono_RefescarAdmin {
+            get {
+                object obj = ResourceManager.GetObject("Icono-RefescarAdmin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icono_RefescarCajero {
+            get {
+                object obj = ResourceManager.GetObject("Icono-RefescarCajero", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icono_RefescarVendedor {
+            get {
+                object obj = ResourceManager.GetObject("Icono-RefescarVendedor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icono_RegistrarPago {
+            get {
+                object obj = ResourceManager.GetObject("Icono-RegistrarPago", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
