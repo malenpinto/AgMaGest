@@ -287,8 +287,6 @@ SELECT * FROM Pais
 SELECT * FROM Perfil_Empleado
 SELECT * FROM Estado_Empleado*/
 
-
-
 --------------------------
 --- DATOS PARA VEHICULO---
 --------------------------
@@ -412,9 +410,8 @@ SELECT * FROM Cliente_Final
 SELECT * FROM Cliente
 SELECT * FROM Estado_Cliente*/
 
-
 ---------------------------------
---- DATOS PARA PEEDIDO Y PAGO ---
+--- DATOS PARA PEDIDO Y PAGO ---
 ---------------------------------
 INSERT INTO Tipo_Pago (nombre_TipoPago) VALUES 
 ('Tarjeta de crédito'),
@@ -426,8 +423,8 @@ INSERT INTO Estado_Pedido (nombre_EstadoPedido) VALUES
 ('Confirmado');
 
 INSERT INTO Estado_Pago (nombre_EstadoPago) VALUES 
-('Pendiente'),
-('Pagado');
+('Pagado'),
+('Pendiente');
 
 /*SELECT * FROM Tipo_Pago
 SELECT * FROM Estado_Pago
