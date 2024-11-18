@@ -16,14 +16,16 @@ namespace AgMaGest.C_Presentacion.Vendedor
 {
     public partial class VisualizarEstadisticas : Form
     {
+        private bool interfazCargada = false; // Indicador de que la interfaz se cargó completamente
+
         public VisualizarEstadisticas()
         {
             InitializeComponent();
             CargarEstadisticasPedidos();
             InicializarComboMesFiltro(); // Inicializar el ComboBox para el mes
+            interfazCargada = true; // Indicar que la interfaz está completamente cargada
         }
-
-        public void CargarEstadisticasPedidos()
+        public void CargarEstadisticasPedidos(bool mostrarMensajes = false)
         {
             // Crear una instancia de PedidoDAL
             PedidoDAL pedidoDAL = new PedidoDAL();
@@ -41,7 +43,7 @@ namespace AgMaGest.C_Presentacion.Vendedor
             var serie = new System.Windows.Forms.DataVisualization.Charting.Series("Pedidos por Estado");
 
             // Configuración de la serie (puedes personalizar el tipo de gráfico)
-            serie.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;  // Tipo de gráfico: torta (pie)
+            serie.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie; // Tipo de gráfico: torta (pie)
             chartPedidos.Series.Add(serie);
 
             // Variable para saber si se agregaron puntos
@@ -67,33 +69,23 @@ namespace AgMaGest.C_Presentacion.Vendedor
                 }
             }
 
-            // Si no se encontraron datos para mostrar
-            if (!hayDatos)
+            // Si no se encontraron datos para mostrar y se debe mostrar mensajes
+            if (!hayDatos && mostrarMensajes)
             {
                 string mensaje = "No se encontraron pedidos para mostrar en el gráfico.";
 
                 // Verificar si se seleccionó un mes específico (no "Todos los meses")
-                if (mesSeleccionado.HasValue && mesSeleccionado.Value != 0)
+                if (mesSeleccionado.HasValue && mesSeleccionado.Value >= 1 && mesSeleccionado.Value <= 12)
                 {
-                    try
-                    {
-                        // Crear el objeto DateTime solo si el mes es válido (1-12)
-                        string nombreMes = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(new DateTime(2024, mesSeleccionado.Value, 1).ToString("MMMM"));
-                        mensaje = $"No se encontraron pedidos para el mes seleccionado: {nombreMes}.";
-                    }
-                    catch (ArgumentOutOfRangeException)
-                    {
-                        // Si ocurre un error, capturarlo y mostrar un mensaje adecuado
-                        MessageBox.Show("El mes seleccionado no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return; // Salir del método
-                    }
+                    // Crear el objeto DateTime solo si el mes es válido
+                    string nombreMes = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(new DateTime(2024, mesSeleccionado.Value, 1).ToString("MMMM"));
+                    mensaje = $"No se encontraron pedidos para el mes seleccionado: {nombreMes}.";
                 }
 
                 // Mostrar el mensaje
                 MessageBox.Show(mensaje, "Sin Datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
-            else
+            else if (hayDatos)
             {
                 // Si hay datos, agregar título al gráfico
                 chartPedidos.Titles.Clear();
@@ -102,7 +94,7 @@ namespace AgMaGest.C_Presentacion.Vendedor
         }
 
         private void InicializarComboMesFiltro()
-        {
+            {
             CBFiltroEstado.Items.Add("Todos los meses");
             for (int i = 1; i <= 12; i++)
             {
@@ -113,11 +105,13 @@ namespace AgMaGest.C_Presentacion.Vendedor
             CBFiltroEstado.SelectedIndexChanged += CBMesFiltro_SelectedIndexChanged; // Evento de cambio de selección
         }
 
-        // Evento que se ejecuta cuando se cambia la selección del ComboBox de meses
         private void CBMesFiltro_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CargarEstadisticasPedidos(); // Recargar las estadísticas con el filtro aplicado
+            // Solo mostrar mensajes si la interfaz ya fue cargada
+            if (interfazCargada)
+            {
+                CargarEstadisticasPedidos(true); // Habilitar mensajes al cambiar de mes
+            }
         }
-
     }
 }
