@@ -38,7 +38,7 @@ namespace AgMaGest.C_Presentacion.Administrador
                 ConfigurarDataGridView();
                 dataGridFacturas.AutoGenerateColumns = false;
 
-                FacturaDAL facturaDAL = new FacturaDAL(); 
+                FacturaDAL facturaDAL = new FacturaDAL();
                 List<Factura> listaFacturas = facturaDAL.ObtenerFacturas();
 
                 if (listaFacturas != null && listaFacturas.Count > 0)
@@ -83,6 +83,9 @@ namespace AgMaGest.C_Presentacion.Administrador
 
             dataGridFacturas.Columns.Add("DetallesVehiculo", "Detalles del Vehículo");
             dataGridFacturas.Columns["DetallesVehiculo"].DataPropertyName = "DetallesVehiculo";
+
+            dataGridFacturas.Columns.Add("NombreTipoPago", "Forma de pago");
+            dataGridFacturas.Columns["NombreTipoPago"].DataPropertyName = "NombreTipoPago";
 
             dataGridFacturas.Columns.Add("TotalFactura", "Total de la Factura");
             dataGridFacturas.Columns["TotalFactura"].DataPropertyName = "TotalFactura";
@@ -169,76 +172,79 @@ namespace AgMaGest.C_Presentacion.Administrador
 
                 // Agregar una página al documento
                 PdfPage pagina = documento.AddPage();
-                pagina.Size = PdfSharp.PageSize.A4; // Establecer tamaño A4
+                pagina.Size = PdfSharp.PageSize.A4;
 
                 // Crear un objeto para dibujar en la página
                 XGraphics graficos = XGraphics.FromPdfPage(pagina);
 
-                // Definir fuentes
-                XFont fuenteTitulo = new XFont("Arial", 14, XFontStyleEx.Bold);
-                XFont fuenteSubtitulo = new XFont("Arial", 14, XFontStyleEx.Bold);
+                // Fuentes
+                XFont fuenteTitulo = new XFont("Arial", 16, XFontStyleEx.Bold);
+                XFont fuenteSubtitulo = new XFont("Arial", 12, XFontStyleEx.Bold);
                 XFont fuenteNormal = new XFont("Arial", 10);
+                XFont fuenteNegrita = new XFont("Arial", 10, XFontStyleEx.Bold);
 
                 // Coordenadas iniciales
-                double posY = 40;
+                double posX = 40; // Margen izquierdo
+                double posY = 40; // Margen superior
 
-                // Dibujar Encabezado
-                graficos.DrawRectangle(XPens.Black, new XRect(40, posY, 500, 50));
-                graficos.DrawString("Factura", fuenteTitulo, XBrushes.Black, new XPoint(40, posY));
+                // Encabezado principal
+                graficos.DrawImage(XImage.FromFile("logo.png"), posX, posY, 100, 50);
+                graficos.DrawString("FACTURA", fuenteTitulo, XBrushes.Black, new XPoint(posX + 120, posY + 20));
+                posY += 70;
+
+                // Datos de la empresa
+                graficos.DrawString("CONCESIONARIA: AUDEC S.A.", fuenteSubtitulo, XBrushes.Black, new XPoint(posX, posY));
                 posY += 20;
-
-                graficos.DrawString($"Fecha: {factura.FechaFactura:dd/MM/yyyy}", fuenteNormal, XBrushes.Black, new XPoint(40, posY));
-                graficos.DrawString($"N.º de Factura: {factura.NumFactura}", fuenteNormal, XBrushes.Black, new XPoint(300, posY));
-                posY += 20;
-
-                graficos.DrawString($"Id. de Cliente: {factura.CUIL_Cliente}", fuenteNormal, XBrushes.Black, new XPoint(40, posY));
-                graficos.DrawString($"Para: {factura.NombreCliente}", fuenteNormal, XBrushes.Black, new XPoint(300, posY));
+                graficos.DrawString("CUIT: 30-70757091-9", fuenteNegrita, XBrushes.Black, new XPoint(posX, posY));
+                graficos.DrawString("DIRECCIÓN: ", fuenteNegrita, XBrushes.Black, new XPoint(posX, posY + 15));
+                graficos.DrawString("Av. Independencia 4280, CP 3400 Corrientes", fuenteNormal, XBrushes.Black, new XPoint(posX + 70, posY + 15));
                 posY += 40;
 
-                // Dibujar Detalles del Vendedor
-                graficos.DrawString("Vendedor", fuenteSubtitulo, XBrushes.Black, new XPoint(40, posY));
+                // Datos de la factura y cliente
+                graficos.DrawString($"Fecha: {factura.FechaFactura:dd/MM/yyyy}", fuenteNormal, XBrushes.Black, new XPoint(posX, posY));
+                graficos.DrawString($"N.º de Factura: {factura.NumFactura}", fuenteNormal, XBrushes.Black, new XPoint(posX + 300, posY));
                 posY += 20;
-
-                graficos.DrawString($"Nombre: {factura.NombreCompleto}", fuenteNormal, XBrushes.Black, new XPoint(40, posY));
-                graficos.DrawString($"CUIL: {factura.CUIL_Empleado}", fuenteNormal, XBrushes.Black, new XPoint(300, posY));
-                posY += 20;
-
-                graficos.DrawString($"Condiciones de Pago: Contado", fuenteNormal, XBrushes.Black, new XPoint(40, posY));
+                graficos.DrawString($"ID de Cliente: {factura.CUIL_Cliente}", fuenteNormal, XBrushes.Black, new XPoint(posX, posY));
+                graficos.DrawString($"Cliente: {factura.NombreCliente}", fuenteNormal, XBrushes.Black, new XPoint(posX + 300, posY));
                 posY += 40;
 
-                // Dibujar Tabla de Detalles
-                graficos.DrawString("DETALLES DEL VEHÍCULO", fuenteSubtitulo, XBrushes.Black, new XPoint(40, posY));
+                // Encabezado de tabla
+                graficos.DrawString("VENDEDOR", fuenteNegrita, XBrushes.Black, new XPoint(posX, posY));
+                graficos.DrawString("CUIL", fuenteNegrita, XBrushes.Black, new XPoint(posX + 150, posY));
+                graficos.DrawString("FORMA DE PAGO", fuenteNegrita, XBrushes.Black, new XPoint(posX + 300, posY));
                 posY += 20;
 
-                graficos.DrawRectangle(XPens.Black, new XRect(40, posY, 500, 20));
-                graficos.DrawString($"Descripción", fuenteNormal, XBrushes.Black, new XPoint(50, posY + 5));
-                graficos.DrawString("Importe", fuenteNormal, XBrushes.Black, new XPoint(400, posY + 5));
-                posY += 20;
-
-                graficos.DrawRectangle(XPens.Black, new XRect(40, posY, 500, 20));
-                graficos.DrawString(factura.DetallesVehiculo, fuenteNormal, XBrushes.Black, new XPoint(50, posY + 5));
-                graficos.DrawString($"{factura.TotalFactura:C}", fuenteNormal, XBrushes.Black, new XPoint(400, posY + 5));
+                // Datos del vendedor
+                graficos.DrawString(factura.NombreCompleto, fuenteNormal, XBrushes.Black, new XPoint(posX, posY));
+                graficos.DrawString(factura.CUIL_Empleado, fuenteNormal, XBrushes.Black, new XPoint(posX + 150, posY));
+                graficos.DrawString(factura.NombreTipoPago, fuenteNormal, XBrushes.Black, new XPoint(posX + 300, posY));
                 posY += 40;
 
-                // Dibujar Total de la Factura
-                graficos.DrawString($"Total Factura: {factura.TotalFactura:C}", fuenteSubtitulo, XBrushes.Black, new XPoint(40, posY));
+                // Detalles del vehículo
+                graficos.DrawString("DETALLES DEL VEHÍCULO", fuenteNegrita, XBrushes.Black, new XPoint(posX, posY));
+                posY += 20;
+                graficos.DrawString(factura.DetallesVehiculo, fuenteNormal, XBrushes.Black, new XPoint(posX, posY));
+                graficos.DrawString($"{factura.TotalFactura:C}", fuenteNormal, XBrushes.Black, new XPoint(posX + 400, posY));
                 posY += 40;
 
-                // Dibujar Pie de Página
-                graficos.DrawString("¡Gracias por su confianza!", fuenteNormal, XBrushes.Black, new XPoint(40, posY));
-                posY += 20;
+                // Total factura
+                graficos.DrawString("Total Factura", fuenteNegrita, XBrushes.Black, new XPoint(posX + 300, posY));
+                graficos.DrawString($"{factura.TotalFactura:C}", fuenteNegrita, XBrushes.Black, new XPoint(posX + 400, posY));
+                posY += 50;
 
+                // Pie de página
+                posY = pagina.Height - 50; // Ajustar cerca del borde inferior
+                graficos.DrawString("¡Gracias por su confianza!", fuenteNormal, XBrushes.Black, new XPoint(posX, posY));
+                posY += 20;
                 graficos.DrawString("AgMaGest 2024 © | Corrientes, CP 3400 | Phone: 111-222-3333 | Fax: 111-222-3334",
-                    fuenteNormal, XBrushes.Black, new XPoint(40, posY));
+                    fuenteNormal, XBrushes.Black, new XPoint(posX, posY));
 
-                // Guardar el archivo PDF
+                // Guardar PDF
                 string rutaArchivo = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), $"Factura_{factura.NumFactura}.pdf");
                 documento.Save(rutaArchivo);
+                MessageBox.Show($"PDF generado: {rutaArchivo}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // Notificar al usuario
-                MessageBox.Show($"PDF generado con éxito en: {rutaArchivo}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                // Abrir el archivo PDF
+                // Abrir PDF
                 System.Diagnostics.Process.Start(rutaArchivo);
             }
             catch (Exception ex)

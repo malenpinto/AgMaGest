@@ -18,5 +18,7 @@ namespace AgMaGest.C_Logica.Entidades
         public string DetallesVehiculo { get; set; }
         public string CUIL_Cliente { get; set; } 
         public string NombreCliente { get; set; }
+        public string NombreTipoPago { get; set; }
+
     }
 }

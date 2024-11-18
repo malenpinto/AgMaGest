@@ -77,9 +77,11 @@ namespace AgMaGest.C_Datos
                             cf.apellido_CFinal, 
                             cf.cuil_CFinal,
                             ce.razon_Social_CEmpresa, 
-                            ce.cuit_CEmpresa
+                            ce.cuit_CEmpresa,
+                            t.nombre_tipoPago AS NombreTipoPago
                         FROM Factura f
                         INNER JOIN Pago p ON f.id_pago = p.id_pago
+                        INNER JOIN Tipo_Pago t ON p.id_TipoPago = t.id_TipoPago
                         INNER JOIN Pedido pe ON p.id_Pedido = pe.id_Pedido
                         INNER JOIN Empleado e ON pe.cuil_Empleado = e.cuil_Empleado
                         INNER JOIN Vehiculos v ON pe.id_Vehiculo = v.id_Vehiculo
@@ -135,7 +137,10 @@ namespace AgMaGest.C_Datos
                                         ? "Sin detalles"
                                         : reader.GetString(reader.GetOrdinal("DetallesVehiculo")),
                                     CUIL_Cliente = cuilCuitCliente,
-                                    NombreCliente = nombreCliente
+                                    NombreCliente = nombreCliente,
+                                    NombreTipoPago = reader.IsDBNull(reader.GetOrdinal("NombreTipoPago"))
+                                        ? "Desconocido"
+                                        : reader.GetString(reader.GetOrdinal("NombreTipoPago")) // Asignar tipo de pago
                                 };
 
                                 listaFacturas.Add(factura);
@@ -155,6 +160,7 @@ namespace AgMaGest.C_Datos
 
             return listaFacturas;
         }
+
 
         public List<Factura> BuscarFacturas(string criterio)
         {
