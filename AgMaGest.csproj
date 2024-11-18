@@ -125,7 +125,6 @@
     <Compile Include="C_Datos\ClienteEmpresaDAL.cs" />
     <Compile Include="C_Datos\ClienteFinalDAL.cs" />
     <Compile Include="C_Datos\CondicionVehiculoDAL.cs" />
-    <Compile Include="C_Datos\DetallePedidoDAL.cs" />
     <Compile Include="C_Datos\EmpleadoDAL.cs" />
     <Compile Include="C_Datos\EstadoClienteDAL.cs" />
     <Compile Include="C_Datos\EstadoEmpleadoDAL.cs" />
@@ -147,7 +146,6 @@
     <Compile Include="C_Logica\Entidades\ClienteEmpresa.cs" />
     <Compile Include="C_Logica\Entidades\ClienteFinal.cs" />
     <Compile Include="C_Logica\Entidades\CondicionVehiculo.cs" />
-    <Compile Include="C_Logica\Entidades\DetallePedido.cs" />
     <Compile Include="C_Logica\Entidades\Empleado.cs" />
     <Compile Include="C_Logica\Entidades\EstadoCliente.cs" />
     <Compile Include="C_Logica\Entidades\EstadoEmpleado.cs" />
