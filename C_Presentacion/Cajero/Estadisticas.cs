@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using AgMaGest.C_Logica.Entidades;
+using System.Globalization;
 
 namespace AgMaGest.C_Presentacion.Cajero
 {
@@ -18,50 +19,73 @@ namespace AgMaGest.C_Presentacion.Cajero
         public Estadisticas()
         {
             InitializeComponent();
+            InicializarComboMesFiltro();
             CargarEstadisticasAnualesPedidos();
+            CBMesFiltro.SelectedIndexChanged += CBMesFiltro_SelectedIndexChanged; // Asociar evento
         }
+
+        private void InicializarComboMesFiltro()
+        {
+            CBMesFiltro.Items.Add("Todos los meses");
+            for (int i = 1; i <= 12; i++)
+            {
+                string nombreMes = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(
+                    new DateTime(1, i, 1).ToString("MMMM").ToLower()
+                );
+                CBMesFiltro.Items.Add(nombreMes);
+            }
+            CBMesFiltro.SelectedIndex = 0; // Seleccionar "Todos los meses" por defecto
+        }
+
 
         private void CargarEstadisticasAnualesPedidos()
         {
             PedidoDAL pedidoDAL = new PedidoDAL();
-            var estadisticasAnuales = pedidoDAL.ObtenerEstadisticasAnualesPedidos();
 
-            // Limpiar el Chart antes de agregar datos
+            // Obtener el mes seleccionado del ComboBox
+            int? mesSeleccionado = CBMesFiltro.SelectedIndex == 0 ? (int?)null : CBMesFiltro.SelectedIndex;
+
+            // Obtener estadísticas filtradas
+            var estadisticasAnuales = pedidoDAL.ObtenerEstadisticasAnualesPedidos(mesSeleccionado);
+
+            // Limpiar el Chart
             chartPedidosAnuales.Series.Clear();
 
-            // Crear una nueva serie para las estadísticas anuales de los pedidos
+            // Crear y llenar la serie con datos
             var serie = new Series("Pedidos Anuales")
             {
-                ChartType = SeriesChartType.Bar // Tipo de gráfico: Barra
+                ChartType = SeriesChartType.Bar
             };
             chartPedidosAnuales.Series.Add(serie);
 
-            // Recorrer las estadísticas y agregar los valores al gráfico
             foreach (var estadistica in estadisticasAnuales)
             {
-                // Agregar el mes y la cantidad de pedidos al gráfico
-                serie.Points.AddXY(estadistica.Key, estadistica.Value);
+                string mesConFormato = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(estadistica.Key);
+                serie.Points.AddXY(mesConFormato, estadistica.Value);
             }
 
-            // Validación adicional para asegurarse de que se agregaron puntos
+            // Mostrar mensaje si no hay datos para el mes seleccionado
             if (serie.Points.Count == 0)
             {
-                MessageBox.Show("No se encontraron pedidos para el año actual.");
+                string mensaje = mesSeleccionado.HasValue
+                    ? $"No hay datos para el mes seleccionado: {CultureInfo.CurrentCulture.TextInfo.ToTitleCase(new DateTime(1, mesSeleccionado.Value, 1).ToString("MMMM"))}."
+                    : "No hay datos para el año actual.";
+                MessageBox.Show(mensaje, "Sin datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
-            // Configurar etiquetas del eje X para mostrar los meses
+            // Configurar el gráfico
             chartPedidosAnuales.ChartAreas[0].AxisX.Interval = 1;
             chartPedidosAnuales.ChartAreas[0].AxisX.Title = "Meses";
             chartPedidosAnuales.ChartAreas[0].AxisY.Title = "Cantidad de Pedidos";
-
-            // Configurar título del gráfico
             chartPedidosAnuales.Titles.Clear();
             chartPedidosAnuales.Titles.Add("Estadísticas Anuales de Pedidos");
-
-            // Opcional: Personalizar las etiquetas del eje X si no se muestran correctamente
             chartPedidosAnuales.ChartAreas[0].AxisX.LabelStyle.Angle = -45;
-            chartPedidosAnuales.ChartAreas[0].AxisX.LabelStyle.Format = "MMMM";
-            chartPedidosAnuales.ChartAreas[0].AxisX.LabelStyle.IsEndLabelVisible = true;
         }
+
+        private void CBMesFiltro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CargarEstadisticasAnualesPedidos();
+        }
+
     }
 }

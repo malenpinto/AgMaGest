@@ -600,22 +600,31 @@ namespace AgMaGest.C_Datos
             return vendedores;
         }
 
-        public List<KeyValuePair<string, int>> ObtenerEstadisticasAnualesPedidos()
+        public List<KeyValuePair<string, int>> ObtenerEstadisticasAnualesPedidos(int? mes = null)
         {
             List<KeyValuePair<string, int>> estadisticasAnuales = new List<KeyValuePair<string, int>>();
 
+            // Consulta SQL con filtro opcional por mes
             string query = @"
-                SELECT 
-                    MONTH(fecha_Pedido) AS Mes,
-                    COUNT(*) AS CantidadPedidos
-                FROM 
-                    Pedido
-                WHERE 
-                    YEAR(fecha_Pedido) = YEAR(GETDATE())
-                GROUP BY 
-                    MONTH(fecha_Pedido)
-                ORDER BY 
-                    Mes";
+        SELECT 
+            MONTH(fecha_Pedido) AS Mes,
+            COUNT(*) AS CantidadPedidos
+        FROM 
+            Pedido
+        WHERE 
+            YEAR(fecha_Pedido) = YEAR(GETDATE())";
+
+            // Agregar filtro por mes si se proporciona
+            if (mes.HasValue)
+            {
+                query += " AND MONTH(fecha_Pedido) = @Mes";
+            }
+
+            query += @"
+        GROUP BY 
+            MONTH(fecha_Pedido)
+        ORDER BY 
+            Mes";
 
             try
             {
@@ -623,17 +632,25 @@ namespace AgMaGest.C_Datos
                 {
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(query, conn))
-                    using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        while (reader.Read())
+                        // Si se proporciona un mes, agregarlo como parámetro
+                        if (mes.HasValue)
                         {
-                            int mes = reader.GetInt32(reader.GetOrdinal("Mes"));
-                            int cantidadPedidos = reader.GetInt32(reader.GetOrdinal("CantidadPedidos"));
+                            cmd.Parameters.AddWithValue("@Mes", mes.Value);
+                        }
 
-                            // Convertir el número del mes a nombre del mes
-                            string nombreMes = new DateTime(1, mes, 1).ToString("MMMM");
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                int mesResult = reader.GetInt32(reader.GetOrdinal("Mes"));
+                                int cantidadPedidos = reader.GetInt32(reader.GetOrdinal("CantidadPedidos"));
 
-                            estadisticasAnuales.Add(new KeyValuePair<string, int>(nombreMes, cantidadPedidos));
+                                // Convertir el número del mes al nombre del mes
+                                string nombreMes = new DateTime(1, mesResult, 1).ToString("MMMM");
+
+                                estadisticasAnuales.Add(new KeyValuePair<string, int>(nombreMes, cantidadPedidos));
+                            }
                         }
                     }
                 }
@@ -646,5 +663,6 @@ namespace AgMaGest.C_Datos
 
             return estadisticasAnuales;
         }
+
     }
 }

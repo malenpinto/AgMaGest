@@ -43,6 +43,7 @@
             System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chartPedidosAnuales = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.CBMesFiltro = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.chartPedidosAnuales)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,15 +109,24 @@
             this.chartPedidosAnuales.TabIndex = 1;
             this.chartPedidosAnuales.Text = "chart1";
             // 
-            // InformeMensual
+            // CBMesFiltro
+            // 
+            this.CBMesFiltro.FormattingEnabled = true;
+            this.CBMesFiltro.Location = new System.Drawing.Point(664, 152);
+            this.CBMesFiltro.Name = "CBMesFiltro";
+            this.CBMesFiltro.Size = new System.Drawing.Size(303, 28);
+            this.CBMesFiltro.TabIndex = 2;
+            // 
+            // Estadisticas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1238, 882);
+            this.Controls.Add(this.CBMesFiltro);
             this.Controls.Add(this.chartPedidosAnuales);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "InformeMensual";
+            this.Name = "Estadisticas";
             this.Text = "InformeMensual";
             ((System.ComponentModel.ISupportInitialize)(this.chartPedidosAnuales)).EndInit();
             this.ResumeLayout(false);
@@ -126,5 +136,6 @@
         #endregion
 
         private System.Windows.Forms.DataVisualization.Charting.Chart chartPedidosAnuales;
+        private System.Windows.Forms.ComboBox CBMesFiltro;
     }
 }
