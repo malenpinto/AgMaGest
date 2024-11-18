@@ -544,29 +544,30 @@ namespace AgMaGest.C_Datos
             return estadosPedidos;
         }
 
-        public List<VendedorEstadistica> ObtenerVendedorDelMes()
+        public List<VendedorEstadistica> ObtenerVendedorDelMes(int? mes = null)
         {
             List<VendedorEstadistica> vendedores = new List<VendedorEstadistica>();
 
+            // Usamos el parámetro "mes" para filtrar los pedidos por el mes seleccionado
             string query = @"
-                SELECT TOP 1
-                    e.cuil_Empleado,
-                    e.nombre_Empleado,
-                    e.apellido_Empleado,
-                    COUNT(p.id_Pedido) AS CantidadPedidos,
-                    SUM(p.monto_Pedido) AS TotalVentas
-                FROM 
-                    Pedido p
-                INNER JOIN 
-                    Empleado e ON p.cuil_Empleado = e.cuil_Empleado
-                WHERE 
-                    MONTH(p.fecha_Pedido) = MONTH(GETDATE()) 
-                    AND YEAR(p.fecha_Pedido) = YEAR(GETDATE())
-                    AND p.id_EstadoPedido = 2
-                GROUP BY 
-                    e.cuil_Empleado, e.nombre_Empleado, e.apellido_Empleado
-                ORDER BY 
-                    CantidadPedidos DESC, TotalVentas DESC";
+        SELECT 
+            e.cuil_Empleado,
+            e.nombre_Empleado,
+            e.apellido_Empleado,
+            COUNT(p.id_Pedido) AS CantidadPedidos,
+            SUM(p.monto_Pedido) AS TotalVentas
+        FROM 
+            Pedido p
+        INNER JOIN 
+            Empleado e ON p.cuil_Empleado = e.cuil_Empleado
+        WHERE 
+            MONTH(p.fecha_Pedido) = @Mes
+            AND YEAR(p.fecha_Pedido) = YEAR(GETDATE()) 
+            AND p.id_EstadoPedido = 2
+        GROUP BY 
+            e.cuil_Empleado, e.nombre_Empleado, e.apellido_Empleado
+        ORDER BY 
+            CantidadPedidos DESC, TotalVentas DESC";
 
             try
             {
@@ -574,19 +575,24 @@ namespace AgMaGest.C_Datos
                 {
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(query, conn))
-                    using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        while (reader.Read())
+                        // Agregamos el parámetro del mes a la consulta
+                        cmd.Parameters.AddWithValue("@Mes", mes);
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
                         {
-                            VendedorEstadistica vendedor = new VendedorEstadistica
+                            while (reader.Read())
                             {
-                                CUIL = reader.GetString(reader.GetOrdinal("cuil_Empleado")),
-                                NombreEmpleado = reader.GetString(reader.GetOrdinal("nombre_Empleado")),
-                                ApellidoEmpleado = reader.GetString(reader.GetOrdinal("apellido_Empleado")),
-                                CantidadPedidos = reader.GetInt32(reader.GetOrdinal("CantidadPedidos")),
-                                TotalVentas = reader.GetDouble(reader.GetOrdinal("TotalVentas"))
-                            };
-                            vendedores.Add(vendedor);
+                                VendedorEstadistica vendedor = new VendedorEstadistica
+                                {
+                                    CUIL = reader.GetString(reader.GetOrdinal("cuil_Empleado")),
+                                    NombreEmpleado = reader.GetString(reader.GetOrdinal("nombre_Empleado")),
+                                    ApellidoEmpleado = reader.GetString(reader.GetOrdinal("apellido_Empleado")),
+                                    CantidadPedidos = reader.GetInt32(reader.GetOrdinal("CantidadPedidos")),
+                                    TotalVentas = reader.GetDouble(reader.GetOrdinal("TotalVentas"))
+                                };
+                                vendedores.Add(vendedor);
+                            }
                         }
                     }
                 }
@@ -599,6 +605,7 @@ namespace AgMaGest.C_Datos
 
             return vendedores;
         }
+
 
         public List<KeyValuePair<string, int>> ObtenerEstadisticasAnualesPedidos(int? mes = null)
         {
@@ -662,6 +669,32 @@ namespace AgMaGest.C_Datos
             }
 
             return estadisticasAnuales;
+        }
+
+        public int ContarPedidosPorEstadoYMes(int idEstadoPedido, int mes)
+        {
+            int cantidadPedidos = 0;
+
+            // Consulta SQL para contar los pedidos por estado y mes
+            string query = @"
+        SELECT COUNT(*) 
+        FROM Pedido 
+        WHERE id_EstadoPedido = @idEstadoPedido 
+        AND MONTH(fecha_Pedido) = @mes";
+
+            // Crear conexión y comando para ejecutar la consulta
+            using (SqlConnection connection = new SqlConnection(ConnectionString)) // Asegúrate de que connectionString esté correctamente configurada
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@idEstadoPedido", idEstadoPedido);
+                command.Parameters.AddWithValue("@mes", mes);
+
+                // Abrir la conexión y ejecutar la consulta
+                connection.Open();
+                cantidadPedidos = (int)command.ExecuteScalar(); // Ejecuta la consulta y obtiene el valor de la cuenta
+            }
+
+            return cantidadPedidos;
         }
 
     }

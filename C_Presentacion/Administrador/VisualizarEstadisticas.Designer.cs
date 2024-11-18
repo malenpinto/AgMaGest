@@ -35,6 +35,7 @@
             System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chartVendedor = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label1 = new System.Windows.Forms.Label();
+            this.CBFiltroVendedor = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.chartVendedor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,12 +78,21 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Vendedor del Mes";
             // 
+            // CBFiltroVendedor
+            // 
+            this.CBFiltroVendedor.FormattingEnabled = true;
+            this.CBFiltroVendedor.Location = new System.Drawing.Point(892, 154);
+            this.CBFiltroVendedor.Name = "CBFiltroVendedor";
+            this.CBFiltroVendedor.Size = new System.Drawing.Size(295, 28);
+            this.CBFiltroVendedor.TabIndex = 2;
+            // 
             // VisualizarEstadisticas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(200)))), ((int)(((byte)(145)))));
             this.ClientSize = new System.Drawing.Size(1238, 882);
+            this.Controls.Add(this.CBFiltroVendedor);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.chartVendedor);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -99,5 +109,6 @@
 
         private System.Windows.Forms.DataVisualization.Charting.Chart chartVendedor;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox CBFiltroVendedor;
     }
 }

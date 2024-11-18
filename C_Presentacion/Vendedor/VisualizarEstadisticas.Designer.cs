@@ -32,6 +32,7 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chartPedidos = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.CBFiltroEstado = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.chartPedidos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,12 +53,21 @@
             this.chartPedidos.Size = new System.Drawing.Size(642, 478);
             this.chartPedidos.TabIndex = 0;
             // 
+            // CBFiltroEstado
+            // 
+            this.CBFiltroEstado.FormattingEnabled = true;
+            this.CBFiltroEstado.Location = new System.Drawing.Point(857, 112);
+            this.CBFiltroEstado.Name = "CBFiltroEstado";
+            this.CBFiltroEstado.Size = new System.Drawing.Size(308, 28);
+            this.CBFiltroEstado.TabIndex = 1;
+            // 
             // VisualizarEstadisticas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(1238, 882);
+            this.Controls.Add(this.CBFiltroEstado);
             this.Controls.Add(this.chartPedidos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -71,5 +81,6 @@
         #endregion
 
         private System.Windows.Forms.DataVisualization.Charting.Chart chartPedidos;
+        private System.Windows.Forms.ComboBox CBFiltroEstado;
     }
 }
