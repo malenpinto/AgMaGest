@@ -263,12 +263,14 @@ namespace AgMaGest.C_Presentacion.Administrador
             {
                 BEditarEmpleado.Visible = true;
                 BEliminarEmpleado.Visible = true;
+                BAsignarUsuario.Visible = true;
             }
             else
             {
                 // Opcionalmente, ocultar los botones si no hay selección
                 BEditarEmpleado.Visible = false;
                 BEliminarEmpleado.Visible = false;
+                BAsignarUsuario.Visible = false;
             }
         }
     }
